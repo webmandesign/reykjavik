@@ -333,7 +333,7 @@ class Reykjavik_Header {
 
 				// Footer layout
 
-					if ( $layout_footer = get_theme_mod( 'layout_footer', 'fullwidth' ) ) {
+					if ( $layout_footer = get_theme_mod( 'layout_footer', 'boxed' ) ) {
 						$classes[] = esc_attr( 'footer-layout-' . $layout_footer );
 					}
 

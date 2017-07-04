@@ -129,6 +129,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 										// All the selectors with `@extend %content_width;` from SASS files // $content_width
 										'.site-header-inner',
 										'.intro-inner',
+										'.intro-special .intro',
 										'.site-content-inner',
 										'.nav-links',
 										'.page-template-child-pages:not(.fl-builder) .site-main .entry-content',

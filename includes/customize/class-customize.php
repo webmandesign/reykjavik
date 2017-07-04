@@ -887,6 +887,7 @@ class Reykjavik_Customize {
 													// All the selectors with `@extend %content_width;` from SASS files // $content_width
 													'.site-header-inner',
 													'.intro-inner',
+													'.intro-special .intro',
 													'.site-content-inner',
 													'.nav-links',
 													'.page-template-child-pages:not(.fl-builder) .site-main .entry-content',
@@ -993,7 +994,7 @@ class Reykjavik_Customize {
 										'type'    => 'radio',
 										'id'      => 'layout_footer',
 										'label'   => esc_html__( 'Footer layout', 'reykjavik' ),
-										'default' => 'fullwidth',
+										'default' => 'boxed',
 										'choices' => array(
 											'fullwidth' => esc_html__( 'Fullwidth', 'reykjavik' ),
 											'boxed'     => esc_html__( 'Boxed', 'reykjavik' ),

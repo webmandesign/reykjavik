@@ -885,12 +885,12 @@ tbody tr:hover td::after, tbody tr:hover th::after, .button::after, button::afte
 
 .site-layout-boxed .site { max-width: 1920px; max-width: 106.66667rem; }
 
-.site-header-inner, .intro-inner, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs, .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs { width: 88%; margin: 0 auto; }
+.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs, .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs { width: 88%; margin: 0 auto; }
 
 .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs, .fl-row-content { max-width: 1920px; max-width: 106.66667rem; }
 
 /* $content_width */
-.site-header-inner, .intro-inner, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs { max-width: 1200px; max-width: 66.66667rem; }
+.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs { max-width: 1200px; max-width: 66.66667rem; }
 
 /* FILE: main/base/__classes.scss */
 @media only screen and (min-width: 55em) { .no-wrap { white-space: nowrap; } }
@@ -1202,13 +1202,13 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 .intro-special .wp-custom-header::before { content: ''; z-index: 5; }
 
-.intro-special .intro { position: relative; max-width: 38em; max-width: 70ch; margin-left: auto; margin-right: auto; text-align: center; z-index: 10; }
+.intro-special .intro { position: relative; z-index: 10; }
 
 @media only screen and (min-width: 80em) { .intro-special .intro { font-size: 1.19em; } }
 
 .intro-special .intro-media img { display: none; }
 
-.intro-special .intro-inner { padding: 0; }
+.intro-special .intro-inner { max-width: 38rem; padding: 0; margin: 0; }
 
 .intro-special .intro-title, .intro-special .intro .page-summary { float: none; width: 100%; }
 
@@ -2033,7 +2033,7 @@ a .entry-date { cursor: pointer; }
 /* FILE: main/plugins/__breadcrumbs.scss */
 .breadcrumbs { position: relative; padding: 1rem 1.62rem; border-width: 1px; border-style: solid; }
 
-.site-footer .breadcrumbs { padding: 0; border-width: 0; }
+.site-footer .breadcrumbs { border-width: 0; }
 
 .breadcrumbs a { color: inherit; }
 
