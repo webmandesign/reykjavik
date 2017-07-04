@@ -1,0 +1,20 @@
+/* FILE: options-widget-text.scss */
+.text-widget-media-image-select { box-sizing: border-box; width: 100%; }
+
+.fl-lightbox .text-widget-media-image-select { width: auto; }
+
+.text-widget-media-image-preview { position: relative; display: block; }
+
+.text-widget-media-image-preview img { max-width: 100%; vertical-align: top; }
+
+.text-widget-media-image-remove { position: absolute; width: 2em; right: 1em; top: 1em; }
+
+.rtl .text-widget-media-image-remove { right: auto; left: 1em; }
+
+.text-widget-media-image-remove::after, .text-widget-media-image-remove::before { content: ''; position: absolute; width: 1px; height: 1em; left: 50%; top: 50%; margin-top: -.5em; border-left: 1px solid; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+.text-widget-media-image-remove::after { -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+.text-widget-media-icon, .text-widget-media-image { box-sizing: border-box; padding: 1.62em; margin: 1.62em 0; border: 2px dashed rgba(0, 0, 0, 0.1); }
+
+.text-widget-media-image-preview { padding: .38rem; margin-top: 1rem; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: .38rem; background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%), linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }

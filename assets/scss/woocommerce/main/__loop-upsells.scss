@@ -1,0 +1,15 @@
+/* FILE: woocommerce/main/__loop-upsells.scss */
+
+//
+// Upsell products loop styles
+//
+// This loop is displayed on single product page.
+//
+
+
+
+
+
+.upsells {
+	@extend %wc_content_width;
+}

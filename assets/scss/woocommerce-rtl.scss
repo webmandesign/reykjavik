@@ -1,0 +1,30 @@
+/* FILE: woocommerce-rtl.scss */
+
+//
+// WooCommerce frontend styles (RTL)
+//
+// @package    Reykjavík
+// @copyright  WebMan Design, Oliver Juhas
+//
+
+
+
+
+
+// Setup language direction
+
+	$language_direction: rtl;
+
+
+
+// Imports
+
+	@import 'starter/tools/functions';
+
+	@import 'starter/setup/variables';
+
+	@import 'starter/tools/mixins';
+
+	@import 'setup';
+
+	@import 'woocommerce/woocommerce';

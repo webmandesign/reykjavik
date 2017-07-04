@@ -1,0 +1,130 @@
+/* FILE: main/content/__media.scss */
+
+//
+// Media
+//
+
+
+
+
+
+// Entry media
+
+	.entry-media {
+		margin-bottom: power( $golden, 2 ) +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		a {
+			display: inline-block; // To wrap the focus outline around the image/entry media object
+			width: 100%;
+		}
+
+		.wp-playlist {
+			// Keep the text in playlist left/right even if container text is centered
+			text-align: $left; // {{RTL}}
+		}
+
+		.search-results & img {
+			width: auto;
+			max-width: 100%;
+		}
+
+
+
+		// On single post page and when using any-page-builder-ready layout
+
+			.site-main > .entry > & {
+
+				$single_post_media_width: 47; // In %
+				$single_post_media_gutter: 6; // In %
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					position: relative;
+					float: $left; // {{RTL}}
+					width: percentage( $single_post_media_width / 100 );
+					margin: 0 percentage( $single_post_media_gutter / 100 ) 2em;
+					margin-#{$left}: 0; // {{RTL}}
+					z-index: 1;
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+					.no-widgets-sidebar & {
+						margin-#{$left}: percentage( -$single_post_media_width / 100 / 2 ); // {{RTL}}
+					}
+
+				}
+
+				@include responsive( map_get( $breakpoint, 'xxl' ) ) {
+					margin-#{$left}: percentage( -$single_post_media_width / 100 / 4 ); // {{RTL}}
+				}
+
+				.is-singular:not(.has-custom-intro-image):not(.no-intro) & {
+					display: none;
+				}
+
+			}
+
+
+
+		// In loop
+
+			.posts & {
+				float: none;
+				width: auto;
+				margin-bottom: $golden +em;
+
+				.search-results & {
+					margin: 0 0 ( $golden +em );
+				}
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin-bottom: 2em;
+				}
+
+			}
+
+
+
+		// Hiding the post media
+
+			.hide-media & {
+				display: none;
+			}
+
+
+
+		// Avatar image
+
+			.avatar {
+				margin-bottom: $golden +em;
+			}
+
+	}
+
+
+
+// Attachment page
+
+	.attachment {
+
+		caption {
+			caption-side: top;
+		}
+
+		&-download {
+			padding: $golden +em;
+			margin-bottom: $golden +em;
+			border-width: 2px;
+			border-style: dashed;
+
+			&-label {
+				@extend %font_weight_700;
+			}
+
+		}
+
+	}

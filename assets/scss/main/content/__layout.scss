@@ -1,0 +1,102 @@
+/* FILE: main/content/__layout.scss */
+
+//
+// Site content layout
+//
+
+
+
+
+
+// Site content width holder
+
+	.site-content {
+
+		&-inner {
+			@extend %content_width;
+			@extend .clearfix;
+			padding: $padding_vertical 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
+				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: $golden * $padding_vertical;
+				padding-bottom: $golden * $padding_vertical;
+			}
+
+		}
+
+
+
+		// Do not show the outline on the skip link target
+
+			&[tabindex="-1"]:focus {
+				outline: 0;
+			}
+
+	}
+
+
+
+// Primary content container
+
+	.content-area {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: percentage( $golden_major );
+
+			.has-widgets-sidebar & {
+				float: $left; // {{RTL}}
+			}
+
+			.no-widgets-sidebar & {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.posts-layout-list.no-widgets-sidebar &,
+			.single.no-widgets-sidebar &,
+			.attachment.no-widgets-sidebar & {
+				max-width: 38em;
+				max-width: 70ch;
+			}
+
+		}
+
+		.error404 &,
+		.no-widgets-sidebar & {
+			width: 100%;
+		}
+
+	}
+
+
+
+// Extenders
+
+	%fullwidth_sections_layout {
+
+		.site-content-inner {
+			width: 100%;
+			max-width: none;
+			padding: 0;
+		}
+
+		.content-area {
+			float: none;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+
+			html & {
+				// Unfortunately, we need to rise specificity for `max-width` due to possible IE shame styles overrides later.
+				max-width: none;
+			}
+
+		}
+
+	}

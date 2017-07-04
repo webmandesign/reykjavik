@@ -1,0 +1,58 @@
+/* FILE: main/menu/_menu-primary-sub-sub-menu.scss */
+
+//
+// Sub-sub-menus
+//
+
+
+
+
+
+.main-navigation-container {
+
+	&,
+	.has-fullwidth-submenu & {
+
+		li ul ul {
+			font-size: 1em;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				min-width: 0;
+				#{$left}: 100%; // {{RTL}}
+				top: 0;
+				padding: $golden +rem;
+				margin: 0;
+				margin-top: -$golden +rem;
+				margin-top: calc( #{ -$golden +rem } - 1px ); // Account for top border
+				transition: transform ( $small_animation_speed +s ),
+				            opacity ( $small_animation_speed +s );
+
+				li {
+					margin-#{$left}: 0; // {{RTL}}
+				}
+
+			}
+
+		}
+
+		.reverse-expand ul ul,
+		li .reverse-expand ul {
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				#{$left}: auto; // {{RTL}}
+				#{$right}: 100%; // {{RTL}}
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+
+			li li li a {
+				padding-#{$left}: 2em; // {{RTL}}
+			}
+
+		}
+
+	}
+
+}

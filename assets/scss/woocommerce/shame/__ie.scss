@@ -1,0 +1,27 @@
+/* FILE: woocommerce/shame/__ie.scss */
+
+//
+// Internet Explorer browser fixes
+//
+// Unfortunately, IE browser still behaves...
+//
+// @link  http://stackoverflow.com/questions/18907131/detecting-ie11-using-css-capability-feature-detection
+//
+
+
+
+
+
+//
+// IE calculates `ch` units a bit differently, a bit too narrow.
+//
+
+	@media all and (min-width: #{ map_get( $breakpoint, 'l' ) / 16 +em }) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+		.site .woocommerce-tabs .panel,
+		.woocommerce .notes,
+		ul.order_details {
+			max-width: 94ch;
+		}
+
+	}

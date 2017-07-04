@@ -1,0 +1,17 @@
+/* FILE: woocommerce/custom-styles/__widgets.scss */
+
+//
+// Sidebars and widgets color styles
+//
+
+
+
+
+
+// Widgets
+
+	// Layered Nav Filters
+
+		.widget_layered_nav_filters a {
+			@extend %accent_colors;
+		}

@@ -1,0 +1,81 @@
+/* FILE: customize-rtl.scss */
+/* FILE: styles/_customize.scss */
+.customize-control-html h3, .control-section-theme-options .customize-control h3, .customize-control-html h4, .control-section-theme-options .customize-control h4 { padding: 1em 20px; margin: 2em -20px .5em; text-transform: uppercase; font-size: 1em; letter-spacing: 1px; color: #555; border-top: 2px solid #bbb; }
+
+.customize-control-html h4, .control-section-theme-options .customize-control h4 { padding: 1em 0; margin: 1em 0 .5em; border-top-style: dotted; }
+
+.customize-control input[type=tel][size], .customize-control input[type=url][size], .customize-control input[type=text][size], .customize-control input[type=password][size], .customize-control input[type=email][size], .customize-control input[type=number][size], .customize-control input[type=search][size] { width: auto; }
+
+.control-section-theme-options .no-overflow { overflow: hidden; }
+
+.control-section-theme-options .donation-link, .control-section-theme-options .donation-link:hover, .control-section-theme-options .donation-link:active { display: block; width: 100%; padding: 1em 0; text-transform: uppercase; text-align: center; font-weight: bold; font-size: .81em; background: #0aac8e; color: #fafcfe; }
+
+.control-section-theme-options .donation-link:hover { letter-spacing: 1px; }
+
+.control-section-theme-options .customize-section-description-container + .customize-control h3:first-of-type { margin-top: 0; border: 0; }
+
+.control-section-theme-options .customize-control:first-child h3:first-of-type { margin-top: 0; border: 0; }
+
+.control-section-theme-options .customize-control hr { margin: 1em 0; background: transparent; border: 0; border-top: 2px dashed #bbb; }
+
+.control-section-theme-options .customize-control pre { max-height: 8em; padding: .62em; white-space: pre-wrap; background: #eee; border: 1px dashed #ddd; overflow: auto; }
+
+.control-section-theme-options .customize-control select, .control-section-theme-options .customize-control textarea { width: 100%; }
+
+.control-section-theme-options .customize-control select[multiple] { height: 8em; }
+
+.control-section-theme-options .customize-control textarea { min-height: 12em; resize: vertical; }
+
+.control-section-theme-options .customize-control-hidden { display: none !important; }
+
+.control-section-theme-options .customize-control-checkbox label { font-weight: 600; }
+
+.control-section-theme-options .customize-control-checkbox .description { margin-top: .38em; font-weight: 400; }
+
+.control-section-theme-options .matrix { padding: 2px 0 3px; padding-right: 2px; margin-bottom: .5em; border: 2px solid #bbb; overflow: hidden; }
+
+.control-section-theme-options .matrix span { display: none; }
+
+.control-section-theme-options .matrix label { float: right; display: block; width: 33.33%; padding: .5em 0 .5em; padding-right: 4px; margin: 0 -1px -1px; margin-right: 0; text-align: center; border: 1px dotted #bbb; box-sizing: border-box; }
+
+.control-section-theme-options .matrix label:hover { background: #fff; }
+
+.control-section-theme-options .matrix label.is-active { background: #aaa; }
+
+.control-section-theme-options .matrix label.is-active:hover { background: #ccc; }
+
+.control-section-theme-options .image-radio span { display: none; }
+
+.control-section-theme-options .image-radio label { float: right; display: inline-block; margin: 4px; text-align: center; }
+
+.control-section-theme-options .image-radio label.is-active img, .control-section-theme-options .image-radio label:hover img { opacity: 1; }
+
+.control-section-theme-options .image-radio img { display: block; width: 42px; opacity: .5; }
+
+.control-section-theme-options .image-radio input { position: relative; top: -.75em; margin: 0; }
+
+.control-section-theme-options input[type=range] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; margin: 1.62em 0; background: transparent; }
+
+.control-section-theme-options input[type=range]:focus { outline: none; }
+
+.control-section-theme-options input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
+
+.control-section-theme-options input[type=range]::-moz-range-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
+
+.control-section-theme-options input[type=range]::-ms-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
+
+.control-section-theme-options input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+
+.control-section-theme-options input[type=range]::-moz-range-thumb { -moz-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+
+.control-section-theme-options input[type=range]::-ms-thumb { appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+
+.control-section-theme-options input[type=range]::-ms-fill-upper { background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
+
+.control-section-theme-options input[type=range]::-ms-fill-lower { background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
+
+.control-section-theme-options .range-container { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; cursor: default; }
+
+.control-section-theme-options .range-value { position: relative; min-width: 16%; padding: .38rem; margin-right: .38rem; text-align: center; font-size: .9em; background: #0085ba; color: #fff; border-radius: .19rem; cursor: help; }
+
+.control-section-theme-options .range-value::before { content: ''; position: absolute; width: .38rem; height: .38rem; right: 0; top: 50%; margin: -.19rem; background: inherit; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }

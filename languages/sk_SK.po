@@ -1,0 +1,2929 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Reykjavík\n"
+"Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
+"POT-Creation-Date: 2017-07-04 19:55+0200\n"
+"PO-Revision-Date: 2017-07-04 20:00+0200\n"
+"Last-Translator: Oliver Juhas, WebMan Design\n"
+"Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:25
+msgid "Oops! That page can not be found."
+msgstr "Hľadaná stránka nebola nájdená."
+
+#: 404.php:30
+msgid ""
+"It looks like nothing was found at this location. Maybe try the search below?"
+msgstr "Na tomto mieste sa nič nenachádza. Možno skúste vyhľadávanie?"
+
+#: comments.php:45
+#, php-format
+msgctxt "Comments list title."
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "Jeden komentár k &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s komentáre k &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s komentárov k &ldquo;%2$s&rdquo;"
+
+#: comments.php:70
+msgid "Comments are closed."
+msgstr "Komentáre sú uzavreté."
+
+#: comments.php:109
+msgid "Comments Navigation"
+msgstr "Navigácia komentárov"
+
+#: comments.php:114 includes/frontend/class-loop.php:116
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:361
+#: includes/plugins/woocommerce/class-woocommerce-single.php:274
+msgctxt "Pagination text (visible): previous."
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: comments.php:115 includes/frontend/class-loop.php:117
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:363
+#: includes/plugins/woocommerce/class-woocommerce-single.php:274
+msgctxt "Pagination text (hidden): previous."
+msgid "Previous page"
+msgstr "Predchádzajúca stránka"
+
+#: comments.php:116 includes/frontend/class-loop.php:118
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:367
+#: includes/plugins/woocommerce/class-woocommerce-single.php:275
+msgctxt "Pagination text (hidden): next."
+msgid "Next page"
+msgstr "Nasledujúca stránka"
+
+#: comments.php:117 includes/frontend/class-loop.php:119
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:369
+#: includes/plugins/woocommerce/class-woocommerce-single.php:275
+msgctxt "Pagination text (visible): next."
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: includes/custom-header/class-intro.php:138
+msgctxt "Header image description."
+msgid "Anticipation"
+msgstr "Očakávanie"
+
+#: includes/custom-header/class-intro.php:144
+msgctxt "Header image description."
+msgid "Rotation"
+msgstr "Rotácia"
+
+#: includes/customize/class-customize.php:202
+msgid "Logo image"
+msgstr "Logo obrázok"
+
+#: includes/customize/class-customize.php:203
+msgid "Please, do not forget to set the logo max height."
+msgstr "Nezabudnite nastaviť maximálnu výšku logo obrázka."
+
+#: includes/customize/class-customize.php:203
+msgid ""
+"To make your logo image ready for high DPI screens, please upload twice as "
+"big image."
+msgstr ""
+"Aby ste zabezpečili kompatibilitu logo obrázka s displejmi s vysokým "
+"rozlíšením, odporúčame nahrať dvojnásobne veľký obrázok."
+
+#: includes/customize/class-customize.php:211
+msgid "Max logo image height (px)"
+msgstr "Maximálna výška obrázka loga (px)"
+
+#: includes/customize/class-customize.php:232
+#: includes/customize/class-customize.php:263
+#: includes/customize/class-customize.php:305
+#: includes/customize/class-customize.php:401
+#: includes/customize/class-customize.php:543
+#: includes/customize/class-customize.php:619
+#: includes/customize/class-customize.php:822
+#: includes/customize/class-customize.php:1017
+#: includes/customize/class-customize.php:1041
+#: includes/customize/class-customize.php:1206
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:423
+msgctxt "Customizer panel title."
+msgid "Theme Options"
+msgstr "Nastavenia témy"
+
+#: includes/customize/class-customize.php:233
+msgid "Theme Credits"
+msgstr "O téme"
+
+#: includes/customize/class-customize.php:236
+#, php-format
+msgctxt "1: linked theme name, 2: theme author name."
+msgid "%1$s is a WordPress theme developed by %2$s."
+msgstr "%1$s je WordPress téma vytvorená spoločnosťou %2$s."
+
+#: includes/customize/class-customize.php:243
+#, php-format
+msgctxt "%s: theme author link."
+msgid "You can obtain other professional WordPress themes at %s."
+msgstr "Ďalšie profesionálne WordPress témy môžete získať na %s."
+
+#: includes/customize/class-customize.php:248
+msgid "Thank you for using a theme by WebMan Design!"
+msgstr "Ďakujeme, že používate tému od WebMan Design!"
+
+#: includes/customize/class-customize.php:262
+#: includes/customize/class-customize.php:304
+#: includes/customize/class-customize.php:400
+#: includes/customize/class-customize.php:542
+#: includes/customize/class-customize.php:618
+#, php-format
+msgctxt "%s = section name. Customizer section title."
+msgid "Colors: %s"
+msgstr "Farby: %s"
+
+#: includes/customize/class-customize.php:262
+msgctxt "Customizer color section title"
+msgid "Accents"
+msgstr "Akcentované"
+
+#: includes/customize/class-customize.php:274
+msgid "These colors affect links, buttons and other elements."
+msgstr "Tieto farby ovplyvňujú odkazy, tlačidlá a ďalšie prvky."
+
+#: includes/customize/class-customize.php:279
+msgid "Primary accent color"
+msgstr "Primárna akcentovaná farba"
+
+#: includes/customize/class-customize.php:285
+msgid "Accent color"
+msgstr "Akcentovaná farba"
+
+#: includes/customize/class-customize.php:291
+msgid "Accent text color"
+msgstr "Farba textu na akcentovanej farbe"
+
+#: includes/customize/class-customize.php:292
+msgid "Color of text on accent color background."
+msgstr "Farba textu zobrazeného na pozadí akcentovanej farby."
+
+#: includes/customize/class-customize.php:304
+msgctxt "Customizer color section title"
+msgid "Header"
+msgstr "Hlavička"
+
+#: includes/customize/class-customize.php:316
+#: includes/customize/class-customize.php:919
+msgid "Header"
+msgstr "Hlavička"
+
+#: includes/customize/class-customize.php:322
+#: includes/customize/class-customize.php:419
+#: includes/customize/class-customize.php:484
+#: includes/customize/class-customize.php:560
+#: includes/customize/class-customize.php:637
+msgid "Background color"
+msgstr "Farba pozadia"
+
+#: includes/customize/class-customize.php:323
+msgid "This color is also used to style a mobile device browser address bar."
+msgstr ""
+"Táto farba sa taktiež použije na zafarbenie adresného riadka prehliadača v "
+"mobilnom zariadení."
+
+#: includes/customize/class-customize.php:323
+msgid "You can further customize it with a dedicated plugin."
+msgstr ""
+"Je možné túto farbu dodatočne upraviť pomocou špecializovaného pluginu."
+
+#: includes/customize/class-customize.php:348
+#: includes/customize/class-customize.php:434
+#: includes/customize/class-customize.php:499
+#: includes/customize/class-customize.php:575
+#: includes/customize/class-customize.php:658
+msgid "Text color"
+msgstr "Farba textu"
+
+#: includes/customize/class-customize.php:379
+msgid "Site title (logo) color"
+msgstr "Farba názvu stránky (loga)"
+
+#: includes/customize/class-customize.php:400
+msgctxt "Customizer color section title"
+msgid "Intro"
+msgstr "Intro"
+
+#: includes/customize/class-customize.php:412
+#: includes/customize/class-customize.php:944
+msgid "Intro"
+msgstr "Intro"
+
+#: includes/customize/class-customize.php:413
+msgid "This is a specially styled, main, dominant page title section."
+msgstr "Jedná sa o špeciálnu, hlavnú, dominantnú sekciu nadpisu stránky."
+
+#: includes/customize/class-customize.php:455
+#: includes/customize/class-customize.php:520
+#: includes/customize/class-customize.php:596
+#: includes/customize/class-customize.php:679
+msgid "Headings color"
+msgstr "Farba nadpisov"
+
+#: includes/customize/class-customize.php:477
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:168
+msgid "Intro widgets"
+msgstr "Widgety v intro sekcii"
+
+#: includes/customize/class-customize.php:478
+msgid ""
+"Please note that this widgets area is displayed only if it contains some "
+"widgets."
+msgstr ""
+"Upozorňujeme, že táto oblasť widgetov sa zobrazí iba ak obsahuje nejaké "
+"widgety."
+
+#: includes/customize/class-customize.php:542
+msgctxt "Customizer color section title"
+msgid "Content"
+msgstr "Obsah"
+
+#: includes/customize/class-customize.php:554
+#: includes/customize/class-customize.php:967
+msgid "Content"
+msgstr "Obsah"
+
+#: includes/customize/class-customize.php:618
+msgctxt "Customizer color section title"
+msgid "Footer"
+msgstr "Pätička"
+
+#: includes/customize/class-customize.php:630
+#: includes/customize/class-customize.php:989
+msgid "Footer"
+msgstr "Pätička"
+
+#: includes/customize/class-customize.php:631
+msgid ""
+"The main footer widgets area is displayed only if it contains some widgets."
+msgstr ""
+"Hlavná oblasť widgetov v pätičke sa zobrazí zobrazí iba ak obsahuje nejaké "
+"widgety."
+
+#: includes/customize/class-customize.php:702
+msgid "Background image"
+msgstr "Obrázok pozadia"
+
+#: includes/customize/class-customize.php:724
+msgid "Image position"
+msgstr "Pozícia obrázku"
+
+#: includes/customize/class-customize.php:728
+msgctxt "Image position."
+msgid "Top left"
+msgstr "Vľavo hore"
+
+#: includes/customize/class-customize.php:729
+msgctxt "Image position."
+msgid "Top center"
+msgstr "Hore v strede"
+
+#: includes/customize/class-customize.php:730
+msgctxt "Image position."
+msgid "Top right"
+msgstr "Vpravo hore"
+
+#: includes/customize/class-customize.php:732
+msgctxt "Image position."
+msgid "Center left"
+msgstr "V strede vľavo"
+
+#: includes/customize/class-customize.php:733
+msgctxt "Image position."
+msgid "Center"
+msgstr "V strede"
+
+#: includes/customize/class-customize.php:734
+msgctxt "Image position."
+msgid "Center right"
+msgstr "V strede vpravo"
+
+#: includes/customize/class-customize.php:736
+msgctxt "Image position."
+msgid "Bottom left"
+msgstr "Vľavo dole"
+
+#: includes/customize/class-customize.php:737
+msgctxt "Image position."
+msgid "Bottom center"
+msgstr "Dole v strede"
+
+#: includes/customize/class-customize.php:738
+msgctxt "Image position."
+msgid "Bottom right"
+msgstr "Vpravo dole"
+
+#: includes/customize/class-customize.php:754
+msgid "Image size"
+msgstr "Veľkosť obrázku"
+
+#: includes/customize/class-customize.php:757
+msgctxt "Image size."
+msgid "Original"
+msgstr "Originál"
+
+#: includes/customize/class-customize.php:758
+msgctxt "Image size."
+msgid "Fit"
+msgstr "Prispôsobiť"
+
+#: includes/customize/class-customize.php:759
+msgctxt "Image size."
+msgid "Fill"
+msgstr "Vyplniť"
+
+#: includes/customize/class-customize.php:774
+msgid "Do not repeat the image"
+msgstr "Neopakovať obrázok"
+
+#: includes/customize/class-customize.php:784
+msgid "Fix image position"
+msgstr "Fixovať pozíciu obrázku"
+
+#: includes/customize/class-customize.php:794
+msgid "Background image opacity"
+msgstr "Nepriehľadnosť obrázku na pozadí"
+
+#: includes/customize/class-customize.php:821
+msgctxt "Customizer section title."
+msgid "Layout"
+msgstr "Rozloženie"
+
+#: includes/customize/class-customize.php:833
+msgctxt "A website container."
+msgid "Site Container"
+msgstr "Kontajner webovej stránky"
+
+#: includes/customize/class-customize.php:839
+msgid "Website layout"
+msgstr "Rozloženie webovej stránky"
+
+#: includes/customize/class-customize.php:842
+#: includes/customize/class-customize.php:928
+#: includes/customize/class-customize.php:998
+msgid "Fullwidth"
+msgstr "Na celú šírku"
+
+#: includes/customize/class-customize.php:843
+#: includes/customize/class-customize.php:929
+#: includes/customize/class-customize.php:999
+msgid "Boxed"
+msgstr "Orámovaná"
+
+#: includes/customize/class-customize.php:851
+msgid "Website max width"
+msgstr "Maximálna šírka webovej stránky"
+
+#: includes/customize/class-customize.php:852
+msgid "For boxed website layout."
+msgstr "Platí iba pre orámované rozloženie webovej stránky."
+
+#: includes/customize/class-customize.php:852
+#: includes/customize/class-customize.php:877
+#, php-format
+msgid "Default value: %s"
+msgstr "Pôvodná hodnota: %s"
+
+#: includes/customize/class-customize.php:876
+msgid "Content width"
+msgstr "Šírka obsahu"
+
+#: includes/customize/class-customize.php:925
+msgid "Header layout"
+msgstr "Rozloženie hlavičky"
+
+#: includes/customize/class-customize.php:950
+msgid "Enable intro widgets"
+msgstr "Povoliť intro widgety"
+
+#: includes/customize/class-customize.php:951
+#, php-format
+msgctxt "%s: Linked plugin name."
+msgid ""
+"If you enable this widget area also for archives, we recommend using %s "
+"plugin to control its appearance further more."
+msgstr ""
+"Ak povolíte zobrazenie tejto oblasti widgetov na stránkach archívov, "
+"odporúčame použiť plugin %s pre dodatočné nastavenie zobrazenia."
+
+#: includes/customize/class-customize.php:954
+msgid "On singular pages only"
+msgstr "Iba na jednotlivých stránkach"
+
+#: includes/customize/class-customize.php:955
+msgid "On both archive and singular pages"
+msgstr "Na jednotlivých stránkach a stránkach archívov"
+
+#: includes/customize/class-customize.php:973
+msgid "Outdented page content"
+msgstr "Odsadený obsah stránky"
+
+#: includes/customize/class-customize.php:974
+msgid ""
+"Page content will be displayed in 2 columns: H2 headings in first, all the "
+"other page content in second column."
+msgstr ""
+"Obsah stránky sa zobrazí v 2 stĺpcoch: nadpisy veľkosti H2 v prvom a všetok "
+"ostatný obsah v druhom stĺpci."
+
+#: includes/customize/class-customize.php:974
+msgid "This does not affect pages using \"With sidebar\" page template."
+msgstr ""
+"Toto rozloženie sa neaplikuje na stránky používajúce šablónu \"S bočným "
+"panelom\"."
+
+#: includes/customize/class-customize.php:995
+msgid "Footer layout"
+msgstr "Rozloženie pätičky"
+
+#: includes/customize/class-customize.php:1016
+msgctxt "Customizer section title."
+msgid "Texts"
+msgstr "Texty"
+
+#: includes/customize/class-customize.php:1023
+msgid "Footer credits (copyright)"
+msgstr "Info v pätičke (copyright)"
+
+#: includes/customize/class-customize.php:1024
+#, php-format
+msgid "Set %s to disable this area."
+msgstr "Nastavte %s pre vypnutie tejto sekcie."
+
+#: includes/customize/class-customize.php:1024
+msgid "Leaving the field empty will fall back to default theme setting."
+msgstr "Ak toto pole necháte prázdne, zobrazí sa pôvodné nastavenie témy."
+
+#: includes/customize/class-customize.php:1040
+msgctxt "Customizer section title."
+msgid "Typography"
+msgstr "Písmo"
+
+#: includes/customize/class-customize.php:1047
+msgid "Basic font size in px"
+msgstr "Základná veľkosť písma v px"
+
+#: includes/customize/class-customize.php:1048
+msgid ""
+"All other font sizes are calculated automatically from this basic font size."
+msgstr ""
+"Všetky ostatné veľkosti písma budú automaticky vypočítané z tejto základnej "
+"hodnoty."
+
+#: includes/customize/class-customize.php:1072
+msgid "Use custom fonts"
+msgstr "Použiť vlastné písma"
+
+#: includes/customize/class-customize.php:1079
+msgid "Custom fonts setup"
+msgstr "Nastavenie vlastných typov písma"
+
+#: includes/customize/class-customize.php:1080
+#, php-format
+msgctxt ""
+"%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
+"Typekit."
+msgid ""
+"This theme does not restrict you to choose from a predefined set of fonts. "
+"Instead, please use any font service (such as %s) plugin you like."
+msgstr ""
+"Táto téma vás neobmedzuje prednastavenými typmi písma. Môžete použiť plugin "
+"pre akúkoľvek službu typov písma (ako je napríklad %s)."
+
+#: includes/customize/class-customize.php:1082
+msgid ""
+"You can set your fonts plugin according to information provided below, or "
+"insert your custom font names (a value of \"font-family\" CSS property) "
+"directly into input fields (you still need to use a plugin to load those "
+"fonts on the website)."
+msgstr ""
+"Pluginy typov písma môžete nastaviť podľa doleuvedených informácií, alebo "
+"zadajte vlastné názvy typov písma (hodnoty pre CSS štýl \"font-family\") "
+"priamo do polí (stále je však nutné použiť plugin pre načítanie daných typov "
+"písma do webovej stránky)."
+
+#: includes/customize/class-customize.php:1089
+msgid "General text font"
+msgstr "Všeobecný typ písma"
+
+#: includes/customize/class-customize.php:1101
+#: includes/setup/class-setup.php:886
+msgid "Headings font"
+msgstr "Písmo nadpisov"
+
+#: includes/customize/class-customize.php:1113
+#: includes/setup/class-setup.php:892
+msgid "Logo font"
+msgstr "Písmo loga"
+
+#: includes/customize/class-customize.php:1124
+msgid "Info: CSS selectors"
+msgstr "Info: CSS selektory"
+
+#: includes/customize/class-customize.php:1125
+msgid ""
+"Here you can find CSS selectors list associated with each font group in the "
+"theme. You can use these in your custom font plugin settings."
+msgstr ""
+"Tu nájdete zoznam CSS selektorov viazaných na každú skupinu typov písma v "
+"téme. Môžete ich použiť v nastavení vášho pluginu pre vlastné typy písma."
+
+#: includes/customize/class-customize.php:1128
+msgid "General text font CSS selectors:"
+msgstr "CSS selektory všeobecného typu písma:"
+
+#: includes/customize/class-customize.php:1138
+msgid "Headings font CSS selectors:"
+msgstr "CSS selektory písma nadpisov:"
+
+#: includes/customize/class-customize.php:1155
+msgid "Logo font CSS selectors:"
+msgstr "CSS selektory písma loga:"
+
+#: includes/customize/class-customize.php:1205
+msgctxt "Customizer section title."
+msgid "Others"
+msgstr "Ostatné"
+
+#: includes/customize/class-customize.php:1212
+msgid "Show \"Welcome\" page"
+msgstr "Zobraziť stránku \"Vitajte\""
+
+#: includes/customize/class-customize.php:1213
+msgid "Under \"Appearance\" WordPress dashboard menu."
+msgstr "V administračnom menu \"Vzhľad\"."
+
+#: includes/customize/class-customize.php:1221
+msgid "Disable mobile navigation"
+msgstr "Vypnúť mobilnú navigáciu"
+
+#: includes/customize/class-customize.php:1222
+msgid ""
+"Maybe your website navigation is very simple and you do not want to use the "
+"mobile navigation functionality?"
+msgstr ""
+"Možno je navigácie vašej webovej stránke veľmi jednoduchá a nechcete "
+"používať funkcionalitu mobilnej navigácie?"
+
+#: includes/customize/class-customize.php:1229
+msgid "Archive page title prefix"
+msgstr "Značenie archívu v titulku"
+
+#: includes/customize/class-customize.php:1232
+msgid "Remove \"Category:\" prefix"
+msgstr "Odstrániť značenie \"Kategória:\""
+
+#: includes/customize/class-customize.php:1233
+msgid "Remove \"Tag:\" prefix"
+msgstr "Odstrániť značenie \"Štítok:\""
+
+#: includes/customize/class-customize.php:1234
+msgid "Remove \"Author:\" prefix"
+msgstr "Odstrániť značenie \"Autor:\""
+
+#: includes/customize/class-customize.php:1235
+msgid "Remove \"Archives:\" prefix"
+msgstr "Odstrániť značenie \"Archív:\""
+
+#: includes/customize/class-customize.php:1236
+msgid "Remove \"Taxonomy:\" prefix"
+msgstr "Odstrániť značenie \"Taxonómia:\""
+
+#: includes/customize/class-customize.php:1430
+msgid ""
+"Please set your website credits text or the theme default one will be "
+"displayed."
+msgstr ""
+"Nastavte vlastný text, v opačnom prípade bude použitý prednastavený text "
+"témy."
+
+#: includes/frontend/class-header.php:174
+msgid "Skip to main navigation"
+msgstr "Preskočiť na hlavnú navigáciu"
+
+#: includes/frontend/class-header.php:176
+msgid "Skip to footer"
+msgstr "Preskočiť na pätičku"
+
+#: includes/frontend/class-loop.php:132
+msgid "Posts Navigation"
+msgstr "Navigácia príspevkov"
+
+#: includes/frontend/class-menu.php:122
+msgctxt "Navigational menu location"
+msgid "Primary"
+msgstr "Primárne"
+
+#: includes/frontend/class-menu.php:123
+msgctxt "Navigational menu location"
+msgid "Secondary"
+msgstr "Sekundárna"
+
+#: includes/frontend/class-menu.php:124
+msgctxt "Navigational menu location"
+msgid "Social Links"
+msgstr "Odkazy sociálnych sietí"
+
+#: includes/frontend/class-menu.php:303
+msgid "Please, set up the menu in Appearance &raquo; Menus."
+msgstr "Nastavte navigáciu v sekcii Vzhľad &raquo; Menu."
+
+#: includes/frontend/class-post-summary.php:114
+msgid "This content is password protected."
+msgstr "Tento obsah je chránený heslom."
+
+#: includes/frontend/class-post-summary.php:114
+msgid "Enter the password to view it."
+msgstr "Zadajte heslo pre jeho zobrazenie."
+
+#: includes/frontend/class-post.php:372
+msgid "Skip back to navigation"
+msgstr "Preskočiť späť na navigáciu"
+
+#: includes/frontend/class-post.php:403
+msgctxt "$s: Custom post type singular label"
+msgid "Previous $s"
+msgstr "Predchádzajúce"
+
+#: includes/frontend/class-post.php:408
+msgctxt "$s: Custom post type singular label"
+msgid "Next $s"
+msgstr "Následujúce"
+
+#: includes/frontend/class-sidebar.php:109
+msgid "Sidebar"
+msgstr "Bočný panel"
+
+#: includes/frontend/class-sidebar.php:110
+msgid "Intro Widgets"
+msgstr "Intro widgety"
+
+#: includes/frontend/class-sidebar.php:111
+msgid "Footer Widgets"
+msgstr "Widgety pätičky"
+
+#: includes/frontend/class-sidebar.php:124
+msgid "Add widgets here."
+msgstr "Pridajte sem widgety."
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:104
+msgid "Intro options"
+msgstr "Nastavenia intra"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:111
+msgid "Intro section"
+msgstr "Intro sekcia"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:114
+msgid "Disable intro section for this page"
+msgstr "Vypnúť intro sekciu na tejto stránke"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:122
+msgid "Disable intro media"
+msgstr "Nezobrazovať intro médiá"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:125
+msgid "Do not show intro media (such as image) if it is displayed on this page"
+msgstr ""
+"Nezobraziť intro médiá (ako napríklad obrázok), ak sú na tejto stránke "
+"zobrazené"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:144
+msgid "Custom intro image"
+msgstr "Vlastný intro obrázok"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:145
+msgid ""
+"Here you can override the default Intro section image with a custom one."
+msgstr "Týmto nastavíte vlastný obrázok v intro sekcii namiesto pôvodného."
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:171
+msgid "Show widgets in intro section of this page"
+msgstr "Zobraziť widgety v intro sekcii tejto stránky"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:290
+msgid "Child pages list options"
+msgstr "Nastavenia zoznamu podstránok"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:297
+msgid "Instructions"
+msgstr "Inštrukcie"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:300
+msgid ""
+"These settings will modify the page display in the list of child pages. The "
+"page needs to be nested under a parent page that is set up as a \"List child "
+"pages\" page template."
+msgstr ""
+"Tieto nastavenia upravujú zobrazenie stránky v zozname podstránok. Stránku "
+"je nutné nastaviť ako podstránku inej stránky, a zároveň je nutné nastaviť "
+"šablónu nadradenej stránky na \"Zoznam podstránok\"."
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:307
+msgid "Disable image"
+msgstr "Vypnúť obrázok"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:310
+msgid "Do not display page image in list of child pages"
+msgstr "Vypne zobrazovanie ilustračného obrázka stránky v zozname podstránok"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:385
+msgid "Page builder layout"
+msgstr "Rozloženie editora stránok"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:390
+msgid "Content area layout"
+msgstr "Rozloženie obsahu"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:394
+msgid "Leave as is"
+msgstr "Ponechať nezmenené"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:395
+msgid "Remove content paddings only"
+msgstr "Iba odstrániť odsadenie obsahu"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:396
+msgid "Fullwidth content with no paddings"
+msgstr "Obsah na celú šírku bez odsadenia"
+
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:398
+msgid ""
+"As every page builder plugin works differently, set this according to your "
+"needs."
+msgstr ""
+"Keďže každý plugin typu editora stránok je iný, zvoľte možnosť podľa potreby."
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:103
+msgid "Content Vertical Alignment"
+msgstr "Zvislé zarovnanie obsahu"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:104
+msgid ""
+"As the theme makes all columns in a row equally high automatically, it "
+"allows you to set the column content vertical alignment here."
+msgstr ""
+"Keďže táto téma zarovnáva výšku všetkých stĺpcov v riadku automaticky, je "
+"možné nastaviť vertikálne zarovnanie obsahu v stĺpci."
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:107
+msgctxt "Vertical content alignment value"
+msgid "Initial"
+msgstr "Pôvodné zarovnanie"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:108
+msgctxt "Vertical content alignment value"
+msgid "Top"
+msgstr "Hore"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:109
+msgctxt "Vertical content alignment value"
+msgid "Middle"
+msgstr "V strede"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:110
+msgctxt "Vertical content alignment value"
+msgid "Bottom"
+msgstr "Dole"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:134
+msgid "Predefined Colors"
+msgstr "Prednastavené farby"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:139
+msgid "Assign predefined colors"
+msgstr "Nastaviť prednastavené farby"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:140
+msgid ""
+"You can override these further below by setting up a custom background or "
+"text color"
+msgstr ""
+"Tieto nastavenia môžete prepísať nastavením vlastnej farby pozadia alebo "
+"textu nižšie"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:141
+msgid "Set this to match the colors of theme predefined sections"
+msgstr "Týmto nastavením aplikujete prednastavené farby sekcií témy"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:144
+msgid "- No predefined color -"
+msgstr "- Žiadne prednastavené farby -"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:149
+msgid "Theme sections colors:"
+msgstr "Farby sekcií témy:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:152
+msgid "Set header colors"
+msgstr "Nastaviť farby hlavičky"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:153
+msgid "Set intro colors"
+msgstr "Nastaviť farby intra"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:154
+msgid "Set intro widgets colors"
+msgstr "Nastaviť farby widgetov intra"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:155
+msgid "Set content colors"
+msgstr "Nastaviť farby obsahu"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:156
+msgid "Set footer colors"
+msgstr "Nastaviť farby pätičky"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:164
+msgid "Accent colors:"
+msgstr "Akcentované farby:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:167
+msgid "Set primary accent colors"
+msgstr "Nastaviť farby primárneho akcentu"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:168
+msgid "Set primary accent colors on mouse hover"
+msgstr "Nastaviť farby primárneho akcentu pri prechode kurzorom"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:170
+msgid "Set error colors"
+msgstr "Nastaviť farby typu \"chyba\""
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:171
+msgid "Set error colors on mouse hover"
+msgstr "Nastaviť farby typu \"chyba\" pri prechode kurzorom"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:173
+msgid "Set info colors"
+msgstr "Nastaviť farby typu \"info\""
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:174
+msgid "Set info colors on mouse hover"
+msgstr "Nastaviť farby typu \"info\" pri prechode kurzorom"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:176
+msgid "Set success colors"
+msgstr "Nastaviť farby typu \"úspech\""
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:177
+msgid "Set success colors on mouse hover"
+msgstr "Nastaviť farby typu \"úspech\" pri prechode kurzorom"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:179
+msgid "Set warning colors"
+msgstr "Nastaviť farby typu \"výstraha\""
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:180
+msgid "Set warning colors on mouse hover"
+msgstr "Nastaviť farby typu \"výstraha\" pri prechode kurzorom"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:234
+msgid "- Choose from predefined classes -"
+msgstr "- Vyberte z prednastavených tried -"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:239
+msgid "Decorations:"
+msgstr "Dekorácie:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:242
+msgid "Column shadow, small"
+msgstr "Tieň stĺpca, malý"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:243
+msgid "Column shadow, medium"
+msgstr "Tieň stĺpca, stredný"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:244
+msgid "Column shadow, large"
+msgstr "Tieň stĺpca, veľký"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:252
+msgid "Layout:"
+msgstr "Rozloženie:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:255
+msgid "Text center"
+msgstr "Text v strede"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:256
+msgid "Text left"
+msgstr "Text vľavo"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:257
+msgid "Text right"
+msgstr "Text vpravo"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:259
+msgid "Fullwidth elements"
+msgstr "Roztiahnuť elementy na celú šírku"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:261
+msgid "Hide accessibly (displayed in page builder edit mode only)"
+msgstr "Skryť prístupne (zobrazí sa iba počas editácie stránky)"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:263
+msgid "Split screen row (apply on full-height row only)"
+msgstr "Riadok rozdeľujúci obrazovku (aplikujte iba na riadok s plnou výškou)"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:265
+msgid "Bring element to front (CSS z-index)"
+msgstr "Presunúť prvok dopredu (CSS z-index)"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:273
+msgid "Widgets:"
+msgstr "Widgety:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:276
+msgid "Use default widget title styling"
+msgstr "Použiť predvolený štýl nadpisu widgetu"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:277
+msgid "Hide widget title accessibly"
+msgstr "Skryť nadpis widgetu prístupne"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:278
+msgid "Hide widget title forcefully"
+msgstr "Skryť nadpis widgetu neprístupne"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:286
+msgid "Typography:"
+msgstr "Písmo:"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:289
+msgid "Font size, extra small"
+msgstr "Veľkosť písma, extrémne malá"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:290
+msgid "Font size, small"
+msgstr "Veľkosť písma, malá"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:291
+msgid "Font size, smaller"
+msgstr "Veľkosť písma, menšia"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:292
+msgid "Font size, large"
+msgstr "Veľkosť písma, veľká"
+
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:293
+msgid "Font size, extra large"
+msgstr "Veľkosť písma, extrémne veľká"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:147
+msgctxt "Website hooks category name."
+msgid "Page"
+msgstr "Stránka"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:149
+msgctxt "Website hook name."
+msgid "Page Open"
+msgstr "Začiatok stránky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:150
+msgctxt "Website hook name."
+msgid "Page Close"
+msgstr "Koniec stránky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:155
+msgctxt "Website hooks category name."
+msgid "Header"
+msgstr "Hlavička"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:157
+msgctxt "Website hook name."
+msgid "Before Header"
+msgstr "Pred hlavičkou"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:158
+msgctxt "Website hook name."
+msgid "Header Top"
+msgstr "Vrch hlavičky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:159
+msgctxt "Website hook name."
+msgid "Header Bottom"
+msgstr "Spodok hlavičky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:160
+msgctxt "Website hook name."
+msgid "After Header"
+msgstr "Za hlavičkou"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:165
+msgctxt "Website hooks category name."
+msgid "Intro"
+msgstr "Intro"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:167
+msgctxt "Website hook name."
+msgid "Before Intro"
+msgstr "Pred introm"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:168
+msgctxt "Website hook name."
+msgid "Intro Content"
+msgstr "Obsah intra"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:169
+msgctxt "Website hook name."
+msgid "After Intro"
+msgstr "Za introm"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:174
+msgctxt "Website hooks category name."
+msgid "Content Area"
+msgstr "Oblasť obsahu"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:176
+msgctxt "Website hook name."
+msgid "Before Content Area"
+msgstr "Pred oblasťou obsahu"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:177
+msgctxt "Website hook name."
+msgid "Content Area Top"
+msgstr "Vrch oblasti obsahu"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:178
+msgctxt "Website hook name."
+msgid "Content Area Bottom"
+msgstr "Spodok oblasti obsahu"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:179
+msgctxt "Website hook name."
+msgid "After Content Area"
+msgstr "Za oblasťou obsahu"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:184
+msgctxt "Website hooks category name."
+msgid "Post Entry"
+msgstr "Článok"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:186
+msgctxt "Website hook name."
+msgid "Before Post"
+msgstr "Pred článkom"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:187
+msgctxt "Website hook name."
+msgid "Post Top"
+msgstr "Vrch článku"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:188
+msgctxt "Website hook name."
+msgid "Before Post Content"
+msgstr "Pred obsahom článku"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:189
+msgctxt "Website hook name."
+msgid "After Post Content"
+msgstr "Za obsahom článku"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:190
+msgctxt "Website hook name."
+msgid "Post Bottom"
+msgstr "Spodok článku"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:191
+msgctxt "Website hook name."
+msgid "After Post"
+msgstr "Za článkom"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:196
+msgctxt "Website hooks category name."
+msgid "Comments"
+msgstr "Komentáre"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:198
+msgctxt "Website hook name."
+msgid "Before Comments"
+msgstr "Pred komentármi"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:199
+msgctxt "Website hook name."
+msgid "After Comments"
+msgstr "Za komentármi"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:204
+msgctxt "Website hooks category name."
+msgid "Posts List"
+msgstr "Zoznam článkov"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:206
+msgctxt "Website hook name."
+msgid "Before Posts List"
+msgstr "Pred zoznamom článkov"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:207
+msgctxt "Website hook name."
+msgid "After Posts List"
+msgstr "Za zoznamom článkov"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:212
+msgctxt "Website hooks category name."
+msgid "Child Pages List"
+msgstr "Zoznam podstránok"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:214
+msgctxt "Website hook name."
+msgid "Before Child Pages List"
+msgstr "Pred zoznamom podstránok"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:215
+msgctxt "Website hook name."
+msgid "After Child Pages List"
+msgstr "Za zoznamom podstránok"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:220
+msgctxt "Website hooks category name."
+msgid "Sidebar"
+msgstr "Bočný panel"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:222
+msgctxt "Website hook name."
+msgid "Before Sidebar"
+msgstr "Pred bočným panelom"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:223
+msgctxt "Website hook name."
+msgid "Sidebar Top"
+msgstr "Vrch bočného panela"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:224
+msgctxt "Website hook name."
+msgid "Sidebar Bottom"
+msgstr "Spodok bočného panela"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:225
+msgctxt "Website hook name."
+msgid "After Sidebar"
+msgstr "Za bočným panelom"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:230
+msgctxt "Website hooks category name."
+msgid "Footer"
+msgstr "Pätička"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:232
+msgctxt "Website hook name."
+msgid "Before Footer"
+msgstr "Pred pätičkou"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:233
+msgctxt "Website hook name."
+msgid "Footer Top"
+msgstr "Vrch pätičky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:234
+msgctxt "Website hook name."
+msgid "Footer Bottom"
+msgstr "Spodok pätičky"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:235
+msgctxt "Website hook name."
+msgid "After Footer"
+msgstr "Za pätičkou"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:237
+msgctxt "Website hook name."
+msgid "Before Site Info"
+msgstr "Pred informáciami o stránke v pätičke"
+
+#: includes/plugins/beaver-themer/class-beaver-themer.php:238
+msgctxt "Website hook name."
+msgid "After Site Info"
+msgstr "Za informáciami o stránke v pätičke"
+
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:201
+msgid "Breadcrumbs"
+msgstr "Omrvinková navigácia"
+
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:207
+msgid "Breadcrumbs display"
+msgstr "Zobrazenie omrvinkovej navigácie"
+
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:209
+msgid "Before content only"
+msgstr "Iba pred obsahom"
+
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:210
+msgid "Both before and after content"
+msgstr "Aj pred, aj za obsahom"
+
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:211
+msgid "After content only"
+msgstr "Iba za obsahom"
+
+#: includes/plugins/jetpack/class-jetpack.php:203
+msgid "Load more&hellip;"
+msgstr "Načítať viac&hellip;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:109
+msgid "Theme demo content"
+msgstr "Demo obsah témy"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+msgid "Media files quality"
+msgstr "Kvalita súborov médií"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:146
+msgid ""
+"Please note that imported media files (such as images, video and audio "
+"files) are of low quality to prevent copyright infringement."
+msgstr ""
+"Upozorňujeme, že importované súbory médií (napríklad obrázky, video a audio "
+"súbory) majú nízku kvalitu, aby sa zabránilo porušovaniu autorských práv."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
+msgid ""
+"Please read \"Credits\" section of theme documentation for reference where "
+"the demo media files were obtained from."
+msgstr ""
+"Zoznam zdrojov multimediálnych súborov nájdete v sekcii \"Credits\" v "
+"dokumentácii témy."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+msgid "Get media for your website &raquo;"
+msgstr "Získať médiá pre vaše webové stránky &raquo;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
+msgid "Install required plugins!"
+msgstr "Nainštalujte vyžadované pluginy!"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+msgid ""
+"Please read the information about the theme demo required plugins first."
+msgstr ""
+"Najskôr si prečítajte informácie o pluginoch vyžadovaných pre demo obsah "
+"témy."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+msgid ""
+"If you do not install and activate demo required plugins, some of the "
+"content will not be imported."
+msgstr ""
+"Ak pluginy vyžadované pre demo obsah témy nebudú nainštalované a aktivované, "
+"časti demo obsahu nebudú importované."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+msgid ""
+"Read the information before you run the theme demo content import process."
+msgstr ""
+"Preštudujte si informácie predtým, než spustíte proces importu demo obsahu."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
+msgid "View the list of required plugins &raquo;"
+msgstr "Zobraziť zoznam požadovaných pluginov &raquo;"
+
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:422
+msgctxt "Customizer section title."
+msgid "Shop"
+msgstr "Obchod"
+
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:428
+msgid "Cart and Checkout"
+msgstr "Košík a pokladňa"
+
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
+msgid "Checkout guide"
+msgstr "Sprievodca pokladňou"
+
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:435
+msgid "Enables the checkout process steps visualization."
+msgstr "Zobrazí vizualizáciu krokov nákupného procesu."
+
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:234
+msgid "Shop Category"
+msgstr "Kategória produktov"
+
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:252
+msgid "Shop Now &rarr;"
+msgstr "Nakupovať &rarr;"
+
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:334
+msgid "Products Navigation"
+msgstr "Navigácia produktov"
+
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:400
+msgid "List of products"
+msgstr "Zoznam produktov"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:266 search.php:28
+#: templates/parts/intro/intro-content.php:80
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Výsledky vyhľadávania pre: %s"
+
+#. translators: Custom page template name.
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:448
+#: templates/no-intro.php:19
+msgid "No intro"
+msgstr "Bez úvodu"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:478
+msgid "Cart content"
+msgstr "Obsah košíka"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:481
+#, php-format
+msgid "(1 item)"
+msgid_plural "(%s items)"
+msgstr[0] "(1 položka)"
+msgstr[1] "(%s položky)"
+msgstr[2] "(%s položiek)"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:501
+msgid "Use your discount coupon code here"
+msgstr "Použite svoj zľavový kupón"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:605
+msgid "Continue Shopping"
+msgstr "Pokračovať v nákupe"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:627
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:828
+msgid "Checkout"
+msgstr "Pokladňa"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:820
+msgid "Shopping Cart"
+msgstr "Nákupný košík"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:836
+msgid "Order Completed"
+msgstr "Objednávka dokončená"
+
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:845
+msgid "Pay for Order"
+msgstr "Platba za objednávku"
+
+#: includes/plugins/woocommerce/class-woocommerce-single.php:455
+msgid "More details&hellip;"
+msgstr "Viac informácií&hellip;"
+
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:104
+msgid "Shop Sidebar"
+msgstr "Bočný panel obchodu"
+
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:105
+msgid ""
+"This sidebar replaces the default sidebar area for shop page and product "
+"archive pages."
+msgstr "Tento bočný panel nahradí základný bočný panel na stránkach obchodu."
+
+#: includes/setup/class-setup.php:224
+#, php-format
+msgctxt "%s: Theme name."
+msgid "Thank you for installing %s!"
+msgstr "Ďakujeme, že používate %s!"
+
+#: includes/setup/class-setup.php:231
+msgid "Please read \"Welcome\" page for information about the theme setup."
+msgstr "Prečítajte si informácie o nastavení témy na stránke \"Vitajte\"."
+
+#: includes/setup/class-setup.php:238
+#, php-format
+msgctxt "%s: Theme name."
+msgid "Get started with %s"
+msgstr "Začíname s %s"
+
+#: includes/setup/class-setup.php:564
+msgid "In posts list."
+msgstr "V zozname článkov."
+
+#: includes/setup/class-setup.php:571
+msgid "As featured image preview on single post page."
+msgstr "Ako náhľad prezentačného obrázku na stránke článku."
+
+#: includes/setup/class-setup.php:572
+msgid "In list of child pages."
+msgstr "V zozname podstránok."
+
+#: includes/setup/class-setup.php:579 includes/setup/class-setup.php:590
+msgid "Not used in the theme."
+msgstr "Téma nepoužíva túto veľkosť obrázku."
+
+#: includes/setup/class-setup.php:589
+msgid "This is WordPress native image size."
+msgstr "Toto je jedna zo základných veľkostí obrázkov vo WordPress."
+
+#: includes/setup/class-setup.php:597
+msgid "In page intro section."
+msgstr "V intro sekcii stránky."
+
+#. translators: Do not translate into your own language!
+#. If there are characters in your language that are not
+#. supported by the font, translate this to 'off'.
+#. The font will not load then.
+#.
+#: includes/setup/class-setup.php:767
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: Do not translate into your own language!
+#. If there are characters in your language that are not
+#. supported by the font, translate this to 'off'.
+#. The font will not load then.
+#.
+#: includes/setup/class-setup.php:777
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: includes/setup/class-setup.php:846
+msgid "Thin (hairline) text"
+msgstr "Tenulinký text (ako vlások)"
+
+#: includes/setup/class-setup.php:847
+msgid "Extra light text"
+msgstr "Extra tenký text"
+
+#: includes/setup/class-setup.php:848
+msgid "Light text"
+msgstr "Tenký text"
+
+#: includes/setup/class-setup.php:849
+msgid "Normal weight text"
+msgstr "Normálny text"
+
+#: includes/setup/class-setup.php:850
+msgid "Medium text"
+msgstr "Hrubší text"
+
+#: includes/setup/class-setup.php:851
+msgid "Semi bold text"
+msgstr "Stredne hrubý text"
+
+#: includes/setup/class-setup.php:852
+msgid "Bold text"
+msgstr "Hrubý text"
+
+#: includes/setup/class-setup.php:853
+msgid "Extra bold text"
+msgstr "Extra hrubý text"
+
+#: includes/setup/class-setup.php:854
+msgid "Heavy text"
+msgstr "Tažký text"
+
+#: includes/setup/class-setup.php:859
+msgid "Text weights"
+msgstr "Hrúbka textu"
+
+#: includes/setup/class-setup.php:876
+msgid "Fonts"
+msgstr "Písmo"
+
+#: includes/setup/class-setup.php:880
+msgid "General font"
+msgstr "Všeobecný typ písma"
+
+#: includes/setup/class-setup.php:898
+msgid "Inherit font"
+msgstr "Zdediť typ písma"
+
+#: includes/setup/class-setup.php:909
+msgid "Columns"
+msgstr "Stĺpce"
+
+#: includes/setup/class-setup.php:916
+#, php-format
+msgctxt "%d: Number of columns."
+msgid "Text in 1 column"
+msgid_plural "Text in %d columns"
+msgstr[0] "Text v 1 stĺpci"
+msgstr[1] "Text v %d stĺpcoch"
+msgstr[2] "Text v %d stĺpcoch"
+
+#: includes/setup/class-setup.php:927
+msgid "Buttons"
+msgstr "Tlačidlá"
+
+#: includes/setup/class-setup.php:931
+msgid "Button from link"
+msgstr "Tlačidlo z odkazu"
+
+#: includes/setup/class-setup.php:937
+msgid "Button from link, small"
+msgstr "Tlačidlo z odkazu, malé"
+
+#: includes/setup/class-setup.php:943
+msgid "Button from link, large"
+msgstr "Tlačidlo z odkazu, veľké"
+
+#: includes/setup/class-setup.php:949
+msgid "Button from link, extra large"
+msgstr "Tlačidlo z odkazu, extra veľké"
+
+#: includes/setup/class-setup.php:960
+msgid "Outdent"
+msgstr "Odsadiť"
+
+#: includes/setup/class-setup.php:964
+msgid "Outdent selected content"
+msgstr "Odsadiť označený obsah"
+
+#: includes/setup/class-setup.php:976
+msgid "Outdented heading style"
+msgstr "Štýl odsadených nadpisov"
+
+#: includes/starter-content/class-starter-content.php:106
+msgctxt "Theme starter content"
+msgid "How to hide sidebar?"
+msgstr "Ako skryť bočný panel?"
+
+#: includes/starter-content/class-starter-content.php:107
+msgctxt "Theme starter content"
+msgid "Remove all widgets from sidebar to hide it."
+msgstr ""
+"Odstránením všetkých widgetov z bočného panela zabránite jeho zobrazeniu."
+
+#: includes/starter-content/class-starter-content.php:118
+msgctxt "Theme starter content"
+msgid "Intro Widgets"
+msgstr "Intro widgety"
+
+#: includes/starter-content/class-starter-content.php:119
+msgctxt "Theme starter content"
+msgid ""
+"This is an Intro Widgets area. It only displays on pages with a specific "
+"page template assigned, or a dedicated option enabled."
+msgstr ""
+"Toto je oblasť intro widgetov, ktorá sa zobrazí iba na stránkach s "
+"prednastavenou šablónou alebo špeciálnym nastavením."
+
+#: includes/starter-content/class-starter-content.php:127
+msgctxt "Theme starter content"
+msgid "Icons in Text Widget"
+msgstr "Ikonky v Text widgete"
+
+#: includes/starter-content/class-starter-content.php:128
+msgctxt "Theme starter content"
+msgid ""
+"To allow displaying icons in Text widget you need some plugin to load the "
+"icons to your website. You can use any icons plugin."
+msgstr ""
+"Aby bolo možné zobraziť ikonky v textovom widgete, je nutné použiť akýkoľvek "
+"plugin, ktorý načíta a zobrazí ikonky na vašej stránke."
+
+#: includes/starter-content/class-starter-content.php:180
+msgctxt "Theme starter content"
+msgid "Welcome to our site!"
+msgstr "Vitajte na našich stránkach!"
+
+#: includes/starter-content/class-starter-content.php:181
+#: includes/starter-content/class-starter-content.php:200
+#: includes/starter-content/class-starter-content.php:211
+#: includes/starter-content/class-starter-content.php:217
+msgctxt "Theme starter content"
+msgid ""
+"Set this text as a page excerpt. You will most likely need to enable the "
+"excerpt field in screen options in the upper right corner of the screen when "
+"editing the page."
+msgstr ""
+"Nastaviť tento text ako zhrnutie stránky. Budete pravdepodobne musieť zapnúť "
+"textové pole zhrnutia v možnostiach zobrazenia v pravom hornom rohu "
+"obrazovky počas upravovania stránky."
+
+#: includes/starter-content/class-starter-content.php:181
+msgctxt "Theme starter content"
+msgid "Go shopping"
+msgstr "Do obchodu"
+
+#: includes/starter-content/class-starter-content.php:183
+msgctxt "Theme starter content"
+msgid "WooCommerce featured products"
+msgstr "Odporúčané produkty WooCommerce"
+
+#: includes/starter-content/class-starter-content.php:185
+msgctxt "Theme starter content"
+msgid ""
+"You need to have WooCommerce plugin installed and activated for this "
+"shortcode to display your featured products."
+msgstr ""
+"Je nutné mať nainštalovaný a aktivovaný plugin WooCommerce, aby tento "
+"shortcode zobrazil vaše odporúčané produkty."
+
+#: includes/starter-content/class-starter-content.php:187
+msgctxt "Theme starter content"
+msgid "H2 headings are outdented"
+msgstr "Nadpisy úrovne H2 sú odsadené"
+
+#: includes/starter-content/class-starter-content.php:189
+msgctxt "Theme starter content"
+msgid ""
+"This is your homepage, which is what most visitors will see when they come "
+"to your site for the first time."
+msgstr ""
+"Toto je domovská stránka, ktorú uvidí najviac návštevníkov, keď prvýkrát "
+"vstúpia na vaše stránky."
+
+#: includes/starter-content/class-starter-content.php:191
+msgctxt "Theme starter content"
+msgid "Page layout in 2 columns"
+msgstr "Rozloženie stránky v 2 stĺpcoch"
+
+#: includes/starter-content/class-starter-content.php:193
+msgctxt "Theme starter content"
+msgid ""
+"By default the theme displays page content in 2 columns. You can change this "
+"to more traditional layout in theme options."
+msgstr ""
+"Téma je prednastavená na zobrazovanie obsahu stránky v 2 stĺpcoch. Môžete to "
+"však zmeniť na tradičnejšie rozloženie v možnostiach nastavenia témy."
+
+#: includes/starter-content/class-starter-content.php:202
+msgctxt "Theme starter content"
+msgid "Introduce yourself"
+msgstr "Predstavte sa"
+
+#: includes/starter-content/class-starter-content.php:204
+msgctxt "Theme starter content"
+msgid ""
+"You might be an artist who would like to introduce yourself and your work "
+"here or maybe you&rsquo;re a business with a mission to describe."
+msgstr ""
+"Možno ste umelcom, ktorý by sa rád predstavil svetu a prezentoval svoje "
+"práce, alebo opíšte poslanie vašej firmy."
+
+#: includes/starter-content/class-starter-content.php:219
+msgctxt "Theme starter content"
+msgid "Get in touch"
+msgstr "Kontaktujte nás"
+
+#: includes/starter-content/class-starter-content.php:221
+msgctxt "Theme starter content"
+msgid ""
+"This is a page with some basic contact information, such as an address and "
+"phone number. You might also try a plugin to add a contact form."
+msgstr ""
+"Toto je stránka so základnými kontaktnými údajmi, ako sú adresa a telefónne "
+"číslo. Môžete taktiež využiť dedikovaný plugin a pridať kontaktný formulár."
+
+#: includes/starter-content/class-starter-content.php:223
+#: includes/starter-content/class-starter-content.php:225
+msgctxt "Theme starter content"
+msgid "Your name"
+msgstr "Vaše meno"
+
+#: includes/starter-content/class-starter-content.php:227
+#: includes/starter-content/class-starter-content.php:229
+msgctxt "Theme starter content"
+msgid "Your email"
+msgstr "Váš e-mail"
+
+#: includes/starter-content/class-starter-content.php:231
+#: includes/starter-content/class-starter-content.php:233
+msgctxt "Theme starter content"
+msgid "Your message"
+msgstr "Vaša správa"
+
+#: includes/starter-content/class-starter-content.php:235
+msgctxt "Theme starter content"
+msgid ""
+"This is only a dummy form placeholder. Use a plugin to create forms, such as "
+"Caldera Forms or Contact Form 7."
+msgstr ""
+"Toto je iba fiktívny nefungujúci formulár. Použite plugin pre vytváranie "
+"formulárov, ako je napríklad Caldera Forms alebo Contact Form 7."
+
+#: includes/starter-content/class-starter-content.php:237
+msgctxt "Theme starter content"
+msgid "This form does not work"
+msgstr "Tento formulár je nefunkčný"
+
+#: includes/starter-content/class-starter-content.php:260
+msgctxt "Theme starter content"
+msgid "Primary Menu"
+msgstr "Primárne menu"
+
+#: includes/starter-content/class-starter-content.php:264
+msgctxt "Theme starter content"
+msgid "Home"
+msgstr "Úvod"
+
+#: includes/starter-content/class-starter-content.php:275
+msgctxt "Theme starter content"
+msgid "Secondary Menu"
+msgstr "Sekundárne menu"
+
+#: includes/starter-content/class-starter-content.php:279
+msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
+msgid "Secondary"
+msgstr "Sekundárne"
+
+#: includes/starter-content/class-starter-content.php:284
+msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
+msgid "Simple"
+msgstr "Jednoduché"
+
+#: includes/starter-content/class-starter-content.php:289
+msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
+msgid "Menu"
+msgstr "Menu"
+
+#: includes/starter-content/class-starter-content.php:297
+msgctxt "Theme starter content"
+msgid "Social Links Menu"
+msgstr "Odkazy sociálnych sietí"
+
+#: includes/starter-content/class-starter-content.php:301
+msgctxt "Theme starter content"
+msgid "WebMan Design on Facebook"
+msgstr "WebMan Design na Facebooku"
+
+#: includes/starter-content/class-starter-content.php:306
+msgctxt "Theme starter content"
+msgid "WebMan Design on Twitter"
+msgstr "WebMan Design na Twitteri"
+
+#: includes/tgmpa/class-tgmpa-plugins.php:116
+msgid "Easy to use front-end page builder."
+msgstr "Jednoducho použiteľný editor stránok."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:124
+msgid "Adding set of predefined templates for Beaver Builder page builder."
+msgstr "Pridáva sadu prednastavených šablón pre editor stránok Beaver Builder."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:132
+msgid "For easy post and page attributes setup."
+msgstr "Pre jednoduché nastavenie atribútov stránok a článkov."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:140
+msgid "Adding e-commerce functionality."
+msgstr "Pridáva funkcionalitu e-shopu."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:147
+msgid ""
+"Adding custom sidebars management, allowing page layout modifications by "
+"removing sidebars."
+msgstr ""
+"Dodatočný manažment bočných panelov a widgetových oblastí, umožňuje "
+"modifikovať rozloženie stránok odstránením bočných panelov."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:154
+msgid "For installing theme demo content easily."
+msgstr "Pre jednoduchú inštaláciu demo obsahu témy."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:189
+msgid "Other useful plugins &raquo;"
+msgstr "Ďalšie užitočné pluginy &raquo;"
+
+#: includes/tgmpa/class-tgmpa-plugins.php:214
+msgid "Description"
+msgstr "Popis"
+
+#: includes/tgmpa/class-tgmpa-plugins.php:283
+msgctxt "Plugins."
+msgid "Recommended, not required"
+msgstr "Odporúčané, nie vyžadované"
+
+#: includes/tgmpa/class-tgmpa-plugins.php:286
+msgid "Please note that these are just recommended plugins, not required ones."
+msgstr ""
+"Upozorňujeme, že toto je zoznam odporúčaných pluginov, nie vyžadovaných."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:287
+msgid "Install only those plugins you will use."
+msgstr "Nainštalujte iba tie pluginy, ktoré budete používať."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:288
+msgctxt "Plugins."
+msgid "Or install the ones you prefer."
+msgstr "Alebo nainštalujte tie, ktoré uprednostňujete."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:289
+msgid ""
+"For example, if you are not building an eCommerce website, there is no need "
+"to install WooCommerce plugin suggested below."
+msgstr ""
+"Napríklad, ak nevytvárate webové stránky online obchodu, nie je nutné "
+"inštalovať WooCommerce plugin."
+
+#: includes/welcome/class-welcome.php:150
+#: includes/welcome/class-welcome.php:152
+msgid "Welcome"
+msgstr "Vitajte"
+
+#: includes/widgets/class-wp-widget-text.php:243
+msgid "Set icon CSS class:"
+msgstr "Nastavte CSS triedu ikonky:"
+
+#: includes/widgets/class-wp-widget-text.php:248
+#, php-format
+msgid ""
+"For displaying icons on your website use a plugin, such as %1$s or %2$s."
+msgstr ""
+"Pre zobrazenie ikoniek na stránke použite plugin, ako je napríklad %1$s "
+"alebo %2$s."
+
+#: includes/widgets/class-wp-widget-text.php:249
+msgctxt "Plugin name."
+msgid "Better Font Awesome"
+msgstr "Better Font Awesome"
+
+#: includes/widgets/class-wp-widget-text.php:250
+msgctxt "Plugin name."
+msgid "Ionicons Official"
+msgstr "Ionicons Official"
+
+#: includes/widgets/class-wp-widget-text.php:288
+msgid "Set image:"
+msgstr "Nastaviť obrázok:"
+
+#: includes/widgets/class-wp-widget-text.php:291
+msgid "Choose a featured image for this widget."
+msgstr "Zvoľte prezentačný obrázok pre tento widget."
+
+#: includes/widgets/class-wp-widget-text.php:296
+msgid "Select image"
+msgstr "Zvoliť obrázok"
+
+#: includes/widgets/class-wp-widget-text.php:310
+msgid "Remove image"
+msgstr "Odstrániť obrázok"
+
+#: library/includes/classes/class-core.php:184
+#, php-format
+msgctxt "%s: post title."
+msgid "\"%s\" table of contents"
+msgstr "Obsah článku \"%s\""
+
+#: library/includes/classes/class-core.php:222
+#, php-format
+msgid "Page %s"
+msgstr "Stránka %s"
+
+#: library/includes/classes/class-core.php:322
+#, php-format
+msgctxt "Paginated content title suffix, %s: page number."
+msgid "(page %s)"
+msgstr "(stránka %s)"
+
+#: library/includes/classes/class-core.php:542
+msgid "Skip to main content"
+msgstr "Preskočiť na hlavný obsah"
+
+#: library/includes/classes/class-customize-control-html.php:32
+msgid "Please set the `content` parameter for the HTML control."
+msgstr "Nastavte parameter `content` pre pole HTML."
+
+#: library/includes/classes/class-customize-control-multiselect.php:115
+msgid "Press CTRL key for multiple selection."
+msgstr "Pridržte klávesu CTRL pre viacnásobnú voľbu."
+
+#: library/includes/classes/class-customize-styles.php:174
+msgid ""
+"The main theme CSS stylesheet was regenerated. Please refresh your web "
+"browser's and server's cache (if you are using a website server caching "
+"solution)."
+msgstr ""
+"Hlavný súbor CSS štýlov bol regenerovaný. Vyprázdnite cache pamäť vášho "
+"prehliadača a servera (ak používate cache servera)."
+
+#: library/includes/classes/class-customize-styles.php:238
+msgid ""
+"ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
+msgstr ""
+"CHYBA: Nebolo možné vytvoriť priečinok pre CSS štýly témy. Kontaktujte "
+"technickú podporu témy."
+
+#: library/includes/classes/class-customize-styles.php:789
+msgid ""
+"The theme writes a files to your server. You do not appear to have your FTP "
+"credentials set up in \"wp-config.php\" file."
+msgstr ""
+"Téma zapisuje na váš server nové súbory. Vyzerá to tak, že ste nenastavili "
+"FTP v súbore \"wp-config.php\"."
+
+#: library/includes/classes/class-customize-styles.php:789
+msgid "Please set your FTP credentials first."
+msgstr "Prosíme, najskôr nastavte FTP."
+
+#: library/includes/classes/class-visual-editor.php:219
+msgid "Text styles"
+msgstr "Štýl textu"
+
+#: library/includes/classes/class-visual-editor.php:223
+msgid "Dropcap text"
+msgstr "Text s iniciálou"
+
+#: library/includes/classes/class-visual-editor.php:229
+msgid "Uppercase heading or paragraph"
+msgstr "Text veľkým písmom"
+
+#: library/includes/classes/class-visual-editor.php:235
+msgid "Highlighted (marked) text"
+msgstr "Zvýraznený text"
+
+#: library/includes/classes/class-visual-editor.php:241
+msgid "Small text"
+msgstr "Zmenšený text"
+
+#: library/includes/classes/class-visual-editor.php:246
+msgid "Superscript"
+msgstr "Horný index"
+
+#: library/includes/classes/class-visual-editor.php:252
+msgid "Subscript"
+msgstr "Dolný index"
+
+#: library/includes/classes/class-visual-editor.php:258
+#: library/includes/classes/class-visual-editor.php:264
+#: library/includes/classes/class-visual-editor.php:270
+#, php-format
+msgctxt "%d = HTML heading size number."
+msgid "Heading %d text style"
+msgstr "Štýl nadpisu %d"
+
+#: library/includes/classes/class-visual-editor.php:281
+msgid "Text sizes"
+msgstr "Veľkosť textu"
+
+#: library/includes/classes/class-visual-editor.php:285
+#: library/includes/classes/class-visual-editor.php:291
+#: library/includes/classes/class-visual-editor.php:297
+#: library/includes/classes/class-visual-editor.php:303
+#, php-format
+msgctxt "%d: Display text size number."
+msgid "Display %d"
+msgstr "Prezentácia %d"
+
+#: library/includes/classes/class-visual-editor.php:314
+msgctxt "Visual editor blockquote formats group title."
+msgid "Quotes"
+msgstr "Citácie"
+
+#: library/includes/classes/class-visual-editor.php:318
+msgid "Blockquote"
+msgstr "Citácia"
+
+#: library/includes/classes/class-visual-editor.php:324
+msgid "Pullquote - align left"
+msgstr "Vytrhnutý citát vľavo"
+
+#: library/includes/classes/class-visual-editor.php:331
+msgid "Pullquote - align right"
+msgstr "Vytrhnutý citát vpravo"
+
+#: library/includes/classes/class-visual-editor.php:338
+msgctxt ""
+"Visual editor format label for HTML CITE tag used to set the blockquote "
+"source."
+msgid "Cite"
+msgstr "Citovaný autor"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:346
+msgid "Install Required Plugins"
+msgstr "Inštalovať vyžadované pluginy"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:347
+msgid "Install Plugins"
+msgstr "Inštalovať pluginy"
+
+#. translators: %s: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Inštalujem plugin: %s"
+
+#. translators: %s: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:351
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Aktualizujem plugin: %s"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:352
+msgid "Something went wrong with the plugin API."
+msgstr "Došlo k chybe v API pluginov."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:355
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Táto téma vyžaduje nasledujúci plugin: %1$s."
+msgstr[1] "Táto téma vyžaduje nasledujúce pluginy: %1$s."
+msgstr[2] "Táto téma vyžaduje nasledujúce pluginy: %1$s."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Táto téma odporúča nasledujúci plugin: %1$s."
+msgstr[1] "Táto téma odporúča nasledujúce pluginy: %1$s."
+msgstr[2] "Táto téma odporúča nasledujúce pluginy: %1$s."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:367
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"Nasledujúci plugin je nutné aktualizovať pre zabezpečenie kompatibility s "
+"témou: %1$s."
+msgstr[1] ""
+"Nasledujúce pluginy je nutné aktualizovať pre zabezpečenie kompatibility s "
+"témou: %1$s."
+msgstr[2] ""
+"Nasledujúce pluginy je nutné aktualizovať pre zabezpečenie kompatibility s "
+"témou: %1$s."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Aktualizácia je k dispozícii pre: %1$s."
+msgstr[1] "Aktualizácie sú k dispozícii pre nasledujúce pluginy: %1$s."
+msgstr[2] "Aktualizácie sú k dispozícii pre nasledujúce pluginy: %1$s."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:379
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Nasledujúci vyžadovaný plugin je v súčasnosti neaktívny: %1$s."
+msgstr[1] "Nasledujúce vyžadované pluginy sú v súčasnosti neaktívne: %1$s."
+msgstr[2] "Nasledujúce vyžadované pluginy sú v súčasnosti neaktívne: %1$s."
+
+#. translators: 1: plugin name(s).
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:385
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Nasledujúci odporúčaný plugin je v súčasnosti neaktívny: %1$s."
+msgstr[1] "Nasledujúce odporúčané pluginy sú v súčasnosti neaktívne: %1$s."
+msgstr[2] "Nasledujúce odporúčané pluginy sú v súčasnosti neaktívne: %1$s."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:390
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Spustiť inštaláciu pluginu"
+msgstr[1] "Spustiť inštaláciu pluginov"
+msgstr[2] "Spustiť inštaláciu pluginov"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:395
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Spustiť aktualizáciu pluginu"
+msgstr[1] "Spustiť aktualizáciu pluginov"
+msgstr[2] "Spustiť aktualizáciu pluginov"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:400
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Spustiť aktiváciu pluginu"
+msgstr[1] "Spustiť aktiváciu pluginov"
+msgstr[2] "Spustiť aktiváciu pluginov"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:404
+msgid "Return to Required Plugins Installer"
+msgstr "Návrat na inštalátor vyžadovaných pluginov"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:405
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:846
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2552
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3599
+msgid "Return to the Dashboard"
+msgstr "Späť na Nástenku"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:406
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3178
+msgid "Plugin activated successfully."
+msgstr "Plugin bol úspešne aktivovaný."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:407
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2971
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Nasledovný plugin bol úspešne aktivovaný:"
+msgstr[1] "Nasledovné pluginy boli úspešne aktivované:"
+msgstr[2] "Nasledovné pluginy boli úspešne aktivované:"
+
+#. translators: 1: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:409
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Nebola vykonaná žiadna akcia. Plugin %1$s je už aktívny."
+
+#. translators: 1: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:411
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin nebol aktivovaný. Táto téma vyžaduje novšiu verziu pluginu %s. "
+"Prosíme, aktualizujte plugin."
+
+#. translators: 1: dashboard link.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:413
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Všetky pluginy boli úspešne nainštalované a aktivované. %1$s"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:414
+msgid "Dismiss this notice"
+msgstr "Vypnúť toto oznámenie"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:415
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"V zozname sa ešte nachádzajú pluginy vyžadované na inštaláciu, aktualizáciu "
+"alebo aktiváciu."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:416
+msgid "Please contact the administrator of this site for help."
+msgstr "Prosíme, kontaktujte administrátora webovej stránky."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:541
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Tento plugin je nutné aktualizovať, aby bola zachovaná kompatibilita s témou."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:542
+msgid "Update Required"
+msgstr "Vyžaduje aktualizáciu"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:953
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Vzdialený balík pluginu neobsahuje zložku pomenovanú vyžadovaným slugom a "
+"premenovanie neprebehlo úspešne."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:953
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:956
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Prosíme, kontaktujte poskytovateľov pluginu a požiadajte ich o prípravu "
+"balíka pluginu podľa pokynov WordPress."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:956
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Vzdialený balík pluginu obsahuje viacero súborov, ktoré však nie sú vnorené "
+"v zložke."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:1140
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2967
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "a"
+
+#. translators: %s: version number
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2001
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2292
+msgid "Required"
+msgstr "Vyžadované"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2295
+msgid "Recommended"
+msgstr "Odporúčané"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2311
+msgid "WordPress Repository"
+msgstr "WordPress repozitár"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2314
+msgid "External Source"
+msgstr "Externý zdroj"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2317
+msgid "Pre-Packaged"
+msgstr "Pribalené"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2334
+msgid "Not Installed"
+msgstr "Nenainštalované"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2338
+msgid "Installed But Not Activated"
+msgstr "Inštalované, ale neaktivované"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2340
+msgid "Active"
+msgstr "Aktivované"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2346
+msgid "Required Update not Available"
+msgstr "Vyžadovaná aktualizácia nie je k dispozícii"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2349
+msgid "Requires Update"
+msgstr "Vyžaduje aktualizáciu"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2352
+msgid "Update recommended"
+msgstr "Odporúča sa aktualizovať"
+
+#. translators: 1: install status, 2: update status
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2361
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#. translators: 1: number of plugins.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2407
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Všetok <span class=\"count\">(%s)</span>"
+msgstr[1] "Všetky <span class=\"count\">(%s)</span>"
+msgstr[2] "Všetkých <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2411
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "K inštalácii <span class=\"count\">(%s)</span>"
+msgstr[1] "K inštalácii <span class=\"count\">(%s)</span>"
+msgstr[2] "K inštalácii <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2415
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Aktualizácia dostupná <span class=\"count\">(%s)</span>"
+msgstr[1] "Aktualizácia dostupná <span class=\"count\">(%s)</span>"
+msgstr[2] "Aktualizácia dostupná <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2419
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "K aktivácii <span class=\"count\">(%s)</span>"
+msgstr[1] "K aktivácii <span class=\"count\">(%s)</span>"
+msgstr[2] "K aktivácii <span class=\"count\">(%s)</span>"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2501
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "neznáma"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2509
+msgid "Installed version:"
+msgstr "Nainštalovaná verzia:"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2517
+msgid "Minimum required version:"
+msgstr "Minimálna vyžadovaná verzia:"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2529
+msgid "Available version:"
+msgstr "Dostupná verzia:"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2552
+msgid "No plugins to install, update or activate."
+msgstr "Žiadne pluginy na inštaláciu, aktualizáciu alebo aktiváciu."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2566
+msgid "Plugin"
+msgstr "Plugin"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2567
+msgid "Source"
+msgstr "Zdroj"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2568
+msgid "Type"
+msgstr "Typ"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2572
+msgid "Version"
+msgstr "Verzia"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2573
+msgid "Status"
+msgstr "Stav"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2622
+#, php-format
+msgid "Install %2$s"
+msgstr "Inštalovať %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2627
+#, php-format
+msgid "Update %2$s"
+msgstr "Aktualizovať %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2633
+#, php-format
+msgid "Activate %2$s"
+msgstr "Aktivovať %2$s"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2703
+msgid "Upgrade message from the plugin author:"
+msgstr "Správa o aktualizácii od autora pluginu:"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2736
+msgid "Install"
+msgstr "Inštalovať"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2742
+msgid "Update"
+msgstr "Aktualizovať"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2745
+msgid "Activate"
+msgstr "Aktivovať"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2776
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+"Neboli zvolené žiadne pluginy pre inštaláciu. Žiadna akcia nebola vykonaná."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2778
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+"Neboli zvolené žiadne pluginy pre aktualizáciu. Žiadna akcia nebola vykonaná."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2819
+msgid "No plugins are available to be installed at this time."
+msgstr "Nie sú k dispozícii žiadne pluginy pre inštaláciu."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2821
+msgid "No plugins are available to be updated at this time."
+msgstr "Nie sú k dispozícii žiadne pluginy pre aktualizáciu."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2927
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+"Neboli zvolené žiadne pluginy pre aktiváciu. Žiadna akcia nebola vykonaná."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2953
+msgid "No plugins are available to be activated at this time."
+msgstr "Nie sú k dispozícii žiadne pluginy pre aktiváciu."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3177
+msgid "Plugin activation failed."
+msgstr "Aktivácia pluginu zlyhala."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Aktualizujem plugin %1$s (%2$d/%3$d)"
+
+#. translators: 1: plugin name, 2: error message.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Pri inštalácii %1$s došlo k chybe: <strong>%2$s</strong>."
+
+#. translators: 1: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3522
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Zlyhala inštalácia %1$s."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3526
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Spúšťa sa proces inštalácie a aktivácie. Tento proces môže chvíľu trvať, "
+"prosíme o trpezlivosť."
+
+#. translators: 1: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s plugin bol úspešne inštalovaný a aktivovaný."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+msgid "Show Details"
+msgstr "Zobraziť podrobnosti"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+msgid "Hide Details"
+msgstr "Skryť podrobnosti"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3529
+msgid "All installations and activations have been completed."
+msgstr "Všetky inštalácie a aktivácie sú skompletizované."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3531
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Inštalácia a aktivácia pluginu %1$s (%2$d/%3$d)"
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3534
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Spúšťa sa proces inštalácie. Tento proces môže chvíľu trvať, prosíme o "
+"trpezlivosť."
+
+#. translators: 1: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s úspešne inštalovaný."
+
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3537
+msgid "All installations have been completed."
+msgstr "Všetky inštalácie boli skompletizované."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3539
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Inštalácia pluginu %1$s (%2$d/%3$d)"
+
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:135
+#, php-format
+msgid "Please use a %s child theme to make changes!"
+msgstr "Pre vykonanie zmien použite prosím %s odvodenú tému!"
+
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:136
+msgid "Create and activate now &raquo;"
+msgstr "Vytvoriť a aktivovať teraz &raquo;"
+
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:193
+msgid "All done! You are using a child theme now! Please refresh the page."
+msgstr ""
+"Dokončené! Práve používate odvodenú tému! Prosíme, znovu načítajte túto "
+"stránku."
+
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:216
+msgid "Error: theme folder not writable!"
+msgstr "Chyba: adresár témy nemá oprávnenia na zápis!"
+
+#: sidebar-footer.php:28
+msgctxt "Sidebar aria label"
+msgid "Footer widgets"
+msgstr "Widgety pätičky"
+
+#: sidebar-intro.php:28
+msgctxt "Sidebar aria label"
+msgid "Intro widgets"
+msgstr "Widgety intra"
+
+#: sidebar.php:33
+msgctxt "Sidebar aria label"
+msgid "Sidebar"
+msgstr "Bočný panel"
+
+#. translators: Custom page template name.
+#: templates/blank.php:21
+msgid "Blank"
+msgstr "Prázdna"
+
+#. translators: Custom page template name.
+#: templates/child-pages.php:17
+msgid "List child pages"
+msgstr "Zoznam podstránok"
+
+#. translators: Custom page template name.
+#: templates/intro-widgets.php:17
+msgid "With intro widgets"
+msgstr "S intro widgetmi"
+
+#: templates/parts/admin/media-image-sizes.php:19
+msgctxt "WordPress predefined image size name."
+msgid "Thumbnail size"
+msgstr "Veľkosť miniatúry"
+
+#: templates/parts/admin/media-image-sizes.php:20
+msgctxt "WordPress predefined image size name."
+msgid "Medium size"
+msgstr "Stredný rozmer"
+
+#: templates/parts/admin/media-image-sizes.php:21
+msgctxt "WordPress predefined image size name."
+msgid "Large size"
+msgstr "Veľký rozmer"
+
+#: templates/parts/admin/media-image-sizes.php:40
+msgid "Recommended image sizes"
+msgstr "Odporúčané rozmery obrázkov"
+
+#: templates/parts/admin/media-image-sizes.php:42
+msgid ""
+"For the theme to work correctly, please, set these recommended image sizes:"
+msgstr ""
+"Prosíme, nastavte tieto odporúčané rozmery obrázkov pre správne zobrazenie v "
+"téme:"
+
+#: templates/parts/admin/media-image-sizes.php:48
+msgid "Size name"
+msgstr "Názov rozmeru"
+
+#: templates/parts/admin/media-image-sizes.php:49
+msgid "Size parameters"
+msgstr "Parametre rozmeru"
+
+#: templates/parts/admin/media-image-sizes.php:50
+msgid "Theme usage"
+msgstr "Použitie v téme"
+
+#: templates/parts/admin/media-image-sizes.php:59
+msgid "cropped"
+msgstr "orezaný"
+
+#: templates/parts/admin/media-image-sizes.php:59
+msgid "scaled"
+msgstr "zmenšený"
+
+#: templates/parts/admin/media-image-sizes.php:71
+msgid ""
+"Additional image size added by the theme. Can not be changed on this page."
+msgstr ""
+"Dodatočný rozmer obrázkov vytvorený použitou témou. Nie je ho možné nastaviť "
+"na tejto stránke."
+
+#: templates/parts/admin/media-image-sizes.php:81
+#, php-format
+msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
+msgid "%1$d &times; %2$d, %3$s"
+msgstr "%1$d &times; %2$d, %3$s"
+
+#: templates/parts/admin/welcome-demo.php:22
+msgid "Installing the theme demo content"
+msgstr "Inštalácia demo obsahu témy"
+
+#: templates/parts/admin/welcome-demo.php:25
+msgid ""
+"You can install the theme demo content including pages, posts, custom post "
+"types, layouts, menus and widgets directly from your WordPress dashboard by "
+"clicking the button bellow."
+msgstr ""
+"Kliknutím na doleuvedené tlačidlo inštalujete demo obsah témy obsahujúci "
+"stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu a "
+"widgety."
+
+#: templates/parts/admin/welcome-demo.php:29
+msgid ""
+"Alternatively (such as when the automated installation fails) you can follow "
+"theme documentation instructions for manual demo content installation."
+msgstr ""
+"Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
+"manuálny import demo obsahu témy popísaný v dokumentácii."
+
+#: templates/parts/admin/welcome-demo.php:30
+msgid "Read the instructions &raquo;"
+msgstr "Prečítajte si inštrukcie &raquo;"
+
+#: templates/parts/admin/welcome-demo.php:35
+msgid "Install and run \"One Click Demo Import\" plugin"
+msgstr "Inštaluj a spusti plugin \"Importuj demo jedným klikom\""
+
+#: templates/parts/admin/welcome-demo.php:39
+msgid "Install theme demo content"
+msgstr "Inštaluj demo obsah témy"
+
+#: templates/parts/admin/welcome-demo.php:43
+msgid ""
+"Or head over to Appearance &raquo; Import Demo Data to start the import "
+"process."
+msgstr ""
+"Alebo spustite proces importu v administračnom menu Vzhľad &raquo; Import "
+"demo dát."
+
+#: templates/parts/admin/welcome-filesystem.php:23
+msgid "Important:"
+msgstr "Dôležité:"
+
+#: templates/parts/admin/welcome-filesystem.php:30
+msgid ""
+"For the best performance, the theme generates a single CSS stylesheet file "
+"using WordPress native filesystem API."
+msgstr ""
+"Aby bol zaručený čo najvyšší výkon webovej stránky, téma generuje iba jeden "
+"súbor CSS štýlov pomocou WordPress Filesystem API."
+
+#: templates/parts/admin/welcome-filesystem.php:31
+msgid "The file is being generated after saving theme customizer settings."
+msgstr "Tento súbor sa vytvára po uložení nastavení prispôsobenia témy."
+
+#: templates/parts/admin/welcome-filesystem.php:32
+msgid ""
+"If you notice an error message in WordPress dashboard after leaving the "
+"theme customizer, please check whether you should set up the FTP credentials "
+"in your \"wp-config.php\" file."
+msgstr ""
+"Ak spozorujete chybové hlásenie v administrácii WordPress po odchode zo "
+"stránky prispôsobenia témy, skontrolujte prosím, či nie je nutné nastaviť "
+"FTP prístup v súbore \"wp-config.php\"."
+
+#: templates/parts/admin/welcome-filesystem.php:33
+msgid "In that case please read the instructions &raquo;"
+msgstr "V takom prípade si prečítajte návod &raquo;"
+
+#: templates/parts/admin/welcome-footer.php:22
+msgid ""
+"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
+"Options &raquo; Others."
+msgstr ""
+"Túto stránku môžete vypnúť v administračnom menu Vzhľad &raquo; Prispôsobiť "
+"&raquo; Nastavenia témy &raquo; Ostatné."
+
+#: templates/parts/admin/welcome-header.php:26
+#, php-format
+msgctxt "1: theme name, 2: theme version number."
+msgid "Welcome to %1$s %2$s"
+msgstr "Vitajte v %1$s %2$s"
+
+#: templates/parts/admin/welcome-header.php:38
+#, php-format
+msgctxt "1: theme name, 2: theme developer link."
+msgid "Thank you for using %1$s WordPress theme by %2$s!"
+msgstr "Ďakujeme, že používate %1$s WordPress tému od %2$s!"
+
+#: templates/parts/admin/welcome-header.php:45
+msgid "Please take time to read the steps below to set up your website."
+msgstr ""
+"Venujte prosím čas doleuvedeným inštrukciám pre nastavenie vašej webovej "
+"stránky."
+
+#: templates/parts/admin/welcome-header.php:50
+msgid "Theme Documentation"
+msgstr "Dokumentácia témy"
+
+#: templates/parts/admin/welcome-header.php:52
+msgid "Support Center"
+msgstr "Centrum pomoci"
+
+#: templates/parts/admin/welcome-promo.php:24
+#: templates/parts/admin/welcome-wordpress.php:22
+msgid "WordPress Video Tutorials &raquo;"
+msgstr "Video návody k WordPress &raquo;"
+
+#: templates/parts/admin/welcome-promo.php:26
+#: templates/parts/admin/welcome-wordpress.php:24
+msgid "New to WordPress?"
+msgstr "Je pre vás WordPress novinkou?"
+
+#: templates/parts/admin/welcome-promo.php:29
+#: templates/parts/admin/welcome-wordpress.php:27
+msgid ""
+"If you are new to WordPress, please check out the introduction section in "
+"theme documentation."
+msgstr ""
+"Ak nie ste dostatočne zoznámený so systémom WordPress, preštudujte si úvodnú "
+"sekciu dokumentácie témy."
+
+#: templates/parts/admin/welcome-quickstart.php:20
+msgid "Quickstart Guide"
+msgstr "Sprievodca nastavením"
+
+#: templates/parts/admin/welcome-quickstart.php:28
+msgid "The WordPress settings"
+msgstr "Nastavenia WordPress"
+
+#: templates/parts/admin/welcome-quickstart.php:31
+msgid ""
+"Do not forget to set up your WordPress in \"Settings\" section of the "
+"WordPress dashboard."
+msgstr ""
+"Nezabudnite nastaviť váš WordPress v administračnom menu \"Nastavenia\"."
+
+#: templates/parts/admin/welcome-quickstart.php:32
+msgid "Please go through all the subsections and options."
+msgstr ""
+"Prosíme, prejdite si všetky sekcie nastavení, ktoré vám WordPress ponúka."
+
+#: templates/parts/admin/welcome-quickstart.php:33
+msgid "This step is required for all WordPress websites."
+msgstr "Tento krok je vyžadovaný na všetkých webových stránkach WordPress."
+
+#: templates/parts/admin/welcome-quickstart.php:37
+msgid ""
+"Please, pay special attention to image sizes settings under Settings &raquo; "
+"Media."
+msgstr ""
+"Odporúčame skontrolovať hlavne nastavenia veľkostí obrázkov na stránke "
+"Nastavenia &raquo; Multimédiá."
+
+#: templates/parts/admin/welcome-quickstart.php:40
+msgid "Set Up WordPress &raquo;"
+msgstr "Nastaviť WordPress &raquo;"
+
+#: templates/parts/admin/welcome-quickstart.php:48
+msgid "Customize the theme"
+msgstr "Prispôsobenie témy"
+
+#: templates/parts/admin/welcome-quickstart.php:51
+msgid "You can customize the theme using live-preview editor."
+msgstr ""
+"Tému si môžete prispôsobiť jednoducho použitím editora so živím náhľadom."
+
+#: templates/parts/admin/welcome-quickstart.php:52
+msgid "Customization changes will go live only after you save them!"
+msgstr "Zmeny, ktoré vykonáte, sa aplikujú až keď ich uložíte."
+
+#: templates/parts/admin/welcome-quickstart.php:55
+msgid "Customize the Theme &raquo;"
+msgstr "Prispôsobiť tému &raquo;"
+
+#: templates/parts/component/breadcrumbs.php:38
+msgid "Breadcrumbs navigation"
+msgstr "Omrvinková navigácia"
+
+#: templates/parts/component/link-more-product.php:33
+#, php-format
+msgctxt "%s: Product name."
+msgid "View product%s&hellip;"
+msgstr "Prezrieť produkt%s&hellip;"
+
+#: templates/parts/component/link-more.php:23
+#, php-format
+msgctxt "%s: Name of current post."
+msgid "Continue reading%s&hellip;"
+msgstr "Prečítať%s&hellip;"
+
+#: templates/parts/component/oldie.php:28
+#, php-format
+msgctxt "%s: Version number"
+msgid ""
+"We are sorry, but this website works with Internet Explorer version %s or "
+"newer."
+msgstr ""
+"Ospravedlňujeme sa, ale táto webstránka funguje na prehliadači Internet "
+"Explorer vo verzii %s a novšej."
+
+#: templates/parts/component/oldie.php:34
+msgid "Please, upgrade your Internet Explorer."
+msgstr "Prosíme, aktualizujte svoj Internet Explorer."
+
+#: templates/parts/component/oldie.php:35
+msgid "Or, switch to another browser."
+msgstr "Alebo skúste iný internetový prehliadač."
+
+#: templates/parts/content/content-attachment-image.php:35
+msgctxt "Attachment page image info table caption."
+msgid "Image info"
+msgstr "Informácie o obrázku"
+
+#: templates/parts/content/content-attachment-image.php:40
+msgctxt "Attachment page publish time."
+msgid "Image published on:"
+msgstr "Obrázok publikovaný dňa:"
+
+#: templates/parts/content/content-attachment-image.php:47
+msgid "Image size:"
+msgstr "Veľkosť obrázku:"
+
+#: templates/parts/content/content-attachment-image.php:54
+msgid "Image file name:"
+msgstr "Názov súboru obrázku:"
+
+#: templates/parts/content/content-attachment.php:29
+msgid "Download attachment file:"
+msgstr "Prevziať súbor prílohy:"
+
+#: templates/parts/content/content-none.php:23
+msgid "Nothing Found"
+msgstr "Nenašli sa žiadne záznamy"
+
+#: templates/parts/content/content-none.php:34
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pripravený publikovať svoj prvý článok? <a href=\"%1$s\">Začnite hneď</a>."
+
+#: templates/parts/content/content-none.php:44
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Vášmu vyhľadávaniu nezodpovedajú žiadne záznamy. Skúste znovu pomocou iných "
+"kľúčových slov."
+
+#: templates/parts/content/content-none.php:50
+msgid ""
+"It seems we can not find what you are looking for. Perhaps searching can "
+"help."
+msgstr "Nemôžeme nájsť, čo hľadáte. Skúste vyhľadávacie pole."
+
+#: templates/parts/footer/site-info.php:53
+#, php-format
+msgctxt "1: theme name, 2: linked \"WordPress\" word, 3: theme developer name."
+msgid "Using %1$s %2$s theme created by %3$s"
+msgstr "Používame %2$s tému %1$s od %3$s"
+
+#: templates/parts/footer/site-info.php:55
+msgid "http://wordpress.org/"
+msgstr "https://sk.wordpress.org/"
+
+#: templates/parts/footer/site-info.php:61
+#: templates/parts/menu/menu-social.php:35
+msgid "Back to top &uarr;"
+msgstr "Späť nahor &uarr;"
+
+#: templates/parts/intro/intro-content.php:102
+msgid "Introduction"
+msgstr "Úvod"
+
+#: templates/parts/loop/loop-categories-product.php:38
+msgid "List of categories"
+msgstr "Zoznam kategórií"
+
+#: templates/parts/menu/menu-primary.php:30
+msgid "Skip to menu toggle button"
+msgstr "Preskočiť na tlačidlo rozbaľovania menu"
+
+#: templates/parts/menu/menu-primary.php:43
+msgid "Primary Menu"
+msgstr "Primárne menu"
+
+#: templates/parts/menu/menu-primary.php:46
+msgctxt "Mobile navigation toggle button title."
+msgid "Menu"
+msgstr "Menu"
+
+#: templates/parts/menu/menu-secondary.php:29
+msgid "Secondary Menu"
+msgstr "Sekundárne menu"
+
+#: templates/parts/menu/menu-social.php:35
+msgid "Back to top"
+msgstr "Späť nahor"
+
+#: templates/parts/menu/menu-social.php:43
+msgid "Social Menu"
+msgstr "Menu sociálnych sietí"
+
+#: templates/parts/meta/entry-meta-element-author.php:20
+msgctxt "Post meta info description: author name."
+msgid "Written by:"
+msgstr "Autor:"
+
+#: templates/parts/meta/entry-meta-element-category.php:30
+msgctxt "Post meta info description: categories list."
+msgid "Categorized in:"
+msgstr "Kategorizované:"
+
+#: templates/parts/meta/entry-meta-element-comments.php:34
+#, php-format
+msgctxt "%s: number of comments."
+msgid "Comments: %s"
+msgstr "Komentáre: %s"
+
+#: templates/parts/meta/entry-meta-element-comments.php:36
+msgctxt "Post meta info description: comments count."
+msgid "Comments:"
+msgstr "Komentáre:"
+
+#: templates/parts/meta/entry-meta-element-date.php:25
+msgctxt "Post meta info description: publish date."
+msgid "Posted on:"
+msgstr "Publikované dňa:"
+
+#: templates/parts/meta/entry-meta-element-tags.php:27
+msgctxt "Post meta info description: tags list."
+msgid "Tagged as:"
+msgstr "Označené ako:"
+
+#. translators: Custom page template name.
+#: templates/sidebar.php:14
+msgid "With sidebar"
+msgstr "S bočným panelom"

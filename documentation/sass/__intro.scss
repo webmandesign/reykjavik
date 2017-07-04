@@ -1,0 +1,30 @@
+/* FILE: __intro.scss */
+
+
+
+
+
+.main-header {
+	padding: 40px 40px 400px;
+	padding: 40px 40px 38vh;
+	margin: -20px -40px -3.62em;
+	font-weight: 300;
+	background: $color_intro_bg;
+	color: $color_intro_txt;
+
+	h1 {
+		margin-bottom: 1.62em;
+		font-size: 3.62em;
+		color: inherit;
+	}
+
+	h2 {
+		text-transform: uppercase;
+		color: inherit;
+	}
+
+	a {
+		color: inherit;
+	}
+
+}

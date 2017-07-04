@@ -1,0 +1,22 @@
+/* FILE: woocommerce/custom-styles/__tabs.scss */
+
+//
+// Product tabs color styles
+//
+
+
+
+
+
+// Tabs
+
+	.woocommerce-tabs .tabs {
+
+		a:hover,
+		.active a,
+		.is-active a {
+			@extend %accent_colors;
+			border-color: transparent; //*
+		}
+
+	}

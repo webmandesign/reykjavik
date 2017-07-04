@@ -1,0 +1,41 @@
+/* FILE: main/sidebar/__intro.scss */
+
+//
+// Intro widgets area
+//
+
+
+
+
+
+.intro-widgets {
+	@extend %horizontal_widget_area;
+
+	&-container {
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			// Preventing mobile horizontal scrolling
+			// (Required for horizontal_widget_area.)
+			overflow: hidden;
+		}
+
+	}
+
+	&-inner {
+		padding-top: $golden +rem;
+		padding-bottom: $golden +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding-top: power( $golden, 2 ) +rem;
+			padding-bottom: power( $golden, 2 ) +rem;
+		}
+
+	}
+
+	a {
+		color: inherit;
+	}
+
+}

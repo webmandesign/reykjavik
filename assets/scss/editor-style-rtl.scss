@@ -1,0 +1,31 @@
+/* FILE: editor-style-rtl.scss */
+
+//
+// Visual Editor core stylesheet (RTL)
+//
+// @package    Reykjavík
+// @copyright  WebMan Design, Oliver Juhas
+//
+
+
+
+
+
+// These will be ignored when editor stylesheet is generated
+
+	/*[*/
+	@import url( 'main-rtl.css' );
+	/*]*/
+
+	/*[*/
+	@import url( 'custom-styles-editor.css' );
+	/*]*/
+
+
+
+// RTL style overrides
+
+	body {
+		direction: rtl;
+		unicode-bidi: embed;
+	}

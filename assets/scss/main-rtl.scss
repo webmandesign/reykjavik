@@ -1,0 +1,26 @@
+/* FILE: main-rtl.scss */
+
+//
+// Main theme styles (RTL)
+//
+// @package    Reykjavík
+// @copyright  WebMan Design, Oliver Juhas
+//
+
+
+
+
+
+// Setup language direction
+
+	$language_direction: rtl;
+
+
+
+// Imports
+
+	@import 'setup';
+
+	@import 'starter/starter';
+
+	@import 'main/main';

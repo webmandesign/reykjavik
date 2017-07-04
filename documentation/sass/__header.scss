@@ -1,0 +1,26 @@
+/* FILE: __header.scss */
+
+
+
+
+
+.navbar {
+	background-color: $color_header_bg;
+
+	a {
+		text-decoration: none;
+	}
+
+	& &-brand {
+		color: $color_logo;
+		margin-right: 2em;
+		letter-spacing: 1px;
+		text-shadow: none;
+		text-transform: uppercase;
+	}
+
+	&-right {
+		font-size: .9em;
+	}
+
+}

@@ -1,0 +1,55 @@
+/* FILE: main/menu/_menu-primary-description.scss */
+
+//
+// Primary menu item description text
+//
+
+
+
+
+
+.menu-item-description {
+	@extend %menu_item_description;
+
+
+
+	// In top level menu items
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.main-navigation-container .menu > ul > li > a & {
+				position: absolute;
+				left: 50%;
+				margin-top: 0;
+				white-space: nowrap;
+				opacity: 0;
+				transform: translateX(-50%) translateY(.62em);
+				transition: opacity ( $small_animation_speed +s ),
+				            transform ( $small_animation_speed +s );
+
+				@include in( 'a:hover, a:focus' ) {
+					opacity: .8;
+					transform: translateX(-50%) translateY(0);
+				}
+
+			}
+
+			.main-navigation-container .menu > ul > .menu-item-has-children > a & {
+				display: none;
+			}
+
+		}
+
+
+
+	// In megamenu label
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.main-navigation-container .megamenu > ul > li > a & {
+				margin-bottom: $golden_major +em;
+			}
+
+		}
+
+}

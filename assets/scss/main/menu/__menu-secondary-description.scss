@@ -1,0 +1,41 @@
+/* FILE: main/menu/_menu-secondary-description.scss */
+
+//
+// Secondary menu item description text
+//
+
+
+
+
+
+.menu-item-description {
+
+	.secondary-navigation & {
+		display: none;
+	}
+
+
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+		.secondary-navigation a & {
+			display: block;
+			position: absolute;
+			left: 50%;
+			margin-top: 0;
+			white-space: nowrap;
+			opacity: 0;
+			transform: translateX(-50%) translateY(.62em);
+			transition: opacity ( $small_animation_speed +s ),
+			            transform ( $small_animation_speed +s );
+
+			@include in( 'a:hover, a:focus' ) {
+				opacity: .8;
+				transform: translateX(-50%) translateY(0);
+			}
+
+		}
+
+	}
+
+}

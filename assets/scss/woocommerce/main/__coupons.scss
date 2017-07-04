@@ -1,0 +1,74 @@
+/* FILE: woocommerce/main/__coupons.scss */
+
+//
+// Coupons styles
+//
+
+
+
+
+
+// Coupon box
+
+	%coupon_box {
+		padding: $golden +em;
+		text-align: center;
+		border-width: 2px;
+		border-style: dashed;
+		box-sizing: border-box; // Reset required for when displayed in shop table
+
+		label {
+			@extend %wc_screen_reader_hiding;
+		}
+
+		p {
+			float: none;
+			width: 100%;
+			margin: 1em 0 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+		}
+
+		.input-text {
+			width: 100%;
+			text-align: inherit;
+
+			&:not(:hover):not(:focus) {
+				background-color: transparent;
+				border-color: transparent;
+				border-bottom-color: currentColor;
+			}
+
+		}
+
+		.button {
+			display: block;
+			width: 100%;
+			margin: 1em 0 0;
+		}
+
+		.description {
+			margin-top: 1em;
+			font-size: 1em - $golden_minor / 2;
+			font-style: italic;
+		}
+
+	}
+
+
+
+// Remove coupon link
+
+	.woocommerce-remove-coupon {
+		@extend %wc_indent_text_for_icon_only;
+		line-height: 1;
+		overflow: hidden;
+
+		&::before {
+			content: '\f405';
+		}
+
+	}

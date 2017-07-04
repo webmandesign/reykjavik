@@ -1,0 +1,32 @@
+/* FILE: main/sidebar/__footer.scss */
+
+//
+// Footer widgets area
+//
+
+
+
+
+
+.footer-widgets {
+	@extend %horizontal_widget_area;
+
+	&-inner {
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			// Preventing mobile horizontal scrolling
+			// (Required for horizontal_widget_area.)
+			overflow: hidden;
+		}
+
+	}
+
+	.widget {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: ( power( $golden, 2 ) + 1em ) 0;
+		}
+
+	}
+
+}

@@ -1,0 +1,20 @@
+/* FILE: woocommerce/pages/__checkout-order-pay.scss */
+
+//
+// Page: Checkout -> Order pay
+//
+// Failed order pay page.
+//
+
+
+
+
+
+.woocommerce-order-pay {
+
+	// @todo  Don't use ID selector if possible
+	#payment {
+		max-width: 36em;
+	}
+
+}

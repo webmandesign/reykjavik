@@ -1,0 +1,25 @@
+/* FILE: woocommerce/pages/_my-account-address.scss */
+
+//
+// Page: My Account -> Addresses -> Edit
+//
+
+
+
+
+
+.woocommerce-address {
+
+	&-fields {
+
+		> * + * {
+			margin-top: $golden +em;
+		}
+
+		&__field-wrapper {
+			@extend %wc_clearfix;
+		}
+
+	}
+
+}

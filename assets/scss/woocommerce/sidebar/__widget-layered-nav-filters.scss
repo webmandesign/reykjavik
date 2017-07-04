@@ -1,0 +1,53 @@
+/* FILE: woocommerce/sidebar/__widget-layered-nav-filters.scss */
+
+//
+// Widget: Layered Nav Filters
+//
+
+
+
+
+
+.widget_layered_nav_filters {
+	margin-bottom: power( $golden, 2 ) +em;
+
+	ul {
+
+		li {
+			display: inline-block;
+			padding: $golden_minor +em;
+			font-size: 1rem - $golden_minor / 2;
+			border-width: 0;
+		}
+
+	}
+
+	a {
+		display: block;
+		padding: ( $golden_minor +em ) 1em;
+
+		&:hover,
+		&:focus {
+			text-decoration: line-through;
+		}
+
+		&::after {
+			@extend %wc_genericon;
+			content: '\f406';
+			display: inline-block; // Required to override the :hover text-decoration
+			margin-#{$left}: $golden_major +em; // {{RTL}}
+			text-decoration: none;
+			vertical-align: middle;
+		}
+
+	}
+
+	.amount {
+		font-weight: 700;
+	}
+
+	.products + & {
+		margin-top: power( $golden, 2 ) +em;
+	}
+
+}

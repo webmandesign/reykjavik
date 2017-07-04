@@ -1,0 +1,31 @@
+/* FILE: main/sidebar/__widget-calendar.scss */
+
+//
+// Calendar widget
+//
+
+
+
+
+
+.widget_calendar {
+
+	th,
+	td {
+		vertical-align: middle;
+	}
+
+	tfoot {
+
+		td {
+			text-align: $left; // {{RTL}}
+
+			&:last-child {
+				text-align: $right; // {{RTL}}
+			}
+
+		}
+
+	}
+
+}

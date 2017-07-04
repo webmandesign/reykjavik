@@ -1,0 +1,19 @@
+/* FILE: woocommerce/sidebar/__widget-recent-reviews.scss */
+
+//
+// Widget: Recent Reviews
+//
+
+
+
+
+
+.widget_recent_reviews {
+
+	.reviewer {
+		display: inline-block;
+		font-size: 1em - $golden_minor / 4;
+		font-style: italic;
+	}
+
+}

@@ -1,0 +1,23 @@
+/* FILE: customize-rtl.scss */
+
+//
+// Customize RTL styles
+//
+// @package     WebMan WordPress Theme Framework
+// @subpackage  Customize
+//
+
+
+
+
+
+// Setup language direction
+
+	$left: right;
+	$right: left;
+
+
+
+// Imports
+
+	@import "styles/customize";

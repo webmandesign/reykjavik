@@ -1,0 +1,136 @@
+/* FILE: main/menu/__menu-primary-mega.scss */
+
+//
+// Megamenu
+//
+// Class of `.megamenu` is applied on a primary menu item (on a `<li>` HTML tag).
+//
+
+
+
+
+
+@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+	.main-navigation-container .megamenu {
+
+		// Columns container
+
+			> ul {
+				display: flex;
+
+
+
+				// Column
+
+					> li {
+						flex: 0 1 14em;
+						padding: 0;
+						border-width: 0;
+						vertical-align: top;
+
+						+ li {
+							margin-#{$left}: power( $golden, 2 ) +rem; // {{RTL}}
+						}
+
+						a {
+							min-width: 0;
+						}
+
+
+
+						// Label
+
+							> a {
+								margin-bottom: $golden +em;
+								text-transform: uppercase;
+								letter-spacing: 1px;
+								font-size: 1em - $golden_minor / 4;
+								font-weight: 700;
+								border-width: 0;
+								border-radius: 0;
+
+								.expander {
+									display: none;
+								}
+
+							}
+
+
+
+						// Content (sub-sub-menu)
+
+							> .sub-menu {
+								display: block;
+								position: relative;
+								min-width: 100%;
+								#{$left}: 0; // {{RTL}}
+								top: 0;
+								padding: 0;
+								margin: 1em 0 0;
+								background: none;
+								border-width: 0;
+								box-shadow: none;
+								transform: none;
+								transition: none;
+
+								> li > a {
+									padding-#{$right}: 1rem;
+								}
+
+
+
+								// Sub-sub-sub-menu
+
+									ul {
+										box-shadow: 0 .38em 1em rgba( #000, .25 );
+									}
+
+							}
+
+							&,
+							.no-js &:hover,
+							&.focus {
+
+								> .sub-menu {
+									#{$left}: 0; // {{RTL}}
+								}
+
+							}
+
+					}
+
+			}
+
+
+
+		// Make sure the column border color is consistent
+
+			& > ul > li > a,
+			&:hover > ul > .current-menu-item > a,
+			&:hover > ul > .current-menu-ancestor > a {
+				border-color: currentColor;
+			}
+
+
+
+		// Make sure the column content is opaque
+
+			.no-js &:hover ul,
+			&.focus ul {
+				opacity: 1;
+			}
+
+	}
+
+}
+
+
+
+@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+
+	.main-navigation-container .megamenu {
+		position: static;
+	}
+
+}

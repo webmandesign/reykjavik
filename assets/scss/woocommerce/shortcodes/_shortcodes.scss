@@ -1,0 +1,57 @@
+/* FILE: woocommerce/shortcodes/_shortcodes.scss */
+
+//
+// WooCommerce shortcodes styles
+//
+
+
+
+
+
+// Imports
+
+	@import '_add-to-cart';
+
+	// @import '_add-to-cart-url';
+
+	// @import '_cart';
+
+	// @import '_checkout';
+
+	// @import '_my-account';
+
+	@import '_order-tracking';
+
+	// @import '_product-page'; // Removed via theme WooCommerce setup file
+
+	// @import '_shop-messages';
+
+	//
+	// Categories list:
+	//
+
+	// @import '_product-categories';
+
+	//
+	// Products list:
+	//
+
+	// @import '_best-selling-products';
+
+	// @import '_featured-products';
+
+	// @import '_product';
+
+	// @import '_product-attribute';
+
+	// @import '_product-category';
+
+	// @import '_products';
+
+	// @import '_recent-products';
+
+	// @import '_related-products'; // Removed via theme WooCommerce setup file
+
+	// @import '_sale-products';
+
+	// @import '_top-rated-products';

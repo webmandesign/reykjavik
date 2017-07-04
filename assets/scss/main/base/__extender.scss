@@ -1,0 +1,80 @@
+/* FILE: main/base/__extender.scss */
+
+//
+// Helper extenders
+//
+
+
+
+
+
+// Horizontal widget area
+
+	%horizontal_widget_area {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding-top: $golden +em;
+		padding-bottom: $golden +em;
+		margin-left: -$golden +rem;
+		margin-right: -$golden +rem;
+
+		.widget {
+			position: relative;
+			flex: 1 1 10em;
+			padding: ( $golden +em ) 0;
+			margin: 0 ( $golden +rem );
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				flex-basis: 0%;
+				padding: ( power( $golden, 2 ) +em ) 0;
+			}
+
+		}
+
+	}
+
+
+
+// Background overlay automated from text color
+
+	%background_overlay_from_text_color_container {
+		position: relative;
+		z-index: 1; // Trick to keep pseudo element below child elements
+	}
+
+	%background_overlay_from_text_color {
+		@extend %background_overlay_from_text_color_container;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: currentColor;
+			border-radius: inherit;
+			opacity: $overlay_from_text_color_opacity;
+			z-index: -1; // Trick to keep pseudo element below child elements
+		}
+
+	}
+
+	%background_overlay_from_text_color_after {
+		@extend %background_overlay_from_text_color_container;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: currentColor;
+			border-radius: inherit;
+			opacity: $overlay_from_text_color_opacity;
+			z-index: -1; // Trick to keep pseudo element below child elements
+		}
+
+	}

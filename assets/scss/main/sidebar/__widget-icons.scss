@@ -1,0 +1,53 @@
+/* FILE: main/sidebar/__widget-icons.scss */
+
+//
+// Multiple widgets list icons
+//
+
+
+
+
+
+// Archives
+// Categories
+// Pages
+// Recent Comments
+// Recent Posts
+
+	li::before {
+
+		.widget_archive &,
+		.widget_categories &,
+		.widget_pages &,
+		.widget_recent_comments &,
+		.widget_recent_entries & {
+			@extend %genericon;
+			@extend %font_size_1rem;
+			content: '\f307';
+			display: inline-block; // RTL fix // {{RTL}}
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			vertical-align: middle;
+		}
+
+		.widget_categories & {
+			content: '\f301';
+		}
+
+		.widget_pages & {
+			content: '\f443';
+		}
+
+		.widget_recent_comments &,
+		.widget_recent_entries & {
+			content: '\f300';
+			position: absolute;
+			#{$left}: 0; // {{RTL}}
+			top: $golden_minor +em;
+			margin: 0;
+		}
+
+		.widget_recent_entries & {
+			content: '\f411';
+		}
+
+	}

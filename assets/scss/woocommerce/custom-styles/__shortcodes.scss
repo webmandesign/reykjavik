@@ -1,0 +1,22 @@
+/* FILE: woocommerce/custom-styles/__shortcode.scss */
+
+//
+// WooCommerce shortcodes color styles
+//
+
+
+
+
+
+// Add to cart button
+
+	.add_to_cart_inline {
+
+		.button,
+		.site .fl-builder-content & .button,
+		.added_to_cart {
+			@extend %accent_colors;
+			border-color: transparent; //*
+		}
+
+	}

@@ -1,0 +1,15 @@
+/* FILE: woocommerce/main/__loop-related.scss */
+
+//
+// Related products loop styles
+//
+// This loop is displayed on single product page.
+//
+
+
+
+
+
+.related {
+	@extend %wc_content_width;
+}

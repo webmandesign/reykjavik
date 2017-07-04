@@ -1,0 +1,45 @@
+/* FILE: woocommerce/tabs/__description.scss */
+
+//
+// Tab: Description
+//
+
+
+
+
+
+.woocommerce-Tabs-panel--description {
+
+	.woocommerce-tabs & {
+
+		.content-layout-no-paddings & {
+			@extend %wc_content_width;
+			padding: 0;
+		}
+
+		.content-layout-no-paddings &,
+		.fl-builder & {
+
+			> h2:first-child {
+				@extend %wc_content_width;
+				margin-top: $padding_vertical * $golden_major;
+				margin-bottom: $golden +em;
+			}
+
+		}
+
+		.content-layout-stretched &,
+		.fl-builder & {
+			width: 100%;
+			padding: 0;
+
+			html & {
+				// Unfortunately, we need to rise specificity for `max-width` due to possible IE shame styles overrides later.
+				max-width: none;
+			}
+
+		}
+
+	}
+
+}

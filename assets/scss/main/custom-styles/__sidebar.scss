@@ -1,0 +1,38 @@
+/* FILE: main/custom-styles/__sidebar.scss */
+
+//
+// Widgets and sidebars colors
+//
+
+
+
+
+
+// Sidebar: Intro widgets
+
+	.intro-widgets-container,
+	.#{$special_color_class_prefix}intro-widgets,
+	.#{$special_color_class_prefix}intro-widgets > .fl-row-content-wrap,
+	.#{$special_color_class_prefix}intro-widgets > .fl-col-content {
+		@extend %sidebar_intro_widgets_colors;
+	}
+
+
+
+// Widgets
+
+	// Custom Menu and Pages
+
+		.widget {
+
+			.current_page_item > a,
+			.current-menu-item > a {
+
+				.sidebar &,
+				.fl-widget & {
+					@extend %accent_colors;
+				}
+
+			}
+
+		}

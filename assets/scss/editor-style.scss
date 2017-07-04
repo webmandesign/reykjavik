@@ -1,0 +1,25 @@
+/* FILE: editor-style.scss */
+
+//
+// Visual Editor core stylesheet
+//
+// @package    Reykjavík
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0.0
+// @version  1.0.0
+//
+
+
+
+
+
+// These will be ignored when editor stylesheet is generated
+
+	/*[*/
+	@import url( 'main.css' );
+	/*]*/
+
+	/*[*/
+	@import url( 'custom-styles-editor.css' );
+	/*]*/

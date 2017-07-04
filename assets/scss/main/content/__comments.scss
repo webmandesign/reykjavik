@@ -1,0 +1,263 @@
+/* FILE: main/content/__comments.scss */
+
+//
+// Comments
+//
+
+
+
+
+
+// Container
+
+	.comments-area {
+		clear: both;
+		padding: ( $golden +rem ) 0 0;
+		margin: ( power( $golden, 2 ) +rem ) 0 0;
+		border-top-width: 2px;
+		border-top-style: solid;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-top: $padding_vertical;
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			margin-top: $golden * $padding_vertical;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+
+		.reply {
+			margin-top: 1em;
+		}
+
+
+
+		// On pages
+
+			.page.no-widgets-sidebar &-inner {
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					width: percentage( $golden_major );
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+			}
+
+
+
+		// On page builder pages/posts
+
+			.content-layout-no-paddings & {
+				width: 100%;
+			}
+
+			.fl-builder &,
+			.content-layout-no-paddings &,
+			.content-layout-stretched & {
+				// No sidebar here
+				@extend %content_width;
+				padding: ( power( 1 + $golden_minor, 5 ) +rem ) 0;
+				border-width: 0;
+
+				&-inner {
+
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
+						width: percentage( $golden_major );
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+// Comments list
+
+	.comment-list {
+
+		> li,
+		.children > li {
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				padding-#{$left}: 100px; // {{RTL}}
+			}
+
+		}
+
+	}
+
+
+
+// Container title
+
+	.comments-title {
+		@extend %font_weight_700;
+		margin-bottom: $golden +rem;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-bottom: power( $golden, 2 ) +rem;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( $golden, 3 ) +rem;
+		}
+
+		.add-comment-link {
+			@extend .screen-reader-text;
+			@extend .focus-position-static;
+		}
+
+		span {
+			@extend %font_weight_300;
+		}
+
+	}
+
+
+
+// Avatar and meta info
+
+	.comment-meta {
+		border-bottom-width: 1px;
+
+		.avatar {
+			box-shadow: 0 1.5em 6em rgba( #000, .1 );
+			border-radius: 0;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				width: 80px;
+			}
+
+		}
+
+		&data {
+			text-transform: uppercase;
+		}
+
+	}
+
+
+
+// Content
+
+	.comment-body {
+		padding-bottom: 0;
+	}
+
+
+
+// By post author
+
+	.bypostauthor > .comment-body .comment-author {
+
+		&::before {
+			@extend %genericon;
+			content: '\f411';
+			position: absolute;
+			display: block;
+			width: 30px;
+			height: 30px;
+			#{$left}: 15px; // Avatar is 60x60 px // {{RTL}}
+			top: 45px; // Avatar is 60x60 px
+			margin-top: $golden +em;
+			font-size: 16px;
+			line-height: 28px;
+			text-align: center;
+			font-size: 1em + $golden_minor / 2;
+			border-radius: 50%;
+			z-index: 1;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				// Avatar is 80x80 px
+				#{$left}: 25px; // {{RTL}}
+				top: 65px;
+			}
+
+		}
+
+	}
+
+
+
+// Utility links
+
+	.comment-edit-link,
+	.comment-reply-link {
+
+		&::before {
+			@extend %genericon;
+			content: '\f466';
+			margin-#{$right}: $golden_minor / 2 +em; // {{RTL}}
+			font-size: 1em + $golden_minor;
+			vertical-align: middle;
+		}
+
+	}
+
+	.comment-edit-link {
+
+		&::before {
+			content: '\f411';
+		}
+
+	}
+
+
+
+// Navigation
+
+	.comment-navigation {
+		@extend %font_weight_700;
+
+		div {
+			text-align: inherit;
+		}
+
+		a {
+			padding: ( $golden +em ) 6%;
+
+			&:hover {
+				opacity: 1;
+			}
+
+		}
+
+		.nav-links {
+			border-width: 2px;
+			border-style: solid;
+		}
+
+	}
+
+
+
+// Form
+
+	.comment-respond {
+		padding: 0;
+		border-width: 0;
+
+		&,
+		.comment-list & {
+			margin-top: $padding_vertical;
+		}
+
+		.comment-list & {
+			padding: 0 ( $golden +em );
+			border-width: 0;
+		}
+
+	}
+
+	.comment-reply-title {
+		font-size: inherit;
+		text-transform: uppercase;
+	}

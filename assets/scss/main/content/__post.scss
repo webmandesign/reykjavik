@@ -1,0 +1,19 @@
+/* FILE: main/content/__post.scss */
+
+//
+// Post styles
+//
+
+
+
+
+
+// Excerpt
+
+	.entry-summary {
+
+		&.has-more-tag {
+			text-transform: uppercase;
+		}
+
+	}

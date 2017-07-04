@@ -1,0 +1,19 @@
+/* FILE: woocommerce/pages/_pages.scss */
+
+//
+// WooCommerce related pages styles
+//
+
+
+
+
+
+// Imports
+
+	@import '_shop';
+
+	@import '_cart';
+
+	@import '_checkout';
+
+	@import '_my-account';

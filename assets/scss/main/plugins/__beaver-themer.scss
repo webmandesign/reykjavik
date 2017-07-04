@@ -1,0 +1,38 @@
+/* FILE: main/plugins/__beaver-themer.scss */
+
+//
+// Beaver Themer
+//
+
+
+
+
+
+// Prepare the page layout for Beaver Themer - make it fullwidth if possible
+
+	.fl-theme-builder {
+
+		&-singular,
+		&-404,
+		&-archive {
+			@extend %fullwidth_sections_layout;
+
+			&.single {
+
+				.site-main > .entry > .entry-header {
+					@extend %screen_reader_hiding;
+				}
+
+			}
+
+		}
+
+		&-singular.single {
+
+			.content-area {
+				max-width: none;
+			}
+
+		}
+
+	}

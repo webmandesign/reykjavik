@@ -1,0 +1,63 @@
+/* FILE: woocommerce/main/__menu.scss */
+
+//
+// Mobile menu styles
+//
+
+
+
+
+
+.shop-mobile-menu-links {
+	@extend %wc_clearfix;
+	position: fixed;
+	display: inline-block;
+	#{$right}: 0; // {{RTL}}
+	bottom: -1rem;
+	line-height: 1 + $golden_minor;
+	z-index: 1000; // Above the `.menu-toggle` button and the actual primary menu
+	animation: comeInFromBottom ( $large_animation_speed * 3s );
+
+	.button {
+		@extend %wc_indent_text_for_icon_only;
+		width: $mobile_menu_toggle_height +rem;
+		height: $mobile_menu_toggle_height + 1rem;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-size: $golden +em;
+		font-weight: 700;
+		border-width: 0;
+		border-#{$left}-width: 1px;
+		border-color: inherit;
+
+		&::before {
+			line-height: $mobile_menu_toggle_height +rem;
+		}
+
+	}
+
+	.link-cart::before,
+	.link-checkout::before,
+	.link-shop::before {
+		content: '\f447';
+	}
+
+	.link-myaccount::before {
+		content: '\f304';
+	}
+
+	@media only screen and (min-width: #{ map_get( $breakpoint, 'm' ) / 16 +em } ),
+	       only screen and (max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) / 16 +em } ) {
+		display: none;
+	}
+
+
+
+	// Change default mobile menu toggle button styling
+
+		& + .main-navigation .menu-toggle {
+			text-align: inherit;
+		}
+
+}

@@ -1,0 +1,49 @@
+/* FILE: woocommerce/extensions/__woocommerce-product-image-flipper.scss */
+
+//
+// WooCommerce Product Image Flipper
+//
+// @see  https://wordpress.org/plugins/woocommerce-product-image-flipper/
+//
+
+
+
+
+
+.pif-has-gallery {
+
+	.products & {
+
+		.thumbnail {
+			position: relative;
+			overflow: hidden;
+		}
+
+		img {
+			backface-visibility: hidden;
+			transition: opacity ( $large_animation_speed +s );
+
+			+ img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+			}
+
+		}
+
+		&:hover {
+
+			img {
+				opacity: 1;
+			}
+
+			img:first-child {
+				opacity: 0;
+			}
+
+		}
+
+	}
+
+}

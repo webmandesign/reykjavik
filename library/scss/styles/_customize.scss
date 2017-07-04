@@ -1,0 +1,369 @@
+/* FILE: styles/_customize.scss */
+
+//
+// Customize styles
+//
+// @package     WebMan WordPress Theme Framework
+// @subpackage  Customize
+//
+// @since    1.5.0
+// @version  2.2.1
+//
+
+
+
+
+
+// Generic styles
+
+	// Extenders
+
+		%customier_headings {
+
+			h3,
+			h4 {
+				padding: 1em 20px;
+				margin: 2em -20px .5em;
+				text-transform: uppercase;
+				font-size: 1em;
+				letter-spacing: 1px;
+				color: #555;
+				border-top: 2px solid #bbb;
+			}
+
+			h4 {
+				padding: 1em 0;
+				margin: 1em 0 .5em;
+				border-top-style: dotted;
+			}
+
+		}
+
+	// Custom "HTML" control styles
+
+		.customize-control-html {
+			@extend %customier_headings;
+		}
+
+	// Text field with size attribute set
+
+		.customize-control input[type=tel][size],
+		.customize-control input[type=url][size],
+		.customize-control input[type=text][size],
+		.customize-control input[type=password][size],
+		.customize-control input[type=email][size],
+		.customize-control input[type=number][size],
+		.customize-control input[type=search][size] {
+			width: auto;
+		}
+
+
+
+// Theme options sections
+
+	.control-section-theme-options {
+
+		// Basic styles
+
+			.no-overflow {
+				overflow: hidden;
+			}
+
+
+
+		// Donation link
+
+			.donation-link {
+
+				&,
+				&:hover,
+				&:active {
+					display: block;
+					width: 100%;
+					padding: 1em 0;
+					text-transform: uppercase;
+					text-align: center;
+					font-weight: bold;
+					font-size: .81em;
+					background: #0aac8e;
+					color: #fafcfe;
+				}
+
+				&:hover {
+					letter-spacing: 1px;
+				}
+
+			}
+
+
+
+		// Controls
+
+			.customize-section-description-container + .customize-control { // This has to be here due to global wrapper
+
+				h3 {
+
+					&:first-of-type {
+						margin-top: 0;
+						border: 0;
+					}
+
+				}
+
+			}
+
+			.customize-control {
+				@extend %customier_headings;
+
+				&:first-child {
+
+					h3 {
+
+						&:first-of-type {
+							margin-top: 0;
+							border: 0;
+						}
+
+					}
+
+				}
+
+				hr {
+					margin: 1em 0;
+					background: transparent;
+					border: 0;
+					border-top: 2px dashed #bbb;
+				}
+
+				pre {
+					max-height: 8em;
+					padding: .62em;
+					white-space: pre-wrap;
+					background: #eee;
+					border: 1px dashed #ddd;
+					overflow: auto;
+				}
+
+				select,
+				textarea {
+					width: 100%;
+				}
+
+				select[multiple] {
+					height: 8em;
+				}
+
+				textarea {
+					min-height: 12em;
+					resize: vertical;
+				}
+
+			}
+
+
+
+			// Hidden control
+
+				.customize-control-hidden {
+					display: none !important;
+				}
+
+
+
+			// Checkbox
+
+				.customize-control-checkbox {
+
+					label {
+						font-weight: 600;
+					}
+
+					.description {
+						margin-top: .38em;
+						font-weight: 400;
+					}
+
+				}
+
+
+
+			// Radio matrix (3x3)
+
+				.matrix {
+					padding: 2px 0 3px;
+					padding-#{$left}: 2px;
+					margin-bottom: .5em;
+					border: 2px solid #bbb;
+					overflow: hidden;
+
+					span {
+						display: none;
+					}
+
+					label {
+						float: $left;
+						display: block;
+						width: 33.33%;
+						padding: .5em 0 .5em;
+						padding-#{$left}: 4px;
+						margin: 0 -1px -1px;
+						margin-#{$left}: 0;
+						text-align: center;
+						border: 1px dotted #bbb;
+						box-sizing: border-box;
+
+						&:hover {
+							background: #fff;
+						}
+
+						&.is-active {
+							background: #aaa;
+
+							&:hover {
+								background: #ccc;
+							}
+
+						}
+
+					}
+
+				}
+
+
+
+			// Image radios
+
+				.image-radio {
+
+					span {
+						display: none;
+					}
+
+					label {
+						float: $left;
+						display: inline-block;
+						margin: 4px;
+						text-align: center;
+
+						&.is-active,
+						&:hover {
+
+							img {
+								opacity: 1;
+							}
+
+						}
+
+					}
+
+					img {
+						display: block;
+						width: 42px;
+						opacity: .5;
+					}
+
+					input {
+						position: relative;
+						top: -.75em;
+						margin: 0;
+					}
+
+				}
+
+
+
+			// Range / jQuery UI Slider
+
+				$range_track_size: 1em;
+				$range_track_color: #ccc;
+				$range_thumb_size: 1.5em;
+				$range_thumb_color: #0085ba;
+				$range_value_background: $range_thumb_color;
+				$range_value_color: #fff;
+
+				@mixin range_track() {
+					width: 100%;
+					height: $range_track_size;
+					cursor: pointer;
+					@include range_track_colors;
+				}
+
+				@mixin range_track_colors() {
+					background: $range_track_color;
+					border: 0;
+					border-radius: $range_thumb_size;
+					box-shadow: none;
+				}
+
+				@mixin range_thumb() {
+					appearance: none;
+					width: $range_thumb_size;
+					height: $range_thumb_size;
+					margin-top: ( $range_track_size - $range_thumb_size ) / 2;
+					background: $range_thumb_color;
+					border: 0;
+					border-radius: .19em;
+					box-shadow: none;
+					cursor: pointer;
+				}
+
+				input[type=range] {
+					appearance: none;
+					width: 100%;
+					margin: 1.62em 0;
+					background: transparent;
+
+					&:focus {
+						outline: none;
+					}
+
+					&::-webkit-slider-runnable-track { @include range_track; }
+					&::-moz-range-track { @include range_track; }
+					&::-ms-track { @include range_track; }
+
+					&::-webkit-slider-thumb { @include range_thumb; }
+					&::-moz-range-thumb { @include range_thumb; }
+					&::-ms-thumb { @include range_thumb; }
+
+					&::-ms-fill-upper { @include range_track_colors; }
+					&::-ms-fill-lower { @include range_track_colors; }
+
+				}
+
+				.range {
+
+					&-container {
+						display: flex;
+						align-items: center;
+						cursor: default;
+					}
+
+					&-value {
+						position: relative;
+						min-width: 16%;
+						padding: .38rem;
+						margin-#{$left}: .38rem;
+						text-align: center;
+						font-size: .9em;
+						background: $range_value_background;
+						color: $range_value_color;
+						border-radius: .19rem;
+						cursor: help;
+
+						&::before {
+							content: '';
+							position: absolute;
+							width: .38rem;
+							height: .38rem;
+							#{$left}: 0;
+							top: 50%;
+							margin: -.19rem;
+							background: inherit;
+							transform: rotate( 45deg );
+						}
+
+					}
+
+				}
+
+	}

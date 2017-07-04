@@ -1,0 +1,33 @@
+/* FILE: main/footer/__site-info.scss */
+
+//
+// Site info (credits)
+//
+
+
+
+
+
+.footer-area-site-info {
+	@extend %background_overlay_from_text_color;
+	padding: ( $golden +rem ) 0;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding: ( power( $golden, 2 ) +rem ) 0;
+	}
+
+}
+
+
+
+.site-info {
+	padding: ( $golden +em ) 0;
+
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+}

@@ -1,0 +1,52 @@
+/* FILE: main/headings/__display-size.scss */
+
+//
+// "Display" heading/text sizes
+//
+
+
+
+
+
+// Extender
+
+	%display_text_size {
+		margin-top: $golden +rem;
+		margin-bottom: $golden +rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+
+
+// Display text size classes
+
+	@each $i, $size in $display_text_size {
+
+		.display-#{$i} {
+			@extend %display_text_size;
+			font-size: $size * ( $golden_major + $golden_minor / 2 / $i );
+			line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				font-size: $size;
+			}
+
+			@at-root h1#{&}, h2#{&}, h3#{&} {
+				@extend %font_logo;
+			}
+
+			&.h1, &.h2, &.h3 {
+				@extend %font_logo;
+			}
+
+		}
+
+	}

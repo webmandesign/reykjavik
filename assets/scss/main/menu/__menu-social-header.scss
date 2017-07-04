@@ -1,0 +1,32 @@
+/* FILE: main/menu/__menu-social-header.scss */
+
+//
+// Social links in header
+//
+
+
+
+
+
+.social-links {
+
+	.site-header-content & {
+		float: $right; // {{RTL}}
+		white-space: nowrap;
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			padding-#{$left}: $golden +em; // {{RTL}}
+			margin-#{$left}: auto; // {{RTL}}
+		}
+
+		.back-to-top-link {
+			display: none;
+		}
+
+	}
+
+	.site-header-content .secondary-navigation + & {
+		margin-#{$left}: 0;
+	}
+
+}

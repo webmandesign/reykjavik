@@ -1,0 +1,80 @@
+/* FILE: main/content/__pagination.scss */
+
+//
+// Pagination
+//
+
+
+
+
+
+.pagination {
+	@extend .overflow-hidden;
+	padding: 1px; // To display accessibility outline.
+	margin-top: $golden +rem;
+	text-align: center;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		margin-top: power( $golden, 2 ) +rem;
+	}
+
+	a,
+	span {
+		margin: 0;
+		background: transparent;
+		color: inherit;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	.dots {
+		padding-left: $golden_major +em;
+		padding-right: $golden_major +em;
+		border-color: transparent;
+	}
+
+	a {
+
+		&:hover {
+			@extend %background_overlay_from_text_color;
+		}
+
+	}
+
+	.prev,
+	.next {
+		@extend %background_overlay_from_text_color;
+
+		&:hover::before {
+			display: none;
+		}
+
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+
+		.prev {
+			float: $left; // {{RTL}}
+		}
+
+		.next {
+			float: $right; // {{RTL}}
+		}
+
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+		position: relative;
+
+		&::after {
+			@include rtl_property( content, attr(data-current) ' / ' attr(data-total), attr(data-current) ' \2216 ' attr(data-total) ); // {{RTL}}
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX( -50% )
+			           translateY( -50% );
+		}
+
+	}
+
+}

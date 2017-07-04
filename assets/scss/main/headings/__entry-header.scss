@@ -1,0 +1,62 @@
+/* FILE: main/headings/__entry-header.scss */
+
+//
+// Entry header title
+//
+
+
+
+
+
+// Entry header
+
+	.entry-header {
+		margin-bottom: power( $golden, 2 ) +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		.posts & {
+			margin-bottom: $golden +em;
+		}
+
+		.page .site-main > .entry > &,
+		.single.has-intro .site-main > .entry > & {
+			@extend %screen_reader_hiding;
+		}
+
+	}
+
+
+
+// Entry & Page title
+
+	.entry-title,
+	.page-title {
+		@extend %break_words;
+		padding: 0;
+		margin: 0 0 ( power( $golden, 2 ) +rem );
+
+		small {
+			@extend %font_size_tiny;
+		}
+
+	}
+
+
+
+// Search results title
+
+	.page-title {
+
+		.search-results & {
+			@extend %font_weight_300;
+
+			span {
+				@extend %font_weight_700;
+			}
+
+		}
+
+	}

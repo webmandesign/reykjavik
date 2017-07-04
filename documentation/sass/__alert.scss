@@ -1,0 +1,24 @@
+/* FILE: __alert.scss */
+
+
+
+
+
+.alert {
+	margin: 1.62em 0;
+
+	h3, h4, h5, h6 {
+		padding: 0;
+		margin: 0 0 .62em;
+		text-transform: uppercase;
+		font-size: 1em;
+		font-weight: 700;
+		color: inherit;
+		border: 0;
+	}
+
+	dd & {
+		margin: .62em 0 0;
+	}
+
+}

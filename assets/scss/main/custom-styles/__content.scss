@@ -1,0 +1,19 @@
+/* FILE: main/custom-styles/__content.scss */
+
+//
+// Site content colors
+//
+
+
+
+
+
+// Default site content elements
+
+	.site,
+	.site-content,
+	.#{$special_color_class_prefix}content,
+	.#{$special_color_class_prefix}content > .fl-row-content-wrap,
+	.#{$special_color_class_prefix}content > .fl-col-content {
+		@extend %site_content_colors;
+	}

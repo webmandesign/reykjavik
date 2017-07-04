@@ -1,0 +1,115 @@
+/* FILE: main/icons/_icons.scss */
+
+//
+// Icons
+//
+
+
+
+
+
+@font-face {
+	font-family: 'Genericons';
+	//
+	// Using Genericons Neue v4.0.4
+	// https://github.com/Automattic/genericons-neue
+	//
+	// Supports IE9+, Android 4.4+
+	// http://caniuse.com/#feat=woff
+	//
+	// NOTE:
+	// When encoding the WOFF file directly into source URL (like it is in original repository
+	// of Genericons Neue font), it seems to "slow" down the website according to Pingdom Tools
+	// as it throws a "Minimize request size" error.
+	// https://tools.pingdom.com/#!/dRG0wH/https://themedemos.webmandesign.eu/reykjavik/
+	//
+
+	/*[*/
+	src: url('../fonts/genericons-neue/Genericons-Neue.woff') format('woff'),
+	     url('../fonts/genericons-neue/Genericons-Neue.ttf') format('truetype');
+	/*]*/
+	/*//
+	src: url('[[get_template_directory_uri]]/assets/fonts/genericons-neue/Genericons-Neue.woff') format('woff'),
+	     url('[[get_template_directory_uri]]/assets/fonts/genericons-neue/Genericons-Neue.ttf') format('truetype');
+	//*/
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+// Main Genericon extender
+
+	%genericon {
+		font-family: 'Genericons';
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		speak: none;
+	}
+
+
+
+// Icons styles
+
+	[class^="icon-"],
+	[class*=" icon-"] {
+
+		&::before {
+			@extend %font_smoothing;
+			line-height: 1;
+		}
+
+		&.vertical-align-middle::before {
+			@extend %vertical_align_middle;
+		}
+
+		&.vertical-align-baseline::before {
+			@extend %vertical_align_baseline;
+		}
+
+		&.vertical-align-bottom::before {
+			@extend %vertical_align_bottom;
+		}
+
+	}
+
+	.svgicon {
+		display: inline-block;
+		position: relative;
+		width: 1em;
+		height: 1em;
+		top: -0.0625em;
+		fill: currentColor;
+		vertical-align: middle;
+	}
+
+	.svg-fallback {
+		display: none;
+	}
+
+
+
+// Remove text for icon
+
+	%indent_text_for_icon_only {
+		position: relative;
+		display: inline-block;
+		width: 1em;
+		text-align: $left; // {{RTL}}
+		text-indent: -999em;
+
+		&::before {
+			@extend %genericon;
+			position: absolute;
+			width: 100%;
+			#{$left}: 0; // {{RTL}}
+			top: 0;
+			text-align: center;
+			text-indent: 0;
+		}
+
+	}

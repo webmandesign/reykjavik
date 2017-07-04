@@ -1,0 +1,30 @@
+/* FILE: woocommerce/pages/_my-account-downloads.scss */
+
+//
+// Page: My Account -> Downloads
+//
+
+
+
+
+
+// Pre WC2.6 downloads list
+
+	.digital-downloads {
+		margin: 0;
+		list-style: none;
+
+		li {
+			padding: $golden_minor +em;
+
+			&::before {
+				@extend %wc_genericon;
+				content: '\f50b';
+				margin-#{$right}: $golden_minor +em;
+				font-size: 1em + $golden_minor;
+				vertical-align: middle;
+			}
+
+		}
+
+	}

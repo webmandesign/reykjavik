@@ -1,0 +1,35 @@
+/* FILE: woocommerce/sidebar/__widget-product-categories.scss */
+
+//
+// Widget: Product categories
+//
+
+
+
+
+
+.widget_product_categories {
+
+	li {
+
+		&::before {
+			@extend %wc_genericon;
+			content: '\f301';
+			display: inline-block; // RTL fix // {{RTL}}
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			font-size: 1rem;
+			vertical-align: middle;
+		}
+
+	}
+
+	.current-cat {
+		font-weight: 700;
+
+		&::before {
+			content: '\f403';
+		}
+
+	}
+
+}

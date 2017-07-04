@@ -1,0 +1,50 @@
+/* FILE: woocommerce/extensions/__woocommerce-cart-tab.scss */
+
+//
+// WooCommerce Cart Tab
+//
+// @see  https://wordpress.org/plugins/woocommerce-cart-tab/
+//
+
+
+
+
+
+.woocommerce-cart-tab-container {
+
+	.widget_shopping_cart {
+
+		body & {
+
+			.buttons,
+			.widgettitle {
+				position: relative;
+				left: auto;
+				right: auto;
+				top: auto;
+				bottom: auto;
+			}
+
+			.buttons {
+
+				.button {
+					float: none;
+					width: 100%;
+
+					+ .button {
+						margin-top: $golden_minor +em;
+					}
+
+				}
+
+			}
+
+			ul.product_list_widget {
+				margin-top: $golden +em;
+			}
+
+		}
+
+	}
+
+}

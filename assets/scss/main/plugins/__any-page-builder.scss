@@ -1,0 +1,47 @@
+/* FILE: main/plugins/__any-page-builder.scss */
+
+//
+// Page builder plugins compatibility
+//
+
+
+
+
+
+.content-layout {
+
+	// Remove paddings
+
+		&-no-paddings {
+
+			.site-content-inner {
+				padding: 0;
+			}
+
+			.content-area {
+				width: 100%;
+			}
+
+			.site-main > .entry > .entry-header {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+
+
+	// Fullwidth sections
+
+		&-stretched {
+
+			.site-main > .entry > .entry-header {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+		&-stretched.is-singular {
+			@extend %fullwidth_sections_layout;
+		}
+
+}

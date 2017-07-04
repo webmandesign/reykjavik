@@ -1,0 +1,32 @@
+/* FILE: main/forms/__comment.scss */
+
+//
+// Comment form
+//
+
+
+
+
+
+.comment-form {
+
+	p {
+		margin-bottom: $golden +em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	.form-submit {
+		margin-top: power( $golden, 2 ) +em;
+	}
+
+	::placeholder {
+		text-transform: uppercase;
+		font-size: .81em;
+		opacity: 1;
+	}
+
+}

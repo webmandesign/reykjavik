@@ -1,0 +1,45 @@
+/* FILE: main/menu/__menu-social-widget.scss */
+
+//
+// Social links when displayed using Custom Menu widget
+//
+
+
+
+
+
+.social-links {
+
+	a {
+
+		.widget_nav_menu & {
+			text-align: center;
+
+			.sidebar &,
+			.fl-widget & {
+				@extend %font_size_higher;
+				width: 2em;
+				height: 2em;
+				padding: 0;
+				line-height: 2;
+				border-radius: 2em;
+				box-shadow: inset 0 0 0 1px;
+				transition: box-shadow ( $small_animation_speed +s );
+
+				&:hover,
+				&:focus,
+				&:active {
+					box-shadow: inset 0 0 0 3px;
+				}
+
+			}
+
+			&::after {
+				display: none;
+			}
+
+		}
+
+	}
+
+}

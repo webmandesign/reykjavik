@@ -1,0 +1,85 @@
+/* FILE: woocommerce/main/__count-and-sorting.scss */
+
+//
+// Products count and sorting
+//
+
+
+
+
+
+// Container
+
+	.products-sorting {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 0 ( $golden +rem );
+		font-weight: 700;
+
+		&:empty {
+			display: none;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( $golden, 2 ) +rem;
+		}
+
+		.products:not(.products-categories) + & {
+			margin-top: $golden +em;
+			margin-bottom: 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin-top: power( $golden, 2 ) +em;
+			}
+
+		}
+
+	}
+
+
+
+// Results count
+
+	.woocommerce-result-count {
+		flex: 0 1 auto;
+		margin: ( $golden_major +em );
+
+		&::before {
+			@extend %wc_genericon;
+			@extend %wc_icon_vertical_align_middle;
+			content: '\f403';
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			font-size: 1rem;
+		}
+
+	}
+
+
+
+// Ordering dropdown
+
+	.woocommerce-ordering {
+		flex: 0 1 auto;
+		margin: ( $golden_major +em );
+
+		&::before {
+			@extend %wc_genericon;
+			@extend %wc_icon_vertical_align_middle;
+			content: '\f514';
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			font-size: 1rem;
+		}
+
+		select {
+			width: auto;
+			padding-#{$right}: $golden +em; // {{RTL}}
+			padding-top: 0;
+			padding-bottom: 0;
+			background-color: transparent;
+			background-origin: padding-box;
+			border-color: transparent;
+			cursor: pointer;
+		}
+
+	}

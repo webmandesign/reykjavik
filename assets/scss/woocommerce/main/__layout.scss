@@ -1,0 +1,81 @@
+/* FILE: woocommerce/main/__layout.scss */
+
+//
+// Layout styles
+//
+
+
+
+
+
+// Content area
+
+	.no-widgets-sidebar.woocommerce-page .content-area {
+		width: 100%;
+	}
+
+
+
+	// Outdented page layout
+
+		.woocommerce-page.page-layout-outdented .entry-content-inner {
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+				> .woocommerce,
+				> .woocommerce-message {
+					// Outdent WC content and messages and make them fullwidth.
+					width: percentage( 1 / ( $page_content_width / 100 ) );
+					margin-top: 12%;
+					margin-bottom: 12%;
+					margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
+					margin-#{$right}: 0; // {{RTL}}
+
+					&:first-child {
+						margin-top: 0;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+// Columns row
+
+	.col2-set {
+		// This is used on:
+		// * Checkout page
+		// * My Account page: login page, if registration form is also enabled
+		// * My Account page: addresses page, if different shipping address allowed
+		// * Order details when displaying addresses
+
+		.col-1,
+		.col-2 {
+			@extend %wc_clearfix;
+		}
+
+		.col-1 {
+			margin-bottom: power( $golden, 2 ) +em;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: flex;
+			justify-content: space-between;
+
+			.col-1,
+			.col-2 {
+				flex: 0 1 auto;
+				width: 48%;
+				margin-bottom: 0;
+			}
+
+		}
+
+	}

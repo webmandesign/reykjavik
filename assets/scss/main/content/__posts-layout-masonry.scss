@@ -1,0 +1,64 @@
+/* FILE: main/content/__posts-layout-masonry.scss */
+
+//
+// Posts list masonry layout styles
+//
+
+
+
+
+
+.posts-layout-masonry {
+
+	$columns_default: 3;
+	$columns_default_sidebar: 2;
+	$gutter: 2; // In rem
+
+	.posts {
+		@extend .clearfix;
+
+		.entry {
+			@extend .clearfix;
+			width: 100%;
+
+			&-date {
+
+				.entry-meta-description {
+					@extend %screen_reader_hiding;
+				}
+
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-left: -$gutter / 2 +rem;
+			margin-right: -$gutter / 2 +rem;
+
+			&.masonry {
+				margin-bottom: -$gutter +rem;
+			}
+
+			.entry {
+				float: $left; // {{RTL}}
+				width: calc( #{ percentage( 1 / $columns_default_sidebar ) } - #{ $gutter +rem } );
+				margin: 0 ( $gutter / 2 +rem ) ( $gutter +rem );
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.entry {
+
+				@include in( '.posts-layout-masonry.no-widgets-sidebar' ) {
+					width: calc( #{ percentage( 1 / $columns_default ) } - #{ $gutter +rem } );
+				}
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,43 @@
+/* FILE: woocommerce/sidebar/__widget-average-rating-filter.scss */
+
+//
+// Widget: Average Rating Filter
+//
+// WC2.6+
+//
+
+
+
+
+
+.widget_rating_filter {
+
+	ul {
+
+		li {
+
+			&,
+			&:first-child {
+				padding: ( $golden_minor +em ) ( $golden_major +em );
+				border-width: 2px;
+				border-style: solid;
+				border-color: transparent;
+			}
+
+		}
+
+		.chosen {
+			border-color: inherit; // Required as default is transparent
+		}
+
+	}
+
+	.star-rating {
+		display: inline-block;
+		margin: 0;
+		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		font-size: 1em + $golden_minor;
+		vertical-align: middle;
+	}
+
+}

@@ -1,0 +1,51 @@
+/* FILE: woocommerce/custom-styles/__forms.scss */
+
+//
+// Forms color styles
+//
+
+
+
+
+
+// Invalid input
+
+	.form-row.woocommerce-invalid {
+
+		select,
+		.input-text,
+		.select2-container .select2-choice {
+			box-shadow: 0 ( $golden_minor +em ) 0 map_get( $colors, 'error_background' ); //*
+		}
+
+	}
+
+
+
+// Styled radio buttons and checkboxes
+
+	.woocommerce input[type="checkbox"]:first-child + label,
+	.woocommerce input[type="checkbox"]:first-child + span,
+	.woocommerce input[type="radio"]:first-child + label,
+	.woocommerce input[type="radio"]:first-child + span,
+	.widget_layered_nav li {
+
+		&::before {
+			background-color: rgba( #000, .05 ); //*
+			box-shadow: inset 0 0 0 2px; //*
+		}
+
+	}
+
+	.woocommerce input[type="checkbox"]:first-child:checked + label,
+	.woocommerce input[type="checkbox"]:first-child:checked + span,
+	.woocommerce input[type="radio"]:first-child:checked + label,
+	.woocommerce input[type="radio"]:first-child:checked + span,
+	.widget_layered_nav .chosen {
+
+		&::before {
+			@extend %accent_colors;
+			box-shadow: none; //*
+		}
+
+	}

@@ -1,0 +1,388 @@
+/////////////////////
+//
+// Support
+//
+/////////////////////
+
+	//
+	// Post formats
+	//
+	// @see  includes/frontend/class-post-media.php
+	//
+
+		$supported_post_formats: ();
+
+
+
+
+
+/////////////////////
+//
+// Logo
+//
+/////////////////////
+
+	$custom_logo_height: 66; // In px
+
+
+
+
+
+/////////////////////
+//
+// Layout
+//
+/////////////////////
+
+	//
+	// Breakpoints info:
+	//
+	// 's'     :  448, // =  28em // Starting mobile landscape
+	// 'm'     :  672, // =  42em // Starting tablet portrait
+	// 'l'     :  880, // =  55em // Starting tablet landscape
+	// 'xl'    : 1280, // =  80em // Starting laptop
+	// 'xxl'   : 1600, // = 100em // Starting desktop
+	// 'xxxl'  : 1920, // = 120em // Starting desktop full HD
+	// 'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+	//
+
+	//
+	// Site widths
+	//
+
+		$boxed_width: 1920;   // In px // Default max boxed site width
+		$content_width: 1200; // In px // Default content width
+
+		$page_content_width: 62; // In %
+		$page_content_gutter: 6; // In %
+
+			$page_content_width: $page_content_width - $page_content_gutter / 2;
+
+
+
+	//
+	// Paddings
+	//
+
+		$padding_vertical: 5rem;
+
+
+
+	//
+	// Mobile menu
+	//
+
+		$mobile_menu_toggle_height: 3.62; // In rem.
+
+
+
+
+
+/////////////////////
+//
+// Appearance
+//
+/////////////////////
+
+	//
+	// Special color classes
+	//
+
+		$special_color_class_prefix: 'set-colors-';
+
+
+
+	//
+	// Automated color calculation
+	//
+
+		$border_opacity_from_text: (
+
+			'general': .20,
+
+			'header':  .20,
+			'content': .20,
+			'footer':  .20,
+
+		);
+
+		$overlay_from_text_color_opacity: .07;
+
+
+
+	//
+	// Theme colors
+	// For accessibility test with http://jxnblk.com/colorable/demos/text/
+	//
+	// //* = Doesn't change via Customizer.
+	//
+
+		$color_mejs_bg: #333; //*
+
+		$colors: (
+
+			// Accent color
+
+				'accent':      #273a7d, // Reykjavík coat of arms. @link  https://en.wikipedia.org/wiki/File:Reykjavik_Coat_of_Arms.svg
+				'accent_text': #fff,
+
+			// Body
+
+				'body_background': #e3e3e4,
+
+			// Site header
+
+				'header_background': #fefeff,
+				'header_text':       #535354,
+				'header_headings':   #232324,
+
+			// Intro
+
+				'intro_background': #fafafb,
+				'intro_text':       #535354,
+				'intro_headings':   #232324,
+
+				// Intro widgets
+
+					'intro_widgets_background': #273a7d,
+					'intro_widgets_text':       #c3c3c4,
+					'intro_widgets_headings':   #f3f3f4,
+
+			// Site content
+
+				'content_background': #fffefe,
+				'content_text':       #535354,
+				'content_headings':   #232324,
+
+			// Site footer
+
+				'footer_background': #060607,
+				'footer_text':       #c3c3c4,
+				'footer_headings':   #f3f3f4,
+
+			// Predefined colors
+
+				'error_background': rgba( #e00, .85 ),   //*
+				'error_text':       #fff,                //*
+
+				'info_background': rgba( #05e, .85 ),    //*
+				'info_text':       #fff,                 //*
+
+				'success_background': rgba( #072, .85 ), //*
+				'success_text':       #fff,              //*
+
+				'warning_background': rgba( #fd0, .85 ), //*
+				'warning_text':       #310,              //*
+
+		);
+
+
+
+	//
+	// Decorations
+	//
+
+		// Animation speeds
+
+			$small_animation_speed: .3; // Seconds
+			$large_animation_speed: .5; // Seconds
+
+		// Drop shadows
+
+			$column_box_shadows: (
+				'small':  1rem,
+				'medium': 2rem,
+				'large':  3rem,
+			) !default;
+
+			$column_box_shadows_opacity: .2;
+
+
+
+
+
+/////////////////////
+//
+// Typography
+//
+/////////////////////
+
+	// Helper variables
+
+		$typography_line_height: 1.62;
+		$typography_margin_bottom: 1.62;
+
+
+
+	//
+	// Font size
+	//
+
+		$font_size: 18; // Set also in `assets/css-generate/custom-styles.php`
+
+
+
+	//
+	// Font families
+	//
+
+		$font_family: (
+			'body':     "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
+			'headings': "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+			'logo':     "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+		) !default;
+
+
+
+	//
+	// Headings
+	//
+
+		$h_tags_setup: (
+
+			// $selector : (
+			//   $size
+			//   $line_height
+			//   $margin_top    [ ( span_4_or_3_lines - $size * $line_height - $margin_bottom ) / $size ]
+			//   $margin_bottom [ $margin_bottom / $size / $line_height ]
+			// )
+
+			// @link http://www.zell-weekeat.com/responsive-typography/
+			//
+			// Em vs Rem section regarding vertical rhythm
+			//
+			// "First, we’re not 100% precise and accurate with our math. We could get more precise (like 10 decimal places), but that would make our code ugly as hell…"
+			// "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
+			// "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
+
+			// http://www.modularscale.com/?1,0.81&em&1.62
+
+			'h1, .h1' : (
+					2.618,
+					1.19,
+					( 4 * $typography_line_height - 2.618 * 1.19 - $typography_margin_bottom ) / 2.618,
+					$typography_margin_bottom / 2.618 / 1.19
+				),
+			'h2, .h2' : (
+					2.058,
+					1.19,
+					( 4 * $typography_line_height - 2.058 * 1.19 - $typography_margin_bottom ) / 2.058,
+					$typography_margin_bottom / 2.058 / 1.19
+				),
+			'h3, .h3' : (
+					1.618,
+					1.38,
+					( 3 * $typography_line_height - 1.618 * 1.38 - $typography_margin_bottom ) / 1.618,
+					$typography_margin_bottom / 1.618 / 1.38
+				),
+			'h4, .h4' : (
+					1.272,
+					1.38,
+					( 3 * $typography_line_height - 1.272 * 1.38 - $typography_margin_bottom ) / 1.272,
+					$typography_margin_bottom / 1.272 / 1.38
+				),
+			'h5, .h5' : (
+					1.000,
+					1.62,
+					( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
+					$typography_margin_bottom / 1.000 / 1.62
+				),
+			'h6, .h6' : (
+					1.000,
+					1.62,
+					( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
+					$typography_margin_bottom / 1.000 / 1.62
+				)
+
+		) !default;
+
+
+
+	//
+	// Special typography
+	//
+
+		$display_text_size: (
+			1 : 2.62em,
+			2 : 3.62em,
+			3 : 4.25em,
+			4 : 5em,
+		) !default;
+
+
+
+
+
+/////////////////////
+//
+// Icons
+//
+/////////////////////
+
+	//
+	// Entry meta
+	//
+
+		$entry_meta_icons: (
+
+			// class: char
+
+			'author':          '\f304',
+			'cat-links':       '\f301',
+			'comments-link a': '\f300',
+			'entry-date':      '\f303',
+			'tags-links':      '\f302',
+
+		);
+
+
+
+
+
+/////////////////////
+//
+// Element groups
+//
+/////////////////////
+
+	//
+	// Margin elements
+	//
+
+		$tags_margin_bottom: (
+			'h1',
+			'h2',
+			'h3',
+			'.h1',
+			'.h2',
+			'.h3',
+			'p',
+			'ol',
+			'ul',
+			'blockquote',
+			'.gallery',
+			'.tiled-gallery'
+		);
+
+
+
+	//
+	// Button elements
+	//
+
+		$button_elements: (
+			'.button',
+			'button',
+			'input[type="button"]',
+			'input[type="reset"]',
+			'input[type="submit"]',
+			'.child-page .more-link'
+		);
+
+		$button_elements_beaver_builder: ();
+
+		$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
+
+		@each $button_element in $button_elements {
+			$button_elements_beaver_builder: append( $button_elements_beaver_builder, '#{$beaver_builder_button_prepend} #{$button_element}', comma );
+		}
