@@ -54,8 +54,6 @@ class Reykjavik_Loop {
 
 						add_filter( 'get_the_archive_description', __CLASS__ . '::archive_author_description' );
 
-						add_filter( 'wmhook_reykjavik_sidebar_disable', __CLASS__ . '::sidebar_disable' );
-
 						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
 
 		} // /__construct
@@ -322,36 +320,6 @@ class Reykjavik_Loop {
 				}
 
 		} // /ignore_sticky_posts
-
-
-
-		/**
-		 * Hide sidebar on minimal posts list layout
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  boolean $disabled
-		 */
-		public static function sidebar_disable( $disabled = false  ) {
-
-			// Requirements check
-
-				if ( ! (
-						is_home()
-						|| is_category()
-						|| is_tag()
-						|| is_date()
-					) ) {
-					return $disabled;
-				}
-
-
-			// Output
-
-				return ( 'minimal' === get_theme_mod( 'blog_style', 'list' ) );
-
-		} // /sidebar_disable
 
 
 

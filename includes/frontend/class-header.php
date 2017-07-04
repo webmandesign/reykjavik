@@ -419,7 +419,7 @@ class Reykjavik_Header {
 							|| is_tag()
 							|| is_date()
 						) {
-						$classes[] = 'posts-layout-' . sanitize_html_class( get_theme_mod( 'blog_style', 'list' ) );
+						$classes[] = 'posts-layout-list';
 					}
 
 					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {

@@ -125,9 +125,9 @@ form input[type="submit"], .site .fl-builder-content .fl-module form input[type=
 
 .intro-special .has-header-video { background-color: #222; }
 
-.intro-special .intro { color: #fff; }
+.intro-special-has-media .intro { color: #fff; }
 
-.intro-special .intro h2, .intro-special .intro h3, .intro-special .intro h4, .intro-special .intro .h1, .intro-special .intro .h2, .intro-special .intro .h3, .intro-special .intro .h4, .intro-special .intro a, .intro-special .intro .accent-color { color: inherit; }
+.intro-special-has-media .intro h2, .intro-special-has-media .intro h3, .intro-special-has-media .intro h4, .intro-special-has-media .intro .h1, .intro-special-has-media .intro .h2, .intro-special-has-media .intro .h3, .intro-special-has-media .intro .h4, .intro-special-has-media .intro a, .intro-special-has-media .intro .accent-color { color: inherit; }
 
 /* FILE: main/custom-styles/__content.scss */
 /* FILE: main/custom-styles/__footer.scss */

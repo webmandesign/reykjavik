@@ -29,7 +29,8 @@
 	 */
 
 		var
-			$breakpoints = ( 'undefined' !== typeof $reykjavikBreakpoints ) ? ( $reykjavikBreakpoints ) : ( { 'xl' : 1280 } );
+			$breakpoints = ( 'undefined' !== typeof $reykjavikBreakpoints ) ? ( $reykjavikBreakpoints ) : ( { 'xl' : 1280 } ),
+			$introMedia  = $( document.getElementById( 'intro-media' ) );
 
 
 
@@ -127,12 +128,18 @@
 	 * 30) Custom header
 	 */
 
+		if ( $introMedia.length ) {
+			$introMedia
+				.parent( '.intro-special' )
+					.addClass( 'intro-special-has-media' );
+		}
+
 		$( document )
 			.on( 'wp-custom-header-video-loaded', function() {
 
 				// Processing
 
-					$( document.getElementById( 'intro-media' ) )
+					$introMedia
 						.addClass( 'has-header-video' );
 
 			} );

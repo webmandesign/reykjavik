@@ -87,7 +87,7 @@ class Reykjavik_Setup {
 
 						add_filter( 'wmhook_reykjavik_library_editor_custom_mce_format', __CLASS__ . '::visual_editor_formats' );
 
-						add_filter( 'wmhook_reykjavik_is_masonry_layout', __CLASS__ . '::is_masonry' );
+						add_filter( 'wmhook_reykjavik_is_masonry_layout', 'is_search' );
 
 						add_filter( 'wmhook_reykjavik_widget_css_classes', __CLASS__ . '::widget_css_classes' );
 
@@ -1031,28 +1031,6 @@ class Reykjavik_Setup {
 				register_meta( 'post', 'intro_image',        'esc_attr' );
 
 		} // /register_meta
-
-
-
-		/**
-		 * When to use masonry posts layout?
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function is_masonry() {
-
-			// Helper variables
-
-				$is_masonry_blog = ( 'masonry' === get_theme_mod( 'blog_style', 'list' ) );
-				$is_masonry_blog = $is_masonry_blog && ( is_home() || is_category() || is_tag() || is_date() );
-
-
-			// Output
-
-				return $is_masonry_blog || is_search();
-
-		} // /is_masonry
 
 
 
