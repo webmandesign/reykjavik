@@ -1791,8 +1791,6 @@ a .entry-date { cursor: pointer; }
 
 @media only screen and (min-width: 80em) { .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > h2:not(:first-child), .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > .outdent-heading:not(:first-child) { margin-top: 12%; } }
 
-.page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner h3[class="outdent-heading"] { font-size: 1em; font-weight: 400; }
-
 @media only screen and (min-width: 80em) { .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner { padding-left: 41%; }
   .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > h2, .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > .outdent-heading { width: 169.49153%; height: 1.62em; padding-right: 110.16949%; margin-left: -69.49153%; margin-bottom: -1.62em; }
   .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > h2.uppercase, .page-layout-outdented:not(.content-layout-no-paddings) .entry-content-inner > .outdent-heading.uppercase { letter-spacing: .075em; }
@@ -2031,7 +2029,7 @@ a .entry-date { cursor: pointer; }
 /* FILE: main/plugins/__breadcrumbs.scss */
 .breadcrumbs { position: relative; padding: 1rem 1.62rem; border-width: 1px; border-style: solid; }
 
-.site-footer .breadcrumbs { border-width: 0; }
+.site-footer .breadcrumbs { border-width: 0; padding: 1rem 0; }
 
 .breadcrumbs a { color: inherit; }
 
@@ -2074,17 +2072,13 @@ div.sharedaddy { margin-top: 2.6244rem; border-color: inherit; }
 .site .sd-social-icon .sd-content ul li[class*="share-"] a.sd-button::before { top: 0; }
 
 /* FILE: main/plugins/__subtitles.scss */
-.entry-subtitle { display: block; margin-top: 0.38em; opacity: .8; }
+.entry-subtitle { display: block; margin-top: 0.19em; opacity: .8; }
 
 .intro .entry-subtitle { line-height: inherit; }
-
-.posts .entry-subtitle { margin-top: 0.19em; }
 
 .is-singular[class*="paged-"] .entry-subtitle { margin-bottom: 0.62em; }
 
 .post-table-of-contents .entry-subtitle, .comments-title .entry-subtitle, .comment-reply-title .entry-subtitle { display: none; }
-
-.widget .entry-subtitle { margin-top: 0.19em; }
 
 /* FILE: main/shame/_shame.scss */
 /* FILE: main/shame/__ie.scss */

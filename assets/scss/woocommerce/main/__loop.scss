@@ -28,27 +28,9 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 			flex: 0 1 auto;
 			width: percentage( 1 - $column_gutter );
 			margin: 1em percentage( $gutter / 100 );
-			border: 1px solid transparent;
+			border-width: 1px;
+			border-style: solid;
 			border-bottom-width: 2px;
-			transition: transform ( $small_animation_speed +s );
-
-			&:hover {
-				border-color: inherit;
-				transform: translateY( -4px );
-			}
-
-			&.sale {
-				@extend %wc_background_overlay_from_text_color;
-
-				&::before {
-					transition: opacity ( $small_animation_speed +s );
-				}
-
-				&:hover::before {
-					opacity: 0;
-				}
-
-			}
 
 			a {
 				text-decoration: none;
@@ -365,10 +347,6 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
 			padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
-		}
-
-		h2 {
-			@extend %wc_widget_title;
 		}
 
 	}

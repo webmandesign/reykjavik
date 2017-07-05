@@ -18,6 +18,7 @@
 
 	.site-footer & {
 		border-width: 0;
+		padding: 1rem 0;
 
 		.footer-layout-fullwidth & {
 			@extend %full_width;

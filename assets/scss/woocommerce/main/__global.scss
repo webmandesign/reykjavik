@@ -34,7 +34,7 @@
 		&-MyAccount-content header h3,
 		// WC 3.0+
 		&-column__title,
-		section > h2:first-child,
+		section:not(.products) > h2:first-child,
 		.col2-set > div > h3:first-child {
 			@extend %wc_widget_title;
 		}

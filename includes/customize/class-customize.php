@@ -792,7 +792,7 @@ class Reykjavik_Customize {
 											'type'       => 'range',
 											'id'         => 'footer_image_opacity',
 											'label'      => esc_html__( 'Background image opacity', 'reykjavik' ),
-											'default'    => .10,
+											'default'    => .20,
 											'min'        => .05,
 											'max'        => 1,
 											'step'       => .05,

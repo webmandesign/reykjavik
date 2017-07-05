@@ -87,8 +87,6 @@
 				line-height: 2em;
 				font-size: 1em + $golden_minor;
 				z-index: 19;
-				opacity: .66;
-				transition: opacity ( $small_animation_speed +s );
 
 				&::before {
 					content: '\f402';
@@ -98,7 +96,6 @@
 				&:focus,
 				&:active {
 					text-decoration: none;
-					opacity: 1;
 				}
 
 			}

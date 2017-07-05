@@ -8,24 +8,6 @@
 
 
 
-// Heading basic styles
-
-	//
-	// IMPORTANT!
-	//
-	// If you make change here, make sure to do the same for editor
-	// stylesheet in `main/custom-styles/_editor-style.scss`.
-	//
-
-	%outdented_heading {
-		// line-height: $golden / ( $golden_minor / 4 + 1 );
-		// text-transform: uppercase;
-		// font-size: $golden_minor / 4 + 1em;
-		// letter-spacing: .075em;
-	}
-
-
-
 // Content
 
 	.outdent-content {
@@ -82,10 +64,6 @@
 
 		.entry-content-inner {
 
-			> h2:not([class]) {
-				@extend %outdented_heading;
-			}
-
 			> h2,
 			> .outdent-heading {
 
@@ -99,17 +77,6 @@
 				}
 
 			}
-
-			// Any HTML element with `.outdent-heading` class ONLY:
-
-				[class="outdent-heading"] {
-					@extend %outdented_heading;
-				}
-
-				h3[class="outdent-heading"] {
-					font-size: 1em;
-					font-weight: 400;
-				}
 
 			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: percentage( 1 - $page_content_width / 100 ); // {{RTL}}

@@ -8,17 +8,6 @@
 
 
 
-// Heading basic styles
-
-	%outdented_heading {
-		line-height: $golden / ( $golden_minor / 4 + 1 );
-		text-transform: uppercase;
-		font-size: $golden_minor / 4 + 1em;
-		letter-spacing: .075em;
-	}
-
-
-
 // Outdented content
 
 	.outdent-content {
@@ -52,10 +41,6 @@
 
 	.page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) {
 
-			> h2:not([class]) {
-				@extend %outdented_heading;
-			}
-
 			> h2,
 			> .outdent-heading {
 
@@ -69,17 +54,6 @@
 				}
 
 			}
-
-			// Any HTML element with `.outdent-heading` class ONLY:
-
-				[class="outdent-heading"] {
-					@extend %outdented_heading;
-				}
-
-				h3[class="outdent-heading"] {
-					font-size: 1em;
-					font-weight: 400;
-				}
 
 			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: percentage( 1 - $page_content_width / 100 ) !important; // {{RTL}} // Yes, we have to force this one as WP native styles apply !important too.
@@ -107,11 +81,11 @@
 				// Outdented content
 
 					.outdent-content {
-						width: percentage( 1 / ( $page_content_width / 100 ) );
+						width: calc( #{ percentage( 1 / ( $page_content_width / 100 ) ) } + 20px );
 						margin-top: 12%;
 						margin-bottom: 12%;
-						margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
-						margin-#{$right}: 0; // {{RTL}}
+						margin-#{$left}: calc( #{ percentage( -1 / ( $page_content_width / 100 ) + 1 ) } - 10px ); // {{RTL}}
+						margin-#{$right}: -10px; // {{RTL}}
 
 						&:first-child {
 							margin-top: 0;
