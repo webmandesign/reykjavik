@@ -4,7 +4,7 @@
  *
  * @uses  `wmhook_reykjavik_esc_css` global hook
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
@@ -363,7 +363,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			date_default_timezone_set( 'UTC' );
 
-			$output .= "\r\n\r\n\r\n" . '/* Using Reykjavík theme by WebMan Design - Oliver Juhas (https://www.webmandesign.eu), version ' . REYKJAVIK_THEME_VERSION . '. CSS generated on ' . date( 'Y/m/d H:i, e' ) . '. */';
+			$output .= "\r\n\r\n\r\n" . '/* Using Reykjavik theme by WebMan Design - Oliver Juhas (https://www.webmandesign.eu), version ' . REYKJAVIK_THEME_VERSION . '. CSS generated on ' . date( 'Y/m/d H:i, e' ) . '. */';
 
 
 	// Output

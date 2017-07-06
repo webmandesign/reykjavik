@@ -241,6 +241,8 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 .single-product .product-type-grouped .summary > .price, .single-product .product-type-variable .summary > .price { font-size: 1em; }
 
+.search-results .entry-title .price { display: block; margin-top: 1rem; font-size: 1rem; }
+
 .woocommerce-price-suffix { margin-right: 0.38em; }
 
 .amount-separator { margin: 0 0.19em; font-weight: 400; }
@@ -453,8 +455,6 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 .cross-sells .onsale { display: none; }
 
 /* FILE: woocommerce/main/__loop-search.scss */
-.search-results .entry-title .price { display: block; margin-top: 1rem; }
-
 .search-results .entry-title del { display: inline; margin-left: 0.38em; }
 
 .search-results .product .entry-summary { display: none; }

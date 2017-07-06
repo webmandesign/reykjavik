@@ -5,7 +5,7 @@ Any translation files placed here will be deleted when you update the theme.
 
 ## Translating the theme
 
-If you have obtained the theme from **[WordPress.org themes repository](https://wordpress.org/themes/author/webmandesign/)**, please translate the theme by clicking the [Translate Reykjavík](https://translate.wordpress.org/projects/wp-themes/reykjavik) link in [theme page](https://wordpress.org/themes/reykjavik/) sidebar.
+If you have obtained the theme from **[WordPress.org themes repository](https://wordpress.org/themes/author/webmandesign/)**, please translate the theme by clicking the [Translate Reykjavik](https://translate.wordpress.org/projects/wp-themes/reykjavik) link in [theme page](https://wordpress.org/themes/reykjavik/) sidebar.
 
 Otherwise follow these instructions:
 
@@ -17,6 +17,6 @@ Otherwise follow these instructions:
 
 ## Contributing your translations back to the theme
 
-If you have obtained the theme from **[WordPress.org themes repository](https://wordpress.org/themes/author/webmandesign/)**, please translate the theme by clicking the [Translate Reykjavík](https://translate.wordpress.org/projects/wp-themes/reykjavik) link in [theme page](https://wordpress.org/themes/reykjavik/) sidebar.
+If you have obtained the theme from **[WordPress.org themes repository](https://wordpress.org/themes/author/webmandesign/)**, please translate the theme by clicking the [Translate Reykjavik](https://translate.wordpress.org/projects/wp-themes/reykjavik) link in [theme page](https://wordpress.org/themes/reykjavik/) sidebar.
 
 Otherwise, if you would like to help out translating the theme, please contribute on our [Support Center](https://www.webmandesign.eu/reference/#links-support).

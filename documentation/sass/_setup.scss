@@ -5,35 +5,41 @@
 
 
 
+
+$font_family_body : 'Open Sans', sans-serif;
+$font_family_headings : 'Montserrat', sans-serif;
+
+
+
 $content_width    : 1200px;
 $nav_item_padding : .38em;
 
-$color_header_bg : #141313;
+$color_header_bg : #131314;
 $color_logo      : #fff;
 
-$color_sidebar_bg  : #242323;
-$color_sidebar_txt : #a4a3a3;
-$color_sidebar_bd  : #444343;
+$color_sidebar_bg  : #273a7d;
+$color_sidebar_txt : #fefeff;
+$color_sidebar_bd  : #475a9d;
 
 $color_nav_active_bg  : $color_sidebar_bd;
 $color_nav_active_txt : #fff;
 
-$color_intro_bg  : #dc1e35;
-$color_intro_txt : #fff;
+$color_intro_bg  : #0f1732;
+$color_intro_txt : #fefeff;
 
-$color_content_txt     : #6f6e6e;
-$color_content_bd      : #e4e3e3;
-$color_content_heading : #242323;
+$color_content_txt     : #6e6e6f;
+$color_content_bd      : #e3e3e4;
+$color_content_heading : #232324;
 
 $color_figure_bg : #fff;
 
-$color_anatomy_heading      : #141313;
-$color_anatomy_bd           : #c4c3c3;
+$color_anatomy_heading      : #131314;
+$color_anatomy_bd           : #c3c3c4;
 $color_anatomy_active_bg    : #fe0000;
 $color_anatomy_active_txt   : #fff;
-$color_anatomy_inactive_bg  : #efeeee;
-$color_anatomy_inactive_txt : #676666;
+$color_anatomy_inactive_bg  : #eeeeef;
+$color_anatomy_inactive_txt : #666667;
 
 $color_footer_bg  : $color_header_bg;
-$color_footer_txt : #949393;
+$color_footer_txt : #939394;
 $color_footer_lnk : $color_logo;

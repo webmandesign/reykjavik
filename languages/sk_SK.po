@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Reykjavík\n"
+"Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-07-04 19:55+0200\n"
-"PO-Revision-Date: 2017-07-04 20:00+0200\n"
+"POT-Creation-Date: 2017-07-06 22:57+0200\n"
+"PO-Revision-Date: 2017-07-06 23:14+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -45,28 +45,28 @@ msgstr "Komentáre sú uzavreté."
 msgid "Comments Navigation"
 msgstr "Navigácia komentárov"
 
-#: comments.php:114 includes/frontend/class-loop.php:116
+#: comments.php:114 includes/frontend/class-loop.php:114
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:361
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: comments.php:115 includes/frontend/class-loop.php:117
+#: comments.php:115 includes/frontend/class-loop.php:115
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:363
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: comments.php:116 includes/frontend/class-loop.php:118
+#: comments.php:116 includes/frontend/class-loop.php:116
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:367
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: comments.php:117 includes/frontend/class-loop.php:119
+#: comments.php:117 includes/frontend/class-loop.php:117
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:369
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
@@ -75,13 +75,8 @@ msgstr "&raquo;"
 
 #: includes/custom-header/class-intro.php:138
 msgctxt "Header image description."
-msgid "Anticipation"
-msgstr "Očakávanie"
-
-#: includes/custom-header/class-intro.php:144
-msgctxt "Header image description."
-msgid "Rotation"
-msgstr "Rotácia"
+msgid "Cliffs"
+msgstr "Útesy"
 
 #: includes/customize/class-customize.php:202
 msgid "Logo image"
@@ -394,12 +389,12 @@ msgid "For boxed website layout."
 msgstr "Platí iba pre orámované rozloženie webovej stránky."
 
 #: includes/customize/class-customize.php:852
-#: includes/customize/class-customize.php:877
+#: includes/customize/class-customize.php:876
 #, php-format
 msgid "Default value: %s"
 msgstr "Pôvodná hodnota: %s"
 
-#: includes/customize/class-customize.php:876
+#: includes/customize/class-customize.php:875
 msgid "Content width"
 msgstr "Šírka obsahu"
 
@@ -604,7 +599,7 @@ msgstr "Odstrániť značenie \"Archív:\""
 msgid "Remove \"Taxonomy:\" prefix"
 msgstr "Odstrániť značenie \"Taxonómia:\""
 
-#: includes/customize/class-customize.php:1430
+#: includes/customize/class-customize.php:1407
 msgid ""
 "Please set your website credits text or the theme default one will be "
 "displayed."
@@ -620,7 +615,7 @@ msgstr "Preskočiť na hlavnú navigáciu"
 msgid "Skip to footer"
 msgstr "Preskočiť na pätičku"
 
-#: includes/frontend/class-loop.php:132
+#: includes/frontend/class-loop.php:130
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
@@ -1520,27 +1515,15 @@ msgstr "Tlačidlá"
 msgid "Button from link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/class-setup.php:937
-msgid "Button from link, small"
-msgstr "Tlačidlo z odkazu, malé"
-
-#: includes/setup/class-setup.php:943
-msgid "Button from link, large"
-msgstr "Tlačidlo z odkazu, veľké"
-
-#: includes/setup/class-setup.php:949
-msgid "Button from link, extra large"
-msgstr "Tlačidlo z odkazu, extra veľké"
-
-#: includes/setup/class-setup.php:960
+#: includes/setup/class-setup.php:942
 msgid "Outdent"
 msgstr "Odsadiť"
 
-#: includes/setup/class-setup.php:964
+#: includes/setup/class-setup.php:946
 msgid "Outdent selected content"
 msgstr "Odsadiť označený obsah"
 
-#: includes/setup/class-setup.php:976
+#: includes/setup/class-setup.php:958
 msgid "Outdented heading style"
 msgstr "Štýl odsadených nadpisov"
 
@@ -2691,31 +2674,87 @@ msgstr "Dokumentácia témy"
 msgid "Support Center"
 msgstr "Centrum pomoci"
 
-#: templates/parts/admin/welcome-promo.php:24
-#: templates/parts/admin/welcome-wordpress.php:22
-msgid "WordPress Video Tutorials &raquo;"
-msgstr "Video návody k WordPress &raquo;"
-
 #: templates/parts/admin/welcome-promo.php:26
-#: templates/parts/admin/welcome-wordpress.php:24
-msgid "New to WordPress?"
-msgstr "Je pre vás WordPress novinkou?"
+msgid "Do you like this theme?"
+msgstr "Páči sa vám táto téma?"
 
 #: templates/parts/admin/welcome-promo.php:29
-#: templates/parts/admin/welcome-wordpress.php:27
 msgid ""
-"If you are new to WordPress, please check out the introduction section in "
-"theme documentation."
+"If you like this free WordPress theme, please, consider supporting its "
+"development by purchasing one of WebMan Design products."
 msgstr ""
-"Ak nie ste dostatočne zoznámený so systémom WordPress, preštudujte si úvodnú "
-"sekciu dokumentácie témy."
+"Ak sa vám páči táto WordPress téma, podporte prosím jej vývoj zakúpením "
+"niektorého z produktov WebMan Design."
+
+#: templates/parts/admin/welcome-promo.php:33
+msgid "Go to WebMan Design website &raquo;"
+msgstr "Navštíviť webovú stránku WebMan Design &raquo;"
+
+#: templates/parts/admin/welcome-promo.php:38
+msgid "Thank you!"
+msgstr "Vďaka!"
+
+#: templates/parts/admin/welcome-promo.php:45
+msgid "Feel like stepping up?"
+msgstr "Potrebujete rásť?"
+
+#: templates/parts/admin/welcome-promo.php:51
+#, php-format
+msgctxt "%s = linked theme name."
+msgid ""
+"If you need more for your growing website, consider upgrading to %s theme "
+"with this additional functionality:"
+msgstr ""
+"Ak vyžaduje vaša rastúca webová stránka novú funkcionalitu, zvážte zakúpenie "
+"témy %s s týmito výhodami:"
+
+#: templates/parts/admin/welcome-promo.php:58
+msgctxt "Theme feature."
+msgid "Portfolios, Staff, Testimonials management"
+msgstr "Správa portfólia, zamestnancov a referencií"
+
+#: templates/parts/admin/welcome-promo.php:59
+msgctxt "Theme feature."
+msgid "Additional layouts and widget areas"
+msgstr "Dodatočné oblasti widgetov a usporiadania elementov na stránkach"
+
+#: templates/parts/admin/welcome-promo.php:60
+msgctxt "Theme feature."
+msgid "Custom page builder elements"
+msgstr "Vlastné elementy editora stránok"
+
+#: templates/parts/admin/welcome-promo.php:61
+msgctxt "Theme feature."
+msgid "Sticky header functionality"
+msgstr "Funkcionalita prichytávania hlavičky"
+
+#: templates/parts/admin/welcome-promo.php:62
+msgctxt "Theme feature."
+msgid "Custom icons uploader"
+msgstr "Nahrávanie vlastných ikoniek"
+
+#: templates/parts/admin/welcome-promo.php:63
+msgctxt "Theme feature."
+msgid "Additional blog styles"
+msgstr "Dodatočné štýly blogu"
+
+#: templates/parts/admin/welcome-promo.php:64
+msgctxt "Theme feature."
+msgid "And more&hellip;"
+msgstr "A viac&hellip;"
+
+#: templates/parts/admin/welcome-promo.php:71
+#, php-format
+msgctxt "%s = theme name."
+msgid "Upgrade to %s theme"
+msgstr "Získať tému %s"
 
 #: templates/parts/admin/welcome-quickstart.php:20
 msgid "Quickstart Guide"
 msgstr "Sprievodca nastavením"
 
 #: templates/parts/admin/welcome-quickstart.php:28
-msgid "The WordPress settings"
+msgid "WordPress settings"
 msgstr "Nastavenia WordPress"
 
 #: templates/parts/admin/welcome-quickstart.php:31
@@ -2762,6 +2801,22 @@ msgstr "Zmeny, ktoré vykonáte, sa aplikujú až keď ich uložíte."
 #: templates/parts/admin/welcome-quickstart.php:55
 msgid "Customize the Theme &raquo;"
 msgstr "Prispôsobiť tému &raquo;"
+
+#: templates/parts/admin/welcome-wordpress.php:22
+msgid "WordPress Video Tutorials &raquo;"
+msgstr "Video návody k WordPress &raquo;"
+
+#: templates/parts/admin/welcome-wordpress.php:24
+msgid "New to WordPress?"
+msgstr "Je pre vás WordPress novinkou?"
+
+#: templates/parts/admin/welcome-wordpress.php:27
+msgid ""
+"If you are new to WordPress, please check out the introduction section in "
+"theme documentation."
+msgstr ""
+"Ak nie ste dostatočne zoznámený so systémom WordPress, preštudujte si úvodnú "
+"sekciu dokumentácie témy."
 
 #: templates/parts/component/breadcrumbs.php:38
 msgid "Breadcrumbs navigation"

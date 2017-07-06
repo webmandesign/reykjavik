@@ -6,7 +6,7 @@
  *
  * @link  https://wordpress.org/plugins/one-click-demo-import/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

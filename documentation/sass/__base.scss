@@ -12,7 +12,7 @@
 
 	body {
 		line-height: 1.62;
-		font-family: 'Open Sans', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+		font-family: $font_family_body;
 		font-size: 16px;
 		color: $color_content_txt;
 	}
@@ -23,6 +23,7 @@
 
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: $font_family_headings;
 		font-weight: 400;
 		color: $color_content_heading;
 	}

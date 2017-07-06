@@ -6,7 +6,7 @@
  * On subpage uses accessibly hidden H2 for HTML body title
  * and paragraph for linked site title.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

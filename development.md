@@ -34,17 +34,17 @@ When developing a new theme, you need to batch replace a predefined set of strin
 
 ### Project replacements:
 
-> Developers, fill this section with the actual values used for replacements for future reference.
+Developers, fill this section with the actual values used for replacements for future reference.
 
 | Prefix variable   | Value |
 |-------------------|-------|
-| `theme_name`      | Reykjavík |
+| `theme_name`      | Reykjavik |
 | `theme_slug`      | reykjavik |
 | `version_since`   | 1.0.0 |
 | `version`         | 1.0.0 |
 | `prefix_constant` | REYKJAVIK |
 | `prefix_var`      | reykjavik |
-| `prefix_class`    | Reykjavík |
+| `prefix_class`    | Reykjavik |
 | `prefix_fn`       | reykjavik |
 | `prefix_js`       | reykjavik |
 | `prefix_hook_fn`  | reykjavik |

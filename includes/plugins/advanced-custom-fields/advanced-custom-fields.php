@@ -7,7 +7,7 @@
  * @link  https://wordpress.org/plugins/advanced-custom-fields/
  * @link  https://www.advancedcustomfields.com/resources/register-fields-via-php/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

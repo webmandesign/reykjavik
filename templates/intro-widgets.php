@@ -6,7 +6,7 @@
  * Displays page intro with dedicated sidebar.
  * Other than that it is normal page.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

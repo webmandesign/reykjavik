@@ -5,7 +5,7 @@
  *
  * Learn more: https://git.io/vWdr2
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

@@ -4,7 +4,7 @@
  *
  * @link  https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

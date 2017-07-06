@@ -6,7 +6,7 @@
  * Displays the child pages list followed by page content.
  * Use this template for parent pages only.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

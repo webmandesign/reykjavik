@@ -1,4 +1,4 @@
-# Reykjavík
+# Reykjavik
 
 * **Theme URI:**          https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
 * **Author:**             WebMan Design
@@ -39,11 +39,11 @@ Theme documentation is available on-line at https://www.webmandesign.eu/manual/r
 
 ### Theme copyright
 
-**Reykjavík WordPress Theme**
+**Reykjavik WordPress Theme**
 Copyright (c) WebMan Design, Oliver Juhas, https://www.webmandesign.eu
 Distributed under the terms of the GNU GPL
 
-**Reykjavík is based on Underscores**
+**Reykjavik is based on Underscores**
 Copyright (c) Automattic, Inc.
 Distributed under the terms of the GNU GPL
 http://underscores.me

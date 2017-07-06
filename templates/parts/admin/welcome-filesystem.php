@@ -4,7 +4,7 @@
  *
  * WP Filesystem info.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

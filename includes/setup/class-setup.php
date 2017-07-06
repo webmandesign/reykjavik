@@ -5,7 +5,7 @@
  * Theme options with `__` prefix (`get_theme_mod( '__option_id' )`) are theme
  * setup related options and can not be edited via customizer.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

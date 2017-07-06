@@ -6,7 +6,7 @@
  *
  * @link  http://a11yproject.com/patterns/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

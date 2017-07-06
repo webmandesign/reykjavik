@@ -10,7 +10,7 @@
  * @see  footer.php
  * @see  includes/custom-header/custom-header.php
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

@@ -1,4 +1,4 @@
-# Reykjavík Changelog
+# Reykjavik Changelog
 
 ## 1.0.0
 

@@ -12,7 +12,7 @@
  * Alternatively, if a page has a feature image set and you don't want to display
  * it in child pages list, set a `no_thumbnail` custom field to `1` (true).
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

@@ -2,7 +2,7 @@
 /**
  * Menu Class
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
@@ -65,11 +65,11 @@ class Reykjavik_Menu {
 
 						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_social_icons', 10, 4 );
 
-						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::primary_item_description', 20, 4 );
+						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_description', 20, 4 );
 
-						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::primary_item_expander', 30, 4 );
+						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_expander', 30, 4 );
 
-						add_filter( 'nav_menu_css_class', __CLASS__ . '::primary_item_classes', 10, 4 );
+						add_filter( 'nav_menu_css_class', __CLASS__ . '::nav_menu_item_classes', 10, 4 );
 
 						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 3 );
 
@@ -169,7 +169,7 @@ class Reykjavik_Menu {
 		/**
 		 * Menu item modification: item description
 		 *
-		 * Primary and Secondary menu only.
+		 * Primary menu only.
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
@@ -179,12 +179,12 @@ class Reykjavik_Menu {
 		 * @param  int    $depth       Depth of menu item. Used for padding. Since WordPress 4.1.
 		 * @param  array  $args        An array of wp_nav_menu() arguments.
 		 */
-		public static function primary_item_description( $item_output, $item, $depth, $args ) {
+		public static function nav_menu_item_description( $item_output, $item, $depth, $args ) {
 
 			// Processing
 
 				if (
-						in_array( $args->theme_location, array( 'primary', 'secondary' ) )
+						in_array( $args->theme_location, array( 'primary' ) )
 						&& trim( $item->description )
 					) {
 
@@ -201,7 +201,7 @@ class Reykjavik_Menu {
 
 				return $item_output;
 
-		} // /primary_item_description
+		} // /nav_menu_item_description
 
 
 
@@ -218,7 +218,7 @@ class Reykjavik_Menu {
 		 * @param  int    $depth       Depth of menu item. Used for padding. Since WordPress 4.1.
 		 * @param  array  $args        An array of wp_nav_menu() arguments.
 		 */
-		public static function primary_item_expander( $item_output, $item, $depth, $args ) {
+		public static function nav_menu_item_expander( $item_output, $item, $depth, $args ) {
 
 			// Processing
 
@@ -240,7 +240,7 @@ class Reykjavik_Menu {
 
 				return $item_output;
 
-		} // /primary_item_expander
+		} // /nav_menu_item_expander
 
 
 
@@ -259,7 +259,7 @@ class Reykjavik_Menu {
 		 * @param  array  $args    An array of wp_nav_menu() arguments.
 		 * @param  int    $depth   Depth of menu item. Used for padding. Since WordPress 4.1.
 		 */
-		public static function primary_item_classes( $classes, $item, $args, $depth = 0 ) {
+		public static function nav_menu_item_classes( $classes, $item, $args, $depth = 0 ) {
 
 			// Processing
 
@@ -280,7 +280,7 @@ class Reykjavik_Menu {
 
 				return $classes;
 
-		} // /primary_item_classes
+		} // /nav_menu_item_classes
 
 
 

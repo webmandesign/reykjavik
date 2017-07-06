@@ -6,7 +6,7 @@
  *
  * @link  https://www.wpbeaverbuilder.com/beaver-themer/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

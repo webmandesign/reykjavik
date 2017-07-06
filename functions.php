@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
@@ -12,7 +12,7 @@
  *
  * Contents:
  *
- *   0) Path base
+ *   0) Paths
  *   1) Theme framework
  *  10) Theme setup
  *  20) Frontend

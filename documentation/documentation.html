@@ -23,13 +23,16 @@ For on-line documentation rename the file to `index.php` and enable GZIP compres
 	<meta name="description" content="">
 	<meta name="author" content="WebMan Design, www.webmandesign.eu">
 
-	<title>Reykjavík WordPress Theme User Manual</title>
+	<title>Reykjavik WordPress Theme User Manual</title>
 
 	<!--
 
 	CSS
 
 	-->
+	<!-- Google Fonts -->
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A300%2C400%2C700%7COpen+Sans%3A300%2C400%2C700&#038;subset=latin&#038;ver=0.2.0' type='text/css' media='screen' />
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<!-- Custom styles -->
@@ -53,7 +56,7 @@ Navbar
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Reykjavík</a>
+			<a class="navbar-brand" href="#">Reykjavik</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
@@ -89,11 +92,6 @@ Sidebar
 		<li><a href="#demo-content">Demo Content</a></li>
 		<li><a href="#pages">Pages</a></li>
 		<li><a href="#posts">Posts</a></li>
-		<li><a href="#projects">Projects</a></li>
-		<li><a href="#staff">Staff</a></li>
-		<li><a href="#testimonials">Testimonials</a></li>
-		<li><a href="#content-modules">Content Modules</a></li>
-		<li><a href="#shortcodes">Shortcodes</a></li>
 		<li><a href="#navigation">Navigation Menu</a></li>
 		<li><a href="#social-links">Social Links</a></li>
 		<li><a href="#widgets">Sidebars &amp; Widgets</a></li>
@@ -126,15 +124,15 @@ Content Container
 	<header class="main-header"><div class="container-fluid">
 
 			<div class="main-title">
-				<h1 title="Reykjavík WordPress Theme by WebMan"><strong>Reykjavík</strong> WordPress Theme</h1>
+				<h1 title="Reykjavik WordPress Theme by WebMan"><strong>Reykjavik</strong> WordPress Theme</h1>
 				<h2><span>User Manual</span></h2>
 			</div>
 
 			<p class="lead">
-				Thank you very much for choosing Reykjavík accessible WordPress theme by <a href="https://www.webmandesign.eu" target="_blank">WebMan Design</a>!
+				Thank you very much for choosing Reykjavik accessible WordPress theme by <a href="https://www.webmandesign.eu" target="_blank">WebMan Design</a>!
 			</p>
 
-			<p>This user manual will teach you how to set up and use the <strong>Reykjavík</strong> WordPress theme. In case you have any questions<br />that are beyond the scope of the user manual, please join <a href="https://www.webmandesign.eu/reference/#links-support"><strong>WebMan Design Support Center</strong></a>. Enjoy your <strong>Reykjavík</strong> theme!</p>
+			<p>This user manual will teach you how to set up and use the <strong>Reykjavik</strong> WordPress theme. In case you have any questions<br />that are beyond the scope of the user manual, please join <a href="https://www.webmandesign.eu/reference/#links-support"><strong>WebMan Design Support Center</strong></a>. Enjoy your <strong>Reykjavik</strong> theme!</p>
 
 			<p>
 				<svg width="16" height="16" style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="m3.08977,15.12881l4.91023,-15.12881l4.91023,15.12881l-12.87276,-9.35597l15.92506,0" /></svg>
@@ -183,7 +181,7 @@ Content Container
 					<h3>What is a theme?</h3>
 
 					<p>A WordPress theme changes the way your site looks and affects the style of the content displayed on it. WordPress themes are built so you can change your site's design without losing content.</p>
-					<p>There are themes out there that can lock you into their ecosystem, unfortunately. But we play nice and <strong>Reykjavík</strong> is not one of them :)</p>
+					<p>There are themes out there that can lock you into their ecosystem, unfortunately. But we play nice and <strong>Reykjavik</strong> is not one of them :)</p>
 
 				</div>
 
@@ -207,7 +205,7 @@ Content Container
 					<p>If you need help installing WordPress, follow the instructions in <a href="http://codex.wordpress.org/Installing_WordPress" target="_blank">WordPress Codex</a>.</p>
 
 					<div class="alert alert-info">
-						<p><strong>Reykjavík</strong> requires WordPress version 4.7 to work properly.</p>
+						<p><strong>Reykjavik</strong> requires WordPress version 4.7 to work properly.</p>
 					</div>
 
 				</div>
@@ -289,7 +287,7 @@ Content Container
 						<ol>
 							<li>Log into your WordPress admin.</li>
 							<li>In WordPress admin navigate to <strong><em>Appearance &raquo; Themes</em></strong> and click the <strong>[Add New]</strong> button next to "Themes" page title.</li>
-							<li>On "Add Themes" screen use a search field to search for "Reykjavík".</li>
+							<li>On "Add Themes" screen use a search field to search for "Reykjavik".</li>
 							<li>Once you've found the theme in the search results list, click the <strong>[Install]</strong> button when hovering over the theme.</li>
 							<li>After the theme is installed, activate it by clicking the <strong>"Activate"</strong> link.</li>
 						</ol>
@@ -401,7 +399,6 @@ Content Container
 					<li><a href="#anatomy-page"><strong>Page</strong> content</a></li>
 					<li><a href="#anatomy-blog"><strong>Blog, archives, search results</strong></a></li>
 					<li><a href="#anatomy-post"><strong>Post</strong> content</a></li>
-					<li><a href="#anatomy-custom-post-types"><strong>Custom post types</strong></a></li>
 					<li><a href="#anatomy-shop"><strong>Shop</strong> content</a></li>
 				</ol>
 
@@ -761,91 +758,6 @@ Content Container
 
 				</div><!-- /#anatomy-post -->
 
-				<div id="anatomy-custom-post-types" class="row anatomy-content">
-
-					<h3><strong>Custom post types</strong></h3>
-
-					<div class="col-sm-12 col-md-4">
-						<p>You need <a href="#webman-amplifier"><strong>WebMan Amplifier</strong> plugin</a> to enable this functionality.</p>
-						<p><em>(Click the item below to reveal more info. Click the image to download a bigger size.)</em></p>
-						<p><a href="#anatomy">&uarr; Back to anatomy selection</a></p>
-						<ol>
-							<li><label><input type="checkbox" />
-								<h5>Archive pages</h5>
-								<p>The theme is compatible with <a href="#webman-amplifier"><strong>WebMan Amplifier</strong> plugin</a>, which allows you to use several different custom post types: <a href="#projects">Projects</a>, <a href="#staff">Staff</a>, <a href="#testimonials">Testimonials</a>, <a href="#content-modules">Content Modules</a>.</p>
-								<p>While Content Modules is a helper post type with no archive page, the theme can display <a href="#projects">Projects</a>, <a href="#staff">Staff</a> and <a href="#testimonials">Testimonials</a> posts archive pages.</p>
-								<p>Projects can be even <a href="#projects">displayed in different style</a>.</p>
-								<p>(Other post types can be added by a different plugins. If you want to sell products, please use <a href="#woocommerce"><strong>WooCommerce</strong> plugin</a>.)</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Taxonomy filters</h5>
-								<p><a href="#projects">Projects</a> and <a href="#staff">Staff</a> posts display a filter from their taxonomies on archive pages.</p>
-								<p>A taxonomy can also display on specific posts in the custom post type posts list. This depends on the custom post type and on the taxonomies you have assigned to it (such as project category, project tags, staff department or specialty).</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Post featured image</h5>
-								<p>It is displayed differently for each custom post type. We suggest to set them for each post.</p>
-								<p>You can <a href="#custom-fields">disable it on single post page or use a custom one</a>.</p>
-								<p>Please see FAQ section for more <a href="#image-sizes">information on image sizes</a>.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Post title</h5>
-								<p>By default the Testimonial posts display their title as a cite source. You can override this by setting a custom source, though.</p>
-								<p>If you would like to display subtitles, use <a href="#subtitles"><strong>Subtitles</strong> plugin</a>.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Post excerpt</h5>
-								<p>Custom post excerpt is displayed in intro section on all custom post type single pages (except for <a href="#testimonials">Testimonials</a>).</p>
-								<p><a href="#staff">Staff</a> post excerpt is displayed also in posts listing, and if the Staff post contains some content, a "Nice to meet you!" button is displayed too. After clicking the button you get to single Staff post page.</p>
-								<p><a href="#projects">Project</a> post does not display excerpt in posts listing.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Post content</h5>
-								<p><a href="#projects">Project</a> or <a href="#staff">Staff</a> post content. You can <a href="#formats">use "Formats" button</a> for some special styles.</p>
-								<p>With <a href="#projects">Project</a> post type you can also use a special <a href="#project-templates">"Project layout" post type template</a> to display the project content and media in a specific way.</p>
-								<p>You can also use a <a href="#beaver-builder">page builder</a> to create some interesting post layouts.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Page builder</h5>
-								<p>For creating a more complex custom post layouts please use a (<a href="#page-builder">any</a>) page builder plugin (we recommend using powerful, optimized and easy to use <a href="#beaver-builder"><strong>Beaver Builder</strong> page builder plugin</a>).</p>
-								<p>Please note that you will probably need to <strong>enable the custom post type in your page builder settings</strong> first! (For Beaver Builder go to <strong><em>Settings &raquo; Page Builder &raquo; Post Types</em></strong>.)</p>
-								<p>If you would like to remove the intro section for the custom post type, use a <a href="#page-templates">post type page template</a> or a specific <a href="#custom-fields">custom field</a>.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Sharing buttons</h5>
-								<p>To enable custom post sharing buttons, please use <a href="#jetpack"><strong>Jetpack</strong></a> plugin's <a href="https://jetpack.com/support/sharing/" target="_blank">sharing module</a>.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Posts navigation</h5>
-								<p>Displays links to previous and next post.</p>
-							</label></li>
-
-							<li><label><input type="checkbox" />
-								<h5>Sidebar</h5>
-								<p>The theme displays sidebar on each single custom post type page and archive page.</p>
-								<p>Sidebar is a <a href="#widgets">widgetized area</a>, its content can be set in <strong><em>Appearance &raquo; Customize &raquo; Widgets</em></strong>.</p>
-								<p>If you would like to replace sidebar on a specific post with a different one or just remove it, use <a href="#woosidebars"><strong>WooSidebars</strong> plugin</a>. It is a great way to control and alter your website layout.</p>
-							</label></li>
-						</ol>
-						<p><a href="#anatomy">&uarr; Back to anatomy selection</a></p>
-					</div>
-
-					<div class="col-sm-12 col-md-8">
-						<a href="https://www.dropbox.com/s/im5dq91t906ogwr/custom-post-types.jpg?dl=1" target="_blank">
-							<img src="https://www.dropbox.com/s/im5dq91t906ogwr/custom-post-types.jpg?dl=1" alt="Theme screenshot with marked sections location" class="frame" />
-						</a>
-					</div>
-
-				</div><!-- /#anatomy-custom-post-types -->
-
 				<div id="anatomy-shop" class="row anatomy-content">
 
 					<h3><strong>Shop</strong> content</h3>
@@ -1007,7 +919,7 @@ Content Container
 						<h3>Plugins Compatibility</h3>
 
 						<p>Other plugins than the recommended ones should work with the theme with no issues, though some <em>might</em> require additional tweaks to integrate them 100% with the theme (this is usually the case of more robust plugins such as e-shop or directory plugins).</p>
-						<p>Please understand that there are thousands of plugins available for WordPress and it is not possible for any theme developer to test the theme with all of them. <strong>Reykjavík</strong> was tested with most of the popular plugins. You can install any custom plugin <a href="https://codex.wordpress.org/Managing_Plugins" target="_blank">following the WordPress instructions</a> (or following the plugin documentation).</p>
+						<p>Please understand that there are thousands of plugins available for WordPress and it is not possible for any theme developer to test the theme with all of them. <strong>Reykjavik</strong> was tested with most of the popular plugins. You can install any custom plugin <a href="https://codex.wordpress.org/Managing_Plugins" target="_blank">following the WordPress instructions</a> (or following the plugin documentation).</p>
 						<p>In case of any plugin incompatibility or error, please, <strong>contact the plugin support first</strong> before contacting <a href="https://www.webmandesign.eu/reference/#links-support">WebMan Design Support Center</a>.</p>
 
 					</div>
@@ -1020,15 +932,6 @@ Content Container
 
 					<div class="section indented plugins">
 
-						<h4 id="webman-amplifier">
-							<strong>WebMan Amplifier</strong><br />
-							<small>(<a href="https://wordpress.org/plugins/webman-amplifier/" target="_blank">https://wordpress.org/plugins/webman-amplifier/</a>)</small>
-						</h4>
-
-							<p class="uppercase">This plugin extends the theme's functionality with additional content types, custom icon font, metaboxes, shortcodes (with page builder compatibility) and custom widgets.</p>
-							<p>It also provides seamless integration with <a href="#beaver-builder"><strong>Beaver Builder</strong></a> page builder plugin.</p>
-							<p>This is essential plugin to provide advanced functionality for the theme and you will be prompted to install it after theme activation.</p>
-
 						<h4 id="beaver-builder">
 							<strong>Beaver Builder</strong><br />
 							<small>(<a href="https://www.wpbeaverbuilder.com?fla=67" target="_blank">https://www.wpbeaverbuilder.com <span class="badge">Pro</span></a>, <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">https://wordpress.org/plugins/beaver-builder-lite-version/ <span class="badge">Free</span></a>)</small>
@@ -1036,8 +939,6 @@ Content Container
 
 							<p class="uppercase">If you need a page builder plugin to create your pages with ease with a <strong>front-end drag and drop editor</strong>, I highly recommend using the Beaver Builder plugin. The plugin is available both in free Lite version and payed Pro version. The theme is 100% compatible with this plugin.</p>
 							<p>For more info on the plugin please visit the <a href="https://www.wpbeaverbuilder.com?fla=67" target="_blank">Beaver Builder website</a> where you can also find the instructional videos for this page builder plugin.</p>
-
-							<p>When you <a href="#webman-amplifier">install a <strong>WebMan Amplifier</strong> plugin</a>, it will enhance the free (and also the paid) version of Beaver Builder with <strong>custom theme page builder elements</strong>. You can then create the exact same website as <a href="https://themedemos.webmandesign.eu/reykjavik/" target="_blank">the theme demo website</a> with a free Beaver Builder only!</p>
 
 							<p><strong>The theme is fully compatible also with <a href="#beaver-themer">Beaver Themer</a> to create your own custom header, footer, post, archive, product,&hellip; layouts!</strong> Check out the <a href="#beaver-themer">plugin information below</a>.</p>
 
@@ -1212,13 +1113,6 @@ Content Container
 						</h4>
 
 							<p>You can easily add posts and pages subtitles with this plugin.</p>
-
-						<h4 id="envato-market">
-							<strong>Envato Market</strong><br />
-							<small>(<a href="http://envato.github.io/wp-envato-market/" target="_blank">http://envato.github.io/wp-envato-market/</a>)</small>
-						</h4>
-
-							<p>If you <a href="http://themeforest.net/user/webmandesign/portfolio" target="_blank">obtained the theme from ThemeForest</a>, you can use this plugin for easy <a href="#update">automatic theme updates</a>.</p>
 
 					</div>
 
@@ -1492,7 +1386,7 @@ Content Container
 							<p>There is an additional <a href="#widgets"><em>"Intro Widgets"</em> widget area</a> displayed in the intro section of this page template. No intro widgets are displayed when the intro section is not displayed on the page or there are no widgets set in <em>"Intro Widgets"</em> sidebar.</p>
 
 							<div class="alert alert-info">
-								<small>Since WordPress 4.7 you can set this page template also for <a href="#posts">posts</a>, <a href="#projects">projects</a>, <a href="#staff">staff posts</a> and <a href="#woocommerce">WooCommerce products</a>.</small>
+								<small>Since WordPress 4.7 you can set this page template also for <a href="#posts">posts</a> and <a href="#woocommerce">WooCommerce products</a>.</small>
 							</div>
 						</dd>
 
@@ -1507,7 +1401,7 @@ Content Container
 							<p>This page template works best with a <a href="#beaver-builder">page builder</a>.</p>
 
 							<div class="alert alert-info">
-								<small>Since WordPress 4.7 you can set this page template also for <a href="#posts">posts</a>, <a href="#projects">projects</a>, <a href="#staff">staff posts</a> and <a href="#woocommerce">WooCommerce products</a>.</small>
+								<small>Since WordPress 4.7 you can set this page template also for <a href="#posts">posts</a> and <a href="#woocommerce">WooCommerce products</a>.</small>
 							</div>
 						</dd>
 
@@ -1528,14 +1422,6 @@ Content Container
 							<p>It will display a list of child pages below the actual (parent) page content. You can tweak each child page display by <a href="#custom-fields">setting the corresponding page options</a>.</p>
 							<p>There will be a page <strong>featured image</strong> (you can then even set a different intro image displayed on the actual page with a dedicated <a href="#custom-fields">custom field</a>), page <strong>title</strong>, page <strong>excerpt</strong> and optional <strong>"Continue reading" button</strong> displayed. "Continue reading" button is displayed only if the page has some actual content.</p>
 							<p>To set up a child page excerpt please use the "Excerpt" field on page edit screen (if the field is not displayed below the page content editor, enable it in <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> tab in the upper right corner of the screen).</p>
-						</dd>
-
-						<dt>
-							<strong>Project layout</strong>
-							<a href="https://themedemos.webmandesign.eu/reykjavik/theme-features/template-project-layout" target="_blank" class="alignright btn btn-default">Demo</a>
-						</dt>
-						<dd>
-							<p>This is a special custom post type template for displaying Project content in more traditional way. Read more under <a href="#project-templates">"Projects" section</a> of this documentation.</p>
 						</dd>
 					</dl>
 
@@ -1618,264 +1504,6 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 		<!--
 
-		Projects
-
-		-->
-		<h2 id="projects">Projects</h2>
-			<div class="section indented">
-
-				<div class="row">
-
-					<h3>What Are They and How to Use Them?</h3>
-
-					<div class="col-sm-12 col-md-4">
-
-						<p class="uppercase">Projects custom post can be used to showcase your work. You can place any content into projects and create stunning complex layouts using <a href="#beaver-builder"><strong>Beaver Builder</strong> page builder plugin</a>.</p>
-
-						<p>Each project can be categorized and tagged and you can use these taxonomies for portfolio filtering in dedicated <strong>Beaver Builder</strong> "Posts (custom posts)" element.</p>
-
-						<p>Projects can be set to display in various styles in <strong><em>Appearance &raquo; Customize &raquo; Theme Options &raquo; Layout</em></strong>.</p>
-
-						<p>On Projects archives pages, there will be a <strong>filter</strong> displayed on top of the posts list from (not empty) project categories.</p>
-
-						<p>To display all projects on your site, you can use a projects <a href="#menu">archive page link in the navigation</a>.</p>
-
-					</div>
-
-					<div class="col-sm-12 col-md-8">
-
-						<div class="alert alert-info mt0">
-							This custom post type is provided via <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin.
-						</div>
-
-						<div class="alert alert-success">
-							<h4>What <a href="#beaver-builder"><strong>Beaver Builder</strong></a> element to use to display Projects?</h4>
-							<p>Use <em>"WM Posts (custom posts)"</em> element and set the "Post type" option to "Projects".</p>
-						</div>
-
-						<div class="alert alert-warning">
-							Before using <a href="#beaver-builder"><strong>Beaver Builder</strong> page builder</a> with this custom post type you need to enable it in Beaver Builder's settings first.<br />
-							Navigate to <strong>Settings &raquo; Page Builder &raquo; Post Types</strong>.
-						</div>
-
-						<div class="alert alert-info">
-							Since WordPress 4.7 you can set a custom <a href="#page-templates">post type page template</a> for these posts. It supports "With intro widgets" and "No intro" page templates.
-						</div>
-
-						<div class="alert alert-info">
-							<p><strong>TIP:</strong> If you would like to point the post to a custom URL, try using a <a href="https://wordpress.org/plugins/page-links-to/" target="_blank"><strong>Page Links To</strong></a> plugin.</p>
-						</div>
-
-						<div class="alert alert-info">
-							<p><strong>TIP:</strong> If you would like to rename this post type, use the <a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a> plugin. To rename the custom taxonomies related to this post type, use the <a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a> plugin.</p>
-						</div>
-
-					</div>
-
-				</div>
-
-				<h3 id="project-templates">"<strong>Project layout</strong>" post type template</h3>
-
-					<p>This custom post type contains a predefined special post type page template, the "<strong>Project layout</strong>", which lets you display project content in more traditional way: project description in one column, and project gallery in another column. There is no sidebar displayed on this template.</p>
-					<p>The gallery can be created in 2 ways:</p>
-					<ul>
-						<li>Just upload project-related images directly from the project edit screen. This way those images will get associated/connected with that particular post and gallery can be automatically created by the theme. This is <a href="https://codex.wordpress.org/Gallery_Shortcode" target="_blank">default WordPress behavior</a>.</li>
-						<li>For much <strong>more flexible way with more control</strong> over the gallery, you can <strong>simply insert the gallery anywhere into post content</strong>. You can edit it however you want - add, remove, link or reorder any image. The theme will automatically grab the (first) gallery it finds in post content and place it correctly in the project layout on your website front-end.</li>
-					</ul>
-
-			</div>
-
-
-
-		<!--
-
-		Staff
-
-		-->
-		<h2 id="staff">Staff posts</h2>
-			<div class="section indented row">
-
-				<h3>What Are They and How to Use Them?</h3>
-
-				<div class="col-sm-12 col-md-4">
-
-					<p class="uppercase">With staff custom post you can easily manage your company team info.</p>
-
-					<p>Post excerpt is displayed in posts listing, and if the Staff post contains some content, a "Nice to meet you!" button is displayed too. After clicking the button you get to single Staff post page with full profile of the person.</p>
-
-					<p>The featured image is used as a Staff photo.</p>
-
-					<p>Organize your Staff posts with dedicated tags, departments, set a team member position and specialties.</p>
-
-					<p>On Staff posts archives pages, there will be a <strong>filter</strong> displayed on top of the posts list from (not empty) staff departments.</p>
-
-					<p>To display all staff posts on your site, you can use a staff <a href="#menu">archive page link in the navigation</a>.</p>
-
-				</div>
-
-				<div class="col-sm-12 col-md-8">
-
-					<div class="alert alert-info mt0">
-						This custom post type is provided via <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin.
-					</div>
-
-					<div class="alert alert-success">
-						<h4>What <a href="#beaver-builder"><strong>Beaver Builder</strong></a> element to use to display Staff?</h4>
-						<p>Use <em>"WM Posts (custom posts)"</em> element and set the "Post type" option to "Staff".</p>
-					</div>
-
-					<div class="alert alert-warning">
-						Before using <a href="#beaver-builder"><strong>Beaver Builder</strong> page builder</a> with this custom post type you need to enable it in Beaver Builder's settings first.<br />
-						Navigate to <strong>Settings &raquo; Page Builder &raquo; Post Types</strong>.
-					</div>
-
-					<div class="alert alert-info">
-						Since WordPress 4.7 you can set a custom <a href="#page-templates">post type page template</a> for these posts. It supports "With intro widgets" and "No intro" page templates.
-					</div>
-
-					<div class="alert alert-info">
-						<p><strong>TIP:</strong> If you would like to point the post to a custom URL, try using a <a href="https://wordpress.org/plugins/page-links-to/" target="_blank"><strong>Page Links To</strong></a> plugin.</p>
-					</div>
-
-					<div class="alert alert-info">
-						<p><strong>TIP:</strong> If you would like to rename this post type, use the <a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a> plugin. To rename the custom taxonomies related to this post type, use the <a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a> plugin.</p>
-					</div>
-
-				</div>
-
-			</div>
-
-
-
-		<!--
-
-		Testimonials
-
-		-->
-		<h2 id="testimonials">Testimonials</h2>
-			<div class="section indented row">
-
-				<h3>What Are They and How to Use Them?</h3>
-
-				<div class="col-sm-12 col-md-4">
-
-					<p class="uppercase">Testimonials posts can be used to display reviews you receive from your clients or customers.</p>
-
-					<p>Besides the actual testimonial text you can also set its author details together with author photo or logo (featured image) and conveniently categorize testimonials for better organization.</p>
-
-					<p>To display all testimonials on your site, you can use a testimonials <a href="#menu">archive page link in the navigation</a>.</p>
-
-				</div>
-
-				<div class="col-sm-12 col-md-8">
-
-					<div class="alert alert-info mt0">
-						This custom post type is provided via <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin.
-					</div>
-
-					<div class="alert alert-success">
-						<h4>What <a href="#beaver-builder"><strong>Beaver Builder</strong></a> element to use to display Testimonials?</h4>
-						<p>Use <em>"WM Testimonials"</em> element.</p>
-					</div>
-
-					<div class="alert alert-info">
-						<p><strong>TIP:</strong> If you would like to rename this post type, use the <a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a> plugin. To rename the custom taxonomies related to this post type, use the <a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a> plugin.</p>
-					</div>
-
-				</div>
-
-			</div>
-
-
-
-		<!--
-
-		Content Modules
-
-		-->
-		<h2 id="content-modules">Content Modules</h2>
-			<div class="section indented row">
-
-				<h3>What Are They and How to Use Them?</h3>
-
-				<div class="col-sm-12 col-md-4">
-
-					<p class="uppercase">Content Modules can be used as a content injection to various website areas. You can display it within any page or post content. Content Modules can be styled as <strong>icon boxes</strong>, so they are perfect for your services, features or benefits presentation.</p>
-
-					<p>For each Content Module you can set up a title, description text, custom link URL, custom link action, set an icon or featured image. If you use font icon, you can change the icon colors too. It is also possible to conveniently group Content Modules using dedicated module tags.</p>
-
-					<p><strong>NOTE: Content Modules are not meant to be used for inserting a basic content with a page builder.</strong> In <a href="#beaver-builder">Beaver Builder</a> please use it's <a href="http://kb.wpbeaverbuilder.com/article/77-text-editor-module-overview" target="_blank">native "Text Editor" element</a> instead.</p>
-
-				</div>
-
-				<div class="col-sm-12 col-md-8">
-
-					<div class="alert alert-info mt0">
-						This custom post type is provided via <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin.
-					</div>
-
-					<div class="alert alert-success">
-						<h4>What <a href="#beaver-builder"><strong>Beaver Builder</strong></a> element to use to display Content Modules?</h4>
-						<p>Use <em>"WM Content Module"</em> element.</p>
-					</div>
-
-					<div class="alert alert-info">
-						<p><strong>TIP:</strong> If you would like to rename this post type, use the <a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a> plugin. To rename the custom taxonomies related to this post type, use the <a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a> plugin.</p>
-					</div>
-
-					<div class="alert alert-info">
-						<p><strong>TIP:</strong> You can modify the layout of this post type display with <a href="#css-classes">custom CSS classes</a>.</p>
-					</div>
-
-				</div>
-
-			</div>
-
-
-
-		<!--
-
-		Shortcodes
-
-		-->
-		<h2 id="shortcodes">Shortcodes</h2>
-			<div class="section indented row">
-
-				<div class="col-sm-12 col-md-6">
-
-					<h3>Shortcodes</h3>
-
-					<p><strong>Shortcodes</strong> are basically commands you place into page/post/text widget content that will display content elements that are not possible (or would be too complicated) to create otherwise.</p>
-
-					<p>WordPress offers couple of shortcodes natively and one of them is a <code>[gallery]</code> shortcode. You can <a href="http://codex.wordpress.org/Shortcode_API" target="_blank">read more on shortcodes in WordPress codex</a>.</p>
-
-					<div class="alert alert-warning">
-						<h4>Documentation</h4>
-						<p>For more information on available custom shortcodes please <a href="https://github.com/webmandesign/webman-amplifier/wiki"><strong>read the documentation</strong></a> of <a href="#webman-amplifier">WebMan Amplifier</a> plugin.</p>
-						<a href="https://github.com/webmandesign/webman-amplifier/wiki" class="btn btn-primary mt-s">Shortcodes documentation &raquo;</a>
-					</div>
-
-				</div>
-
-				<div class="col-sm-12 col-md-6">
-
-					<h3 id="shortcodes-generator">Shortcode Generator</h3>
-
-					<p>With integrated <strong>Shortcode Generator</strong> it is very easy to insert a <a href="#webman-amplifier">WebMan Amplifier's</a> shortcode into the post or page content. Simply click the <strong>[S]</strong> button in page/post content editor, select a shortcode from dropdown and it will be inserted into the post content on the current cursor position.</p>
-
-					<div class="alert alert-info">
-						<h4>Page builder integration</h4>
-						<p>The theme <a href="#beaver-builder"><strong>is compatible with Beaver Builder page builder plugin</strong></a> that allows you to create a page/post content in drag and drop environment with ease, which is even more convenient way of creating a complex content than using shortcodes and Shortcode Generator.</p>
-					</div>
-
-				</div>
-
-			</div>
-
-
-
-		<!--
-
 		Navigation
 
 		-->
@@ -1884,7 +1512,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 				<h3>Using Navigational Menus</h3>
 
-					<p><strong>Reykjavík</strong> supports WordPress Menus, so you can easily create custom navigational menus directly in <strong><em>Appearance &raquo; Menus</em></strong>.</p>
+					<p><strong>Reykjavik</strong> supports WordPress Menus, so you can easily create custom navigational menus directly in <strong><em>Appearance &raquo; Menus</em></strong>.</p>
 					<p>Custom menus may contain links to pages, categories, custom links or other content types (use the <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> tab in upper right corner of the screen to decide which content types to show on the menu edit screen).</p>
 					<p>You can specify a different navigation label for a menu item as well as other attributes. The theme supports menu item description text. To display menus on website you need to assign them to a menu locations or use a <strong>Custom Menu</strong> widget.</p>
 
@@ -1912,38 +1540,21 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 						</dd>
 					</dl>
 
-				<div class="row">
+				<h3 id="menu">Creating a Menu</h3>
 
-					<div class="col-sm-12 col-md-6">
+					<p>Please follow the <a href="http://codex.wordpress.org/WordPress_Menu_User_Guide" target="_blank">instructions in WordPress codex on how to create menus</a>.</p>
+					<p>Helpful tutorial: <a href="#wordpress">WordPress video tutorials</a>.</p>
 
-						<h3 id="menu">Creating a Menu</h3>
-
-							<p>Please follow the <a href="http://codex.wordpress.org/WordPress_Menu_User_Guide" target="_blank">instructions in WordPress codex on how to create menus</a>.</p>
-							<p>Helpful tutorial: <a href="#wordpress">WordPress video tutorials</a>.</p>
-
-							<div class="alert alert-info">
-								<h4>Tip: <br>Opening submenu to reverse direction</h4>
-								<p>You can use a special <code>reverse-expand</code> CSS class on a menu item if you want its sub-menu to open to the other side than the theme's default.</p>
-								<p><small>For this functionality you will need enable <em>CSS Classes</em> attributes in <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> tab in the upper right corner of the screen.</small></p>
-							</div>
-
-							<div class="alert alert-warning">
-								<h4>Tip: <br>Post type archive link</h4>
-								<p>You can add any custom post type archive page link into the menu. <a href="http://easycaptures.com/fs/uploaded/1023/6040881305.png" target="_blank">Please see the image for the instructions &raquo;</a></p>
-							</div>
-
+					<div class="alert alert-info">
+						<h4>Tip: <br>Opening submenu to reverse direction</h4>
+						<p>You can use a special <code>reverse-expand</code> CSS class on a menu item if you want its sub-menu to open to the other side than the theme's default.</p>
+						<p><small>For this functionality you will need enable <em>CSS Classes</em> attributes in <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> tab in the upper right corner of the screen.</small></p>
 					</div>
 
-					<div class="col-sm-12 col-md-6">
-
-						<h3>Menu Item Icon</h3>
-
-							<p>To set up menu icons please use a HTML directly in the menu "Navigation Label" such as <code class="wrap">&lt;span class="icon-class" aria-hidden="true">&lt;/span> Menu label</code> (icon classes can be found in <strong><em>Appearance &raquo; Icon Font</em></strong> - you need to have <a href="#webman-amplifier">WebMan Amplifier plugin</a> installed and activated).</p>
-							<img src="http://easycaptures.com/fs/uploaded/1021/3849696617.png" alt="Setting up a menu item icon" title="Setting up a menu item icon" class="frame" />
-
+					<div class="alert alert-warning">
+						<h4>Tip: <br>Post type archive link</h4>
+						<p>You can add any custom post type archive page link into the menu. <a href="http://easycaptures.com/fs/uploaded/1023/6040881305.png" target="_blank">Please see the image for the instructions &raquo;</a></p>
 					</div>
-
-				</div>
 
 				<h3 id="megamenu">Megamenu</h3>
 
@@ -2166,7 +1777,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<h4 class="mt">"<strong>Text</strong>" Widget</h4>
 
 						<p>The theme allows you to set a custom widget icon and widget featured image. You can then use a "Text" widget to display a service or a feature in any widgetized area or in a page builder layout on your website.</p>
-						<p>To enable the custom icon functionality you need to have <a href="#webman-amplifier">WebMan Amplifier plugin</a> installed and activated first.</p>
+						<p>To enable the custom icon functionality you need to @todo</p>
 
 			</div>
 
@@ -2294,7 +1905,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<h4 class="mt"><strong>Don't forget to translate your plugins too!</strong></h4>
 
 						<p>WordPress website is built from WordPress system itself, a theme and plugin(s). There is a very high probability that <a href="https://codex.wordpress.org/Installing_WordPress_in_Your_Language" target="_blank">WordPress system is already translated into your language</a>, so, you don't have to do it on your own. You have also learned how to translate the theme into your language above. But what about plugins and their texts?</p>
-						<p>If you are lucky, your plugin contains your language localization files already and you don't have to do anything. But if you need to translate the plugin into your language, the best advice is to check the plugin's documentation for instructions (you can <a href="https://github.com/webmandesign/webman-amplifier/blob/master/languages/readme.md" target="_blank">check the instructions for WebMan Amplifier plugin localization</a> procedure).</p>
+						<p>If you are lucky, your plugin contains your language localization files already and you don't have to do anything. But if you need to translate the plugin into your language, the best advice is to check the plugin's documentation for instructions.</p>
 						<p>Alternatively you can also use <a href="https://wordpress.org/plugins/loco-translate/" target="_blank"><strong>Loco Translate</strong> plugin</a> (again) to translate your plugins directly in your WordPress dashboard.</p>
 
 				</div>
@@ -2303,7 +1914,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 					<div class="alert alert-warning mt0">
 						<h4>Free WordPress.org themes translation</h4>
-						<p>If you have obtained the theme from <a href="https://wordpress.org/themes/author/webmandesign/" target="_blank"><strong>WordPress.org themes repository</strong></a>, please translate the theme by clicking the <a href="https://translate.wordpress.org/projects/wp-themes/reykjavik" target="_blank">Translate Reykjavík</a> link in theme page sidebar.</p>
+						<p>If you have obtained the theme from <a href="https://wordpress.org/themes/author/webmandesign/" target="_blank"><strong>WordPress.org themes repository</strong></a>, please translate the theme by clicking the <a href="https://translate.wordpress.org/projects/wp-themes/reykjavik" target="_blank">Translate Reykjavik</a> link in theme page sidebar.</p>
 					</div>
 
 					<div class="alert alert-info">
@@ -2333,7 +1944,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 						<p><strong>Accessibility</strong> in web design means creating web pages that everyone can use, regardless of hardware, software, or any sensory or physical impairment.</p>
 
-						<p>While this is a <em>complex process that includes a website content strategy</em>, the <strong>Reykjavík</strong> theme helps you with being accessibility ready. It complies to and surpasses the <a href="https://make.wordpress.org/themes/handbook/review/accessibility/" target="_blank">WordPress accessibility requirements</a> and was built to pass the <a href="http://webaim.org/standards/wcag/checklist" target="_blank">WCAG 2.0 level AA</a> and <a href="http://webaim.org/standards/508/checklist" target="_blank">Section 508</a> requirements.</p>
+						<p>While this is a <em>complex process that includes a website content strategy</em>, the <strong>Reykjavik</strong> theme helps you with being accessibility ready. It complies to and surpasses the <a href="https://make.wordpress.org/themes/handbook/review/accessibility/" target="_blank">WordPress accessibility requirements</a> and was built to pass the <a href="http://webaim.org/standards/wcag/checklist" target="_blank">WCAG 2.0 level AA</a> and <a href="http://webaim.org/standards/508/checklist" target="_blank">Section 508</a> requirements.</p>
 
 						<p>The theme itself contains and applies <strong>proper headings structure</strong>, uses <strong>ARIA landmark roles</strong> and attributes, adds <strong>informative "read more" links</strong>, <strong>keyboard accessible navigation</strong> (applied also on mobile navigation), <strong>skip links</strong>, the <strong>default color scheme complies to WCAG 2.0 level AA color contrast ratio</strong>, and others.</p>
 
@@ -2487,9 +2098,9 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 						<h3 class="mt-m">When and How to Use a Child Theme?</h3>
 
-						<p>If you need to make any styling or functional changes to the theme, please use the WordPress native <strong>child theme</strong> functionality. This way you can continue updating the parent (original) <strong>Reykjavík</strong> theme without any worry of your changes being overwritten as all your custom styles and functionality are kept in a child theme. You can read more about <a href="http://codex.wordpress.org/Child_Themes" target="_blank">child themes on WordPress Codex pages</a>.</p>
+						<p>If you need to make any styling or functional changes to the theme, please use the WordPress native <strong>child theme</strong> functionality. This way you can continue updating the parent (original) <strong>Reykjavik</strong> theme without any worry of your changes being overwritten as all your custom styles and functionality are kept in a child theme. You can read more about <a href="http://codex.wordpress.org/Child_Themes" target="_blank">child themes on WordPress Codex pages</a>.</p>
 						<p>You can put all your custom CSS styles into <code>YOUR_CHILD_THEME/style.css</code> file. (You can alternatively use <strong>Appearance &raquo; Customize &raquo; Additional CSS</strong> for that.)</p>
-						<p>If you also want to change the functionality of the original <strong>Reykjavík</strong> theme, do so in <code>YOUR_CHILD_THEME/functions.php</code> file. You can freely modify any theme function or class method there by hooking onto the specific "pre" filter or unhooking the function altogether (see below for how to use filter and action hooks).</p>
+						<p>If you also want to change the functionality of the original <strong>Reykjavik</strong> theme, do so in <code>YOUR_CHILD_THEME/functions.php</code> file. You can freely modify any theme function or class method there by hooking onto the specific "pre" filter or unhooking the function altogether (see below for how to use filter and action hooks).</p>
 
 						<h4 class="mt-m">Additional resources:</h4>
 						<ul>
@@ -2505,7 +2116,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 						<h3 class="mt-m">Child Theme Generator</h3>
 
-						<p><strong>Reykjavík</strong> theme lets you create a child theme automatically. Just <a href="http://easycaptures.com/fs/uploaded/1045/1169420183.png" target="_blank">navigate to <strong><em>Appearance &raquo; Editor</em></strong> and click the <em>"Create and activate now &raquo;"</em> link</a> in the displayed child theme notification.</p>
+						<p><strong>Reykjavik</strong> theme lets you create a child theme automatically. Just <a href="http://easycaptures.com/fs/uploaded/1045/1169420183.png" target="_blank">navigate to <strong><em>Appearance &raquo; Editor</em></strong> and click the <em>"Create and activate now &raquo;"</em> link</a> in the displayed child theme notification.</p>
 						<p>A new child theme will be created and activated for you automatically, so you can add any custom code in it.</p>
 						<p><em><small>Please note that this option is not available when using <a href="https://codex.wordpress.org/Create_A_Network" target="_blank">WordPress multisite</a> installation. In that case (or when automatic child theme creation doesn't work) please download a sample child theme (see "Additional resources" on left).</small></em></p>
 
@@ -2522,7 +2133,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 					<p>The theme is <a href="https://wordpress.org/plugins/theme-check/" target="_blank">coded according to WordPress coding standards</a> and is full of action and filter hooks. You can easily hook onto these to alter functions outputs (or short-circuit the whole functions - the <code>wmhook_HOOKNAME_pre</code> filter hooks) or alter parameters and variables, to add your own meta data, theme or design options, layouts and much more!</p>
 					<p>Please check the theme's source code for which hook to use (you can simply search for "<code>do_action(</code>" or "<code>apply_filters(</code>", respectively), or contact <a target="_blank" href="https://www.webmandesign.eu/reference/#links-support">WebMan Design Support Center</a> for more details and tips.</p>
-					<p><strong>Reykjavík</strong> theme also uses the <a href="https://github.com/zamoose/themehookalliance" target="_blank">Theme Hook Alliance</a> hooks too. This is useful to entirely rebuild the theme structure or add your own sections anywhere in the theme. The whole theme front-end structure setup can be found in files inside the <code>reykjavik/includes/frontend</code> folder.</p>
+					<p><strong>Reykjavik</strong> theme also uses the <a href="https://github.com/zamoose/themehookalliance" target="_blank">Theme Hook Alliance</a> hooks too. This is useful to entirely rebuild the theme structure or add your own sections anywhere in the theme. The whole theme front-end structure setup can be found in files inside the <code>reykjavik/includes/frontend</code> folder.</p>
 					<p>You can also watch an <a href="https://www.youtube.com/watch?v=AQrXcsc4CIw" target="_blank">instructional video on how to use WordPress hooks</a>.</p>
 					<p>To show all theme hooks you may try using <a href="https://wordpress.org/plugins/simply-show-hooks/" target="_blank"><strong>Simply Show Hooks</strong></a> plugin or <a href="https://wordpress.org/plugins/wp-inspect/" target="_blank"><strong>WP Inspect</strong></a> plugin.</p>
 
@@ -2544,7 +2155,6 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 						<li><a href="#any-page-builder"><em>How to use any page builder plugin?</em></a></li>
 						<li><a href="#css-classes"><em>How to restyle elements with ease? <small>Using special predefined CSS classes.</small></em></a></li>
 						<li><a href="#fonts"><em>How to set up and use a custom font? <small>Google Fonts or Typekit setup.</small></em></a></li>
-						<li><a href="#icons"><em>How to set up custom icons set?</em></a></li>
 						<li><a href="#cookies"><em>How to set up cookies notification?</em></a></li>
 						<li><a href="#error404"><em>How to customize error 404 page?</em></a></li>
 						<li><a href="#admin"><em>How to customize WordPress admin?</em></a></li>
@@ -2633,7 +2243,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<span class="badge alignleft"></span>
 				</h3>
 
-					<p>Instead of restricting you to using either Google Fonts or Typekit fonts (or any other fonts provider) built within the theme, you have the <strong>luxury of choosing your own preferred fonts provider</strong> (or using <a href="https://en.wikipedia.org/wiki/Web_typography#Web-safe_fonts" target="_blank">web safe fonts</a>) with the Reykjavík WordPress theme.</p>
+					<p>Instead of restricting you to using either Google Fonts or Typekit fonts (or any other fonts provider) built within the theme, you have the <strong>luxury of choosing your own preferred fonts provider</strong> (or using <a href="https://en.wikipedia.org/wiki/Web_typography#Web-safe_fonts" target="_blank">web safe fonts</a>) with the Reykjavik WordPress theme.</p>
 					<p>There are multiple different custom fonts plugins you can use, such as <a href="https://wordpress.org/plugins/easy-google-fonts/" target="_blank"><strong>Easy Google Fonts</strong></a>, <a href="https://wordpress.org/plugins/typekit-fonts-for-wordpress/" target="_blank"><strong>Typekit Fonts for WordPress</strong></a> or <a href="https://wordpress.org/plugins/font-squirrel/" target="_blank"><strong>Font Squirrel (unofficial)</strong></a>.</p>
 					<p>All the information regarding the theme typography and fonts setup can be found in <strong><em>Appearance &raquo; Customize &raquo; Theme Options &raquo; Typography</em></strong>.</p>
 
@@ -2644,36 +2254,6 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 							<li>For using a <a href="#child-theme">child theme</a> to add custom fonts, please read/watch <a href="http://www.wpbeginner.com/wp-themes/how-to-add-custom-fonts-in-wordpress/" target="_blank">How to Add Custom Fonts in WordPress</a>.</li>
 						</ul>
 					</div>
-
-				<h3 id="icons">
-					How to set up custom icons set?
-					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
-					<span class="badge alignleft"></span>
-				</h3>
-
-					<p>The theme comes bundled with 2 icons sets:</p>
-
-					<ul>
-						<li>
-							<h4><strong>Utility icons</strong></h4>
-
-							<p>The utility icons set is used by the theme internally to provide icons for post meta information, for example. These icons can not be changed easily, you can override them with custom CSS code only. The theme uses <a href="http://genericons.com/" target="_blank"><strong>Genericons</strong> icon set</a> as the utility icons.</p>
-						</li>
-						<li>
-							<h4><strong>Content icons</strong></h4>
-
-							<p>Thanks to help of <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin, you can use a set of custom content icons, which can be changed under <strong><em>Appearance &raquo; Icon Font</em></strong> in your WordPress dashboard using a <a href="http://fontello.com/" target="_blank"><strong>Fontello</strong> online icon fonts generator</a>. These icons are then available to set in <a href="#content-modules">Content Modules</a> posts or for use anywhere on the website (just grab the icon-specific "Instant HTML" when hovering over an icon in <strong><em>Appearance &raquo; Icon Font</em></strong> page).</p>
-
-							<p>By default, the theme provides its own custom content icons set best suited for the theme usage purpose. If you import your own Fontello icons set, this will override the default theme icons. In case you <em>just want to add a new icons</em> to the theme's predefined set, please import the theme's <code>reykjavik/assets/fonts/fontello/config.json</code> file into Fontello icons font generator first (as seen in the picture below) and then select your additional icons or import your custom icons SVG into Fontello (read instructions on <a href="https://github.com/fontello/fontello/wiki" target="_blank">how to use Fontello</a>).</p>
-
-							<figure class="mt-m">
-								<a href="http://easycaptures.com/fs/uploaded/1026/5529117955.jpg" target="_blank">
-									<img src="http://easycaptures.com/fs/uploaded/1026/5529117955.jpg" alt="Importing config.json file into Fontello.com icons font generator" />
-								</a>
-								<figcaption>Importing config.json file into Fontello.com icons font generator</figcaption>
-							</figure>
-						</li>
-					</ul>
 
 				<h3 id="cookies">
 					How to set up cookies notification?
@@ -2697,7 +2277,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<span class="badge alignleft"></span>
 				</h3>
 
-					<p>If you are building a website for a client using WordPress (and Reykjavík theme), you might want to adapt the WordPress admin area a bit to remove unnecessary things and maybe even rename some post types. In this case we provide some useful resources you would want to check out:</p>
+					<p>If you are building a website for a client using WordPress (and Reykjavik theme), you might want to adapt the WordPress admin area a bit to remove unnecessary things and maybe even rename some post types. In this case we provide some useful resources you would want to check out:</p>
 
 					<ul>
 						<li><a href="https://webdesign.tutsplus.com/courses/wordpress-admin-customization" target="_blank"><strong>WordPress Admin Customization</strong></a> video course</li>
@@ -2880,7 +2460,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 									<dd>
 										<p><strong title="Value type">Boolean</strong>: "1" or empty</p>
 										<p>Disables Intro section for the current page/post.</p>
-										<p>With supported post types (pages, posts, projects, staff and WooCommerce products) you can preferably use a special <a href="#page-templates">page template</a> instead.</p>
+										<p>With supported post types (pages, posts and WooCommerce products) you can preferably use a special <a href="#page-templates">page template</a> instead.</p>
 									</dd>
 
 									<dt><code>no_intro_media</code></dt>
@@ -2899,7 +2479,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 									<dd>
 										<p><strong title="Value type">Boolean</strong>: "1" or empty</p>
 										<p>Displays <a href="#widgets">Intro Widgets</a> area if Intro section is displayed.</p>
-										<p>With supported post types (pages, posts, projects, staff and WooCommerce products) you can preferably use a special <a href="#page-templates">page template</a> instead.</p>
+										<p>With supported post types (pages, posts and WooCommerce products) you can preferably use a special <a href="#page-templates">page template</a> instead.</p>
 									</dd>
 								</dl>
 
@@ -3004,10 +2584,8 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 						<!-- JS -->
 						<li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
-						<li><a href="https://github.com/webmandesign/scroll-watch/" target="_blank">jQuery.scrollWatch</a></li>
 						<li><a href="http://fitvidsjs.com/" target="_blank">FitVids.JS</a></li>
 						<li><a href="http://masonry.desandro.com/" target="_blank">Masonry</a></li>
-						<li><a href="http://kenwheeler.github.io/slick/" target="_blank">Slick slider</a></li>
 
 						<!-- CSS -->
 						<li><a href="https://github.com/webmandesign/wp-css-starter" target="_blank">WordPress CSS starter stylesheet</a></li>
@@ -3022,10 +2600,9 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<h3>Fonts</h3>
 
 					<ul class="columns" title="Sources and credits">
-						<li><a href="https://fonts.google.com/specimen/Fira+Sans" target="_blank">Fira Sans font</a></li>
+						<li><a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat font</a></li>
+						<li><a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans font</a></li>
 						<li><a href="http://genericons.com/" target="_blank">Genericons</a></li>
-						<li><a href="http://ionicons.com/" target="_blank">Ionicons</a></li>
-						<li><a href="http://fontello.com/" target="_blank">Fontello</a></li>
 					</ul>
 
 				</div>
@@ -3035,10 +2612,11 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<h3>Images</h3>
 
 					<ul class="columns" title="Sources and credits">
+						<li><a href="https://unsplash.com" target="_blank">Unsplash</a></li>
+						<li><a href="https://openclipart.org" target="_blank">Open Clipart</a></li>
 						<li><a href="https://stocksnap.io/" target="_blank">StockSnap</a></li>
 						<li><a href="https://www.pexels.com" target="_blank">Pexels</a></li>
 						<li><a href="https://pixabay.com" target="_blank">Pixabay</a></li>
-						<li><a href="https://unsplash.com" target="_blank">Unsplash</a></li>
 						<li><a href="https://www.canva.com/" target="_blank">Canva</a> <em>(<a href="https://themeisle.com/blog/blog-images-for-wordpress/" target="_blank">How to use it?</a>)</em></li>
 					</ul>
 
@@ -3058,7 +2636,7 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 	-->
 	<footer class="footer"><div class="container-fluid">
 
-		<p>Once again, thank you for using Reykjavík WordPress theme. If you have any questions that are beyond the scope of this user manual, please join <a target="_blank" href="https://www.webmandesign.eu/reference/#links-support">WebMan Design Support Center</a>. I will do my best to assist you.</p>
+		<p>Once again, thank you for using Reykjavik WordPress theme. If you have any questions that are beyond the scope of this user manual, please join <a target="_blank" href="https://www.webmandesign.eu/reference/#links-support">WebMan Design Support Center</a>. I will do my best to assist you.</p>
 		<p>If you like the theme, please rate it on the marketplace where you've purchased the theme from. Thank you!</p>
 		<p>&copy; <a href="https://www.webmandesign.eu">WebMan Design</a> | <a href="#">Back to top &uarr;</a></p>
 

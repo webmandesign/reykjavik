@@ -4,7 +4,7 @@
  * @link  http://a11yproject.com/
  * @link  https://codeable.io/community/wordpress-accessibility-creating-accessible-dropdown-menus/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

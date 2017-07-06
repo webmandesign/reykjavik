@@ -5,7 +5,7 @@
  * @uses  `wmhook_reykjavik_esc_css` global hook
  * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

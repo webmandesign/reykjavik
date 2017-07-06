@@ -157,13 +157,12 @@
 	.entry-date-enabled {
 
 		.entry-content {
-			margin-#{$left}: power( $golden, 2 ) * $golden + 1em; // {{RTL}}
+			margin-#{$left}: 4em; // {{RTL}}
 
 			.sidebar &,
 			.widget-area & {
 				float: none;
 				width: auto;
-				margin-#{$left}: 4em; // {{RTL}}
 			}
 
 		}

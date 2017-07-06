@@ -6,7 +6,7 @@
  * Do not remove the HTML comment from `</div><!-- /footer-area-site-info -->`
  * as it is required for customizer partial refresh manipulation.
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0

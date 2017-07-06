@@ -7,7 +7,7 @@
  *
  * @link  https://make.wordpress.org/core/2016/11/26/video-headers-in-4-7/
  *
- * @package    Reykjavík
+ * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
