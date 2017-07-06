@@ -132,9 +132,9 @@ class Reykjavik_Intro {
 
 					register_default_headers( array(
 
-							'matt-howard-248421' => array(
-								'url'           => '%s/assets/images/header/matt-howard-248421.jpg',
-								'thumbnail_url' => '%s/assets/images/header/thumbnail/matt-howard-248421.jpg',
+							'unsplash-matt-howard-248421' => array(
+								'url'           => '%s/assets/images/header/unsplash-matt-howard-248421.jpg',
+								'thumbnail_url' => '%s/assets/images/header/thumbnail/unsplash-matt-howard-248421.jpg',
 								'description'   => esc_html_x( 'Cliffs', 'Header image description.', 'reykjavik' ),
 							),
 

@@ -380,7 +380,7 @@ class Reykjavik_Setup {
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
 					 */
 					add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
-							'default-color' => 'e4e3e3',
+							'default-color' => 'e3e3e4',
 						) ) );
 
 				// Post formats
@@ -487,7 +487,7 @@ class Reykjavik_Setup {
 			// Processing
 
 				$content_width = absint( get_theme_mod( 'layout_width_content', 1200 ) );
-				$site_width    = absint( get_theme_mod( 'layout_width_site', 1920 ) );
+				$site_width    = absint( get_theme_mod( 'layout_width_site', 1640 ) );
 
 				// Make content width max 88% of site width
 
@@ -538,12 +538,12 @@ class Reykjavik_Setup {
 
 					if ( 'boxed' === get_theme_mod( 'layout_site', 'fullwidth' ) ) {
 
-						$intro_width = absint( get_theme_mod( 'layout_width_site', 1920 ) );
+						$intro_width = absint( get_theme_mod( 'layout_width_site', 1640 ) );
 
 						if ( 1000 > $intro_width ) {
 							// Can't set site width less then 1000 px,
 							// so default to max boxed site width then.
-							$intro_width = 1920;
+							$intro_width = 1640;
 						}
 
 					} else {
@@ -931,24 +931,6 @@ class Reykjavik_Setup {
 									'title'    => esc_html__( 'Button from link', 'reykjavik' ),
 									'selector' => 'a',
 									'classes'  => 'button',
-								),
-
-								500 . 'buttons' . 110 => array(
-									'title'    => esc_html__( 'Button from link, small', 'reykjavik' ),
-									'selector' => 'a',
-									'classes'  => 'button size-small',
-								),
-
-								500 . 'buttons' . 120 => array(
-									'title'    => esc_html__( 'Button from link, large', 'reykjavik' ),
-									'selector' => 'a',
-									'classes'  => 'button size-large',
-								),
-
-								500 . 'buttons' . 130 => array(
-									'title'    => esc_html__( 'Button from link, extra large', 'reykjavik' ),
-									'selector' => 'a',
-									'classes'  => 'button size-extra-large',
 								),
 
 							),

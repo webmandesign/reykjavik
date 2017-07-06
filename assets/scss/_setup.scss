@@ -50,7 +50,7 @@
 	// Site widths
 	//
 
-		$boxed_width: 1920;   // In px // Default max boxed site width
+		$boxed_width: 1640;   // In px // Default max boxed site width
 		$content_width: 1200; // In px // Default content width
 
 		$page_content_width: 62; // In %
@@ -117,7 +117,7 @@
 	// //* = Doesn't change via Customizer.
 	//
 
-		$color_mejs_bg: #333; //*
+		$color_mejs_bg: #333334; //*
 
 		$colors: (
 
@@ -255,7 +255,7 @@
 			// "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
 			// "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
 
-			// http://www.modularscale.com/?1,0.81&em&1.62
+			// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
 
 			'h1, .h1' : (
 					2.618,
@@ -302,11 +302,13 @@
 	// Special typography
 	//
 
+		// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
+
 		$display_text_size: (
-			1 : 2.62em,
-			2 : 3.62em,
-			3 : 4.25em,
-			4 : 5em,
+			1 : 2.618em,
+			2 : 3.329em,
+			3 : 4.236em,
+			4 : 5.387em,
 		) !default;
 
 

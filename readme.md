@@ -5,14 +5,14 @@
 * **Author URI:**         https://www.webmandesign.eu
 * **License:**            GNU General Public License v3
 * **License URI:**        http://www.gnu.org/licenses/gpl-3.0.html
-* **Requires at least:**  4.7 (due to custom header markup support)
+* **Requires at least:**  4.7
 
 
 ## Description
 
-**Reykjavík** is accessible business portfolio & e-commerce WordPress theme with a lot of powerful yet easy to use features. Optimized for search engines, responsive, high resolution displays ready, with support for multilingual setup (including RTL languages). Main focus was put into readability, putting your website content in front. The theme loads really fast and has a secure, clean, flexible and developer friendly code.
+@todo
 
-Follow [WebMan Design on **Twitter**](https://twitter.com/webmandesigneu) and become a fan on [**Facebook**](https://www.facebook.com/webmandesigneu) for staying informed about theme updates and news.
+Follow [WebMan Design on **Twitter**](https://twitter.com/webmandesigneu) and become a fan on [**Facebook**](https://www.facebook.com/webmandesigneu) for staying informed about the theme updates and news.
 
 
 ## Demo
@@ -71,10 +71,15 @@ http://tgmpluginactivation.com
 
 ### Fonts copyright
 
-**Fira Sans**
-Copyright (c) Carrois Apostrophe, https://carrois.com/
+**Montserrat**
+Copyright (c) Julieta Ulanovsky, Principal design
 Licensed under the Open Font License
-https://fonts.google.com/specimen/Fira+Sans
+https://fonts.google.com/specimen/Montserrat
+
+**Open Sans**
+Copyright (c) Steve Matteson, Principal design
+Licensed under the Apache License, Version 2.0
+https://fonts.google.com/specimen/Open+Sans
 
 **Genericons Neue font icons**
 Copyright (c) Automattic, Inc.
@@ -83,8 +88,10 @@ http://genericons.com
 
 ### Images copyright
 
-**Images used in theme custom header, screenshot and demo website**
+**Images used in theme custom header, footer, screenshot and demo website**
+https://unsplash.com/@thematthoward?photo=U9ZI3ysJtrE
 https://pixabay.com/en/colorado-rocky-mountain-national-park-1436681/
+Copyright (c) https://openclipart.org
 Copyright (c) https://unsplash.com
 Copyright (c) https://stocksnap.io
 Copyright (c) https://www.pexels.com

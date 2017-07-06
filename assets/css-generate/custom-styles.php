@@ -40,7 +40,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 		$custom_styles = array();
 
 		$helper = apply_filters( 'wmhook_reykjavik_custom_styles_helper', array(
-				'layout_width_site'    => get_theme_mod( 'layout_width_site', 1920 ),
+				'layout_width_site'    => get_theme_mod( 'layout_width_site', 1640 ),
 				'layout_width_content' => get_theme_mod( 'layout_width_content', 1200 ),
 				'typography_size_html' => get_theme_mod( 'typography_size_html', 18 ),
 			) );

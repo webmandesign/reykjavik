@@ -283,14 +283,14 @@ class Reykjavik_Customize {
 										'type'    => 'color',
 										'id'      => 'color_accent',
 										'label'   => esc_html__( 'Accent color', 'reykjavik' ),
-										'default' => '#dc1e35',
+										'default' => '#273a7d',
 									),
 									100 . 'colors' . 10 . 220 => array(
 										'type'        => 'color',
 										'id'          => 'color_accent_text',
 										'label'       => esc_html__( 'Accent text color', 'reykjavik' ),
 										'description' => esc_html__( 'Color of text on accent color background.', 'reykjavik' ),
-										'default'     => '#ffffff',
+										'default'     => '#fefeff',
 									),
 
 
@@ -321,11 +321,11 @@ class Reykjavik_Customize {
 										'id'          => 'color_header_background',
 										'label'       => esc_html__( 'Background color', 'reykjavik' ),
 										'description' => esc_html__( 'This color is also used to style a mobile device browser address bar.', 'reykjavik' ) . ' <a href="https://wordpress.org/plugins/chrome-theme-color-changer/" target="_blank">' . esc_html__( 'You can further customize it with a dedicated plugin.', 'reykjavik' ) . '</a>',
-										'default'     => '#fffefe',
+										'default'     => '#fefeff',
 										'preview_js'  => array(
 											'css' => array(
 
-												'.site-header-content, .masthead-placeholder, ' . self::color_selectors( 'header' ) => array(
+												'.site-header-content, ' . self::color_selectors( 'header' ) => array(
 													'background-color'
 												),
 												'.main-navigation-container li ul' => array(
@@ -346,11 +346,11 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_header_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'default'    => '#545353',
+										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
 
-												'.site-header-content, .masthead-placeholder, ' . self::color_selectors( 'header' ) => array(
+												'.site-header-content, ' . self::color_selectors( 'header' ) => array(
 													'color',
 													array(
 														'property'         => 'border-color',
@@ -377,7 +377,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_header_headings',
 										'label'      => esc_html__( 'Site title (logo) color', 'reykjavik' ),
-										'default'    => '#242323',
+										'default'    => '#232324',
 										'preview_js' => array(
 											'css' => array(
 
@@ -417,7 +417,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'default'    => '#242323',
+										'default'    => '#fafafb',
 										'preview_js' => array(
 											'css' => array(
 
@@ -432,7 +432,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'default'    => '#a4a3a3',
+										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
 
@@ -453,7 +453,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'default'    => '#e4e3e3',
+										'default'    => '#232324',
 										'preview_js' => array(
 											'css' => array(
 
@@ -482,7 +482,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'default'    => '#2e2d2d',
+										'default'    => '#0f1732',
 										'preview_js' => array(
 											'css' => array(
 
@@ -497,7 +497,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'default'    => '#a4a3a3',
+										'default'    => '#d3d3d4',
 										'preview_js' => array(
 											'css' => array(
 
@@ -518,7 +518,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'default'    => '#e4e3e3',
+										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
 
@@ -558,7 +558,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'default'    => '#fdfcfc',
+										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
 
@@ -573,7 +573,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'default'    => '#6f6e6e',
+										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
 
@@ -594,7 +594,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'default'    => '#242323',
+										'default'    => '#232324',
 										'preview_js' => array(
 											'css' => array(
 
@@ -635,7 +635,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'default'    => '#242323',
+										'default'    => '#060607',
 										'preview_js' => array(
 											'css' => array(
 
@@ -656,7 +656,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'default'    => '#a4a3a3',
+										'default'    => '#d3d3d4',
 										'preview_js' => array(
 											'css' => array(
 
@@ -677,7 +677,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'default'    => '#e4e3e3',
+										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
 
@@ -700,7 +700,7 @@ class Reykjavik_Customize {
 										'type'                => 'image',
 										'id'                  => 'footer_image',
 										'label'               => esc_html__( 'Background image', 'reykjavik' ),
-										'default'             => trailingslashit( get_template_directory_uri() ) . 'assets/images/footer/footer.png',
+										'default'             => trailingslashit( get_template_directory_uri() ) . 'assets/images/footer/pixabay-colorado-1436681.png',
 										'is_background_image' => true,
 										'is_css_condition'    => true,
 										'preview_js'          => array(
@@ -849,15 +849,14 @@ class Reykjavik_Customize {
 										'type'        => 'range',
 										'id'          => 'layout_width_site',
 										'label'       => esc_html__( 'Website max width', 'reykjavik' ),
-										'description' => esc_html__( 'For boxed website layout.', 'reykjavik' ) . '<br />' . sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1920 ) ),
-										'default'     => 1920,
+										'description' => esc_html__( 'For boxed website layout.', 'reykjavik' ) . '<br />' . sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1640 ) ),
+										'default'     => 1640,
 										'min'         => 1000,
-										'max'         => 1920, // cca 1920 x 96%
+										'max'         => 1920,
 										'step'        => 20,
 										'suffix'      => 'px',
 										'preview_js'  => array(
-											'custom' => "jQuery( '.masthead-placeholder #masthead' ).css( 'width', jQuery( '.masthead-placeholder' ).outerWidth() + 'px' );",
-											'css'    => array(
+											'css' => array(
 
 												'.site-layout-boxed .site' => array(
 													array(
@@ -1320,29 +1319,6 @@ class Reykjavik_Customize {
 				return ( 'boxed' == $option->value() );
 
 		} // /is_layout_site_boxed
-
-
-
-		/**
-		 * Is site layout: Fullwidth?
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  array $control
-		 */
-		public static function is_layout_site_fullwidth( $control ) {
-
-			// Helper variables
-
-				$option = $control->manager->get_setting( 'layout_site' );
-
-
-			// Output
-
-				return ( 'fullwidth' == $option->value() );
-
-		} // /is_layout_site_fullwidth
 
 
 

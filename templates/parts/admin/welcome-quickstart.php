@@ -25,7 +25,7 @@
 
 		<span class="dropcap">1</span>
 
-		<h3><?php esc_html_e( 'The WordPress settings', 'reykjavik' ); ?></h3>
+		<h3><?php esc_html_e( 'WordPress settings', 'reykjavik' ); ?></h3>
 
 		<p>
 			<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the WordPress dashboard.', 'reykjavik' ); ?>

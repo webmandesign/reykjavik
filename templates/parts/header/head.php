@@ -28,5 +28,5 @@
  * @see  https://wordpress.org/plugins/chrome-theme-color-changer
  */
 if ( ! class_exists( 'Chrome_Theme_Color_Changer' ) ) {
-	echo '<meta name="theme-color" content="' . esc_attr( get_theme_mod( 'color_header_background', '#fffefe' ) ) . '">';
+	echo '<meta name="theme-color" content="' . esc_attr( get_theme_mod( 'color_header_background', '#fefeff' ) ) . '">';
 }

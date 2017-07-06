@@ -279,7 +279,7 @@ th, tfoot td { text-align: left; border-width: 2px; }
 /* FILE: starter/base/__player.scss */
 .site .mejs-container { min-height: 50px; margin: 1.62em 0; }
 
-.site .mejs-container .mejs-controls { height: 50px; padding: 0 20px; background: #333; }
+.site .mejs-container .mejs-controls { height: 50px; padding: 0 20px; background: #333334; }
 
 .site .mejs-container .mejs-controls div { margin-top: 10px; }
 
@@ -287,11 +287,11 @@ th, tfoot td { text-align: left; border-width: 2px; }
 
 .site .mejs-container .mejs-controls .mejs-time-rail { height: 100%; padding: 0; margin: 0; }
 
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-total { height: 100%; margin-top: 0; margin-bottom: 0; background: #292929; }
+.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-total { height: 100%; margin-top: 0; margin-bottom: 0; background: #29292a; }
 
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded { height: 4px; margin-top: 23px; background: #383838; background: repeating-linear-gradient(90deg, transparent, transparent 2px, #383838 2px, #383838 4px); border-radius: 0; }
+.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded { height: 4px; margin-top: 23px; background: #383839; background: repeating-linear-gradient(90deg, transparent, transparent 2px, #383839 2px, #383839 4px); border-radius: 0; }
 
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-current { height: 100%; background: #5c5c5c; }
+.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-current { height: 100%; background: #5b5b5d; }
 
 .site .mejs-container video { height: auto; }
 
@@ -301,7 +301,7 @@ th, tfoot td { text-align: left; border-width: 2px; }
 
 .site .mejs-overlay-button { margin: -50px 0 0 !important; margin-left: -50px !important; }
 
-.site .wp-playlist { padding: 1.62em; margin: 1.62em 0; background-color: #cccccc; border-width: 0; }
+.site .wp-playlist { padding: 1.62em; margin: 1.62em 0; background-color: #cccccb; border-width: 0; }
 
 .site .wp-playlist .mejs-container { width: 100% !important; }
 
@@ -309,7 +309,7 @@ th, tfoot td { text-align: left; border-width: 2px; }
 
 .site .wp-playlist-tracks { margin-top: 1em; }
 
-.site .wp-playlist-item { padding: 0.62em 0; border-color: #bdbdbd; }
+.site .wp-playlist-item { padding: 0.62em 0; border-color: #bdbdbc; }
 
 .site .wp-playlist-item-length { margin-top: 0.62em; }
 
@@ -881,7 +881,7 @@ tbody tr:hover td::after, tbody tr:hover th::after, .button::after, button::afte
 
 @media only screen and (min-width: 55em) { .site-layout-boxed { padding: 1.62em; } }
 
-.site-layout-boxed .site { max-width: 1920px; max-width: 106.66667rem; }
+.site-layout-boxed .site { max-width: 1640px; max-width: 91.11111rem; }
 
 .site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs, .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs { width: 88%; margin: 0 auto; }
 
@@ -1098,21 +1098,21 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 .display-1:last-child, .display-2:last-child, .display-3:last-child, .display-4:last-child { margin-bottom: 0; }
 
-.display-1 { font-size: 2.1222em; line-height: 1.3325; }
+.display-1 { font-size: 2.12058em; line-height: 1.3325; }
 
-@media only screen and (min-width: 55em) { .display-1 { font-size: 2.62em; } }
+@media only screen and (min-width: 55em) { .display-1 { font-size: 2.618em; } }
 
-.display-2 { font-size: 2.5883em; line-height: 1.2375; }
+.display-2 { font-size: 2.38023em; line-height: 1.2375; }
 
-@media only screen and (min-width: 55em) { .display-2 { font-size: 3.62em; } }
+@media only screen and (min-width: 55em) { .display-2 { font-size: 3.329em; } }
 
-.display-3 { font-size: 2.90417em; line-height: 1.20583; }
+.display-3 { font-size: 2.8946em; line-height: 1.20583; }
 
-@media only screen and (min-width: 55em) { .display-3 { font-size: 4.25em; } }
+@media only screen and (min-width: 55em) { .display-3 { font-size: 4.236em; } }
 
-.display-4 { font-size: 3.3375em; line-height: 1.19; }
+.display-4 { font-size: 3.59582em; line-height: 1.19; }
 
-@media only screen and (min-width: 55em) { .display-4 { font-size: 5em; } }
+@media only screen and (min-width: 55em) { .display-4 { font-size: 5.387em; } }
 
 /* FILE: main/header/_header.scss */
 .site-header { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; z-index: 20; }
