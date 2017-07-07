@@ -92,7 +92,7 @@ class Reykjavik_Welcome {
 
 				$sections = (array) apply_filters( 'wmhook_reykjavik_welcome_render_sections', array(
 						0   => 'header',
-						10   => 'promo',
+						10  => 'promo',
 						20  => 'quickstart',
 						30  => 'filesystem',
 						40  => 'demo',

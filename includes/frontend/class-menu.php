@@ -52,7 +52,6 @@ class Reykjavik_Menu {
 						add_action( 'tha_header_top', __CLASS__ . '::secondary', 30 );
 
 						add_action( 'tha_header_top', __CLASS__ . '::social', 40 );
-
 						add_action( 'wmhook_reykjavik_site_info_after', __CLASS__ . '::social' );
 
 						add_action( 'wp_update_nav_menu',   __CLASS__ . '::social_cache_flush' );
@@ -73,7 +72,7 @@ class Reykjavik_Menu {
 
 						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 3 );
 
-						add_filter( 'wp_nav_menu', __CLASS__ . '::mobile_menu_search', 20, 2 ); // See below for priority info
+						add_filter( 'wp_nav_menu', __CLASS__ . '::mobile_menu_search', 20, 2 ); // See below for priority info.
 
 		} // /__construct
 

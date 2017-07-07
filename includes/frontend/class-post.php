@@ -91,9 +91,7 @@ class Reykjavik_Post {
 						add_filter( 'wmhook_reykjavik_post_media_pre', __CLASS__ . '::is_page_builder_ready_maybe_return_empty_string', 100 );
 
 						add_filter( 'wmhook_reykjavik_disable_header', __CLASS__ . '::is_page_template_blank' );
-
 						add_filter( 'wmhook_reykjavik_disable_footer', __CLASS__ . '::is_page_template_blank' );
-
 						add_filter( 'wmhook_reykjavik_breadcrumb_navxt_disabled', __CLASS__ . '::is_page_template_blank' );
 
 						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::intro_disable' );
@@ -369,7 +367,7 @@ class Reykjavik_Post {
 
 			// Output
 
-				echo Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip back to navigation', 'reykjavik' ), 'focus-position-static' );
+				echo Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip back to main navigation', 'reykjavik' ), 'focus-position-static' );
 
 		} // /skip_links
 

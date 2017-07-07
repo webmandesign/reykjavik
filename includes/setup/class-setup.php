@@ -132,14 +132,9 @@ class Reykjavik_Setup {
 		 */
 		public static function installation() {
 
-			// Helper variables
-
-				$installed = get_theme_mod( '__theme_installed' );
-
-
 			// Requirements check
 
-				if ( $installed ) {
+				if ( get_theme_mod( '__theme_installed' ) ) {
 					return;
 				}
 

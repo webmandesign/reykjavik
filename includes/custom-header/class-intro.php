@@ -132,10 +132,10 @@ class Reykjavik_Intro {
 
 					register_default_headers( array(
 
-							'unsplash-matt-howard-248421' => array(
-								'url'           => '%s/assets/images/header/unsplash-matt-howard-248421.jpg',
-								'thumbnail_url' => '%s/assets/images/header/thumbnail/unsplash-matt-howard-248421.jpg',
-								'description'   => esc_html_x( 'Cliffs', 'Header image description.', 'reykjavik' ),
+							'pixabay-colorado-1436681' => array(
+								'url'           => '%s/assets/images/header/pixabay-colorado-1436681.png',
+								'thumbnail_url' => '%s/assets/images/header/thumbnail/pixabay-colorado-1436681.png',
+								'description'   => esc_html_x( 'Mountains drawing', 'Header image description.', 'reykjavik' ),
 							),
 
 						) );

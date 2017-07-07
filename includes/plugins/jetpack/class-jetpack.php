@@ -72,9 +72,7 @@ class Reykjavik_Jetpack {
 					// Filters
 
 						add_filter( 'jetpack_sharing_display_markup', 'Reykjavik_Content::headings_level_up', 999 );
-
 						add_filter( 'jetpack_relatedposts_filter_headline', 'Reykjavik_Content::headings_level_up', 999 );
-
 						add_filter( 'jetpack_relatedposts_filter_post_heading', 'Reykjavik_Content::headings_level_up', 999 );
 
 						add_filter( 'sharing_show', __CLASS__ . '::sharing_show', 10, 2 );
