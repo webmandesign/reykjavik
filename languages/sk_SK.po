@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-07-06 22:57+0200\n"
-"PO-Revision-Date: 2017-07-06 23:14+0200\n"
+"POT-Creation-Date: 2017-07-07 22:01+0200\n"
+"PO-Revision-Date: 2017-07-07 22:01+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -75,8 +75,8 @@ msgstr "&raquo;"
 
 #: includes/custom-header/class-intro.php:138
 msgctxt "Header image description."
-msgid "Cliffs"
-msgstr "Útesy"
+msgid "Mountains drawing"
+msgstr "Kresba hôr"
 
 #: includes/customize/class-customize.php:202
 msgid "Logo image"
@@ -517,12 +517,12 @@ msgid "General text font"
 msgstr "Všeobecný typ písma"
 
 #: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:886
+#: includes/setup/class-setup.php:881
 msgid "Headings font"
 msgstr "Písmo nadpisov"
 
 #: includes/customize/class-customize.php:1113
-#: includes/setup/class-setup.php:892
+#: includes/setup/class-setup.php:887
 msgid "Logo font"
 msgstr "Písmo loga"
 
@@ -619,22 +619,22 @@ msgstr "Preskočiť na pätičku"
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/frontend/class-menu.php:122
+#: includes/frontend/class-menu.php:121
 msgctxt "Navigational menu location"
 msgid "Primary"
 msgstr "Primárne"
 
-#: includes/frontend/class-menu.php:123
+#: includes/frontend/class-menu.php:122
 msgctxt "Navigational menu location"
 msgid "Secondary"
 msgstr "Sekundárna"
 
-#: includes/frontend/class-menu.php:124
+#: includes/frontend/class-menu.php:123
 msgctxt "Navigational menu location"
 msgid "Social Links"
 msgstr "Odkazy sociálnych sietí"
 
-#: includes/frontend/class-menu.php:303
+#: includes/frontend/class-menu.php:302
 msgid "Please, set up the menu in Appearance &raquo; Menus."
 msgstr "Nastavte navigáciu v sekcii Vzhľad &raquo; Menu."
 
@@ -646,16 +646,16 @@ msgstr "Tento obsah je chránený heslom."
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/frontend/class-post.php:372
-msgid "Skip back to navigation"
-msgstr "Preskočiť späť na navigáciu"
+#: includes/frontend/class-post.php:370
+msgid "Skip back to main navigation"
+msgstr "Preskočiť späť na hlavnú navigáciu"
 
-#: includes/frontend/class-post.php:403
+#: includes/frontend/class-post.php:401
 msgctxt "$s: Custom post type singular label"
 msgid "Previous $s"
 msgstr "Predchádzajúce"
 
-#: includes/frontend/class-post.php:408
+#: includes/frontend/class-post.php:406
 msgctxt "$s: Custom post type singular label"
 msgid "Next $s"
 msgstr "Následujúce"
@@ -1225,7 +1225,7 @@ msgstr "Aj pred, aj za obsahom"
 msgid "After content only"
 msgstr "Iba za obsahom"
 
-#: includes/plugins/jetpack/class-jetpack.php:203
+#: includes/plugins/jetpack/class-jetpack.php:201
 msgid "Load more&hellip;"
 msgstr "Načítať viac&hellip;"
 
@@ -1382,43 +1382,43 @@ msgid ""
 "archive pages."
 msgstr "Tento bočný panel nahradí základný bočný panel na stránkach obchodu."
 
-#: includes/setup/class-setup.php:224
+#: includes/setup/class-setup.php:219
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s!"
 msgstr "Ďakujeme, že používate %s!"
 
-#: includes/setup/class-setup.php:231
+#: includes/setup/class-setup.php:226
 msgid "Please read \"Welcome\" page for information about the theme setup."
 msgstr "Prečítajte si informácie o nastavení témy na stránke \"Vitajte\"."
 
-#: includes/setup/class-setup.php:238
+#: includes/setup/class-setup.php:233
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr "Začíname s %s"
 
-#: includes/setup/class-setup.php:564
+#: includes/setup/class-setup.php:559
 msgid "In posts list."
 msgstr "V zozname článkov."
 
-#: includes/setup/class-setup.php:571
+#: includes/setup/class-setup.php:566
 msgid "As featured image preview on single post page."
 msgstr "Ako náhľad prezentačného obrázku na stránke článku."
 
-#: includes/setup/class-setup.php:572
+#: includes/setup/class-setup.php:567
 msgid "In list of child pages."
 msgstr "V zozname podstránok."
 
-#: includes/setup/class-setup.php:579 includes/setup/class-setup.php:590
+#: includes/setup/class-setup.php:574 includes/setup/class-setup.php:585
 msgid "Not used in the theme."
 msgstr "Téma nepoužíva túto veľkosť obrázku."
 
-#: includes/setup/class-setup.php:589
+#: includes/setup/class-setup.php:584
 msgid "This is WordPress native image size."
 msgstr "Toto je jedna zo základných veľkostí obrázkov vo WordPress."
 
-#: includes/setup/class-setup.php:597
+#: includes/setup/class-setup.php:592
 msgid "In page intro section."
 msgstr "V intro sekcii stránky."
 
@@ -1427,7 +1427,7 @@ msgstr "V intro sekcii stránky."
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:767
+#: includes/setup/class-setup.php:762
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr "on"
@@ -1437,68 +1437,68 @@ msgstr "on"
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:777
+#: includes/setup/class-setup.php:772
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: includes/setup/class-setup.php:846
+#: includes/setup/class-setup.php:841
 msgid "Thin (hairline) text"
 msgstr "Tenulinký text (ako vlások)"
 
-#: includes/setup/class-setup.php:847
+#: includes/setup/class-setup.php:842
 msgid "Extra light text"
 msgstr "Extra tenký text"
 
-#: includes/setup/class-setup.php:848
+#: includes/setup/class-setup.php:843
 msgid "Light text"
 msgstr "Tenký text"
 
-#: includes/setup/class-setup.php:849
+#: includes/setup/class-setup.php:844
 msgid "Normal weight text"
 msgstr "Normálny text"
 
-#: includes/setup/class-setup.php:850
+#: includes/setup/class-setup.php:845
 msgid "Medium text"
 msgstr "Hrubší text"
 
-#: includes/setup/class-setup.php:851
+#: includes/setup/class-setup.php:846
 msgid "Semi bold text"
 msgstr "Stredne hrubý text"
 
-#: includes/setup/class-setup.php:852
+#: includes/setup/class-setup.php:847
 msgid "Bold text"
 msgstr "Hrubý text"
 
-#: includes/setup/class-setup.php:853
+#: includes/setup/class-setup.php:848
 msgid "Extra bold text"
 msgstr "Extra hrubý text"
 
-#: includes/setup/class-setup.php:854
+#: includes/setup/class-setup.php:849
 msgid "Heavy text"
 msgstr "Tažký text"
 
-#: includes/setup/class-setup.php:859
+#: includes/setup/class-setup.php:854
 msgid "Text weights"
 msgstr "Hrúbka textu"
 
-#: includes/setup/class-setup.php:876
+#: includes/setup/class-setup.php:871
 msgid "Fonts"
 msgstr "Písmo"
 
-#: includes/setup/class-setup.php:880
+#: includes/setup/class-setup.php:875
 msgid "General font"
 msgstr "Všeobecný typ písma"
 
-#: includes/setup/class-setup.php:898
+#: includes/setup/class-setup.php:893
 msgid "Inherit font"
 msgstr "Zdediť typ písma"
 
-#: includes/setup/class-setup.php:909
+#: includes/setup/class-setup.php:904
 msgid "Columns"
 msgstr "Stĺpce"
 
-#: includes/setup/class-setup.php:916
+#: includes/setup/class-setup.php:911
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in 1 column"
@@ -1507,23 +1507,23 @@ msgstr[0] "Text v 1 stĺpci"
 msgstr[1] "Text v %d stĺpcoch"
 msgstr[2] "Text v %d stĺpcoch"
 
-#: includes/setup/class-setup.php:927
+#: includes/setup/class-setup.php:922
 msgid "Buttons"
 msgstr "Tlačidlá"
 
-#: includes/setup/class-setup.php:931
+#: includes/setup/class-setup.php:926
 msgid "Button from link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/class-setup.php:942
+#: includes/setup/class-setup.php:937
 msgid "Outdent"
 msgstr "Odsadiť"
 
-#: includes/setup/class-setup.php:946
+#: includes/setup/class-setup.php:941
 msgid "Outdent selected content"
 msgstr "Odsadiť označený obsah"
 
-#: includes/setup/class-setup.php:958
+#: includes/setup/class-setup.php:953
 msgid "Outdented heading style"
 msgstr "Štýl odsadených nadpisov"
 
@@ -1742,18 +1742,14 @@ msgid "Easy to use front-end page builder."
 msgstr "Jednoducho použiteľný editor stránok."
 
 #: includes/tgmpa/class-tgmpa-plugins.php:124
-msgid "Adding set of predefined templates for Beaver Builder page builder."
-msgstr "Pridáva sadu prednastavených šablón pre editor stránok Beaver Builder."
-
-#: includes/tgmpa/class-tgmpa-plugins.php:132
 msgid "For easy post and page attributes setup."
 msgstr "Pre jednoduché nastavenie atribútov stránok a článkov."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:140
+#: includes/tgmpa/class-tgmpa-plugins.php:132
 msgid "Adding e-commerce functionality."
 msgstr "Pridáva funkcionalitu e-shopu."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:147
+#: includes/tgmpa/class-tgmpa-plugins.php:139
 msgid ""
 "Adding custom sidebars management, allowing page layout modifications by "
 "removing sidebars."
@@ -1761,38 +1757,38 @@ msgstr ""
 "Dodatočný manažment bočných panelov a widgetových oblastí, umožňuje "
 "modifikovať rozloženie stránok odstránením bočných panelov."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:154
+#: includes/tgmpa/class-tgmpa-plugins.php:146
 msgid "For installing theme demo content easily."
 msgstr "Pre jednoduchú inštaláciu demo obsahu témy."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:189
+#: includes/tgmpa/class-tgmpa-plugins.php:181
 msgid "Other useful plugins &raquo;"
 msgstr "Ďalšie užitočné pluginy &raquo;"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:214
+#: includes/tgmpa/class-tgmpa-plugins.php:206
 msgid "Description"
 msgstr "Popis"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:283
+#: includes/tgmpa/class-tgmpa-plugins.php:275
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr "Odporúčané, nie vyžadované"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:286
+#: includes/tgmpa/class-tgmpa-plugins.php:278
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 "Upozorňujeme, že toto je zoznam odporúčaných pluginov, nie vyžadovaných."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:287
+#: includes/tgmpa/class-tgmpa-plugins.php:279
 msgid "Install only those plugins you will use."
 msgstr "Nainštalujte iba tie pluginy, ktoré budete používať."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:288
+#: includes/tgmpa/class-tgmpa-plugins.php:280
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr "Alebo nainštalujte tie, ktoré uprednostňujete."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:289
+#: includes/tgmpa/class-tgmpa-plugins.php:281
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1805,11 +1801,11 @@ msgstr ""
 msgid "Welcome"
 msgstr "Vitajte"
 
-#: includes/widgets/class-wp-widget-text.php:243
+#: includes/widgets/class-wp-widget-text.php:246
 msgid "Set icon CSS class:"
 msgstr "Nastavte CSS triedu ikonky:"
 
-#: includes/widgets/class-wp-widget-text.php:248
+#: includes/widgets/class-wp-widget-text.php:251
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
@@ -1817,29 +1813,29 @@ msgstr ""
 "Pre zobrazenie ikoniek na stránke použite plugin, ako je napríklad %1$s "
 "alebo %2$s."
 
-#: includes/widgets/class-wp-widget-text.php:249
+#: includes/widgets/class-wp-widget-text.php:252
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr "Better Font Awesome"
 
-#: includes/widgets/class-wp-widget-text.php:250
+#: includes/widgets/class-wp-widget-text.php:253
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr "Ionicons Official"
 
-#: includes/widgets/class-wp-widget-text.php:288
+#: includes/widgets/class-wp-widget-text.php:291
 msgid "Set image:"
 msgstr "Nastaviť obrázok:"
 
-#: includes/widgets/class-wp-widget-text.php:291
+#: includes/widgets/class-wp-widget-text.php:294
 msgid "Choose a featured image for this widget."
 msgstr "Zvoľte prezentačný obrázok pre tento widget."
 
-#: includes/widgets/class-wp-widget-text.php:296
+#: includes/widgets/class-wp-widget-text.php:299
 msgid "Select image"
 msgstr "Zvoliť obrázok"
 
-#: includes/widgets/class-wp-widget-text.php:310
+#: includes/widgets/class-wp-widget-text.php:313
 msgid "Remove image"
 msgstr "Odstrániť obrázok"
 

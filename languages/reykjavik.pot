@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-07-06 22:57+0200\n"
+"POT-Creation-Date: 2017-07-07 22:01+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: includes/custom-header/class-intro.php:138
 msgctxt "Header image description."
-msgid "Cliffs"
+msgid "Mountains drawing"
 msgstr ""
 
 #: includes/customize/class-customize.php:202
@@ -494,12 +494,12 @@ msgid "General text font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:886
+#: includes/setup/class-setup.php:881
 msgid "Headings font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1113
-#: includes/setup/class-setup.php:892
+#: includes/setup/class-setup.php:887
 msgid "Logo font"
 msgstr ""
 
@@ -590,22 +590,22 @@ msgstr ""
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/frontend/class-menu.php:122
+#: includes/frontend/class-menu.php:121
 msgctxt "Navigational menu location"
 msgid "Primary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:123
+#: includes/frontend/class-menu.php:122
 msgctxt "Navigational menu location"
 msgid "Secondary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:124
+#: includes/frontend/class-menu.php:123
 msgctxt "Navigational menu location"
 msgid "Social Links"
 msgstr ""
 
-#: includes/frontend/class-menu.php:303
+#: includes/frontend/class-menu.php:302
 msgid "Please, set up the menu in Appearance &raquo; Menus."
 msgstr ""
 
@@ -617,16 +617,16 @@ msgstr ""
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/frontend/class-post.php:372
-msgid "Skip back to navigation"
+#: includes/frontend/class-post.php:370
+msgid "Skip back to main navigation"
 msgstr ""
 
-#: includes/frontend/class-post.php:403
+#: includes/frontend/class-post.php:401
 msgctxt "$s: Custom post type singular label"
 msgid "Previous $s"
 msgstr ""
 
-#: includes/frontend/class-post.php:408
+#: includes/frontend/class-post.php:406
 msgctxt "$s: Custom post type singular label"
 msgid "Next $s"
 msgstr ""
@@ -1186,7 +1186,7 @@ msgstr ""
 msgid "After content only"
 msgstr ""
 
-#: includes/plugins/jetpack/class-jetpack.php:203
+#: includes/plugins/jetpack/class-jetpack.php:201
 msgid "Load more&hellip;"
 msgstr ""
 
@@ -1333,43 +1333,43 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:224
+#: includes/setup/class-setup.php:219
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s!"
 msgstr ""
 
-#: includes/setup/class-setup.php:231
+#: includes/setup/class-setup.php:226
 msgid "Please read \"Welcome\" page for information about the theme setup."
 msgstr ""
 
-#: includes/setup/class-setup.php:238
+#: includes/setup/class-setup.php:233
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/class-setup.php:564
+#: includes/setup/class-setup.php:559
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:571
+#: includes/setup/class-setup.php:566
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:572
+#: includes/setup/class-setup.php:567
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:579 includes/setup/class-setup.php:590
+#: includes/setup/class-setup.php:574 includes/setup/class-setup.php:585
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:589
+#: includes/setup/class-setup.php:584
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:597
+#: includes/setup/class-setup.php:592
 msgid "In page intro section."
 msgstr ""
 
@@ -1378,7 +1378,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:767
+#: includes/setup/class-setup.php:762
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1388,68 +1388,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:777
+#: includes/setup/class-setup.php:772
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:846
+#: includes/setup/class-setup.php:841
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:847
+#: includes/setup/class-setup.php:842
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:848
+#: includes/setup/class-setup.php:843
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:849
+#: includes/setup/class-setup.php:844
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:850
+#: includes/setup/class-setup.php:845
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:851
+#: includes/setup/class-setup.php:846
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:852
+#: includes/setup/class-setup.php:847
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:853
+#: includes/setup/class-setup.php:848
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:854
+#: includes/setup/class-setup.php:849
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:859
+#: includes/setup/class-setup.php:854
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:876
+#: includes/setup/class-setup.php:871
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:880
+#: includes/setup/class-setup.php:875
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:898
+#: includes/setup/class-setup.php:893
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:909
+#: includes/setup/class-setup.php:904
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:916
+#: includes/setup/class-setup.php:911
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in 1 column"
@@ -1457,23 +1457,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:927
+#: includes/setup/class-setup.php:922
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:931
+#: includes/setup/class-setup.php:926
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:942
+#: includes/setup/class-setup.php:937
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:946
+#: includes/setup/class-setup.php:941
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:958
+#: includes/setup/class-setup.php:953
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1672,54 +1672,50 @@ msgid "Easy to use front-end page builder."
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:124
-msgid "Adding set of predefined templates for Beaver Builder page builder."
-msgstr ""
-
-#: includes/tgmpa/class-tgmpa-plugins.php:132
 msgid "For easy post and page attributes setup."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:140
+#: includes/tgmpa/class-tgmpa-plugins.php:132
 msgid "Adding e-commerce functionality."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:147
+#: includes/tgmpa/class-tgmpa-plugins.php:139
 msgid ""
 "Adding custom sidebars management, allowing page layout modifications by "
 "removing sidebars."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:154
+#: includes/tgmpa/class-tgmpa-plugins.php:146
 msgid "For installing theme demo content easily."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:189
+#: includes/tgmpa/class-tgmpa-plugins.php:181
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:214
+#: includes/tgmpa/class-tgmpa-plugins.php:206
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:283
+#: includes/tgmpa/class-tgmpa-plugins.php:275
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:286
+#: includes/tgmpa/class-tgmpa-plugins.php:278
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:287
+#: includes/tgmpa/class-tgmpa-plugins.php:279
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:288
+#: includes/tgmpa/class-tgmpa-plugins.php:280
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:289
+#: includes/tgmpa/class-tgmpa-plugins.php:281
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1730,39 +1726,39 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:243
+#: includes/widgets/class-wp-widget-text.php:246
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:248
+#: includes/widgets/class-wp-widget-text.php:251
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:249
+#: includes/widgets/class-wp-widget-text.php:252
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:250
+#: includes/widgets/class-wp-widget-text.php:253
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:288
+#: includes/widgets/class-wp-widget-text.php:291
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:291
+#: includes/widgets/class-wp-widget-text.php:294
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:296
+#: includes/widgets/class-wp-widget-text.php:299
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:310
+#: includes/widgets/class-wp-widget-text.php:313
 msgid "Remove image"
 msgstr ""
 
