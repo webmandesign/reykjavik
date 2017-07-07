@@ -51,6 +51,7 @@
 	 * 10) Output
 	 * 20) Options
 	 * 30) Admin
+	 * 40) Icon fallback
 	 */
 	class Reykjavik_WP_Widget_Text extends WP_Widget_Text {
 
@@ -81,6 +82,8 @@
 							add_action( 'admin_print_scripts-widgets.php', array( $this, 'enqueue' ) );
 
 							add_action( 'wp_enqueue_scripts', array( $this, 'assets_beaver_builder' ) );
+
+							add_action( 'wp_head', array( $this, 'style_icon_fallback' ), 5 );
 
 			} // /__construct
 
@@ -409,6 +412,36 @@
 					$this->enqueue();
 
 			} // /assets_beaver_builder
+
+
+
+
+
+		/**
+		 * 40) Icon fallback
+		 */
+
+			/**
+			 * Icon fallback styles
+			 *
+			 * For cases when no icons font is loaded.
+			 *
+			 * IMPORTANT:
+			 * This has to be loaded early enough, before the icons font
+			 * stylesheet is enqueued (with any plugin)!
+			 *
+			 * @since    1.0.0
+			 * @version  1.0.0
+			 */
+			public function style_icon_fallback() {
+
+				// Output
+
+					echo '<style id="reykjavik-text-widget-icon-fallback"> ' .
+					     '.widget-symbol::before { content: "?"; font-family: inherit; } ' .
+					     '</style>';
+
+			} // /style_icon_fallback
 
 
 

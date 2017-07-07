@@ -124,7 +124,7 @@ embed, iframe, object { max-height: 320px; }
 
 embed, iframe, object, video { width: 100% !important; }
 
-[class^="icon-"]::before, [class*=" icon-"]::before { content: '?'; display: inline-block; padding: .19em .38em; font-size: .81em; font-weight: 700; border-width: 2px; border-style: dashed; vertical-align: middle; }
+.icon::before, [class^="icon-"]::before, [class*=" icon-"]::before { content: '?'; display: inline-block; padding: .19em .38em; font-size: .81em; font-weight: 700; border-width: 2px; border-style: dashed; vertical-align: middle; }
 
 /* FILE: main/custom-styles/__editor-outdented-layout.scss */
 .outdent-content { position: relative; padding: 8px; margin-left: -10px; margin-right: -10px; border-width: 2px; border-style: dashed; }

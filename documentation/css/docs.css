@@ -36,9 +36,9 @@ html { font-size: 100%; }
 
 body { line-height: 1.62; font-family: "Open Sans", sans-serif; font-size: 16px; color: #6e6e6f; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Montserrat", sans-serif; font-weight: 400; color: #232324; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Montserrat", sans-serif; font-weight: 700; color: #232324; }
 
-h5, h6 { font-size: 1em; font-weight: 700; }
+h5, h6 { font-size: 1em; }
 
 a:not(.btn) { text-decoration: underline; }
 

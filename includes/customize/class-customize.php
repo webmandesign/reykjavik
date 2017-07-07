@@ -635,7 +635,7 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'default'    => '#060607',
+										'default'    => '#0f1732',
 										'preview_js' => array(
 											'css' => array(
 
@@ -792,7 +792,7 @@ class Reykjavik_Customize {
 											'type'       => 'range',
 											'id'         => 'footer_image_opacity',
 											'label'      => esc_html__( 'Background image opacity', 'reykjavik' ),
-											'default'    => .20,
+											'default'    => .15,
 											'min'        => .05,
 											'max'        => 1,
 											'step'       => .05,

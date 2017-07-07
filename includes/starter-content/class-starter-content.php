@@ -117,7 +117,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => esc_html_x( 'Intro Widgets', 'Theme starter content', 'reykjavik' ),
 									'text'  => esc_html_x( 'This is an Intro Widgets area. It only displays on pages with a specific page template assigned, or a dedicated option enabled.', 'Theme starter content', 'reykjavik' ),
-									'icon'  => 'icon-ion-ios-cart-outline'
+									'icon'  => 'ion-ios-cart-outline'
 								),
 							),
 
@@ -126,7 +126,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => esc_html_x( 'Icons in Text Widget', 'Theme starter content', 'reykjavik' ),
 									'text'  => esc_html_x( 'To allow displaying icons in Text widget you need some plugin to load the icons to your website. You can use any icons plugin.', 'Theme starter content', 'reykjavik' ),
-									'icon'  => 'icon-ion-ios-gear-outline'
+									'icon'  => 'ion-ios-gear-outline'
 								),
 							),
 
@@ -135,7 +135,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => 'Lorem Ipsum',
 									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.',
-									'icon'  => 'icon-ion-ios-checkmark-outline'
+									'icon'  => 'ion-ios-checkmark-outline'
 								),
 							),
 

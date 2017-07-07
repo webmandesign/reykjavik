@@ -21,7 +21,7 @@ a, .accent-color { /*[*/ color: #273a7d; /*]*/ /*// color: [[color_accent]]; //*
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .post-navigation, .dropcap-text::first-letter { /*[*/ color: #232324; /*]*/ /*// color: [[color_content_headings]]; //*/ }
 
-.site-footer, .set-colors-footer, .set-colors-footer > .fl-row-content-wrap, .set-colors-footer > .fl-col-content { /*[*/ background-color: #060607; color: #d3d3d4; border-color: rgba(211, 211, 212, 0.2); /*]*/ /*// background-color: [[color_footer_background]]; color: [[color_footer_text]]; border-color: [[color_footer_text(20)]]; //*/ }
+.site-footer, .set-colors-footer, .set-colors-footer > .fl-row-content-wrap, .set-colors-footer > .fl-col-content { /*[*/ background-color: #0f1732; color: #d3d3d4; border-color: rgba(211, 211, 212, 0.2); /*]*/ /*// background-color: [[color_footer_background]]; color: [[color_footer_text]]; border-color: [[color_footer_text(20)]]; //*/ }
 
 .site-footer h2, .set-colors-footer h2, .set-colors-footer > .fl-row-content-wrap h2, .set-colors-footer > .fl-col-content h2, .site-footer h3, .set-colors-footer h3, .set-colors-footer > .fl-row-content-wrap h3, .set-colors-footer > .fl-col-content h3, .site-footer h4, .set-colors-footer h4, .set-colors-footer > .fl-row-content-wrap h4, .set-colors-footer > .fl-col-content h4, .site-footer .h1, .set-colors-footer .h1, .site-footer .h2, .set-colors-footer .h2, .site-footer .h3, .set-colors-footer .h3, .site-footer .h4, .set-colors-footer .h4, .site-footer a, .set-colors-footer a, .set-colors-footer > .fl-row-content-wrap a, .set-colors-footer > .fl-col-content a, .site-footer .accent-color, .set-colors-footer .accent-color { /*[*/ color: #fefeff; /*]*/ /*// color: [[color_footer_headings]]; //*/ }
 
@@ -131,17 +131,17 @@ form input[type="submit"], .site .fl-builder-content .fl-module form input[type=
 
 /* FILE: main/custom-styles/__content.scss */
 /* FILE: main/custom-styles/__footer.scss */
-.site-footer::before { background-image: url("../images/footer/pixabay-colorado-1436681.png"); /*[*/ background-position: 50% 50%; background-size: cover; opacity: .2; /*]*/ /*// background-image: [[footer_image]]; background-position: [[footer_image_position]]; background-size: [[footer_image_size]]; opacity: [[footer_image_opacity]]; //*/ /**if(footer_image_repeat) background-repeat: no-repeat; endif(footer_image_repeat)**/ /**if(footer_image_attachment) background-attachment: fixed; endif(footer_image_attachment)**/ }
+.site-footer::before { background-image: url("../images/footer/pixabay-colorado-1436681.png"); /*[*/ background-position: 50% 50%; background-size: cover; opacity: .15; /*]*/ /*// background-image: [[footer_image]]; background-position: [[footer_image_position]]; background-size: [[footer_image_size]]; opacity: [[footer_image_opacity]]; //*/ /**if(footer_image_repeat) background-repeat: no-repeat; endif(footer_image_repeat)**/ /**if(footer_image_attachment) background-attachment: fixed; endif(footer_image_attachment)**/ }
 
 .site-footer:not(.is-customize-preview)::before { /**if!(footer_image) display: none; endif!(footer_image)**/ }
 
 .site-footer.is-customize-preview::before { background-repeat: inherit; background-attachment: inherit; }
 
-.site-footer #page mark, .site-footer #page .highlight, .site-footer .pagination .current, .site-footer .bypostauthor > .comment-body .comment-author::before, .site-footer .widget_calendar tbody a, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active { text-shadow: none; /*[*/ background-color: #fefeff; color: #060607; /*]*/ /*// background-color: [[color_footer_headings]]; color: [[color_footer_background]]; //*/ }
+.site-footer #page mark, .site-footer #page .highlight, .site-footer .pagination .current, .site-footer .bypostauthor > .comment-body .comment-author::before, .site-footer .widget_calendar tbody a, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active { text-shadow: none; /*[*/ background-color: #fefeff; color: #0f1732; /*]*/ /*// background-color: [[color_footer_headings]]; color: [[color_footer_background]]; //*/ }
 
 .site-footer .button, .site-footer button, .site-footer input[type="button"], .site-footer input[type="reset"], .site-footer input[type="submit"] { text-shadow: none; }
 
-.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer input[type="button"]:hover, .site-footer input[type="button"]:focus, .site-footer input[type="button"]:active, .site-footer input[type="reset"]:hover, .site-footer input[type="reset"]:focus, .site-footer input[type="reset"]:active, .site-footer input[type="submit"]:hover, .site-footer input[type="submit"]:focus, .site-footer input[type="submit"]:active { /*[*/ background-color: #fefeff; color: #060607; /*]*/ /*// background-color: [[color_footer_headings]]; color: [[color_footer_background]]; //*/ }
+.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer input[type="button"]:hover, .site-footer input[type="button"]:focus, .site-footer input[type="button"]:active, .site-footer input[type="reset"]:hover, .site-footer input[type="reset"]:focus, .site-footer input[type="reset"]:active, .site-footer input[type="submit"]:hover, .site-footer input[type="submit"]:focus, .site-footer input[type="submit"]:active { /*[*/ background-color: #fefeff; color: #0f1732; /*]*/ /*// background-color: [[color_footer_headings]]; color: [[color_footer_background]]; //*/ }
 
 .site-footer mark, .site-footer .highlight { box-shadow: none; }
 
