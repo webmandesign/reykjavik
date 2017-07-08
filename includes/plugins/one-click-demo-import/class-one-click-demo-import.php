@@ -227,7 +227,7 @@ class Reykjavik_One_Click_Demo_Import {
 
 			// Processing
 
-				set_theme_mod( 'external_header_video', 'https://youtu.be/vvxP5n2vsrw' );
+				set_theme_mod( 'external_header_video', 'https://youtu.be/HbXTFQXnhmY' );
 
 		} // /theme_options
 
@@ -379,17 +379,17 @@ class Reykjavik_One_Click_Demo_Import {
 
 					update_option( 'shop_catalog_image_size', array(
 							'width'  => 480,
-							'height' => 640,
+							'height' => 480,
 							'crop'   => 1,
 						) );
-					add_image_size( 'shop_catalog_image_size', 480, 640, true );
+					add_image_size( 'shop_catalog_image_size', 480, 480, true );
 
 					update_option( 'shop_single_image_size', array(
 							'width'  => 1200,
-							'height' => 1600,
+							'height' => 1200,
 							'crop'   => 1,
 						) );
-					add_image_size( 'shop_single_image_size', 1200, 1600, true );
+					add_image_size( 'shop_single_image_size', 1200, 1200, true );
 
 					update_option( 'shop_thumbnail_image_size', array(
 							'width'  => 120,

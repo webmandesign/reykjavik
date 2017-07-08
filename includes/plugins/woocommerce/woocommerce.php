@@ -42,23 +42,14 @@
 	define( 'REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE', REYKJAVIK_PATH_PLUGINS . 'woocommerce/class-woocommerce-' );
 
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'setup.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'assets.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'customize.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'single.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'loop.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'pages.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'wrappers.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'widgets.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'helpers.php';
-
 	require REYKJAVIK_PATH_PLUGINS_WOOCOMMERCE . 'extensions.php';
 
 

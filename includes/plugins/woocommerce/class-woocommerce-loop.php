@@ -91,8 +91,6 @@ class Reykjavik_WooCommerce_Loop {
 
 						add_filter( 'the_title', __CLASS__ . '::search_results_product_title', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_summary_continue_reading_post_type', __CLASS__ . '::add_product_post_type' );
-
 						add_filter( 'wmhook_reykjavik_post_media_image_size', __CLASS__ . '::product_media_size', 15 );
 
 		} // /__construct
@@ -455,29 +453,6 @@ class Reykjavik_WooCommerce_Loop {
 				return $title . ' <span class="price">' . $product->get_price_html() . '</span>';
 
 		} // /search_results_product_title
-
-
-
-		/**
-		 * Allow theme features to work with products
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  array $post_types
-		 */
-		public static function add_product_post_type( $post_types = array() ) {
-
-			// Processing
-
-				$post_types[] = 'product';
-
-
-			// Output
-
-				return $post_types;
-
-		} // /add_product_post_type
 
 
 

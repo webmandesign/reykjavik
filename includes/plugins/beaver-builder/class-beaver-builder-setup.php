@@ -172,31 +172,6 @@ class Reykjavik_Beaver_Builder_Setup {
 	 */
 
 		/**
-		 * Null-out theme mods when editing post
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  mixed $mod
-		 */
-		public static function theme_mod_null_if_bb( $mod ) {
-
-			// Processing
-
-				if ( FLBuilderModel::is_builder_active() ) {
-					return null;
-				}
-
-
-			// Output
-
-				return $mod;
-
-		} // /theme_mod_null_if_bb
-
-
-
-		/**
 		 * Retrieves all theme colors in array
 		 *
 		 * @since    1.0.0

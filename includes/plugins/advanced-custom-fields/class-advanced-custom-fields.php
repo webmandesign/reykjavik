@@ -97,6 +97,11 @@ class Reykjavik_Advanced_Custom_Fields {
 		 */
 		public static function intro() {
 
+			// Helper variables
+
+				$group_no = 0;
+
+
 			// Processing
 
 				register_field_group( (array) apply_filters( 'wmhook_reykjavik_acf_register_field_group', array(
@@ -201,7 +206,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'posts_page',
 									'order_no' => 0,
-									'group_no' => 1,
+									'group_no' => $group_no++,
 								),
 
 								200 => array(
@@ -209,7 +214,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'templates/no-intro.php',
 									'order_no' => 0,
-									'group_no' => 2,
+									'group_no' => $group_no++,
 								),
 
 									210 => array(
@@ -217,7 +222,7 @@ class Reykjavik_Advanced_Custom_Fields {
 										'operator' => '!=',
 										'value'    => 'templates/blank.php',
 										'order_no' => 0,
-										'group_no' => 2,
+										'group_no' => $group_no++,
 									),
 
 								// CPTs
@@ -227,7 +232,7 @@ class Reykjavik_Advanced_Custom_Fields {
 										'operator' => '!=',
 										'value'    => 'fl-builder-template',
 										'order_no' => 0,
-										'group_no' => 1,
+										'group_no' => $group_no++,
 									),
 
 										310 => array(
@@ -235,7 +240,7 @@ class Reykjavik_Advanced_Custom_Fields {
 											'operator' => '!=',
 											'value'    => 'fl-theme-layout',
 											'order_no' => 0,
-											'group_no' => 1,
+											'group_no' => $group_no++,
 										),
 
 									400 => array(
@@ -243,7 +248,7 @@ class Reykjavik_Advanced_Custom_Fields {
 										'operator' => '!=',
 										'value'    => 'shop_order',
 										'order_no' => 0,
-										'group_no' => 1,
+										'group_no' => $group_no++,
 									),
 
 									500 => array(
@@ -251,7 +256,7 @@ class Reykjavik_Advanced_Custom_Fields {
 										'operator' => '!=',
 										'value'    => 'sidebar',
 										'order_no' => 0,
-										'group_no' => 1,
+										'group_no' => $group_no++,
 									),
 
 							),
@@ -263,7 +268,7 @@ class Reykjavik_Advanced_Custom_Fields {
 						'hide_on_screen' => array(),
 					),
 					'menu_order' => 20,
-				), 'intro' ) );
+				), 'intro', $group_no ) );
 
 		} // /intro
 
@@ -282,6 +287,11 @@ class Reykjavik_Advanced_Custom_Fields {
 		 * @version  1.0.0
 		 */
 		public static function child_pages() {
+
+			// Helper variables
+
+				$group_no = 0;
+
 
 			// Processing
 
@@ -323,7 +333,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '==',
 									'value'    => 'page',
 									'order_no' => 0,
-									'group_no' => 0,
+									'group_no' => $group_no++,
 								),
 
 								200 => array(
@@ -331,7 +341,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'posts_page',
 									'order_no' => 0,
-									'group_no' => 1,
+									'group_no' => $group_no++,
 								),
 
 								300 => array(
@@ -339,7 +349,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => '',
 									'order_no' => 0,
-									'group_no' => 2,
+									'group_no' => $group_no++,
 								),
 
 							),
@@ -351,7 +361,7 @@ class Reykjavik_Advanced_Custom_Fields {
 						'hide_on_screen' => array(),
 					),
 					'menu_order' => 20,
-				), 'child_pages' ) );
+				), 'child_pages', $group_no ) );
 
 		} // /child_pages
 
@@ -376,6 +386,11 @@ class Reykjavik_Advanced_Custom_Fields {
 				if ( class_exists( 'FLBuilder' ) ) {
 					return;
 				}
+
+
+			// Helper variables
+
+				$group_no = 0;
 
 
 			// Processing
@@ -414,7 +429,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'posts_page',
 									'order_no' => 0,
-									'group_no' => 0,
+									'group_no' => $group_no++,
 								),
 
 								200 => array(
@@ -422,7 +437,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'shop_order',
 									'order_no' => 0,
-									'group_no' => 1,
+									'group_no' => $group_no++,
 								),
 
 								300 => array(
@@ -430,7 +445,7 @@ class Reykjavik_Advanced_Custom_Fields {
 									'operator' => '!=',
 									'value'    => 'sidebar',
 									'order_no' => 0,
-									'group_no' => 1,
+									'group_no' => $group_no++,
 								),
 
 							),
@@ -442,7 +457,7 @@ class Reykjavik_Advanced_Custom_Fields {
 						'hide_on_screen' => array(),
 					),
 					'menu_order' => 20,
-				), 'any_page_builder' ) );
+				), 'any_page_builder', $group_no ) );
 
 		} // /any_page_builder
 

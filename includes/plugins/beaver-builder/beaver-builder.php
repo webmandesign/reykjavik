@@ -41,13 +41,8 @@
 	define( 'REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER', REYKJAVIK_PATH_PLUGINS . 'beaver-builder/class-beaver-builder-' );
 
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'setup.php';
-
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'assets.php';
-
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'form.php';
-
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'row.php';
-
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'column.php';
-
 	require REYKJAVIK_PATH_PLUGINS_BEAVER_BUILDER . 'helpers.php';

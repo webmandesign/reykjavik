@@ -81,7 +81,7 @@ class Reykjavik_WooCommerce_Pages {
 
 						add_filter( 'wmhook_reykjavik_woocommerce_checkout_guide', __CLASS__ . '::guide_steps', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_acf_register_field_group', __CLASS__ . '::acf_modify', 10, 2 );
+						add_filter( 'wmhook_reykjavik_acf_register_field_group', __CLASS__ . '::acf_modify', 10, 3 );
 
 		} // /__construct
 
@@ -873,8 +873,9 @@ class Reykjavik_WooCommerce_Pages {
 		 *
 		 * @param  array  $args
 		 * @param  string $scope
+		 * @param  absint $group_no
 		 */
-		public static function acf_modify( $args = array(), $scope = '' ) {
+		public static function acf_modify( $args = array(), $scope = '', $group_no = 555 ) {
 
 			// Processing
 
@@ -885,7 +886,7 @@ class Reykjavik_WooCommerce_Pages {
 							'operator' => '!=',
 							'value'    => ( function_exists( 'wc_get_page_id' ) ) ? ( wc_get_page_id( 'shop' ) ) : ( null ),
 							'order_no' => 0,
-							'group_no' => 555,
+							'group_no' => $group_no++,
 						);
 
 				}

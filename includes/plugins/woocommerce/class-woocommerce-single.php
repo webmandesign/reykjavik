@@ -93,8 +93,6 @@ class Reykjavik_WooCommerce_Single {
 						add_filter( 'woocommerce_upsell_display_args',          __CLASS__ . '::products_list_args' );
 						add_filter( 'woocommerce_output_related_products_args', __CLASS__ . '::products_list_args' );
 
-						add_filter( 'wmhook_reykjavik_post_navigation_post_type', __CLASS__ . '::post_navigation' );
-
 		} // /__construct
 
 
@@ -461,31 +459,6 @@ class Reykjavik_WooCommerce_Single {
 				return $excerpt;
 
 		} // /read_more_link
-
-
-
-		/**
-		 * Enabling post navigation
-		 *
-		 * Adding `product` to post navigation enabled post types array.
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  array $post_types
-		 */
-		public static function post_navigation( $post_types ) {
-
-			// Processing
-
-				$post_types[] = 'product';
-
-
-			// Output
-
-				return $post_types;
-
-		} // /post_navigation
 
 
 

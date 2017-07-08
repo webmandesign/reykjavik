@@ -259,7 +259,6 @@ class Reykjavik_Beaver_Builder_Assets {
 
 			// Helper variables
 
-				$selectors_zindex = array();
 				$global_settings  = FLBuilderModel::get_global_settings();
 
 
@@ -298,44 +297,6 @@ class Reykjavik_Beaver_Builder_Assets {
 					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col, .fl-col-group .fl-visible-mobile.fl-col';
 					$css .= ' { display: flex; }';
 					$css .= ' }' . "\r\n\r\n";
-
-				// Columns styles
-
-					if (
-							isset( $nodes['columns'] )
-							&& ! empty( $nodes['columns'] )
-						) {
-
-						foreach ( $nodes['columns'] as $col ) {
-
-							// Set higher z-index on rows with negatively set top/bottom margins
-
-								if ( is_callable( 'FLBuilderModel::get_node_parent_by_type' ) ) {
-									if (
-											( isset( $col->settings->margin_top ) && 0 > $col->settings->margin_top )
-											|| ( isset( $col->settings->margin_top_medium ) && 0 > $col->settings->margin_top_medium )
-											|| ( isset( $col->settings->margin_top_responsive ) && 0 > $col->settings->margin_top_responsive )
-											|| ( isset( $col->settings->margin_bottom ) && 0 > $col->settings->margin_bottom )
-											|| ( isset( $col->settings->margin_bottom_medium ) && 0 > $col->settings->margin_bottom_medium )
-											|| ( isset( $col->settings->margin_bottom_responsive ) && 0 > $col->settings->margin_bottom_responsive )
-										) {
-
-										$parent_row = FLBuilderModel::get_node_parent_by_type( $col->node, 'row' );
-
-										if ( isset( $parent_row->node ) ) {
-											$selectors_zindex[] = '.fl-node-' . esc_attr( $parent_row->node );
-										}
-
-									}
-								}
-
-						} // /foreach
-
-						if ( ! empty( $selectors_zindex ) ) {
-							$css .= "\r\n\r\n" . '/* Rows with negatively top/bottom margined columns */' . "\r\n" . implode( ', ', $selectors_zindex ) . ' { position: relative; z-index: 5; }' . "\r\n\r\n";
-						}
-
-					}
 
 
 			// Output

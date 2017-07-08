@@ -235,7 +235,6 @@ class Reykjavik_WooCommerce_Customize {
 								'.content-layout-no-paddings .woocommerce-tabs .woocommerce-Tabs-panel--description',
 								'.content-layout-no-paddings .woocommerce-tabs .woocommerce-Tabs-panel--description > h2:first-child',
 								'.fl-builder .woocommerce-tabs .woocommerce-Tabs-panel--description > h2:first-child',
-								'.product-widgets-inner',
 							),
 
 						);
@@ -462,10 +461,6 @@ class Reykjavik_WooCommerce_Customize {
 
 				$wp_customize->selective_refresh->add_partial( 'woocommerce_checkout_guide', array(
 						'selector' => '.checkout-guide',
-					) );
-
-				$wp_customize->selective_refresh->add_partial( 'woocommerce_colors_product_widgets', array(
-						'selector' => '.product-widgets-inner',
 					) );
 
 		} // /options_pointers

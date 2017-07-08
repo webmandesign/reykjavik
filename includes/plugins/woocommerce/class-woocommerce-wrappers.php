@@ -60,12 +60,10 @@ class Reykjavik_WooCommerce_Wrappers {
 					add_action( 'woocommerce_before_shop_loop_item_title', __CLASS__ . '::product_item_thumbnail_wrapper_close', 13 );
 
 					add_action( 'woocommerce_before_shop_loop_item_title', __CLASS__ . '::product_item_description_wrapper_open', 90 );
+					add_action( 'woocommerce_before_subcategory_title',    __CLASS__ . '::product_item_description_wrapper_open', 90 );
 
 					add_action( 'woocommerce_after_shop_loop_item_title', __CLASS__ . '::product_item_description_wrapper_close', 90 );
-
-					add_action( 'woocommerce_before_subcategory_title', __CLASS__ . '::product_item_description_wrapper_open', 90 );
-
-					add_action( 'woocommerce_after_subcategory_title', __CLASS__ . '::product_item_description_wrapper_close', 90 );
+					add_action( 'woocommerce_after_subcategory_title',    __CLASS__ . '::product_item_description_wrapper_close', 90 );
 
 					add_action( 'woocommerce_before_customer_login_form', __CLASS__ . '::login_form_wrapper_open' );
 

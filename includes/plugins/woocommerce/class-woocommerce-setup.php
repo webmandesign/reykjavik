@@ -69,16 +69,13 @@ class Reykjavik_WooCommerce_Setup {
 						add_action( 'init', __CLASS__ . '::remove_gallery_noscript' );
 
 						add_action( 'wmhook_reykjavik_breadcrumb_navxt_before', __CLASS__ . '::breadcrumb_navxt' );
-
-						add_action( 'wmhook_reykjavik_breadcrumb_navxt_after', __CLASS__ . '::breadcrumb_navxt' );
+						add_action( 'wmhook_reykjavik_breadcrumb_navxt_after',  __CLASS__ . '::breadcrumb_navxt' );
 
 						add_action( 'tha_header_top', __CLASS__ . '::mobile_menu_links', 15 );
 
 						add_action( 'tha_content_before', __CLASS__ . '::demo_store' );
 
 					// Filters
-
-						add_filter( 'wmhook_reykjavik_subtitles_post_types', __CLASS__ . '::subtitles' );
 
 						add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
@@ -90,6 +87,10 @@ class Reykjavik_WooCommerce_Setup {
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class', 20 );
 
 						add_filter( 'wp_nav_menu', __CLASS__ . '::mobile_menu_search', 20, 2 ); // See below for priority info
+
+						add_filter( 'wmhook_reykjavik_summary_continue_reading_post_type', __CLASS__ . '::add_product_post_type' );
+						add_filter( 'wmhook_reykjavik_post_navigation_post_type',          __CLASS__ . '::add_product_post_type' );
+						add_filter( 'wmhook_reykjavik_subtitles_post_types',               __CLASS__ . '::add_product_post_type' );
 
 		} // /__construct
 
@@ -285,29 +286,6 @@ class Reykjavik_WooCommerce_Setup {
 	 */
 
 		/**
-		 * Subtitles plugin support
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  array $post_types  Post types supporting Subtitles plugin.
-		 */
-		public static function subtitles( $post_types = array() ) {
-
-			// Helper variables
-
-				$post_types[] = 'product';
-
-
-			// Processing
-
-				return $post_types;
-
-		} // /subtitles
-
-
-
-		/**
 		 * Subtitles plugin support: Force subtitle display
 		 *
 		 * @since    1.0.0
@@ -388,6 +366,29 @@ class Reykjavik_WooCommerce_Setup {
 	/**
 	 * 100) Others
 	 */
+
+		/**
+		 * Allow features to work with products
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  array $post_types
+		 */
+		public static function add_product_post_type( $post_types = array() ) {
+
+			// Processing
+
+				$post_types[] = 'product';
+
+
+			// Output
+
+				return $post_types;
+
+		} // /add_product_post_type
+
+
 
 		/**
 		 * Review author avatar image size
