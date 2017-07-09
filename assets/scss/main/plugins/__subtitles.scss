@@ -14,7 +14,7 @@
 	@extend %font_style_normal;
 	@extend %line_height_golden_minor;
 	display: block;
-	margin-top: $golden_minor / 2 +em;
+	margin-top: $golden_minor +em;
 	opacity: .8;
 
 

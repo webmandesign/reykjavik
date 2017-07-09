@@ -56,7 +56,7 @@
 	h2.screen-reader-text,
 	h3.screen-reader-text,
 	h4.screen-reader-text {
-		color: inherit;
+		color: inherit; // Fixing some accessibility testing tools errors.
 	}
 
 

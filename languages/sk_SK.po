@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-07-07 22:01+0200\n"
-"PO-Revision-Date: 2017-07-07 22:01+0200\n"
+"POT-Creation-Date: 2017-07-09 16:26+0200\n"
+"PO-Revision-Date: 2017-07-09 16:28+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -46,29 +46,29 @@ msgid "Comments Navigation"
 msgstr "Navigácia komentárov"
 
 #: comments.php:114 includes/frontend/class-loop.php:114
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:361
-#: includes/plugins/woocommerce/class-woocommerce-single.php:274
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:359
+#: includes/plugins/woocommerce/class-woocommerce-single.php:272
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
 #: comments.php:115 includes/frontend/class-loop.php:115
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:363
-#: includes/plugins/woocommerce/class-woocommerce-single.php:274
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:361
+#: includes/plugins/woocommerce/class-woocommerce-single.php:272
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
 #: comments.php:116 includes/frontend/class-loop.php:116
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:367
-#: includes/plugins/woocommerce/class-woocommerce-single.php:275
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:365
+#: includes/plugins/woocommerce/class-woocommerce-single.php:273
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
 #: comments.php:117 includes/frontend/class-loop.php:117
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:369
-#: includes/plugins/woocommerce/class-woocommerce-single.php:275
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:367
+#: includes/plugins/woocommerce/class-woocommerce-single.php:273
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
@@ -108,7 +108,7 @@ msgstr "Maximálna výška obrázka loga (px)"
 #: includes/customize/class-customize.php:1017
 #: includes/customize/class-customize.php:1041
 #: includes/customize/class-customize.php:1206
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:423
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:422
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr "Nastavenia témy"
@@ -231,7 +231,7 @@ msgid "Headings color"
 msgstr "Farba nadpisov"
 
 #: includes/customize/class-customize.php:477
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:168
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:173
 msgid "Intro widgets"
 msgstr "Widgety v intro sekcii"
 
@@ -676,50 +676,50 @@ msgstr "Widgety pätičky"
 msgid "Add widgets here."
 msgstr "Pridajte sem widgety."
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:104
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:109
 msgid "Intro options"
 msgstr "Nastavenia intra"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:111
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:116
 msgid "Intro section"
 msgstr "Intro sekcia"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:114
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:119
 msgid "Disable intro section for this page"
 msgstr "Vypnúť intro sekciu na tejto stránke"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:122
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:127
 msgid "Disable intro media"
 msgstr "Nezobrazovať intro médiá"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:125
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:130
 msgid "Do not show intro media (such as image) if it is displayed on this page"
 msgstr ""
 "Nezobraziť intro médiá (ako napríklad obrázok), ak sú na tejto stránke "
 "zobrazené"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:144
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:149
 msgid "Custom intro image"
 msgstr "Vlastný intro obrázok"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:145
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:150
 msgid ""
 "Here you can override the default Intro section image with a custom one."
 msgstr "Týmto nastavíte vlastný obrázok v intro sekcii namiesto pôvodného."
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:171
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:176
 msgid "Show widgets in intro section of this page"
 msgstr "Zobraziť widgety v intro sekcii tejto stránky"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:290
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:300
 msgid "Child pages list options"
 msgstr "Nastavenia zoznamu podstránok"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:297
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:307
 msgid "Instructions"
 msgstr "Inštrukcie"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:300
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:310
 msgid ""
 "These settings will modify the page display in the list of child pages. The "
 "page needs to be nested under a parent page that is set up as a \"List child "
@@ -729,35 +729,35 @@ msgstr ""
 "je nutné nastaviť ako podstránku inej stránky, a zároveň je nutné nastaviť "
 "šablónu nadradenej stránky na \"Zoznam podstránok\"."
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:307
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:317
 msgid "Disable image"
 msgstr "Vypnúť obrázok"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:310
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:320
 msgid "Do not display page image in list of child pages"
 msgstr "Vypne zobrazovanie ilustračného obrázka stránky v zozname podstránok"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:385
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:400
 msgid "Page builder layout"
 msgstr "Rozloženie editora stránok"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:390
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:405
 msgid "Content area layout"
 msgstr "Rozloženie obsahu"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:394
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:409
 msgid "Leave as is"
 msgstr "Ponechať nezmenené"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:395
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:410
 msgid "Remove content paddings only"
 msgstr "Iba odstrániť odsadenie obsahu"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:396
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:411
 msgid "Fullwidth content with no paddings"
 msgstr "Obsah na celú šírku bez odsadenia"
 
-#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:398
+#: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:413
 msgid ""
 "As every page builder plugin works differently, set this according to your "
 "needs."
@@ -1286,36 +1286,36 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných pluginov &raquo;"
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:422
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:421
 msgctxt "Customizer section title."
 msgid "Shop"
 msgstr "Obchod"
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:428
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:427
 msgid "Cart and Checkout"
 msgstr "Košík a pokladňa"
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:433
 msgid "Checkout guide"
 msgstr "Sprievodca pokladňou"
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:435
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
 msgid "Enables the checkout process steps visualization."
 msgstr "Zobrazí vizualizáciu krokov nákupného procesu."
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:234
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:232
 msgid "Shop Category"
 msgstr "Kategória produktov"
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:252
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:250
 msgid "Shop Now &rarr;"
 msgstr "Nakupovať &rarr;"
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:334
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:332
 msgid "Products Navigation"
 msgstr "Navigácia produktov"
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:400
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:398
 msgid "List of products"
 msgstr "Zoznam produktov"
 
@@ -1368,7 +1368,7 @@ msgstr "Objednávka dokončená"
 msgid "Pay for Order"
 msgstr "Platba za objednávku"
 
-#: includes/plugins/woocommerce/class-woocommerce-single.php:455
+#: includes/plugins/woocommerce/class-woocommerce-single.php:453
 msgid "More details&hellip;"
 msgstr "Viac informácií&hellip;"
 
@@ -1572,9 +1572,10 @@ msgid "Welcome to our site!"
 msgstr "Vitajte na našich stránkach!"
 
 #: includes/starter-content/class-starter-content.php:181
-#: includes/starter-content/class-starter-content.php:200
-#: includes/starter-content/class-starter-content.php:211
-#: includes/starter-content/class-starter-content.php:217
+#: includes/starter-content/class-starter-content.php:201
+#: includes/starter-content/class-starter-content.php:220
+#: includes/starter-content/class-starter-content.php:231
+#: includes/starter-content/class-starter-content.php:237
 msgctxt "Theme starter content"
 msgid ""
 "Set this text as a page excerpt. You will most likely need to enable the "
@@ -1586,16 +1587,19 @@ msgstr ""
 "obrazovky počas upravovania stránky."
 
 #: includes/starter-content/class-starter-content.php:181
+#: includes/starter-content/class-starter-content.php:201
 msgctxt "Theme starter content"
 msgid "Go shopping"
 msgstr "Do obchodu"
 
 #: includes/starter-content/class-starter-content.php:183
+#: includes/starter-content/class-starter-content.php:203
 msgctxt "Theme starter content"
 msgid "WooCommerce featured products"
 msgstr "Odporúčané produkty WooCommerce"
 
 #: includes/starter-content/class-starter-content.php:185
+#: includes/starter-content/class-starter-content.php:205
 msgctxt "Theme starter content"
 msgid ""
 "You need to have WooCommerce plugin installed and activated for this "
@@ -1605,11 +1609,13 @@ msgstr ""
 "shortcode zobrazil vaše odporúčané produkty."
 
 #: includes/starter-content/class-starter-content.php:187
+#: includes/starter-content/class-starter-content.php:207
 msgctxt "Theme starter content"
 msgid "H2 headings are outdented"
 msgstr "Nadpisy úrovne H2 sú odsadené"
 
 #: includes/starter-content/class-starter-content.php:189
+#: includes/starter-content/class-starter-content.php:209
 msgctxt "Theme starter content"
 msgid ""
 "This is your homepage, which is what most visitors will see when they come "
@@ -1619,11 +1625,13 @@ msgstr ""
 "vstúpia na vaše stránky."
 
 #: includes/starter-content/class-starter-content.php:191
+#: includes/starter-content/class-starter-content.php:211
 msgctxt "Theme starter content"
 msgid "Page layout in 2 columns"
 msgstr "Rozloženie stránky v 2 stĺpcoch"
 
 #: includes/starter-content/class-starter-content.php:193
+#: includes/starter-content/class-starter-content.php:213
 msgctxt "Theme starter content"
 msgid ""
 "By default the theme displays page content in 2 columns. You can change this "
@@ -1632,12 +1640,17 @@ msgstr ""
 "Téma je prednastavená na zobrazovanie obsahu stránky v 2 stĺpcoch. Môžete to "
 "však zmeniť na tradičnejšie rozloženie v možnostiach nastavenia témy."
 
-#: includes/starter-content/class-starter-content.php:202
+#: includes/starter-content/class-starter-content.php:200
+msgctxt "Theme starter content"
+msgid "Shop homepage"
+msgstr "Úvodná stránka obchodu"
+
+#: includes/starter-content/class-starter-content.php:222
 msgctxt "Theme starter content"
 msgid "Introduce yourself"
 msgstr "Predstavte sa"
 
-#: includes/starter-content/class-starter-content.php:204
+#: includes/starter-content/class-starter-content.php:224
 msgctxt "Theme starter content"
 msgid ""
 "You might be an artist who would like to introduce yourself and your work "
@@ -1646,12 +1659,12 @@ msgstr ""
 "Možno ste umelcom, ktorý by sa rád predstavil svetu a prezentoval svoje "
 "práce, alebo opíšte poslanie vašej firmy."
 
-#: includes/starter-content/class-starter-content.php:219
+#: includes/starter-content/class-starter-content.php:239
 msgctxt "Theme starter content"
 msgid "Get in touch"
 msgstr "Kontaktujte nás"
 
-#: includes/starter-content/class-starter-content.php:221
+#: includes/starter-content/class-starter-content.php:241
 msgctxt "Theme starter content"
 msgid ""
 "This is a page with some basic contact information, such as an address and "
@@ -1660,25 +1673,25 @@ msgstr ""
 "Toto je stránka so základnými kontaktnými údajmi, ako sú adresa a telefónne "
 "číslo. Môžete taktiež využiť dedikovaný plugin a pridať kontaktný formulár."
 
-#: includes/starter-content/class-starter-content.php:223
-#: includes/starter-content/class-starter-content.php:225
+#: includes/starter-content/class-starter-content.php:243
+#: includes/starter-content/class-starter-content.php:245
 msgctxt "Theme starter content"
 msgid "Your name"
 msgstr "Vaše meno"
 
-#: includes/starter-content/class-starter-content.php:227
-#: includes/starter-content/class-starter-content.php:229
+#: includes/starter-content/class-starter-content.php:247
+#: includes/starter-content/class-starter-content.php:249
 msgctxt "Theme starter content"
 msgid "Your email"
 msgstr "Váš e-mail"
 
-#: includes/starter-content/class-starter-content.php:231
-#: includes/starter-content/class-starter-content.php:233
+#: includes/starter-content/class-starter-content.php:251
+#: includes/starter-content/class-starter-content.php:253
 msgctxt "Theme starter content"
 msgid "Your message"
 msgstr "Vaša správa"
 
-#: includes/starter-content/class-starter-content.php:235
+#: includes/starter-content/class-starter-content.php:255
 msgctxt "Theme starter content"
 msgid ""
 "This is only a dummy form placeholder. Use a plugin to create forms, such as "
@@ -1687,52 +1700,57 @@ msgstr ""
 "Toto je iba fiktívny nefungujúci formulár. Použite plugin pre vytváranie "
 "formulárov, ako je napríklad Caldera Forms alebo Contact Form 7."
 
-#: includes/starter-content/class-starter-content.php:237
+#: includes/starter-content/class-starter-content.php:257
 msgctxt "Theme starter content"
 msgid "This form does not work"
 msgstr "Tento formulár je nefunkčný"
 
-#: includes/starter-content/class-starter-content.php:260
+#: includes/starter-content/class-starter-content.php:280
 msgctxt "Theme starter content"
 msgid "Primary Menu"
 msgstr "Primárne menu"
 
-#: includes/starter-content/class-starter-content.php:264
+#: includes/starter-content/class-starter-content.php:284
 msgctxt "Theme starter content"
 msgid "Home"
 msgstr "Úvod"
 
-#: includes/starter-content/class-starter-content.php:275
+#: includes/starter-content/class-starter-content.php:288
+msgctxt "Theme starter content"
+msgid "Shop home"
+msgstr "Obchod"
+
+#: includes/starter-content/class-starter-content.php:299
 msgctxt "Theme starter content"
 msgid "Secondary Menu"
 msgstr "Sekundárne menu"
 
-#: includes/starter-content/class-starter-content.php:279
+#: includes/starter-content/class-starter-content.php:303
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Secondary"
 msgstr "Sekundárne"
 
-#: includes/starter-content/class-starter-content.php:284
+#: includes/starter-content/class-starter-content.php:308
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Simple"
 msgstr "Jednoduché"
 
-#: includes/starter-content/class-starter-content.php:289
+#: includes/starter-content/class-starter-content.php:313
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Menu"
 msgstr "Menu"
 
-#: includes/starter-content/class-starter-content.php:297
+#: includes/starter-content/class-starter-content.php:321
 msgctxt "Theme starter content"
 msgid "Social Links Menu"
 msgstr "Odkazy sociálnych sietí"
 
-#: includes/starter-content/class-starter-content.php:301
+#: includes/starter-content/class-starter-content.php:325
 msgctxt "Theme starter content"
 msgid "WebMan Design on Facebook"
 msgstr "WebMan Design na Facebooku"
 
-#: includes/starter-content/class-starter-content.php:306
+#: includes/starter-content/class-starter-content.php:330
 msgctxt "Theme starter content"
 msgid "WebMan Design on Twitter"
 msgstr "WebMan Design na Twitteri"
@@ -2687,14 +2705,22 @@ msgid "Go to WebMan Design website &raquo;"
 msgstr "Navštíviť webovú stránku WebMan Design &raquo;"
 
 #: templates/parts/admin/welcome-promo.php:38
+msgid "You can also rate it at its WordPress repository page."
+msgstr "Môžete ju taktiež ohodnotiť na stránkach WordPress."
+
+#: templates/parts/admin/welcome-promo.php:40
+msgid "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)"
+msgstr "Poďte ohodnotiť tému &#9733;&#9733;&#9733;&#9733;&#9733; :)"
+
+#: templates/parts/admin/welcome-promo.php:45
 msgid "Thank you!"
 msgstr "Vďaka!"
 
-#: templates/parts/admin/welcome-promo.php:45
+#: templates/parts/admin/welcome-promo.php:52
 msgid "Feel like stepping up?"
 msgstr "Potrebujete rásť?"
 
-#: templates/parts/admin/welcome-promo.php:51
+#: templates/parts/admin/welcome-promo.php:58
 #, php-format
 msgctxt "%s = linked theme name."
 msgid ""
@@ -2704,42 +2730,42 @@ msgstr ""
 "Ak vyžaduje vaša rastúca webová stránka novú funkcionalitu, zvážte zakúpenie "
 "témy %s s týmito výhodami:"
 
-#: templates/parts/admin/welcome-promo.php:58
+#: templates/parts/admin/welcome-promo.php:65
 msgctxt "Theme feature."
 msgid "Portfolios, Staff, Testimonials management"
 msgstr "Správa portfólia, zamestnancov a referencií"
 
-#: templates/parts/admin/welcome-promo.php:59
+#: templates/parts/admin/welcome-promo.php:66
 msgctxt "Theme feature."
 msgid "Additional layouts and widget areas"
 msgstr "Dodatočné oblasti widgetov a usporiadania elementov na stránkach"
 
-#: templates/parts/admin/welcome-promo.php:60
+#: templates/parts/admin/welcome-promo.php:67
 msgctxt "Theme feature."
 msgid "Custom page builder elements"
 msgstr "Vlastné elementy editora stránok"
 
-#: templates/parts/admin/welcome-promo.php:61
+#: templates/parts/admin/welcome-promo.php:68
 msgctxt "Theme feature."
 msgid "Sticky header functionality"
 msgstr "Funkcionalita prichytávania hlavičky"
 
-#: templates/parts/admin/welcome-promo.php:62
+#: templates/parts/admin/welcome-promo.php:69
 msgctxt "Theme feature."
 msgid "Custom icons uploader"
 msgstr "Nahrávanie vlastných ikoniek"
 
-#: templates/parts/admin/welcome-promo.php:63
+#: templates/parts/admin/welcome-promo.php:70
 msgctxt "Theme feature."
 msgid "Additional blog styles"
 msgstr "Dodatočné štýly blogu"
 
-#: templates/parts/admin/welcome-promo.php:64
+#: templates/parts/admin/welcome-promo.php:71
 msgctxt "Theme feature."
 msgid "And more&hellip;"
 msgstr "A viac&hellip;"
 
-#: templates/parts/admin/welcome-promo.php:71
+#: templates/parts/admin/welcome-promo.php:78
 #, php-format
 msgctxt "%s = theme name."
 msgid "Upgrade to %s theme"

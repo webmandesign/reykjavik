@@ -13,8 +13,6 @@
 	.site-header {
 		display: flex;
 		flex-direction: column;
-		position: relative;
-		z-index: 20; // This has to be larger than content class of .zindex-10
 
 		> div {
 			flex: 0 1 auto;
@@ -25,7 +23,6 @@
 			padding-bottom: $golden +em;
 			border-bottom-width: 1px;
 			border-bottom-style: solid;
-			transition: padding ( $small_animation_speed +s );
 		}
 
 		&-inner {

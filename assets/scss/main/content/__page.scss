@@ -193,7 +193,7 @@
 
 				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					width: percentage( 1 / 2 - $column_gutter );
-					padding: power( $golden, 2 ) +em;
+					padding: 2em;
 					margin-left: percentage( $gutter / 100 );
 					margin-right: percentage( $gutter / 100 );
 				}

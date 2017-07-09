@@ -259,7 +259,7 @@ class Reykjavik_Beaver_Builder_Assets {
 
 			// Helper variables
 
-				$global_settings  = FLBuilderModel::get_global_settings();
+				$global_settings = FLBuilderModel::get_global_settings();
 
 
 			// Processing

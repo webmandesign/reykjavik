@@ -87,8 +87,6 @@ class Reykjavik_Setup {
 
 						add_filter( 'wmhook_reykjavik_library_editor_custom_mce_format', __CLASS__ . '::visual_editor_formats' );
 
-						add_filter( 'wmhook_reykjavik_is_masonry_layout', 'is_search' );
-
 						add_filter( 'wmhook_reykjavik_widget_css_classes', __CLASS__ . '::widget_css_classes' );
 
 		} // /__construct
@@ -554,7 +552,7 @@ class Reykjavik_Setup {
 
 						'thumbnail' => array(
 								absint( $content_width * .62 ),
-								absint( $content_width * .62 / 2 ),
+								absint( $content_width * .62 * 9 / 16 ),
 								true,
 								esc_html__( 'In posts list.', 'reykjavik' ),
 							),

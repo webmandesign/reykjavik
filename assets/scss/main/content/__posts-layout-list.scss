@@ -10,6 +10,26 @@
 
 .posts-layout-list {
 
+	.posts {
+		display: block;
+		margin: 0;
+
+		.entry {
+			margin: 0 0 $padding_vertical;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&,
+			.no-widgets-sidebar & {
+				width: 100%;
+			}
+
+		}
+
+	}
+
 	.type-post {
 		@extend .clearfix;
 

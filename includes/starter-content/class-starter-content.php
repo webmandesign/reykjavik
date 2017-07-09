@@ -117,7 +117,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => esc_html_x( 'Intro Widgets', 'Theme starter content', 'reykjavik' ),
 									'text'  => esc_html_x( 'This is an Intro Widgets area. It only displays on pages with a specific page template assigned, or a dedicated option enabled.', 'Theme starter content', 'reykjavik' ),
-									'icon'  => 'ion-ios-cart-outline'
+									'icon'  => 'genericons-neue genericons-neue-anchor',
 								),
 							),
 
@@ -126,7 +126,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => esc_html_x( 'Icons in Text Widget', 'Theme starter content', 'reykjavik' ),
 									'text'  => esc_html_x( 'To allow displaying icons in Text widget you need some plugin to load the icons to your website. You can use any icons plugin.', 'Theme starter content', 'reykjavik' ),
-									'icon'  => 'ion-ios-gear-outline'
+									'icon'  => 'genericons-neue genericons-neue-cart',
 								),
 							),
 
@@ -135,7 +135,7 @@ class Reykjavik_Starter_Content {
 								array(
 									'title' => 'Lorem Ipsum',
 									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.',
-									'icon'  => 'ion-ios-checkmark-outline'
+									'icon'  => 'genericons-neue genericons-neue-home',
 								),
 							),
 
@@ -178,6 +178,26 @@ class Reykjavik_Starter_Content {
 							'post_type'    => 'page',
 							'template'     => 'templates/intro-widgets.php',
 							'post_title'   => esc_html_x( 'Welcome to our site!', 'Theme starter content', 'reykjavik' ),
+							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
+							'post_content' => '<div class="outdent-content"><h2 class="uppercase h3">' .
+							                  esc_html_x( 'WooCommerce featured products', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2>[featured_products per_page="3" columns="3"]<p><em><small>' .
+							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your featured products.', 'Theme starter content', 'reykjavik' ) .
+							                  '</small></em></p><hr></div><h2>' .
+							                  esc_html_x( 'H2 headings are outdented', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><p>' .
+							                  esc_html_x( 'This is your homepage, which is what most visitors will see when they come to your site for the first time.', 'Theme starter content', 'reykjavik' ) .
+							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p><h2>' .
+							                  esc_html_x( 'Page layout in 2 columns', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><p>' .
+							                  esc_html_x( 'By default the theme displays page content in 2 columns. You can change this to more traditional layout in theme options.', 'Theme starter content', 'reykjavik' ) .
+							                  '</p>',
+						),
+
+						'home_shop' => array(
+							'post_type'    => 'page',
+							'template'     => 'templates/intro-widgets.php',
+							'post_title'   => esc_html_x( 'Shop homepage', 'Theme starter content', 'reykjavik' ),
 							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
 							'post_content' => '<div class="outdent-content"><h2 class="uppercase h3">' .
 							                  esc_html_x( 'WooCommerce featured products', 'Theme starter content', 'reykjavik' ) .
@@ -262,6 +282,10 @@ class Reykjavik_Starter_Content {
 
 								'page_home' => array(
 									'title' => esc_html_x( 'Home', 'Theme starter content', 'reykjavik' ),
+								),
+
+								'page_home_shop' => array(
+									'title' => esc_html_x( 'Shop home', 'Theme starter content', 'reykjavik' ),
 								),
 
 								'page_about',

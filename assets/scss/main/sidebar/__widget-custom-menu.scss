@@ -57,22 +57,14 @@
 
 			li {
 
-				a {
-
-					&::before {
-						content: '\2013\2002';
-					}
-
+				a::before {
+					content: '\2013\2002';
 				}
 
 				li {
 
-					a {
-
-						&::before {
-							content: '\2013\2002\2013\2002';
-						}
-
+					a::before {
+						content: '\2013\2002\2013\2002';
 					}
 
 				}

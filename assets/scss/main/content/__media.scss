@@ -75,14 +75,21 @@
 			.posts & {
 				float: none;
 				width: auto;
+				margin: calc( #{ $golden * -1em } - 1px ); // Cover border around post entry.
 				margin-bottom: $golden +em;
 
 				.search-results & {
-					margin: 0 0 ( $golden +em );
+					margin: 0 0 ( $golden +em ); // Due to possible icon child page featured image.
 				}
 
 				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin: calc( -2em - 1px ); // Cover border around post entry.
 					margin-bottom: 2em;
+
+					.search-results & {
+						margin: 0 0 2em; // Due to possible icon child page featured image.
+					}
+
 				}
 
 			}

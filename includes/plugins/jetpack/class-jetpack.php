@@ -79,6 +79,11 @@ class Reykjavik_Jetpack {
 
 						add_filter( 'infinite_scroll_js_settings', __CLASS__ . '::infinite_scroll_js_settings' );
 
+						if ( is_callable( 'Reykjavik_Post_Media::size' ) ) {
+							add_filter( 'jetpack_portfolio_thumbnail_size', 'Reykjavik_Post_Media::size' );
+							add_filter( 'jetpack_testimonial_thumbnail_size', 'Reykjavik_Post_Media::size' );
+						}
+
 		} // /__construct
 
 

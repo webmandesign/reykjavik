@@ -422,10 +422,6 @@ class Reykjavik_Header {
 						$classes[] = 'posts-layout-list';
 					}
 
-					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {
-						$classes[] = 'posts-layout-masonry';
-					}
-
 				// Enable outdented page layout
 
 					if (

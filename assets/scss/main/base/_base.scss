@@ -21,8 +21,7 @@
 		li {
 
 			&.icon,
-			&[class^="icon-"],
-			&[class*=" icon-"] {
+			&.icon-bullet {
 				position: relative;
 				list-style: none;
 

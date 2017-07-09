@@ -752,7 +752,7 @@ Content Container
 
 				</div>
 
-				<h3>Starter Content</h3>
+				<h3 id="starter-content">Starter Content</h3>
 
 					<p>This theme supports and contains its own <a href="https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/" target="_blank">WordPress starter content</a> for easy and fast small website deployment.</p>
 					<p>The starter content is displayed in the <a href="#customizer">theme customizer</a> <strong>on clear WordPress installation only</strong>. Once you save the customizer settings, the starter content will be ported into your website automatically then.</p>
@@ -1249,8 +1249,9 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 					<h4 class="mt">"<strong>Text</strong>" Widget</h4>
 
 						<p>The theme allows you to set a custom widget icon and widget featured image. You can then use a "Text" widget to display a service or a feature in any widgetized area or in a page builder layout on your website.</p>
-						<p>To <strong>enable the custom icon functionality</strong> you also need some plugin that will load the icons to your website first. You can use any plugin for this, <a href="https://wordpress.org/plugins/ionicons-official/" target="_blank"><strong>Ionicons Official</strong></a> or <a href="https://wordpress.org/plugins/better-font-awesome/" target="_blank"><strong>Better Font Awesome</strong></a> plugin, for example. Then just set up the correct icon CSS class (get those from the <a href="http://ionicons.com/" target="_blank">Ionicons</a> or <a href="http://fontawesome.io/" target="_blank">Font Awesome</a> website, for example) into the widget's <em>"Set icon CSS class"</em> option field and the icon will be displayed correctly.<br>
-						If you don't use any icons plugin and no icons are loaded on your website, the fallback <code>?</code> (question mark) will be displayed instead of the unrecognized icon (if the widget's <em>"Set icon CSS class"</em> option field is set).</p>
+						<p>To <strong>enable the custom icon functionality</strong> you also need some plugin that will load the icons to your website first. You can use any plugin for this, <a href="https://wordpress.org/plugins/ionicons-official/" target="_blank"><strong>Ionicons Official</strong></a> or <a href="https://wordpress.org/plugins/better-font-awesome/" target="_blank"><strong>Better Font Awesome</strong></a> plugin, for example. Then just set up the correct icon CSS class (get those from the <a href="http://ionicons.com/" target="_blank">Ionicons</a> or <a href="http://fontawesome.io/" target="_blank">Font Awesome</a> website, for example) into the widget's <em>"Set icon CSS class"</em> option field and the icon will be displayed correctly.</p>
+						<p>If you don't use any icons plugin and no icons are loaded on your website, the fallback <code>?</code> (question mark) will be displayed instead of the unrecognized icon (if the widget's <em>"Set icon CSS class"</em> option field is set).</p>
+						<p>Alternatively, the theme actually loads <a href="http://genericons.com/" target="_blank"><strong>Genericons Neue</strong> icons</a> font to provide the utility icons set. If you are OK with this limited icons set and want to use one of its icons, then you don't have to load an additional icons to your website via plugin. Just add the proper icon class you can obtain from <a href="http://genericons.com/" target="_blank"><strong>genericons.com</strong> website</a>, such as <code>genericons-neue genericons-neue-anchor</code> (<a href="https://www.dropbox.com/s/hsw51n7auavmk4f/genericons-class.png?dl=0" target="_blank">How to get this class?</a>). The <a href="#starter-content">theme starter content</a> actually uses this approach too.</p>
 
 			</div>
 
