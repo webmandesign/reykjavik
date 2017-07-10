@@ -60,7 +60,7 @@ class Reykjavik_WooCommerce_Helpers {
 				$output['shop_columns']         = 3;
 				$output['shop_columns_sidebar'] = 2;
 
-				$output['thumbnails_columns'] = ( version_compare( WC_VERSION, '3.0', '<' ) ) ? ( 20 ) : ( 4 );
+				$output['thumbnails_columns'] = ( version_compare( WC_VERSION, '3.0', '<' ) ) ? ( 20 ) : ( 5 );
 
 				$output['cross_sells_total']   = 2;
 				$output['cross_sells_columns'] = 1;

@@ -17,13 +17,8 @@
 	.checkout {
 		@extend %wc_clearfix;
 
-		h3 {
-			@extend %wc_widget_title;
-
-			label {
-				font-size: 1em;
-			}
-
+		h3 label {
+			font-size: 1em;
 		}
 
 	}
@@ -113,6 +108,7 @@
 					+ h3 {
 						float: $right; // {{RTL}}
 						width: 50%;
+						margin-top: 0;
 					}
 
 				}
@@ -249,7 +245,7 @@
 				font-size: $golden_minor / 2 + 1em;
 			}
 
-			h4, .h3 {
+			h4, .h4 {
 				font-size: 1em;
 			}
 

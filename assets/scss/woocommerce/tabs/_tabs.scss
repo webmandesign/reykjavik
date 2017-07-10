@@ -153,7 +153,6 @@
 // Extenders
 
 	%wc_panel_title {
-		@extend %wc_widget_title;
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			clip: rect( 1px, 1px, 1px, 1px );

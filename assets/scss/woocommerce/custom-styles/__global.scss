@@ -16,7 +16,6 @@
 		&,
 		.site .fl-builder-content .fl-module & {
 			@extend %accent_colors;
-			border-color: transparent; //*
 		}
 
 	}
@@ -26,7 +25,7 @@
 // Edit link in titles
 
 	.title .edit {
-		@extend %accent_colors;
+		@extend %button_default_colors;
 	}
 
 

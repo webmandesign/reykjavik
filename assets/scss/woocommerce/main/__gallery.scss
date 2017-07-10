@@ -69,7 +69,7 @@
 // WC 3.0+
 
 	.woocommerce-product-gallery {
-		$columns: 5;
+		$columns: 5; // From PHP Reykjavik_WooCommerce_Helpers::return_number( 'thumbnails_columns' ).
 		$gutter: 4; // In %
 
 		position: relative;

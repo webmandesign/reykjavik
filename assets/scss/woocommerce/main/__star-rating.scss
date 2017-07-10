@@ -71,26 +71,14 @@
 				line-height: 1;
 			}
 
-			&:hover {
-
-				~ a::before {
-					content: '\f511'; // Empty star
-				}
-
+			&:hover ~ a::before {
+				content: '\f511'; // Empty star
 			}
 
 		}
 
-		&:hover {
-
-			a {
-
-				&::before {
-					content: '\f408'; // Full star
-				}
-
-			}
-
+		&:hover a::before {
+			content: '\f408'; // Full star
 		}
 
 		&.selected {
@@ -107,12 +95,8 @@
 
 			}
 
-			a:not(.active) {
-
-				&::before {
-					content: '\f408'; // Full star
-				}
-
+			a:not(.active)::before {
+				content: '\f408'; // Full star
 			}
 
 		}

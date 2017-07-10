@@ -74,12 +74,8 @@
 
 	.customer_details {
 
-		td {
-
-			&:last-child {
-				text-align: inherit;
-			}
-
+		td:last-child {
+			text-align: inherit;
 		}
 
 	}

@@ -30,12 +30,6 @@
 
 
 
-.order-info + h2 {
-	@extend %wc_widget_title;
-}
-
-
-
 .woocommerce .notes {
 	margin-bottom: power( $golden, 2 ) +em;
 	max-width: 38em;

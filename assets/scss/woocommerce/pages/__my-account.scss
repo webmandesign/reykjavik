@@ -21,14 +21,6 @@
 			margin-top: power( 1 + $golden_minor, 4 ) +rem;
 		}
 
-		form {
-
-			h3 {
-				@extend %wc_widget_title;
-			}
-
-		}
-
 		a {
 			font-weight: 700;
 		}
@@ -55,7 +47,6 @@
 		.woocommerce & {
 
 			h2 {
-				@extend %wc_widget_title;
 				margin-top: 0;
 			}
 
@@ -180,88 +171,32 @@
 
 				&-link {
 
-					&--dashboard {
-
-						a {
-
-							&::before {
-								content: '\f409';
-							}
-
-						}
-
+					&--dashboard a::before {
+						content: '\f409';
 					}
 
-					&--orders {
-
-						a {
-
-							&::before {
-								content: '\f447';
-							}
-
-						}
-
+					&--orders a::before {
+						content: '\f447';
 					}
 
-					&--downloads {
-
-						a {
-
-							&::before {
-								content: '\f50b';
-							}
-
-						}
-
+					&--downloads a::before {
+						content: '\f50b';
 					}
 
-					&--edit-address {
-
-						a {
-
-							&::before {
-								content: '\f417';
-							}
-
-						}
-
+					&--edit-address a::before {
+						content: '\f417';
 					}
 
-					&--payment-methods {
-
-						a {
-
-							&::before {
-								content: '\f301';
-							}
-
-						}
-
+					&--payment-methods a::before {
+						content: '\f301';
 					}
 
-					&--edit-account {
-
-						a {
-
-							&::before {
-								content: '\f304';
-							}
-
-						}
-
+					&--edit-account a::before {
+						content: '\f304';
 					}
 
-					&--customer-logout {
-
-						a {
-
-							&::before {
-								content: '\f470';
-							}
-
-						}
-
+					&--customer-logout a::before {
+						content: '\f470';
 					}
 
 				}

@@ -102,9 +102,9 @@
 		text-transform: none;
 		letter-spacing: 0;
 		font-size: 1rem;
+		cursor: pointer;
 
 		&::before {
-			@extend %wc_genericon;
 			@extend %wc_icon_vertical_align_middle;
 			content: '';
 			display: inline-block;
@@ -117,16 +117,7 @@
 			border-radius: 1em;
 			vertical-align: middle;
 			cursor: pointer;
-			transition: transform ( $small_animation_speed +s ),
-			            background ( $small_animation_speed +s );
-		}
-
-		&:hover {
-
-			&::before {
-				transform: scale(1.2);
-			}
-
+			transition: background ( $small_animation_speed +s );
 		}
 
 	}

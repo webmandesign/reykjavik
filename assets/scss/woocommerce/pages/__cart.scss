@@ -13,10 +13,6 @@
 	.woocommerce {
 		@extend %wc_clearfix;
 
-		h2 {
-			@extend %wc_widget_title;
-		}
-
 		> form {
 
 			@include responsive( map_get( $breakpoint, 'l' ) ) {
@@ -88,13 +84,9 @@
 
 
 
-		.coupon {
-
-			.button {
-				width: 100%;
-				margin-top: 1em;
-			}
-
+		.coupon .button {
+			width: 100%;
+			margin-top: 1em;
 		}
 
 	}
@@ -149,9 +141,7 @@
 
 		.checkout-button {
 			width: 100%;
-			padding-top: 1em;
-			padding-bottom: 1em;
-			font-size: 1em;
+			padding: ( $golden_minor + 1em ) ( $golden_minor +em );
 			font-weight: 700;
 		}
 
@@ -159,10 +149,14 @@
 			width: 100%;
 			margin-top: 1em;
 
+			&:not(:hover):not(:focus):not(:active) {
+				background-color: transparent;
+				color: inherit;
+			}
+
 			&::before {
-				@extend %wc_genericon;
 				@extend %wc_icon_vertical_align_middle;
-				@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
+				@include rtl_property( content, '\21A9', '\21AA' ); // {{RTL}}
 				display: inline-block;
 				margin-#{$right}: $golden_minor +em; // {{RTL}}
 				line-height: $golden_major;

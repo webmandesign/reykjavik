@@ -20,22 +20,16 @@
 
 	&-title,
 	.comment-reply-title {
-		@extend %wc_widget_title;
 		display: block; // For `.comment-reply-title`
+
+		span {
+			font-weight: 400;
+		}
+
 	}
 
 		.entry-subtitle {
-			display: inline;
-			margin: 0;
-
-			&::before {
-				@include rtl_property( content, '(', ')' ); // {{RTL}}
-			}
-
-			&::after {
-				@include rtl_property( content, ')', '(' ); // {{RTL}}
-			}
-
+			display: none;
 		}
 
 	li {

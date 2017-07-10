@@ -52,13 +52,17 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 			}
 
 			.description {
-				padding: 2em;
+				padding: $golden +em;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					padding: 2em;
+				}
+
 			}
 
 				h3 {
-					@extend %wc_heading_uppercase;
 					margin: 0;
-					font-size: 1em;
+					font-size: $golden_minor / 2 + 1em;
 				}
 
 				.entry-subtitle {
@@ -103,24 +107,16 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 					margin-top: 1em;
 				}
 
-				&.loading {
-
-					&::before {
-						content: '\f420';
-						animation-name: rotate;
-						animation-duration: $large_animation_speed * 2s;
-						animation-timing-function: linear;
-						animation-iteration-count: infinite;
-					}
-
+				&.loading::before {
+					content: '\f420';
+					animation-name: rotate;
+					animation-duration: $large_animation_speed * 2s;
+					animation-timing-function: linear;
+					animation-iteration-count: infinite;
 				}
 
-				&.added {
-
-					&::before {
-						content: '\f418';
-					}
-
+				&.added::before {
+					content: '\f418';
 				}
 
 			}
@@ -153,20 +149,16 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 						color: inherit;
 					}
 
-					h3 {
-						font-size: $golden_minor / 2 + 1em;
+					.count {
+						position: absolute;
+						#{$right}: 0;
+						top: 0;
+						padding: 0 ( $golden_major +em );
+						margin: $golden_minor +rem;
+						line-height: 1rem + 2 * $golden_major;
+						font-size: 1rem;
+						font-weight: 400;
 					}
-
-						.count {
-							position: absolute;
-							#{$right}: 0;
-							top: 0;
-							padding: 0 ( $golden_major +em );
-							margin: $golden_minor +rem;
-							line-height: 1rem + 2 * $golden_major;
-							font-size: 1rem;
-							font-weight: 400;
-						}
 
 				}
 
@@ -178,20 +170,12 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 		.added-to-cart {
 
-			.button:nth-child(2) {
-
-				&::before {
-					content: '\f418';
-				}
-
+			.button:nth-child(2)::before {
+				content: '\f418';
 			}
 
-			.button.loading {
-
-				&::before {
-					content: '\f420';
-				}
-
+			.button.loading::before {
+				content: '\f420';
 			}
 
 		}
@@ -218,10 +202,10 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 			.woocommerce.archive.has-widgets-sidebar & {
 
-					@include responsive( map_get( $breakpoint, 'm' ) ) {
-						margin-left: percentage( -2 * $gutter / 100 );
-						margin-right: percentage( -2 * $gutter / 100 );
-					}
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin-left: percentage( -2 * $gutter / 100 );
+					margin-right: percentage( -2 * $gutter / 100 );
+				}
 
 			}
 

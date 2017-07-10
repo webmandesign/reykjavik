@@ -46,20 +46,12 @@
 
 	}
 
-		tr:first-child {
-
-			th {
-				border-top-width: 0;
-			}
-
+		tr:first-child th {
+			border-top-width: 0;
 		}
 
-		tr:last-child {
-
-			th {
-				border-bottom-width: 0;
-			}
-
+		tr:last-child th {
+			border-bottom-width: 0;
 		}
 
 	td {
@@ -73,12 +65,8 @@
 
 	}
 
-		tr:last-child {
-
-			td {
-				border-bottom-width: 0;
-			}
-
+		tr:last-child td {
+			border-bottom-width: 0;
 		}
 
 	p {

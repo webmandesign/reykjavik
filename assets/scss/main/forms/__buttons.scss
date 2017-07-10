@@ -27,7 +27,9 @@
 		letter-spacing: $golden_minor / 6 +em;
 		border: 2px solid currentColor;
 		cursor: pointer;
-		transition: border-color ( $small_animation_speed +s );
+		transition: background ( $small_animation_speed +s ),
+		            color ( $small_animation_speed +s ),
+		            border-color ( $small_animation_speed +s );
 
 		form & {
 			// No need for stacked breathing in forms...

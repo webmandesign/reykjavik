@@ -98,23 +98,6 @@
 
 
 
-// Headings
-
-	%wc_heading_uppercase {
-		// text-transform: uppercase;
-		// letter-spacing: .075em;
-		font-weight: 700;
-	}
-
-	%wc_widget_title {
-		@extend %wc_heading_uppercase;
-		margin: 0 0 ( power( $golden, 2 ) +rem );
-		line-height: 1 + $golden_minor;
-		font-size: 1rem;
-	}
-
-
-
 // Layout
 
 	%wc_clearfix {
