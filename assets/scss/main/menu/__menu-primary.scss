@@ -19,6 +19,7 @@
 
 	@include responsive( map_get( $breakpoint, 'l' ) ) {
 		float: $left; // {{RTL}}
+		margin-#{$right}: $golden +em;
 	}
 
 	@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
@@ -158,8 +159,7 @@
 
 		// Icon in menu item (has to be included with HTML)
 
-			.icon,
-			[class^="icon-"] {
+			.icon {
 				margin-#{$right}: $golden_minor +em; // {{RTL}}
 			}
 

@@ -54,7 +54,6 @@
 	.avatar {
 		float: $left; // {{RTL}}
 		width: power( 1 + $golden_minor, 4 ) +em;
-		box-shadow: 0 1.5em 6em rgba( #000, .1 );
 	}
 
 	.star-rating {

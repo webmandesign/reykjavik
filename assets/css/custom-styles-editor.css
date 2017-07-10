@@ -1,11 +1,11 @@
 /* FILE: custom-styles-editor.scss */
 /* FILE: main/custom-styles/_editor-style.scss */
 /* FILE: main/custom-styles/__extenders.scss */
-.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .child-page .more-link:hover, .site .fl-builder-content .fl-module .button:hover, .site .fl-builder-content .fl-module button:hover, .site .fl-builder-content .fl-module input[type="button"]:hover, .site .fl-builder-content .fl-module input[type="reset"]:hover, .site .fl-builder-content .fl-module input[type="submit"]:hover, .site .fl-builder-content .fl-module .child-page .more-link:hover, .main-navigation-container .button > a:hover, .menu-toggle:hover, .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .child-page .more-link:focus, .site .fl-builder-content .fl-module .button:focus, .site .fl-builder-content .fl-module button:focus, .site .fl-builder-content .fl-module input[type="button"]:focus, .site .fl-builder-content .fl-module input[type="reset"]:focus, .site .fl-builder-content .fl-module input[type="submit"]:focus, .site .fl-builder-content .fl-module .child-page .more-link:focus, .main-navigation-container .button > a:focus, .menu-toggle:focus, .button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .child-page .more-link:active, .site .fl-builder-content .fl-module .button:active, .site .fl-builder-content .fl-module button:active, .site .fl-builder-content .fl-module input[type="button"]:active, .site .fl-builder-content .fl-module input[type="reset"]:active, .site .fl-builder-content .fl-module input[type="submit"]:active, .site .fl-builder-content .fl-module .child-page .more-link:active, .main-navigation-container .button > a:active, .menu-toggle:active, #page mark, #page .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, .set-colors-accent, .set-colors-accent > .fl-row-content-wrap, .set-colors-accent > .fl-col-content, .hover-color-accent.fl-col:hover .fl-col-content, form input[type="submit"], .site .fl-builder-content .fl-module form input[type="submit"] { /*[*/ background-color: #273a7d; color: #fefeff; /*]*/ /*// background-color: [[color_accent]]; color: [[color_accent_text]]; //*/ }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .child-page .more-link, .site .fl-builder-content .fl-module .button, .site .fl-builder-content .fl-module button, .site .fl-builder-content .fl-module input[type="button"], .site .fl-builder-content .fl-module input[type="reset"], .site .fl-builder-content .fl-module input[type="submit"], .site .fl-builder-content .fl-module .child-page .more-link, .main-navigation-container .button > a, .menu-toggle, mark, #page mark, .highlight, #page .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, .set-colors-accent, .set-colors-accent > .fl-row-content-wrap, .set-colors-accent > .fl-col-content, .hover-color-accent.fl-col:hover .fl-col-content { /*[*/ background-color: #273a7d; color: #fefeff; /*]*/ /*// background-color: [[color_accent]]; color: [[color_accent_text]]; //*/ }
 
 a, .accent-color { /*[*/ color: #273a7d; /*]*/ /*// color: [[color_accent]]; //*/ }
 
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .child-page .more-link, .site .fl-builder-content .fl-module .button, .site .fl-builder-content .fl-module button, .site .fl-builder-content .fl-module input[type="button"], .site .fl-builder-content .fl-module input[type="reset"], .site .fl-builder-content .fl-module input[type="submit"], .site .fl-builder-content .fl-module .child-page .more-link, .main-navigation-container .button > a, .menu-toggle { text-shadow: none; background: transparent; color: inherit; }
+.button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .child-page .more-link:focus, .site .fl-builder-content .fl-module .button:focus, .site .fl-builder-content .fl-module button:focus, .site .fl-builder-content .fl-module input[type="button"]:focus, .site .fl-builder-content .fl-module input[type="reset"]:focus, .site .fl-builder-content .fl-module input[type="submit"]:focus, .site .fl-builder-content .fl-module .child-page .more-link:focus, .main-navigation-container .button > a:focus, .menu-toggle:focus { /*[*/ outline: thin dashed #273a7d; /*]*/ /*// outline: thin dashed [[color_accent]]; //*/ }
 
 .mce-content-body, .outdent-content::before { /*[*/ background-color: #fefeff; color: #535354; border-color: rgba(83, 83, 84, 0.2); /*]*/ /*// background-color: [[color_content_background]]; color: [[color_content_text]]; border-color: [[color_content_text(20)]]; //*/ }
 
@@ -44,8 +44,6 @@ button, input, select, textarea { background-color: transparent; }
 
 .set-colors-warning, .set-colors-warning > .fl-row-content-wrap, .set-colors-warning > .fl-col-content { background-color: rgba(255, 221, 0, 0.85); color: #310; }
 
-.fl-builder-content .fl-module-wm_button { background: transparent; color: inherit; }
-
 .site .fl-row[class*="set-colors-"], .site .fl-col[class*="set-colors-"] { background: none; }
 
 div[class*="set-colors-"] a, div[class*="set-colors-"] h1, div[class*="set-colors-"] h2, div[class*="set-colors-"] h3, div[class*="set-colors-"] h4, div[class*="set-colors-"] .h1, div[class*="set-colors-"] .h2, div[class*="set-colors-"] .h3, div[class*="set-colors-"] .h4, div[class*="set-colors-"] .dropcap-text::first-letter { color: inherit; }
@@ -54,8 +52,6 @@ div[class*="set-colors-"] a, div[class*="set-colors-"] h1, div[class*="set-color
 mark, .highlight { /*[*/ box-shadow: 0.38em 0 0 #273a7d, -0.38em 0 0 #273a7d; /*]*/ /*// box-shadow:  .38em 0 0 [[color_accent]], -.38em 0 0 [[color_accent]]; //*/ }
 
 @media only screen and (max-width: 41.9375em) { .pagination a { /*[*/ background-color: #273a7d; color: #fefeff; /*]*/ /*// background-color: [[color_accent]]; color: [[color_accent_text]]; //*/ } }
-
-form input[type="submit"], .site .fl-builder-content .fl-module form input[type="submit"] { border-color: transparent; }
 
 /* FILE: main/custom-styles/__typography-editor.scss */
 .mce-content-body, .mce-content-body .font-body { font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
@@ -123,8 +119,6 @@ img, embed, iframe, object, video { max-width: 100%; }
 embed, iframe, object { max-height: 320px; }
 
 embed, iframe, object, video { width: 100% !important; }
-
-.icon::before, [class^="icon-"]::before, [class*=" icon-"]::before { content: '?'; display: inline-block; padding: .19em .38em; font-size: .81em; font-weight: 700; border-width: 2px; border-style: dashed; vertical-align: middle; }
 
 /* FILE: main/custom-styles/__editor-outdented-layout.scss */
 .outdent-content { position: relative; padding: 8px; margin-left: -10px; margin-right: -10px; border-width: 2px; border-style: dashed; }

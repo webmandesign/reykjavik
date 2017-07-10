@@ -11,8 +11,10 @@
 // Helper selectors
 
 	$accent_color_elements: (
-		// Marker (have to use ID overrides for page builder)
+		// Marker (have to use ID overrides for page builder, and default selector for editor stylesheet)
+		'mark',
 		'#page mark',
+		'.highlight',
 		'#page .highlight',
 		// Pagination
 		'.pagination .current',
@@ -85,14 +87,4 @@
 
 	.menu-toggle {
 		@extend %button_default_colors;
-	}
-
-	form input[type="submit"] {
-
-		&,
-		.site .fl-builder-content .fl-module & {
-			@extend %accent_colors;
-			border-color: transparent; //*
-		}
-
 	}

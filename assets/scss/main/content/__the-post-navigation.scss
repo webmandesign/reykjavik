@@ -72,13 +72,7 @@
 			display: block;
 			text-transform: uppercase;
 			white-space: nowrap;
-			opacity: .66;
-
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				display: inline-block;
-				margin-#{$right}: 1em; // {{RTL}}
-			}
-
+			opacity: .8;
 		}
 
 
@@ -87,26 +81,19 @@
 
 		.title {
 			@extend %font_weight_700;
+			display: block;
 		}
 
 
 
 	// Hover action
 
-		&:hover {
-
-			> div {
-				opacity: .33;
-			}
-
+		&:hover > div {
+			opacity: .5;
 		}
 
-		> div:not(:empty) {
-
-			&:hover {
-				opacity: 1;
-			}
-
+		> div:not(:empty):hover {
+			opacity: 1;
 		}
 
 }

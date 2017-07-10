@@ -97,16 +97,11 @@
 // Genericons Neue CSS
 // @link  https://github.com/Automattic/genericons-neue/blob/master/icon-font/Genericons-Neue.css
 
-	.genericons-neue {
+	.genericons-neue::before {
+		@extend %genericon;
 		display: inline-block;
 		line-height: 1;
-		text-decoration: inherit;
-		text-transform: none;
 		text-rendering: auto;
-		font-family: 'Genericons-Neue';
-		font-weight: normal;
-		font-style: normal;
-		speak: none;
 		-moz-osx-font-smoothing: grayscale;
 		 -webkit-font-smoothing: antialiased;
 		vertical-align: middle;

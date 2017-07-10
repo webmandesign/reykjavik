@@ -91,8 +91,7 @@
 
 	// Icon in menu item (has to be included with HTML)
 
-		.icon,
-		[class^="icon-"] {
+		.icon {
 			margin-#{$right}: $golden_minor +em; // {{RTL}}
 		}
 

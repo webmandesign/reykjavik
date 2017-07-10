@@ -27,11 +27,7 @@
 		letter-spacing: $golden_minor / 6 +em;
 		border: 2px solid currentColor;
 		cursor: pointer;
-		transition: background ( $large_animation_speed +s ),
-		            color ( $large_animation_speed +s ),
-		            border-color ( $small_animation_speed +s ),
-		            box-shadow ( $small_animation_speed +s ),
-		            opacity ( $small_animation_speed +s );
+		transition: border-color ( $small_animation_speed +s );
 
 		form & {
 			// No need for stacked breathing in forms...
@@ -71,23 +67,6 @@
 			opacity: .5;
 			cursor: not-allowed;
 		}
-
-		// Special hover effect
-
-			@extend %background_overlay_from_text_color_after;
-
-			&::after {
-				top: auto;
-				bottom: 0;
-				height: 0;
-				transition: height ( $small_animation_speed / 2 +s );
-				transition-delay: $small_animation_speed +s;
-			}
-
-			&:hover::after,
-			&:focus::after {
-				height: 100%;
-			}
 
 	}
 

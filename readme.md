@@ -89,7 +89,6 @@ http://genericons.com
 ### Images copyright
 
 **Images used in theme custom header, footer, screenshot and demo website**
-https://unsplash.com/@thematthoward?photo=U9ZI3ysJtrE
 https://pixabay.com/en/colorado-rocky-mountain-national-park-1436681/
 Copyright (c) https://openclipart.org
 Copyright (c) https://unsplash.com

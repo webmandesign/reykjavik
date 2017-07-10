@@ -73,12 +73,8 @@
 
 		// Page post type in search results list
 
-			.type-page {
-
-				.entry-summary {
-					margin-bottom: 0;
-				}
-
+			.type-page .entry-summary {
+				margin-bottom: 0;
 			}
 
 	}

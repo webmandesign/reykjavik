@@ -62,14 +62,15 @@
 	// Buttons
 
 		%button_default_colors {
-			text-shadow: none; //*
-			background: transparent; //*
-			color: inherit; //*
+			@extend %accent_colors;
 
-			&:hover,
-			&:focus,
-			&:active {
-				@extend %accent_colors;
+			&:focus {
+				/*[*/
+				outline: thin dashed map_get( $colors, 'accent' );
+				/*]*/
+				/*//
+				outline: thin dashed [[color_accent]];
+				//*/
 			}
 
 		}

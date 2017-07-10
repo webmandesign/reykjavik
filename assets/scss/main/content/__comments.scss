@@ -129,7 +129,6 @@
 		border-bottom-width: 1px;
 
 		.avatar {
-			box-shadow: 0 1.5em 6em rgba( #000, .1 );
 			border-radius: 0;
 
 			@include responsive( map_get( $breakpoint, 'm' ) ) {
