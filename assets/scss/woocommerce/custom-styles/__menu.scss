@@ -19,4 +19,10 @@
 	color: [[color_header_text]];
 	border-color: [[color_header_text(#{ map_get( $border_opacity_from_text, 'header' ) * 100 })]];
 	//*/
+
+	.button:not(:hover):not(:focus):not(:active) {
+		background: transparent;
+		color: inherit;
+	}
+
 }

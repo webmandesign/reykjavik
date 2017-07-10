@@ -37,4 +37,6 @@ ul.order_details::after, ul.order_details::before { /*[*/ background-image: line
 /* FILE: woocommerce/custom-styles/__menu.scss */
 .shop-mobile-menu-links { /*[*/ background-color: #fefeff; color: #535354; border-color: rgba(83, 83, 84, 0.2); /*]*/ /*// background-color: [[color_header_background]]; color: [[color_header_text]]; border-color: [[color_header_text(20)]]; //*/ }
 
+.shop-mobile-menu-links .button:not(:hover):not(:focus):not(:active) { background: transparent; color: inherit; }
+
 /* FILE: woocommerce/custom-styles/__shortcode.scss */

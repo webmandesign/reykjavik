@@ -104,7 +104,7 @@ class Reykjavik_Starter_Content {
 								'text',
 								array(
 									'title' => esc_html_x( 'How to hide sidebar?', 'Theme starter content', 'reykjavik' ),
-									'text'  => esc_html_x( 'Remove all widgets from sidebar to hide it.', 'Theme starter content', 'reykjavik' ),
+									'text'  => esc_html_x( 'Remove all widgets from sidebar to hide it.', 'Theme starter content', 'reykjavik' ) . ' ' . esc_html_x( 'Or use WooSidebars plugin to manage all widget areas on your website and create your own ones.', 'Theme starter content', 'reykjavik' ),
 								),
 							),
 
@@ -116,17 +116,19 @@ class Reykjavik_Starter_Content {
 								'text',
 								array(
 									'title' => esc_html_x( 'Intro Widgets', 'Theme starter content', 'reykjavik' ),
-									'text'  => esc_html_x( 'This is an Intro Widgets area. It only displays on pages with a specific page template assigned, or a dedicated option enabled.', 'Theme starter content', 'reykjavik' ),
+									'text'  => esc_html_x( 'This is an Intro Widgets area displayed on a special page template.', 'Theme starter content', 'reykjavik' ),
 									'icon'  => 'genericons-neue genericons-neue-anchor',
+									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-in-harbor.jpg',
 								),
 							),
 
 							'text_intro_2' => array(
 								'text',
 								array(
-									'title' => esc_html_x( 'Icons in Text Widget', 'Theme starter content', 'reykjavik' ),
-									'text'  => esc_html_x( 'To allow displaying icons in Text widget you need some plugin to load the icons to your website. You can use any icons plugin.', 'Theme starter content', 'reykjavik' ),
+									'title' => 'Lorem Ipsum',
+									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
 									'icon'  => 'genericons-neue genericons-neue-cart',
+									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing.jpg',
 								),
 							),
 
@@ -134,8 +136,9 @@ class Reykjavik_Starter_Content {
 								'text',
 								array(
 									'title' => 'Lorem Ipsum',
-									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.',
-									'icon'  => 'genericons-neue genericons-neue-home',
+									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
+									'icon'  => 'genericons-neue genericons-neue-phone',
+									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing-side-wind.jpg',
 								),
 							),
 
@@ -177,64 +180,90 @@ class Reykjavik_Starter_Content {
 						'home' => array(
 							'post_type'    => 'page',
 							'template'     => 'templates/intro-widgets.php',
-							'post_title'   => esc_html_x( 'Welcome to our site!', 'Theme starter content', 'reykjavik' ),
-							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
-							'post_content' => '<div class="outdent-content"><h2 class="uppercase h3">' .
-							                  esc_html_x( 'WooCommerce featured products', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2>[featured_products per_page="3" columns="3"]<p><em><small>' .
-							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your featured products.', 'Theme starter content', 'reykjavik' ) .
-							                  '</small></em></p><hr></div><h2>' .
-							                  esc_html_x( 'H2 headings are outdented', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2><p>' .
+							'post_title'   => esc_html_x( 'Hello from Reykjavik', 'Theme starter content', 'reykjavik' ),
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
+							'post_content' => '<div class="outdent-content"><h2 class="display-1">' .
+							                  esc_html_x( 'Welcome to our website!', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><p class="h3">' .
 							                  esc_html_x( 'This is your homepage, which is what most visitors will see when they come to your site for the first time.', 'Theme starter content', 'reykjavik' ) .
-							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p><h2>' .
-							                  esc_html_x( 'Page layout in 2 columns', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2><p>' .
+							                  ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.</p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" /><p>&nbsp;</p></div>' .
+
+							                  '<h2>' .
+							                  esc_html_x( 'In default page layout&hellip;', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><div class="text-columns-2"><p>' .
 							                  esc_html_x( 'By default the theme displays page content in 2 columns. You can change this to more traditional layout in theme options.', 'Theme starter content', 'reykjavik' ) .
-							                  '</p>',
+							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, vulputate orci. Integer in leo eget.</p></div>' .
+
+							                  '<h2>' .
+							                  esc_html_x( '&hellip;H2 headings are outdented', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2>' .
+							                  '<div class="text-columns-2"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p></div>',
 						),
 
-						'home_shop' => array(
+						'shop' => array(
+							'thumbnail'    => '{{image-header}}',
 							'post_type'    => 'page',
 							'template'     => 'templates/intro-widgets.php',
-							'post_title'   => esc_html_x( 'Shop homepage', 'Theme starter content', 'reykjavik' ),
-							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
-							'post_content' => '<div class="outdent-content"><h2 class="uppercase h3">' .
-							                  esc_html_x( 'WooCommerce featured products', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2>[featured_products per_page="3" columns="3"]<p><em><small>' .
-							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your featured products.', 'Theme starter content', 'reykjavik' ) .
-							                  '</small></em></p><hr></div><h2>' .
-							                  esc_html_x( 'H2 headings are outdented', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2><p>' .
-							                  esc_html_x( 'This is your homepage, which is what most visitors will see when they come to your site for the first time.', 'Theme starter content', 'reykjavik' ) .
-							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p><h2>' .
-							                  esc_html_x( 'Page layout in 2 columns', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2><p>' .
-							                  esc_html_x( 'By default the theme displays page content in 2 columns. You can change this to more traditional layout in theme options.', 'Theme starter content', 'reykjavik' ) .
-							                  '</p>',
+							'post_title'   => esc_html_x( 'WooCommerce shop homepage', 'Theme starter content', 'reykjavik' ),
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p>',
+							'post_content' => '<h2>' .
+							                  esc_html_x( 'Featured products', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat.</p>' .
+							                  '<div class="outdent-content">' .
+							                  '[featured_products per_page="3" columns="3"]' .
+							                  '<p><em><small>' .
+							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your products.', 'Theme starter content', 'reykjavik' ) .
+							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
+							                  '</div>' .
+
+							                  '<h2>' .
+							                  esc_html_x( 'Shop categories', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat.</p>' .
+							                  '<div class="outdent-content">' .
+							                  '[product_categories per_page="3" columns="6"]' .
+							                  '<p><em><small>' .
+							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your product categories.', 'Theme starter content', 'reykjavik' ) .
+							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
+							                  '</div>' .
+
+							                  '<h2>' .
+							                  esc_html_x( 'Shortly about us', 'Theme starter content', 'reykjavik' ) .
+							                  '</h2>' .
+							                  '<div class="text-columns-2">' .
+							                  '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p>' .
+							                  '</div>' .
+							                  '<img src="https://sample.webmandesign.eu/signature-webman-design-black-320.png" alt="WebMan Design signature" />',
 						),
 
 						'about' => array(
-							'thumbnail'    => '{{attachment-image-mystery-1}}',
 							'post_type'    => 'page',
-							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p>',
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p>',
 							'post_content' => '<h2>' .
 							                  esc_html_x( 'Introduce yourself', 'Theme starter content', 'reykjavik' ) .
-							                  '</h2><p>' .
+							                  '</h2>' .
+							                  '<p class="uppercase">' .
 							                  esc_html_x( 'You might be an artist who would like to introduce yourself and your work here or maybe you&rsquo;re a business with a mission to describe.', 'Theme starter content', 'reykjavik' ) .
-							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p><h2 class="display-2 weight-300">2017</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p><h2 class="display-2 weight-300">2010</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p>',
+							                  '</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p>' .
+
+							                  '<div class="outdent-content">[embed]https://www.youtube.com/watch?v=fbkEmW6PlXs[/embed]</div>' .
+
+							                  '<h2 class="display-2 weight-300">2017</h2>' .
+							                  '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p>' .
+
+							                  '<h2 class="display-2 weight-300">2010</h2>' .
+							                  '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat. Donec varius est eu neque ultrices consectetur.</p>',
 						),
 
 						'news' => array(
-							'thumbnail'    => '{{attachment-image-mystery-2}}',
+							'thumbnail'    => '{{image-header}}',
 							'post_type'    => 'page',
-							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p>',
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p>',
 						),
 
 						'contact' => array(
 							'post_type'    => 'page',
-							'template'     => 'templates/child-pages.php',
-							'post_excerpt' => '<p>' . esc_html_x( 'Set this text as a page excerpt. You will most likely need to enable the excerpt field in screen options in the upper right corner of the screen when editing the page.', 'Theme starter content', 'reykjavik' ) . '</p>',
+							'template'     => 'templates/intro-widgets.php',
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p>',
 							'post_content' => '<h2>' .
 							                  esc_html_x( 'Get in touch', 'Theme starter content', 'reykjavik' ) .
 							                  '</h2><p>' .
@@ -284,13 +313,21 @@ class Reykjavik_Starter_Content {
 									'title' => esc_html_x( 'Home', 'Theme starter content', 'reykjavik' ),
 								),
 
-								'page_home_shop' => array(
-									'title' => esc_html_x( 'Shop home', 'Theme starter content', 'reykjavik' ),
+								'page_shop' => array(
+									'title'     => esc_html_x( 'Shop', 'Theme starter content', 'reykjavik' ),
+									'type'      => 'post_type',
+									'object'    => 'page',
+									'object_id' => '{{shop}}',
 								),
 
 								'page_about',
 								'page_news',
 								'page_contact',
+
+								'link_documentation' => array(
+									'title' => esc_html_x( 'Docs', 'Short for "documentation". Theme starter content.', 'reykjavik' ),
+									'url'   => 'https://www.webmandesign.eu/manual/reykjavik',
+								),
 
 							),
 						),
@@ -305,11 +342,6 @@ class Reykjavik_Starter_Content {
 								),
 
 								'link_secondary_2' => array(
-									'title' => esc_html_x( 'Simple', 'As in "Secondary simple navigational menu". Theme starter content.', 'reykjavik' ),
-									'url'   => '#0',
-								),
-
-								'link_secondary_3' => array(
 									'title' => esc_html_x( 'Menu', 'As in "Secondary simple navigational menu". Theme starter content.', 'reykjavik' ),
 									'url'   => '#0',
 								),
@@ -321,6 +353,11 @@ class Reykjavik_Starter_Content {
 							'name' => esc_html_x( 'Social Links Menu', 'Theme starter content', 'reykjavik' ),
 							'items' => array(
 
+								'link_vimeo' => array(
+									'title' => esc_html_x( 'Video tutorials by WebMan Design', 'Theme starter content', 'reykjavik' ),
+									'url'   => 'https://vimeo.com/album/4647015',
+								),
+
 								'link_facebook' => array(
 									'title' => esc_html_x( 'WebMan Design on Facebook', 'Theme starter content', 'reykjavik' ),
 									'url'   => 'https://www.facebook.com/webmandesigneu',
@@ -328,7 +365,7 @@ class Reykjavik_Starter_Content {
 
 								'link_twitter' => array(
 									'title' => esc_html_x( 'WebMan Design on Twitter', 'Theme starter content', 'reykjavik' ),
-									'url'   => 'https://youtu.be/vvxP5n2vsrw',
+									'url'   => 'https://twitter.com/webmandesigneu',
 								),
 
 								'link_email',
@@ -358,7 +395,7 @@ class Reykjavik_Starter_Content {
 						'page_for_posts'      => '{{news}}',
 						'posts_per_page'      => 6,
 						'permalink_structure' => '/%postname%/',
-						'external_header_video' => 'https://youtu.be/vvxP5n2vsrw',
+						'external_header_video' => 'https://www.youtube.com/watch?v=HbXTFQXnhmY',
 					);
 
 		} // /options
@@ -377,12 +414,8 @@ class Reykjavik_Starter_Content {
 
 				self::$content['attachments'] = array(
 
-						'attachment-image-mystery-1' => array(
-							'file' => 'assets/images/header/mystery-1.jpg',
-						),
-
-						'attachment-image-mystery-2' => array(
-							'file' => 'assets/images/header/mystery-2.jpg',
+						'image-header' => array(
+							'file' => 'assets/images/header/pixabay-colorado-1436681.png',
 						),
 
 					);

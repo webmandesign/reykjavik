@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-07-09 16:26+0200\n"
+"POT-Creation-Date: 2017-07-10 20:18+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -494,12 +494,12 @@ msgid "General text font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:881
+#: includes/setup/class-setup.php:879
 msgid "Headings font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1113
-#: includes/setup/class-setup.php:887
+#: includes/setup/class-setup.php:885
 msgid "Logo font"
 msgstr ""
 
@@ -1186,7 +1186,7 @@ msgstr ""
 msgid "After content only"
 msgstr ""
 
-#: includes/plugins/jetpack/class-jetpack.php:201
+#: includes/plugins/jetpack/class-jetpack.php:206
 msgid "Load more&hellip;"
 msgstr ""
 
@@ -1333,43 +1333,43 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:219
+#: includes/setup/class-setup.php:217
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s!"
 msgstr ""
 
-#: includes/setup/class-setup.php:226
+#: includes/setup/class-setup.php:224
 msgid "Please read \"Welcome\" page for information about the theme setup."
 msgstr ""
 
-#: includes/setup/class-setup.php:233
+#: includes/setup/class-setup.php:231
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/class-setup.php:559
+#: includes/setup/class-setup.php:557
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:566
+#: includes/setup/class-setup.php:564
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:567
+#: includes/setup/class-setup.php:565
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:574 includes/setup/class-setup.php:585
+#: includes/setup/class-setup.php:572 includes/setup/class-setup.php:583
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:584
+#: includes/setup/class-setup.php:582
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:592
+#: includes/setup/class-setup.php:590
 msgid "In page intro section."
 msgstr ""
 
@@ -1378,7 +1378,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:762
+#: includes/setup/class-setup.php:760
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1388,68 +1388,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:772
+#: includes/setup/class-setup.php:770
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:841
+#: includes/setup/class-setup.php:839
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:842
+#: includes/setup/class-setup.php:840
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:843
+#: includes/setup/class-setup.php:841
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:844
+#: includes/setup/class-setup.php:842
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:845
+#: includes/setup/class-setup.php:843
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:846
+#: includes/setup/class-setup.php:844
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:847
+#: includes/setup/class-setup.php:845
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:848
+#: includes/setup/class-setup.php:846
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:849
+#: includes/setup/class-setup.php:847
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:854
+#: includes/setup/class-setup.php:852
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:871
+#: includes/setup/class-setup.php:869
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:875
+#: includes/setup/class-setup.php:873
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:893
+#: includes/setup/class-setup.php:891
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:904
+#: includes/setup/class-setup.php:902
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:911
+#: includes/setup/class-setup.php:909
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in 1 column"
@@ -1457,23 +1457,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:922
+#: includes/setup/class-setup.php:920
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:926
+#: includes/setup/class-setup.php:924
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:937
+#: includes/setup/class-setup.php:935
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:941
+#: includes/setup/class-setup.php:939
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:953
+#: includes/setup/class-setup.php:951
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1487,6 +1487,13 @@ msgctxt "Theme starter content"
 msgid "Remove all widgets from sidebar to hide it."
 msgstr ""
 
+#: includes/starter-content/class-starter-content.php:107
+msgctxt "Theme starter content"
+msgid ""
+"Or use WooSidebars plugin to manage all widget areas on your website and "
+"create your own ones."
+msgstr ""
+
 #: includes/starter-content/class-starter-content.php:118
 msgctxt "Theme starter content"
 msgid "Intro Widgets"
@@ -1494,193 +1501,198 @@ msgstr ""
 
 #: includes/starter-content/class-starter-content.php:119
 msgctxt "Theme starter content"
-msgid ""
-"This is an Intro Widgets area. It only displays on pages with a specific "
-"page template assigned, or a dedicated option enabled."
+msgid "This is an Intro Widgets area displayed on a special page template."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:127
+#: includes/starter-content/class-starter-content.php:183
 msgctxt "Theme starter content"
-msgid "Icons in Text Widget"
+msgid "Hello from Reykjavik"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:128
-msgctxt "Theme starter content"
-msgid ""
-"To allow displaying icons in Text widget you need some plugin to load the "
-"icons to your website. You can use any icons plugin."
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:180
-msgctxt "Theme starter content"
-msgid "Welcome to our site!"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:181
-#: includes/starter-content/class-starter-content.php:201
-#: includes/starter-content/class-starter-content.php:220
-#: includes/starter-content/class-starter-content.php:231
-#: includes/starter-content/class-starter-content.php:237
+#: includes/starter-content/class-starter-content.php:184
+#: includes/starter-content/class-starter-content.php:208
+#: includes/starter-content/class-starter-content.php:240
+#: includes/starter-content/class-starter-content.php:260
+#: includes/starter-content/class-starter-content.php:266
 msgctxt "Theme starter content"
 msgid ""
-"Set this text as a page excerpt. You will most likely need to enable the "
-"excerpt field in screen options in the upper right corner of the screen when "
-"editing the page."
+"This is a page/post excerpt text. You might need to enable the excerpt field "
+"in screen options first when editing the page/post."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:181
-#: includes/starter-content/class-starter-content.php:201
+#: includes/starter-content/class-starter-content.php:184
 msgctxt "Theme starter content"
 msgid "Go shopping"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:183
-#: includes/starter-content/class-starter-content.php:203
+#: includes/starter-content/class-starter-content.php:186
 msgctxt "Theme starter content"
-msgid "WooCommerce featured products"
+msgid "Welcome to our website!"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:185
-#: includes/starter-content/class-starter-content.php:205
-msgctxt "Theme starter content"
-msgid ""
-"You need to have WooCommerce plugin installed and activated for this "
-"shortcode to display your featured products."
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:187
-#: includes/starter-content/class-starter-content.php:207
-msgctxt "Theme starter content"
-msgid "H2 headings are outdented"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:189
-#: includes/starter-content/class-starter-content.php:209
+#: includes/starter-content/class-starter-content.php:188
 msgctxt "Theme starter content"
 msgid ""
 "This is your homepage, which is what most visitors will see when they come "
 "to your site for the first time."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:191
-#: includes/starter-content/class-starter-content.php:211
+#: includes/starter-content/class-starter-content.php:192
 msgctxt "Theme starter content"
-msgid "Page layout in 2 columns"
+msgid "In default page layout&hellip;"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:193
-#: includes/starter-content/class-starter-content.php:213
+#: includes/starter-content/class-starter-content.php:194
 msgctxt "Theme starter content"
 msgid ""
 "By default the theme displays page content in 2 columns. You can change this "
 "to more traditional layout in theme options."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:200
+#: includes/starter-content/class-starter-content.php:198
 msgctxt "Theme starter content"
-msgid "Shop homepage"
+msgid "&hellip;H2 headings are outdented"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:222
+#: includes/starter-content/class-starter-content.php:207
+msgctxt "Theme starter content"
+msgid "WooCommerce shop homepage"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:210
+msgctxt "Theme starter content"
+msgid "Featured products"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:215
+msgctxt "Theme starter content"
+msgid ""
+"You need to have WooCommerce plugin installed and activated for this "
+"shortcode to display your products."
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:220
+msgctxt "Theme starter content"
+msgid "Shop categories"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:225
+msgctxt "Theme starter content"
+msgid ""
+"You need to have WooCommerce plugin installed and activated for this "
+"shortcode to display your product categories."
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:230
+msgctxt "Theme starter content"
+msgid "Shortly about us"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:242
 msgctxt "Theme starter content"
 msgid "Introduce yourself"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:224
+#: includes/starter-content/class-starter-content.php:245
 msgctxt "Theme starter content"
 msgid ""
 "You might be an artist who would like to introduce yourself and your work "
 "here or maybe you&rsquo;re a business with a mission to describe."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:239
+#: includes/starter-content/class-starter-content.php:268
 msgctxt "Theme starter content"
 msgid "Get in touch"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:241
+#: includes/starter-content/class-starter-content.php:270
 msgctxt "Theme starter content"
 msgid ""
 "This is a page with some basic contact information, such as an address and "
 "phone number. You might also try a plugin to add a contact form."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:243
-#: includes/starter-content/class-starter-content.php:245
+#: includes/starter-content/class-starter-content.php:272
+#: includes/starter-content/class-starter-content.php:274
 msgctxt "Theme starter content"
 msgid "Your name"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:247
-#: includes/starter-content/class-starter-content.php:249
+#: includes/starter-content/class-starter-content.php:276
+#: includes/starter-content/class-starter-content.php:278
 msgctxt "Theme starter content"
 msgid "Your email"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:251
-#: includes/starter-content/class-starter-content.php:253
+#: includes/starter-content/class-starter-content.php:280
+#: includes/starter-content/class-starter-content.php:282
 msgctxt "Theme starter content"
 msgid "Your message"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:255
+#: includes/starter-content/class-starter-content.php:284
 msgctxt "Theme starter content"
 msgid ""
 "This is only a dummy form placeholder. Use a plugin to create forms, such as "
 "Caldera Forms or Contact Form 7."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:257
+#: includes/starter-content/class-starter-content.php:286
 msgctxt "Theme starter content"
 msgid "This form does not work"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:280
+#: includes/starter-content/class-starter-content.php:309
 msgctxt "Theme starter content"
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:284
+#: includes/starter-content/class-starter-content.php:313
 msgctxt "Theme starter content"
 msgid "Home"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:288
+#: includes/starter-content/class-starter-content.php:317
 msgctxt "Theme starter content"
-msgid "Shop home"
+msgid "Shop"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:299
+#: includes/starter-content/class-starter-content.php:328
+msgctxt "Short for \"documentation\". Theme starter content."
+msgid "Docs"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:336
 msgctxt "Theme starter content"
 msgid "Secondary Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:303
+#: includes/starter-content/class-starter-content.php:340
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Secondary"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:308
-msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
-msgid "Simple"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:313
+#: includes/starter-content/class-starter-content.php:345
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:321
+#: includes/starter-content/class-starter-content.php:353
 msgctxt "Theme starter content"
 msgid "Social Links Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:325
+#: includes/starter-content/class-starter-content.php:357
+msgctxt "Theme starter content"
+msgid "Video tutorials by WebMan Design"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:362
 msgctxt "Theme starter content"
 msgid "WebMan Design on Facebook"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:330
+#: includes/starter-content/class-starter-content.php:367
 msgctxt "Theme starter content"
 msgid "WebMan Design on Twitter"
 msgstr ""
@@ -1744,39 +1756,39 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:246
+#: includes/widgets/class-wp-widget-text.php:252
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:251
+#: includes/widgets/class-wp-widget-text.php:257
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:252
+#: includes/widgets/class-wp-widget-text.php:258
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:253
+#: includes/widgets/class-wp-widget-text.php:259
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:291
+#: includes/widgets/class-wp-widget-text.php:297
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:294
+#: includes/widgets/class-wp-widget-text.php:300
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:299
+#: includes/widgets/class-wp-widget-text.php:305
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:313
+#: includes/widgets/class-wp-widget-text.php:321
 msgid "Remove image"
 msgstr ""
 

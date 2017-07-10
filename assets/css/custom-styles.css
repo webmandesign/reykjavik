@@ -114,7 +114,7 @@ mark, .highlight { /*[*/ box-shadow: 0.38em 0 0 #273a7d, -0.38em 0 0 #273a7d; /*
 /* FILE: main/custom-styles/__menu.scss */
 @media only screen and (min-width: 55em) { .main-navigation-container li ul { /*[*/ background-color: #fefeff; color: #535354; /*]*/ /*// background-color: [[color_header_background]]; color: [[color_header_text]]; //*/ } }
 
-@media only screen and (max-width: 54.9375em) { .menu-toggle, .main-navigation-container { /*[*/ background-color: #fefeff; color: #535354; border-color: rgba(83, 83, 84, 0.2); /*]*/ /*// background-color: [[color_header_background]]; color: [[color_header_text]]; border-color: [[color_header_text(20)]]; //*/ } }
+@media only screen and (max-width: 54.9375em) { .main-navigation:not(.is-active) .menu-toggle:not(:hover):not(:focus):not(:active), .main-navigation-container { /*[*/ background-color: #fefeff; color: #535354; border-color: rgba(83, 83, 84, 0.2); /*]*/ /*// background-color: [[color_header_background]]; color: [[color_header_text]]; border-color: [[color_header_text(20)]]; //*/ } }
 
 /* FILE: main/custom-styles/__intro.scss */
 .intro-special .wp-custom-header::before { background-color: rgba(0, 0, 0, 0.6); }

@@ -113,7 +113,7 @@
 					$widget_text  = ( ! empty( $instance['text'] ) ) ? ( $instance['text'] ) : ( '' );
 					$widget_media = array_filter( array(
 							'icon'  => ( isset( $instance['icon'] ) ) ? ( trim( $instance['icon'] ) ) : ( '' ),
-							'image' => ( isset( $instance['image'] ) ) ? ( absint( $instance['image'] ) ) : ( 0 ),
+							'image' => ( isset( $instance['image'] ) ) ? ( $instance['image'] ) : ( 0 ),
 						) );
 
 
@@ -129,7 +129,13 @@
 
 							if ( isset( $widget_media['image'] ) ) {
 								$widget_text .= '<div class="widget-text-media widget-text-media-image">';
-								$widget_text .= wp_get_attachment_image( absint( $instance['image'] ), 'medium' );
+
+								if ( is_numeric( $widget_media['image'] ) ) {
+									$widget_text .= wp_get_attachment_image( absint( $instance['image'] ), 'medium' );
+								} else {
+									$widget_text .= '<img src="' . esc_url( $instance['image'] ) . '" alt="' . esc_attr( $title ) . '" />';
+								}
+
 								$widget_text .= '</div>';
 							}
 
@@ -213,8 +219,8 @@
 
 				// Output
 
-					$this->field_image( $instance );
 					$this->field_icon( $instance );
+					$this->field_image( $instance );
 
 			} // /form
 
@@ -301,11 +307,13 @@
 						<span class="text-widget-media-image-preview"<?php if ( empty( $instance['image'] ) ) { echo ' style="display: none;"'; } ?>>
 							<img src="<?php
 
-								if ( $instance['image'] ) {
+								if ( is_numeric( $instance['image'] ) ) {
 									$image_url = wp_get_attachment_image_src( absint( $instance['image'] ) );
 									if ( $image_url ) {
 										echo esc_url( $image_url[0] );
 									}
+								} elseif ( $instance['image'] ) {
+									echo esc_url( $instance['image'] );
 								}
 
 								?>" alt="" />
@@ -340,7 +348,7 @@
 				// Processing
 
 					$instance['icon']  = esc_attr( $new_instance['icon'] );
-					$instance['image'] = absint( $new_instance['image'] );
+					$instance['image'] = ( is_numeric( $new_instance['image'] ) ) ? ( absint( $new_instance['image'] ) ) : ( esc_url( $new_instance['image'] ) );
 
 
 				// Output

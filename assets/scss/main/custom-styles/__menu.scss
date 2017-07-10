@@ -29,7 +29,7 @@
 
 // Mobile menu
 
-	.menu-toggle,
+	.main-navigation:not(.is-active) .menu-toggle:not(:hover):not(:focus):not(:active),
 	.main-navigation-container {
 
 		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
