@@ -1938,6 +1938,8 @@ a .entry-date { cursor: pointer; }
 
 .comment-metadata { text-transform: uppercase; }
 
+.comment-awaiting-moderation { clear: both; }
+
 .comment-body { padding-bottom: 0; }
 
 .bypostauthor > .comment-body .comment-author::before { content: '\f411'; position: absolute; display: block; width: 30px; height: 30px; right: 15px; top: 45px; margin-top: 1.62em; font-size: 16px; line-height: 28px; text-align: center; font-size: 1.19em; border-radius: 50%; z-index: 1; }
@@ -2087,7 +2089,7 @@ a .entry-date { cursor: pointer; }
 
 .widget-recent-entries-list .entry-content { font-size: 1em; }
 
-.single:not(.fl-builder):not(.content-layout-no-paddings) .widget-recent-entries-list .entry-content { float: none; width: auto; padding: 0; }
+.single:not(.fl-builder):not(.content-layout-no-paddings) .widget-recent-entries-list .entry-content, .posts-layout-list .widget-recent-entries-list .entry-content { float: none; width: auto; padding: 0; }
 
 .widget-recent-entries-list .entry-title { margin-bottom: 0.62em; line-height: 1.38; }
 
@@ -2126,7 +2128,7 @@ a .entry-date { cursor: pointer; }
 
 @media only screen and (min-width: 80em) { .widget-text-media-icon + .widget-text-content { width: calc( 100% - 2em - 3.62em); } }
 
-.widget-text-content .widget-title, .widget-text-content .widgettitle { margin-bottom: 1.62rem; }
+.widget-text-content .widget-title, .widget-text-content .widgettitle { margin-bottom: 0.62rem; }
 
 .textwidget ul { margin-top: 0; margin-bottom: 1em; margin-right: 1.62em; margin-left: 0; list-style: square; }
 

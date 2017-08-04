@@ -14,6 +14,7 @@
  * 10) Assets
  * 20) Sharing
  * 30) Infinite scroll
+ * 40) Custom Post Types
  */
 class Reykjavik_Jetpack {
 
@@ -63,6 +64,10 @@ class Reykjavik_Jetpack {
 								'wrapper'        => false,
 							) ) );
 
+					// Custom post types
+
+						add_post_type_support( 'jetpack-portfolio', 'excerpt' );
+
 				// Hooks
 
 					// Actions
@@ -71,8 +76,8 @@ class Reykjavik_Jetpack {
 
 					// Filters
 
-						add_filter( 'jetpack_sharing_display_markup', 'Reykjavik_Content::headings_level_up', 999 );
-						add_filter( 'jetpack_relatedposts_filter_headline', 'Reykjavik_Content::headings_level_up', 999 );
+						add_filter( 'jetpack_sharing_display_markup',           'Reykjavik_Content::headings_level_up', 999 );
+						add_filter( 'jetpack_relatedposts_filter_headline',     'Reykjavik_Content::headings_level_up', 999 );
 						add_filter( 'jetpack_relatedposts_filter_post_heading', 'Reykjavik_Content::headings_level_up', 999 );
 
 						add_filter( 'sharing_show', __CLASS__ . '::sharing_show', 10, 2 );
@@ -80,9 +85,11 @@ class Reykjavik_Jetpack {
 						add_filter( 'infinite_scroll_js_settings', __CLASS__ . '::infinite_scroll_js_settings' );
 
 						if ( is_callable( 'Reykjavik_Post_Media::size' ) ) {
-							add_filter( 'jetpack_portfolio_thumbnail_size', 'Reykjavik_Post_Media::size' );
+							add_filter( 'jetpack_portfolio_thumbnail_size',   'Reykjavik_Post_Media::size' );
 							add_filter( 'jetpack_testimonial_thumbnail_size', 'Reykjavik_Post_Media::size' );
 						}
+
+						add_filter( 'wmhook_reykjavik_post_navigation_post_type', __CLASS__ . '::add_post_types' );
 
 		} // /__construct
 
@@ -242,6 +249,36 @@ class Reykjavik_Jetpack {
 				endwhile;
 
 		} // /infinite_scroll_render
+
+
+
+
+
+	/**
+	 * 40) Custom Post Types
+	 */
+
+		/**
+		 * Add support for Jetpack CPTs
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  array $post_types
+		 */
+		public static function add_post_types( $post_types ) {
+
+			// Processing
+
+				$post_types[] = 'jetpack-portfolio';
+				$post_types[] = 'jetpack-testimonial';
+
+
+			// Output
+
+				return $post_types;
+
+		} // /add_post_types
 
 
 

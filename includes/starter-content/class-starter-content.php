@@ -181,7 +181,7 @@ class Reykjavik_Starter_Content {
 							'post_type'    => 'page',
 							'template'     => 'templates/intro-widgets.php',
 							'post_title'   => esc_html_x( 'Hello from Reykjavik', 'Theme starter content', 'reykjavik' ),
-							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button size-large">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
+							'post_excerpt' => '<p>' . esc_html_x( 'This is a page/post excerpt text. You might need to enable the excerpt field in screen options first when editing the page/post.', 'Theme starter content', 'reykjavik' ) . '</p><p><a href="#" class="button">' . esc_html_x( 'Go shopping', 'Theme starter content', 'reykjavik' ) . '</a></p>',
 							'post_content' => '<div class="outdent-content"><h2 class="display-1">' .
 							                  esc_html_x( 'Welcome to our website!', 'Theme starter content', 'reykjavik' ) .
 							                  '</h2><p class="h3">' .

@@ -209,7 +209,7 @@ class Reykjavik_Customize {
 								'type'        => 'text',
 								'id'          => 'custom_logo_height',
 								'label'       => esc_html__( 'Max logo image height (px)', 'reykjavik' ),
-								'default'     => 66,
+								'default'     => 50,
 								'validate'    => 'absint',
 								'input_attrs' => array(
 									'size'     => 5,

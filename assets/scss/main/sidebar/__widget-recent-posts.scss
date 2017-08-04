@@ -86,7 +86,8 @@
 			.entry-content {
 				font-size: 1em;
 
-				.single:not(.fl-builder):not(.content-layout-no-paddings) & {
+				.single:not(.fl-builder):not(.content-layout-no-paddings) &,
+				.posts-layout-list & {
 					// Resetting singular post styles
 					float: none;
 					width: auto;

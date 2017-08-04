@@ -10,7 +10,7 @@
 
 ## Description
 
-**Reykjavik** is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Visual Composer and other page builders to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Let's impress your website visitors with this beautiful theme now!
+**Reykjavik** is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Visual Composer and other page builders to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful theme now!
 
 Follow [WebMan Design on **Twitter**](https://twitter.com/webmandesigneu) and become a fan on [**Facebook**](https://www.facebook.com/webmandesigneu) for staying informed about the theme updates and news.
 

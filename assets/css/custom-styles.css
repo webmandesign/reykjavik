@@ -109,7 +109,7 @@ mark, .highlight { /*[*/ box-shadow: 0.38em 0 0 #273a7d, -0.38em 0 0 #273a7d; /*
 /* FILE: main/custom-styles/__branding.scss */
 .site-title, .custom-logo { /*[*/ color: #232324; /*]*/ /*// color: [[color_header_headings]]; //*/ }
 
-.custom-logo, .fl-builder-edit .custom-logo { /*[*/ max-height: 66px; /*]*/ /*// max-height: [[custom_logo_height]]px; //*/ }
+.custom-logo, .fl-builder-edit .custom-logo { /*[*/ max-height: 50px; /*]*/ /*// max-height: [[custom_logo_height]]px; //*/ }
 
 /* FILE: main/custom-styles/__menu.scss */
 @media only screen and (min-width: 55em) { .main-navigation-container li ul { /*[*/ background-color: #fefeff; color: #535354; /*]*/ /*// background-color: [[color_header_background]]; color: [[color_header_text]]; //*/ } }
