@@ -9,7 +9,7 @@
  * @subpackage  Visual Editor
  *
  * @since    1.0.0
- * @version  2.2.5
+ * @version  2.2.8
  *
  * Contents:
  *
@@ -192,7 +192,7 @@ final class Reykjavik_Library_Visual_Editor {
 		 * @link  http://www.tinymce.com/wiki.php/Configuration:style_formats
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.5
+		 * @version  2.2.8
 		 *
 		 * @param  array $init
 		 */
@@ -227,7 +227,7 @@ final class Reykjavik_Library_Visual_Editor {
 
 										100 . 'text_styles' . 110 => array(
 											'title'    => esc_html__( 'Uppercase heading or paragraph', 'reykjavik' ),
-											'selector' => 'h1, h2, h3, h4, h5, h6, p, address',
+											'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
 											'classes'  => 'uppercase',
 										),
 
@@ -262,13 +262,13 @@ final class Reykjavik_Library_Visual_Editor {
 
 										100 . 'text_styles' . 170 => array(
 											'title'    => sprintf( esc_html_x( 'Heading %d text style', '%d = HTML heading size number.', 'reykjavik' ), 2 ),
-											'selector' => 'h1, h3, h4, h5, h6, p, address',
+											'selector' => 'h3, h4, h5, h6, h1, p, address',
 											'classes'  => 'h2',
 										),
 
 										100 . 'text_styles' . 180 => array(
 											'title'    => sprintf( esc_html_x( 'Heading %d text style', '%d = HTML heading size number.', 'reykjavik' ), 3 ),
-											'selector' => 'h1, h2, h4, h5, h6, p, address',
+											'selector' => 'h4, h5, h6, h1, h2, p, address',
 											'classes'  => 'h3',
 										),
 
@@ -283,25 +283,25 @@ final class Reykjavik_Library_Visual_Editor {
 
 										200 . 'text_sizes' . 100 => array(
 											'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 1 ),
-											'selector' => 'h1, h2, h3, h4, h5, h6, p, address',
+											'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
 											'classes'  => 'display-1',
 										),
 
 										200 . 'text_sizes' . 110 => array(
 											'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 2 ),
-											'selector' => 'h1, h2, h3, h4, h5, h6, p, address',
+											'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
 											'classes'  => 'display-2',
 										),
 
 										200 . 'text_sizes' . 120 => array(
 											'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 3 ),
-											'selector' => 'h1, h2, h3, h4, h5, h6, p, address',
+											'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
 											'classes'  => 'display-3',
 										),
 
 										200 . 'text_sizes' . 130 => array(
 											'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 4 ),
-											'selector' => 'h1, h2, h3, h4, h5, h6, p, address',
+											'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
 											'classes'  => 'display-4',
 										),
 

@@ -116,64 +116,100 @@
 							'image' => ( isset( $instance['image'] ) ) ? ( $instance['image'] ) : ( 0 ),
 						) );
 
+					$is_visual_text_widget = ( ! empty( $instance['visual'] ) && ! empty( $instance['filter'] ) );
+
 
 				// Processing
 
-					$text = apply_filters( 'widget_text', $widget_text, $instance, $this );
+					// From WP_Widget_Text
 
-					if ( ! empty( $widget_media ) ) {
+						// In 4.8.0 only, visual Text widgets get filter=content, without visual prop; upgrade instance props just-in-time.
+						if ( ! $is_visual_text_widget ) {
+							$is_visual_text_widget = ( isset( $instance['filter'] ) && 'content' === $instance['filter'] );
+						}
+						if ( $is_visual_text_widget ) {
+							$instance['filter'] = true;
+							$instance['visual'] = true;
+						}
 
-						$widget_text = '';
+						/*
+						 * Just-in-time temporarily upgrade Visual Text widget shortcode handling
+						 * (with support added by plugin) from the widget_text filter to
+						 * widget_text_content:11 to prevent wpautop from corrupting HTML output
+						 * added by the shortcode.
+						 */
+						$widget_text_do_shortcode_priority = has_filter( 'widget_text', 'do_shortcode' );
+						$should_upgrade_shortcode_handling = ( $is_visual_text_widget && false !== $widget_text_do_shortcode_priority );
+						if ( $should_upgrade_shortcode_handling ) {
+							remove_filter( 'widget_text', 'do_shortcode', $widget_text_do_shortcode_priority );
+							add_filter( 'widget_text_content', 'do_shortcode', 11 );
+						}
 
-						// Output image
+						$text = apply_filters( 'widget_text', $widget_text, $instance, $this );
 
-							if ( isset( $widget_media['image'] ) ) {
-								$widget_text .= '<div class="widget-text-media widget-text-media-image">';
 
-								if ( is_numeric( $widget_media['image'] ) ) {
-									$widget_text .= wp_get_attachment_image( absint( $instance['image'] ), 'medium' );
-								} else {
-									$widget_text .= '<img src="' . esc_url( $instance['image'] ) . '" alt="' . esc_attr( $title ) . '" />';
+
+					// Custom widget enhancements output
+
+						if ( ! empty( $widget_media ) ) {
+
+							$widget_text = '';
+
+							// Output image
+
+								if ( isset( $widget_media['image'] ) ) {
+									$widget_text .= '<div class="widget-text-media widget-text-media-image">';
+
+									if ( is_numeric( $widget_media['image'] ) ) {
+										$widget_text .= wp_get_attachment_image( absint( $instance['image'] ), 'medium' );
+									} else {
+										$widget_text .= '<img src="' . esc_url( $instance['image'] ) . '" alt="' . esc_attr( $title ) . '" />';
+									}
+
+									$widget_text .= '</div>';
 								}
 
-								$widget_text .= '</div>';
+							// Output icon
+
+								if ( isset( $widget_media['icon'] ) ) {
+									$widget_text .= '<div class="widget-text-media widget-text-media-icon h3">'; // Heading class is to inherit heading color
+									$widget_text .= '<span class="widget-symbol ' . esc_attr( $widget_media['icon'] ) . '" aria-hidden="true"></span>';
+									$widget_text .= '</div>';
+								}
+
+							$widget_text .= '<div class="widget-text-content">';
+
+							if ( ! empty( $title ) ) {
+								$widget_text .= $args['before_title'];
+								$widget_text .= $title;
+								$widget_text .= $args['after_title'];
+
+								$title = '';
 							}
 
-						// Output icon
+							$widget_text .= $text;
+							$widget_text .= '</div>';
 
-							if ( isset( $widget_media['icon'] ) ) {
-								$widget_text .= '<div class="widget-text-media widget-text-media-icon h3">'; // Heading class is to inherit heading color
-								$widget_text .= '<span class="widget-symbol ' . esc_attr( $widget_media['icon'] ) . '" aria-hidden="true"></span>';
-								$widget_text .= '</div>';
-							}
+							$text = $widget_text;
 
-						$widget_text .= '<div class="widget-text-content">';
-
-						if ( ! empty( $title ) ) {
-							$widget_text .= $args['before_title'];
-							$widget_text .= $title;
-							$widget_text .= $args['after_title'];
-
-							$title = '';
+							$instance['filter'] = true;
 						}
 
-						$widget_text .= $text;
-						$widget_text .= '</div>';
 
-						$text = $widget_text;
 
-						$instance['filter'] = true;
-					}
+					// From WP_Widget_Text
 
-					if ( isset( $instance['filter'] ) ) {
-						if ( 'content' === $instance['filter'] ) {
-							// WP 4.8+
+						if ( $is_visual_text_widget ) {
 							$text = apply_filters( 'widget_text_content', $text, $instance, $this );
-						} elseif ( $instance['filter'] ) {
-							// WP 4.8-
+						} elseif ( ! empty( $instance['filter'] ) ) {
 							$text = wpautop( $text );
 						}
-					}
+
+						// Undo temporary upgrade of the plugin-supplied shortcode handling.
+						if ( $should_upgrade_shortcode_handling ) {
+							remove_filter( 'widget_text_content', 'do_shortcode', 11 );
+							add_filter( 'widget_text', 'do_shortcode', $widget_text_do_shortcode_priority );
+						}
 
 
 				// Output

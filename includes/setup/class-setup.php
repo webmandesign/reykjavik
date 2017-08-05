@@ -857,7 +857,7 @@ class Reykjavik_Setup {
 
 						$formats[ 250 . 'text_weights' ]['items'][ 250 . 'text_weights' . $weight ] = array(
 								'title'    => $name . ' (' . $weight . ')',
-								'selector' => 'h1, h2, h3, h4, h5, h6, p, address, blockquote',
+								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
 								'classes'  => 'weight-' . $weight,
 							);
 
@@ -871,25 +871,25 @@ class Reykjavik_Setup {
 
 								100 . 'font' . 100 => array(
 									'title'    => esc_html__( 'General font', 'reykjavik' ),
-									'selector' => 'h1, h2, h3, h4, h5, h6, p, address, blockquote',
+									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
 									'classes'  => 'font-body',
 								),
 
 								100 . 'font' . 110 => array(
 									'title'    => esc_html__( 'Headings font', 'reykjavik' ),
-									'selector' => 'h1, h2, h3, h4, h5, h6, p, address, blockquote',
+									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
 									'classes'  => 'font-headings',
 								),
 
 								100 . 'font' . 120 => array(
 									'title'    => esc_html__( 'Logo font', 'reykjavik' ),
-									'selector' => 'h1, h2, h3, h4, h5, h6, p, address, blockquote',
+									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
 									'classes'  => 'font-logo',
 								),
 
 								100 . 'font' . 130 => array(
 									'title'    => esc_html__( 'Inherit font', 'reykjavik' ),
-									'selector' => 'h1, h2, h3, h4, h5, h6, p, address, blockquote',
+									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
 									'classes'  => 'font-inherit',
 								),
 
@@ -949,7 +949,7 @@ class Reykjavik_Setup {
 
 						$formats[ 600 . 'media' ]['items'][ 600 . 'media' . 110 ] = array(
 								'title'    => esc_html__( 'Outdented heading style', 'reykjavik' ),
-								'selector' => 'h1, h2, h3, h4, h5, h6, p',
+								'selector' => 'p, h1, h2, h3, h4, h5, h6',
 								'classes'  => 'outdent-heading',
 							);
 

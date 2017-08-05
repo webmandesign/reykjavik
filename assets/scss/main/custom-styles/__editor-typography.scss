@@ -8,6 +8,39 @@
 
 
 
+// TinyMCE overrides
+
+	.mce-content-body {
+		line-height: $golden;
+
+
+
+		// Heading tags and classes
+
+			@each $selector, $settings in $h_tags_setup {
+
+				#{$selector} {
+					line-height: nth( $settings, 2 );
+				}
+
+			}
+
+
+
+		// Display text size classes
+
+			@each $i, $size in $display_text_size {
+
+				.display-#{$i} {
+					line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
+				}
+
+			}
+
+	}
+
+
+
 // Default fonts
 
 	.mce-content-body,

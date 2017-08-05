@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.2.8
+
+* **Fix**: Improving TinyMCE Formats button dropdown styles preview
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-visual-editor.php
+
+
 ## 2.2.7
 
 * **Fix**: Removing obsolete slash for ABSPATH

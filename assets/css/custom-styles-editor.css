@@ -54,6 +54,28 @@ mark, .highlight { /*[*/ box-shadow: 0.38em 0 0 #273a7d, -0.38em 0 0 #273a7d; /*
 @media only screen and (max-width: 41.9375em) { .pagination a { /*[*/ background-color: #273a7d; color: #fefeff; /*]*/ /*// background-color: [[color_accent]]; color: [[color_accent_text]]; //*/ } }
 
 /* FILE: main/custom-styles/__typography-editor.scss */
+.mce-content-body { line-height: 1.62; }
+
+.mce-content-body h1, .mce-content-body .h1 { line-height: 1.19; }
+
+.mce-content-body h2, .mce-content-body .h2 { line-height: 1.19; }
+
+.mce-content-body h3, .mce-content-body .h3 { line-height: 1.38; }
+
+.mce-content-body h4, .mce-content-body .h4 { line-height: 1.38; }
+
+.mce-content-body h5, .mce-content-body .h5 { line-height: 1.62; }
+
+.mce-content-body h6, .mce-content-body .h6 { line-height: 1.62; }
+
+.mce-content-body .display-1 { line-height: 1.3325; }
+
+.mce-content-body .display-2 { line-height: 1.2375; }
+
+.mce-content-body .display-3 { line-height: 1.20583; }
+
+.mce-content-body .display-4 { line-height: 1.19; }
+
 .mce-content-body, .mce-content-body .font-body { font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
 
 .mce-content-body .font-headings, .mce-content-body .font-headings-primary { font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; }
