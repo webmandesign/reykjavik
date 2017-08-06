@@ -145,7 +145,7 @@ class Reykjavik_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'reykjavik' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'reykjavik' );
-					$text .= ' <a href="https://www.webmandesign.eu/manual/reykjavik/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'reykjavik' ) . '</a>';
+					$text .= ' <a href="https://www.webmandesign.eu/manual/reykjavik/#credits">' . esc_html__( 'Get media for your website &raquo;', 'reykjavik' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -159,7 +159,7 @@ class Reykjavik_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please read the information about the theme demo required plugins first.', 'reykjavik' );
 					$text .= ' ' . esc_html__( 'If you do not install and activate demo required plugins, some of the content will not be imported.', 'reykjavik' );
-					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/reykjavik/content#before-you-begin" target="_blank" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'reykjavik' ) . '"><strong>';
+					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/reykjavik/content#before-you-begin" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'reykjavik' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'reykjavik' );
 					$text .= '</strong></a>';
 					$text .= '</p>';

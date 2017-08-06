@@ -234,14 +234,14 @@ class Reykjavik_Customize {
 								. '<p class="description">'
 								. sprintf(
 									esc_html_x( '%1$s is a WordPress theme developed by %2$s.', '1: linked theme name, 2: theme author name.', 'reykjavik' ),
-									'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'ThemeURI' ) ) . '" target="_blank"><strong>' . esc_html( wp_get_theme( 'reykjavik' )->get( 'Name' ) ) . '</strong></a>',
+									'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'ThemeURI' ) ) . '"><strong>' . esc_html( wp_get_theme( 'reykjavik' )->get( 'Name' ) ) . '</strong></a>',
 									'<strong>' . esc_html( wp_get_theme( 'reykjavik' )->get( 'Author' ) ) . '</strong>'
 								)
 								. '</p>'
 								. '<p class="description">'
 								. sprintf(
 									esc_html_x( 'You can obtain other professional WordPress themes at %s.', '%s: theme author link.', 'reykjavik' ),
-									'<strong><a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'AuthorURI' ) ) . '" target="_blank">' . esc_html( str_replace( 'http://', '', untrailingslashit( wp_get_theme( 'reykjavik' )->get( 'AuthorURI' ) ) ) ) . '</a></strong>'
+									'<strong><a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'AuthorURI' ) ) . '">' . esc_html( str_replace( 'http://', '', untrailingslashit( wp_get_theme( 'reykjavik' )->get( 'AuthorURI' ) ) ) ) . '</a></strong>'
 								)
 								. '</p>'
 								. '<p class="description">'
@@ -320,7 +320,7 @@ class Reykjavik_Customize {
 										'type'        => 'color',
 										'id'          => 'color_header_background',
 										'label'       => esc_html__( 'Background color', 'reykjavik' ),
-										'description' => esc_html__( 'This color is also used to style a mobile device browser address bar.', 'reykjavik' ) . ' <a href="https://wordpress.org/plugins/chrome-theme-color-changer/" target="_blank">' . esc_html__( 'You can further customize it with a dedicated plugin.', 'reykjavik' ) . '</a>',
+										'description' => esc_html__( 'This color is also used to style a mobile device browser address bar.', 'reykjavik' ) . ' <a href="https://wordpress.org/plugins/chrome-theme-color-changer/">' . esc_html__( 'You can further customize it with a dedicated plugin.', 'reykjavik' ) . '</a>',
 										'default'     => '#fefeff',
 										'preview_js'  => array(
 											'css' => array(
@@ -948,7 +948,7 @@ class Reykjavik_Customize {
 										'type'        => 'radio',
 										'id'          => 'layout_intro_widgets_display',
 										'label'       => esc_html__( 'Enable intro widgets', 'reykjavik' ),
-										'description' => sprintf( esc_html_x( 'If you enable this widget area also for archives, we recommend using %s plugin to control its appearance further more.', '%s: Linked plugin name.', 'reykjavik' ), '<a href="https://wordpress.org/plugins/woosidebars/" target="_blank">WooSidebars</a>' ),
+										'description' => sprintf( esc_html_x( 'If you enable this widget area also for archives, we recommend using %s plugin to control its appearance further more.', '%s: Linked plugin name.', 'reykjavik' ), '<a href="https://wordpress.org/plugins/woosidebars/">WooSidebars</a>' ),
 										'default'     => '',
 										'choices'     => array(
 											''       => esc_html__( 'On singular pages only', 'reykjavik' ),
@@ -1078,7 +1078,7 @@ class Reykjavik_Customize {
 									'type'    => 'html',
 									'content' => '<h3>' . esc_html__( 'Custom fonts setup', 'reykjavik' ) . '</h3><p class="description">' . sprintf(
 											esc_html_x( 'This theme does not restrict you to choose from a predefined set of fonts. Instead, please use any font service (such as %s) plugin you like.', '%s: linked examples of web fonts libraries such as Google Fonts or Adobe Typekit.', 'reykjavik' ),
-											'<a href="http://www.google.com/fonts" target="_blank"><strong>Google Fonts</strong></a>, <a href="https://typekit.com/fonts" target="_blank"><strong>Adobe Typekit</strong></a>'
+											'<a href="http://www.google.com/fonts"><strong>Google Fonts</strong></a>, <a href="https://typekit.com/fonts"><strong>Adobe Typekit</strong></a>'
 										) . '</p><p class="description">' . esc_html__( 'You can set your fonts plugin according to information provided below, or insert your custom font names (a value of "font-family" CSS property) directly into input fields (you still need to use a plugin to load those fonts on the website).', 'reykjavik' ) . '</p>',
 									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
 								),

@@ -29,14 +29,14 @@
 				<?php esc_html_e( 'If you like this free WordPress theme, please, consider supporting its development by purchasing one of WebMan Design products.', 'reykjavik' ); ?>
 			</p>
 			<p>
-				<a href="https://www.webmandesign.eu" target="_blank">
+				<a href="https://www.webmandesign.eu">
 					<?php esc_html_e( 'Go to WebMan Design website &raquo;', 'reykjavik' ); ?>
 				</a>
 			</p>
 
 			<p>
 				<?php esc_html_e( 'You can also rate it at its WordPress repository page.', 'reykjavik' ); ?>
-				<a href="https://wordpress.org/themes/reykjavik/" target="_blank">
+				<a href="https://wordpress.org/themes/reykjavik/">
 					<?php esc_html_e( "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)", 'reykjavik' ); ?>
 				</a>
 			</p>
@@ -56,7 +56,7 @@
 
 				printf(
 					esc_html_x( 'If you need more for your growing website, consider upgrading to %s theme with this additional functionality:', '%s = linked theme name.', 'reykjavik' ),
-					'<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/" target="_blank"><strong>Icelander</strong></a>'
+					'<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/"><strong>Icelander</strong></a>'
 				);
 
 				?>
@@ -71,7 +71,7 @@
 				<li><?php echo esc_html_x( 'And more&hellip;', 'Theme feature.', 'reykjavik' ); ?></li>
 			</ul>
 			<p>
-				<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/" class="welcome-upgrade-button" target="_blank">
+				<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/" class="welcome-upgrade-button">
 					<?php
 
 					printf(
