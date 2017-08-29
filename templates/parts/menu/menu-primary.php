@@ -19,7 +19,7 @@
 
 // Helper variables
 
-	$is_mobile_nav_enabled = ! get_theme_mod( 'navigation_mobile_disable', false );
+	$is_mobile_nav_enabled = get_theme_mod( 'navigation_mobile', true );
 
 	$menu_args = array(
 			'theme_location'  => 'primary',

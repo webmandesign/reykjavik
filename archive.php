@@ -24,9 +24,13 @@ get_header();
 		<header class="page-header">
 			<?php
 
-			the_archive_title( '<h1 class="page-title">', Reykjavik_Library::get_the_paginated_suffix( 'small' ) . '</h1>' );
+			$paged_suffix = Reykjavik_Library::get_the_paginated_suffix( 'small' );
 
-			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			the_archive_title( '<h1 class="page-title">', $paged_suffix . '</h1>' );
+
+			if ( empty( $paged_suffix ) ) {
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			}
 
 			?>
 		</header>

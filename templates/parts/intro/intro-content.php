@@ -15,7 +15,8 @@
 
 // Helper variables
 
-	$title = $page_summary = '';
+	$title        = apply_filters( 'wmhook_reykjavik_intro_the_title', get_the_title() );
+	$page_summary = '';
 
 	$class_title  = ( is_single() ) ? ( 'entry-title' ) : ( 'page-title' );
 	$class_title .= ' h1 intro-title';
@@ -29,10 +30,6 @@
 // Processing
 
 	if ( ! $pagination_suffix ) {
-
-		// Title setup
-
-			$title = single_post_title( '', false );
 
 		// Page summary setup
 
@@ -53,7 +50,7 @@
 
 		// Title setup
 
-			$title = '<a href="' . esc_url( $title_paginated_url ) . '">' . single_post_title( '', false ) . '</a>';
+			$title = '<a href="' . esc_url( $title_paginated_url ) . '">' . $title . '</a>';
 
 	}
 

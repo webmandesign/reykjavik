@@ -266,8 +266,6 @@ class Reykjavik_Assets {
 
 				$enqueue_assets = array();
 
-				$body_classes = (array) Reykjavik_Header::body_class();
-
 				$breakpoints = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_scripts_breakpoints', array(
 						's'     => 448,
 						'm'     => 672,
@@ -290,7 +288,7 @@ class Reykjavik_Assets {
 					if ( ! apply_filters( 'wmhook_reykjavik_disable_header', false ) ) {
 						$enqueue_assets[20] = 'reykjavik-scripts-nav-a11y';
 
-						if ( ! get_theme_mod( 'navigation_mobile_disable', false ) ) {
+						if ( get_theme_mod( 'navigation_mobile', true ) ) {
 							$enqueue_assets[25] = 'reykjavik-scripts-nav-mobile';
 						}
 					}

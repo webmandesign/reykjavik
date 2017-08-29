@@ -19,7 +19,7 @@
 	text-transform: uppercase;
 	background: transparent;
 
-	.wp-caption-text {
+	&-text {
 		@extend .overflow-hidden;
 		@extend %font_size_small;
 		@extend %line_height_golden_minor;

@@ -43,8 +43,28 @@
 
 
 
+// Captions
+
+	.wp-caption-text {
+
+		a {
+			@extend %accessible_link_style;
+		}
+
+	}
+
+
 // Gallery
 
-	.gallery-columns-1 .gallery-item {
-		margin-top: 2em;
+	.gallery {
+
+		&-columns-1 .gallery-item {
+			margin-top: 2em;
+		}
+
+		&-caption {
+			@extend %font_style_italic;
+			padding: 1em;
+		}
+
 	}

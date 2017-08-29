@@ -73,7 +73,7 @@ class Reykjavik_Setup {
 
 						add_action( 'admin_init', __CLASS__ . '::image_sizes_notice' );
 
-						// add_action( 'switch_theme', __CLASS__ . '::image_sizes_reset' );
+						add_action( 'switch_theme', __CLASS__ . '::image_sizes_reset' );
 
 					// Filters
 
@@ -154,7 +154,7 @@ class Reykjavik_Setup {
 
 				// Site branding defaults
 
-					if ( ! get_theme_mod( 'custom_logo' ) ) {
+					if ( false === get_theme_mod( 'custom_logo' ) ) {
 						set_theme_mod( 'custom_logo', -1 );
 					}
 
@@ -396,35 +396,34 @@ class Reykjavik_Setup {
 
 							foreach ( $image_sizes as $size => $setup ) {
 
-								if (
-										in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) )
-										&& ! get_theme_mod( '__image_size_' . $size )
-									) {
+								if ( in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
 
-									/**
-									 * Force the default image sizes on theme installation only.
-									 * This allows users to set their own sizes later, but a notification is displayed.
-									 */
+									if ( empty( get_theme_mod( '__image_size_' . $size ) ) ) {
 
-									$original_image_width = get_option( $size . '_size_w' );
+										/**
+										 * Force the default image sizes on theme installation only.
+										 * This allows users to set their own sizes later, but a notification is displayed.
+										 */
 
-										if ( $image_sizes[ $size ][0] != $original_image_width ) {
-											update_option( $size . '_size_w', $image_sizes[ $size ][0] );
-										}
+										$original_image_width = get_option( $size . '_size_w' );
 
-									$original_image_height = get_option( $size . '_size_h' );
+											if ( $image_sizes[ $size ][0] != $original_image_width ) {
+												update_option( $size . '_size_w', $image_sizes[ $size ][0] );
+											}
 
-										if ( $image_sizes[ $size ][1] != $original_image_height ) {
-											update_option( $size . '_size_h', $image_sizes[ $size ][1] );
-										}
+										$original_image_height = get_option( $size . '_size_h' );
 
-									$original_image_crop = get_option( $size . '_crop' );
+											if ( $image_sizes[ $size ][1] != $original_image_height ) {
+												update_option( $size . '_size_h', $image_sizes[ $size ][1] );
+											}
 
-										if ( $image_sizes[ $size ][2] != $original_image_crop ) {
-											update_option( $size . '_crop', $image_sizes[ $size ][2] );
-										}
+										$original_image_crop = get_option( $size . '_crop' );
 
-									set_theme_mod(
+											if ( $image_sizes[ $size ][2] != $original_image_crop ) {
+												update_option( $size . '_crop', $image_sizes[ $size ][2] );
+											}
+
+										set_theme_mod(
 											'__image_size_' . $size,
 											array(
 												$original_image_width,
@@ -433,14 +432,16 @@ class Reykjavik_Setup {
 											)
 										);
 
+									}
+
 								} else {
 
 									add_image_size(
-											$size,
-											$image_sizes[ $size ][0],
-											$image_sizes[ $size ][1],
-											$image_sizes[ $size ][2]
-										);
+										$size,
+										$image_sizes[ $size ][0],
+										$image_sizes[ $size ][1],
+										$image_sizes[ $size ][2]
+									);
 
 								}
 

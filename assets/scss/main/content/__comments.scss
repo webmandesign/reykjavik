@@ -264,3 +264,39 @@
 		font-size: inherit;
 		text-transform: uppercase;
 	}
+
+
+
+// Pingbacks & Trackbacks
+
+	.pingback,
+	.trackback {
+
+		.comment-list > & {
+			padding: 0;
+		}
+
+		.comment-body {
+			padding: 1em;
+			margin: ( $golden +em ) 0;
+			border-width: 1px;
+			border-style: dashed;
+			overflow: hidden;
+
+			&::before {
+				@extend %genericon;
+				content: '\f107';
+				margin-#{$right}: $golden_major +em;
+			}
+
+		}
+
+		a:not(.comment-edit-link) {
+			@extend %font_weight_600;
+		}
+
+		.comment-edit-link {
+			float: $right;
+		}
+
+	}

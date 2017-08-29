@@ -41,6 +41,11 @@
 		color: inherit !important; //*
 	}
 
+	.gallery-caption {
+		background-color: rgba( #000, .8 ); //*
+		color: #fdfcfc; //*
+	}
+
 
 
 // Semi-transparent elements
@@ -50,11 +55,6 @@
 	select,
 	textarea {
 		background-color: transparent; //*
-	}
-
-	.gallery-caption {
-		background-color: rgba( #000, .8 ); //*
-		color: #fdfcfc; //*
 	}
 
 

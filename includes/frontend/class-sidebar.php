@@ -106,22 +106,31 @@ class Reykjavik_Sidebar {
 			// Helper variables
 
 				$widget_areas = array(
-						'sidebar' => esc_html__( 'Sidebar', 'reykjavik' ),
-						'intro'   => esc_html__( 'Intro Widgets', 'reykjavik' ),
-						'footer'  => esc_html__( 'Footer Widgets', 'reykjavik' ),
+						'sidebar' => array(
+							'name'        => esc_html__( 'Sidebar', 'reykjavik' ),
+							'description' => esc_html__( 'Default sidebar area.', 'reykjavik' ),
+						),
+						'intro' => array(
+							'name'        => esc_html__( 'Intro Widgets', 'reykjavik' ),
+							'description' => esc_html__( 'Widgetized area displayed at the bottom of the Intro title section.', 'reykjavik' ),
+						),
+						'footer' => array(
+							'name'        => esc_html__( 'Footer Widgets', 'reykjavik' ),
+							'description' => esc_html__( 'Widgetized area displaying the main website footer content.', 'reykjavik' ),
+						),
 					);
 
 
 			// Processing
 
-				foreach( $widget_areas as $id => $name ) {
+				foreach( $widget_areas as $id => $args ) {
 
 					$widget_title_tag = ( 'sidebar' === $id ) ? ( 'h3' ) : ( 'h2' );
 
 					register_sidebar( array(
 							'id'            => esc_attr( $id ),
-							'name'          => $name,
-							'description'   => esc_html__( 'Add widgets here.', 'reykjavik' ),
+							'name'          => $args['name'],
+							'description'   => $args['description'],
 							'before_widget' => '<section id="%1$s" class="widget %2$s">',
 							'after_widget'  => '</section>',
 							'before_title'  => '<' . tag_escape( $widget_title_tag ) . ' class="widget-title">',

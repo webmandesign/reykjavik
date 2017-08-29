@@ -430,7 +430,7 @@ class Reykjavik_WooCommerce_Customize {
 									970 . 'woocommerce' . 110 => array(
 										'type'        => 'checkbox',
 										'id'          => 'woocommerce_checkout_guide',
-										'label'       => esc_html__( 'Checkout guide', 'reykjavik' ),
+										'label'       => esc_html__( 'Display checkout guide', 'reykjavik' ),
 										'description' => esc_html__( 'Enables the checkout process steps visualization.', 'reykjavik' ),
 										'default'     => true,
 										// No need for `preview_js` here as we also need to load the scripts.

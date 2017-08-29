@@ -15,7 +15,8 @@
 	border-width: 0;
 
 	&:empty,
-	.updated {
+	.updated,
+	.label-updated {
 		display: none;
 	}
 

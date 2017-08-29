@@ -367,7 +367,7 @@ class Reykjavik_Post {
 
 			// Output
 
-				echo Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip back to main navigation', 'reykjavik' ), 'focus-position-static' );
+				echo Reykjavik_Library::link_skip_to( 'site-navigation', esc_html__( 'Skip back to main navigation', 'reykjavik' ), 'focus-position-static' );
 
 		} // /skip_links
 
@@ -381,33 +381,47 @@ class Reykjavik_Post {
 		 */
 		public static function navigation() {
 
-			// Output
+			// Requirements check
 
 				if (
-						is_single( get_the_ID() )
-						&& in_array( get_post_type(), (array) apply_filters( 'wmhook_reykjavik_post_navigation_post_type', array( 'post' ) ) )
+						! ( is_single( get_the_ID() ) || is_attachment() )
+						|| ! in_array( get_post_type(), (array) apply_filters( 'wmhook_reykjavik_post_navigation_post_type', array( 'post', 'attachment' ) ) )
 					) {
-
-					$post_type_labels = get_post_type_labels( get_post_type_object( get_post_type() ) );
-
-					/**
-					 * Can't really use `sprintf()` here due to translation error when
-					 * translator decides not to use the `%s` in translated string.
-					 */
-					the_post_navigation( array(
-							'prev_text' => '<span class="label">' . str_replace(
-									'$s',
-									$post_type_labels->singular_name,
-									esc_html_x( 'Previous $s', '$s: Custom post type singular label', 'reykjavik' )
-								) . '</span> <span class="title">%title</span>',
-							'next_text' => '<span class="label">' . str_replace(
-									'$s',
-									$post_type_labels->singular_name,
-									esc_html_x( 'Next $s', '$s: Custom post type singular label', 'reykjavik' )
-								) . '</span> <span class="title">%title</span>',
-						) );
-
+					return;
 				}
+
+
+			// Helper variables
+
+				$post_type_labels = get_post_type_labels( get_post_type_object( get_post_type() ) );
+
+				/**
+				 * Can't really use `sprintf()` here due to translation error when
+				 * translator decides not to use the `%s` in translated string.
+				 */
+				$args = array(
+					'prev_text' => '<span class="label">' . str_replace(
+							'$s',
+							$post_type_labels->singular_name,
+							esc_html_x( 'Previous $s', '$s: Custom post type singular label', 'reykjavik' )
+						) . '</span> <span class="title">%title</span>',
+					'next_text' => '<span class="label">' . str_replace(
+							'$s',
+							$post_type_labels->singular_name,
+							esc_html_x( 'Next $s', '$s: Custom post type singular label', 'reykjavik' )
+						) . '</span> <span class="title">%title</span>',
+				);
+
+				if ( is_attachment() ) {
+					$args = array(
+						'prev_text' => '<span class="label">' . esc_html__( 'Published in', 'reykjavik' ) . '</span> <span class="title">%title</span>',
+					);
+				}
+
+
+			// Output
+
+				the_post_navigation( (array) apply_filters( 'wmhook_reykjavik_post_navigation_args', $args ) );
 
 		} // /navigation
 

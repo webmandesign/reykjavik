@@ -530,7 +530,7 @@ class Reykjavik_Menu {
 
 					if (
 							'primary' !== $args->theme_location
-							|| get_theme_mod( 'navigation_mobile_disable', false )
+							|| ! get_theme_mod( 'navigation_mobile', true )
 						) {
 						return $nav_menu;
 					}

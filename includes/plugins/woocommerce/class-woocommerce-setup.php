@@ -418,7 +418,7 @@ class Reykjavik_WooCommerce_Setup {
 
 			// Requirements check
 
-				if ( get_theme_mod( 'navigation_mobile_disable', false ) ) {
+				if ( ! get_theme_mod( 'navigation_mobile', true ) ) {
 					return;
 				}
 
@@ -477,7 +477,7 @@ class Reykjavik_WooCommerce_Setup {
 
 				if (
 						'primary' !== $args->theme_location
-						|| get_theme_mod( 'navigation_mobile_disable', false )
+						|| ! get_theme_mod( 'navigation_mobile', true )
 					) {
 					return $nav_menu;
 				}

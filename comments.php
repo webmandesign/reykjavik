@@ -81,7 +81,6 @@ do_action( 'tha_comments_before' );
 				<?php
 
 				wp_list_comments( array(
-						'type'        => 'comment', // Do not display trackbacks and pingbacks
 						'avatar_size' => 240,
 						'style'       => 'ol',
 						'short_ping'  => true,

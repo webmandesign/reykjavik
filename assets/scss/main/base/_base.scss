@@ -38,9 +38,9 @@
 	}
 
 	ol {
+		counter-reset: orderedList;
 
 		.entry-content & {
-			counter-reset: orderedList;
 			margin-left: 0;
 			margin-right: 0;
 			list-style: none;
@@ -57,6 +57,26 @@
 					content: counters(orderedList, '.') ') ';
 					margin-#{$right}: $golden_major +em; // {{RTL}}
 					font-weight: 700;
+				}
+
+			}
+
+			&[start],
+			&[reversed] {
+
+				&,
+				& ol {
+					margin-#{$left}: $golden_minor + 1em;
+					list-style: decimal;
+				}
+
+				li {
+					display: list-item;
+
+					&::before {
+						display: none;
+					}
+
 				}
 
 			}

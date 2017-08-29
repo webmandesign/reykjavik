@@ -48,6 +48,7 @@
 	 * Contents:
 	 *
 	 * 10) Output
+	 * 20) Options
 	 */
 	class Reykjavik_WP_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 
@@ -75,6 +76,7 @@
 							'number'    => 5,
 							'show_date' => false,
 							'title'     => '',
+							'category'  => '',
 						) );
 
 					$heading_tag = 'h4';
@@ -90,6 +92,18 @@
 					if ( ! isset( $args['widget_id'] ) ) {
 						$args['widget_id'] = $this->id;
 					}
+
+					// Categories functionality
+
+						$cat = array();
+
+						if ( isset( $instance['category'] ) && $instance['category'] ) {
+							if ( is_numeric( $instance['category'] ) ) {
+								$cat = array( 'cat' => absint( $instance['category'] ) );
+							} else {
+								$cat = array( 'category_name' => sanitize_title( $instance['category'] ) );
+							}
+						}
 
 
 				// Processing
@@ -107,8 +121,8 @@
 						'posts_per_page'      => absint( $instance['number'] ),
 						'no_found_rows'       => true,
 						'post_status'         => 'publish',
-						'ignore_sticky_posts' => true
-					) ) );
+						'ignore_sticky_posts' => true,
+					) + (array) $cat ) );
 
 					if ( $r->have_posts() ) {
 
@@ -189,6 +203,98 @@
 					}
 
 			} // /widget
+
+
+
+
+
+		/**
+		 * 20) Options
+		 */
+
+			/**
+			 * Outputs the settings form
+			 *
+			 * @since    1.3.0
+			 * @version  1.3.0
+			 *
+			 * @param  array $instance  Current settings.
+			 */
+			public function form( $instance ) {
+
+				// Processing
+
+					parent::form( $instance );
+
+
+				// Output
+
+					$this->field_category( $instance );
+
+			} // /form
+
+
+
+			/**
+			 * Option field: Category
+			 *
+			 * @since    1.3.0
+			 * @version  1.3.0
+			 *
+			 * @param  array $instance  Current settings.
+			 */
+			public function field_category( $instance = array() ) {
+
+				// Helper variables
+
+					if ( ! isset( $instance['category'] ) ) {
+						$instance['category'] = '';
+					}
+
+
+				// Output
+
+					?>
+
+					<p>
+						<label for="<?php echo $this->get_field_id( 'category' ); ?>">
+							<?php esc_html_e( 'Category slug or ID:', 'reykjavik' ); ?>
+						</label>
+						<input type="text" size="32" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" value="<?php echo esc_attr( $instance['category'] ); ?>" />
+					</p>
+
+					<?php
+
+			} // /field_category
+
+
+
+			/**
+			 * Handles updating settings for the current widget instance
+			 *
+			 * @since    1.3.0
+			 * @version  1.3.0
+			 *
+			 * @param  array $new_instance  New settings for this instance as input by the user via WP_Widget::form().
+			 * @param  array $old_instance  Old settings for this instance.
+			 */
+			public function update( $new_instance, $old_instance ) {
+
+				// Helper variables
+
+					$instance = parent::update( $new_instance, $old_instance );
+
+
+				// Processing
+
+					$instance['category'] = ( is_numeric( $new_instance['category'] ) ) ? ( absint( $new_instance['category'] ) ) : ( sanitize_title( $new_instance['category'] ) );
+
+
+				// Output
+
+					return $instance;
+
+			} // /update
 
 
 

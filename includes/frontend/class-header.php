@@ -339,7 +339,7 @@ class Reykjavik_Header {
 
 				// Is mobile navigation enabled?
 
-					if ( ! get_theme_mod( 'navigation_mobile_disable', false ) ) {
+					if ( get_theme_mod( 'navigation_mobile', true ) ) {
 						$classes[] = 'has-navigation-mobile';
 					}
 

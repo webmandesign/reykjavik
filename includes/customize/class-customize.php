@@ -771,8 +771,8 @@ class Reykjavik_Customize {
 										100 . 'colors' . 40 . 143 => array(
 											'type'             => 'checkbox',
 											'id'               => 'footer_image_repeat',
-											'label'            => esc_html__( 'Do not repeat the image', 'reykjavik' ),
-											'default'          => false,
+											'label'            => esc_html__( 'Tile the image', 'reykjavik' ),
+											'default'          => true,
 											'is_css_condition' => true,
 											'preview_js'       => array(
 												'custom' => "jQuery( '.site-footer' ).addClass( 'is-customize-preview' ).css( 'background-repeat', ( to ) ? ( 'no-repeat' ) : ( 'repeat' ) );",
@@ -970,7 +970,7 @@ class Reykjavik_Customize {
 									300 . 'layout' . 410 => array(
 										'type'        => 'checkbox',
 										'id'          => 'layout_page_outdent',
-										'label'       => esc_html__( 'Outdented page content', 'reykjavik' ),
+										'label'       => esc_html__( 'Outdent page content', 'reykjavik' ),
 										'description' => esc_html__( 'Page content will be displayed in 2 columns: H2 headings in first, all the other page content in second column.', 'reykjavik' ) . ' ' . esc_html__( 'This does not affect pages using "With sidebar" page template.', 'reykjavik' ),
 										'default'     => true,
 										'preview_js'  => array(
@@ -1217,23 +1217,23 @@ class Reykjavik_Customize {
 
 							950 . 'others' . 110 => array(
 								'type'        => 'checkbox',
-								'id'          => 'navigation_mobile_disable',
-								'label'       => esc_html__( 'Disable mobile navigation', 'reykjavik' ),
-								'description' => esc_html__( 'Maybe your website navigation is very simple and you do not want to use the mobile navigation functionality?', 'reykjavik' ),
-								'default'     => false,
+								'id'          => 'navigation_mobile',
+								'label'       => esc_html__( 'Enable mobile navigation', 'reykjavik' ),
+								'description' => esc_html__( 'If your website navigation is very simple and you do not want to use the mobile navigation functionality, you can disable it here.', 'reykjavik' ),
+								'default'     => true,
 							),
 
 							950 . 'others' . 120 => array(
 								'type'    => 'multicheckbox',
 								'id'      => 'archive_title_prefix',
 								'label'   => esc_html__( 'Archive page title prefix', 'reykjavik' ),
-								'default' => array( 'post-type', 'taxonomy' ),
+								'default' => array( 'category', 'tag', 'author' ),
 								'choices' => array(
-									'category'  => esc_html__( 'Remove "Category:" prefix', 'reykjavik' ),
-									'tag'       => esc_html__( 'Remove "Tag:" prefix', 'reykjavik' ),
-									'author'    => esc_html__( 'Remove "Author:" prefix', 'reykjavik' ),
-									'post-type' => esc_html__( 'Remove "Archives:" prefix', 'reykjavik' ),
-									'taxonomy'  => esc_html__( 'Remove "Taxonomy:" prefix', 'reykjavik' ),
+									'category'  => esc_html__( 'Display "Category:" prefix', 'reykjavik' ),
+									'tag'       => esc_html__( 'Display "Tag:" prefix', 'reykjavik' ),
+									'author'    => esc_html__( 'Display "Author:" prefix', 'reykjavik' ),
+									'post-type' => esc_html__( 'Display "Archives:" prefix', 'reykjavik' ),
+									'taxonomy'  => esc_html__( 'Display "Taxonomy:" prefix', 'reykjavik' ),
 								),
 							),
 

@@ -121,13 +121,19 @@ class Reykjavik_Widget_CSS_Classes {
 
 				// Add predefined theme classes
 
-					$settings['defined_classes'] = ( isset( $settings['defined_classes'] ) && is_string( $settings['defined_classes'] ) ) ? ( explode( ';', (string) $settings['defined_classes'] ) ) : ( array() );
+					if ( isset( $settings['defined_classes'] ) ) {
+						if ( is_string( $settings['defined_classes'] ) ) {
+							$settings['defined_classes'] = explode( ';', (string) $settings['defined_classes'] );
+						}
+					} else {
+						$settings['defined_classes'] = array();
+					}
 
 					$settings['defined_classes'] = array_unique(
 							array_filter(
 								array_merge(
-									(array) self::$classes,
-									(array) $settings['defined_classes']
+									(array) $settings['defined_classes'],
+									(array) self::$classes
 								)
 							)
 						);

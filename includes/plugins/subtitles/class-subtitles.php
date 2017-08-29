@@ -65,7 +65,8 @@ class Reykjavik_Subtitles {
 
 					// Filters
 
-						add_filter( 'single_post_title', __CLASS__ . '::single_post_title', 100, 2 );
+						add_filter( 'single_post_title',                __CLASS__ . '::single_post_title', 100, 2 );
+						add_filter( 'wmhook_reykjavik_intro_the_title', __CLASS__ . '::single_post_title' );
 
 		} // /__construct
 
@@ -107,9 +108,9 @@ class Reykjavik_Subtitles {
 		 * @version  1.0.0
 		 *
 		 * @param  string $title
-		 * @param  object $post
+		 * @param  mixed  $post
 		 */
-		public static function single_post_title( $title, $post ) {
+		public static function single_post_title( $title, $post = 0 ) {
 
 			// Processing
 
@@ -120,13 +121,12 @@ class Reykjavik_Subtitles {
 						&& ! doing_action( 'tha_header_top' ) // Prevent HTML output in logo too
 					) {
 
-					$subtitle = get_the_subtitle( absint( $post->ID ) );
+					$post     = ( is_numeric( $post ) ) ? ( absint( $post ) ) : ( $post->ID );
+					$subtitle = get_the_subtitle( $post );
 
 					if ( ! empty( $subtitle ) ) {
-
 						$title  = '<span class="entry-title-primary">' . $title . '</span>';
 						$title .= ' <span class="entry-subtitle">' . $subtitle . '</span>';
-
 					}
 
 				}

@@ -238,8 +238,16 @@ class Reykjavik_Loop {
 
 			// Helper variables
 
-				$remove_prefix = get_theme_mod( 'archive_title_prefix', array( 'post-type', 'taxonomy' ) );
-				$remove_prefix = ( ! is_array( $remove_prefix ) ) ? ( explode( ',', $remove_prefix ) ) : ( $remove_prefix );
+				$use_prefix = get_theme_mod( 'archive_title_prefix', array( 'category', 'tag', 'author' ) );
+				$use_prefix = ( ! is_array( $use_prefix ) ) ? ( explode( ',', $use_prefix ) ) : ( $use_prefix );
+
+				$remove_prefix = array_diff( array(
+					'author',
+					'category',
+					'post-type',
+					'tag',
+					'taxonomy',
+				), (array) $use_prefix );
 
 
 			// Requirements check

@@ -34,7 +34,7 @@
 			background-size: [[footer_image_size]];
 			opacity: [[footer_image_opacity]];
 			//*/
-			/**if(footer_image_repeat)
+			/**if!(footer_image_repeat)
 			background-repeat: no-repeat;
 			endif(footer_image_repeat)**/
 			/**if(footer_image_attachment)
