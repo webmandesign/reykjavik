@@ -61,6 +61,8 @@ class Reykjavik_Intro {
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::special_image', 120 );
 
+						add_filter( 'customize_partial_render_' . 'custom_header', __CLASS__ . '::special_image_partial_refresh' );
+
 					// Filters
 
 						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::disable', 5 );
@@ -119,13 +121,20 @@ class Reykjavik_Intro {
 			// Processing
 
 				add_theme_support( 'custom-header', apply_filters( 'wmhook_reykjavik_custom_header_args', array(
-						'random-default'     => true,
 						'default-text-color' => 'ffffff',
 						'width'              => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][0] ) : ( 1920 ),
 						'height'             => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][1] ) : ( 1080 ),
 						'flex-width'         => true,
 						'flex-height'        => true,
 						'video'              => true,
+						/**
+						 * WordPress issue:
+						 *
+						 * We can not use `random-default` as in that case there is no "Hide image" button displayed in customizer.
+						 * We simply have to set up a `default-image`, unfortunately...
+						 */
+						'default-image'  => '%s/assets/images/header/pixabay-colorado-1436681.png',
+						'random-default' => false,
 					) ) );
 
 				// Default custom headers packed with the theme
@@ -379,7 +388,7 @@ class Reykjavik_Intro {
 
 
 		/**
-		 * Setting custom header image as an intro background for front page special intro
+		 * Setting custom header image as an intro background for special intro
 		 *
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
@@ -402,26 +411,63 @@ class Reykjavik_Intro {
 				}
 
 
+			// Processing
+
+				if ( $css = self::get_special_image_css() ) {
+					wp_add_inline_style( 'reykjavik-stylesheet', apply_filters( 'wmhook_reykjavik_esc_css', $css . "\r\n\r\n" ) );
+				}
+
+		} // /special_image
+
+
+
+		/**
+		 * Get custom header special intro CSS
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function get_special_image_css() {
+
 			// Requirements check
 
-				if ( ! is_front_page() || Reykjavik_Post::is_paged() ) {
+				if (
+						! is_front_page()
+						|| Reykjavik_Post::is_paged()
+						|| ! $image_url = get_header_image()
+					) {
 					return;
 				}
 
 
-			// Helper variables
+			// Output
 
-				$image_url = get_header_image();
+				return ".intro-special { background-image: url('" . esc_url_raw( $image_url ) . "'); }";
+
+		} // /get_special_image_css
 
 
-			// Processing
 
-				if ( $image_url = get_header_image() ) {
-					$styles = ".intro-special { background-image: url('" . esc_url_raw( $image_url ) . "'); }" . "\r\n\r\n";
-					wp_add_inline_style( 'reykjavik-stylesheet', apply_filters( 'wmhook_reykjavik_esc_css', $styles ) );
-				}
+		/**
+		 * Output custom image CSS in customizer partial refresh
+		 *
+		 * Simply replace the last "</div>" (6 characters) with custom HTML output.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function special_image_partial_refresh( $rendered ) {
 
-		} // /special_image
+			// Output
+
+				return substr( $rendered, 0, -6 )
+					. '<style>'
+					. '.intro-special { background-image: none; }'
+					. self::get_special_image_css()
+					. '</style>'
+					. '</div>';
+
+		} // /special_image_partial_refresh
 
 
 

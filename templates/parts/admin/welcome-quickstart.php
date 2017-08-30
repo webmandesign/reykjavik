@@ -34,7 +34,7 @@
 		</p>
 
 		<p>
-			<strong><?php esc_html_e( 'Please, pay special attention to image sizes settings under Settings &raquo; Media.', 'reykjavik' ); ?></strong>
+			<strong><?php esc_html_e( 'Please, pay special attention to image sizes setup under Settings &raquo; Media.', 'reykjavik' ); ?></strong>
 		</p>
 
 		<a class="button button-hero" href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>"><?php esc_html_e( 'Set Up WordPress &raquo;', 'reykjavik' ); ?></a>

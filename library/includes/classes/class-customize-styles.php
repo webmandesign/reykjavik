@@ -9,7 +9,7 @@
  * @subpackage  Customize
  *
  * @since    1.8.0
- * @version  2.2.7
+ * @version  2.3.0
  *
  * Contents:
  *
@@ -37,7 +37,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * Constructor
 		 *
 		 * @since    1.8.0
-		 * @version  2.0.0
+		 * @version  2.3.0
 		 */
 		private function __construct() {
 
@@ -75,6 +75,8 @@ final class Reykjavik_Library_Customize_Styles {
 							add_action( 'wmhook_reykjavik_library_theme_upgrade', __CLASS__ . '::custom_styles_transient_flusher' );
 
 						}
+
+						add_action( 'wmhook_reykjavik_library_generate_main_css', __CLASS__ . '::stylesheet_timestamp' );
 
 					// Filters
 
@@ -153,7 +155,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * Generate main CSS file
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.5
+		 * @version  2.3.0
 		 *
 		 * @param  array $args
 		 */
@@ -170,12 +172,9 @@ final class Reykjavik_Library_Customize_Styles {
 
 			// Helper variables
 
-				$args = wp_parse_args( $args, apply_filters( 'wmhook_reykjavik_library_generate_main_css_defaults', array(
-						'message'        => '<strong>' . esc_html__( "The main theme CSS stylesheet was regenerated. Please refresh your web browser's and server's cache (if you are using a website server caching solution).", 'reykjavik' ) . '</strong>',
-						'message_after'  => '',
-						'message_before' => '',
-						'type'           => '',
-					) ) );
+				$args = wp_parse_args( $args, array(
+						'type' => '',
+					) );
 				$args = apply_filters( 'wmhook_reykjavik_library_generate_main_css_args', $args );
 
 				$output = $output_min = '';
@@ -266,19 +265,6 @@ final class Reykjavik_Library_Customize_Styles {
 
 						set_theme_mod( '__url_css' . $args['type'], $global_css_url );
 						set_theme_mod( '__path_theme_generated_files' . $args['type'], str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
-						set_theme_mod( '__theme_installed', true );
-
-					// Admin notice
-
-						set_transient(
-								'reykjavik_admin_notice',
-								array(
-									$args['message_before'] . $args['message'] . $args['message_after'],
-									'notice-info',
-									'edit_theme_options'
-								),
-								( 60 * 60 * 24 )
-							);
 
 					// Run custom actions
 
@@ -348,6 +334,22 @@ final class Reykjavik_Library_Customize_Styles {
 					}
 
 			} // /generate_main_css_all
+
+
+
+		/**
+		 * Saves stylesheet regeneration timestamp into theme options
+		 *
+		 * @since    2.3.0
+		 * @version  2.3.0
+		 */
+		public static function stylesheet_timestamp() {
+
+			// Processing
+
+				set_theme_mod( '__stylesheet_timestamp', esc_attr( gmdate( 'ymdHis' ) ) );
+
+		} // /stylesheet_timestamp
 
 
 

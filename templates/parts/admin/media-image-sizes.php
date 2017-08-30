@@ -39,7 +39,12 @@
 
 	<h3><?php esc_html_e( 'Recommended image sizes', 'reykjavik' ); ?></h3>
 
-	<p><?php esc_html_e( 'For the theme to work correctly, please, set these recommended image sizes:', 'reykjavik' ); ?></p>
+	<p><?php esc_html_e( 'For the optimal theme display, please, set image sizes recommended in table below.', 'reykjavik' ); ?></p>
+
+	<p>
+		<?php esc_html_e( 'Do you already have images uploaded to your website and want to resize them?', 'reykjavik' ); ?>
+		<a href="https://wordpress.org/plugins/search/regenerate+thumbnails/"><?php esc_html_e( 'Use a plugin &raquo;', 'reykjavik' ); ?></a>
+	</p>
 
 	<table>
 
@@ -55,6 +60,10 @@
 			<?php
 
 			foreach ( $image_sizes as $size => $setup ) {
+
+				if ( 'medium_large' === $size ) {
+					continue;
+				}
 
 				$crop = ( $setup[2] ) ? ( esc_html__( 'cropped', 'reykjavik' ) ) : ( esc_html__( 'scaled', 'reykjavik' ) );
 
@@ -125,7 +134,7 @@
 		}
 
 		.recommended-image-sizes table {
-			margin-top: 1em;
+			margin-top: 1.62em;
 		}
 
 		.recommended-image-sizes th,
@@ -145,13 +154,6 @@
 
 		.recommended-image-sizes tr[title] {
 			cursor: help;
-		}
-
-		.recommended-image-sizes .small,
-		.recommended-image-sizes tr[title] th,
-		.recommended-image-sizes tr[title] td {
-			padding: .62em 1em;
-			font-size: .81em;
 		}
 
 	</style>

@@ -121,10 +121,15 @@ class Reykjavik_Assets {
 
 				$stylesheets = apply_filters( 'wmhook_reykjavik_assets_register_styles_sheets', $stylesheets );
 
+				$stylesheet_global_version = get_theme_mod( '__stylesheet_timestamp' );
+				if ( empty( $stylesheet_global_version ) ) {
+					$stylesheet_global_version = REYKJAVIK_THEME_VERSION;
+				}
+
 				$register_assets = array(
 						'reykjavik-google-fonts'      => array( self::google_fonts_url() ),
 						'reykjavik-stylesheet'        => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'reykjavik-stylesheet-global' ) ),
-						'reykjavik-stylesheet-global' => array( Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ) ),
+						'reykjavik-stylesheet-global' => array( 'src' => Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ), 'ver' => $stylesheet_global_version ),
 					);
 
 				$register_assets = (array) apply_filters( 'wmhook_reykjavik_assets_register_styles', $register_assets, $stylesheets );

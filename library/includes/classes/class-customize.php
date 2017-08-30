@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.0.0
- * @version  2.2.6
+ * @version  2.3.0
  *
  * Contents:
  *
@@ -435,7 +435,7 @@ final class Reykjavik_Library_Customize {
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.3
+		 * @version  2.3.0
 		 *
 		 * @param  object $wp_customize WP customizer object.
 		 */
@@ -692,8 +692,8 @@ final class Reykjavik_Library_Customize {
 													'type'                 => $type,
 													'default'              => $default,
 													'transport'            => $transport,
-													'sanitize_callback'    => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Customize::sanitize_checkbox' ) : ( 'Reykjavik_Library_Customize::sanitize_select' ),
-													'sanitize_js_callback' => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Customize::sanitize_checkbox' ) : ( 'Reykjavik_Library_Customize::sanitize_select' ),
+													'sanitize_callback'    => ( 'checkbox' === $theme_option['type'] ) ? ( __CLASS__ . '::sanitize_checkbox' ) : ( __CLASS__ . '::sanitize_select' ),
+													'sanitize_js_callback' => ( 'checkbox' === $theme_option['type'] ) ? ( __CLASS__ . '::sanitize_checkbox' ) : ( __CLASS__ . '::sanitize_select' ),
 												)
 											);
 
@@ -718,8 +718,8 @@ final class Reykjavik_Library_Customize {
 													'type'                 => $type,
 													'default'              => $default,
 													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Customize::sanitize_array' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Customize::sanitize_array' ),
+													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( __CLASS__ . '::sanitize_array' ),
+													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( __CLASS__ . '::sanitize_array' ),
 												)
 											);
 
@@ -960,8 +960,8 @@ final class Reykjavik_Library_Customize {
 													'type'                 => $type,
 													'default'              => $default,
 													'transport'            => $transport,
-													'sanitize_callback'    => 'Reykjavik_Library_Customize::sanitize_select',
-													'sanitize_js_callback' => 'Reykjavik_Library_Customize::sanitize_select',
+													'sanitize_callback'    => __CLASS__ . '::sanitize_select',
+													'sanitize_js_callback' => __CLASS__ . '::sanitize_select',
 												)
 											);
 
@@ -1062,7 +1062,7 @@ final class Reykjavik_Library_Customize {
 
 					if ( $wp_customize->is_preview() ) {
 
-						add_action( 'wp_footer', 'Reykjavik_Library_Customize::preview_scripts', 99 );
+						add_action( 'wp_footer', __CLASS__ . '::preview_scripts', 99 );
 
 					}
 

@@ -1,5 +1,20 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.3.0
+
+* **Update**: Using `__CLASS__` where appropriate
+* **Update**: Removing stylesheet regeneration success message
+* **Update**: Saving current stylesheet regeneration timestamp into theme options
+* **Update**: Removing `set_theme_mod( '__theme_installed', true );` leaving this to theme
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-customize.php
+	includes/classes/class-customize-styles.php
+
+
 ## 2.2.8
 
 * **Fix**: Improving TinyMCE Formats button dropdown styles preview

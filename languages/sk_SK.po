@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-08-29 20:24+0200\n"
-"PO-Revision-Date: 2017-08-29 20:25+0200\n"
+"POT-Creation-Date: 2017-08-30 19:47+0200\n"
+"PO-Revision-Date: 2017-08-30 19:50+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -73,7 +73,7 @@ msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/custom-header/class-intro.php:138
+#: includes/custom-header/class-intro.php:147
 msgctxt "Header image description."
 msgid "Mountains drawing"
 msgstr "Kresba hôr"
@@ -517,12 +517,12 @@ msgid "General text font"
 msgstr "Všeobecný typ písma"
 
 #: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:880
+#: includes/setup/class-setup.php:730
 msgid "Headings font"
 msgstr "Písmo nadpisov"
 
 #: includes/customize/class-customize.php:1113
-#: includes/setup/class-setup.php:886
+#: includes/setup/class-setup.php:736
 msgid "Logo font"
 msgstr "Písmo loga"
 
@@ -634,9 +634,9 @@ msgctxt "Navigational menu location"
 msgid "Social Links"
 msgstr "Odkazy sociálnych sietí"
 
-#: includes/frontend/class-menu.php:302
-msgid "Please, set up the menu in Appearance &raquo; Menus."
-msgstr "Nastavte navigáciu v sekcii Vzhľad &raquo; Menu."
+#: includes/frontend/class-menu.php:182 includes/frontend/class-menu.php:193
+msgid "Skip to menu toggle button"
+msgstr "Preskočiť na tlačidlo rozbaľovania menu"
 
 #: includes/frontend/class-post-summary.php:114
 msgid "This content is password protected."
@@ -1394,43 +1394,43 @@ msgid ""
 "archive pages."
 msgstr "Tento bočný panel nahradí základný bočný panel na stránkach obchodu."
 
-#: includes/setup/class-setup.php:217
+#: includes/setup/class-setup.php:169
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s!"
 msgstr "Ďakujeme, že používate %s!"
 
-#: includes/setup/class-setup.php:224
+#: includes/setup/class-setup.php:176
 msgid "Please read \"Welcome\" page for information about the theme setup."
 msgstr "Prečítajte si informácie o nastavení témy na stránke \"Vitajte\"."
 
-#: includes/setup/class-setup.php:231
+#: includes/setup/class-setup.php:183
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr "Začíname s %s"
 
-#: includes/setup/class-setup.php:558
+#: includes/setup/class-setup.php:472
 msgid "In posts list."
 msgstr "V zozname článkov."
 
-#: includes/setup/class-setup.php:565
+#: includes/setup/class-setup.php:479
 msgid "As featured image preview on single post page."
 msgstr "Ako náhľad prezentačného obrázku na stránke článku."
 
-#: includes/setup/class-setup.php:566
+#: includes/setup/class-setup.php:480
 msgid "In list of child pages."
 msgstr "V zozname podstránok."
 
-#: includes/setup/class-setup.php:573 includes/setup/class-setup.php:584
+#: includes/setup/class-setup.php:487 includes/setup/class-setup.php:498
 msgid "Not used in the theme."
 msgstr "Téma nepoužíva túto veľkosť obrázku."
 
-#: includes/setup/class-setup.php:583
+#: includes/setup/class-setup.php:497
 msgid "This is WordPress native image size."
 msgstr "Toto je jedna zo základných veľkostí obrázkov vo WordPress."
 
-#: includes/setup/class-setup.php:591
+#: includes/setup/class-setup.php:505
 msgid "In page intro section."
 msgstr "V intro sekcii stránky."
 
@@ -1439,7 +1439,7 @@ msgstr "V intro sekcii stránky."
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:761
+#: includes/setup/class-setup.php:611
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr "on"
@@ -1449,68 +1449,68 @@ msgstr "on"
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:771
+#: includes/setup/class-setup.php:621
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: includes/setup/class-setup.php:840
+#: includes/setup/class-setup.php:690
 msgid "Thin (hairline) text"
 msgstr "Tenulinký text (ako vlások)"
 
-#: includes/setup/class-setup.php:841
+#: includes/setup/class-setup.php:691
 msgid "Extra light text"
 msgstr "Extra tenký text"
 
-#: includes/setup/class-setup.php:842
+#: includes/setup/class-setup.php:692
 msgid "Light text"
 msgstr "Tenký text"
 
-#: includes/setup/class-setup.php:843
+#: includes/setup/class-setup.php:693
 msgid "Normal weight text"
 msgstr "Normálny text"
 
-#: includes/setup/class-setup.php:844
+#: includes/setup/class-setup.php:694
 msgid "Medium text"
 msgstr "Hrubší text"
 
-#: includes/setup/class-setup.php:845
+#: includes/setup/class-setup.php:695
 msgid "Semi bold text"
 msgstr "Stredne hrubý text"
 
-#: includes/setup/class-setup.php:846
+#: includes/setup/class-setup.php:696
 msgid "Bold text"
 msgstr "Hrubý text"
 
-#: includes/setup/class-setup.php:847
+#: includes/setup/class-setup.php:697
 msgid "Extra bold text"
 msgstr "Extra hrubý text"
 
-#: includes/setup/class-setup.php:848
+#: includes/setup/class-setup.php:698
 msgid "Heavy text"
 msgstr "Tažký text"
 
-#: includes/setup/class-setup.php:853
+#: includes/setup/class-setup.php:703
 msgid "Text weights"
 msgstr "Hrúbka textu"
 
-#: includes/setup/class-setup.php:870
+#: includes/setup/class-setup.php:720
 msgid "Fonts"
 msgstr "Písmo"
 
-#: includes/setup/class-setup.php:874
+#: includes/setup/class-setup.php:724
 msgid "General font"
 msgstr "Všeobecný typ písma"
 
-#: includes/setup/class-setup.php:892
+#: includes/setup/class-setup.php:742
 msgid "Inherit font"
 msgstr "Zdediť typ písma"
 
-#: includes/setup/class-setup.php:903
+#: includes/setup/class-setup.php:753
 msgid "Columns"
 msgstr "Stĺpce"
 
-#: includes/setup/class-setup.php:910
+#: includes/setup/class-setup.php:760
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in 1 column"
@@ -1519,23 +1519,23 @@ msgstr[0] "Text v 1 stĺpci"
 msgstr[1] "Text v %d stĺpcoch"
 msgstr[2] "Text v %d stĺpcoch"
 
-#: includes/setup/class-setup.php:921
+#: includes/setup/class-setup.php:771
 msgid "Buttons"
 msgstr "Tlačidlá"
 
-#: includes/setup/class-setup.php:925
+#: includes/setup/class-setup.php:775
 msgid "Button from link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/class-setup.php:936
+#: includes/setup/class-setup.php:786
 msgid "Outdent"
 msgstr "Odsadiť"
 
-#: includes/setup/class-setup.php:940
+#: includes/setup/class-setup.php:790
 msgid "Outdent selected content"
 msgstr "Odsadiť označený obsah"
 
-#: includes/setup/class-setup.php:952
+#: includes/setup/class-setup.php:802
 msgid "Outdented heading style"
 msgstr "Štýl odsadených nadpisov"
 
@@ -1914,23 +1914,14 @@ msgstr "Nastavte parameter `content` pre pole HTML."
 msgid "Press CTRL key for multiple selection."
 msgstr "Pridržte klávesu CTRL pre viacnásobnú voľbu."
 
-#: library/includes/classes/class-customize-styles.php:174
-msgid ""
-"The main theme CSS stylesheet was regenerated. Please refresh your web "
-"browser's and server's cache (if you are using a website server caching "
-"solution)."
-msgstr ""
-"Hlavný súbor CSS štýlov bol regenerovaný. Vyprázdnite cache pamäť vášho "
-"prehliadača a servera (ak používate cache servera)."
-
-#: library/includes/classes/class-customize-styles.php:238
+#: library/includes/classes/class-customize-styles.php:237
 msgid ""
 "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
 msgstr ""
 "CHYBA: Nebolo možné vytvoriť priečinok pre CSS štýly témy. Kontaktujte "
 "technickú podporu témy."
 
-#: library/includes/classes/class-customize-styles.php:789
+#: library/includes/classes/class-customize-styles.php:791
 msgid ""
 "The theme writes a files to your server. You do not appear to have your FTP "
 "credentials set up in \"wp-config.php\" file."
@@ -1938,7 +1929,7 @@ msgstr ""
 "Téma zapisuje na váš server nové súbory. Vyzerá to tak, že ste nenastavili "
 "FTP v súbore \"wp-config.php\"."
 
-#: library/includes/classes/class-customize-styles.php:789
+#: library/includes/classes/class-customize-styles.php:791
 msgid "Please set your FTP credentials first."
 msgstr "Prosíme, najskôr nastavte FTP."
 
@@ -2572,39 +2563,50 @@ msgstr "Odporúčané rozmery obrázkov"
 
 #: templates/parts/admin/media-image-sizes.php:42
 msgid ""
-"For the theme to work correctly, please, set these recommended image sizes:"
+"For the optimal theme display, please, set image sizes recommended in table "
+"below."
 msgstr ""
-"Prosíme, nastavte tieto odporúčané rozmery obrázkov pre správne zobrazenie v "
-"téme:"
+"Pre optimálne zobrazenie témy odporúčame nastaviť veľkosti obrázkov podľa "
+"doleuvedenej tabuľky."
 
-#: templates/parts/admin/media-image-sizes.php:48
+#: templates/parts/admin/media-image-sizes.php:45
+msgid ""
+"Do you already have images uploaded to your website and want to resize them?"
+msgstr ""
+"Vaša webstránka už obsahuje nejaké obrázky a radi by ste zmenili ich veľkosť?"
+
+#: templates/parts/admin/media-image-sizes.php:46
+msgid "Use a plugin &raquo;"
+msgstr "Použite plugin &raquo;"
+
+#: templates/parts/admin/media-image-sizes.php:53
 msgid "Size name"
 msgstr "Názov rozmeru"
 
-#: templates/parts/admin/media-image-sizes.php:49
+#: templates/parts/admin/media-image-sizes.php:54
 msgid "Size parameters"
 msgstr "Parametre rozmeru"
 
-#: templates/parts/admin/media-image-sizes.php:50
+#: templates/parts/admin/media-image-sizes.php:55
 msgid "Theme usage"
 msgstr "Použitie v téme"
 
-#: templates/parts/admin/media-image-sizes.php:59
+#: templates/parts/admin/media-image-sizes.php:68
 msgid "cropped"
 msgstr "orezaný"
 
-#: templates/parts/admin/media-image-sizes.php:59
+#: templates/parts/admin/media-image-sizes.php:68
 msgid "scaled"
 msgstr "zmenšený"
 
-#: templates/parts/admin/media-image-sizes.php:71
+#: templates/parts/admin/media-image-sizes.php:80
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 "Dodatočný rozmer obrázkov vytvorený použitou témou. Nie je ho možné nastaviť "
 "na tejto stránke."
 
-#: templates/parts/admin/media-image-sizes.php:81
+#: templates/parts/admin/media-image-sizes.php:90
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
@@ -2825,7 +2827,7 @@ msgstr "Tento krok je vyžadovaný na všetkých webových stránkach WordPress.
 
 #: templates/parts/admin/welcome-quickstart.php:37
 msgid ""
-"Please, pay special attention to image sizes settings under Settings &raquo; "
+"Please, pay special attention to image sizes setup under Settings &raquo; "
 "Media."
 msgstr ""
 "Odporúčame skontrolovať hlavne nastavenia veľkostí obrázkov na stránke "
@@ -2972,15 +2974,11 @@ msgstr "Úvod"
 msgid "List of categories"
 msgstr "Zoznam kategórií"
 
-#: templates/parts/menu/menu-primary.php:30
-msgid "Skip to menu toggle button"
-msgstr "Preskočiť na tlačidlo rozbaľovania menu"
-
-#: templates/parts/menu/menu-primary.php:43
+#: templates/parts/menu/menu-primary.php:29
 msgid "Primary Menu"
 msgstr "Primárne menu"
 
-#: templates/parts/menu/menu-primary.php:46
+#: templates/parts/menu/menu-primary.php:32
 msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr "Menu"

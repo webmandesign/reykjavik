@@ -121,7 +121,7 @@
 
 		h2, h3, h4,
 		.h1, .h2, .h3, .h4,
-		a,
+		a:not(.button),
 		.accent-color {
 			/*[*/
 			color: map_get( $colors, 'intro_headings' );

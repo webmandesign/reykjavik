@@ -12,7 +12,7 @@
  *
  *  0) Init
  * 10) Register
- * 20) Primary
+ * 20) Primary & Secondary
  * 30) Others
  */
 class Reykjavik_Menu {
@@ -130,7 +130,7 @@ class Reykjavik_Menu {
 
 
 	/**
-	 * 20) Primary
+	 * 20) Primary & Secondary
 	 */
 
 		/**
@@ -146,6 +146,104 @@ class Reykjavik_Menu {
 				get_template_part( 'templates/parts/menu/menu', 'primary' );
 
 		} // /primary
+
+
+
+			/**
+			 * Primary navigation args
+			 *
+			 * @since    1.0.0
+			 * @version  1.0.0
+			 *
+			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
+			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
+			 */
+			public static function primary_menu_args( $mobile_nav = true, $fallback = false ) {
+
+				// Helper variables
+
+					$args = array(
+						'container'    => 'div',
+						'menu_class'   => 'menu',
+						'item_spacing' => 'preserve', // Required for `wp_page_menu()` is different than `wp_nav_menu()` one.
+					);
+
+
+				// Processing
+
+					if ( ! $fallback ) {
+
+						// For `wp_nav_menu()`
+
+							$args['theme_location']  = 'primary';
+							$args['container_class'] = 'menu';
+							$args['depth']           = 4;
+							$args['fallback_cb']     = 'Reykjavik_Menu::primary_fallback';
+							$args['items_wrap']      = '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
+
+							if ( ! $mobile_nav ) {
+								$args['items_wrap'] = '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s</ul>';
+							}
+
+					} else {
+
+						// For `wp_page_menu()`
+
+							$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback" role="menubar">';
+							$args['after']  = '<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
+
+							if ( ! $mobile_nav ) {
+								$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback" role="menubar">';
+								$args['after']  = '</ul>';
+							}
+
+					}
+
+
+				// Output
+
+					return $args;
+
+			} // /primary_menu_args
+
+
+
+			/**
+			 * Primary navigation fallback
+			 *
+			 * @since    1.0.0
+			 * @version  1.0.0
+			 */
+			public static function primary_fallback() {
+
+				// Helper variables
+
+					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( get_theme_mod( 'navigation_mobile', true ), 'fallback' ) );
+
+
+				// Output
+
+					echo str_replace(
+						array(
+							'current_page_item',
+							'current_page_parent',
+							'current_page_ancestor',
+							'page_item_has_children',
+							'page_item',
+							'page-item',
+						),
+						array(
+							'current-menu-item',
+							'current-menu-parent',
+							'current-menu-ancestor',
+							'menu-item-has-children',
+							'menu-item',
+							'page-item menu-item',
+						),
+						$output
+					);
+
+			} // /primary_fallback
 
 
 
@@ -288,22 +386,6 @@ class Reykjavik_Menu {
 	/**
 	 * 30) Others
 	 */
-
-		/**
-		 * Navigation fallback text
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function menu_fallback() {
-
-			// Output
-
-				return esc_html__( 'Please, set up the menu in Appearance &raquo; Menus.', 'reykjavik' );
-
-		} // /menu_fallback
-
-
 
 		/**
 		 * Social

@@ -67,13 +67,9 @@ class Reykjavik_Setup {
 
 						add_action( 'after_setup_theme', __CLASS__ . '::visual_editor' );
 
-						add_action( 'after_setup_theme', __CLASS__ . '::installation', 15 );
-
 						add_action( 'init', __CLASS__ . '::register_meta' );
 
 						add_action( 'admin_init', __CLASS__ . '::image_sizes_notice' );
-
-						add_action( 'switch_theme', __CLASS__ . '::image_sizes_reset' );
 
 					// Filters
 
@@ -121,50 +117,6 @@ class Reykjavik_Setup {
 	/**
 	 * 10) Installation
 	 */
-
-		/**
-		 * Theme installation process
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function installation() {
-
-			// Requirements check
-
-				if ( get_theme_mod( '__theme_installed' ) ) {
-					return;
-				}
-
-
-			// Processing
-
-				// Generate the custom stylesheet
-
-					Reykjavik_Library_Customize_Styles::generate_main_css_all();
-
-				// Set Beaver Builder post types on theme's first activation
-				// This is required here as the Beaver Builder plugin might not be active yet
-
-					update_option( '_fl_builder_post_types', array(
-							'post',
-							'page',
-							'product',
-						) );
-
-				// Site branding defaults
-
-					if ( false === get_theme_mod( 'custom_logo' ) ) {
-						set_theme_mod( 'custom_logo', -1 );
-					}
-
-				// Other theme installation actions
-
-					do_action( 'wmhook_reykjavik_installation' );
-
-		} // /installation
-
-
 
 		/**
 		 * Initiate "Welcome" admin notice
@@ -396,45 +348,7 @@ class Reykjavik_Setup {
 
 							foreach ( $image_sizes as $size => $setup ) {
 
-								if ( in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
-
-									if ( empty( get_theme_mod( '__image_size_' . $size ) ) ) {
-
-										/**
-										 * Force the default image sizes on theme installation only.
-										 * This allows users to set their own sizes later, but a notification is displayed.
-										 */
-
-										$original_image_width = get_option( $size . '_size_w' );
-
-											if ( $image_sizes[ $size ][0] != $original_image_width ) {
-												update_option( $size . '_size_w', $image_sizes[ $size ][0] );
-											}
-
-										$original_image_height = get_option( $size . '_size_h' );
-
-											if ( $image_sizes[ $size ][1] != $original_image_height ) {
-												update_option( $size . '_size_h', $image_sizes[ $size ][1] );
-											}
-
-										$original_image_crop = get_option( $size . '_crop' );
-
-											if ( $image_sizes[ $size ][2] != $original_image_crop ) {
-												update_option( $size . '_crop', $image_sizes[ $size ][2] );
-											}
-
-										set_theme_mod(
-											'__image_size_' . $size,
-											array(
-												$original_image_width,
-												$original_image_height,
-												$original_image_crop
-											)
-										);
-
-									}
-
-								} else {
+								if ( ! in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
 
 									add_image_size(
 										$size,
@@ -599,70 +513,6 @@ class Reykjavik_Setup {
 				return $image_sizes;
 
 		} // /image_sizes
-
-
-
-		/**
-		 * Reset predefined image sizes to their original values
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function image_sizes_reset() {
-
-			// Requirements check
-
-				if (
-						is_child_theme()
-						&& 'reykjavik' == wp_get_theme()->get_template()
-					) {
-					return;
-				}
-
-
-			// Helper variables
-
-				$image_sizes = array( 'thumbnail', 'medium', 'medium_large', 'large' );
-				$theme_mods  = get_theme_mods();
-
-
-			// Processing
-
-				foreach ( $image_sizes as $size ) {
-
-					$values = (array) ( isset( $theme_mods[ '__image_size_' . $size ] ) ) ? ( $theme_mods[ '__image_size_' . $size ] ) : ( array() );
-
-					// Skip processing if we do not have the image height and crop value
-
-						if ( ! isset( $values[1] ) || ! isset( $values[2] ) ) {
-							continue;
-						}
-
-					// Old image width
-
-						if ( $values[0] ) {
-							update_option( $size . '_size_w', $values[0] );
-						}
-
-					// Old image height
-
-						if ( $values[1] ) {
-							update_option( $size . '_size_h', $values[1] );
-						}
-
-					// Old image crop
-
-						if ( $values[2] ) {
-							update_option( $size . '_crop', $values[2] );
-						}
-
-					// Remove the saved reset size
-
-						remove_theme_mod( '__image_size_' . $size );
-
-				} // /foreach
-
-		} // /image_sizes_reset
 
 
 

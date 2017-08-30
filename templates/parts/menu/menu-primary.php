@@ -21,20 +21,6 @@
 
 	$is_mobile_nav_enabled = get_theme_mod( 'navigation_mobile', true );
 
-	$menu_args = array(
-			'theme_location'  => 'primary',
-			'container'       => 'div',
-			'container_class' => 'menu',
-			'menu_class'      => 'menu', // Fallback for pagelist
-			'depth'           => 4,
-			'items_wrap'      => '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>',
-			'fallback_cb'     => 'Reykjavik_Menu::menu_fallback',
-		);
-
-	if ( ! $is_mobile_nav_enabled ) {
-		$menu_args['items_wrap'] = '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s</ul>';
-	}
-
 
 ?>
 
@@ -47,7 +33,7 @@
 
 	<?php endif; ?>
 	<div id="site-navigation-container" class="main-navigation-container">
-		<?php wp_nav_menu( $menu_args ); ?>
+		<?php wp_nav_menu( Reykjavik_Menu::primary_menu_args( $is_mobile_nav_enabled ) ); ?>
 	</div>
 
 </nav>

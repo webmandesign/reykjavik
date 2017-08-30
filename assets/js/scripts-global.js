@@ -89,6 +89,15 @@
 
 
 
+		/**
+		 * Primary menu fallback
+		 */
+
+			$( '#menu-primary.menu-fallback .menu-item-has-children > a' )
+				.append( ' <span class="expander" aria-hidden="true"></span>' );
+
+
+
 
 
 	/**
