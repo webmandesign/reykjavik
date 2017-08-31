@@ -9,7 +9,7 @@
  * @subpackage  Core
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.4.0
  *
  * Contents:
  *
@@ -267,7 +267,7 @@ final class Reykjavik_Library {
 		 * Get the paginated heading suffix
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.4.0
 		 *
 		 * @param  string $tag           Wrapper tag
 		 * @param  string $singular_only Display only on singular posts of specific type
@@ -297,16 +297,8 @@ final class Reykjavik_Library {
 
 				global $page, $paged;
 
-				$output = '';
-
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-
-				$paged = max( $page, $paged );
+				$output    = '';
+				$paginated = max( absint( $page ), absint( $paged ) );
 
 				$tag = trim( $tag );
 				if ( $tag ) {
@@ -318,8 +310,8 @@ final class Reykjavik_Library {
 
 			// Processing
 
-				if ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( esc_html_x( '(page %s)', 'Paginated content title suffix, %s: page number.', 'reykjavik' ), number_format_i18n( $paged ) ) . $tag[1];
+				if ( 1 < $paginated ) {
+					$output = ' ' . $tag[0] . sprintf( esc_html_x( '(page %s)', 'Paginated content title suffix, %s: page number.', 'reykjavik' ), number_format_i18n( $paginated ) ) . $tag[1];
 				}
 
 
@@ -361,7 +353,7 @@ final class Reykjavik_Library {
 		 * Checks for <!--more--> tag in post content
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.4.0
 		 *
 		 * @param  mixed $post
 		 */
@@ -379,7 +371,7 @@ final class Reykjavik_Library {
 			// Helper variables
 
 				if ( empty( $post ) ) {
-					global $post;
+					$post = $GLOBALS['post'];
 				} elseif ( is_numeric( $post ) ) {
 					$post = get_post( absint( $post ) );
 				}

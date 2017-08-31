@@ -47,8 +47,6 @@ class Reykjavik_Beaver_Builder_Assets {
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets' );
 
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::editor_style' );
-
 					// Filters
 
 						add_filter( 'fl_builder_layout_style_media', __CLASS__ . '::stylesheet_layout_media' );
@@ -202,41 +200,6 @@ class Reykjavik_Beaver_Builder_Assets {
 				}
 
 		} // /assets
-
-
-
-		/**
-		 * Load editor styles in frontend editor
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function editor_style() {
-
-			// Requirements check
-
-				if (
-						is_admin()
-						|| ! class_exists( 'FLBuilderModel' )
-						|| ! FLBuilderModel::is_builder_active()
-					) {
-					return;
-				}
-
-
-			// Helper variables
-
-				global $editor_styles;
-
-				$editor_styles       = (array) $editor_styles;
-				$theme_editor_styles = array_filter( (array) apply_filters( 'wmhook_reykjavik_setup_editor_stylesheets', array() ) );
-
-
-			// Output
-
-				$editor_styles = array_merge( $editor_styles, $theme_editor_styles );
-
-		} // /editor_style
 
 
 

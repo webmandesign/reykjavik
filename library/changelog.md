@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.4.0
+
+* **Fix**: Not overriding WordPress globals
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-core.php
+
+
 ## 2.3.0
 
 * **Update**: Using `__CLASS__` where appropriate

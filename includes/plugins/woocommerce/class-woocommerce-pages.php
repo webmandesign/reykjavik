@@ -478,7 +478,7 @@ class Reykjavik_WooCommerce_Pages {
 				     . esc_html__( 'Cart content', 'reykjavik' )
 				     . '<small class="cart-table-products-count"> '
 				     . sprintf(
-				     		esc_html( _n( '(1 item)', '(%s items)', absint( wp_strip_all_tags( WC()->cart->get_cart_contents_count() ) ), 'reykjavik' ) ),
+				     		esc_html( _nx( '(%d item)', '(%d items)', absint( wp_strip_all_tags( WC()->cart->get_cart_contents_count() ) ), 'Shopping cart items count.', 'reykjavik' ) ),
 				     		absint( wp_strip_all_tags( WC()->cart->get_cart_contents_count() ) )
 				     	)
 				     . '</small>'

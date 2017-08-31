@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-08-30 19:47+0200\n"
+"POT-Creation-Date: 2017-08-31 12:11+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -32,8 +32,8 @@ msgstr ""
 #: comments.php:45
 #, php-format
 msgctxt "Comments list title."
-msgid "One comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgid "%1$d comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$d comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1284,7 +1284,7 @@ msgid "List of products"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:266 search.php:28
-#: templates/parts/intro/intro-content.php:77
+#: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1301,8 +1301,9 @@ msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:481
 #, php-format
-msgid "(1 item)"
-msgid_plural "(%s items)"
+msgctxt "Shopping cart items count."
+msgid "(%d item)"
+msgid_plural "(%d items)"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1464,7 +1465,7 @@ msgstr ""
 #: includes/setup/class-setup.php:760
 #, php-format
 msgctxt "%d: Number of columns."
-msgid "Text in 1 column"
+msgid "Text in %d column"
 msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
@@ -1819,13 +1820,13 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: library/includes/classes/class-core.php:322
+#: library/includes/classes/class-core.php:314
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/includes/classes/class-core.php:542
+#: library/includes/classes/class-core.php:534
 msgid "Skip to main content"
 msgstr ""
 
@@ -2808,7 +2809,7 @@ msgstr ""
 msgid "Back to top &uarr;"
 msgstr ""
 
-#: templates/parts/intro/intro-content.php:99
+#: templates/parts/intro/intro-content.php:108
 msgid "Introduction"
 msgstr ""
 

@@ -15,16 +15,25 @@
 
 // Helper variables
 
-	$title        = apply_filters( 'wmhook_reykjavik_intro_the_title', get_the_title() );
+	$title        = get_the_title();
+	$post_id      = get_the_ID();
+	$posts_page   = get_option( 'page_for_posts' );
 	$page_summary = '';
 
 	$class_title  = ( is_single() ) ? ( 'entry-title' ) : ( 'page-title' );
 	$class_title .= ' h1 intro-title';
 
-	$posts_page          = get_option( 'page_for_posts' );
-	$intro_title_tag     = ( is_page() ) ? ( 'h1' ) : ( 'h3' );
-	$title_paginated_url = ( is_home() && $posts_page && ! is_front_page() ) ? ( get_permalink( $posts_page ) ) : ( get_permalink() );
-	$pagination_suffix   = Reykjavik_Library::get_the_paginated_suffix( 'small' );
+	$intro_title_tag   = ( is_page() ) ? ( 'h1' ) : ( 'h3' );
+	$pagination_suffix = Reykjavik_Library::get_the_paginated_suffix( 'small' );
+
+	if ( is_home() && $posts_page && ! is_front_page() ) {
+		$post_id = $posts_page;
+		$title   = get_the_title( $post_id );
+	}
+
+	$title_paginated_url = get_permalink( $post_id );
+
+	$title = apply_filters( 'wmhook_reykjavik_intro_the_title', $title, $post_id );
 
 
 // Processing
@@ -50,7 +59,7 @@
 
 		// Title setup
 
-			$title = '<a href="' . esc_url( $title_paginated_url ) . '">' . $title . '</a>';
+			$title = '<a href="' . esc_url( $title_paginated_url ) . '">' . $title . '</a>' . $pagination_suffix;
 
 	}
 

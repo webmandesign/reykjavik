@@ -42,7 +42,7 @@ do_action( 'tha_comments_before' );
 		<?php
 
 		printf(
-			esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'reykjavik' ) ),
+			esc_html( _nx( '%1$d comment on &ldquo;%2$s&rdquo;', '%1$d comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'reykjavik' ) ),
 			number_format_i18n( get_comments_number() ),
 			'<span>' . get_the_title() . '</span>'
 		);

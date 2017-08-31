@@ -23,7 +23,7 @@
 	if (
 			Reykjavik_Post::is_paged()
 			|| ! function_exists( 'the_custom_header_markup' )
-			|| empty( get_custom_header_markup() )
+			|| ! get_custom_header_markup()
 			|| ( Reykjavik_Post::is_singular() && get_post_meta( get_the_ID(), 'no_intro_media', true ) )
 		) {
 		return;

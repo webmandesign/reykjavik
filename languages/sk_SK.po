@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
-"POT-Creation-Date: 2017-08-30 19:47+0200\n"
-"PO-Revision-Date: 2017-08-30 19:50+0200\n"
+"POT-Creation-Date: 2017-08-31 12:11+0200\n"
+"PO-Revision-Date: 2017-08-31 12:12+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -31,11 +31,11 @@ msgstr "Na tomto mieste sa nič nenachádza. Možno skúste vyhľadávanie?"
 #: comments.php:45
 #, php-format
 msgctxt "Comments list title."
-msgid "One comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "Jeden komentár k &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s komentáre k &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s komentárov k &ldquo;%2$s&rdquo;"
+msgid "%1$d comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$d comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$d komentár k &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$d komentáre k &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$d komentáre k &ldquo;%2$s&rdquo;"
 
 #: comments.php:70
 msgid "Comments are closed."
@@ -1332,7 +1332,7 @@ msgid "List of products"
 msgstr "Zoznam produktov"
 
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:266 search.php:28
-#: templates/parts/intro/intro-content.php:77
+#: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Výsledky vyhľadávania pre: %s"
@@ -1349,11 +1349,12 @@ msgstr "Obsah košíka"
 
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:481
 #, php-format
-msgid "(1 item)"
-msgid_plural "(%s items)"
-msgstr[0] "(1 položka)"
-msgstr[1] "(%s položky)"
-msgstr[2] "(%s položiek)"
+msgctxt "Shopping cart items count."
+msgid "(%d item)"
+msgid_plural "(%d items)"
+msgstr[0] "(%d produkt)"
+msgstr[1] "(%d produkty)"
+msgstr[2] "(%d produktov)"
 
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:501
 msgid "Use your discount coupon code here"
@@ -1513,9 +1514,9 @@ msgstr "Stĺpce"
 #: includes/setup/class-setup.php:760
 #, php-format
 msgctxt "%d: Number of columns."
-msgid "Text in 1 column"
+msgid "Text in %d column"
 msgid_plural "Text in %d columns"
-msgstr[0] "Text v 1 stĺpci"
+msgstr[0] "Text v %d stĺpci"
 msgstr[1] "Text v %d stĺpcoch"
 msgstr[2] "Text v %d stĺpcoch"
 
@@ -1896,13 +1897,13 @@ msgstr "Obsah článku \"%s\""
 msgid "Page %s"
 msgstr "Stránka %s"
 
-#: library/includes/classes/class-core.php:322
+#: library/includes/classes/class-core.php:314
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr "(stránka %s)"
 
-#: library/includes/classes/class-core.php:542
+#: library/includes/classes/class-core.php:534
 msgid "Skip to main content"
 msgstr "Preskočiť na hlavný obsah"
 
@@ -2966,7 +2967,7 @@ msgstr "https://sk.wordpress.org/"
 msgid "Back to top &uarr;"
 msgstr "Späť nahor &uarr;"
 
-#: templates/parts/intro/intro-content.php:99
+#: templates/parts/intro/intro-content.php:108
 msgid "Introduction"
 msgstr "Úvod"
 

@@ -757,7 +757,7 @@ class Reykjavik_Setup {
 					for ( $i = 2; $i <= 3; $i++ ) {
 
 						$formats[ 400 . 'columns' ]['items'][ 400 . 'columns' . ( 100 + 10 * $i ) ] = array(
-								'title'   => sprintf( esc_html( _nx( 'Text in 1 column', 'Text in %d columns', $i, '%d: Number of columns.', 'reykjavik' ) ), $i ),
+								'title'   => sprintf( esc_html( _nx( 'Text in %d column', 'Text in %d columns', $i, '%d: Number of columns.', 'reykjavik' ) ), $i ),
 								'classes' => 'text-columns-' . $i,
 								'block'   => 'div',
 								'wrapper' => true,

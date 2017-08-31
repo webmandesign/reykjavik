@@ -62,6 +62,8 @@ class Reykjavik_Assets {
 
 						add_filter( 'wmhook_reykjavik_setup_editor_stylesheets', __CLASS__ . '::editor' );
 
+						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
+
 						if ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) {
 							add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
 							add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
@@ -608,6 +610,32 @@ class Reykjavik_Assets {
 				return (array) apply_filters( 'wmhook_reykjavik_assets_editor', $visual_editor_stylesheets );
 
 		} // /editor
+
+
+
+		/**
+		 * Load editor styles for any frontend editor
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function editor_frontend_stylesheets( $stylesheets ) {
+
+			// Requirements check
+
+				if ( is_admin() ) {
+					return $stylesheets;
+				}
+
+
+			// Output
+
+				return array_merge(
+					(array) $stylesheets,
+					array_filter( (array) apply_filters( 'wmhook_reykjavik_setup_editor_stylesheets', array() ) )
+				);
+
+		} // /editor_frontend_stylesheets
 
 
 

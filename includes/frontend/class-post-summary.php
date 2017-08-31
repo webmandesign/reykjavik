@@ -131,12 +131,6 @@ class Reykjavik_Post_Summary {
 					 * Post has more tag
 					 */
 
-						// Required for <!--more--> tag to work
-
-							global $more;
-
-							$more = 0;
-
 						if ( has_excerpt( $post_id ) ) {
 							$excerpt = '<div class="entry-summary has-more-tag">' . get_the_excerpt() . '</div>';
 						} else {

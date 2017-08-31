@@ -737,19 +737,12 @@ class Reykjavik_Post {
 
 				global $page, $paged;
 
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-
-				$paged = max( $page, $paged );
+				$paginated = max( absint( $page ), absint( $paged ) );
 
 
 			// Output
 
-				return 1 < $paged;
+				return 1 < $paginated;
 
 		} // /is_paged
 
