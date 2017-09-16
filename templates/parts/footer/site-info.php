@@ -52,7 +52,7 @@
 				printf(
 					esc_html_x( 'Using %1$s %2$s theme.', '1: theme name, 2: linked "WordPress" word.', 'reykjavik' ),
 					'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( 'reykjavik' )->get( 'Name' ) . '</strong></a>',
-					'<a href="' . esc_url( __( 'http://wordpress.org/', 'reykjavik' ) ) . '">WordPress</a>'
+					'<a href="' . esc_url( __( 'https://wordpress.org/', 'reykjavik' ) ) . '">WordPress</a>'
 				);
 
 				?>

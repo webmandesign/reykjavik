@@ -33,7 +33,8 @@
 
 	$title_paginated_url = get_permalink( $post_id );
 
-	$title = apply_filters( 'wmhook_reykjavik_intro_the_title', $title, $post_id );
+	$intro_title_tag = apply_filters( 'wmhook_reykjavik_intro_title_tag', $intro_title_tag, $post_id );
+	$title           = apply_filters( 'wmhook_reykjavik_intro_title', $title, $post_id );
 
 
 // Processing

@@ -33,7 +33,7 @@
 	}
 
 	a {
-		text-decoration: none;
+		@extend %accessible_link_style_disable;
 	}
 
 	.author {

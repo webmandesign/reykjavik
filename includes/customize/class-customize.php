@@ -1534,4 +1534,4 @@ class Reykjavik_Customize {
 
 } // /Reykjavik_Customize
 
-add_action( 'after_setup_theme', 'Reykjavik_Customize::init' ); // Hook before installation so the CSS is generated with all replacements.
+add_action( 'after_setup_theme', 'Reykjavik_Customize::init' );

@@ -833,7 +833,7 @@ class Reykjavik_Setup {
 
 			// Processing
 
-				set_transient( 'reykjavik_regenerate_styles', true );
+				set_transient( 'reykjavik_regenerate_styles', true, 24 * 60 * 60 );
 
 		} // /regenerate_styles
 

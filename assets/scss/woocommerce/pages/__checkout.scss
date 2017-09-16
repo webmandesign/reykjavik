@@ -34,6 +34,13 @@
 		.showlogin,
 		.showcoupon {
 			margin-#{$left}: $golden_major +em; // {{RTL}}
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
 
 			&::before {
 				@include rtl_property( content, '\2192', '\2190' ); // {{RTL}}

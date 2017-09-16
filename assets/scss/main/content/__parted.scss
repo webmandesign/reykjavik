@@ -11,6 +11,11 @@
 .post-table-of-contents {
 	margin-top: power( $golden, 2 ) +rem;
 
+	a {
+		@extend %font_weight_600;
+		@extend %accessible_link_style_disable;
+	}
+
 	ol {
 		counter-reset: table-of-contents-counter;
 	}
@@ -26,10 +31,6 @@
 
 		&::before {
 			display: none;
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 	}

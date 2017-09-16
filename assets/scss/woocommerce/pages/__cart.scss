@@ -193,6 +193,7 @@
 			font-size: 1em - $golden_minor / 4;
 
 			&:last-child {
+				max-width: 12em;
 				text-align: $left; // {{RTL}}
 			}
 

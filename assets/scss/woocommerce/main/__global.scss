@@ -55,6 +55,7 @@
 		font-size: 1rem - $golden_minor / 2;
 		font-weight: 700;
 		text-transform: uppercase;
+		text-decoration: none;
 		letter-spacing: .075em;
 		border: 2px solid;
 		transition: border-color ( $small_animation_speed +s );
@@ -62,7 +63,6 @@
 		&:hover,
 		&:focus,
 		&:active {
-			text-decoration: none;
 			border-color: transparent;
 		}
 

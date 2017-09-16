@@ -37,7 +37,15 @@
 		color: inherit;
 
 		a {
+			text-decoration: none;
 			color: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
+
 		}
 
 		&-item:last-child {

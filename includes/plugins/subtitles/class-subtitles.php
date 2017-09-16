@@ -66,7 +66,7 @@ class Reykjavik_Subtitles {
 					// Filters
 
 						add_filter( 'single_post_title',                __CLASS__ . '::single_post_title', 100, 2 );
-						add_filter( 'wmhook_reykjavik_intro_the_title', __CLASS__ . '::single_post_title', 10, 2 );
+						add_filter( 'wmhook_reykjavik_intro_title', __CLASS__ . '::single_post_title', 10, 2 );
 
 		} // /__construct
 

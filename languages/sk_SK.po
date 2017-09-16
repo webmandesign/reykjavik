@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
-"Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
+"Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
 "POT-Creation-Date: 2017-08-31 12:11+0200\n"
 "PO-Revision-Date: 2017-08-31 12:12+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"

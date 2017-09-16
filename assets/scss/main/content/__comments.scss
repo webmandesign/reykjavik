@@ -151,8 +151,26 @@
 
 // Content
 
-	.comment-body {
-		padding-bottom: 0;
+	.comment {
+
+		&-body {
+			padding-bottom: 0;
+		}
+
+		&-content {
+
+			ol {
+				list-style: decimal;
+
+				ol,
+				ol ol {
+					list-style: inherit;
+				}
+
+			}
+
+		}
+
 	}
 
 

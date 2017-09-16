@@ -191,9 +191,12 @@
 
 	// One Click Demo Import
 
-		if ( class_exists( 'OCDI_Plugin' ) && is_admin() ) {
-			require REYKJAVIK_PATH_PLUGINS . 'one-click-demo-import/one-click-demo-import.php';
-		}
+		/**
+		 * @todo  OCDI plugin compatibility once you create demo XML.
+		 */
+		// if ( class_exists( 'OCDI_Plugin' ) && is_admin() ) {
+		// 	require REYKJAVIK_PATH_PLUGINS . 'one-click-demo-import/one-click-demo-import.php';
+		// }
 
 	// Smart Slider 3
 

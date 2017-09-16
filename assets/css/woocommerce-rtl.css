@@ -52,9 +52,9 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 .woocommerce mark, #page .woocommerce mark { margin: 0; font-weight: 700; background: none; color: inherit; box-shadow: none; -webkit-box-decoration-break: slice; box-decoration-break: slice; }
 
-.title .edit { display: inline-block; padding: 0.38em 1em; margin-bottom: 1em; font-size: 0.81rem; font-weight: 700; text-transform: uppercase; letter-spacing: .075em; border: 2px solid; transition: border-color 0.3s; }
+.title .edit { display: inline-block; padding: 0.38em 1em; margin-bottom: 1em; font-size: 0.81rem; font-weight: 700; text-transform: uppercase; text-decoration: none; letter-spacing: .075em; border: 2px solid; transition: border-color 0.3s; }
 
-.title .edit:hover, .title .edit:focus, .title .edit:active { text-decoration: none; border-color: transparent; }
+.title .edit:hover, .title .edit:focus, .title .edit:active { border-color: transparent; }
 
 .title .edit::before { content: '\f411'; margin-left: 0.38em; }
 
@@ -65,7 +65,7 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 /* FILE: woocommerce/main/__layout.scss */
 .no-widgets-sidebar.woocommerce-page .content-area { width: 100%; }
 
-@media only screen and (min-width: 80em) { .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce, .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce-message { width: 169.49153%; margin-top: 12%; margin-bottom: 12%; margin-right: -69.49153%; margin-left: 0; }
+@media only screen and (min-width: 80em) { .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce, .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce-message { width: 172.41379%; margin-top: 12%; margin-bottom: 12%; margin-right: -72.41379%; margin-left: 0; }
   .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce:first-child, .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce-message:first-child { margin-top: 0; }
   .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce:last-child, .woocommerce-page.page-layout-outdented .entry-content-inner > .woocommerce-message:last-child { margin-bottom: 0; } }
 
@@ -534,7 +534,7 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 
 .single-product-images > .gallery-item, .single-product-images img { width: 100%; }
 
-.single-product-images a { position: relative; display: block; color: inherit; }
+.single-product-images a { position: relative; display: block; text-decoration: none; color: inherit; }
 
 .single-product-images .thumbnails { padding: 1.62em 0 1em; white-space: nowrap; overflow-x: auto; }
 
@@ -577,7 +577,9 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 
 .woocommerce-breadcrumb { margin-bottom: 0.62em; text-transform: uppercase; font-size: 0.81em; color: inherit; }
 
-.woocommerce-breadcrumb a { color: inherit; }
+.woocommerce-breadcrumb a { text-decoration: none; color: inherit; }
+
+.woocommerce-breadcrumb a:hover, .woocommerce-breadcrumb a:focus, .woocommerce-breadcrumb a:active { text-decoration: underline; }
 
 .woocommerce-breadcrumb-item:last-child { display: none; }
 
@@ -653,7 +655,7 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 
 .demo_store::before, .woocommerce-store-notice::before { content: '\f455'; font-size: 1rem; margin-left: 0.38em; }
 
-.demo_store a, .woocommerce-store-notice a { color: inherit; }
+.demo_store a, .woocommerce-store-notice a { text-decoration: none; color: inherit; }
 
 .woocommerce-store-notice__dismiss-link { margin-right: 1.62em; }
 
@@ -853,7 +855,7 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .shipping td { font-size: 0.905em; }
 
-.shipping td:last-child { text-align: right; }
+.shipping td:last-child { max-width: 12em; text-align: right; }
 
 .shipping td > p { clear: both; }
 
@@ -900,7 +902,9 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .woocommerce-checkout form + .checkout { padding-top: 1.62em; }
 
-.woocommerce-checkout .showlogin, .woocommerce-checkout .showcoupon { margin-right: 0.62em; }
+.woocommerce-checkout .showlogin, .woocommerce-checkout .showcoupon { margin-right: 0.62em; text-decoration: none; }
+
+.woocommerce-checkout .showlogin:hover, .woocommerce-checkout .showlogin:focus, .woocommerce-checkout .showlogin:active, .woocommerce-checkout .showcoupon:hover, .woocommerce-checkout .showcoupon:focus, .woocommerce-checkout .showcoupon:active { text-decoration: underline; }
 
 .woocommerce-checkout .showlogin::before, .woocommerce-checkout .showcoupon::before { content: "←"; margin-left: 0.62em; }
 

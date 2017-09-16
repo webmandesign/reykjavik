@@ -32,6 +32,17 @@
 
 		}
 
+		li a {
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
+
+		}
+
 		ul {
 
 			ul {

@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.4.1
+
+* **Fix**: Reykjavik theme reference.
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-customize-styles.php
+
+
 ## 2.4.0
 
 * **Fix**: Not overriding WordPress globals

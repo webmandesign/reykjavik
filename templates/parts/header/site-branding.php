@@ -34,7 +34,6 @@
 		 * Default theme logo image fallback
 		 *
 		 * HTML was taken from WordPress native `the_custom_logo()` function.
-		 * Hard-coding microformats here as this is a demo logo anyway.
 		 */
 		$logo_image = '';
 

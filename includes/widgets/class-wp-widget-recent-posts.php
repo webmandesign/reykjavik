@@ -215,8 +215,8 @@
 			/**
 			 * Outputs the settings form
 			 *
-			 * @since    1.3.0
-			 * @version  1.3.0
+			 * @since    1.0.0
+			 * @version  1.0.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -238,8 +238,8 @@
 			/**
 			 * Option field: Category
 			 *
-			 * @since    1.3.0
-			 * @version  1.3.0
+			 * @since    1.0.0
+			 * @version  1.0.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -272,8 +272,8 @@
 			/**
 			 * Handles updating settings for the current widget instance
 			 *
-			 * @since    1.3.0
-			 * @version  1.3.0
+			 * @since    1.0.0
+			 * @version  1.0.0
 			 *
 			 * @param  array $new_instance  New settings for this instance as input by the user via WP_Widget::form().
 			 * @param  array $old_instance  Old settings for this instance.

@@ -114,4 +114,15 @@ $icon_size: 3.62em;
 
 	}
 
+	li a {
+		text-decoration: underline;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+		}
+
+	}
+
 }

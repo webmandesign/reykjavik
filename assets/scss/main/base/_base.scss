@@ -37,54 +37,6 @@
 
 	}
 
-	ol {
-		counter-reset: orderedList;
-
-		.entry-content & {
-			margin-left: 0;
-			margin-right: 0;
-			list-style: none;
-
-			ol {
-				margin-#{$left}: $golden_minor + 1em; // {{RTL}}
-			}
-
-			> li {
-				display: block;
-
-				&::before {
-					counter-increment: orderedList;
-					content: counters(orderedList, '.') ') ';
-					margin-#{$right}: $golden_major +em; // {{RTL}}
-					font-weight: 700;
-				}
-
-			}
-
-			&[start],
-			&[reversed] {
-
-				&,
-				& ol {
-					margin-#{$left}: $golden_minor + 1em;
-					list-style: decimal;
-				}
-
-				li {
-					display: list-item;
-
-					&::before {
-						display: none;
-					}
-
-				}
-
-			}
-
-		}
-
-	}
-
 	abbr {
 		@extend %font_weight_600;
 	}

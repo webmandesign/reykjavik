@@ -106,18 +106,22 @@ class Reykjavik_Sidebar {
 			// Helper variables
 
 				$widget_areas = array(
+
 						'sidebar' => array(
 							'name'        => esc_html__( 'Sidebar', 'reykjavik' ),
 							'description' => esc_html__( 'Default sidebar area.', 'reykjavik' ),
 						),
+
 						'intro' => array(
 							'name'        => esc_html__( 'Intro Widgets', 'reykjavik' ),
 							'description' => esc_html__( 'Widgetized area displayed at the bottom of the Intro title section.', 'reykjavik' ),
 						),
+
 						'footer' => array(
 							'name'        => esc_html__( 'Footer Widgets', 'reykjavik' ),
 							'description' => esc_html__( 'Widgetized area displaying the main website footer content.', 'reykjavik' ),
 						),
+
 					);
 
 

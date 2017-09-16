@@ -42,6 +42,7 @@
 	}
 
 	a {
+		@extend %accessible_link_style_disable;
 		display: block;
 		margin: 1px; // For focus outline to be visible in whole.
 		color: inherit;

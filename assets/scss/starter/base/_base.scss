@@ -21,11 +21,8 @@
 
 	a {
 		@extend %break_words;
-		text-decoration: none;
 
-		&:hover {
-			text-decoration: underline;
-		}
+		&:hover {}
 
 		&:focus {
 			outline: thin dashed;
@@ -176,24 +173,6 @@
 
 		li > & {
 			margin-bottom: 0;
-		}
-
-	}
-
-	ol {
-
-		ol {
-			list-style: upper-alpha;
-
-			ol {
-				list-style: upper-roman;
-
-				ol {
-					list-style: lower-alpha;
-				}
-
-			}
-
 		}
 
 	}
