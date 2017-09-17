@@ -139,6 +139,10 @@
 
 	.cart_totals {
 
+		.shop_table {
+			margin-bottom: 2em;
+		}
+
 		.checkout-button {
 			width: 100%;
 			padding: ( $golden_minor + 1em ) ( $golden_minor +em );

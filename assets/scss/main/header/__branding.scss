@@ -11,7 +11,7 @@
 // Extender
 
 	%site_title {
-		@extend %accessible_link_style_disable;
+		text-decoration: none;
 		color: inherit;
 	}
 
@@ -31,9 +31,7 @@
 
 		a {
 
-			&,
-			&:hover,
-			&:active {
+			@include haf( ( '&', 'h', 'f', 'a' ) ) {
 				@extend %site_title;
 			}
 

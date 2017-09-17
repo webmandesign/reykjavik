@@ -169,13 +169,8 @@
 				transition: background .3s,
 				            color .3s,
 				            border .3s;
-			}
 
-			a {
-
-				&:hover,
-				&:focus,
-				&:active {
+				@include haf() {
 					text-decoration: none;
 				}
 

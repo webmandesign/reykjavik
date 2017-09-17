@@ -11,6 +11,15 @@
 
 // Elements
 
+	a {
+		text-decoration: underline;
+
+		@include haf() {
+			text-decoration: none;
+		}
+
+	}
+
 	ul, ol {
 		margin-bottom: $golden +em;
 	}

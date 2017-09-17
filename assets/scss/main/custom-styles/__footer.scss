@@ -80,9 +80,7 @@
 		input[type="submit"] {
 			text-shadow: none; //*
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				/*[*/
 				background-color: map_get( $colors, 'footer_headings' );
 				color: map_get( $colors, 'footer_background' );

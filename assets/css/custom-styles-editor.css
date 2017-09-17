@@ -151,10 +151,10 @@ embed, iframe, object, video { width: 100% !important; }
 
 @media only screen and (min-width: 80em) { .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > h2:not(:first-child), .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > .outdent-heading:not(:first-child) { margin-top: 12%; } }
 
-@media only screen and (min-width: 80em) { .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) { padding-left: 42% !important; }
-  .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > h2, .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > .outdent-heading { width: 172.41379%; height: 1.62em; padding-right: 113.7931%; margin-left: -72.41379%; margin-bottom: -1.62em; }
+@media only screen and (min-width: 80em) { .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) { padding-left: 41.056% !important; }
+  .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > h2, .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > .outdent-heading { width: 169.65255%; height: 1.62em; padding-right: 113.5722%; margin-left: -69.65255%; margin-bottom: -1.62em; }
   .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > h2.uppercase, .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > .outdent-heading.uppercase { letter-spacing: .075em; }
   .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > h2 + h3, .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) > .outdent-heading + h3 { margin-top: 0; }
-  .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) .outdent-content { width: calc( 172.41379% + 20px); margin-top: 12%; margin-bottom: 12%; margin-left: calc( -72.41379% - 10px); margin-right: -10px; }
+  .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) .outdent-content { width: calc( 169.65255% + 20px); margin-top: 12%; margin-bottom: 12%; margin-left: calc( -69.65255% - 10px); margin-right: -10px; }
   .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) .outdent-content:first-child { margin-top: 0; }
   .page-layout-outdented:not(.content-layout-no-paddings):not(.page-template-sidebar) .outdent-content:last-child { margin-bottom: 0; } }

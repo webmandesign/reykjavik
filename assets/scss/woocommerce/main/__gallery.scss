@@ -93,9 +93,7 @@
 					content: '\f402';
 				}
 
-				&:hover,
-				&:focus,
-				&:active {
+				@include haf() {
 					text-decoration: none;
 				}
 

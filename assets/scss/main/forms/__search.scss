@@ -30,10 +30,7 @@ form[role="search"],
 		input[type="submit"],
 		.search-submit {
 
-			&,
-			&:hover,
-			&:active,
-			&:focus {
+			@include haf( ( '&', 'h', 'f', 'a' ) ) {
 				@extend %form_search_submit_button;
 			}
 
@@ -47,10 +44,7 @@ form[role="search"],
 
 	.site .fl-builder-content .fl-module & input[type="submit"] {
 
-		&,
-		&:hover,
-		&:active,
-		&:focus {
+		@include haf( ( '&', 'h', 'f', 'a' ) ) {
 			@extend %form_search_submit_button;
 		}
 

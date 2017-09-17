@@ -242,3 +242,36 @@
 	}
 
 } // /rtl_property
+
+
+
+//
+// :hover, :active, :focus states
+//
+// You can optionally use :link and &.
+//
+// @param  string $state
+//
+@mixin haf( $states: ( 'h', 'a', 'f' ) ) {
+
+	$selectors: ();
+
+	@each $state in $states {
+		@if 'f' == $state {
+			$selectors: append( $selectors, '&:focus', comma );
+		} @else if 'a' == $state {
+			$selectors: append( $selectors, '&:active', comma );
+		} @else if 'l' == $state {
+			$selectors: append( $selectors, '&:link', comma );
+		} @else if '&' == $state {
+			$selectors: append( $selectors, '&', comma );
+		} @else {
+			$selectors: append( $selectors, '&:hover', comma );
+		}
+	}
+
+	#{ $selectors } {
+		@content;
+	}
+
+} // /haf

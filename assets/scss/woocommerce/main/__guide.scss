@@ -178,9 +178,10 @@
 
 				}
 
-				&:hover,
-				&:focus,
-				&:active,
+				@include haf() {
+					opacity: 1;
+				}
+
 				.is-current & {
 					opacity: 1;
 				}

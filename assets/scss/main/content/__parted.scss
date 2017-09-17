@@ -13,7 +13,12 @@
 
 	a {
 		@extend %font_weight_600;
-		@extend %accessible_link_style_disable;
+		text-decoration: none;
+
+		@include haf() {
+			text-decoration: underline;
+		}
+
 	}
 
 	ol {

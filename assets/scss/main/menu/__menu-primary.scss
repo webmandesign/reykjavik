@@ -81,9 +81,7 @@
 				border-#{$left}-width: 2px; // {{RTL}}
 				transition: border-color ( $small_animation_speed +s );
 
-				&:hover,
-				&:focus,
-				&:active {
+				@include haf() {
 					border-color: currentColor;
 				}
 

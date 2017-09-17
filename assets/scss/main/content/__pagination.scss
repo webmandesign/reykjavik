@@ -20,7 +20,6 @@
 
 	a,
 	span {
-		margin: 0;
 		background: transparent;
 		color: inherit;
 		border-width: 1px;
@@ -34,9 +33,8 @@
 	}
 
 	a {
-		@extend %accessible_link_style_disable;
 
-		&:hover {
+		@include haf() {
 			@extend %background_overlay_from_text_color;
 		}
 

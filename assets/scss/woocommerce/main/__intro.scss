@@ -40,9 +40,7 @@
 			text-decoration: none;
 			color: inherit;
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				text-decoration: underline;
 			}
 

@@ -180,9 +180,7 @@
 			opacity: .33;
 			z-index: 10;
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				opacity: .66;
 			}
 

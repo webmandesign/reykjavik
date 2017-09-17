@@ -60,9 +60,7 @@
 		border: 2px solid;
 		transition: border-color ( $small_animation_speed +s );
 
-		&:hover,
-		&:focus,
-		&:active {
+		@include haf() {
 			border-color: transparent;
 		}
 

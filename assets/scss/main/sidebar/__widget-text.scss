@@ -117,9 +117,7 @@ $icon_size: 3.62em;
 	li a {
 		text-decoration: underline;
 
-		&:hover,
-		&:focus,
-		&:active {
+		@include haf() {
 			text-decoration: none;
 		}
 

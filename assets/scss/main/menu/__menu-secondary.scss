@@ -57,9 +57,7 @@
 			border-top-width: 2px;
 			transition: border-color ( $small_animation_speed +s );
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				border-color: currentColor;
 			}
 

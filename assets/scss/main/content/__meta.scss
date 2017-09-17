@@ -33,7 +33,12 @@
 	}
 
 	a {
-		@extend %accessible_link_style_disable;
+		text-decoration: none;
+
+		@include haf() {
+			text-decoration: underline;
+		}
+
 	}
 
 	.author {

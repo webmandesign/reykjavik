@@ -42,9 +42,7 @@
 			transition: none;
 		}
 
-		&:hover,
-		&:focus,
-		&:active {
+		@include haf() {
 			text-decoration: none;
 			border-color: transparent;
 		}

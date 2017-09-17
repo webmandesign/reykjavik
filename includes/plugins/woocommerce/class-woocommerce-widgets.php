@@ -48,13 +48,17 @@ class Reykjavik_WooCommerce_Widgets {
 
 						add_action( 'widgets_init', __CLASS__ . '::register_widget_areas', 1 );
 
-						add_filter( 'sidebars_widgets', __CLASS__ . '::shop_sidebar', 5 );
-
 					// Filters
+
+						add_filter( 'sidebars_widgets', __CLASS__ . '::shop_sidebar', 5 );
 
 						add_filter( 'wmhook_reykjavik_sidebar_disable', __CLASS__ . '::sidebar_disable' );
 
 						add_filter( 'get_product_search_form', __CLASS__ . '::product_search_form' );
+
+						if ( is_callable( 'Reykjavik_Sidebar::widget_tag_cloud_args' ) ) {
+							add_filter( 'woocommerce_product_tag_cloud_widget_args', 'Reykjavik_Sidebar::widget_tag_cloud_args' );
+						}
 
 		} // /__construct
 

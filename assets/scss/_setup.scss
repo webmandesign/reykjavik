@@ -56,7 +56,7 @@
 		$page_content_width: 62; // In %
 		$page_content_gutter: 8; // In %
 
-			$page_content_width: $page_content_width - $page_content_gutter / 2;
+			$page_content_width: $page_content_width - ( $page_content_gutter * .382 );
 
 
 

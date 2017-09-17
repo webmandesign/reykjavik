@@ -87,7 +87,12 @@
 			float: $right; // {{RTL}}
 			margin-top: $golden_minor +em;
 			margin-#{$right}: $golden_major +em; // {{RTL}}
+			text-decoration: none;
 			font-size: 1em - $golden_minor / 2;
+
+			@include haf() {
+				text-decoration: underline;
+			}
 
 			&::before {
 				@extend %wc_genericon;

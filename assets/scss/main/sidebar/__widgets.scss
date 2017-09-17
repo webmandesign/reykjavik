@@ -35,9 +35,7 @@
 		li a {
 			text-decoration: none;
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				text-decoration: underline;
 			}
 

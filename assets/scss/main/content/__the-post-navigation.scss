@@ -46,20 +46,14 @@
 	}
 
 	a {
-		@extend %accessible_link_style_disable;
 		display: block;
 		padding: 8% 0;
 		margin: 1px; // For focus outline
+		text-decoration: none;
 		color: inherit;
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
 			padding: $padding_vertical 0;
-		}
-
-		&:hover,
-		&:focus,
-		&:active {
-			text-decoration: none;
 		}
 
 	}

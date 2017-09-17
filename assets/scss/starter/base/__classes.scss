@@ -33,33 +33,33 @@
 		padding: 0;
 		margin: 0;
 
-		&.skip-link:hover,
-		&.skip-link:active,
-		&.skip-link:focus {
-			clip: auto !important;
-			display: block;
-			width: auto;
-			height: auto;
-			#{$left}: $golden_minor +rem; // {{RTL}}
-			top: $golden_minor +rem;
-			line-height: normal;
-			text-decoration: none;
-			padding: 1rem;
-			font-size: 14px;
-			font-size: .81rem;
-			font-weight: 700;
-			background-color: #47c;
-			color: #fff;
-			z-index: 100000; /* Above WP toolbar. */
+		&.skip-link {
+
+			@include haf() {
+				clip: auto !important;
+				display: block;
+				width: auto;
+				height: auto;
+				#{$left}: $golden_minor +rem; // {{RTL}}
+				top: $golden_minor +rem;
+				line-height: normal;
+				text-decoration: none;
+				padding: 1rem;
+				font-size: 14px;
+				font-size: .81rem;
+				font-weight: 700;
+				background-color: #47c;
+				color: #fff;
+				z-index: 100000; /* Above WP toolbar. */
+			}
+
 		}
 
 	}
 
 	.focus-position-static {
 
-		&:hover,
-		&:active,
-		&:focus {
+		@include haf() {
 			position: static !important;
 			margin: 1px; // For focus outline
 			text-align: center;

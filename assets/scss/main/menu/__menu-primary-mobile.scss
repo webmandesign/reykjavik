@@ -180,9 +180,7 @@
 				animation: comeInFromBottom ( $large_animation_speed * 2s );
 			}
 
-			&:hover,
-			&:focus,
-			&:active {
+			@include haf() {
 				opacity: 1;
 			}
 
