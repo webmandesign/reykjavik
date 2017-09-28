@@ -1616,9 +1616,11 @@ blockquote.alignleft::before { float: right; margin-right: 0; margin-left: .25em
 
 blockquote.alignright { margin-right: 0; }
 
+.gallery img { width: 100%; }
+
 .gallery-columns-1 .gallery-item { margin-top: 2em; }
 
-.gallery-caption { padding: 1em; }
+.gallery-caption { padding: 1em; margin-top: -1px; }
 
 /* FILE: main/content/__layout.scss */
 .site-content-inner { padding: 5rem 0; }
@@ -1940,7 +1942,7 @@ a .entry-date { cursor: pointer; }
 
 .comment-reply-title { font-size: inherit; text-transform: uppercase; }
 
-.comment-list > .pingback, .comment-list > .trackback { padding: 0; }
+.comment-list > .pingback, .comment-list > .trackback { min-height: 0; padding: 0; }
 
 .pingback .comment-body, .trackback .comment-body { padding: 1em; margin: 1.62em 0; border-width: 1px; border-style: dashed; overflow: hidden; }
 

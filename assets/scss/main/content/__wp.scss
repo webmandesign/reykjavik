@@ -47,6 +47,10 @@
 
 	.gallery {
 
+		img {
+			width: 100%;
+		}
+
 		&-columns-1 .gallery-item {
 			margin-top: 2em;
 		}
@@ -54,6 +58,7 @@
 		&-caption {
 			@extend %font_style_italic;
 			padding: 1em;
+			margin-top: -1px; // To prevent a gap in certain cases.
 		}
 
 	}

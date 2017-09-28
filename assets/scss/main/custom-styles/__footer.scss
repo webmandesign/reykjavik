@@ -36,7 +36,7 @@
 			//*/
 			/**if!(footer_image_repeat)
 			background-repeat: no-repeat;
-			endif(footer_image_repeat)**/
+			endif!(footer_image_repeat)**/
 			/**if(footer_image_attachment)
 			background-attachment: fixed;
 			endif(footer_image_attachment)**/

@@ -24,9 +24,9 @@ body { background-color: #e3e3e4; }
 
 ::placeholder, :disabled::placeholder { color: inherit !important; }
 
-.gallery-caption { background-color: rgba(0, 0, 0, 0.8); color: #fdfcfc; }
-
 button, input, select, textarea { background-color: transparent; }
+
+.gallery-caption { background-color: rgba(0, 0, 0, 0.8); color: #fdfcfc; }
 
 .color-error, .fl-builder-content .color-error, .site .fl-builder-content .color-error.button, .site .fl-builder-content .color-error.button:hover, .hover-color-error.fl-col:hover .fl-col-content { background-color: rgba(238, 0, 0, 0.85); color: #fff; }
 

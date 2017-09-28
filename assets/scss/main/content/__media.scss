@@ -75,7 +75,7 @@
 			.posts & {
 				float: none;
 				width: auto;
-				margin: calc( #{ $golden * -1em } - 1px ); // Cover border around post entry.
+				margin: calc( #{ -$golden +em } - 1px ); // Cover border around post entry.
 				margin-bottom: $golden +em;
 
 				.search-results & {
