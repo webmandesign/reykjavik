@@ -9,7 +9,7 @@
  * @subpackage  Core
  *
  * @since    1.0.0
- * @version  2.4.0
+ * @version  2.4.2
  *
  * Contents:
  *
@@ -37,7 +37,7 @@ final class Reykjavik_Library {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.8.0
+		 * @version  2.4.2
 		 */
 		private function __construct() {
 
@@ -53,8 +53,6 @@ final class Reykjavik_Library {
 
 						// Flushing transients
 
-							add_action( 'switch_theme', __CLASS__ . '::image_ids_transient_flusher' );
-
 							add_action( 'edit_category', __CLASS__ . '::all_categories_transient_flusher' );
 
 							add_action( 'save_post', __CLASS__ . '::all_categories_transient_flusher' );
@@ -68,8 +66,6 @@ final class Reykjavik_Library {
 						// Widgets improvements
 
 							add_filter( 'show_recent_comments_widget_style', '__return_false' );
-
-							add_filter( 'widget_text', 'do_shortcode' );
 
 						// Table of contents
 
@@ -617,95 +613,6 @@ final class Reykjavik_Library {
 				}
 
 		} // /contextual_help
-
-
-
-		/**
-		 * Get image ID from its URL
-		 *
-		 * @since    1.0.0
-		 * @version  2.0.0
-		 *
-		 * @link  http://pippinsplugins.com/retrieve-attachment-id-from-image-url/
-		 * @link  http://make.wordpress.org/core/2012/12/12/php-warning-missing-argument-2-for-wpdb-prepare/
-		 *
-		 * @param  string $url
-		 */
-		public static function get_image_id_from_url( $url ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_reykjavik_library_get_image_id_from_url_pre', false, $url );
-
-				if ( false !== $pre ) {
-					return $pre;
-				}
-
-
-			// Helper variables
-
-				global $wpdb;
-
-				$output = null;
-
-				$cache = array_filter( (array) get_transient( 'reykjavik_image_ids' ) );
-
-
-			// Return cached result if found and if relevant
-
-				if (
-						! empty( $cache )
-						&& isset( $cache[ $url ] )
-						&& wp_get_attachment_url( absint( $cache[ $url ] ) )
-						&& $url == wp_get_attachment_url( absint( $cache[ $url ] ) )
-					) {
-
-					return absint( $cache[ $url ] );
-
-				}
-
-
-			// Processing
-
-				if (
-						is_object( $wpdb )
-						&& isset( $wpdb->posts )
-					) {
-
-					$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT id FROM $wpdb->posts WHERE guid='%s'", esc_url( $url ) ) );
-
-					$output = ( isset( $attachment[0] ) ) ? ( $attachment[0] ) : ( null );
-
-				}
-
-				// Cache the new record
-
-					$cache[ $url ] = $output;
-
-					set_transient( 'reykjavik_image_ids', array_filter( (array) $cache ) );
-
-
-			// Output
-
-				return absint( $output );
-
-		} // /get_image_id_from_url
-
-
-
-			/**
-			 * Flush out the transients used in `get_image_id_from_url`
-			 *
-			 * @since    1.0.0
-			 * @version  1.0.0
-			 */
-			public static function image_ids_transient_flusher() {
-
-				// Processing
-
-					delete_transient( 'reykjavik_image_ids' );
-
-			} // /image_ids_transient_flusher
 
 
 

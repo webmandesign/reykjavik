@@ -1,5 +1,17 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.4.2
+
+* **Update**: Removing shortcodes in Text widget
+* **Update**: Removing `get_image_id_from_url()` in favor of WordPress native `attachment_url_to_postid()`
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-core.php
+
+
 ## 2.4.1
 
 * **Fix**: Reykjavik theme reference.
