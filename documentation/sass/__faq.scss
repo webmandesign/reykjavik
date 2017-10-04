@@ -1,0 +1,21 @@
+/* FILE: __faq.scss */
+
+
+
+
+
+#tips {
+	counter-reset: faq;
+
+	+ .section h3 .badge::before {
+		counter-increment: faq;
+		content: counter( faq );
+	}
+
+}
+
+
+
+#faq ~ h3 {
+	font-weight: 700;
+}

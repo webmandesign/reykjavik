@@ -1,0 +1,46 @@
+/* FILE: __sidebar.scss */
+
+
+
+
+
+.sidebar {
+	top: 50px;
+	font-size: .9em;
+	font-weight: 400;
+	background-color: $color_sidebar_bg;
+	color: $color_sidebar_txt;
+	border: 0;
+
+	a {
+		text-decoration: none;
+	}
+
+	.nav {
+		border-top: 1px solid $color_sidebar_bd;
+
+		> li {
+			border-bottom: 1px solid $color_sidebar_bd;
+
+			> a {
+				padding-top: $nav_item_padding;
+				padding-bottom: $nav_item_padding;
+				color: inherit;
+			}
+
+			&.active > a {
+				font-weight: 600;
+			}
+
+		}
+
+		> li.active > a,
+		> li > a:focus,
+		> li > a:hover {
+			background-color: $color_nav_active_bg;
+			color: $color_nav_active_txt;
+		}
+
+	}
+
+}

@@ -1,0 +1,45 @@
+//
+// Documentation stylesheet setup
+//
+
+
+
+
+
+$font_family_body : 'Open Sans', sans-serif;
+$font_family_headings : 'Montserrat', sans-serif;
+
+
+
+$content_width    : 1200px;
+$nav_item_padding : .38em;
+
+$color_header_bg : #131314;
+$color_logo      : #fff;
+
+$color_sidebar_bg  : #273a7d;
+$color_sidebar_txt : #fefeff;
+$color_sidebar_bd  : #475a9d;
+
+$color_nav_active_bg  : $color_sidebar_bd;
+$color_nav_active_txt : #fff;
+
+$color_intro_bg  : #0f1732;
+$color_intro_txt : #fefeff;
+
+$color_content_txt     : #6e6e6f;
+$color_content_bd      : #e3e3e4;
+$color_content_heading : #232324;
+
+$color_figure_bg : #fff;
+
+$color_anatomy_heading      : #131314;
+$color_anatomy_bd           : #c3c3c4;
+$color_anatomy_active_bg    : #fe0000;
+$color_anatomy_active_txt   : #fff;
+$color_anatomy_inactive_bg  : #eeeeef;
+$color_anatomy_inactive_txt : #666667;
+
+$color_footer_bg  : $color_header_bg;
+$color_footer_txt : #939394;
+$color_footer_lnk : $color_logo;

@@ -1,0 +1,18 @@
+/* FILE: __footer.scss */
+
+
+
+
+
+.footer {
+	padding: 3.62em 40px;
+	margin: 3.62em -40px -20px;
+	font-size: .9em;
+	background-color: $color_footer_bg;
+	color: $color_footer_txt;
+
+	a {
+		color: $color_footer_lnk;
+	}
+
+}

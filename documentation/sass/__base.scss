@@ -1,0 +1,122 @@
+/* FILE: __base.scss */
+
+
+
+
+
+// Typography
+
+	html {
+		font-size: 100%;
+	}
+
+	body {
+		line-height: 1.62;
+		font-family: $font_family_body;
+		font-size: 16px;
+		color: $color_content_txt;
+	}
+
+
+
+// Headings
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: $font_family_headings;
+		font-weight: 700;
+		color: $color_content_heading;
+	}
+
+	h5, h6 {
+		font-size: 1em;
+	}
+
+
+
+// Elements
+
+	a {
+
+		&:not(.btn) {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+	}
+
+
+
+	ul, ol {
+
+		p + & {
+			margin-top: 1em;
+		}
+
+	}
+
+
+
+	dl {
+		padding: 1.62em;
+		margin: 1.62em 0 0;
+		border: 2px solid $color_content_bd;
+		border-radius: .19em;
+	}
+
+		dt {
+			margin: .62em 0;
+			font-weight: 400;
+			overflow: hidden;
+
+			code {
+				font-size: 1.19em;
+			}
+
+			dd + & {
+				margin-top: 1.62em;
+			}
+
+		}
+
+		dd {
+			margin-left: 2.62em;
+		}
+
+
+
+	code {
+		white-space: nowrap;
+	}
+
+
+
+	img {
+		max-width: 100%;
+	}
+
+
+
+	figure {
+		padding: 1em;
+		margin: .62em 0 1.62em;
+		text-align: center;
+		background: $color_figure_bg;
+		border: 2px solid $color_content_bd;
+		border-radius: .19em;
+
+		img {
+			border: 1px solid $color_content_bd;
+		}
+
+	}
+
+		figcaption {
+			padding: 0 6%;
+			margin-top: 1em;
+			font-size: .81em;
+			text-transform: uppercase;
+		}
