@@ -46,7 +46,7 @@ class Reykjavik_One_Click_Demo_Import {
 
 						add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles', 99 );
 
-						add_action( 'pt-ocdi/before_content_import', __CLASS__ . '::woocommerce_images' );
+						add_action( 'pt-ocdi/before_content_import', __CLASS__ . '::before' );
 
 						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
@@ -180,6 +180,43 @@ class Reykjavik_One_Click_Demo_Import {
 	/**
 	 * 30) Setup
 	 */
+
+		/**
+		 * Before import actions
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function before() {
+
+			// Helper variables
+
+				$image_sizes = array_filter( (array) apply_filters( 'wmhook_reykjavik_setup_image_sizes', array() ) );
+
+
+			// Processing
+
+				// Default logo
+
+					set_theme_mod( 'custom_logo', -1 );
+
+				// Image sizes
+
+					foreach ( array( 'thumbnail', 'medium', 'medium_large', 'large' ) as $size ) {
+						if ( isset( $image_sizes[ $size ] ) ) {
+							update_option( $size . '_size_w', $image_sizes[ $size ][0] );
+							update_option( $size . '_size_h', $image_sizes[ $size ][1] );
+							update_option( $size . '_crop', $image_sizes[ $size ][2] );
+						}
+					}
+
+				// WooCommerce image sizes
+
+					self::woocommerce_image_sizes();
+
+		} // /before
+
+
 
 		/**
 		 * After import actions
@@ -364,7 +401,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
-		public static function woocommerce_images() {
+		public static function woocommerce_image_sizes() {
 
 			// Requirements check
 
@@ -398,7 +435,7 @@ class Reykjavik_One_Click_Demo_Import {
 						) );
 					add_image_size( 'shop_thumbnail_image_size', 120, 120, true );
 
-		} // /woocommerce_images
+		} // /woocommerce_image_sizes
 
 
 

@@ -128,6 +128,9 @@ class Reykjavik_WooCommerce_Setup {
 		/**
 		 * Product class
 		 *
+		 * Note: do not use `.added-to-cart` class on page refresh
+		 * due to caching issues. @see  https://goo.gl/9TU5tW
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
@@ -152,7 +155,6 @@ class Reykjavik_WooCommerce_Setup {
 
 				$classes = (array) $classes; // Just in case...
 				$product = wc_get_product( $post_id );
-				$cart    = array_filter( array_map( 'Reykjavik_WooCommerce_Helpers::get_cart_product_id', (array) WC()->cart->get_cart() ) );
 
 
 			// Processing
@@ -161,12 +163,6 @@ class Reykjavik_WooCommerce_Setup {
 
 					if ( Reykjavik_WooCommerce_Helpers::get_product_gallery_image_ids( $product ) ) {
 						$classes[] = 'has-gallery';
-					}
-
-				// Product in cart?
-
-					if ( ! empty( $cart ) && in_array( get_the_ID(), $cart ) ) {
-						$classes[] = 'added-to-cart';
 					}
 
 

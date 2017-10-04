@@ -213,8 +213,7 @@ class Reykjavik_Post_Media {
 
 			// Helper variables
 
-				$output = '';
-
+				$output   = '';
 				$post_id  = get_the_ID();
 				$image_id = ( is_attachment() ) ? ( $post_id ) : ( get_post_thumbnail_id( $post_id ) );
 

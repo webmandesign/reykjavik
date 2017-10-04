@@ -604,6 +604,12 @@ class Reykjavik_Assets {
 
 					}
 
+				// Include icons stylesheet
+
+					if ( class_exists( 'WM_Icons' ) && $icons_font_stylesheet = get_option( 'wmamp-icon-font' ) ) {
+						$visual_editor_stylesheets[] = esc_url_raw( $icons_font_stylesheet );
+					}
+
 
 			// Output
 

@@ -289,11 +289,17 @@
 							<span class="description" style="display: inline-block; padding: 0 0 .38em">
 								<em>
 									<?php
+
 									printf(
 										esc_html__( 'For displaying icons on your website use a plugin, such as %1$s or %2$s.', 'reykjavik' ),
 										'<a href="https://wordpress.org/plugins/better-font-awesome/">' . esc_html_x( 'Better Font Awesome', 'Plugin name.', 'reykjavik' ) . '</a>',
 										'<a href="https://wordpress.org/plugins/ionicons-official/">' . esc_html_x( 'Ionicons Official', 'Plugin name.', 'reykjavik' ) . '</a>'
 									);
+
+									if ( class_exists( 'WM_Icons' ) ) {
+										echo '<br><strong>' . esc_html__( 'As your theme supports custom icons, you can simply use icon classes from Appearance &rarr; Icon Font.', '{%= text_domain %}' ) . '</strong>';
+									}
+
 									?>
 								</em>
 							</span>

@@ -200,7 +200,7 @@ Content Container
 
 					<h3>Installing WordPress</h3>
 
-					<p>If you need help installing WordPress, follow the instructions in <a href="http://codex.wordpress.org/Installing_WordPress" target="_blank">WordPress Codex</a>.</p>
+					<p>You can run WordPress <a href="https://support.webmandesign.eu/testing-a-theme-on-your-computer/" target="_blank">locally on your computer</a>, or install and use it <a href="https://codex.wordpress.org/Installing_WordPress" target="_blank">on your web hosting account</a> (what kind of <a href="#speed">web hosting should you use</a>?).</p>
 
 					<div class="alert alert-info">
 						<p><strong>Reykjavik</strong> requires WordPress version 4.7 to work properly.</p>
@@ -234,15 +234,16 @@ Content Container
 						<li><a title="WordPress Glossary Terms for Beginners" href="http://www.wpbeginner.com/glossary/" target="_blank">WordPress Glossary Terms for Beginners</a></li>
 						<li><a title="Most Frequently Asked Questions by WordPress Beginners" href="http://www.wpbeginner.com/beginners-guide/15-most-frequently-asked-questions-by-wordpress-beginners" target="_blank">Most Frequently Asked Questions by WordPress Beginners</a></li>
 						<li>Selection of Video courses:
-						<ul>
-							<li><a href="https://www.youtube.com/playlist?list=PLtaXuX0nEZk-rRfsl8lclMY5TncDmAUBm" target="_blank">The WordPress Beginner Tutorial Class</a></li>
-							<li><a href="https://www.youtube.com/playlist?list=PLfOXCtnURNbZjLUyU_Isp39VdAjqEctNw" target="_blank">WordPress for Beginners</a></li>
-							<li><a href="http://videos.wpbeginner.com/" target="_blank">WordPress Beginner Videos - Free WordPress Video Tutorials</a></li>
-							<li><a href="http://leveluptuts.com/tutorials/wordpress-basics" target="_blank">WordPress Basics</a></li>
-							<li><a href="https://webdesign.tutsplus.com/courses/a-beginners-guide-to-using-wordpress" target="_blank">A Beginner's Guide to Using WordPress</a></li>
-							<li><a href="https://www.udemy.com/getting-started-with-wordpress-a-beginners-guide/" target="_blank">Getting Started With WordPress - A Beginners Guide</a></li>
-							<li><a href="https://www.youtube.com/user/wpbeginner/videos" target="_blank">Useful WordPress tips</a></li>
-						</ul>
+							<ul>
+								<li><a href="https://www.youtube.com/playlist?list=PLfOXCtnURNbZjLUyU_Isp39VdAjqEctNw" target="_blank">WordPress for Beginners</a></li>
+								<li><a href="https://www.youtube.com/playlist?list=PLtaXuX0nEZk-rRfsl8lclMY5TncDmAUBm" target="_blank">The WordPress Beginner Tutorial Class</a></li>
+								<li><a href="https://thenewboston.com/videos.php?cat=105" target="_blank">WordPress Basics</a></li>
+								<li><a href="http://videos.wpbeginner.com/" target="_blank">WordPress Beginner Videos - Free WordPress Video Tutorials</a></li>
+								<li><a href="https://webdesign.tutsplus.com/courses/a-beginners-guide-to-using-wordpress" target="_blank">A Beginner's Guide to Using WordPress</a></li>
+								<li><a href="https://www.udemy.com/getting-started-with-wordpress-a-beginners-guide/" target="_blank">Getting Started With WordPress - A Beginners Guide</a></li>
+								<li><a href="https://www.youtube.com/user/wpbeginner/videos" target="_blank">Useful WordPress tips</a></li>
+							</ul>
+						</li>
 					</ul>
 
 				</div>
@@ -596,6 +597,10 @@ Content Container
 							<p>To choose some of the features included in this plugin: <strong>tiled galleries</strong>, image lightbox zooming effect, contact form, <strong>custom CSS</strong>, extra widgets, infinite scroll, better search, <strong>social networks sharing buttons</strong>, <strong>related posts display</strong>, <abbr title="Content Delivery Network">CDN</abbr>, site verification and others.</p>
 							<p>For more info on the plugin usage and functionality please visit the <a href="http://jetpack.me/" target="_blank"><strong>Jetpack.me</strong></a> website.</p>
 
+							<div class="alert alert-info">
+								<p><strong>TIP:</strong> For custom posts order use a plugin, such as <a href="https://wordpress.org/plugins/intuitive-custom-post-order/" target="_blank"><strong>Intuitive Custom Post Order</strong></a>.</p>
+							</div>
+
 						<h4 id="breadcrumbs-navxt">
 							<strong>Breadcrumbs NavXT</strong><br />
 							<small>(<a href="https://wordpress.org/plugins/breadcrumb-navxt/" target="_blank">https://wordpress.org/plugins/breadcrumb-navxt/</a>)</small>
@@ -919,6 +924,7 @@ Content Container
 							<p>It will display a list of child pages below the actual (parent) page content. You can tweak each child page display by <a href="#custom-fields">setting the corresponding page options</a>.</p>
 							<p>There will be a page <strong>featured image</strong> (you can then even set a different intro image displayed on the actual page with a dedicated <a href="#custom-fields">custom field</a>), page <strong>title</strong>, page <strong>excerpt</strong> and optional <strong>"Continue reading" button</strong> displayed. "Continue reading" button is displayed only if the page has some actual content.</p>
 							<p>To set up a child page excerpt please use the "Excerpt" field on page edit screen (if the field is not displayed below the page content editor, enable it in <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> tab in the upper right corner of the screen).</p>
+							<p>If you would like to custom order your child pages, use <a href="https://codex.wordpress.org/Pages_Add_New_Screen" target="_blank">page "Order" attribute</a>. Or you can <a href="#plugins-others">use a plugin</a> for this, such as <em>Nested Pages</em> or <em>Intuitive Custom Post Order</em>.</p>
 						</dd>
 					</dl>
 
@@ -1283,11 +1289,11 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 
 				<div class="col-sm-12 col-md-6">
 
-					<div class="alert alert-danger mt0">
-						<h4>My changes are not being applied on the website!</h4>
-						<p>There might be several different causes of such issue, in most cases they are related only to caching or to wrongly setup/installed WordPress:</p>
+					<div class="alert alert-warning mt0">
+						<h4>Why are my changes not being applied on the website?</h4>
+						<p>There might be several different causes of such issue, most likely they are related to caching:</p>
 						<ul>
-							<li>Try flushing your browser's cache first (repeatedly press <strong>CTRL&nbsp;+&nbsp;R</strong> keys (or <strong>SHIFT&nbsp;+&nbsp;F5</strong>, depending on your web browser) or use <a href="http://www.refreshyourcache.com/" target="_blank">instructions specific for your browser</a>).</li>
+							<li>Try flushing your browser's cache first (repeatedly press <strong>CTRL&nbsp;+&nbsp;R</strong> or <strong>SHIFT&nbsp;+&nbsp;F5</strong> keys or use <a href="http://www.refreshyourcache.com/" target="_blank">instructions specific for your browser</a>).</li>
 							<li>If you are using a caching plugin and/or <abbr title="Content Deliver Network">CDN</abbr>, flush the cache.</li>
 							<li>If you notice <strong>an error message in WordPress dashboard after leaving the theme customizer</strong>, please <a href="http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants" target="_blank">check whether you should set up the FTP credentials in your <code>wp-config.php</code> file</a>.</li>
 							<li>If none of the above helps, please <a href="https://www.webmandesign.eu/reference/#links-support">contact WebMan Design Support Center</a>.</li>
@@ -1646,10 +1652,10 @@ add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
 						<div class="col-sm-12 col-md-6">
 
 							<p>Yes, this theme predefines some useful CSS classes for you so you can use them in your page builder elements, shortcodes or directly in the HTML of your page or post. These custom special CSS classes will modify the appearance of your website elements.</p>
-							<p>For full, up-to-date list of these classes and instructions on how to use them, please, refer to the <a href="https://themedemos.webmandesign.eu/reykjavik/theme-features/custom-css-classes/" target="_blank">"Custom CSS classes" page at the theme demo website</a>.</p>
+							<p>For full, up-to-date list of these classes and instructions on how to use them, please, refer to the <a href="https://themedemos.webmandesign.eu/reykjavik/theme-features/css-classes/" target="_blank">"Helper CSS classes" page at the theme demo website</a>.</p>
 							<p>All of these classes are integrated with <a href="#beaver-builder">Beaver Builder page builder</a> CSS field for easier usage.</p>
 
-							<a href="https://themedemos.webmandesign.eu/reykjavik/theme-features/custom-css-classes/" target="_blank" class="btn btn-primary btn-lg mt-s"><strong>List of CSS classes</strong> you can use &raquo;</a>
+							<a href="https://themedemos.webmandesign.eu/reykjavik/theme-features/css-classes/" target="_blank" class="btn btn-primary btn-lg mt-s"><strong>List of CSS classes</strong> you can use &raquo;</a>
 
 						</div>
 

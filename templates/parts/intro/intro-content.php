@@ -15,7 +15,6 @@
 
 // Helper variables
 
-	$title        = get_the_title();
 	$post_id      = get_the_ID();
 	$posts_page   = get_option( 'page_for_posts' );
 	$page_summary = '';
@@ -28,9 +27,9 @@
 
 	if ( is_home() && $posts_page && ! is_front_page() ) {
 		$post_id = $posts_page;
-		$title   = get_the_title( $post_id );
 	}
 
+	$title               = get_the_title( $post_id );
 	$title_paginated_url = get_permalink( $post_id );
 
 	$intro_title_tag = apply_filters( 'wmhook_reykjavik_intro_title_tag', $intro_title_tag, $post_id );
