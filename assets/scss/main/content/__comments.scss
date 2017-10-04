@@ -128,6 +128,15 @@
 	.comment-meta {
 		border-bottom-width: 1px;
 
+		a {
+			text-decoration: none;
+
+			@include haf() {
+				text-decoration: underline;
+			}
+
+		}
+
 		.avatar {
 			border-radius: 0;
 
@@ -212,6 +221,11 @@
 
 	.comment-edit-link,
 	.comment-reply-link {
+		text-decoration: none;
+
+		@include haf() {
+			text-decoration: underline;
+		}
 
 		&::before {
 			@extend %genericon;

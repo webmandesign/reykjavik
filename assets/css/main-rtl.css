@@ -1906,6 +1906,10 @@ a .entry-date { cursor: pointer; }
 
 .comment-meta { border-bottom-width: 1px; }
 
+.comment-meta a { text-decoration: none; }
+
+.comment-meta a:hover, .comment-meta a:active, .comment-meta a:focus { text-decoration: underline; }
+
 .comment-meta .avatar { border-radius: 0; }
 
 @media only screen and (min-width: 42em) { .comment-meta .avatar { width: 80px; } }
@@ -1923,6 +1927,10 @@ a .entry-date { cursor: pointer; }
 .bypostauthor > .comment-body .comment-author::before { content: '\f411'; position: absolute; display: block; width: 30px; height: 30px; right: 15px; top: 45px; margin-top: 1.62em; font-size: 16px; line-height: 28px; text-align: center; font-size: 1.19em; border-radius: 50%; z-index: 1; }
 
 @media only screen and (min-width: 42em) { .bypostauthor > .comment-body .comment-author::before { right: 25px; top: 65px; } }
+
+.comment-edit-link, .comment-reply-link { text-decoration: none; }
+
+.comment-edit-link:hover, .comment-edit-link:active, .comment-edit-link:focus, .comment-reply-link:hover, .comment-reply-link:active, .comment-reply-link:focus { text-decoration: underline; }
 
 .comment-edit-link::before, .comment-reply-link::before { content: '\f466'; margin-left: 0.19em; font-size: 1.38em; vertical-align: middle; }
 

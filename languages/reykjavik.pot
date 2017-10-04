@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-08-31 12:11+0200\n"
+"POT-Creation-Date: 2017-10-04 16:35+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -635,27 +635,27 @@ msgstr ""
 msgid "Published in"
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:110
+#: includes/frontend/class-sidebar.php:111
 msgid "Sidebar"
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:111
+#: includes/frontend/class-sidebar.php:112
 msgid "Default sidebar area."
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:114
+#: includes/frontend/class-sidebar.php:116
 msgid "Intro Widgets"
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:115
+#: includes/frontend/class-sidebar.php:117
 msgid "Widgetized area displayed at the bottom of the Intro title section."
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:118
+#: includes/frontend/class-sidebar.php:121
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/frontend/class-sidebar.php:119
+#: includes/frontend/class-sidebar.php:122
 msgid "Widgetized area displaying the main website footer content."
 msgstr ""
 
@@ -1336,11 +1336,11 @@ msgstr ""
 msgid "More details&hellip;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-widgets.php:104
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:108
 msgid "Shop Sidebar"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-widgets.php:105
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:109
 msgid ""
 "This sidebar replaces the default sidebar area for shop page and product "
 "archive pages."
@@ -1697,17 +1697,12 @@ msgstr ""
 
 #: includes/starter-content/class-starter-content.php:357
 msgctxt "Theme starter content"
-msgid "Video tutorials by WebMan Design"
+msgid "Facebook"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:362
 msgctxt "Theme starter content"
-msgid "WebMan Design on Facebook"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:367
-msgctxt "Theme starter content"
-msgid "WebMan Design on Twitter"
+msgid "Twitter"
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:116
@@ -1728,37 +1723,33 @@ msgid ""
 "removing sidebars."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:146
-msgid "For installing theme demo content easily."
-msgstr ""
-
-#: includes/tgmpa/class-tgmpa-plugins.php:181
+#: includes/tgmpa/class-tgmpa-plugins.php:184
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:206
+#: includes/tgmpa/class-tgmpa-plugins.php:209
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:275
+#: includes/tgmpa/class-tgmpa-plugins.php:278
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:278
+#: includes/tgmpa/class-tgmpa-plugins.php:281
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:279
+#: includes/tgmpa/class-tgmpa-plugins.php:282
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:280
+#: includes/tgmpa/class-tgmpa-plugins.php:283
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:281
+#: includes/tgmpa/class-tgmpa-plugins.php:284
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1777,56 +1768,62 @@ msgstr ""
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:293
+#: includes/widgets/class-wp-widget-text.php:294
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:294
+#: includes/widgets/class-wp-widget-text.php:295
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:295
+#: includes/widgets/class-wp-widget-text.php:296
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:333
+#: includes/widgets/class-wp-widget-text.php:300
+msgid ""
+"As your theme supports custom icons, you can simply use icon classes from "
+"Appearance &rarr; Icon Font."
+msgstr ""
+
+#: includes/widgets/class-wp-widget-text.php:339
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:336
+#: includes/widgets/class-wp-widget-text.php:342
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:341
+#: includes/widgets/class-wp-widget-text.php:347
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:357
+#: includes/widgets/class-wp-widget-text.php:363
 msgid "Remove image"
 msgstr ""
 
-#: library/includes/classes/class-core.php:184
+#: library/includes/classes/class-core.php:180
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/includes/classes/class-core.php:222
+#: library/includes/classes/class-core.php:218
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: library/includes/classes/class-core.php:314
+#: library/includes/classes/class-core.php:310
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/includes/classes/class-core.php:534
+#: library/includes/classes/class-core.php:530
 msgid "Skip to main content"
 msgstr ""
 
@@ -2487,36 +2484,36 @@ msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:22
+#: templates/parts/admin/welcome-demo.php:25
 msgid "Installing the theme demo content"
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:25
+#: templates/parts/admin/welcome-demo.php:28
 msgid ""
 "You can install the theme demo content including pages, posts, custom post "
 "types, layouts, menus and widgets directly from your WordPress dashboard by "
 "clicking the button bellow."
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:29
+#: templates/parts/admin/welcome-demo.php:32
 msgid ""
 "Alternatively (such as when the automated installation fails) you can follow "
 "theme documentation instructions for manual demo content installation."
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:30
+#: templates/parts/admin/welcome-demo.php:33
 msgid "Read the instructions &raquo;"
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:35
+#: templates/parts/admin/welcome-demo.php:38
 msgid "Install and run \"One Click Demo Import\" plugin"
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:39
+#: templates/parts/admin/welcome-demo.php:42
 msgid "Install theme demo content"
 msgstr ""
 
-#: templates/parts/admin/welcome-demo.php:43
+#: templates/parts/admin/welcome-demo.php:46
 msgid ""
 "Or head over to Appearance &raquo; Import Demo Data to start the import "
 "process."
@@ -2801,7 +2798,7 @@ msgid "Using %1$s %2$s theme."
 msgstr ""
 
 #: templates/parts/footer/site-info.php:55
-msgid "http://wordpress.org/"
+msgid "https://wordpress.org/"
 msgstr ""
 
 #: templates/parts/footer/site-info.php:60

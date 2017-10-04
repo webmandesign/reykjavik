@@ -196,10 +196,6 @@ class Reykjavik_One_Click_Demo_Import {
 
 			// Processing
 
-				// Default logo
-
-					set_theme_mod( 'custom_logo', -1 );
-
 				// Image sizes
 
 					foreach ( array( 'thumbnail', 'medium', 'medium_large', 'large' ) as $size ) {

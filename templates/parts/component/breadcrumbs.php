@@ -35,7 +35,7 @@
 <div class="breadcrumbs-container">
 	<nav class="breadcrumbs" aria-labelledby="breadcrumbs-label-<?php echo esc_attr( $unique_id ); ?>">
 
-		<h2 class="screen-reader-text" id="breadcrumbs-label-<?php echo esc_attr( $unique_id ); ?>"><?php esc_attr_e( 'Breadcrumbs navigation', 'reykjavik' ); ?></h2>
+		<h2 class="screen-reader-text" id="breadcrumbs-label-<?php echo esc_attr( $unique_id ); ?>"><?php esc_html_e( 'Breadcrumbs navigation', 'reykjavik' ); ?></h2>
 
 		<?php bcn_display(); ?>
 

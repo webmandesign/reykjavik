@@ -353,19 +353,14 @@ class Reykjavik_Starter_Content {
 							'name' => esc_html_x( 'Social Links Menu', 'Theme starter content', 'reykjavik' ),
 							'items' => array(
 
-								'link_vimeo' => array(
-									'title' => esc_html_x( 'Video tutorials by WebMan Design', 'Theme starter content', 'reykjavik' ),
-									'url'   => 'https://vimeo.com/album/4647015',
-								),
-
 								'link_facebook' => array(
-									'title' => esc_html_x( 'WebMan Design on Facebook', 'Theme starter content', 'reykjavik' ),
-									'url'   => 'https://www.facebook.com/webmandesigneu',
+									'title' => esc_html_x( 'Facebook', 'Theme starter content', 'reykjavik' ),
+									'url'   => 'https://www.facebook.com/',
 								),
 
 								'link_twitter' => array(
-									'title' => esc_html_x( 'WebMan Design on Twitter', 'Theme starter content', 'reykjavik' ),
-									'url'   => 'https://twitter.com/webmandesigneu',
+									'title' => esc_html_x( 'Twitter', 'Theme starter content', 'reykjavik' ),
+									'url'   => 'https://twitter.com/',
 								),
 
 								'link_email',

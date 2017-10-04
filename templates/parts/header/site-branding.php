@@ -26,34 +26,7 @@
 
 <div class="site-branding">
 
-	<?php
-
-	if ( -1 === get_theme_mod( 'custom_logo' ) ) {
-
-		/**
-		 * Default theme logo image fallback
-		 *
-		 * HTML was taken from WordPress native `the_custom_logo()` function.
-		 */
-		$logo_image = '';
-
-		ob_start();
-		locate_template( 'assets/images/svg/reykjavik-logo.svg', true );
-		$logo_image = str_replace( '<svg ', '<svg class="custom-logo" ', ob_get_clean() );
-
-		printf(
-				'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
-				esc_url( home_url( '/' ) ),
-				$logo_image
-			);
-
-	} else {
-
-		the_custom_logo();
-
-	}
-
-	?>
+	<?php the_custom_logo(); ?>
 
 	<div class="site-branding-text">
 

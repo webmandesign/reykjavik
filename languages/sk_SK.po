@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-08-31 12:11+0200\n"
-"PO-Revision-Date: 2017-08-31 12:12+0200\n"
+"POT-Creation-Date: 2017-10-04 16:35+0200\n"
+"PO-Revision-Date: 2017-10-04 16:35+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -664,27 +664,27 @@ msgstr "Následujúce"
 msgid "Published in"
 msgstr "Uverejnené v"
 
-#: includes/frontend/class-sidebar.php:110
+#: includes/frontend/class-sidebar.php:111
 msgid "Sidebar"
 msgstr "Bočný panel"
 
-#: includes/frontend/class-sidebar.php:111
+#: includes/frontend/class-sidebar.php:112
 msgid "Default sidebar area."
 msgstr "Základný bočný panel."
 
-#: includes/frontend/class-sidebar.php:114
+#: includes/frontend/class-sidebar.php:116
 msgid "Intro Widgets"
 msgstr "Intro widgety"
 
-#: includes/frontend/class-sidebar.php:115
+#: includes/frontend/class-sidebar.php:117
 msgid "Widgetized area displayed at the bottom of the Intro title section."
 msgstr "Oblasť widgetov zobrazená v spodnej časti Intro sekcie."
 
-#: includes/frontend/class-sidebar.php:118
+#: includes/frontend/class-sidebar.php:121
 msgid "Footer Widgets"
 msgstr "Widgety pätičky"
 
-#: includes/frontend/class-sidebar.php:119
+#: includes/frontend/class-sidebar.php:122
 msgid "Widgetized area displaying the main website footer content."
 msgstr "Oblasť widgetov zobrazujúca hlavný obsah pätičky."
 
@@ -1385,11 +1385,11 @@ msgstr "Platba za objednávku"
 msgid "More details&hellip;"
 msgstr "Viac informácií&hellip;"
 
-#: includes/plugins/woocommerce/class-woocommerce-widgets.php:104
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:108
 msgid "Shop Sidebar"
 msgstr "Bočný panel obchodu"
 
-#: includes/plugins/woocommerce/class-woocommerce-widgets.php:105
+#: includes/plugins/woocommerce/class-woocommerce-widgets.php:109
 msgid ""
 "This sidebar replaces the default sidebar area for shop page and product "
 "archive pages."
@@ -1767,18 +1767,13 @@ msgstr "Odkazy sociálnych sietí"
 
 #: includes/starter-content/class-starter-content.php:357
 msgctxt "Theme starter content"
-msgid "Video tutorials by WebMan Design"
-msgstr "Video návody od WebMan Design"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: includes/starter-content/class-starter-content.php:362
 msgctxt "Theme starter content"
-msgid "WebMan Design on Facebook"
-msgstr "WebMan Design na Facebooku"
-
-#: includes/starter-content/class-starter-content.php:367
-msgctxt "Theme starter content"
-msgid "WebMan Design on Twitter"
-msgstr "WebMan Design na Twitteri"
+msgid "Twitter"
+msgstr "Twitter"
 
 #: includes/tgmpa/class-tgmpa-plugins.php:116
 msgid "Easy to use front-end page builder."
@@ -1800,38 +1795,34 @@ msgstr ""
 "Dodatočný manažment bočných panelov a widgetových oblastí, umožňuje "
 "modifikovať rozloženie stránok odstránením bočných panelov."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:146
-msgid "For installing theme demo content easily."
-msgstr "Pre jednoduchú inštaláciu demo obsahu témy."
-
-#: includes/tgmpa/class-tgmpa-plugins.php:181
+#: includes/tgmpa/class-tgmpa-plugins.php:184
 msgid "Other useful plugins &raquo;"
 msgstr "Ďalšie užitočné pluginy &raquo;"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:206
+#: includes/tgmpa/class-tgmpa-plugins.php:209
 msgid "Description"
 msgstr "Popis"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:275
+#: includes/tgmpa/class-tgmpa-plugins.php:278
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr "Odporúčané, nie vyžadované"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:278
+#: includes/tgmpa/class-tgmpa-plugins.php:281
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 "Upozorňujeme, že toto je zoznam odporúčaných pluginov, nie vyžadovaných."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:279
+#: includes/tgmpa/class-tgmpa-plugins.php:282
 msgid "Install only those plugins you will use."
 msgstr "Nainštalujte iba tie pluginy, ktoré budete používať."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:280
+#: includes/tgmpa/class-tgmpa-plugins.php:283
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr "Alebo nainštalujte tie, ktoré uprednostňujete."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:281
+#: includes/tgmpa/class-tgmpa-plugins.php:284
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1852,7 +1843,7 @@ msgstr "Slug alebo ID kategórie:"
 msgid "Set icon CSS class:"
 msgstr "Nastavte CSS triedu ikonky:"
 
-#: includes/widgets/class-wp-widget-text.php:293
+#: includes/widgets/class-wp-widget-text.php:294
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
@@ -1860,50 +1851,58 @@ msgstr ""
 "Pre zobrazenie ikoniek na stránke použite plugin, ako je napríklad %1$s "
 "alebo %2$s."
 
-#: includes/widgets/class-wp-widget-text.php:294
+#: includes/widgets/class-wp-widget-text.php:295
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr "Better Font Awesome"
 
-#: includes/widgets/class-wp-widget-text.php:295
+#: includes/widgets/class-wp-widget-text.php:296
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr "Ionicons Official"
 
-#: includes/widgets/class-wp-widget-text.php:333
+#: includes/widgets/class-wp-widget-text.php:300
+msgid ""
+"As your theme supports custom icons, you can simply use icon classes from "
+"Appearance &rarr; Icon Font."
+msgstr ""
+"Keďže vaša téma podporuje vlastné ikonky, môžete použiť CSS triedy zo "
+"stránky Vzhľad &rarr; Ikonky."
+
+#: includes/widgets/class-wp-widget-text.php:339
 msgid "Set image:"
 msgstr "Nastaviť obrázok:"
 
-#: includes/widgets/class-wp-widget-text.php:336
+#: includes/widgets/class-wp-widget-text.php:342
 msgid "Choose a featured image for this widget."
 msgstr "Zvoľte prezentačný obrázok pre tento widget."
 
-#: includes/widgets/class-wp-widget-text.php:341
+#: includes/widgets/class-wp-widget-text.php:347
 msgid "Select image"
 msgstr "Zvoliť obrázok"
 
-#: includes/widgets/class-wp-widget-text.php:357
+#: includes/widgets/class-wp-widget-text.php:363
 msgid "Remove image"
 msgstr "Odstrániť obrázok"
 
-#: library/includes/classes/class-core.php:184
+#: library/includes/classes/class-core.php:180
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr "Obsah článku \"%s\""
 
-#: library/includes/classes/class-core.php:222
+#: library/includes/classes/class-core.php:218
 #, php-format
 msgid "Page %s"
 msgstr "Stránka %s"
 
-#: library/includes/classes/class-core.php:314
+#: library/includes/classes/class-core.php:310
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr "(stránka %s)"
 
-#: library/includes/classes/class-core.php:534
+#: library/includes/classes/class-core.php:530
 msgid "Skip to main content"
 msgstr "Preskočiť na hlavný obsah"
 
@@ -2613,11 +2612,11 @@ msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr "%1$d &times; %2$d, %3$s"
 
-#: templates/parts/admin/welcome-demo.php:22
+#: templates/parts/admin/welcome-demo.php:25
 msgid "Installing the theme demo content"
 msgstr "Inštalácia demo obsahu témy"
 
-#: templates/parts/admin/welcome-demo.php:25
+#: templates/parts/admin/welcome-demo.php:28
 msgid ""
 "You can install the theme demo content including pages, posts, custom post "
 "types, layouts, menus and widgets directly from your WordPress dashboard by "
@@ -2627,7 +2626,7 @@ msgstr ""
 "stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu a "
 "widgety."
 
-#: templates/parts/admin/welcome-demo.php:29
+#: templates/parts/admin/welcome-demo.php:32
 msgid ""
 "Alternatively (such as when the automated installation fails) you can follow "
 "theme documentation instructions for manual demo content installation."
@@ -2635,19 +2634,19 @@ msgstr ""
 "Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
 "manuálny import demo obsahu témy popísaný v dokumentácii."
 
-#: templates/parts/admin/welcome-demo.php:30
+#: templates/parts/admin/welcome-demo.php:33
 msgid "Read the instructions &raquo;"
 msgstr "Prečítajte si inštrukcie &raquo;"
 
-#: templates/parts/admin/welcome-demo.php:35
+#: templates/parts/admin/welcome-demo.php:38
 msgid "Install and run \"One Click Demo Import\" plugin"
 msgstr "Inštaluj a spusti plugin \"Importuj demo jedným klikom\""
 
-#: templates/parts/admin/welcome-demo.php:39
+#: templates/parts/admin/welcome-demo.php:42
 msgid "Install theme demo content"
 msgstr "Inštaluj demo obsah témy"
 
-#: templates/parts/admin/welcome-demo.php:43
+#: templates/parts/admin/welcome-demo.php:46
 msgid ""
 "Or head over to Appearance &raquo; Import Demo Data to start the import "
 "process."
@@ -2959,7 +2958,7 @@ msgid "Using %1$s %2$s theme."
 msgstr "Používame %2$s tému %1$s."
 
 #: templates/parts/footer/site-info.php:55
-msgid "http://wordpress.org/"
+msgid "https://wordpress.org/"
 msgstr "https://sk.wordpress.org/"
 
 #: templates/parts/footer/site-info.php:60

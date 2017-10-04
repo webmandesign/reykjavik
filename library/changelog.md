@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.4.3
+
+* **Update**: Removing duplicate text escaping from `link_skip_to()`
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-core.php
+
+
 ## 2.4.2
 
 * **Update**: Removing shortcodes in Text widget

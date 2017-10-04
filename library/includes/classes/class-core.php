@@ -9,7 +9,7 @@
  * @subpackage  Core
  *
  * @since    1.0.0
- * @version  2.4.2
+ * @version  2.4.3
  *
  * Contents:
  *
@@ -507,7 +507,7 @@ final class Reykjavik_Library {
 		 * Accessibility skip links
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.4.3
 		 *
 		 * @param  string $id     Link target element ID.
 		 * @param  string $text   Link text.
@@ -527,7 +527,7 @@ final class Reykjavik_Library {
 			// Helper variables
 
 				if ( empty( $text ) ) {
-					$text = esc_html__( 'Skip to main content', 'reykjavik' );
+					$text = __( 'Skip to main content', 'reykjavik' );
 				}
 
 

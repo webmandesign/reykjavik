@@ -18,6 +18,7 @@
 
 
 ?>
+<?php return; // @todo Remove this once demo content is ready. ?>
 
 <div class="wm-notes special">
 
@@ -32,8 +33,7 @@
 		<a href="https://www.webmandesign.eu/manual/reykjavik/#demo-content"><?php esc_html_e( 'Read the instructions &raquo;', 'reykjavik' ); ?></a>
 	</p>
 
-	<?php // if ( ! class_exists( 'OCDI_Plugin' ) ) : ?>
-	<?php if ( false ) : ?>
+	<?php if ( ! class_exists( 'OCDI_Plugin' ) ) : ?>
 
 		<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><strong><?php esc_html_e( 'Install and run "One Click Demo Import" plugin', 'reykjavik' ); ?></strong></a>
 
