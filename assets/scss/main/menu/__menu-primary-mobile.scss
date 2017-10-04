@@ -13,6 +13,7 @@
 	.has-navigation-mobile .main-navigation-container {
 
 		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			visibility: hidden;
 			position: fixed;
 			width: 100%;
 			height: 100%;
@@ -25,12 +26,17 @@
 			opacity: 0;
 			transform: scaleY(0);
 			transform-origin: 50% 0;
-			transition: opacity ( $small_animation_speed +s ),
-									transform ( $small_animation_speed +s );
+			transition: visibility 0s linear ( $small_animation_speed +s ),
+			            opacity ( $small_animation_speed +s ),
+			            transform ( $small_animation_speed +s );
 
 			@include in( '^.is-active' ) {
+				visibility: visible;
 				opacity: 1;
 				transform: scaleY(1);
+				transition: visibility 0s linear 0s,
+				            opacity ( $small_animation_speed +s ),
+				            transform ( $small_animation_speed +s );
 			}
 
 			.menu {
