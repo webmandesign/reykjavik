@@ -145,6 +145,17 @@
 							add_filter( 'widget_text_content', 'do_shortcode', 11 );
 						}
 
+						/**
+						 * Filters the content of the Text widget.
+						 *
+						 * @since 2.3.0
+						 * @since 4.4.0 Added the `$this` parameter.
+						 * @since 4.8.1 The `$this` param may now be a `WP_Widget_Custom_HTML` object in addition to a `WP_Widget_Text` object.
+						 *
+						 * @param string                               $text     The widget content.
+						 * @param array                                $instance Array of settings for the current widget.
+						 * @param WP_Widget_Text|WP_Widget_Custom_HTML $this     Current Text widget instance.
+						 */
 						$text = apply_filters( 'widget_text', $widget_text, $instance, $this );
 
 
@@ -200,9 +211,22 @@
 					// From WP_Widget_Text
 
 						if ( $is_visual_text_widget ) {
+
+							/**
+							 * Filters the content of the Text widget to apply changes expected from the visual (TinyMCE) editor.
+							 *
+							 * By default a subset of the_content filters are applied, including wpautop and wptexturize.
+							 *
+							 * @since 4.8.0
+							 *
+							 * @param string         $text     The widget content.
+							 * @param array          $instance Array of settings for the current widget.
+							 * @param WP_Widget_Text $this     Current Text widget instance.
+							 */
 							$text = apply_filters( 'widget_text_content', $text, $instance, $this );
+
 						} elseif ( ! empty( $instance['filter'] ) ) {
-							$text = wpautop( $text );
+							$text = wpautop( $text ); // Back-compat for instances prior to 4.8.
 						}
 
 						// Undo temporary upgrade of the plugin-supplied shortcode handling.

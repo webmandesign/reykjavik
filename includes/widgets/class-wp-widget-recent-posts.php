@@ -79,6 +79,10 @@
 							'category'  => '',
 						) );
 
+					if ( empty( $instance['title'] ) ) {
+						$instance['title'] = esc_html__( 'Recent Posts', 'reykjavik' );
+					}
+
 					$heading_tag = 'h4';
 					if ( strpos( $args['after_title'], 'h2' ) ) {
 						$heading_tag = 'h3';
@@ -112,17 +116,19 @@
 					 * Filter the arguments for the Recent Posts widget.
 					 *
 					 * @since 3.4.0
+					 * @since 4.9.0 Added the `$instance` parameter.
 					 *
 					 * @see WP_Query::get_posts()
 					 *
-					 * @param array $args An array of arguments used to retrieve the recent posts.
+					 * @param array $args     An array of arguments used to retrieve the recent posts.
+					 * @param array $instance Array of settings for the current widget.
 					 */
-					$r = new WP_Query( apply_filters( 'widget_posts_args', array(
+					$r = new WP_Query( apply_filters( 'widget_posts_args', array_merge( array(
 						'posts_per_page'      => absint( $instance['number'] ),
 						'no_found_rows'       => true,
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => true,
-					) + (array) $cat ) );
+					), (array) $cat ), $instance ) );
 
 					if ( $r->have_posts() ) {
 
