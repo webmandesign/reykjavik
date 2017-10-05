@@ -79,6 +79,15 @@
 		@extend %background_overlay_from_text_color;
 	}
 
+		pre code {
+			font-size: 1em;
+
+			&::before {
+				display: none;
+			}
+
+		}
+
 	hr {
 		height: 1px;
 		margin: ( power( 1 + $golden_minor, 3 ) +em ) 0;

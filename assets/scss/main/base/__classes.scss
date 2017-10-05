@@ -73,12 +73,7 @@
 			padding: 0 ( $golden_minor / 2 +em );
 			padding-#{$left}: 0; // {{RTL}}
 			line-height: 1;
-			font-size: 2.618em;
-
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
-				font-size: 3.329em;
-			}
-
+			font-size: $golden * 2em; // 2 lines of text.
 		}
 
 	}
@@ -177,6 +172,23 @@
 				flex-grow: $i;
 			}
 
+		}
+
+	}
+
+
+
+// Elements modifiers
+
+	.fullwidth {
+
+		&,
+		.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			width: 100%;
 		}
 
 	}

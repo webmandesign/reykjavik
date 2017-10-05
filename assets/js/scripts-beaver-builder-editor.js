@@ -62,12 +62,6 @@
 			 */
 			.delegate( '#fl-field-' + 'vertical_alignment' + ' select', 'change', function() {
 				BBPreviewSelectClass( $( this ) );
-			} )
-			/**
-			 * Trigger immediate preview: predefined colors
-			 */
-			.delegate( '#fl-field-' + 'predefined_color' + ' select', 'change', function() {
-				BBPreviewSelectClass( $( this ) );
 			} );
 
 

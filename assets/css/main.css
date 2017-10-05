@@ -422,7 +422,7 @@ blockquote.alignright { padding-right: 0; margin-right: 0; text-align: left; }
 
 .gallery a { display: block; width: 100%; }
 
-.gallery-item { float: left; position: relative; width: 48%; padding: 0; margin: 0 1% 2%; }
+.gallery-item { float: left; position: relative; width: 48%; padding: 0; margin: 1%; }
 
 .gallery-columns-1 .gallery-item { float: none; width: 100%; margin: 1.62em 0 0; }
 
@@ -1012,6 +1012,10 @@ blockquote:first-child { margin-top: 0; }
 
 blockquote::before { content: '\f106'; float: left; margin-right: .25em; line-height: 1; font-size: 1.62em; opacity: .5; }
 
+pre code { font-size: 1em; }
+
+pre code::before { display: none; }
+
 hr { height: 1px; margin: 2.62807em 0; border-bottom-width: 1px; border-bottom-style: solid; }
 
 @media only screen and (min-width: 42em) { hr { margin: 3.62674em 0; } }
@@ -1089,9 +1093,7 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .site .background-size-stretch > div { background-size: inherit; }
 
-.dropcap-text::first-letter { float: left; display: block; padding: 0 0.19em; padding-left: 0; line-height: 1; font-size: 2.618em; }
-
-@media only screen and (min-width: 80em) { .dropcap-text::first-letter { font-size: 3.329em; } }
+.dropcap-text::first-letter { float: left; display: block; padding: 0 0.19em; padding-left: 0; line-height: 1; font-size: 3.24em; }
 
 .inline li, .inline .widget ul li { display: inline-block; padding: 0 0.62em; border-width: 0; border-left-width: 1px; border-left-style: solid; }
 
@@ -1125,6 +1127,8 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .widget-area .set-flex-grow-4 { -webkit-flex-grow: 4; -ms-flex-positive: 4; flex-grow: 4; }
 
+.fullwidth, .fullwidth .button, .fullwidth button, .fullwidth input[type="button"], .fullwidth input[type="reset"], .fullwidth input[type="submit"] { width: 100%; }
+
 /* FILE: main/base/__player.scss */
 .site .wp-playlist { background: none; border-width: 1px; border-style: solid; }
 
@@ -1156,7 +1160,7 @@ select { padding: calc( 0.62em - 2px); }
 .site .fullwidth input[type], .site .fullwidth select, .site .fullwidth textarea { width: 100%; max-width: 100%; }
 
 /* FILE: main/forms/__buttons.scss */
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link { display: inline-block; padding: 0.76543em 2em; margin-top: 2px; margin-bottom: 2px; line-height: 1.62; text-align: center; text-transform: uppercase; text-decoration: none; font-size: 0.81rem; letter-spacing: 0.06333em; border: 2px solid currentColor; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s; }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link { display: inline-block; padding: 0.76543em 2em; margin-top: 2px; margin-bottom: 2px; line-height: 1.62; text-align: center; text-transform: uppercase; text-decoration: none; font-size: 0.81em; letter-spacing: 0.06333em; border: 2px solid currentColor; cursor: pointer; transition: background 0.3s, color 0.3s, border-color 0.3s; }
 
 form .button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"], form .main-navigation-container .button > a, .main-navigation-container form .button > a, form .child-page .more-link, .child-page form .more-link { margin-top: 0; margin-bottom: 0; }
 
@@ -1949,6 +1953,10 @@ a .entry-date { cursor: pointer; }
 .comment-list .comment-respond { padding: 0 1.62em; border-width: 0; }
 
 .comment-reply-title { font-size: inherit; text-transform: uppercase; }
+
+.logged-in-as a { text-decoration: none; }
+
+.logged-in-as a:hover, .logged-in-as a:active, .logged-in-as a:focus { text-decoration: underline; }
 
 .comment-list > .pingback, .comment-list > .trackback { min-height: 0; padding: 0; }
 

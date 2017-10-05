@@ -297,6 +297,15 @@
 		text-transform: uppercase;
 	}
 
+	.logged-in-as a {
+		text-decoration: none;
+
+		@include haf() {
+			text-decoration: underline;
+		}
+
+	}
+
 
 
 // Pingbacks & Trackbacks

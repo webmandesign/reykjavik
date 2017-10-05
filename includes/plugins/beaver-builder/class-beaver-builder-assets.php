@@ -176,22 +176,12 @@ class Reykjavik_Beaver_Builder_Assets {
 									'$reykjavikBBPreview',
 									array(
 										'vertical_alignment' => array_values(
-												array_filter(
-													array_flip(
-														(array) $bb_settings['tabs']['style']['sections']['general']['fields']['vertical_alignment']['options']
-													)
+											array_filter(
+												array_flip(
+													(array) $bb_settings['tabs']['style']['sections']['general']['fields']['vertical_alignment']['options']
 												)
-											),
-										'predefined_color' => array_values(
-												array_filter(
-													array_flip(
-														array_merge(
-															(array) $bb_settings['tabs']['style']['sections']['colors_predefined']['fields']['predefined_color']['options']['optgroup-sections']['options'],
-															(array) $bb_settings['tabs']['style']['sections']['colors_predefined']['fields']['predefined_color']['options']['optgroup-accents']['options']
-														)
-													)
-												)
-											),
+											)
+										),
 									)
 								);
 
