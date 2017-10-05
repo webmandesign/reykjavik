@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.4.4
+
+* **Update**: Including WPORG theme review required PHP comment into TGMPA class
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/vendor/tgmpa/class-tgm-plugin-activation.php
+
+
 ## 2.4.3
 
 * **Update**: Removing duplicate text escaping from `link_skip_to()`

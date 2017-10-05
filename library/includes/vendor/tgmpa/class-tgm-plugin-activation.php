@@ -10,8 +10,8 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Plugins
  *
- * @since    1.0
- * @version  1.6
+ * @since    1.0.0
+ * @version  2.4.4
  */
 
 
@@ -27,7 +27,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1
+ * @version   2.6.1 for parent theme Reykjavik for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
