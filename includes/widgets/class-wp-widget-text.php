@@ -321,7 +321,7 @@
 									);
 
 									if ( class_exists( 'WM_Icons' ) ) {
-										echo '<br><strong>' . esc_html__( 'As your theme supports custom icons, you can simply use icon classes from Appearance &rarr; Icon Font.', '{%= text_domain %}' ) . '</strong>';
+										echo '<br><strong>' . esc_html__( 'As your theme supports custom icons, you can simply use icon classes from Appearance &rarr; Icon Font.', 'reykjavik' ) . '</strong>';
 									}
 
 									?>

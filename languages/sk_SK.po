@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-04 17:26+0200\n"
-"PO-Revision-Date: 2017-10-04 17:26+0200\n"
+"POT-Creation-Date: 2017-10-06 20:23+0200\n"
+"PO-Revision-Date: 2017-10-06 20:23+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -808,187 +808,95 @@ msgctxt "Vertical content alignment value"
 msgid "Bottom"
 msgstr "Dole"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:134
-msgid "Predefined Colors"
-msgstr "Prednastavené farby"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:139
-msgid "Assign predefined colors"
-msgstr "Nastaviť prednastavené farby"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:140
-msgid ""
-"You can override these further below by setting up a custom background or "
-"text color"
-msgstr ""
-"Tieto nastavenia môžete prepísať nastavením vlastnej farby pozadia alebo "
-"textu nižšie"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:141
-msgid "Set this to match the colors of theme predefined sections"
-msgstr "Týmto nastavením aplikujete prednastavené farby sekcií témy"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:144
-msgid "- No predefined color -"
-msgstr "- Žiadne prednastavené farby -"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:149
-msgid "Theme sections colors:"
-msgstr "Farby sekcií témy:"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:152
-msgid "Set header colors"
-msgstr "Nastaviť farby hlavičky"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:153
-msgid "Set intro colors"
-msgstr "Nastaviť farby intra"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:154
-msgid "Set intro widgets colors"
-msgstr "Nastaviť farby widgetov intra"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:155
-msgid "Set content colors"
-msgstr "Nastaviť farby obsahu"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:156
-msgid "Set footer colors"
-msgstr "Nastaviť farby pätičky"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:164
-msgid "Accent colors:"
-msgstr "Akcentované farby:"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:167
-msgid "Set primary accent colors"
-msgstr "Nastaviť farby primárneho akcentu"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:168
-msgid "Set primary accent colors on mouse hover"
-msgstr "Nastaviť farby primárneho akcentu pri prechode kurzorom"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:170
-msgid "Set error colors"
-msgstr "Nastaviť farby typu \"chyba\""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:171
-msgid "Set error colors on mouse hover"
-msgstr "Nastaviť farby typu \"chyba\" pri prechode kurzorom"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:173
-msgid "Set info colors"
-msgstr "Nastaviť farby typu \"info\""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:174
-msgid "Set info colors on mouse hover"
-msgstr "Nastaviť farby typu \"info\" pri prechode kurzorom"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:176
-msgid "Set success colors"
-msgstr "Nastaviť farby typu \"úspech\""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:177
-msgid "Set success colors on mouse hover"
-msgstr "Nastaviť farby typu \"úspech\" pri prechode kurzorom"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:179
-msgid "Set warning colors"
-msgstr "Nastaviť farby typu \"výstraha\""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:180
-msgid "Set warning colors on mouse hover"
-msgstr "Nastaviť farby typu \"výstraha\" pri prechode kurzorom"
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:234
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:151
 msgid "- Choose from predefined classes -"
 msgstr "- Vyberte z prednastavených tried -"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:239
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:156
 msgid "Decorations:"
 msgstr "Dekorácie:"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:242
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:159
 msgid "Column shadow, small"
 msgstr "Tieň stĺpca, malý"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:243
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:160
 msgid "Column shadow, medium"
 msgstr "Tieň stĺpca, stredný"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:244
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:161
 msgid "Column shadow, large"
 msgstr "Tieň stĺpca, veľký"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:252
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:169
 msgid "Layout:"
 msgstr "Rozloženie:"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:255
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:172
 msgid "Text center"
 msgstr "Text v strede"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:256
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:173
 msgid "Text left"
 msgstr "Text vľavo"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:257
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:174
 msgid "Text right"
 msgstr "Text vpravo"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:259
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:176
 msgid "Fullwidth elements"
 msgstr "Roztiahnuť elementy na celú šírku"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:261
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:178
 msgid "Hide accessibly (displayed in page builder edit mode only)"
 msgstr "Skryť prístupne (zobrazí sa iba počas editácie stránky)"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:263
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:180
 msgid "Split screen row (apply on full-height row only)"
 msgstr "Riadok rozdeľujúci obrazovku (aplikujte iba na riadok s plnou výškou)"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:265
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:182
 msgid "Bring element to front (CSS z-index)"
 msgstr "Presunúť prvok dopredu (CSS z-index)"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:273
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:190
 msgid "Widgets:"
 msgstr "Widgety:"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:276
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:193
 msgid "Use default widget title styling"
 msgstr "Použiť predvolený štýl nadpisu widgetu"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:277
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:194
 msgid "Hide widget title accessibly"
 msgstr "Skryť nadpis widgetu prístupne"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:278
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:195
 msgid "Hide widget title forcefully"
 msgstr "Skryť nadpis widgetu neprístupne"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:286
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:203
 msgid "Typography:"
 msgstr "Písmo:"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:289
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:206
 msgid "Font size, extra small"
 msgstr "Veľkosť písma, extrémne malá"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:290
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:207
 msgid "Font size, small"
 msgstr "Veľkosť písma, malá"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:291
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:208
 msgid "Font size, smaller"
 msgstr "Veľkosť písma, menšia"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:292
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:209
 msgid "Font size, large"
 msgstr "Veľkosť písma, veľká"
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:293
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:210
 msgid "Font size, extra large"
 msgstr "Veľkosť písma, extrémne veľká"
 

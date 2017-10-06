@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-04 17:26+0200\n"
+"POT-Creation-Date: 2017-10-06 20:23+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -771,185 +771,95 @@ msgctxt "Vertical content alignment value"
 msgid "Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:134
-msgid "Predefined Colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:139
-msgid "Assign predefined colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:140
-msgid ""
-"You can override these further below by setting up a custom background or "
-"text color"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:141
-msgid "Set this to match the colors of theme predefined sections"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:144
-msgid "- No predefined color -"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:149
-msgid "Theme sections colors:"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:152
-msgid "Set header colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:153
-msgid "Set intro colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:154
-msgid "Set intro widgets colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:155
-msgid "Set content colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:156
-msgid "Set footer colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:164
-msgid "Accent colors:"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:167
-msgid "Set primary accent colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:168
-msgid "Set primary accent colors on mouse hover"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:170
-msgid "Set error colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:171
-msgid "Set error colors on mouse hover"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:173
-msgid "Set info colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:174
-msgid "Set info colors on mouse hover"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:176
-msgid "Set success colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:177
-msgid "Set success colors on mouse hover"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:179
-msgid "Set warning colors"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:180
-msgid "Set warning colors on mouse hover"
-msgstr ""
-
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:234
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:151
 msgid "- Choose from predefined classes -"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:239
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:156
 msgid "Decorations:"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:242
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:159
 msgid "Column shadow, small"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:243
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:160
 msgid "Column shadow, medium"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:244
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:161
 msgid "Column shadow, large"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:252
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:169
 msgid "Layout:"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:255
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:172
 msgid "Text center"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:256
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:173
 msgid "Text left"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:257
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:174
 msgid "Text right"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:259
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:176
 msgid "Fullwidth elements"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:261
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:178
 msgid "Hide accessibly (displayed in page builder edit mode only)"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:263
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:180
 msgid "Split screen row (apply on full-height row only)"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:265
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:182
 msgid "Bring element to front (CSS z-index)"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:273
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:190
 msgid "Widgets:"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:276
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:193
 msgid "Use default widget title styling"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:277
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:194
 msgid "Hide widget title accessibly"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:278
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:195
 msgid "Hide widget title forcefully"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:286
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:203
 msgid "Typography:"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:289
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:206
 msgid "Font size, extra small"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:290
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:207
 msgid "Font size, small"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:291
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:208
 msgid "Font size, smaller"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:292
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:209
 msgid "Font size, large"
 msgstr ""
 
-#: includes/plugins/beaver-builder/class-beaver-builder-form.php:293
+#: includes/plugins/beaver-builder/class-beaver-builder-form.php:210
 msgid "Font size, extra large"
 msgstr ""
 
