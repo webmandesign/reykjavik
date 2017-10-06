@@ -448,7 +448,6 @@ class Reykjavik_One_Click_Demo_Import {
 				// Page builder enabled post types
 
 					update_option( '_fl_builder_post_types', array(
-							'post',
 							'page',
 							'product',
 						) );

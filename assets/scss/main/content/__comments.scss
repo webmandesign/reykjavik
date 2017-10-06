@@ -170,12 +170,6 @@
 
 			ol {
 				list-style: decimal;
-
-				ol,
-				ol ol {
-					list-style: inherit;
-				}
-
 			}
 
 		}

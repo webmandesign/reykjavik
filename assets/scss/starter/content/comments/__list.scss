@@ -13,9 +13,7 @@
 	margin: 0 0 ( $golden +em );
 
 	&,
-	& ol,
-	& ol ol,
-	& ol ol ol {
+	& ol {
 		list-style: none;
 	}
 

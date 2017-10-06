@@ -804,6 +804,8 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .woocommerce-Reviews .comment-form input[type="submit"] { width: 100%; }
 
+.commentlist { margin-left: 0; list-style: none; }
+
 /* FILE: woocommerce/pages/_pages.scss */
 /* FILE: woocommerce/pages/__shop.scss */
 .page-description, .term-description { margin-bottom: 3.1rem; }

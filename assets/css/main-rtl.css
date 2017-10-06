@@ -592,7 +592,7 @@ form[role="search"] input[type="search"], form[role="search"] .search-field, .fo
 /* FILE: starter/comments/__list.scss */
 .comment-list { padding: 0; margin: 0 0 1.62em; }
 
-.comment-list, .comment-list ol, .comment-list ol ol, .comment-list ol ol ol { list-style: none; }
+.comment-list, .comment-list ol { list-style: none; }
 
 .comments-closed + .comment-list { margin-top: 1.62em; }
 
@@ -1925,8 +1925,6 @@ a .entry-date { cursor: pointer; }
 .comment-body { padding-bottom: 0; }
 
 .comment-content ol { list-style: decimal; }
-
-.comment-content ol ol, .comment-content ol ol ol { list-style: inherit; }
 
 .bypostauthor > .comment-body .comment-author::before { content: '\f411'; position: absolute; display: block; width: 30px; height: 30px; right: 15px; top: 45px; margin-top: 1.62em; font-size: 16px; line-height: 28px; text-align: center; font-size: 1.19em; border-radius: 50%; z-index: 1; }
 
