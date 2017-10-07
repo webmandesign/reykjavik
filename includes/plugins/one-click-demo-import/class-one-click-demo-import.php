@@ -58,6 +58,8 @@ class Reykjavik_One_Click_Demo_Import {
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
 
+						add_action( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::jetpack_custom_posts' );
+
 						add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 		} // /__construct
@@ -453,6 +455,74 @@ class Reykjavik_One_Click_Demo_Import {
 						) );
 
 		} // /beaver_builder
+
+
+
+		/**
+		 * Enable Jetpack custom post types message
+		 *
+		 * This will display the message only if the "Custom content types"
+		 * module is not active already.
+		 * On page reload we attempt to activate the module automatically.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  string $text  Default intro text.
+		 */
+		public static function jetpack_custom_posts( $text = '' ) {
+
+			// Requirements check
+
+				if (
+						is_callable( 'Jetpack::is_module_active' )
+						&& Jetpack::is_module_active( 'custom-content-types' )
+					) {
+					return $text;
+				}
+
+
+			// Processing
+
+				$text .= '<div class="jetpack-info ocdi__demo-import-notice">';
+
+					$text .= '<h3>';
+					$text .= esc_html__( 'Jetpack Custom content types', 'reykjavik' );
+					$text .= '</h3>';
+
+					$text .= '<p>';
+					$text .= esc_html__( 'Please make sure your Jetpack plugin is connected and you have activated Testimonials and Portfolios "Custom content types" in Jetpack settings (navigate to Jetpack &rarr; Settings &rarr; Writing).', 'reykjavik' );
+					$text .= ' ' . esc_html__( 'If you do not activate these, the related demo content will not be imported.', 'reykjavik' );
+					$text .= '</p>';
+					$text .= '<p>';
+					$text .= '<em>';
+					$text .= esc_html__( 'If your Jetpack plugin is connected, you may just try to refresh this page and we will attempt to activate those custom content types for you automatically.', 'reykjavik' );
+					$text .= ' ';
+					$text .= esc_html__( 'If the operation is successful, this message will disappear and you should see 2 new items in your WordPress dashboard menu: "Portfolio" and "Testimonials".', 'reykjavik' );
+					$text .= '</em>';
+					$text .= '</p>';
+
+				$text .= '</div>';
+
+				// This will activate the post types automatically, but page refresh is required.
+
+					if ( is_callable( 'Jetpack::activate_module' ) ) {
+						/**
+						 * Fires before a module is activated.
+						 *
+						 * @param  string $module    Module slug.
+						 * @param  bool   $exit      Should we exit after the module has been activated. Default to true.
+						 * @param  bool   $redirect  Should the user be redirected after module activation? Default to true.
+						 */
+						Jetpack::activate_module( 'custom-content-types', false, false );
+					}
+
+
+			// Output
+
+				return $text;
+
+		} // /jetpack_custom_posts
 
 
 

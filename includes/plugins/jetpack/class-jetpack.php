@@ -66,6 +66,9 @@ class Reykjavik_Jetpack {
 
 					// Custom post types
 
+						add_theme_support( 'jetpack-portfolio' );
+						add_theme_support( 'jetpack-testimonial' );
+
 						add_post_type_support( 'jetpack-portfolio', 'excerpt' );
 
 				// Hooks

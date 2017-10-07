@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-06 20:23+0200\n"
-"PO-Revision-Date: 2017-10-06 20:23+0200\n"
+"POT-Creation-Date: 2017-10-07 21:26+0200\n"
+"PO-Revision-Date: 2017-10-07 21:39+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -1145,19 +1145,19 @@ msgstr "Aj pred, aj za obsahom"
 msgid "After content only"
 msgstr "Iba za obsahom"
 
-#: includes/plugins/jetpack/class-jetpack.php:213
+#: includes/plugins/jetpack/class-jetpack.php:216
 msgid "Load more&hellip;"
 msgstr "Načítať viac&hellip;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:109
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:111
 msgid "Theme demo content"
 msgstr "Demo obsah témy"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
 msgid "Media files quality"
 msgstr "Kvalita súborov médií"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:146
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
@@ -1165,7 +1165,7 @@ msgstr ""
 "Upozorňujeme, že importované súbory médií (napríklad obrázky, video a audio "
 "súbory) majú nízku kvalitu, aby sa zabránilo porušovaniu autorských práv."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
@@ -1173,22 +1173,22 @@ msgstr ""
 "Zoznam zdrojov multimediálnych súborov nájdete v sekcii \"Credits\" v "
 "dokumentácii témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:150
 msgid "Get media for your website &raquo;"
 msgstr "Získať médiá pre vaše webové stránky &raquo;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
 msgid "Install required plugins!"
 msgstr "Nainštalujte vyžadované pluginy!"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 "Najskôr si prečítajte informácie o pluginoch vyžadovaných pre demo obsah "
 "témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
@@ -1196,15 +1196,55 @@ msgstr ""
 "Ak pluginy vyžadované pre demo obsah témy nebudú nainštalované a aktivované, "
 "časti demo obsahu nebudú importované."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:164
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 "Preštudujte si informácie predtým, než spustíte proces importu demo obsahu."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:165
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných pluginov &raquo;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:490
+msgid "Jetpack Custom content types"
+msgstr "Jetpack: Vlastné typy obsahu"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:494
+msgid ""
+"Please make sure your Jetpack plugin is connected and you have activated "
+"Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
+"(navigate to Jetpack &rarr; Settings &rarr; Writing)."
+msgstr ""
+"Uistite sa, že je Jetpack plugin pripojený, a že sú aktivované Referencie "
+"(Testimonials) a Portfóliá (Portfolios) v sekcii \"Vlastné typy obsahu\" v "
+"nastaveniach Jetpack (nájdete pod Jetpack &rarr; Nastavenia &rarr; Písanie)."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:495
+msgid ""
+"If you do not activate these, the related demo content will not be imported."
+msgstr ""
+"V prípade, že tieto typy obsahu neaktivujete, daný demo obsah nebude "
+"importovaný."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:499
+msgid ""
+"If your Jetpack plugin is connected, you may just try to refresh this page "
+"and we will attempt to activate those custom content types for you "
+"automatically."
+msgstr ""
+"Ak je váš Jetpack plugin pripojený, môžete jednoducho skúsiť obnoviť túto "
+"stránku pre automatickú aktiváciu týchto vlastných typov obsahu."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:501
+msgid ""
+"If the operation is successful, this message will disappear and you should "
+"see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
+"\"Testimonials\"."
+msgstr ""
+"Ak operácia prebehne úspešne, táto správa zmizne a v administračnom menu sa "
+"zobrazia 2 nové položky: \"Portfólio\" (\"Portfolio\") a \"Referencie"
+"\" (\"Testimonials\")."
 
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:421
 msgctxt "Customizer section title."
@@ -1703,34 +1743,38 @@ msgstr ""
 "Dodatočný manažment bočných panelov a widgetových oblastí, umožňuje "
 "modifikovať rozloženie stránok odstránením bočných panelov."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:184
+#: includes/tgmpa/class-tgmpa-plugins.php:146
+msgid "For installing theme demo content easily."
+msgstr "Pre jednoduchú inštaláciu demo obsahu témy."
+
+#: includes/tgmpa/class-tgmpa-plugins.php:181
 msgid "Other useful plugins &raquo;"
 msgstr "Ďalšie užitočné pluginy &raquo;"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:209
+#: includes/tgmpa/class-tgmpa-plugins.php:206
 msgid "Description"
 msgstr "Popis"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:278
+#: includes/tgmpa/class-tgmpa-plugins.php:275
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr "Odporúčané, nie vyžadované"
 
-#: includes/tgmpa/class-tgmpa-plugins.php:281
+#: includes/tgmpa/class-tgmpa-plugins.php:278
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 "Upozorňujeme, že toto je zoznam odporúčaných pluginov, nie vyžadovaných."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:282
+#: includes/tgmpa/class-tgmpa-plugins.php:279
 msgid "Install only those plugins you will use."
 msgstr "Nainštalujte iba tie pluginy, ktoré budete používať."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:283
+#: includes/tgmpa/class-tgmpa-plugins.php:280
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr "Alebo nainštalujte tie, ktoré uprednostňujete."
 
-#: includes/tgmpa/class-tgmpa-plugins.php:284
+#: includes/tgmpa/class-tgmpa-plugins.php:281
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -2524,11 +2568,11 @@ msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr "%1$d &times; %2$d, %3$s"
 
-#: templates/parts/admin/welcome-demo.php:25
+#: templates/parts/admin/welcome-demo.php:22
 msgid "Installing the theme demo content"
 msgstr "Inštalácia demo obsahu témy"
 
-#: templates/parts/admin/welcome-demo.php:28
+#: templates/parts/admin/welcome-demo.php:25
 msgid ""
 "You can install the theme demo content including pages, posts, custom post "
 "types, layouts, menus and widgets directly from your WordPress dashboard by "
@@ -2538,7 +2582,7 @@ msgstr ""
 "stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu a "
 "widgety."
 
-#: templates/parts/admin/welcome-demo.php:32
+#: templates/parts/admin/welcome-demo.php:29
 msgid ""
 "Alternatively (such as when the automated installation fails) you can follow "
 "theme documentation instructions for manual demo content installation."
@@ -2546,19 +2590,19 @@ msgstr ""
 "Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
 "manuálny import demo obsahu témy popísaný v dokumentácii."
 
-#: templates/parts/admin/welcome-demo.php:33
+#: templates/parts/admin/welcome-demo.php:30
 msgid "Read the instructions &raquo;"
 msgstr "Prečítajte si inštrukcie &raquo;"
 
-#: templates/parts/admin/welcome-demo.php:38
+#: templates/parts/admin/welcome-demo.php:35
 msgid "Install and run \"One Click Demo Import\" plugin"
 msgstr "Inštaluj a spusti plugin \"Importuj demo jedným klikom\""
 
-#: templates/parts/admin/welcome-demo.php:42
+#: templates/parts/admin/welcome-demo.php:39
 msgid "Install theme demo content"
 msgstr "Inštaluj demo obsah témy"
 
-#: templates/parts/admin/welcome-demo.php:46
+#: templates/parts/admin/welcome-demo.php:43
 msgid ""
 "Or head over to Appearance &raquo; Import Demo Data to start the import "
 "process."

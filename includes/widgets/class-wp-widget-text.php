@@ -414,7 +414,7 @@
 				// Processing
 
 					$instance['icon']  = esc_attr( $new_instance['icon'] );
-					$instance['image'] = ( is_numeric( $new_instance['image'] ) ) ? ( absint( $new_instance['image'] ) ) : ( esc_url( $new_instance['image'] ) );
+					$instance['image'] = ( is_numeric( $new_instance['image'] ) ) ? ( absint( $new_instance['image'] ) ) : ( esc_url_raw( $new_instance['image'] ) );
 
 
 				// Output
