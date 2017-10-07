@@ -141,15 +141,12 @@ class Reykjavik_TGMPA_Plugins {
 									'required'    => false,
 								),
 
-								/**
-								 * @todo  OCDI plugin compatibility once you create demo XML.
-								 */
-								// 'one-click-demo-import' => array(
-								// 	'name'        => 'One Click Demo Import',
-								// 	'description' => esc_html__( 'For installing theme demo content easily.', 'reykjavik' ),
-								// 	'slug'        => 'one-click-demo-import',
-								// 	'required'    => false,
-								// ),
+								'one-click-demo-import' => array(
+									'name'        => 'One Click Demo Import',
+									'description' => esc_html__( 'For installing theme demo content easily.', 'reykjavik' ),
+									'slug'        => 'one-click-demo-import',
+									'required'    => false,
+								),
 
 					) );
 

@@ -4,8 +4,6 @@
  *
  * Demo content installation.
  *
- * @todo  OCDI plugin compatibility once you create demo XML.
- *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
@@ -18,7 +16,6 @@
 
 
 ?>
-<?php return; // @todo Remove this once demo content is ready. ?>
 
 <div class="wm-notes special">
 
