@@ -1,5 +1,20 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.5.0
+
+* **Update**: Disabled Child Theme Generator by default (WPORG theme review requirement)
+* **Update**: Separated sanitization methods into separate class
+* **Update**: Updated and fixed customizer styles generator class
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-customize-styles.php
+	includes/classes/class-customize.php
+	includes/classes/class-sanitize.php
+
+
 ## 2.4.4
 
 * **Update**: Including WPORG theme review required PHP comment into TGMPA class

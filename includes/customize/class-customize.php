@@ -798,7 +798,7 @@ class Reykjavik_Customize {
 											'step'       => .05,
 											'multiplier' => 100,
 											'suffix'     => '%',
-											'validate'   => __CLASS__ . '::sanitize_floatval',
+											'validate'   => 'Reykjavik_Library_Sanitize::float',
 											'preview_js' => array(
 												'css' => array(
 
@@ -1092,7 +1092,7 @@ class Reykjavik_Customize {
 										'placeholder' => "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
 									),
 									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => __CLASS__ . '::sanitize_fonts',
+									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 230 => array(
@@ -1104,7 +1104,7 @@ class Reykjavik_Customize {
 										'placeholder' => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
 									),
 									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => __CLASS__ . '::sanitize_fonts',
+									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 240 => array(
@@ -1116,7 +1116,7 @@ class Reykjavik_Customize {
 										'placeholder' => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
 									),
 									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => __CLASS__ . '::sanitize_fonts',
+									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 290 => array(
@@ -1441,45 +1441,6 @@ class Reykjavik_Customize {
 				return array( 20 );
 
 		} // /rgba_alphas
-
-
-
-		/**
-		 * Sanitize float
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  float $value
-		 */
-		public static function sanitize_floatval( $value ) {
-
-			// Output
-
-				return floatval( $value );
-
-		} // /sanitize_floatval
-
-
-
-		/**
-		 * Sanitize fonts
-		 *
-		 * Allow only alphanumeric characters, spaces, commas, underscores,
-		 * dashes, single and/or double quotes.
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $value
-		 */
-		public static function sanitize_fonts( $value ) {
-
-			// Output
-
-				return trim( preg_replace( '/[^a-zA-Z0-9 ,_\-\'\"]+/', '', (string) $value ) );
-
-		} // /sanitize_fonts
 
 
 

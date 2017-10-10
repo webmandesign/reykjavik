@@ -15,7 +15,7 @@
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Core
  *
- * @version  2.4.4
+ * @version  2.5.0
  *
  * Used global hooks:
  *
@@ -81,6 +81,10 @@
 
 		// Customize class
 
+			require REYKJAVIK_LIBRARY . 'includes/classes/class-sanitize.php';
+
+		// Customize class
+
 			require REYKJAVIK_LIBRARY . 'includes/classes/class-customize.php';
 
 		// CSS Styles Generator class
@@ -111,6 +115,8 @@
 
 			// Child theme generator
 
-				require REYKJAVIK_LIBRARY . 'includes/vendor/use-child-theme/class-use-child-theme.php';
+				if ( apply_filters( 'wmhook_reykjavik_child_theme_generator_enabled', false ) ) {
+					require REYKJAVIK_LIBRARY . 'includes/vendor/use-child-theme/class-use-child-theme.php';
+				}
 
 		}

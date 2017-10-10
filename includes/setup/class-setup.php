@@ -50,13 +50,6 @@ class Reykjavik_Setup {
 
 					self::content_width();
 
-					/**
-					 * Declare support for stylesheet file generator
-					 *
-					 * Has to be declared early for theme upgrades to regenerate styles correctly.
-					 */
-					add_theme_support( 'stylesheet-generator' );
-
 				// Hooks
 
 					// Actions
@@ -74,8 +67,6 @@ class Reykjavik_Setup {
 					// Filters
 
 						add_filter( 'wmhook_reykjavik_enable_rtl', '__return_true' );
-
-						add_action( 'wmhook_reykjavik_library_theme_upgrade', 'Reykjavik_Library_Customize_Styles::generate_main_css_all' );
 
 						add_filter( 'wmhook_reykjavik_setup_image_sizes', __CLASS__ . '::image_sizes' );
 
@@ -367,6 +358,7 @@ class Reykjavik_Setup {
 
 					if ( get_transient( 'reykjavik_regenerate_styles' ) ) {
 						Reykjavik_Library_Customize_Styles::generate_main_css_all();
+						Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
 						delete_transient( 'reykjavik_regenerate_styles' );
 					}
 

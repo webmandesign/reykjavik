@@ -312,27 +312,37 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 
 		/**
-		 * Custom CSS variables stylesheet
+		 * Add custom CSS variables stylesheet(s)
 		 *
-		 * For permanent simple styles (default value must be set).
+		 * This makes sure we've got a functionality to process the custom CSS variables.
+		 * @see  Reykjavik_Library_Customize_Styles::custom_styles()
 		 */
 		if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
 
+			/**
+			 * These files will be loaded additionally to the default custom styles file(s).
+			 * They are being loaded from a child theme first, if found.
+			 * You can simply override the default custom styles file by redefining it in your child theme.
+			 * But it is probably better to just define a new additional file in your child theme, such as
+			 * `child-theme/assets/css/custom-styles-add.css` and do the magic there.
+			 */
 			$custom_styles_custom_types = apply_filters( 'wmhook_reykjavik_custom_styles_custom_types', array(
-					'frontend' => array(
-							'addon',
-						),
-					'editor'   => array(
-							'addon',
-						),
-				) );
+				'frontend' => array(
+					'add',
+				),
+				'editor' => array(
+					'add',
+				),
+			) );
 
 			ob_start();
 
 			if ( ! $visual_editor ) {
 
+				// Default custom styles file is being loaded all the time.
 				locate_template( 'assets/css/custom-styles.css', true, false );
 
+				// Optional other custom styles file types.
 				if ( isset( $custom_styles_custom_types['frontend'] ) ) {
 					foreach ( (array) $custom_styles_custom_types['frontend'] as $type ) {
 						locate_template( 'assets/css/custom-styles-' . sanitize_file_name( $type ) . '.css', true, false );
@@ -341,8 +351,10 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			} else {
 
+				// Default custom styles file is being loaded all the time.
 				locate_template( 'assets/css/custom-styles-editor.css', true, false );
 
+				// Optional other custom styles file types.
 				if ( isset( $custom_styles_custom_types['editor'] ) ) {
 					foreach ( (array) $custom_styles_custom_types['editor'] as $type ) {
 						locate_template( 'assets/css/custom-styles-' . sanitize_file_name( $type ) . '-editor.css', true, false );
@@ -351,7 +363,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			}
 
-			$output .= "\r\n\r\n" . Reykjavik_Library_Customize_Styles::custom_styles( ob_get_clean() );
+			$output .= "\r\n\r\n" . ob_get_clean();
 
 		}
 
@@ -359,11 +371,17 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			$output = (string) apply_filters( 'wmhook_reykjavik_custom_styles_output', $output, $visual_editor, $helper );
 
+		// Apply replacements
+
+			$replacements = (array) apply_filters( 'wmhook_reykjavik_generate_css_replacements', array() );
+
+			if ( ! empty( $replacements ) ) {
+				$output = strtr( $output, $replacements );
+			}
+
 		// CSS generator info comments
 
-			date_default_timezone_set( 'UTC' );
-
-			$output .= "\r\n\r\n\r\n" . '/* Using Reykjavik theme by WebMan Design - Oliver Juhas (https://www.webmandesign.eu), version ' . REYKJAVIK_THEME_VERSION . '. CSS generated on ' . gmdate( 'Y/m/d H:i, e' ) . '. */';
+			$output .= "\r\n\r\n\r\n" . '/* Using Reykjavik theme by WebMan Design (https://www.webmandesign.eu), version ' . REYKJAVIK_THEME_VERSION . '. CSS generated on ' . gmdate( 'Y/m/d H:i, e' ) . '. */';
 
 
 	// Output
@@ -371,3 +389,5 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 		return apply_filters( 'wmhook_reykjavik_esc_css', $output );
 
 } // /reykjavik_custom_styles
+
+add_filter( 'wmhook_reykjavik_custom_styles', 'reykjavik_custom_styles' );

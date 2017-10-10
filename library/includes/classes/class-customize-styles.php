@@ -3,13 +3,14 @@
  * CSS Styles Generator class
  *
  * @uses  `wmhook_reykjavik_theme_options` global hook
+ * @uses  `wmhook_reykjavik_custom_styles` global hook
  * @uses  `wmhook_reykjavik_enable_rtl` global hook
  *
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
  *
  * @since    1.8.0
- * @version  2.3.0
+ * @version  2.5.0
  *
  * Contents:
  *
@@ -31,19 +32,21 @@ final class Reykjavik_Library_Customize_Styles {
 
 		private static $instance;
 
+		public static $supports_generator;
+
 
 
 		/**
 		 * Constructor
 		 *
 		 * @since    1.8.0
-		 * @version  2.3.0
+		 * @version  2.5.0
 		 */
 		private function __construct() {
 
 			// Helper variables
 
-				$supports_generator = current_theme_supports( 'stylesheet-generator' );
+				self::$supports_generator = current_theme_supports( 'stylesheet-generator' );
 
 
 			// Processing
@@ -60,47 +63,22 @@ final class Reykjavik_Library_Customize_Styles {
 
 					// Actions
 
-						if ( $supports_generator ) {
+						if ( self::$supports_generator ) {
 
 							add_action( 'customize_save_after', __CLASS__ . '::generate_main_css_all', 98 );
-
-							add_action( 'after_switch_theme', __CLASS__ . '::generate_main_css_all' );
+							add_action( 'wmhook_reykjavik_library_theme_upgrade', __CLASS__ . '::generate_main_css_all' );
 
 						} else {
 
-							add_action( 'customize_save_after', __CLASS__ . '::custom_styles_cache' );
-
-							add_action( 'switch_theme', __CLASS__ . '::custom_styles_transient_flusher' );
-
-							add_action( 'wmhook_reykjavik_library_theme_upgrade', __CLASS__ . '::custom_styles_transient_flusher' );
+							add_action( 'switch_theme', __CLASS__ . '::custom_styles_cache_flush' );
+							add_action( 'customize_save_after', __CLASS__ . '::custom_styles_cache_flush' );
+							add_action( 'wmhook_reykjavik_library_theme_upgrade', __CLASS__ . '::custom_styles_cache_flush' );
 
 						}
 
 						add_action( 'wmhook_reykjavik_library_generate_main_css', __CLASS__ . '::stylesheet_timestamp' );
 
 					// Filters
-
-						if ( $supports_generator ) {
-
-							// Minify CSS
-
-								add_filter( 'wmhook_reykjavik_library_generate_main_css_output_min', __CLASS__ . '::minify_css' );
-
-							// SSL ready URLs
-
-								add_filter( 'wmhook_reykjavik_library_generate_main_css_output', 'Reykjavik_Library::fix_ssl_urls', 9999 );
-
-						} else {
-
-							// Minify CSS
-
-								add_filter( 'wmhook_reykjavik_library_custom_styles_output_cache', __CLASS__ . '::minify_css' );
-
-							// SSL ready URLs
-
-								add_filter( 'wmhook_reykjavik_library_custom_styles_output', 'Reykjavik_Library::fix_ssl_urls', 9999 );
-
-						}
 
 						// Escape inline CSS
 
@@ -109,14 +87,12 @@ final class Reykjavik_Library_Customize_Styles {
 						// Minify CSS
 
 							add_filter( 'wmhook_reykjavik_library_generate_main_css_output_min', __CLASS__ . '::minify_css' );
-
-							add_filter( 'wmhook_reykjavik_library_custom_styles_output_cache', __CLASS__ . '::minify_css' );
+							add_filter( 'wmhook_reykjavik_library_custom_styles_output_cache',   __CLASS__ . '::minify_css' );
 
 						// SSL ready URLs
 
 							add_filter( 'wmhook_reykjavik_library_generate_main_css_output', 'Reykjavik_Library::fix_ssl_urls', 9999 );
-
-							add_filter( 'wmhook_reykjavik_library_custom_styles_output', 'Reykjavik_Library::fix_ssl_urls', 9999 );
+							add_filter( 'wmhook_reykjavik_library_custom_styles_output',     'Reykjavik_Library::fix_ssl_urls', 9999 );
 
 		} // /__construct
 
@@ -155,7 +131,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * Generate main CSS file
 		 *
 		 * @since    1.0.0
-		 * @version  2.3.0
+		 * @version  2.5.0
 		 *
 		 * @param  array $args
 		 */
@@ -163,7 +139,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_library_generate_main_css_pre', false, $args );
+				$pre = apply_filters( 'wmhook_reykjavik_library_generate_main_css_pre', ! self::$supports_generator, $args );
 
 				if ( false !== $pre ) {
 					return $pre;
@@ -172,16 +148,14 @@ final class Reykjavik_Library_Customize_Styles {
 
 			// Helper variables
 
-				$args = wp_parse_args( $args, array(
-						'type' => '',
-					) );
-				$args = apply_filters( 'wmhook_reykjavik_library_generate_main_css_args', $args );
-
 				$output = $output_min = '';
 
-				$args['type'] = trim( $args['type'] );
-
 				$filesystem = self::get_filesystem();
+
+				$args = apply_filters( 'wmhook_reykjavik_library_generate_main_css_args', wp_parse_args( $args, array(
+						'type' => '',
+					) ) );
+				$args['type'] = trim( $args['type'] );
 
 
 			// Requirements check
@@ -200,20 +174,14 @@ final class Reykjavik_Library_Customize_Styles {
 				// Get the file content with output buffering
 
 					ob_start();
-
 					require_once REYKJAVIK_PATH . 'assets/css-generate/generate-css' . $args['type'] . '.php';
+					$output = apply_filters( 'wmhook_reykjavik_library_generate_main_css_output', trim( ob_get_clean() ), $args );
 
-					$output = trim( ob_get_clean() );
+					// Requirements check
 
-				// Filter output
-
-					$output = apply_filters( 'wmhook_reykjavik_library_generate_main_css_output', $output, $args );
-
-				// Requirements check
-
-					if ( ! $output ) {
-						return;
-					}
+						if ( ! $output ) {
+							return;
+						}
 
 				// Minify output if set
 
@@ -230,6 +198,11 @@ final class Reykjavik_Library_Customize_Styles {
 							! ( file_exists( $theme_css_dir ) && is_dir( $theme_css_dir ) )
 							&& ! wp_mkdir_p( $theme_css_dir )
 						) {
+
+						/**
+						 * Display admin notice if we can not write the file,
+						 * and exit the method returning `false`.
+						 */
 
 						set_transient(
 								'reykjavik_admin_notice',
@@ -249,35 +222,51 @@ final class Reykjavik_Library_Customize_Styles {
 
 					}
 
-				$file_name           = apply_filters( 'wmhook_reykjavik_library_generate_main_css_file_name', 'reykjavik-styles' . $args['type'], $args );
-				$global_css_path     = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path', trailingslashit( $theme_css_dir ) . $file_name . '.css', $args, $file_name );
-				$global_css_url      = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_url', trailingslashit( $theme_css_url ) . $file_name . '.css', $args, $file_name );
-				$global_css_path_dev = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . 'dev-' . $file_name . '.css', $args, $file_name );
+				// Create the theme CSS files
 
-				if (
-						$output
-						&& $filesystem->put_contents( $global_css_path, $output_min )
-					) {
+					$file_name = apply_filters( 'wmhook_reykjavik_library_generate_main_css_file_name', 'reykjavik-styles' . $args['type'], $args );
 
-					$filesystem->put_contents( $global_css_path_dev, $output );
+					$global_css_path     = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path', trailingslashit( $theme_css_dir ) . $file_name . '.css', $args, $file_name, $theme_css_dir );
+					$global_css_path_dev = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . 'dev-' . $file_name . '.css', $args, $file_name, $theme_css_dir );
 
-					// Store the CSS files paths and urls in DB
+					$global_css_url = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_url', trailingslashit( $theme_css_url ) . $file_name . '.css', $args, $file_name, $theme_css_url );
 
-						set_theme_mod( '__url_css' . $args['type'], $global_css_url );
-						set_theme_mod( '__path_theme_generated_files' . $args['type'], str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
+					if (
+							$output
+							&& $filesystem->put_contents( $global_css_path, $output_min )
+						) {
 
-					// Run custom actions
+						/**
+						 * Alright, we've got a CSS string to write,
+						 * and we have already successfully created a main stylesheet file.
+						 *
+						 * Now create unminified stylesheet file (with `dev-` prefix),
+						 * and save all generated files paths and URLs in theme mods (for easier access),
+						 * and run action hook afterwards,
+						 * and then confirm a success returning `true` :)
+						 */
 
-						do_action( 'wmhook_reykjavik_library_generate_main_css', $args );
+						$filesystem->put_contents( $global_css_path_dev, $output );
 
-					return true;
+						// Store the CSS files paths and urls in DB
 
-				}
+							set_theme_mod( '__url_css' . $args['type'], $global_css_url );
+							set_theme_mod( '__path_theme_generated_files' . $args['type'], str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
 
-				remove_theme_mod( '__url_css' . $args['type'] );
-				remove_theme_mod( '__path_theme_generated_files' . $args['type'] );
+						// Run custom actions
 
-				return false;
+							do_action( 'wmhook_reykjavik_library_generate_main_css', $args );
+
+						return true;
+
+					}
+
+				// Well, if we've got down here, there is really nothing we can do...
+
+					remove_theme_mod( '__url_css' . $args['type'] );
+					remove_theme_mod( '__path_theme_generated_files' . $args['type'] );
+
+					return false;
 
 		} // /generate_main_css
 
@@ -360,31 +349,30 @@ final class Reykjavik_Library_Customize_Styles {
 	 */
 
 		/**
-		 * Replace variables in the custom CSS
+		 * Replace custom variables in the CSS string
 		 *
-		 * Just use a '[[customizer_option_id]]' tags in your custom CSS styles string
+		 * Use a '[[customizer_option_id]]' variable tags in your CSS styles string
 		 * where the specific option value should be used.
 		 *
-		 * This method allows using a single stylesheet generator, as well as hooking
-		 * your custom CSS styles string onto `wmhook_reykjavik_custom_styles`
-		 * filter hook when producing an inline CSS output in HTML head.
+		 * This method allows using both single stylesheet file generator,
+		 * and outputting the processed CSS as an inline styles.
+		 *
+		 * You can pass the CSS styles string directly to the method `$css` argument,
+		 * or hooking it onto `wmhook_reykjavik_custom_styles` filter.
 		 *
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 * @uses  `wmhook_reykjavik_custom_styles` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.4
+		 * @version  2.5.0
 		 *
-		 * @param  string  $css        CSS string with variables to replace.
-		 *
-		 * @param  boolean $set_cache  Determines whether the results should be cached or not.
-		 * @param  boolean $return     Whether to return a value or just run the process.
+		 * @param  string  $css  CSS string with variables to replace.
 		 */
-		public static function custom_styles( $css = '', $set_cache = false, $return = true ) {
+		public static function custom_styles( $css = '' ) {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_library_custom_styles_pre', false, $css, $set_cache, $return );
+				$pre = apply_filters( 'wmhook_reykjavik_library_custom_styles_pre', false, $css );
 
 				if ( false !== $pre ) {
 					return $pre;
@@ -396,37 +384,49 @@ final class Reykjavik_Library_Customize_Styles {
 				$css = trim( (string) apply_filters( 'wmhook_reykjavik_custom_styles', $css ) );
 
 				if ( empty( $css ) ) {
+					// Well, we have no CSS string to process, so, nothing to do here...
 					return;
+				}
+
+				/**
+				 * If we don't generate a stylesheet file,
+				 * and we have cache,
+				 * and we are not in customizer preview,
+				 * just output the cache first.
+				 */
+				if (
+						! self::$supports_generator
+						&& ! $is_customize_preview = is_customize_preview()
+					) {
+
+					$output_cached = (string) get_transient( 'reykjavik_custom_css' );
+					if ( isset( $_GET['debug'] ) ) {
+						// Do we want debug cache instead (via "debug" URL attribute)?
+						$output_cached = (string) get_transient( 'reykjavik_custom_css_debug' );
+					}
+
+					if ( $output_cached = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output_cached ) ) ) {
+						return $output_cached;
+					}
+
 				}
 
 
 			// Helper variables
 
-				$output = $css;
+				$output = '';
 
 				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
-				$alphas        = array_filter( (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_alphas', array() ) );
+				$rgba_alphas   = array_filter( (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_alphas', array() ) );
 
 				$replacements     = array();
 				$set_replacements = true;
 
 				// For inline styles only
 
-					if ( ! $supports_generator = current_theme_supports( 'stylesheet-generator' ) ) {
-
-						$replacements  = array_unique( array_filter( (array) get_transient( 'reykjavik_customizer_values' ) ) );
-
-						/**
-						 * Force caching during the first theme display when no cache set
-						 * and only default values are used.
-						 * Cache is being set only after saving the theme customizer.
-						 */
-						if ( empty( $replacements ) ) {
-							$set_cache = true;
-						}
-
-						$set_replacements = is_customize_preview() || empty( $replacements );
-
+					if ( ! self::$supports_generator ) {
+						$replacements     = array_unique( array_filter( (array) get_transient( 'reykjavik_customizer_values' ) ) );
+						$set_replacements = $is_customize_preview || empty( $replacements );
 					}
 
 
@@ -560,8 +560,8 @@ final class Reykjavik_Library_Customize_Styles {
 
 								// Add also rgba() color interpretation
 
-									if ( 'color' === $option['type'] && ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
+									if ( 'color' === $option['type'] && ! empty( $rgba_alphas ) ) {
+										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[' . $css_option_id . '(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
 										} // /foreach
 									}
@@ -593,8 +593,8 @@ final class Reykjavik_Library_Customize_Styles {
 								if ( $value = get_background_color() ) {
 									$replacements['[[background_color]]'] = self::maybe_hash_hex_color( $value );
 
-									if ( ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
+									if ( ! empty( $rgba_alphas ) ) {
+										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[background_color(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
 										} // /foreach
 									}
@@ -613,8 +613,8 @@ final class Reykjavik_Library_Customize_Styles {
 								if ( $value = get_header_textcolor() ) {
 									$replacements['[[header_textcolor]]'] = self::maybe_hash_hex_color( $value );
 
-									if ( ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
+									if ( ! empty( $rgba_alphas ) ) {
+										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[header_textcolor(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
 										} // /foreach
 									}
@@ -628,11 +628,11 @@ final class Reykjavik_Library_Customize_Styles {
 									$replacements['[[header_image]]'] = 'none';
 								}
 
-						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $output );
+						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $css );
 
 						// Create a new cache for replacements values, only when saving theme customizer
 
-							if ( $set_cache && ! empty( $replacements ) ) {
+							if ( ! $is_customize_preview ) {
 								set_transient( 'reykjavik_customizer_values', $replacements );
 							}
 
@@ -640,48 +640,34 @@ final class Reykjavik_Library_Customize_Styles {
 
 				// Prepare output
 
-					if ( $supports_generator ) {
+					/**
+					 * Replace tags in custom CSS strings with actual values
+					 * for both stylesheet file generator,
+					 * and for outputting CSS string.
+					 */
+					$output = strtr( $css, $replacements );
 
-						// Replace tags in custom CSS strings with actual values
+					/**
+					 * Should we set cache of CSS string?
+					 *
+					 * Cache is set when we are in Customizer and saving settings,
+					 * or when we are not in Customizer and we have no cache.
+					 */
+					if (
+							! self::$supports_generator
+							&& ! $is_customize_preview
+						) {
 
-							$output = strtr( $output, $replacements );
-
-					} else {
-
-						$output_cached = (string) get_transient( 'reykjavik_custom_css' );
-
-						// Debugging (via "debug" URL parameter)
-
-							if ( isset( $_GET['debug'] ) ) {
-								$output_cached = (string) get_transient( 'reykjavik_custom_css_debug' );
-							}
-
-						if ( empty( $output_cached ) || is_customize_preview() ) {
-
-							// Replace tags in custom CSS strings with actual values
-
-								$output = strtr( $output, $replacements );
-
-							if ( $set_cache ) {
-								set_transient( 'reykjavik_custom_css_debug', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output ) );
-								set_transient( 'reykjavik_custom_css', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output ) );
-							}
-
-						} else {
-
-							$output = $output_cached;
-
-						}
+						set_transient( 'reykjavik_custom_css_debug', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output ) );
+						set_transient( 'reykjavik_custom_css', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output ) );
 
 					}
 
 
 			// Output
 
-				$output = (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output );
-
-				if ( $output && $return ) {
-					return trim( (string) $output );
+				if ( $output = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output ) ) ) {
+					return $output;
 				}
 
 		} // /custom_styles
@@ -694,9 +680,9 @@ final class Reykjavik_Library_Customize_Styles {
 			 * For HTML head inline CSS styles output only.
 			 *
 			 * @since    1.0.0
-			 * @version  1.1.0
+			 * @version  2.5.0
 			 */
-			public static function custom_styles_transient_flusher() {
+			public static function custom_styles_cache_flush() {
 
 				// Processing
 
@@ -704,28 +690,7 @@ final class Reykjavik_Library_Customize_Styles {
 					delete_transient( 'reykjavik_custom_css_debug' );
 					delete_transient( 'reykjavik_custom_css' );
 
-			} // /custom_styles_transient_flusher
-
-
-
-			/**
-			 * Force cache only for the above function
-			 *
-			 * For HTML head inline CSS styles output only.
-			 * Useful to pass into the action hooks.
-			 *
-			 * @since    1.0.0
-			 * @version  1.0.0
-			 */
-			public static function custom_styles_cache() {
-
-				// Processing
-
-					// Set cache, do not return
-
-						self::custom_styles( true, false );
-
-			} // /custom_styles_cache
+			} // /custom_styles_cache_flush
 
 
 

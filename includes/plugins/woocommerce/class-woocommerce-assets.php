@@ -11,7 +11,8 @@
  * Contents:
  *
  *  0) Init
- * 10) Setup
+ * 10) Enqueue
+ * 20) Setup
  */
 class Reykjavik_WooCommerce_Assets {
 
@@ -39,9 +40,11 @@ class Reykjavik_WooCommerce_Assets {
 
 				// Actions
 
-					add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets', 100 );
+					add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue', 110 );
 
-					add_action( 'wp_enqueue_scripts', __CLASS__ . '::styles_fallback', 100 );
+				// Filters
+
+					add_filter( 'wmhook_reykjavik_assets_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
 
 		} // /__construct
 
@@ -73,7 +76,7 @@ class Reykjavik_WooCommerce_Assets {
 
 
 	/**
-	 * 10) Setup
+	 * 10) Enqueue
 	 */
 
 		/**
@@ -82,63 +85,81 @@ class Reykjavik_WooCommerce_Assets {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
-		public static function assets() {
+		public static function enqueue() {
 
 			// Processing
+
+				// Styles
+
+					if ( current_theme_supports( 'stylesheet-generator' ) ) {
+
+						$wp_upload_dir    = wp_upload_dir();
+						$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
+
+						if (
+								! file_exists( $theme_upload_dir . 'reykjavik-styles.css' )
+								|| ( defined( 'REYKJAVIK_DEBUG_SASS' ) && REYKJAVIK_DEBUG_SASS )
+							) {
+
+							wp_enqueue_style(
+								'reykjavik-stylesheet-woocommerce',
+								get_theme_file_uri( 'fallback-woocommerce.css' ),
+								array( 'reykjavik-stylesheet-global' ),
+								esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+								'screen'
+							);
+
+						}
+
+					} else {
+
+						wp_enqueue_style(
+							'reykjavik-stylesheet-woocommerce',
+							get_theme_file_uri( 'assets/css/woocommerce.css' ),
+							array( 'reykjavik-stylesheet-global' ),
+							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+							'screen'
+						);
+
+					}
+
+					// RTL setup
+
+						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
 
 				// Scripts
 
 					wp_enqueue_script(
-							'reykjavik-scripts-woocommerce',
-							get_theme_file_uri( 'assets/js/scripts-woocommerce.js' ),
-							array( 'jquery' ),
-							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-							true
-						);
+						'reykjavik-scripts-woocommerce',
+						get_theme_file_uri( 'assets/js/scripts-woocommerce.js' ),
+						array( 'jquery' ),
+						esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+						true
+					);
 
-		} // /assets
+		} // /enqueue
 
 
+
+
+
+	/**
+	 * 20) Setup
+	 */
 
 		/**
-		 * Enqueue fallback stylesheet
+		 * Load inline styles after WooCommerce stylesheet is enqueued
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
-		public static function styles_fallback() {
+		public static function inline_styles_handle() {
 
-			// Helper variables
+			// Output
 
-				$wp_upload_dir    = wp_upload_dir();
-				$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
+				return 'reykjavik-stylesheet-woocommerce';
 
-
-			// Requirements check
-
-				if (
-						file_exists( $theme_upload_dir . 'reykjavik-styles.css' )
-						&& ! ( defined( 'REYKJAVIK_DEBUG_SASS' ) && REYKJAVIK_DEBUG_SASS )
-					) {
-					return;
-				}
-
-
-			// Processing
-
-				wp_enqueue_style(
-						'reykjavik-stylesheet-woocommerce',
-						get_theme_file_uri( 'fallback-woocommerce.css' ),
-						array( 'reykjavik-stylesheet-global' ),
-						esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-						'screen'
-					);
-
-				// RTL setup
-
-					wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
-
-		} // /styles_fallback
+		} // /inline_styles_handle
 
 
 

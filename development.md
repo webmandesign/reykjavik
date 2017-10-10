@@ -66,6 +66,8 @@ Reference of what variables need to be replaced can be found in the scripts them
 
 ## Debugging
 
+*This information is only relevant for when theme supports `stylesheet-generator`.*
+
 For SASS debugging define a `REYKJAVIK_DEBUG_SASS` constant and set it to `true`.
 
 Or simply use `webman-sass-debug.php` plugin for that.

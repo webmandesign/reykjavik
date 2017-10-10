@@ -2,6 +2,8 @@
 /**
  * Main RTL stylesheet generator
  *
+ * This file is used only when the theme supports `stylesheet-generator`.
+ *
  * @uses  `wmhook_reykjavik_esc_css` global hook
  * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
  *
@@ -24,18 +26,17 @@
 	$scope  = 'rtl';
 
 	$reykjavik_theme_css_files = array(
-			10 => 'assets/css/main-rtl.css',
-		);
+		10 => 'assets/css/main-rtl.css',
+	);
 
 
 
-		/**
-		 * Allow filtering
-		 */
+	/**
+	 * Allow filtering
+	 */
+	$reykjavik_theme_css_files = apply_filters( 'wmhook_reykjavik_css_files', $reykjavik_theme_css_files, $scope );
 
-			$reykjavik_theme_css_files = apply_filters( 'wmhook_reykjavik_css_files', $reykjavik_theme_css_files, $scope );
-
-			ksort( $reykjavik_theme_css_files );
+	ksort( $reykjavik_theme_css_files );
 
 
 
