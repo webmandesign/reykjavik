@@ -24,10 +24,15 @@
 	}
 
 	&-inner {
-		padding-top: $golden +rem;
-		padding-bottom: $golden +rem;
+		padding-top: 0;
+		padding-bottom: 0;
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding-top: $golden +rem;
+			padding-bottom: $golden +rem;
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
 			padding-top: power( $golden, 2 ) +rem;
 			padding-bottom: power( $golden, 2 ) +rem;
 		}

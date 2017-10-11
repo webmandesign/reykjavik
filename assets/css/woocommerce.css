@@ -102,6 +102,8 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 @media only screen and (min-width: 55em) { .shop_table .product-thumbnail { padding-left: 0; padding-right: 0; }
   .shop_table .product-thumbnail img { max-width: 3.62674em; } }
 
+@media only screen and (min-width: 55em) and (max-width: 79.9375em) { .shop_table .product-thumbnail { display: none; } }
+
 .shop_table .product-name { font-size: 0.905em; overflow: hidden; }
 
 .shop_table .product-name > a { display: block; }
@@ -591,9 +593,9 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 
 .product-title-price .intro-title { -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; }
 
-.product-title-price .price { -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; margin: 0; font-size: 1.9044em; font-weight: 300; }
+.product-title-price .price { -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; margin: 1rem 0 0; font-size: 1.9044em; font-weight: 300; }
 
-@media only screen and (min-width: 42em) { .product-title-price .price { text-align: right; } }
+@media only screen and (min-width: 55em) { .product-title-price .price { margin-top: 0; text-align: right; } }
 
 .product-title-price .amount { font-weight: 400; }
 
@@ -776,11 +778,15 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .woocommerce-Reviews li::before { display: none; }
 
-.woocommerce-Reviews .avatar { float: left; width: 3.62674em; }
+.woocommerce-Reviews .avatar { width: 2.6244em; margin-bottom: 1em; }
+
+@media only screen and (min-width: 42em) { .woocommerce-Reviews .avatar { float: left; margin-bottom: 0; } }
+
+@media only screen and (min-width: 55em) { .woocommerce-Reviews .avatar { width: 3.62674em; } }
 
 .woocommerce-Reviews .star-rating { margin-bottom: 0.38em; }
 
-.woocommerce-Reviews .meta { font-size: 0.81em; }
+.woocommerce-Reviews .meta { margin-bottom: 1em; font-size: 0.81em; }
 
 .woocommerce-Reviews time { opacity: .8; }
 
@@ -788,7 +794,9 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 @media only screen and (max-height: 27.9375em) { .woocommerce-Reviews .commentlist { max-height: 75vh; } }
 
-.woocommerce-Reviews .comment-text { margin-left: 5.24674em; }
+@media only screen and (min-width: 42em) { .woocommerce-Reviews .comment-text { margin-left: 3.6244em; } }
+
+@media only screen and (min-width: 55em) { .woocommerce-Reviews .comment-text { margin-left: 5.24674em; } }
 
 .woocommerce-Reviews .comment-respond { padding: 0; margin: 0; }
 
@@ -863,7 +871,9 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .shipping td { font-size: 0.905em; }
 
-.shipping td:last-child { max-width: 12em; text-align: left; }
+.shipping td:last-child { text-align: left; }
+
+@media only screen and (min-width: 55em) { .shipping td:last-child { max-width: 12em; } }
 
 .shipping td > p { clear: both; }
 

@@ -98,6 +98,10 @@
 
 		}
 
+		@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+			display: none;
+		}
+
 	}
 
 

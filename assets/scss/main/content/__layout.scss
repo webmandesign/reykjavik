@@ -15,11 +15,11 @@
 		&-inner {
 			@extend %content_width;
 			@extend .clearfix;
-			padding: $padding_vertical 0;
+			padding: ( $golden_major * $padding_vertical ) 0;
 
 			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
-				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+				padding-top: $padding_vertical;
+				padding-bottom: $padding_vertical;
 			}
 
 			@include responsive( map_get( $breakpoint, 'xl' ) ) {

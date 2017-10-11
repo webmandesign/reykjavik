@@ -422,7 +422,7 @@ blockquote.alignright { padding-right: 0; margin-right: 0; text-align: left; }
 
 .gallery a { display: block; width: 100%; }
 
-.gallery-item { float: left; position: relative; width: 48%; padding: 0; margin: 1%; }
+.gallery-item { -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; float: left; position: relative; width: 48%; padding: 0; margin: 1%; }
 
 .gallery-columns-1 .gallery-item { float: none; width: 100%; margin: 1.62em 0 0; }
 
@@ -594,22 +594,24 @@ form[role="search"] input[type="search"], form[role="search"] .search-field, .fo
 
 .comments-closed + .comment-list { margin-top: 1.62em; }
 
-.comment-list > li, .comment-list .children > li { position: relative; min-height: 5.55556rem; padding: 1.62em 0 0; padding-left: 2.77778rem; margin: 0; background: none; }
+.comment-list > li, .comment-list .children > li { position: relative; min-height: 5.55556rem; padding: 1.62em 0 0; margin: 0; background: none; }
 
 @media only screen and (min-width: 42em) { .comment-list > li, .comment-list .children > li { padding-left: 4.44444rem; } }
 
-.comment-list .children { clear: both; margin: 0; margin-left: -2.22222rem; }
+.comment-list .children { clear: both; margin: 0; margin-left: 1.62em; }
 
 @media only screen and (min-width: 42em) { .comment-list .children { margin-left: -3.33333rem; } }
 
-.comment-body { padding: 1.62em; }
+.comment-body { padding: 1.62em 0; }
+
+@media only screen and (min-width: 42em) { .comment-body { padding-left: 1.62em; padding-right: 1.62em; } }
 
 /* FILE: starter/comments/__meta.scss */
 .comment-meta { clear: both; padding-bottom: 0.62em; margin-bottom: 1em; border-bottom-width: 2px; border-bottom-style: solid; }
 
-.comment-meta .avatar { position: absolute; width: 3.33333rem; left: 0; top: 1.62em; border-radius: 50%; }
+.comment-meta .avatar { display: block; width: 3.33333rem; margin-bottom: 1em; border-radius: 50%; }
 
-@media only screen and (min-width: 42em) { .comment-meta .avatar { width: 5rem; } }
+@media only screen and (min-width: 42em) { .comment-meta .avatar { position: absolute; width: 5rem; left: 0; top: 1.62em; margin-bottom: 0; } }
 
 @media only screen and (min-width: 42em) { .comment-author { float: left; } }
 
@@ -1338,7 +1340,9 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 @media only screen and (max-width: 41.9375em) { .intro-media { overflow: hidden; }
   .site .intro-media img { position: relative; width: auto; height: auto; max-width: none; max-height: 16em; max-height: 38vh; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); } }
 
-.intro-inner { padding: 5rem 0; }
+.intro-inner { padding: 3.1rem 0; }
+
+@media only screen and (min-width: 80em) { .intro-inner { padding-top: 5rem; padding-bottom: 5rem; } }
 
 .intro-title { line-height: 1.19; font-weight: 700; margin: 0; }
 
@@ -1627,9 +1631,9 @@ blockquote.alignright { margin-right: 0; }
 .gallery-caption { padding: 1em; margin-top: -1px; }
 
 /* FILE: main/content/__layout.scss */
-.site-content-inner { padding: 5rem 0; }
+.site-content-inner { padding: 3.1rem 0; }
 
-@media only screen and (min-width: 55em) { .site-content-inner { padding-top: 6.55rem; padding-bottom: 6.55rem; } }
+@media only screen and (min-width: 55em) { .site-content-inner { padding-top: 5rem; padding-bottom: 5rem; } }
 
 @media only screen and (min-width: 80em) { .site-content-inner { padding-top: 8.1rem; padding-bottom: 8.1rem; } }
 
@@ -2123,8 +2127,8 @@ a .entry-date { cursor: pointer; }
 
 @media only screen and (min-width: 55em) and (max-width: 79.9375em) { .widget-text-media-icon .widget-symbol { font-size: 2.2444em; } }
 
-@media only screen and (max-width: 54.9375em) { .widget-text-media-image + .widget-text-media-icon { float: left; margin-right: 1em; margin-bottom: 0.62em; }
-  .widget-text-media-image + .widget-text-media-icon .widget-symbol { font-size: 2.2444em; } }
+@media only screen and (max-width: 54.9375em) { .widget-text-media-image + .widget-text-media-icon { float: left; margin-right: 1em; margin-bottom: 0.38em; }
+  .widget-text-media-image + .widget-text-media-icon .widget-symbol { font-size: 1.62em; } }
 
 @media only screen and (min-width: 55em) { .widget-text-media-icon + .widget-text-content { float: right; width: calc( 100% - 1em - 2.2444em); } }
 
@@ -2155,9 +2159,11 @@ a .entry-date { cursor: pointer; }
 
 @media only screen and (max-width: 41.9375em) { .intro-widgets-container { overflow: hidden; } }
 
-.intro-widgets-inner { padding-top: 1.62rem; padding-bottom: 1.62rem; }
+.intro-widgets-inner { padding-top: 0; padding-bottom: 0; }
 
-@media only screen and (min-width: 55em) { .intro-widgets-inner { padding-top: 2.6244rem; padding-bottom: 2.6244rem; } }
+@media only screen and (min-width: 55em) { .intro-widgets-inner { padding-top: 1.62rem; padding-bottom: 1.62rem; } }
+
+@media only screen and (min-width: 80em) { .intro-widgets-inner { padding-top: 2.6244rem; padding-bottom: 2.6244rem; } }
 
 .intro-widgets a { color: inherit; }
 
@@ -2245,7 +2251,11 @@ body:not(.no-intro):not(.fl-builder):not(.content-layout-no-paddings) .site-cont
 
 @media only screen and (min-width: 80em) { body:not(.no-intro):not(.fl-builder):not(.content-layout-no-paddings) .site-content .breadcrumbs-container { margin-bottom: -2.6244em; } }
 
-.site-footer .breadcrumbs-container { padding-top: 2.6244em; padding-bottom: 2.6244em; }
+.site-footer .breadcrumbs-container { padding-top: 1em; padding-bottom: 1em; }
+
+@media only screen and (min-width: 55em) { .site-footer .breadcrumbs-container { padding-top: 1.62em; padding-bottom: 1.62em; } }
+
+@media only screen and (min-width: 80em) { .site-footer .breadcrumbs-container { padding-top: 2.6244em; padding-bottom: 2.6244em; } }
 
 .footer-layout-fullwidth .site-footer .breadcrumbs-container { padding-left: 0; padding-right: 0; }
 
@@ -2289,25 +2299,39 @@ div.sharedaddy { margin-top: 2.6244rem; border-color: inherit; }
 
 .entry-content .jetpack-portfolio-shortcode { margin: -1em; }
 
-.jetpack-portfolio-shortcode .portfolio-entry-column-1 { width: calc( 100% - 2em); }
+.jetpack-portfolio-shortcode .portfolio-entry { width: calc( 100% - 2em); }
 
-.jetpack-portfolio-shortcode .portfolio-entry-column-2 { width: calc( 50% - 2em); }
+@media only screen and (min-width: 42em) { .jetpack-portfolio-shortcode .portfolio-entry { width: calc( 50% - 2em); }
+  .jetpack-portfolio-shortcode .portfolio-entry-column-1 { width: calc( 100% - 2em); } }
 
-.jetpack-portfolio-shortcode .portfolio-entry-column-3 { width: calc( 33.33333% - 2em); }
-
-.jetpack-portfolio-shortcode .portfolio-entry-column-4 { width: calc( 25% - 2em); }
-
-.jetpack-portfolio-shortcode .portfolio-entry-column-5 { width: calc( 20% - 2em); }
-
-.jetpack-portfolio-shortcode .portfolio-entry-column-6 { width: calc( 16.66667% - 2em); }
+@media only screen and (min-width: 55em) { .jetpack-portfolio-shortcode .portfolio-entry-column-3 { width: calc( 33.33333% - 2em); }
+  .jetpack-portfolio-shortcode .portfolio-entry-column-4 { width: calc( 25% - 2em); }
+  .jetpack-portfolio-shortcode .portfolio-entry-column-5 { width: calc( 20% - 2em); }
+  .jetpack-portfolio-shortcode .portfolio-entry-column-6 { width: calc( 16.66667% - 2em); } }
 
 .posts .type-jetpack-portfolio .entry-header { margin-bottom: 0; }
 
 .posts .type-jetpack-portfolio .entry-content { display: none; }
 
+.entry-content .testimonial-entry { margin: 1em; }
+
 .entry-content .testimonial-entry .testimonial-featured-image { display: inline-block; max-width: 6em; margin-top: 1em; }
 
 .testimonial-entry-title .entry-subtitle { margin: 0; font-size: inherit; }
+
+.jetpack-testimonial-shortcode { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.entry-content .jetpack-testimonial-shortcode { margin: -1em; }
+
+.jetpack-testimonial-shortcode .testimonial-entry { width: calc( 100% - 2em); }
+
+@media only screen and (min-width: 42em) { .jetpack-testimonial-shortcode .testimonial-entry { width: calc( 50% - 2em); }
+  .jetpack-testimonial-shortcode .testimonial-entry-column-1 { width: calc( 100% - 2em); } }
+
+@media only screen and (min-width: 55em) { .jetpack-testimonial-shortcode .testimonial-entry-column-3 { width: calc( 33.33333% - 2em); }
+  .jetpack-testimonial-shortcode .testimonial-entry-column-4 { width: calc( 25% - 2em); }
+  .jetpack-testimonial-shortcode .testimonial-entry-column-5 { width: calc( 20% - 2em); }
+  .jetpack-testimonial-shortcode .testimonial-entry-column-6 { width: calc( 16.66667% - 2em); } }
 
 /* FILE: main/plugins/__subtitles.scss */
 .entry-subtitle { display: block; margin-top: 0.38em; opacity: .8; }

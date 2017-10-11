@@ -70,7 +70,13 @@
 		&-inner {
 			@extend .clearfix;
 			@extend %content_width;
-			padding: $padding_vertical 0;
+			padding: ( $golden_major * $padding_vertical ) 0;
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: $padding_vertical;
+				padding-bottom: $padding_vertical;
+			}
+
 		}
 
 

@@ -76,8 +76,18 @@
 
 		.site-footer & {
 			@extend %background_overlay_from_text_color;
-			padding-top: power( $golden, 2 ) +em;
-			padding-bottom: power( $golden, 2 ) +em;
+			padding-top: 1em;
+			padding-bottom: 1em;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: $golden +em;
+				padding-bottom: $golden +em;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: power( $golden, 2 ) +em;
+				padding-bottom: power( $golden, 2 ) +em;
+			}
 
 			.footer-layout-fullwidth & {
 				padding-left: 0;

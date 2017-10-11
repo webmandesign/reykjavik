@@ -15,7 +15,7 @@ $icon_size: 3.62em;
 	line-height: 1;
 
 	&-icon {
-		font-size: 1em; // Reset size inherited from `h3` class.
+		font-size: 1em; // Reset size inherited from `.h3` class.
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			float: $left; // {{RTL}}
@@ -35,10 +35,10 @@ $icon_size: 3.62em;
 			.widget-text-media-image + & {
 				float: $left; // {{RTL}}
 				margin-#{$right}: 1em; // {{RTL}}
-				margin-bottom: $golden_major +em;
+				margin-bottom: $golden_minor +em;
 
 				.widget-symbol {
-					font-size: $icon_size * $golden_major;
+					font-size: $golden +em;
 				}
 
 			}

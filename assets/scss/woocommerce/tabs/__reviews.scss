@@ -46,8 +46,18 @@
 	}
 
 	.avatar {
-		float: $left; // {{RTL}}
-		width: power( 1 + $golden_minor, 4 ) +em;
+		width: power( $golden, 2 ) +em;
+		margin-bottom: 1em;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			float: $left; // {{RTL}}
+			margin-bottom: 0;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: power( 1 + $golden_minor, 4 ) +em;
+		}
+
 	}
 
 	.star-rating {
@@ -55,6 +65,7 @@
 	}
 
 	.meta {
+		margin-bottom: 1em;
 		font-size: 1em - $golden_minor / 2;
 	}
 
@@ -78,7 +89,15 @@
 		}
 
 		&-text {
-			margin-#{$left}: power( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				margin-#{$left}: power( $golden, 2 ) + 1em; // {{RTL}}
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin-#{$left}: power( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
+			}
+
 		}
 
 		&-respond {

@@ -197,8 +197,12 @@
 			font-size: 1em - $golden_minor / 4;
 
 			&:last-child {
-				max-width: 12em;
 				text-align: $left; // {{RTL}}
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					max-width: 12em;
+				}
+
 			}
 
 			> p {

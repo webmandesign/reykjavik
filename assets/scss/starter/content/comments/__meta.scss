@@ -17,14 +17,17 @@
 	border-bottom-style: solid;
 
 	.avatar {
-		position: absolute;
+		display: block;
 		width: 60 *$px;
-		#{$left}: 0; // {{RTL}}
-		top: $golden +em;
+		margin-bottom: 1em;
 		border-radius: 50%;
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			position: absolute;
 			width: 90 *$px;
+			#{$left}: 0; // {{RTL}}
+			top: $golden +em;
+			margin-bottom: 0;
 		}
 
 	}

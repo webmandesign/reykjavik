@@ -76,11 +76,12 @@
 
 		.price {
 			flex: 0 1 auto;
-			margin: 0;
+			margin: 1rem 0 0;
 			font-size: power( 1 + $golden_minor, 2 ) +em;
 			font-weight: 300;
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin-top: 0;
 				text-align: $right; // {{RTL}}
 			}
 

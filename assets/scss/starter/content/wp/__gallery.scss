@@ -23,11 +23,12 @@
 
 	// Item
 
-		$columns: 2; // default gallery layout on small devices
+		$columns: 2; // Default layout on small devices.
 		$gutter: 2;  // %
 
 		&-item {
 			@extend .overflow-hidden;
+			flex: 1 1 auto;
 			float: $left; // {{RTL}}
 			position: relative;
 			width: percentage( ( 100 / $columns - $gutter ) / 100 );
@@ -46,7 +47,7 @@
 			}
 
 			@include responsive( map_get( $breakpoint, 'm' ) ) {
-				$columns: 3; // default gallery layout on medium devices
+				$columns: 3; // Default layout on medium devices.
 				width: percentage( ( 100 / $columns - $gutter ) / 100 );
 
 				.gallery-columns-2 & {
@@ -61,7 +62,7 @@
 				@for $i from 3 through 9 {
 
 					.gallery-columns-#{$i} & {
-						$columns: $i; // on large devices do not force any default gallery layout, use actual gallery columns setup
+						$columns: $i; // On large devices do not force any default gallery layout, use actual gallery columns setup.
 						width: percentage( ( 100 / $columns - $gutter ) / 100 );
 					}
 

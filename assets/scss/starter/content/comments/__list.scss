@@ -26,7 +26,6 @@
 		position: relative;
 		min-height: 100 *$px;
 		padding: ( $golden +em ) 0 0;
-		padding-#{$left}: 50 *$px; // {{RTL}}
 		margin: 0;
 		background: none;
 
@@ -39,7 +38,7 @@
 	.children {
 		clear: both;
 		margin: 0;
-		margin-#{$left}: -40 *$px; // {{RTL}}
+		margin-#{$left}: $golden +em; // {{RTL}}
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
 			margin-#{$left}: -60 *$px; // {{RTL}}
@@ -50,5 +49,11 @@
 }
 
 .comment-body {
-	padding: $golden +em;
+	padding: ( $golden +em ) 0;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding-left: $golden +em;
+		padding-right: $golden +em;
+	}
+
 }
