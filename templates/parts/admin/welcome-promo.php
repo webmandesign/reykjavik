@@ -66,8 +66,10 @@
 				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Additional layouts and widget areas', 'Theme feature.', 'reykjavik' ); ?>,</li>
 				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Custom page builder elements', 'Theme feature.', 'reykjavik' ); ?>,</li>
 				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Sticky header functionality', 'Theme feature.', 'reykjavik' ); ?>,</li>
+				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Optimized stylesheet generator', 'Theme feature.', 'reykjavik' ); ?>,</li>
 				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Custom icons uploader', 'Theme feature.', 'reykjavik' ); ?>,</li>
 				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Additional blog styles', 'Theme feature.', 'reykjavik' ); ?>,</li>
+				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Child theme generator', 'Theme feature.', 'reykjavik' ); ?>,</li>
 				<li><?php echo esc_html_x( 'And more&hellip;', 'Theme feature.', 'reykjavik' ); ?></li>
 			</ul>
 			<p>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-07 21:26+0200\n"
+"POT-Creation-Date: 2017-10-11 19:13+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -78,326 +78,326 @@ msgctxt "Header image description."
 msgid "Mountains drawing"
 msgstr ""
 
-#: includes/customize/class-customize.php:202
+#: includes/customize/class-customize.php:203
 msgid "Logo image"
 msgstr ""
 
-#: includes/customize/class-customize.php:203
+#: includes/customize/class-customize.php:204
 msgid "Please, do not forget to set the logo max height."
 msgstr ""
 
-#: includes/customize/class-customize.php:203
+#: includes/customize/class-customize.php:204
 msgid ""
 "To make your logo image ready for high DPI screens, please upload twice as "
 "big image."
 msgstr ""
 
-#: includes/customize/class-customize.php:211
+#: includes/customize/class-customize.php:212
 msgid "Max logo image height (px)"
 msgstr ""
 
-#: includes/customize/class-customize.php:232
-#: includes/customize/class-customize.php:263
-#: includes/customize/class-customize.php:305
-#: includes/customize/class-customize.php:401
-#: includes/customize/class-customize.php:543
-#: includes/customize/class-customize.php:619
-#: includes/customize/class-customize.php:822
-#: includes/customize/class-customize.php:1017
-#: includes/customize/class-customize.php:1041
-#: includes/customize/class-customize.php:1206
+#: includes/customize/class-customize.php:233
+#: includes/customize/class-customize.php:264
+#: includes/customize/class-customize.php:306
+#: includes/customize/class-customize.php:402
+#: includes/customize/class-customize.php:544
+#: includes/customize/class-customize.php:620
+#: includes/customize/class-customize.php:823
+#: includes/customize/class-customize.php:1018
+#: includes/customize/class-customize.php:1042
+#: includes/customize/class-customize.php:1207
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:422
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr ""
 
-#: includes/customize/class-customize.php:233
+#: includes/customize/class-customize.php:234
 msgid "Theme Credits"
 msgstr ""
 
-#: includes/customize/class-customize.php:236
+#: includes/customize/class-customize.php:237
 #, php-format
 msgctxt "1: linked theme name, 2: theme author name."
 msgid "%1$s is a WordPress theme developed by %2$s."
 msgstr ""
 
-#: includes/customize/class-customize.php:243
+#: includes/customize/class-customize.php:244
 #, php-format
 msgctxt "%s: theme author link."
 msgid "You can obtain other professional WordPress themes at %s."
 msgstr ""
 
-#: includes/customize/class-customize.php:248
+#: includes/customize/class-customize.php:249
 msgid "Thank you for using a theme by WebMan Design!"
 msgstr ""
 
-#: includes/customize/class-customize.php:262
-#: includes/customize/class-customize.php:304
-#: includes/customize/class-customize.php:400
-#: includes/customize/class-customize.php:542
-#: includes/customize/class-customize.php:618
+#: includes/customize/class-customize.php:263
+#: includes/customize/class-customize.php:305
+#: includes/customize/class-customize.php:401
+#: includes/customize/class-customize.php:543
+#: includes/customize/class-customize.php:619
 #, php-format
 msgctxt "%s = section name. Customizer section title."
 msgid "Colors: %s"
 msgstr ""
 
-#: includes/customize/class-customize.php:262
+#: includes/customize/class-customize.php:263
 msgctxt "Customizer color section title"
 msgid "Accents"
 msgstr ""
 
-#: includes/customize/class-customize.php:274
+#: includes/customize/class-customize.php:275
 msgid "These colors affect links, buttons and other elements."
 msgstr ""
 
-#: includes/customize/class-customize.php:279
+#: includes/customize/class-customize.php:280
 msgid "Primary accent color"
 msgstr ""
 
-#: includes/customize/class-customize.php:285
+#: includes/customize/class-customize.php:286
 msgid "Accent color"
 msgstr ""
 
-#: includes/customize/class-customize.php:291
+#: includes/customize/class-customize.php:292
 msgid "Accent text color"
 msgstr ""
 
-#: includes/customize/class-customize.php:292
+#: includes/customize/class-customize.php:293
 msgid "Color of text on accent color background."
 msgstr ""
 
-#: includes/customize/class-customize.php:304
+#: includes/customize/class-customize.php:305
 msgctxt "Customizer color section title"
 msgid "Header"
 msgstr ""
 
-#: includes/customize/class-customize.php:316
-#: includes/customize/class-customize.php:919
+#: includes/customize/class-customize.php:317
+#: includes/customize/class-customize.php:920
 msgid "Header"
 msgstr ""
 
-#: includes/customize/class-customize.php:322
-#: includes/customize/class-customize.php:419
-#: includes/customize/class-customize.php:484
-#: includes/customize/class-customize.php:560
-#: includes/customize/class-customize.php:637
+#: includes/customize/class-customize.php:323
+#: includes/customize/class-customize.php:420
+#: includes/customize/class-customize.php:485
+#: includes/customize/class-customize.php:561
+#: includes/customize/class-customize.php:638
 msgid "Background color"
 msgstr ""
 
-#: includes/customize/class-customize.php:323
+#: includes/customize/class-customize.php:324
 msgid "This color is also used to style a mobile device browser address bar."
 msgstr ""
 
-#: includes/customize/class-customize.php:323
+#: includes/customize/class-customize.php:324
 msgid "You can further customize it with a dedicated plugin."
 msgstr ""
 
-#: includes/customize/class-customize.php:348
-#: includes/customize/class-customize.php:434
-#: includes/customize/class-customize.php:499
-#: includes/customize/class-customize.php:575
-#: includes/customize/class-customize.php:658
+#: includes/customize/class-customize.php:349
+#: includes/customize/class-customize.php:435
+#: includes/customize/class-customize.php:500
+#: includes/customize/class-customize.php:576
+#: includes/customize/class-customize.php:659
 msgid "Text color"
 msgstr ""
 
-#: includes/customize/class-customize.php:379
+#: includes/customize/class-customize.php:380
 msgid "Site title (logo) color"
 msgstr ""
 
-#: includes/customize/class-customize.php:400
+#: includes/customize/class-customize.php:401
 msgctxt "Customizer color section title"
-msgid "Intro"
-msgstr ""
-
-#: includes/customize/class-customize.php:412
-#: includes/customize/class-customize.php:944
 msgid "Intro"
 msgstr ""
 
 #: includes/customize/class-customize.php:413
+#: includes/customize/class-customize.php:945
+msgid "Intro"
+msgstr ""
+
+#: includes/customize/class-customize.php:414
 msgid "This is a specially styled, main, dominant page title section."
 msgstr ""
 
-#: includes/customize/class-customize.php:455
-#: includes/customize/class-customize.php:520
-#: includes/customize/class-customize.php:596
-#: includes/customize/class-customize.php:679
+#: includes/customize/class-customize.php:456
+#: includes/customize/class-customize.php:521
+#: includes/customize/class-customize.php:597
+#: includes/customize/class-customize.php:680
 msgid "Headings color"
 msgstr ""
 
-#: includes/customize/class-customize.php:477
+#: includes/customize/class-customize.php:478
 #: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:173
 msgid "Intro widgets"
 msgstr ""
 
-#: includes/customize/class-customize.php:478
+#: includes/customize/class-customize.php:479
 msgid ""
 "Please note that this widgets area is displayed only if it contains some "
 "widgets."
 msgstr ""
 
-#: includes/customize/class-customize.php:542
+#: includes/customize/class-customize.php:543
 msgctxt "Customizer color section title"
 msgid "Content"
 msgstr ""
 
-#: includes/customize/class-customize.php:554
-#: includes/customize/class-customize.php:967
+#: includes/customize/class-customize.php:555
+#: includes/customize/class-customize.php:968
 msgid "Content"
 msgstr ""
 
-#: includes/customize/class-customize.php:618
+#: includes/customize/class-customize.php:619
 msgctxt "Customizer color section title"
-msgid "Footer"
-msgstr ""
-
-#: includes/customize/class-customize.php:630
-#: includes/customize/class-customize.php:989
 msgid "Footer"
 msgstr ""
 
 #: includes/customize/class-customize.php:631
+#: includes/customize/class-customize.php:990
+msgid "Footer"
+msgstr ""
+
+#: includes/customize/class-customize.php:632
 msgid ""
 "The main footer widgets area is displayed only if it contains some widgets."
 msgstr ""
 
-#: includes/customize/class-customize.php:702
+#: includes/customize/class-customize.php:703
 msgid "Background image"
 msgstr ""
 
-#: includes/customize/class-customize.php:724
+#: includes/customize/class-customize.php:725
 msgid "Image position"
-msgstr ""
-
-#: includes/customize/class-customize.php:728
-msgctxt "Image position."
-msgid "Top left"
 msgstr ""
 
 #: includes/customize/class-customize.php:729
 msgctxt "Image position."
-msgid "Top center"
+msgid "Top left"
 msgstr ""
 
 #: includes/customize/class-customize.php:730
 msgctxt "Image position."
-msgid "Top right"
+msgid "Top center"
 msgstr ""
 
-#: includes/customize/class-customize.php:732
+#: includes/customize/class-customize.php:731
 msgctxt "Image position."
-msgid "Center left"
+msgid "Top right"
 msgstr ""
 
 #: includes/customize/class-customize.php:733
 msgctxt "Image position."
-msgid "Center"
+msgid "Center left"
 msgstr ""
 
 #: includes/customize/class-customize.php:734
 msgctxt "Image position."
-msgid "Center right"
+msgid "Center"
 msgstr ""
 
-#: includes/customize/class-customize.php:736
+#: includes/customize/class-customize.php:735
 msgctxt "Image position."
-msgid "Bottom left"
+msgid "Center right"
 msgstr ""
 
 #: includes/customize/class-customize.php:737
 msgctxt "Image position."
-msgid "Bottom center"
+msgid "Bottom left"
 msgstr ""
 
 #: includes/customize/class-customize.php:738
 msgctxt "Image position."
+msgid "Bottom center"
+msgstr ""
+
+#: includes/customize/class-customize.php:739
+msgctxt "Image position."
 msgid "Bottom right"
 msgstr ""
 
-#: includes/customize/class-customize.php:754
+#: includes/customize/class-customize.php:755
 msgid "Image size"
-msgstr ""
-
-#: includes/customize/class-customize.php:757
-msgctxt "Image size."
-msgid "Original"
 msgstr ""
 
 #: includes/customize/class-customize.php:758
 msgctxt "Image size."
-msgid "Fit"
+msgid "Original"
 msgstr ""
 
 #: includes/customize/class-customize.php:759
 msgctxt "Image size."
+msgid "Fit"
+msgstr ""
+
+#: includes/customize/class-customize.php:760
+msgctxt "Image size."
 msgid "Fill"
 msgstr ""
 
-#: includes/customize/class-customize.php:774
+#: includes/customize/class-customize.php:775
 msgid "Tile the image"
 msgstr ""
 
-#: includes/customize/class-customize.php:784
+#: includes/customize/class-customize.php:785
 msgid "Fix image position"
 msgstr ""
 
-#: includes/customize/class-customize.php:794
+#: includes/customize/class-customize.php:795
 msgid "Background image opacity"
 msgstr ""
 
-#: includes/customize/class-customize.php:821
+#: includes/customize/class-customize.php:822
 msgctxt "Customizer section title."
 msgid "Layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:833
+#: includes/customize/class-customize.php:834
 msgctxt "A website container."
 msgid "Site Container"
 msgstr ""
 
-#: includes/customize/class-customize.php:839
+#: includes/customize/class-customize.php:840
 msgid "Website layout"
-msgstr ""
-
-#: includes/customize/class-customize.php:842
-#: includes/customize/class-customize.php:928
-#: includes/customize/class-customize.php:998
-msgid "Fullwidth"
 msgstr ""
 
 #: includes/customize/class-customize.php:843
 #: includes/customize/class-customize.php:929
 #: includes/customize/class-customize.php:999
+msgid "Fullwidth"
+msgstr ""
+
+#: includes/customize/class-customize.php:844
+#: includes/customize/class-customize.php:930
+#: includes/customize/class-customize.php:1000
 msgid "Boxed"
 msgstr ""
 
-#: includes/customize/class-customize.php:851
+#: includes/customize/class-customize.php:852
 msgid "Website max width"
 msgstr ""
 
-#: includes/customize/class-customize.php:852
+#: includes/customize/class-customize.php:853
 msgid "For boxed website layout."
 msgstr ""
 
-#: includes/customize/class-customize.php:852
-#: includes/customize/class-customize.php:876
+#: includes/customize/class-customize.php:853
+#: includes/customize/class-customize.php:877
 #, php-format
 msgid "Default value: %s"
 msgstr ""
 
-#: includes/customize/class-customize.php:875
+#: includes/customize/class-customize.php:876
 msgid "Content width"
 msgstr ""
 
-#: includes/customize/class-customize.php:925
+#: includes/customize/class-customize.php:926
 msgid "Header layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:950
+#: includes/customize/class-customize.php:951
 msgid "Enable intro widgets"
 msgstr ""
 
-#: includes/customize/class-customize.php:951
+#: includes/customize/class-customize.php:952
 #, php-format
 msgctxt "%s: Linked plugin name."
 msgid ""
@@ -405,73 +405,73 @@ msgid ""
 "plugin to control its appearance further more."
 msgstr ""
 
-#: includes/customize/class-customize.php:954
+#: includes/customize/class-customize.php:955
 msgid "On singular pages only"
 msgstr ""
 
-#: includes/customize/class-customize.php:955
+#: includes/customize/class-customize.php:956
 msgid "On both archive and singular pages"
 msgstr ""
 
-#: includes/customize/class-customize.php:973
+#: includes/customize/class-customize.php:974
 msgid "Outdent page content"
 msgstr ""
 
-#: includes/customize/class-customize.php:974
+#: includes/customize/class-customize.php:975
 msgid ""
 "Page content will be displayed in 2 columns: H2 headings in first, all the "
 "other page content in second column."
 msgstr ""
 
-#: includes/customize/class-customize.php:974
+#: includes/customize/class-customize.php:975
 msgid "This does not affect pages using \"With sidebar\" page template."
 msgstr ""
 
-#: includes/customize/class-customize.php:995
+#: includes/customize/class-customize.php:996
 msgid "Footer layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:1016
+#: includes/customize/class-customize.php:1017
 msgctxt "Customizer section title."
 msgid "Texts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1023
+#: includes/customize/class-customize.php:1024
 msgid "Footer credits (copyright)"
 msgstr ""
 
-#: includes/customize/class-customize.php:1024
+#: includes/customize/class-customize.php:1025
 #, php-format
 msgid "Set %s to disable this area."
 msgstr ""
 
-#: includes/customize/class-customize.php:1024
+#: includes/customize/class-customize.php:1025
 msgid "Leaving the field empty will fall back to default theme setting."
 msgstr ""
 
-#: includes/customize/class-customize.php:1040
+#: includes/customize/class-customize.php:1041
 msgctxt "Customizer section title."
 msgid "Typography"
 msgstr ""
 
-#: includes/customize/class-customize.php:1047
+#: includes/customize/class-customize.php:1048
 msgid "Basic font size in px"
 msgstr ""
 
-#: includes/customize/class-customize.php:1048
+#: includes/customize/class-customize.php:1049
 msgid ""
 "All other font sizes are calculated automatically from this basic font size."
 msgstr ""
 
-#: includes/customize/class-customize.php:1072
+#: includes/customize/class-customize.php:1073
 msgid "Use custom fonts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1079
+#: includes/customize/class-customize.php:1080
 msgid "Custom fonts setup"
 msgstr ""
 
-#: includes/customize/class-customize.php:1080
+#: includes/customize/class-customize.php:1081
 #, php-format
 msgctxt ""
 "%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
@@ -481,7 +481,7 @@ msgid ""
 "Instead, please use any font service (such as %s) plugin you like."
 msgstr ""
 
-#: includes/customize/class-customize.php:1082
+#: includes/customize/class-customize.php:1083
 msgid ""
 "You can set your fonts plugin according to information provided below, or "
 "insert your custom font names (a value of \"font-family\" CSS property) "
@@ -489,90 +489,90 @@ msgid ""
 "fonts on the website)."
 msgstr ""
 
-#: includes/customize/class-customize.php:1089
+#: includes/customize/class-customize.php:1090
 msgid "General text font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:730
+#: includes/customize/class-customize.php:1102
+#: includes/setup/class-setup.php:729
 msgid "Headings font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1113
-#: includes/setup/class-setup.php:736
+#: includes/customize/class-customize.php:1114
+#: includes/setup/class-setup.php:735
 msgid "Logo font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1124
+#: includes/customize/class-customize.php:1125
 msgid "Info: CSS selectors"
 msgstr ""
 
-#: includes/customize/class-customize.php:1125
+#: includes/customize/class-customize.php:1126
 msgid ""
 "Here you can find CSS selectors list associated with each font group in the "
 "theme. You can use these in your custom font plugin settings."
 msgstr ""
 
-#: includes/customize/class-customize.php:1128
+#: includes/customize/class-customize.php:1129
 msgid "General text font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1138
+#: includes/customize/class-customize.php:1139
 msgid "Headings font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1155
+#: includes/customize/class-customize.php:1156
 msgid "Logo font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1205
+#: includes/customize/class-customize.php:1206
 msgctxt "Customizer section title."
 msgid "Others"
 msgstr ""
 
-#: includes/customize/class-customize.php:1212
+#: includes/customize/class-customize.php:1213
 msgid "Show \"Welcome\" page"
 msgstr ""
 
-#: includes/customize/class-customize.php:1213
+#: includes/customize/class-customize.php:1214
 msgid "Under \"Appearance\" WordPress dashboard menu."
 msgstr ""
 
-#: includes/customize/class-customize.php:1221
+#: includes/customize/class-customize.php:1222
 msgid "Enable mobile navigation"
 msgstr ""
 
-#: includes/customize/class-customize.php:1222
+#: includes/customize/class-customize.php:1223
 msgid ""
 "If your website navigation is very simple and you do not want to use the "
 "mobile navigation functionality, you can disable it here."
 msgstr ""
 
-#: includes/customize/class-customize.php:1229
+#: includes/customize/class-customize.php:1230
 msgid "Archive page title prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1232
+#: includes/customize/class-customize.php:1233
 msgid "Display \"Category:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1233
+#: includes/customize/class-customize.php:1234
 msgid "Display \"Tag:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1234
+#: includes/customize/class-customize.php:1235
 msgid "Display \"Author:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1235
+#: includes/customize/class-customize.php:1236
 msgid "Display \"Archives:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1236
+#: includes/customize/class-customize.php:1237
 msgid "Display \"Taxonomy:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1407
+#: includes/customize/class-customize.php:1408
 msgid ""
 "Please set your website credits text or the theme default one will be "
 "displayed."
@@ -1286,43 +1286,43 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:169
+#: includes/setup/class-setup.php:167
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s!"
 msgstr ""
 
-#: includes/setup/class-setup.php:176
+#: includes/setup/class-setup.php:174
 msgid "Please read \"Welcome\" page for information about the theme setup."
 msgstr ""
 
-#: includes/setup/class-setup.php:183
+#: includes/setup/class-setup.php:181
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/class-setup.php:472
+#: includes/setup/class-setup.php:471
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:479
+#: includes/setup/class-setup.php:478
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:480
+#: includes/setup/class-setup.php:479
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:487 includes/setup/class-setup.php:498
+#: includes/setup/class-setup.php:486 includes/setup/class-setup.php:497
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:497
+#: includes/setup/class-setup.php:496
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:505
+#: includes/setup/class-setup.php:504
 msgid "In page intro section."
 msgstr ""
 
@@ -1331,7 +1331,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:611
+#: includes/setup/class-setup.php:610
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1341,68 +1341,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:621
+#: includes/setup/class-setup.php:620
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:690
+#: includes/setup/class-setup.php:689
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:691
+#: includes/setup/class-setup.php:690
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:692
+#: includes/setup/class-setup.php:691
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:693
+#: includes/setup/class-setup.php:692
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:694
+#: includes/setup/class-setup.php:693
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:695
+#: includes/setup/class-setup.php:694
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:696
+#: includes/setup/class-setup.php:695
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:697
+#: includes/setup/class-setup.php:696
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:698
+#: includes/setup/class-setup.php:697
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:703
+#: includes/setup/class-setup.php:702
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:720
+#: includes/setup/class-setup.php:719
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:724
+#: includes/setup/class-setup.php:723
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:742
+#: includes/setup/class-setup.php:741
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:753
+#: includes/setup/class-setup.php:752
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:760
+#: includes/setup/class-setup.php:759
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1410,23 +1410,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:771
+#: includes/setup/class-setup.php:770
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:775
+#: includes/setup/class-setup.php:774
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:786
+#: includes/setup/class-setup.php:785
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:790
+#: includes/setup/class-setup.php:789
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:802
+#: includes/setup/class-setup.php:801
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1783,18 +1783,18 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:237
+#: library/includes/classes/class-customize-styles.php:211
 msgid ""
 "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:791
+#: library/includes/classes/class-customize-styles.php:761
 msgid ""
 "The theme writes a files to your server. You do not appear to have your FTP "
 "credentials set up in \"wp-config.php\" file."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:791
+#: library/includes/classes/class-customize-styles.php:761
 msgid "Please set your FTP credentials first."
 msgstr ""
 
@@ -2467,28 +2467,28 @@ msgid ""
 "process."
 msgstr ""
 
-#: templates/parts/admin/welcome-filesystem.php:23
+#: templates/parts/admin/welcome-filesystem.php:30
 msgid "Important:"
 msgstr ""
 
-#: templates/parts/admin/welcome-filesystem.php:30
+#: templates/parts/admin/welcome-filesystem.php:37
 msgid ""
 "For the best performance, the theme generates a single CSS stylesheet file "
 "using WordPress native filesystem API."
 msgstr ""
 
-#: templates/parts/admin/welcome-filesystem.php:31
+#: templates/parts/admin/welcome-filesystem.php:38
 msgid "The file is being generated after saving theme customizer settings."
 msgstr ""
 
-#: templates/parts/admin/welcome-filesystem.php:32
+#: templates/parts/admin/welcome-filesystem.php:39
 msgid ""
 "If you notice an error message in WordPress dashboard after leaving the "
 "theme customizer, please check whether you should set up the FTP credentials "
 "in your \"wp-config.php\" file."
 msgstr ""
 
-#: templates/parts/admin/welcome-filesystem.php:33
+#: templates/parts/admin/welcome-filesystem.php:40
 msgid "In that case please read the instructions &raquo;"
 msgstr ""
 
@@ -2582,20 +2582,30 @@ msgstr ""
 
 #: templates/parts/admin/welcome-promo.php:69
 msgctxt "Theme feature."
-msgid "Custom icons uploader"
+msgid "Optimized stylesheet generator"
 msgstr ""
 
 #: templates/parts/admin/welcome-promo.php:70
 msgctxt "Theme feature."
-msgid "Additional blog styles"
+msgid "Custom icons uploader"
 msgstr ""
 
 #: templates/parts/admin/welcome-promo.php:71
 msgctxt "Theme feature."
+msgid "Additional blog styles"
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:72
+msgctxt "Theme feature."
+msgid "Child theme generator"
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:73
+msgctxt "Theme feature."
 msgid "And more&hellip;"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:78
+#: templates/parts/admin/welcome-promo.php:80
 #, php-format
 msgctxt "%s = theme name."
 msgid "Upgrade to %s theme"

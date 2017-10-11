@@ -15,6 +15,13 @@
 
 
 
+// Requirements check
+
+	if ( ! current_theme_supports( 'stylesheet-generator' ) ) {
+		return;
+	}
+
+
 ?>
 
 <h3>
