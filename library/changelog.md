@@ -1,5 +1,17 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.5.1
+
+* **Fix**: Undefined variable PHP error when using stylesheet generator
+* **Fix**: Stylesheet generator and custom styles generator functionality
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-customize-styles.php
+
+
 ## 2.5.0
 
 * **Update**: Disabled Child Theme Generator by default (WPORG theme review requirement)

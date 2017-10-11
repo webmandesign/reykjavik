@@ -261,11 +261,11 @@ class Reykjavik_WooCommerce_Customize {
 		 *
 		 * @uses  `wmhook_reykjavik_custom_styles_array` filter hook
 		 *
-		 * @param  array   $custom_styles
-		 * @param  boolean $visual_editor
-		 * @param  array   $helper
+		 * @param  array  $custom_styles
+		 * @param  string $scope
+		 * @param  array  $helper
 		 */
-		public static function custom_styles_array( $custom_styles = array(), $visual_editor = false, $helper = array() ) {
+		public static function custom_styles_array( $custom_styles = array(), $scope = '', $helper = array() ) {
 
 			// Helper variables
 
@@ -280,7 +280,7 @@ class Reykjavik_WooCommerce_Customize {
 
 			// Processing
 
-				if ( ! $visual_editor ) {
+				if ( empty( $scope ) ) {
 
 					// Adding WooCommerce CSS selectors with `@extend %wc_content_width;` defined // $content_width
 

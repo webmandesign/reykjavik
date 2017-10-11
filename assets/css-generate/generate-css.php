@@ -68,9 +68,10 @@
  * Customizer styles
  */
 
-	require_once REYKJAVIK_PATH . 'assets/css-generate/custom-styles.php';
-
-	$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n" . reykjavik_custom_styles();
+	if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
+		require_once REYKJAVIK_PATH . 'assets/css-generate/custom-styles.php';
+		$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n" . Reykjavik_Library_Customize_Styles::custom_styles();
+	}
 
 
 

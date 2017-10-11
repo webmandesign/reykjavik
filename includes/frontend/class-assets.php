@@ -64,8 +64,6 @@ class Reykjavik_Assets {
 
 						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
 
-						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_inline_styles' );
-
 						if ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) {
 							add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
 							add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
@@ -369,7 +367,6 @@ class Reykjavik_Assets {
 		/**
 		 * HTML head inline styles
 		 *
-		 * @uses  reykjavik_custom_styles()
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
 		 *

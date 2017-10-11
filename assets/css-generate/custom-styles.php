@@ -21,13 +21,14 @@
  * @since    1.0.0
  * @version  1.0.0
  *
- * @param  boolean $visual_editor If true, will output styles for WordPress Visual Editor only.
+ * @param  string $css
+ * @param  string $scope
  */
-function reykjavik_custom_styles( $visual_editor = false ) {
+function reykjavik_custom_styles( $css = '', $scope = '' ) {
 
 	// Pre
 
-		$pre = apply_filters( 'wmhook_reykjavik_custom_styles_pre', false, $visual_editor );
+		$pre = apply_filters( 'wmhook_reykjavik_custom_styles_pre', false, $css, $scope );
 
 		if ( false !== $pre ) {
 			return $pre;
@@ -39,11 +40,20 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 		$output        = '';
 		$custom_styles = array();
 
+		if ( ! is_string( $scope ) && ! empty( $scope ) ) {
+			/**
+			 * If `$scope` is set to TRUE for example, instead of a string,
+			 * presume someone wants to display 'editor' styles as that's the
+			 * only ones we provide besides default (empty `$scope`) styles here.
+			 */
+			$scope = 'editor';
+		}
+
 		$helper = apply_filters( 'wmhook_reykjavik_custom_styles_helper', array(
-				'layout_width_site'    => get_theme_mod( 'layout_width_site', 1640 ),
-				'layout_width_content' => get_theme_mod( 'layout_width_content', 1200 ),
-				'typography_size_html' => get_theme_mod( 'typography_size_html', 18 ),
-			) );
+			'layout_width_site'    => get_theme_mod( 'layout_width_site', 1640 ),
+			'layout_width_content' => get_theme_mod( 'layout_width_content', 1200 ),
+			'typography_size_html' => get_theme_mod( 'typography_size_html', 18 ),
+		) );
 
 
 	// Processing
@@ -62,7 +72,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 		 */
 		if ( ! apply_filters( 'wmhook_reykjavik_custom_styles_use_custom_array', false ) ) {
 
-			if ( ! $visual_editor ) {
+			if ( empty( $scope ) ) {
 			// Normal, non-Visual Editor styles
 
 				$custom_styles = array(
@@ -231,7 +241,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			// Filter the $custom_styles array
 
-				$custom_styles = apply_filters( 'wmhook_reykjavik_custom_styles_array', $custom_styles, $visual_editor, $helper );
+				$custom_styles = apply_filters( 'wmhook_reykjavik_custom_styles_array', $custom_styles, $scope, $helper, $css );
 
 			// Process the $custom_styles array
 
@@ -337,7 +347,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 			ob_start();
 
-			if ( ! $visual_editor ) {
+			if ( empty( $scope ) ) {
 
 				// Default custom styles file is being loaded all the time.
 				locate_template( 'assets/css/custom-styles.css', true, false );
@@ -355,8 +365,8 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 				locate_template( 'assets/css/custom-styles-editor.css', true, false );
 
 				// Optional other custom styles file types.
-				if ( isset( $custom_styles_custom_types['editor'] ) ) {
-					foreach ( (array) $custom_styles_custom_types['editor'] as $type ) {
+				if ( isset( $custom_styles_custom_types[ $scope ] ) ) {
+					foreach ( (array) $custom_styles_custom_types[ $scope ] as $type ) {
 						locate_template( 'assets/css/custom-styles-' . sanitize_file_name( $type ) . '-editor.css', true, false );
 					}
 				}
@@ -369,7 +379,7 @@ function reykjavik_custom_styles( $visual_editor = false ) {
 
 		// Filter the output
 
-			$output = (string) apply_filters( 'wmhook_reykjavik_custom_styles_output', $output, $visual_editor, $helper );
+			$output = (string) apply_filters( 'wmhook_reykjavik_custom_styles_output', $output, $scope, $helper );
 
 		// Apply replacements
 

@@ -11,7 +11,7 @@
  * @subpackage  Customize
  *
  * @since    1.8.0
- * @version  2.5.0
+ * @version  2.5.1
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 		private static $instance;
 
-		public static $supports_generator;
+		public static $supports_generator = false;
 
 
 
@@ -366,15 +366,16 @@ final class Reykjavik_Library_Customize_Styles {
 		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.5.0
+		 * @version  2.5.1
 		 *
-		 * @param  string $css  CSS string with variables to replace.
+		 * @param  string $css    CSS string with variables to replace.
+		 * @param  string $scope  Optional CSS scope (such as 'editor' for generating editor styles).
 		 */
-		public static function custom_styles( $css = '' ) {
+		public static function custom_styles( $css = '', $scope = '' ) {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_library_custom_styles_pre', false, $css );
+				$pre = apply_filters( 'wmhook_reykjavik_library_custom_styles_pre', false, $css, $scope );
 
 				if ( false !== $pre ) {
 					return $pre;
@@ -383,7 +384,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 			// Requirements check
 
-				$css = trim( (string) apply_filters( 'wmhook_reykjavik_custom_styles', $css ) );
+				$css = trim( (string) apply_filters( 'wmhook_reykjavik_custom_styles', $css, $scope ) );
 
 				if ( empty( $css ) ) {
 					// Well, we have no CSS string to process, so, nothing to do here...
@@ -396,9 +397,11 @@ final class Reykjavik_Library_Customize_Styles {
 				 * and we are not in customizer preview,
 				 * just output the cache first.
 				 */
+				$is_customize_preview = is_customize_preview();
+
 				if (
 						! self::$supports_generator
-						&& ! $is_customize_preview = is_customize_preview()
+						&& ! $is_customize_preview
 					) {
 
 					$output_cached = (string) get_transient( 'reykjavik_custom_css' );
@@ -407,7 +410,7 @@ final class Reykjavik_Library_Customize_Styles {
 						$output_cached = (string) get_transient( 'reykjavik_custom_css_debug' );
 					}
 
-					if ( $output_cached = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output_cached ) ) ) {
+					if ( $output_cached = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output_cached, $scope ) ) ) {
 						return $output_cached;
 					}
 
@@ -630,7 +633,7 @@ final class Reykjavik_Library_Customize_Styles {
 									$replacements['[[header_image]]'] = 'none';
 								}
 
-						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $css );
+						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $css, $scope );
 
 						// Create a new cache for replacements values if it does not exist yet
 
@@ -660,15 +663,15 @@ final class Reykjavik_Library_Customize_Styles {
 							&& ! $is_customize_preview
 						) {
 
-						set_transient( 'reykjavik_custom_css_debug', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output ) );
-						set_transient( 'reykjavik_custom_css', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output ) );
+						set_transient( 'reykjavik_custom_css_debug', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output, $scope ) );
+						set_transient( 'reykjavik_custom_css', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output, $scope ) );
 
 					}
 
 
 			// Output
 
-				if ( $output = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output ) ) ) {
+				if ( $output = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output, $scope ) ) ) {
 					return $output;
 				}
 
