@@ -36,6 +36,7 @@ class Reykjavik_Customize {
 		 *
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
+		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
@@ -62,7 +63,7 @@ class Reykjavik_Customize {
 
 						add_filter( 'wmhook_reykjavik_generate_css_replacements', __CLASS__ . '::css_replacements' );
 
-						add_filter( 'wmhook_reykjavik_library_custom_styles_alphas', __CLASS__ . '::rgba_alphas' );
+						add_filter( 'wmhook_reykjavik_custom_styles_alphas', __CLASS__ . '::rgba_alphas' );
 
 		} // /__construct
 

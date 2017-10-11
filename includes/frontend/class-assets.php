@@ -291,14 +291,14 @@ class Reykjavik_Assets {
 				$enqueue_assets = array();
 
 				$breakpoints = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_scripts_breakpoints', array(
-						's'     => 448,
-						'm'     => 672,
-						'l'     => 880,
-						'xl'    => 1280,
-						'xxl'   => 1600,
-						'xxxl'  => 1920,
-						'xxxxl' => 2560,
-					) );
+					's'     => 448,
+					'm'     => 672,
+					'l'     => 880,
+					'xl'    => 1280,
+					'xxl'   => 1600,
+					'xxxl'  => 1920,
+					'xxxxl' => 2560,
+				) );
 
 
 			// Processing
@@ -329,10 +329,10 @@ class Reykjavik_Assets {
 
 					if ( ! empty( $breakpoints ) ) {
 						wp_localize_script(
-								'reykjavik-skip-link-focus-fix',
-								'$reykjavikBreakpoints',
-								$breakpoints
-							);
+							'reykjavik-skip-link-focus-fix',
+							'$reykjavikBreakpoints',
+							$breakpoints
+						);
 					}
 
 				// Enqueue
@@ -659,11 +659,17 @@ class Reykjavik_Assets {
 						$visual_editor_stylesheets[] = esc_url_raw( add_query_arg(
 							'ver',
 							REYKJAVIK_THEME_VERSION,
-							get_theme_file_uri( 'assets/css/main.css' )
+							get_theme_file_uri( 'assets/css/editor-style.css' ) // Contains custom styles.
 						) );
 
 						/**
-						 * Custom styles are added with `editor_inline_styles()` below.
+						 * Unfortunately, WPORG does not allow generating stylesheet files,
+						 * but we can not really use inline styles in TinyMCE either. Here is why:
+						 *
+						 * - TinyMCE adds inline styles before enqueuing other editor stylesheets,
+						 *   so, we would have to use higher CSS specificity,
+						 * - it also cuts the styles strings (when we pass it to `$init['content_style']`)
+						 *   to 10000 characters only, which does not seem to be enough.
 						 */
 
 					}
@@ -680,51 +686,6 @@ class Reykjavik_Assets {
 				return (array) apply_filters( 'wmhook_reykjavik_assets_editor', $visual_editor_stylesheets );
 
 		} // /editor
-
-
-
-		/**
-		 * Editor inline styles
-		 *
-		 * Unfortunately, WPORG does not allow generating stylesheet files,
-		 * so, we need to insert custom editor styles inline.
-		 * The problem is that TinyMCE adds the inline styles before the
-		 * enqueued editor stylesheets in TinyMCE editor HTML head,
-		 * and there seems to be nothing to override this.
-		 * Let's just hope the custom styles will work correctly in TinyMCE...
-		 * Max 10000 characters though...
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function editor_inline_styles( $init ) {
-
-			// Helper variables
-
-				$output = '';
-
-				$inline_styles_default = ( isset( $init['content_style'] ) ) ? ( $init['content_style'] ) : ( '' );
-
-
-			// Processing
-
-				require_once REYKJAVIK_PATH . 'assets/css-generate/custom-styles.php';
-
-				if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-					$output = trim( json_encode( Reykjavik_Library_Customize_Styles::custom_styles() ), '"' );
-				}
-
-
-			// Processing
-
-				// $init['content_style'] = apply_filters( 'wmhook_reykjavik_esc_css', $inline_styles_default . $output );
-
-
-			// Output
-
-				return $init;
-
-		} // /editor_inline_styles
 
 
 

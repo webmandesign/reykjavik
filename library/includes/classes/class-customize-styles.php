@@ -4,6 +4,7 @@
  *
  * @uses  `wmhook_reykjavik_theme_options` global hook
  * @uses  `wmhook_reykjavik_custom_styles` global hook
+ * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
  * @uses  `wmhook_reykjavik_enable_rtl` global hook
  *
  * @package     WebMan WordPress Theme Framework
@@ -362,11 +363,12 @@ final class Reykjavik_Library_Customize_Styles {
 		 *
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 * @uses  `wmhook_reykjavik_custom_styles` global hook
+		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
 		 * @version  2.5.0
 		 *
-		 * @param  string  $css  CSS string with variables to replace.
+		 * @param  string $css  CSS string with variables to replace.
 		 */
 		public static function custom_styles( $css = '' ) {
 
@@ -417,7 +419,7 @@ final class Reykjavik_Library_Customize_Styles {
 				$output = '';
 
 				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
-				$rgba_alphas   = array_filter( (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_alphas', array() ) );
+				$rgba_alphas   = array_filter( (array) apply_filters( 'wmhook_reykjavik_custom_styles_alphas', array() ) );
 
 				$replacements     = array();
 				$set_replacements = true;
@@ -630,7 +632,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $css );
 
-						// Create a new cache for replacements values, only when saving theme customizer
+						// Create a new cache for replacements values if it does not exist yet
 
 							if ( ! $is_customize_preview ) {
 								set_transient( 'reykjavik_customizer_values', $replacements );

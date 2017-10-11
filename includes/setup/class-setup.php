@@ -50,6 +50,13 @@ class Reykjavik_Setup {
 
 					self::content_width();
 
+					/**
+					 * Declare support for stylesheet file generator
+					 *
+					 * Has to be declared early for theme upgrades to regenerate styles correctly.
+					 */
+					// add_theme_support( 'stylesheet-generator' );
+
 				// Hooks
 
 					// Actions
