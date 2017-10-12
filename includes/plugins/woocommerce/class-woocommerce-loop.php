@@ -327,11 +327,11 @@ class Reykjavik_WooCommerce_Loop {
 				$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
 
 				$html = str_replace(
-						'<nav class="woocommerce-pagination">',
-						'<nav class="woocommerce-pagination pagination" role="navigation" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
-						. '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '</h2>',
-						ob_get_clean()
-					);
+					'<nav class="woocommerce-pagination">',
+					'<nav class="woocommerce-pagination pagination" role="navigation" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
+					. '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '</h2>',
+					ob_get_clean()
+				);
 
 
 			// Output
@@ -369,7 +369,7 @@ class Reykjavik_WooCommerce_Loop {
 
 			// Output
 
-				return $args;
+				return (array) apply_filters( 'wmhook_reykjavik_pagination_args', $args, 'woocommerce' );
 
 		} // /pagination_args
 

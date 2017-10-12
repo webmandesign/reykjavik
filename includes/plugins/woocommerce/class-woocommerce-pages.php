@@ -74,6 +74,7 @@ class Reykjavik_WooCommerce_Pages {
 						add_filter( 'get_the_archive_description', __CLASS__ . '::shop_archive_description' );
 
 						add_filter( 'single_post_title', __CLASS__ . '::page_endpoint_title' );
+						add_filter( 'wmhook_reykjavik_intro_title', __CLASS__ . '::page_endpoint_title' );
 
 						add_filter( 'the_content', __CLASS__ . '::page_title_replace' );
 

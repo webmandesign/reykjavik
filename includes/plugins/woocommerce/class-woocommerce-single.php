@@ -276,7 +276,7 @@ class Reykjavik_WooCommerce_Single {
 
 			// Output
 
-				return $args;
+				return (array) apply_filters( 'wmhook_reykjavik_pagination_args', $args, 'woocommerce-comments' );
 
 		} // /comment_pagination_args
 
