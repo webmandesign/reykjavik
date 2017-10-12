@@ -281,6 +281,10 @@ class Reykjavik_One_Click_Demo_Import {
 						set_theme_mod( 'footer_image', esc_url_raw( $footer_image_url ) );
 						set_theme_mod( 'footer_image_opacity', .10 );
 
+						if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles_cache_flush' ) ) {
+							Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
+						}
+
 					}
 
 		} // /theme_options
