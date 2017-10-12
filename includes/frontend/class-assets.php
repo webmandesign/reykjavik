@@ -48,8 +48,7 @@ class Reykjavik_Assets {
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::register_scripts' );
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_styles', 100 );
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 110 );
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::theme_style_file', 120 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::theme_style_file', 110 );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_scripts', 100 );
 
 						add_action( 'customize_preview_init', __CLASS__ . '::enqueue_customize_preview' );
@@ -361,61 +360,6 @@ class Reykjavik_Assets {
 				);
 
 		} // /theme_style_file
-
-
-
-		/**
-		 * HTML head inline styles
-		 *
-		 * @uses  `wmhook_reykjavik_esc_css` global hook
-		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
-		 *
-		 * @see  assets/css-generate/custom-styles.php
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function inline_styles() {
-
-			// Requirements check
-
-				/**
-				 * If `stylesheet-generator` is supported,
-				 * we only display this in Customizer preview screen.
-				 */
-				if (
-						current_theme_supports( 'stylesheet-generator' )
-						&& ! is_customize_preview()
-					) {
-					return;
-				}
-
-
-			// Helper variables
-
-				$output = '';
-
-
-			// Processing
-
-				require_once REYKJAVIK_PATH . 'assets/css-generate/custom-styles.php';
-
-				if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-					$output = Reykjavik_Library_Customize_Styles::custom_styles();
-				}
-
-				$output = (string) apply_filters( 'wmhook_reykjavik_assets_inline_styles', $output );
-
-				if ( ! empty( $output ) ) {
-
-					wp_add_inline_style(
-						apply_filters( 'wmhook_reykjavik_assets_inline_styles_handle', 'reykjavik-stylesheet-global' ),
-						apply_filters( 'wmhook_reykjavik_esc_css', $output )
-					);
-
-				}
-
-		} // /inline_styles
 
 
 

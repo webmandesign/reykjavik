@@ -49,9 +49,9 @@ class Reykjavik_WooCommerce_Customize {
 
 						add_filter( 'wmhook_reykjavik_css_files', __CLASS__ . '::theme_css_files', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_custom_styles_custom_types', __CLASS__ . '::custom_styles' );
+						add_filter( 'wmhook_reykjavik_custom_styles_stylesheet_types', __CLASS__ . '::custom_stylesheets' );
 
-						add_filter( 'wmhook_reykjavik_custom_styles_array', __CLASS__ . '::custom_styles_array', 10, 3 );
+						add_filter( 'wmhook_reykjavik_custom_styles_advanced_array', __CLASS__ . '::custom_styles_array', 10, 3 );
 
 						add_filter( 'wmhook_reykjavik_theme_options', __CLASS__ . '::options' );
 
@@ -132,15 +132,12 @@ class Reykjavik_WooCommerce_Customize {
 		/**
 		 * Register custom WooCommerce stylesheets
 		 *
-		 * Adding custom CSS stylesheet with customize variables
-		 * into `css-generate/custom-style.php` generator file.
-		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
 		 * @param  array $file_types
 		 */
-		public static function custom_styles( $file_types = array() ) {
+		public static function custom_stylesheets( $file_types = array() ) {
 
 			// Processing
 
@@ -151,7 +148,7 @@ class Reykjavik_WooCommerce_Customize {
 
 				return $file_types;
 
-		} // /custom_styles
+		} // /custom_stylesheets
 
 
 
@@ -251,10 +248,7 @@ class Reykjavik_WooCommerce_Customize {
 
 
 		/**
-		 * Add custom WooCommerce styles
-		 *
-		 * Adding custom CSS into `css-generate/custom-style.php` generator
-		 * file dynamic styles processor.
+		 * Add custom WooCommerce styles array
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0

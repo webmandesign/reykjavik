@@ -125,6 +125,10 @@
 
 		require REYKJAVIK_PATH_INCLUDES . 'customize/class-customize.php';
 
+	// Customized Styles
+
+		require REYKJAVIK_PATH_INCLUDES . 'customize/class-customize-styles.php';
+
 	// Custom Header / Intro
 
 		require REYKJAVIK_PATH_INCLUDES . 'custom-header/class-intro.php';

@@ -65,14 +65,12 @@
 
 
 /**
- * Customizer styles
- *
- * No need to load the 'assets/css-generate/custom-styles.php' as the file was already loaded
- * once while generating main stylesheet.
+ * Customized styles
  */
 
 	if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-		$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n" . Reykjavik_Library_Customize_Styles::custom_styles();
+		$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n";
+		$output .= Reykjavik_Library_Customize_Styles::custom_styles();
 	}
 
 
