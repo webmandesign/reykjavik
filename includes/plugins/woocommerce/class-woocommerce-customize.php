@@ -253,8 +253,6 @@ class Reykjavik_WooCommerce_Customize {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
-		 * @uses  `wmhook_reykjavik_custom_styles_array` filter hook
-		 *
 		 * @param  array  $custom_styles
 		 * @param  string $scope
 		 * @param  array  $helper
