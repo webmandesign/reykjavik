@@ -48,8 +48,8 @@ class Reykjavik_Assets {
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::register_scripts' );
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_styles', 100 );
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 200 );
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::theme_style_file', 900 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 110 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::theme_style_file', 120 );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_scripts', 100 );
 
 						add_action( 'customize_preview_init', __CLASS__ . '::enqueue_customize_preview' );

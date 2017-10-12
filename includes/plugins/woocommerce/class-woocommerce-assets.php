@@ -40,7 +40,7 @@ class Reykjavik_WooCommerce_Assets {
 
 				// Actions
 
-					add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue', 110 );
+					add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue', 100 );
 
 				// Filters
 

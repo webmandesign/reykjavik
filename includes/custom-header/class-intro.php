@@ -59,7 +59,7 @@ class Reykjavik_Intro {
 
 						add_action( 'wmhook_reykjavik_intro_after', __CLASS__ . '::special_wrapper_close', 0 );
 
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::special_image', 120 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::special_image', 130 ); // After Reykjavik_Assets::theme_style_file() is hooked.
 
 					// Filters
 

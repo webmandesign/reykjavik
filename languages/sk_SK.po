@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-11 19:13+0200\n"
-"PO-Revision-Date: 2017-10-11 19:14+0200\n"
+"POT-Creation-Date: 2017-10-12 13:05+0200\n"
+"PO-Revision-Date: 2017-10-12 13:06+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
@@ -1206,11 +1206,11 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných pluginov &raquo;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:490
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:509
 msgid "Jetpack Custom content types"
 msgstr "Jetpack: Vlastné typy obsahu"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:494
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:513
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
@@ -1220,23 +1220,23 @@ msgstr ""
 "(Testimonials) a Portfóliá (Portfolios) v sekcii \"Vlastné typy obsahu\" v "
 "nastaveniach Jetpack (nájdete pod Jetpack &rarr; Nastavenia &rarr; Písanie)."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:495
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:514
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 "V prípade, že tieto typy obsahu neaktivujete, daný demo obsah nebude "
 "importovaný."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:499
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
 msgid ""
-"If your Jetpack plugin is connected, you may just try to refresh this page "
+"If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 "Ak je váš Jetpack plugin pripojený, môžete jednoducho skúsiť obnoviť túto "
-"stránku pre automatickú aktiváciu týchto vlastných typov obsahu."
+"stránku pre automatickú aktiváciu vlastných typov obsahu."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:501
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
@@ -1245,6 +1245,10 @@ msgstr ""
 "Ak operácia prebehne úspešne, táto správa zmizne a v administračnom menu sa "
 "zobrazia 2 nové položky: \"Portfólio\" (\"Portfolio\") a \"Referencie"
 "\" (\"Testimonials\")."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:523
+msgid "Reload this page &raquo;"
+msgstr "Obnoviť túto stránku &raquo;"
 
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:421
 msgctxt "Customizer section title."
@@ -1279,23 +1283,23 @@ msgstr "Navigácia produktov"
 msgid "List of products"
 msgstr "Zoznam produktov"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:266 search.php:28
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:267 search.php:28
 #: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Výsledky vyhľadávania pre: %s"
 
 #. translators: Custom page template name.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:448
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:449
 #: templates/no-intro.php:19
 msgid "No intro"
 msgstr "Bez úvodu"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:478
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:479
 msgid "Cart content"
 msgstr "Obsah košíka"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:481
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:482
 #, php-format
 msgctxt "Shopping cart items count."
 msgid "(%d item)"
@@ -1304,28 +1308,28 @@ msgstr[0] "(%d produkt)"
 msgstr[1] "(%d produkty)"
 msgstr[2] "(%d produktov)"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:501
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:502
 msgid "Use your discount coupon code here"
 msgstr "Použite svoj zľavový kupón"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:605
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:606
 msgid "Continue Shopping"
 msgstr "Pokračovať v nákupe"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:627
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:828
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:628
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:829
 msgid "Checkout"
 msgstr "Pokladňa"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:820
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:821
 msgid "Shopping Cart"
 msgstr "Nákupný košík"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:836
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:837
 msgid "Order Completed"
 msgstr "Objednávka dokončená"
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:845
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:846
 msgid "Pay for Order"
 msgstr "Platba za objednávku"
 

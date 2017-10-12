@@ -260,9 +260,28 @@ class Reykjavik_One_Click_Demo_Import {
 		 */
 		public static function theme_options() {
 
+			// Helper variables
+
+				$footer_image_attachment_post = get_page_by_title( 'Footer decorative background image', OBJECT, 'attachment' );
+
+
 			// Processing
 
-				set_theme_mod( 'external_header_video', 'https://youtu.be/HbXTFQXnhmY' );
+				// Custom header video
+
+					set_theme_mod( 'external_header_video', 'https://youtu.be/HbXTFQXnhmY' );
+
+				// Footer background image
+
+					if ( isset( $footer_image_attachment_post->ID ) ) {
+
+						$footer_image_url = wp_get_attachment_image_src( $footer_image_attachment_post->ID, 'full' );
+						$footer_image_url = $footer_image_url[0];
+
+						set_theme_mod( 'footer_image', esc_url_raw( $footer_image_url ) );
+						set_theme_mod( 'footer_image_opacity', .10 );
+
+					}
 
 		} // /theme_options
 
@@ -496,15 +515,16 @@ class Reykjavik_One_Click_Demo_Import {
 					$text .= '</p>';
 					$text .= '<p>';
 					$text .= '<em>';
-					$text .= esc_html__( 'If your Jetpack plugin is connected, you may just try to refresh this page and we will attempt to activate those custom content types for you automatically.', 'reykjavik' );
+					$text .= esc_html__( 'If your Jetpack plugin is connected, you may just try to reload this page and we will attempt to activate those custom content types for you automatically.', 'reykjavik' );
 					$text .= ' ';
 					$text .= esc_html__( 'If the operation is successful, this message will disappear and you should see 2 new items in your WordPress dashboard menu: "Portfolio" and "Testimonials".', 'reykjavik' );
 					$text .= '</em>';
 					$text .= '</p>';
+					$text .= '<a href="" class="button">' . esc_html__( 'Reload this page &raquo;', 'reykjavik' ) . '</a>';
 
 				$text .= '</div>';
 
-				// This will activate the post types automatically, but page refresh is required.
+				// This will activate the post types automatically, but page reload is required.
 
 					if ( is_callable( 'Jetpack::activate_module' ) ) {
 						/**

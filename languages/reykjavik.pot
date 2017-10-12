@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-11 19:13+0200\n"
+"POT-Creation-Date: 2017-10-12 13:05+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -1160,34 +1160,38 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:490
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:509
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:494
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:513
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:495
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:514
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:499
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
 msgid ""
-"If your Jetpack plugin is connected, you may just try to refresh this page "
+"If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:501
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:523
+msgid "Reload this page &raquo;"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:421
@@ -1223,23 +1227,23 @@ msgstr ""
 msgid "List of products"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:266 search.php:28
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:267 search.php:28
 #: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: Custom page template name.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:448
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:449
 #: templates/no-intro.php:19
 msgid "No intro"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:478
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:479
 msgid "Cart content"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:481
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:482
 #, php-format
 msgctxt "Shopping cart items count."
 msgid "(%d item)"
@@ -1247,28 +1251,28 @@ msgid_plural "(%d items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:501
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:502
 msgid "Use your discount coupon code here"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:605
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:606
 msgid "Continue Shopping"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:627
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:828
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:628
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:829
 msgid "Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:820
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:821
 msgid "Shopping Cart"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:836
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:837
 msgid "Order Completed"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:845
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:846
 msgid "Pay for Order"
 msgstr ""
 
