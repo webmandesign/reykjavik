@@ -12,7 +12,6 @@
  *
  *  0) Init
  * 10) Enqueue
- * 20) Setup
  */
 class Reykjavik_WooCommerce_Assets {
 
@@ -38,13 +37,11 @@ class Reykjavik_WooCommerce_Assets {
 
 			// Processing
 
-				// Actions
+				// Hooks
 
-					add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue', 100 );
+					// Actions
 
-				// Filters
-
-					add_filter( 'wmhook_reykjavik_assets_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue', 100 );
 
 		} // /__construct
 
@@ -138,28 +135,6 @@ class Reykjavik_WooCommerce_Assets {
 					);
 
 		} // /enqueue
-
-
-
-
-
-	/**
-	 * 20) Setup
-	 */
-
-		/**
-		 * Load inline styles after WooCommerce stylesheet is enqueued
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function inline_styles_handle() {
-
-			// Output
-
-				return 'reykjavik-stylesheet-woocommerce';
-
-		} // /inline_styles_handle
 
 
 

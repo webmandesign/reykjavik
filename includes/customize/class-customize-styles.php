@@ -47,7 +47,7 @@ class Reykjavik_Customize_Styles {
 					 * There is really no point of running this
 					 * if we don't have the functionality needed.
 					 */
-					return $css;
+					return;
 				}
 
 
@@ -59,19 +59,12 @@ class Reykjavik_Customize_Styles {
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 109 );
 
-						add_action( 'wp_ajax_reykjavik_editor_styles',         __CLASS__ . '::editor_stylesheet_content' );
-						add_action( 'wp_ajax_no_priv_reykjavik_editor_styles', __CLASS__ . '::editor_stylesheet_content' );
+						add_action( 'wp_ajax_reykjavik_editor_styles',         __CLASS__ . '::get_editor_custom_stylesheet' );
+						add_action( 'wp_ajax_no_priv_reykjavik_editor_styles', __CLASS__ . '::get_editor_custom_stylesheet' );
 
 					// Filters
 
-						/**
-						 * This actually hooks directly into a filter inside of
-						 * Reykjavik_Library_Customize_Styles::custom_styles()
-						 * adding the CSS styles string to process.
-						 */
-						add_filter( 'wmhook_reykjavik_custom_styles', __CLASS__ . '::css', 10, 2 );
-
-						add_filter( 'wmhook_reykjavik_custom_styles_array', __CLASS__ . '::styles_advanced', 10, 2 );
+						add_filter( 'wmhook_reykjavik_custom_styles', __CLASS__ . '::get_css_raw', 10, 2 );
 
 						add_filter( 'wmhook_reykjavik_assets_editor', __CLASS__ . '::editor_stylesheet' );
 
@@ -109,7 +102,44 @@ class Reykjavik_Customize_Styles {
 	 */
 
 		/**
-		 * Get customized styles
+		 * Get processed CSS string
+		 *
+		 * Note that this CSS output is not being escaped with `wmhook_reykjavik_esc_css` global hook!
+		 * You need to escape this CSS string on your own just before outputting it.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  string $scope
+		 */
+		public static function get_css( $scope = '' ) {
+
+			// Helper variables
+
+				$output = '';
+
+
+			// Processing
+
+				if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
+					/**
+					 * self::get_css_raw() is hooked into the Reykjavik_Library_Customize_Styles::custom_styles()
+					 * and we get processed CSS string from it here.
+					 */
+					$output .= Reykjavik_Library_Customize_Styles::custom_styles( $output, $scope );
+				}
+
+
+			// Output
+
+				return (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_styles', $output );
+
+		} // /get_css
+
+
+
+		/**
+		 * Get unprocessed, raw custom styles
 		 *
 		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
 		 *
@@ -119,11 +149,11 @@ class Reykjavik_Customize_Styles {
 		 * @param  string $css
 		 * @param  string $scope
 		 */
-		public static function css( $css = '', $scope = '' ) {
+		public static function get_css_raw( $css = '', $scope = '' ) {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_custom_styles_pre', false, $css, $scope );
+				$pre = apply_filters( 'wmhook_reykjavik_customize_styles_get_css_raw_pre', false, $css, $scope );
 
 				if ( false !== $pre ) {
 					return $pre;
@@ -141,15 +171,15 @@ class Reykjavik_Customize_Styles {
 
 				// Add CSS generated from array
 
-					$output .= self::generate_css_from_array( (array) apply_filters( 'wmhook_reykjavik_custom_styles_array', array(), $scope ) );
+					$output .= self::generate_css_from_array( (array) self::get_custom_styles_array( $scope ) );
 
 				// Add stylesheets containing custom CSS variables
 
-					$output .= self::generate_css_from_variable_stylesheets( $output, $scope );
+					$output .= "\r\n\r\n" . self::get_variable_styles( $scope );
 
 				// Filter the output
 
-					$output = (string) apply_filters( 'wmhook_reykjavik_custom_styles_output', $output, $scope );
+					$output = (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_css_raw', $output, $scope );
 
 				// Apply replacements
 
@@ -170,7 +200,7 @@ class Reykjavik_Customize_Styles {
 
 				return $output;
 
-		} // /css
+		} // /get_css_raw
 
 
 
@@ -206,7 +236,7 @@ class Reykjavik_Customize_Styles {
 
 			// Helper variables
 
-				$output = (string) apply_filters( 'wmhook_reykjavik_assets_inline_styles', Reykjavik_Library_Customize_Styles::custom_styles() );
+				$output = trim( (string) self::get_css() );
 
 
 			// Processing
@@ -214,7 +244,7 @@ class Reykjavik_Customize_Styles {
 				if ( ! empty( $output ) ) {
 
 					wp_add_inline_style(
-						apply_filters( 'wmhook_reykjavik_assets_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+						apply_filters( 'wmhook_reykjavik_customize_styles_inline_styles_handle', 'reykjavik-stylesheet-global' ),
 						apply_filters( 'wmhook_reykjavik_esc_css', $output )
 					);
 
@@ -265,7 +295,7 @@ class Reykjavik_Customize_Styles {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
-		public static function editor_stylesheet_content() {
+		public static function get_editor_custom_stylesheet() {
 
 			// Requirements check
 
@@ -274,20 +304,15 @@ class Reykjavik_Customize_Styles {
 				}
 
 
-			// Helper variables
-
-				$output = (string) apply_filters( 'wmhook_reykjavik_assets_editor_styles', Reykjavik_Library_Customize_Styles::custom_styles( '', 'editor' ) );
-
-
 			// Processing
 
 				header( 'Content-type: text/css' );
 
-				echo apply_filters( 'wmhook_reykjavik_esc_css', $output );
+				echo apply_filters( 'wmhook_reykjavik_esc_css', self::get_css( 'editor' ) );
 
 				die();
 
-		} // /editor_stylesheet_content
+		} // /get_editor_custom_stylesheet
 
 
 
@@ -298,24 +323,23 @@ class Reykjavik_Customize_Styles {
 	 */
 
 		/**
-		 * Adding more advanced custom styles
+		 * Getting array of more advanced custom styles
 		 *
-		 * These styles are set in array and basically require more calculation
-		 * or processing than just being directly outputted into CSS.
+		 * These styles are set in array as they require more calculation
+		 * and processing in oppose to custom CSS variables.
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
-		 * @param  array  $styles_array
 		 * @param  string $scope
 		 */
-		public static function styles_advanced( $styles_array = array(), $scope = '' ) {
+		public static function get_custom_styles_array( $scope = '' ) {
 
 			// Helper variables
 
 				$output = array();
 
-				$helper = apply_filters( 'wmhook_reykjavik_custom_styles_helper', array(
+				$helper = apply_filters( 'wmhook_reykjavik_customize_styles_get_custom_styles_array_helper', array(
 					'layout_width_site'    => get_theme_mod( 'layout_width_site', 1640 ),
 					'layout_width_content' => get_theme_mod( 'layout_width_content', 1200 ),
 					'typography_size_html' => get_theme_mod( 'typography_size_html', 18 ),
@@ -457,19 +481,17 @@ class Reykjavik_Customize_Styles {
 
 				}
 
-				$output = apply_filters( 'wmhook_reykjavik_custom_styles_advanced_array', $output, $scope, $helper );
-
 
 			// Output
 
-				return array_merge( $styles_array, $output );
+				return (array) apply_filters( 'wmhook_reykjavik_customize_styles_get_custom_styles_array', $output, $scope, $helper );
 
-		} // /styles_advanced
+		} // /get_custom_styles_array
 
 
 
 		/**
-		 * Adding customization stylesheets
+		 * Get styles from variable stylesheets
 		 *
 		 * The stylesheets containing custom CSS variables
 		 * are enqueued and processed here,
@@ -478,10 +500,16 @@ class Reykjavik_Customize_Styles {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
-		 * @param  string $css
 		 * @param  string $scope
 		 */
-		public static function generate_css_from_variable_stylesheets( $css = '', $scope = '' ) {
+		public static function get_variable_styles( $scope = '' ) {
+
+			// Requirements check
+
+				if ( ! is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
+					return '';
+				}
+
 
 			// Helper variables
 
@@ -494,7 +522,7 @@ class Reykjavik_Customize_Styles {
 				 * child theme, such as `child-theme/assets/css/custom-styles-add.css` and do the magic there.
 				 * IMPORTANT: So, do not create additional stylesheet files in parent theme's `assets/css/` folder!
 				 */
-				$stylesheet_types = apply_filters( 'wmhook_reykjavik_custom_styles_stylesheet_types', array(
+				$types = apply_filters( 'wmhook_reykjavik_customize_styles_get_variable_styles_types', array(
 
 					// Frontend ($scope='') stylesheet types
 					'' => array(
@@ -515,8 +543,8 @@ class Reykjavik_Customize_Styles {
 
 				ob_start();
 
-				if ( isset( $stylesheet_types[ $scope ] ) ) {
-					foreach ( (array) $stylesheet_types[ $scope ] as $type ) {
+				if ( isset( $types[ $scope ] ) ) {
+					foreach ( (array) $types[ $scope ] as $type ) {
 
 						$file_path = 'assets/css/custom-styles-' . sanitize_file_name( $scope ) . '-' . sanitize_file_name( $type ) . '.css';
 						$file_path = str_replace(
@@ -533,9 +561,9 @@ class Reykjavik_Customize_Styles {
 
 			// Output
 
-				return $css . "\r\n\r\n" . ob_get_clean();
+				return ob_get_clean();
 
-		} // /generate_css_from_variable_stylesheets
+		} // /get_variable_styles
 
 
 

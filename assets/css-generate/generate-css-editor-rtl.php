@@ -70,10 +70,8 @@
  * Setting the 'editor' scope to generate Visual Editor Customizer styles only.
  */
 
-	if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-		$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n";
-		$output .= Reykjavik_Library_Customize_Styles::custom_styles( '', 'editor' );
-	}
+	$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n";
+	$output .= Reykjavik_Customize_Styles::get_css( 'editor' );
 
 
 

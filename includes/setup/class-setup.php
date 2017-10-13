@@ -364,9 +364,17 @@ class Reykjavik_Setup {
 				// Force-regenerate styles
 
 					if ( get_transient( 'reykjavik_regenerate_styles' ) ) {
-						Reykjavik_Library_Customize_Styles::generate_main_css_all();
-						Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
+
+						if ( is_callable( 'Reykjavik_Library_Customize_Styles::generate_main_css_all' ) ) {
+							Reykjavik_Library_Customize_Styles::generate_main_css_all();
+						}
+
+						if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles_cache_flush' ) ) {
+							Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
+						}
+
 						delete_transient( 'reykjavik_regenerate_styles' );
+
 					}
 
 		} // /setup

@@ -47,13 +47,15 @@ class Reykjavik_WooCommerce_Customize {
 
 					// Filters
 
+						add_filter( 'wmhook_reykjavik_theme_options', __CLASS__ . '::options' );
+
 						add_filter( 'wmhook_reykjavik_css_files', __CLASS__ . '::theme_css_files', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_custom_styles_stylesheet_types', __CLASS__ . '::custom_stylesheets' );
+						add_filter( 'wmhook_reykjavik_customize_styles_get_custom_styles_array', __CLASS__ . '::custom_styles_array', 10, 3 );
 
-						add_filter( 'wmhook_reykjavik_custom_styles_advanced_array', __CLASS__ . '::custom_styles_array', 10, 3 );
+						add_filter( 'wmhook_reykjavik_customize_styles_get_variable_styles_types', __CLASS__ . '::variable_styles_types' );
 
-						add_filter( 'wmhook_reykjavik_theme_options', __CLASS__ . '::options' );
+						add_filter( 'wmhook_reykjavik_customize_styles_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
 
 		} // /__construct
 
@@ -130,26 +132,42 @@ class Reykjavik_WooCommerce_Customize {
 
 
 		/**
-		 * Register custom WooCommerce stylesheets
+		 * Register custom WooCommerce stylesheet types
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
-		 * @param  array $stylesheet_types
+		 * @param  array $types
 		 */
-		public static function custom_stylesheets( $stylesheet_types = array() ) {
+		public static function variable_styles_types( $types = array() ) {
 
 			// Processing
 
 				// Add custom WooCommerce frontend ($scope='') stylesheet
-				$stylesheet_types[''][] = 'woocommerce';
+				$types[''][] = 'woocommerce';
 
 
 			// Output
 
-				return $stylesheet_types;
+				return $types;
 
-		} // /custom_stylesheets
+		} // /variable_styles_types
+
+
+
+		/**
+		 * Load inline styles after WooCommerce stylesheet is enqueued
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function inline_styles_handle() {
+
+			// Output
+
+				return 'reykjavik-stylesheet-woocommerce';
+
+		} // /inline_styles_handle
 
 
 
