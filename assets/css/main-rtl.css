@@ -1930,9 +1930,9 @@ a .entry-date { cursor: pointer; }
 
 .comment-content ol { list-style: decimal; }
 
-.bypostauthor > .comment-body .comment-author::before { content: '\f411'; position: absolute; display: block; width: 30px; height: 30px; right: 15px; top: 45px; margin-top: 1.62em; font-size: 16px; line-height: 28px; text-align: center; font-size: 1.19em; border-radius: 50%; z-index: 1; }
+@media only screen and (max-width: 41.9375em) { .bypostauthor > .comment-body .comment-author .avatar { border-left: 0.38em solid; } }
 
-@media only screen and (min-width: 42em) { .bypostauthor > .comment-body .comment-author::before { right: 25px; top: 65px; } }
+@media only screen and (min-width: 42em) { .bypostauthor > .comment-body .comment-author::before { content: '\f411'; position: absolute; display: block; width: 30px; height: 30px; right: 25px; top: 65px; margin-top: 1.62em; font-size: 16px; line-height: 28px; text-align: center; font-size: 1.19em; border-radius: 50%; z-index: 1; } }
 
 .comment-edit-link, .comment-reply-link { text-decoration: none; }
 

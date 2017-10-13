@@ -182,27 +182,33 @@
 
 	.bypostauthor > .comment-body .comment-author {
 
+		.avatar {
+
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+				border-left: ( $golden_minor +em ) solid;
+			}
+
+		}
+
 		&::before {
 			@extend %genericon;
-			content: '\f411';
-			position: absolute;
-			display: block;
-			width: 30px;
-			height: 30px;
-			#{$left}: 15px; // Avatar is 60x60 px // {{RTL}}
-			top: 45px; // Avatar is 60x60 px
-			margin-top: $golden +em;
-			font-size: 16px;
-			line-height: 28px;
-			text-align: center;
-			font-size: 1em + $golden_minor / 2;
-			border-radius: 50%;
-			z-index: 1;
 
 			@include responsive( map_get( $breakpoint, 'm' ) ) {
 				// Avatar is 80x80 px
+				content: '\f411';
+				position: absolute;
+				display: block;
+				width: 30px;
+				height: 30px;
 				#{$left}: 25px; // {{RTL}}
 				top: 65px;
+				margin-top: $golden +em;
+				font-size: 16px;
+				line-height: 28px;
+				text-align: center;
+				font-size: 1em + $golden_minor / 2;
+				border-radius: 50%;
+				z-index: 1;
 			}
 
 		}

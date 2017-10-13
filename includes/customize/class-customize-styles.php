@@ -11,7 +11,7 @@
  * Contents:
  *
  *   0) Init
- *  10) Output
+ *  10) CSS output
  *  20) Enqueue
  *  30) Setup
  * 100) Helpers
@@ -59,16 +59,21 @@ class Reykjavik_Customize_Styles {
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 109 );
 
-					// Filters
+						add_action( 'wp_ajax_reykjavik_editor_styles',         __CLASS__ . '::editor_stylesheet_content' );
+						add_action( 'wp_ajax_no_priv_reykjavik_editor_styles', __CLASS__ . '::editor_stylesheet_content' );
 
-						add_filter( 'wmhook_reykjavik_custom_styles_array', __CLASS__ . '::styles_advanced', 10, 2 );
+					// Filters
 
 						/**
 						 * This actually hooks directly into a filter inside of
 						 * Reykjavik_Library_Customize_Styles::custom_styles()
 						 * adding the CSS styles string to process.
 						 */
-						add_filter( 'wmhook_reykjavik_custom_styles', __CLASS__ . '::css' );
+						add_filter( 'wmhook_reykjavik_custom_styles', __CLASS__ . '::css', 10, 2 );
+
+						add_filter( 'wmhook_reykjavik_custom_styles_array', __CLASS__ . '::styles_advanced', 10, 2 );
+
+						add_filter( 'wmhook_reykjavik_assets_editor', __CLASS__ . '::editor_stylesheet' );
 
 		} // /__construct
 
@@ -100,7 +105,7 @@ class Reykjavik_Customize_Styles {
 
 
 	/**
-	 * 10) Output
+	 * 10) CSS output
 	 */
 
 		/**
@@ -128,15 +133,6 @@ class Reykjavik_Customize_Styles {
 			// Helper variables
 
 				$output = '';
-
-				if ( ! is_string( $scope ) && ! empty( $scope ) ) {
-					/**
-					 * If `$scope` is set to TRUE for example, instead of a string,
-					 * presume someone wants to display 'editor' styles as that's the
-					 * only ones we provide besides default (empty `$scope`) styles here.
-					 */
-					$scope = 'editor';
-				}
 
 				$replacements = (array) apply_filters( 'wmhook_reykjavik_generate_css_replacements', array() );
 
@@ -228,6 +224,73 @@ class Reykjavik_Customize_Styles {
 
 
 
+		/**
+		 * Enqueue custom styles into Visual editor using Ajax
+		 *
+		 * This only runs if the theme does not support `stylesheet-generator`.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  array $visual_editor_stylesheets
+		 */
+		public static function editor_stylesheet( $visual_editor_stylesheets = array() ) {
+
+			// Processing
+
+				if ( ! current_theme_supports( 'stylesheet-generator' ) ) {
+					/**
+					 * @see  `stargazer_get_editor_styles` https://github.com/justintadlock/stargazer/blob/master/inc/stargazer.php
+					 */
+					$visual_editor_stylesheets[20] = add_query_arg( 'action', 'reykjavik_editor_styles', admin_url( 'admin-ajax.php' ) );
+				}
+
+
+			// Output
+
+				return $visual_editor_stylesheets;
+
+		} // /editor_stylesheet
+
+
+
+		/**
+		 * Ajax callback for outputting custom styles for Visual editor
+		 *
+		 * This only runs if the theme does not support `stylesheet-generator`.
+		 *
+		 * @see  https://github.com/justintadlock/stargazer/blob/master/inc/custom-colors.php
+		 * @uses  `wmhook_reykjavik_esc_css` global hook
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function editor_stylesheet_content() {
+
+			// Requirements check
+
+				if ( current_theme_supports( 'stylesheet-generator' ) ) {
+					return;
+				}
+
+
+			// Helper variables
+
+				$output = (string) apply_filters( 'wmhook_reykjavik_assets_editor_styles', Reykjavik_Library_Customize_Styles::custom_styles( '', 'editor' ) );
+
+
+			// Processing
+
+				header( 'Content-type: text/css' );
+
+				echo apply_filters( 'wmhook_reykjavik_esc_css', $output );
+
+				die();
+
+		} // /editor_stylesheet_content
+
+
+
 
 
 	/**
@@ -262,7 +325,7 @@ class Reykjavik_Customize_Styles {
 			// Processing
 
 				if ( empty( $scope ) ) {
-				// Normal, non-Visual Editor styles
+				// Frontend styles
 
 					$output = array(
 
@@ -342,7 +405,7 @@ class Reykjavik_Customize_Styles {
 					$output = array(
 
 						'editor-' . 'customizer-styles-title' => array(
-							'custom' => '/* Customizer styles: calculated */',
+							'custom' => '/* Customizer styles: calculated for visual editor */',
 						),
 
 						/**
@@ -423,21 +486,28 @@ class Reykjavik_Customize_Styles {
 			// Helper variables
 
 				/**
-				 * These files will be loaded additionally to the default custom stylesheet file(s).
-				 * They are being loaded from a child theme first, if found.
+				 * These files are being loaded from a child theme first, if found.
+				 * You can simply override these stylesheet files (`assets/css/custom-styles-$scope-$type.css`)
+				 * by redefining them in your child theme.
 				 *
-				 * You can simply override the default custom styles file by redefining it in your child theme.
-				 *
-				 * But it is probably better to just define a new additional file in your child theme, such as
-				 * `child-theme/assets/css/custom-styles-add.css` and do the magic there.
+				 * But it is probably better to just define a new additional stylesheet file of the scope in your
+				 * child theme, such as `child-theme/assets/css/custom-styles-add.css` and do the magic there.
+				 * IMPORTANT: So, do not create additional stylesheet files in parent theme's `assets/css/` folder!
 				 */
 				$stylesheet_types = apply_filters( 'wmhook_reykjavik_custom_styles_stylesheet_types', array(
-					'frontend' => array(
-						'add',
+
+					// Frontend ($scope='') stylesheet types
+					'' => array(
+						'',    // Default stylesheet file of the scope.
+						'add', // Additional stylesheet file of the scope.
 					),
+
+					// Visual editor ($scope='editor') stylesheet types
 					'editor' => array(
-						'add',
+						'',    // Default stylesheet file of the scope.
+						'add', // Additional stylesheet file of the scope.
 					),
+
 				) );
 
 
@@ -445,15 +515,18 @@ class Reykjavik_Customize_Styles {
 
 				ob_start();
 
-				// Default custom styles file is being loaded all the time.
-				$scope = ( empty( $scope ) ) ? ( '' ) : ( '-' . $scope );
-				locate_template( 'assets/css/custom-styles' . $scope . '.css', true, false );
-
-				// Optional other custom styles file types.
-				$scope = ( empty( $scope ) ) ? ( 'frontend' ) : ( trim( $scope, '-' ) );
 				if ( isset( $stylesheet_types[ $scope ] ) ) {
 					foreach ( (array) $stylesheet_types[ $scope ] as $type ) {
-						locate_template( 'assets/css/custom-styles-' . sanitize_file_name( $type ) . '-editor.css', true, false );
+
+						$file_path = 'assets/css/custom-styles-' . sanitize_file_name( $scope ) . '-' . sanitize_file_name( $type ) . '.css';
+						$file_path = str_replace(
+							array( '--', '-.' ),
+							array( '-', '.' ),
+							$file_path
+						);
+
+						locate_template( $file_path, true, false );
+
 					}
 				}
 

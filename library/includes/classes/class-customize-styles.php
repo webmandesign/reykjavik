@@ -11,7 +11,7 @@
  * @subpackage  Customize
  *
  * @since    1.8.0
- * @version  2.5.1
+ * @version  2.5.2
  *
  * Contents:
  *
@@ -366,7 +366,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.5.1
+		 * @version  2.5.2
 		 *
 		 * @param  string $css    CSS string with variables to replace.
 		 * @param  string $scope  Optional CSS scope (such as 'editor' for generating editor styles).
@@ -404,10 +404,13 @@ final class Reykjavik_Library_Customize_Styles {
 						&& ! $is_customize_preview
 					) {
 
-					$output_cached = (string) get_transient( 'reykjavik_custom_css' );
-					if ( isset( $_GET['debug'] ) ) {
-						// Do we want debug cache instead (via "debug" URL attribute)?
-						$output_cached = (string) get_transient( 'reykjavik_custom_css_debug' );
+					$output_cached = '';
+					$cache = (array) get_transient( 'reykjavik_custom_css' );
+
+					if ( isset( $_GET['debug'] ) && isset( $cache['debug'][ $scope ] ) ) {
+						$output_cached = (string) $cache['debug'][ $scope ];
+					} elseif ( isset( $cache[ $scope ] ) ) {
+						$output_cached = (string) $cache[ $scope ];
 					}
 
 					if ( $output_cached = trim( (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output', $output_cached, $scope ) ) ) {
@@ -663,8 +666,12 @@ final class Reykjavik_Library_Customize_Styles {
 							&& ! $is_customize_preview
 						) {
 
-						set_transient( 'reykjavik_custom_css_debug', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output, $scope ) );
-						set_transient( 'reykjavik_custom_css', apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output, $scope ) );
+						$cache = (array) get_transient( 'reykjavik_custom_css' );
+
+						$cache['debug'][ $scope ] = apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output, $scope );
+						$cache[ $scope ] = apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output, $scope );
+
+						set_transient( 'reykjavik_custom_css', $cache );
 
 					}
 
@@ -685,14 +692,13 @@ final class Reykjavik_Library_Customize_Styles {
 			 * For HTML head inline CSS styles output only.
 			 *
 			 * @since    1.0.0
-			 * @version  2.5.0
+			 * @version  2.5.2
 			 */
 			public static function custom_styles_cache_flush() {
 
 				// Processing
 
 					delete_transient( 'reykjavik_customizer_values' );
-					delete_transient( 'reykjavik_custom_css_debug' );
 					delete_transient( 'reykjavik_custom_css' );
 
 			} // /custom_styles_cache_flush

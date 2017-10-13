@@ -2,7 +2,4 @@
 /*[*/
 @import url("main-rtl.css");
 /*]*/
-/*[*/
-@import url("custom-styles-editor.css");
-/*]*/
 body { direction: rtl; unicode-bidi: embed; }

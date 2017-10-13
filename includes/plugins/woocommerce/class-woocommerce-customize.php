@@ -135,18 +135,19 @@ class Reykjavik_WooCommerce_Customize {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
-		 * @param  array $file_types
+		 * @param  array $stylesheet_types
 		 */
-		public static function custom_stylesheets( $file_types = array() ) {
+		public static function custom_stylesheets( $stylesheet_types = array() ) {
 
 			// Processing
 
-				$file_types['frontend'][] = 'woocommerce';
+				// Add custom WooCommerce frontend ($scope='') stylesheet
+				$stylesheet_types[''][] = 'woocommerce';
 
 
 			// Output
 
-				return $file_types;
+				return $stylesheet_types;
 
 		} // /custom_stylesheets
 

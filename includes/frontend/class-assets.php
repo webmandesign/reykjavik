@@ -59,7 +59,7 @@ class Reykjavik_Assets {
 
 						add_filter( 'wp_resource_hints', __CLASS__ . '::resource_hints', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_setup_editor_stylesheets', __CLASS__ . '::editor' );
+						add_filter( 'wmhook_reykjavik_setup_editor_stylesheets', __CLASS__ . '::editor_stylesheets' );
 
 						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
 
@@ -550,7 +550,7 @@ class Reykjavik_Assets {
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
-		public static function editor() {
+		public static function editor_stylesheets() {
 
 			// Helper variables
 
@@ -566,7 +566,7 @@ class Reykjavik_Assets {
 
 				// Google Fonts stylesheet
 
-					$visual_editor_stylesheets[] = str_replace( ',', '%2C', self::google_fonts_url() );
+					$visual_editor_stylesheets[5] = str_replace( ',', '%2C', self::google_fonts_url() );
 
 				// Editor stylesheet
 
@@ -579,54 +579,64 @@ class Reykjavik_Assets {
 
 							$dev_prefix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
 
-							// Generated stylesheet
-
-								$visual_editor_stylesheets[] = esc_url_raw( Reykjavik_Library::fix_ssl_urls( str_replace( 'reykjavik-styles', $dev_prefix . 'reykjavik-styles', get_theme_mod( '__url_css' . $stylesheet_suffix ) ) ) );
-
-						} else {
-
-							// Fallback stylesheet
-
-								$visual_editor_stylesheets[] = esc_url_raw( add_query_arg(
-									'ver',
-									REYKJAVIK_THEME_VERSION,
-									get_theme_file_uri( 'assets/css/editor-style.css' ) // Contains custom styles.
-								) );
+							$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
+								'ver',
+								get_theme_mod( '__stylesheet_timestamp' ),
+								Reykjavik_Library::fix_ssl_urls( str_replace(
+									'reykjavik-styles',
+									$dev_prefix . 'reykjavik-styles',
+									get_theme_mod( '__url_css' . $stylesheet_suffix )
+								) )
+							) );
 
 						}
 
-					} else {
+					}
 
-						$visual_editor_stylesheets[] = esc_url_raw( add_query_arg(
+					/**
+					 * If we don't have generated editor stylesheet enqueued yet, load a fallback stylesheets.
+					 *
+					 * In Reykjavik_Customize_Styles::editor_stylesheet() the fallback custom styles stylesheet
+					 * will be overridden if the theme does not support `stylesheet-generator`.
+					 */
+					if ( ! isset( $visual_editor_stylesheets[10] ) ) {
+
+						$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
 							'ver',
 							REYKJAVIK_THEME_VERSION,
-							get_theme_file_uri( 'assets/css/editor-style.css' ) // Contains custom styles.
+							get_theme_file_uri( 'assets/css/editor-style' . str_replace(
+								'-editor',
+								'',
+								$stylesheet_suffix
+							) . '.css' )
 						) );
 
-						/**
-						 * Unfortunately, WPORG does not allow generating stylesheet files,
-						 * but we can not really use inline styles in TinyMCE either. Here is why:
-						 *
-						 * - TinyMCE adds inline styles before enqueuing other editor stylesheets,
-						 *   so, we would have to use higher CSS specificity,
-						 * - it also cuts the styles strings (when we pass it to `$init['content_style']`)
-						 *   to 10000 characters only, which does not seem to be enough.
-						 */
+						$visual_editor_stylesheets[20] = esc_url_raw( add_query_arg(
+							'ver',
+							REYKJAVIK_THEME_VERSION,
+							get_theme_file_uri( 'assets/css/custom-styles-editor.css' )
+						) );
 
 					}
 
 				// Icons stylesheet
 
 					if ( class_exists( 'WM_Icons' ) && $icons_font_stylesheet = get_option( 'wmamp-icon-font' ) ) {
-						$visual_editor_stylesheets[] = esc_url_raw( $icons_font_stylesheet );
+						$visual_editor_stylesheets[100] = esc_url_raw( $icons_font_stylesheet );
 					}
+
+				// Filter and order
+
+					$visual_editor_stylesheets = (array) apply_filters( 'wmhook_reykjavik_assets_editor', $visual_editor_stylesheets );
+
+					ksort( $visual_editor_stylesheets );
 
 
 			// Output
 
-				return (array) apply_filters( 'wmhook_reykjavik_assets_editor', $visual_editor_stylesheets );
+				return $visual_editor_stylesheets;
 
-		} // /editor
+		} // /editor_stylesheets
 
 
 
