@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.5.3
+
+* **Fix**: Custom styles replacements issue
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-customize-styles.php
+
+
 ## 2.5.2
 
 * **Fix**: Custom styles caching issue

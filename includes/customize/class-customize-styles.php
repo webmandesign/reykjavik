@@ -330,7 +330,7 @@ class Reykjavik_Customize_Styles {
 					$output = array(
 
 						'customizer-styles-title' => array(
-							'custom' => '/* Customizer styles: calculated */',
+							'custom' => '/* Customizer styles: calculated, frontend */',
 						),
 
 						/**
@@ -405,7 +405,7 @@ class Reykjavik_Customize_Styles {
 					$output = array(
 
 						'editor-' . 'customizer-styles-title' => array(
-							'custom' => '/* Customizer styles: calculated for visual editor */',
+							'custom' => '/* Customizer styles: calculated, visual editor */',
 						),
 
 						/**

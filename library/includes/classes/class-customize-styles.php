@@ -11,7 +11,7 @@
  * @subpackage  Customize
  *
  * @since    1.8.0
- * @version  2.5.2
+ * @version  2.5.3
  *
  * Contents:
  *
@@ -34,6 +34,8 @@ final class Reykjavik_Library_Customize_Styles {
 		private static $instance;
 
 		public static $supports_generator = false;
+
+		public static $cache_key = 'reykjavik_custom_css';
 
 
 
@@ -366,7 +368,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.5.2
+		 * @version  2.5.3
 		 *
 		 * @param  string $css    CSS string with variables to replace.
 		 * @param  string $scope  Optional CSS scope (such as 'editor' for generating editor styles).
@@ -405,7 +407,7 @@ final class Reykjavik_Library_Customize_Styles {
 					) {
 
 					$output_cached = '';
-					$cache = (array) get_transient( 'reykjavik_custom_css' );
+					$cache = (array) get_transient( self::$cache_key );
 
 					if ( isset( $_GET['debug'] ) && isset( $cache['debug'][ $scope ] ) ) {
 						$output_cached = (string) $cache['debug'][ $scope ];
@@ -422,27 +424,18 @@ final class Reykjavik_Library_Customize_Styles {
 
 			// Helper variables
 
-				$output = '';
+				$output       = '';
+				$replacements = array();
 
 				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
 				$rgba_alphas   = array_filter( (array) apply_filters( 'wmhook_reykjavik_custom_styles_alphas', array() ) );
-
-				$replacements     = array();
-				$set_replacements = true;
-
-				// For inline styles only
-
-					if ( ! self::$supports_generator ) {
-						$replacements     = array_unique( array_filter( (array) get_transient( 'reykjavik_customizer_values' ) ) );
-						$set_replacements = $is_customize_preview || empty( $replacements );
-					}
 
 
 			// Processing
 
 				// Setting up replacements array
 
-					if ( ! empty( $theme_options ) && $set_replacements ) {
+					if ( ! empty( $theme_options ) ) {
 
 						foreach ( $theme_options as $option ) {
 
@@ -638,20 +631,12 @@ final class Reykjavik_Library_Customize_Styles {
 
 						$replacements = (array) apply_filters( 'wmhook_reykjavik_library_custom_styles_replacements', $replacements, $theme_options, $css, $scope );
 
-						// Create a new cache for replacements values if it does not exist yet
-
-							if ( ! $is_customize_preview ) {
-								set_transient( 'reykjavik_customizer_values', $replacements );
-							}
-
 					}
 
 				// Prepare output
 
 					/**
-					 * Replace tags in custom CSS strings with actual values
-					 * for both stylesheet file generator,
-					 * and for outputting CSS string.
+					 * Replace tags in custom CSS strings with actual values.
 					 */
 					$output = strtr( $css, $replacements );
 
@@ -666,12 +651,13 @@ final class Reykjavik_Library_Customize_Styles {
 							&& ! $is_customize_preview
 						) {
 
-						$cache = (array) get_transient( 'reykjavik_custom_css' );
+						$cache = (array) get_transient( self::$cache_key );
 
-						$cache['debug'][ $scope ] = apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output, $scope );
-						$cache[ $scope ] = apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output, $scope );
+						$cache['debug'][ $scope ] = (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache_debug', $output, $scope );
+						$cache[ $scope ]          = (string) apply_filters( 'wmhook_reykjavik_library_custom_styles_output_cache', $output, $scope );
+						$cache['__replacements']  = (array) $replacements;
 
-						set_transient( 'reykjavik_custom_css', $cache );
+						set_transient( self::$cache_key, $cache );
 
 					}
 
@@ -692,14 +678,13 @@ final class Reykjavik_Library_Customize_Styles {
 			 * For HTML head inline CSS styles output only.
 			 *
 			 * @since    1.0.0
-			 * @version  2.5.2
+			 * @version  2.5.3
 			 */
 			public static function custom_styles_cache_flush() {
 
 				// Processing
 
-					delete_transient( 'reykjavik_customizer_values' );
-					delete_transient( 'reykjavik_custom_css' );
+					delete_transient( self::$cache_key );
 
 			} // /custom_styles_cache_flush
 
