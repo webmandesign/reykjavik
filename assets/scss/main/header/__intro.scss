@@ -93,6 +93,7 @@
 			}
 
 			a {
+				display: inline-block; // To make pagination suffix float the same line when subtitle is displayed.
 				color: inherit;
 			}
 

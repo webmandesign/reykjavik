@@ -52,6 +52,8 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 .woocommerce mark, #page .woocommerce mark { margin: 0; font-weight: 700; background: none; color: inherit; box-shadow: none; -webkit-box-decoration-break: slice; box-decoration-break: slice; }
 
+.woocommerce-products-header .page-title { margin-bottom: 2.6244rem; }
+
 .title .edit { display: inline-block; padding: 0.38em 1em; margin-bottom: 1em; font-size: 0.81rem; font-weight: 700; text-transform: uppercase; text-decoration: none; letter-spacing: .075em; border: 2px solid; transition: border-color 0.3s; }
 
 .title .edit:hover, .title .edit:active, .title .edit:focus { border-color: transparent; }

@@ -349,7 +349,7 @@ input, select, textarea, .mobile-search-form, .widget_archive li::before, .widge
 
 blockquote blockquote, .widget-recent-entries-list .entry-title, .sidebar .widget-recent-entries-list .entry-title, .widget-area .widget-recent-entries-list .entry-title, div.sharedaddy .sd-title { font-size: 1em; }
 
-.font-size-xs, .entry-title small, .page-title small, .entry-subtitle { font-size: 0.62em; }
+.font-size-xs, .entry-subtitle { font-size: 0.62em; }
 
 blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption-text, #cancel-comment-reply-link, .comment-form label, .comments-title .add-comment-link, .comment-metadata, .comment .reply, .site-description, .menu-item-description, .single.fl-builder .posts .entry-meta, .single.content-layout-no-paddings .posts .entry-meta, .posts .entry-meta, .nav-links .label, .widget-recent-entries-list .month, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .widget .entry-subtitle { font-size: 0.81em; }
 
@@ -367,7 +367,7 @@ blockquote, .font-size-l, .comments-title, .social-links, .widget-recent-entries
 
 blockquote, .weight-300, .search-results .page-title, .author .intro-title span, .post-table-of-contents .is-passed a, .comments-title span, .intro .entry-subtitle { font-weight: 300; }
 
-blockquote cite, .weight-400, #cancel-comment-reply-link, .comments-title .add-comment-link, .button:disabled, button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled, .main-navigation-container .button > a:disabled, .child-page .more-link:disabled, .post-table-of-contents .is-current a, .entry-meta-description, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-subtitle, .widget .entry-subtitle { font-weight: 400; }
+blockquote cite, .weight-400, #cancel-comment-reply-link, .comments-title .add-comment-link, .button:disabled, button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled, .main-navigation-container .button > a:disabled, .child-page .more-link:disabled, .entry-title small, .page-title small, .post-table-of-contents .is-current a, .entry-meta-description, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-subtitle, .widget .entry-subtitle { font-weight: 400; }
 
 .weight-500 { font-weight: 500; }
 
@@ -1266,6 +1266,10 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 .entry-title, .page-title { padding: 0; margin: 0 0 2.6244rem; }
 
+.entry-title small, .page-title small { display: block; margin-top: 0.38rem; }
+
+@media only screen and (min-width: 42em) { .entry-title small, .page-title small { display: inline-block; margin-top: 1em; margin-left: 0.38rem; font-size: 0.5em; vertical-align: top; } }
+
 /* FILE: main/headings/__widget-title.scss */
 .widget-title, .widget-title-style .widgettitle { margin: 0 0 2.6244rem; font-size: 1.272rem; }
 
@@ -1348,7 +1352,7 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 .intro .intro-title { color: inherit; }
 
-.intro-title a { color: inherit; }
+.intro-title a { display: inline-block; color: inherit; }
 
 @media only screen and (min-width: 80em) { .intro-title.has-page-summary { float: left; width: 58.944%; } }
 

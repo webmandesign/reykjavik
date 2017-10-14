@@ -210,7 +210,7 @@ class Reykjavik_Starter_Content {
 							                  esc_html_x( 'Featured products', 'Theme starter content', 'reykjavik' ) .
 							                  '</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat.</p>' .
 							                  '<div class="outdent-content">' .
-							                  '[featured_products per_page="3" columns="3"]' .
+							                  '[products visibility="featured" limit="3" columns="3" orderby="date" order="DESC"]' .
 							                  '<p><em><small>' .
 							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your products.', 'Theme starter content', 'reykjavik' ) .
 							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
@@ -220,7 +220,7 @@ class Reykjavik_Starter_Content {
 							                  esc_html_x( 'Shop categories', 'Theme starter content', 'reykjavik' ) .
 							                  '</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci. Integer in leo eget justo hendrerit consequat.</p>' .
 							                  '<div class="outdent-content">' .
-							                  '[product_categories per_page="3" columns="6"]' .
+							                  '[product_categories limit="3" columns="3"]' .
 							                  '<p><em><small>' .
 							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your product categories.', 'Theme starter content', 'reykjavik' ) .
 							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
