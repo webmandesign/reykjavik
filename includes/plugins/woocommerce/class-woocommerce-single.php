@@ -77,6 +77,8 @@ class Reykjavik_WooCommerce_Single {
 
 					// Filters
 
+						add_filter( 'template_include', __CLASS__ . '::product_page_template_load', 99 );
+
 						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
 
 						add_filter( 'woocommerce_get_price_html', __CLASS__ . '::price_separator' );
@@ -393,6 +395,43 @@ class Reykjavik_WooCommerce_Single {
 	/**
 	 * 100) Others
 	 */
+
+		/**
+		 * Fix for page template assigned onto a product
+		 *
+		 * This will make sure we are actually loading the product post
+		 * content, and not the content defined within the page template.
+		 * Basically, we make sure the page template is used to provide
+		 * HTML body class and post class, but we still want to display
+		 * the actual product post content.
+		 *
+		 * This is also a fix for WooCommerce 3.2+ version.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  string $template
+		 */
+		public static function product_page_template_load( $template ) {
+
+			// Processing
+
+				if (
+						'product' === get_post_type()
+						&& is_page_template()
+						&& function_exists( 'wc_locate_template' )
+					) {
+					$template = wc_locate_template( 'single-product.php' );
+				}
+
+
+			// Output
+
+				return $template;
+
+		} // /product_page_template_load
+
+
 
 		/**
 		 * Price "from-to" separator
