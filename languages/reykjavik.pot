@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-12 13:05+0200\n"
+"POT-Creation-Date: 2017-10-15 23:32+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -47,28 +47,28 @@ msgstr ""
 
 #: comments.php:113 includes/frontend/class-loop.php:114
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:359
-#: includes/plugins/woocommerce/class-woocommerce-single.php:272
+#: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
 #: comments.php:114 includes/frontend/class-loop.php:115
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:361
-#: includes/plugins/woocommerce/class-woocommerce-single.php:272
+#: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
 #: comments.php:115 includes/frontend/class-loop.php:116
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:365
-#: includes/plugins/woocommerce/class-woocommerce-single.php:273
+#: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
 #: comments.php:116 includes/frontend/class-loop.php:117
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:367
-#: includes/plugins/woocommerce/class-woocommerce-single.php:273
+#: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
@@ -106,7 +106,7 @@ msgstr ""
 #: includes/customize/class-customize.php:1018
 #: includes/customize/class-customize.php:1042
 #: includes/customize/class-customize.php:1207
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:422
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:433
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr ""
@@ -494,12 +494,12 @@ msgid "General text font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1102
-#: includes/setup/class-setup.php:729
+#: includes/setup/class-setup.php:737
 msgid "Headings font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1114
-#: includes/setup/class-setup.php:735
+#: includes/setup/class-setup.php:743
 msgid "Logo font"
 msgstr ""
 
@@ -1160,54 +1160,54 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:509
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:513
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:513
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:517
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:514
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:522
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:524
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:523
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:527
 msgid "Reload this page &raquo;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:421
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:432
 msgctxt "Customizer section title."
 msgid "Shop"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:427
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:438
 msgid "Cart and Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:433
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:444
 msgid "Display checkout guide"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:445
 msgid "Enables the checkout process steps visualization."
 msgstr ""
 
@@ -1276,7 +1276,7 @@ msgstr ""
 msgid "Pay for Order"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-single.php:453
+#: includes/plugins/woocommerce/class-woocommerce-single.php:492
 msgid "More details&hellip;"
 msgstr ""
 
@@ -1306,27 +1306,27 @@ msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/class-setup.php:471
+#: includes/setup/class-setup.php:479
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:478
+#: includes/setup/class-setup.php:486
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:479
+#: includes/setup/class-setup.php:487
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:486 includes/setup/class-setup.php:497
+#: includes/setup/class-setup.php:494 includes/setup/class-setup.php:505
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:496
+#: includes/setup/class-setup.php:504
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:504
+#: includes/setup/class-setup.php:512
 msgid "In page intro section."
 msgstr ""
 
@@ -1335,7 +1335,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:610
+#: includes/setup/class-setup.php:618
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1345,68 +1345,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:620
+#: includes/setup/class-setup.php:628
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:689
+#: includes/setup/class-setup.php:697
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:690
+#: includes/setup/class-setup.php:698
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:691
+#: includes/setup/class-setup.php:699
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:692
+#: includes/setup/class-setup.php:700
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:693
+#: includes/setup/class-setup.php:701
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:694
+#: includes/setup/class-setup.php:702
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:695
+#: includes/setup/class-setup.php:703
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:696
+#: includes/setup/class-setup.php:704
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:697
+#: includes/setup/class-setup.php:705
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:702
+#: includes/setup/class-setup.php:710
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:719
+#: includes/setup/class-setup.php:727
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:723
+#: includes/setup/class-setup.php:731
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:741
+#: includes/setup/class-setup.php:749
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:752
+#: includes/setup/class-setup.php:760
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:759
+#: includes/setup/class-setup.php:767
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1414,23 +1414,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:770
+#: includes/setup/class-setup.php:778
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:774
+#: includes/setup/class-setup.php:782
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:785
+#: includes/setup/class-setup.php:793
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:789
+#: includes/setup/class-setup.php:797
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:801
+#: includes/setup/class-setup.php:809
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1654,50 +1654,54 @@ msgid "Easy to use front-end page builder."
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:124
-msgid "For easy post and page attributes setup."
+msgid "Adding set of predefined templates for Beaver Builder page builder."
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:132
+msgid "For easy post and page attributes setup."
+msgstr ""
+
+#: includes/tgmpa/class-tgmpa-plugins.php:140
 msgid "Adding e-commerce functionality."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:139
+#: includes/tgmpa/class-tgmpa-plugins.php:147
 msgid ""
 "Adding custom sidebars management, allowing page layout modifications by "
 "removing sidebars."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:146
+#: includes/tgmpa/class-tgmpa-plugins.php:154
 msgid "For installing theme demo content easily."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:181
+#: includes/tgmpa/class-tgmpa-plugins.php:189
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:206
+#: includes/tgmpa/class-tgmpa-plugins.php:214
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:275
+#: includes/tgmpa/class-tgmpa-plugins.php:283
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:278
+#: includes/tgmpa/class-tgmpa-plugins.php:286
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:279
+#: includes/tgmpa/class-tgmpa-plugins.php:287
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:280
+#: includes/tgmpa/class-tgmpa-plugins.php:288
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:281
+#: includes/tgmpa/class-tgmpa-plugins.php:289
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1787,18 +1791,18 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:211
+#: library/includes/classes/class-customize-styles.php:213
 msgid ""
 "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:761
+#: library/includes/classes/class-customize-styles.php:752
 msgid ""
 "The theme writes a files to your server. You do not appear to have your FTP "
 "credentials set up in \"wp-config.php\" file."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:761
+#: library/includes/classes/class-customize-styles.php:752
 msgid "Please set your FTP credentials first."
 msgstr ""
 

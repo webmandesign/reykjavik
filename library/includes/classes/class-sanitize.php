@@ -8,7 +8,7 @@
  * @subpackage  Core
  *
  * @since    2.5.0
- * @version  2.5.0
+ * @version  2.5.4
  *
  * Contents:
  *
@@ -90,18 +90,18 @@ final class Reykjavik_Library_Sanitize {
 		 * Returns an array of values.
 		 *
 		 * @since    2.5.0
-		 * @version  2.5.0
+		 * @version  2.5.4
 		 *
 		 * @param  mixed $value
 		 * @param  array $choices
 		 */
-		public static function array( $value, $choices = array() ) {
+		public static function multi_array( $value, $choices = array() ) {
 
 			// Helper variables
 
 				/**
-				 * If we get a string as a `$value`, split it to array
-				 * using `,` as delimiter.
+				 * If we get a string in `$value`,
+				 * split it to array using `,` as delimiter.
 				 */
 				$value = ( ! is_array( $value ) ) ? ( explode( ',', (string) $value ) ) : ( $value );
 
@@ -139,7 +139,7 @@ final class Reykjavik_Library_Sanitize {
 
 				return (array) $value;
 
-		} // /array
+		} // /multi_array
 
 
 

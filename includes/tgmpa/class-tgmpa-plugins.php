@@ -119,6 +119,14 @@ class Reykjavik_TGMPA_Plugins {
 									'is_callable' => 'FLBuilder::init',
 								),
 
+								'webman-templates' => array(
+									'name'        => 'WebMan Templates',
+									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'reykjavik' ),
+									'slug'        => 'webman-templates',
+									'required'    => false,
+									'source'      => 'https://webmandesign.github.io/webman-templates/downloads/webman-templates.zip',
+								),
+
 								'advanced-custom-fields' => array(
 									'name'        => 'Advanced Custom Fields',
 									'description' => esc_html__( 'For easy post and page attributes setup.', 'reykjavik' ),

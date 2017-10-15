@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.0.0
- * @version  2.5.0
+ * @version  2.5.4
  *
  * Contents:
  *
@@ -333,7 +333,7 @@ final class Reykjavik_Library_Customize {
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.3.0
+		 * @version  2.5.4
 		 *
 		 * @param  object $wp_customize WP customizer object.
 		 */
@@ -616,8 +616,8 @@ final class Reykjavik_Library_Customize {
 													'type'                 => $type,
 													'default'              => $default,
 													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::array' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::array' ),
+													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
+													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
 												)
 											);
 
