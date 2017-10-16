@@ -2,7 +2,7 @@
 
 ## 2.5.4
 
-* **Fix**: Custom styles replacements issue
+* **Fix**: Sanitize class "array" method name
 
 ### Files changed:
 
