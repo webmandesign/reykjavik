@@ -52,6 +52,7 @@
 	 * 20) Options
 	 * 30) Admin
 	 * 40) Icon fallback
+	 * 50) WordPress 4.9 compatibility
 	 */
 	class Reykjavik_WP_Widget_Text extends WP_Widget_Text {
 
@@ -547,6 +548,38 @@
 					     '</style>';
 
 			} // /style_icon_fallback
+
+
+
+
+
+		/**
+		 * 50) WordPress 4.9 compatibility
+		 */
+
+			/**
+			 * From WordPress 4.9.0
+			 */
+			public function inject_video_max_width_style( $matches ) {
+
+				// Requirements check
+
+					if ( is_callable( array( $this, 'enqueue_admin_scripts' ) ) ) {
+						$this->enqueue_admin_scripts( $matches );
+					}
+
+
+				// Processing
+
+					// From WP_Widget_Text
+
+						$html = $matches[0];
+						$html = preg_replace( '/\sheight="\d+"/', '', $html );
+						$html = preg_replace( '/\swidth="\d+"/', '', $html );
+						$html = preg_replace( '/(?<=width:)\s*\d+px(?=;?)/', '100%', $html );
+						return $html;
+
+			}
 
 
 
