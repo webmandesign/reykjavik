@@ -1,10 +1,8 @@
 # Reykjavik theme review
 
-A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/), by [WebMan Design](https://www.webmandesign.eu/) was submitted to WordPress.org theme repository for a review in mid July 2017.
+A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/), by [WebMan Design](https://www.webmandesign.eu/) was submitted to WordPress.org theme repository for a review in mid July 2017. And here is a report of the (painful) theme review process.
 
-Theme was made live on ... `@todo: Add date when theme is released.`
-
-And here is a report of the (painful) theme review process.
+*(The theme was eventually made live on ... `@todo: Add date when theme is released.`)*
 
 
 ## Review process
@@ -91,7 +89,7 @@ And here is a report of the (painful) theme review process.
 - @poena provides [list of requirements](https://themes.trac.wordpress.org/ticket/46546#comment:3).
 - Asking for explanation for some of the points and receives the answer from @poena the same day!
 - Discussing issue of **Child Theme Generator**, **TinyMCE Formats Dropdown**, **TGMPA Version** and **Custom Widgets Enhancements**.
-- @jrf is stepping up to explain TGMPA Version issue. After discussion it turns out TRT (Theme Review Team) [checks the TGMPA script version upon specific PHP comment](https://themes.trac.wordpress.org/ticket/46546#comment:14)...
+- @jrf is stepping up to explain **TGMPA Version** issue. After discussion it turns out TRT (Theme Review Team) [checks the TGMPA script version upon specific PHP comment](https://themes.trac.wordpress.org/ticket/46546#comment:14)...
 
 ### 6th
 
