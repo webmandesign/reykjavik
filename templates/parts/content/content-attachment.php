@@ -13,9 +13,9 @@
 
 
 
-?>
+do_action( 'tha_entry_before' );
 
-<?php do_action( 'tha_entry_before' ); ?>
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -48,4 +48,6 @@
 
 </article>
 
-<?php do_action( 'tha_entry_after' ); ?>
+<?php
+
+do_action( 'tha_entry_after' );

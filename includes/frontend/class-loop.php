@@ -56,6 +56,8 @@ class Reykjavik_Loop {
 
 						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
 
+						add_filter( 'navigation_markup_template', __CLASS__ . '::pagination_comments', 10, 2 );
+
 		} // /__construct
 
 
@@ -126,7 +128,7 @@ class Reykjavik_Loop {
 					$total   = ( isset( $wp_query->max_num_pages ) ) ? ( $wp_query->max_num_pages ) : ( 1 );
 					$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
 
-					$output = '<nav class="pagination" role="navigation" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
+					$output = '<nav class="pagination" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
 					          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_html__( 'Posts Navigation', 'reykjavik' ) . '</h2>'
 					          . $output
 					          . '</nav>';
@@ -159,6 +161,76 @@ class Reykjavik_Loop {
 				wp_link_pages();
 
 		} // /shim
+
+
+
+		/**
+		 * Comments pagination
+		 *
+		 * From simple next/previous links to full pagination.
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 *
+		 * @param  string $template  The default template.
+		 * @param  string $class     The class passed by the calling function.
+		 */
+		public static function pagination_comments( $template, $class ) {
+
+			// Requirements check
+
+				if ( 'comment-navigation' !== $class ) {
+					return $template;
+				}
+
+
+			// Helper variables
+
+				$args = (array) apply_filters( 'wmhook_reykjavik_pagination_args', array(
+						'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'reykjavik' ) . '<span class="screen-reader-text"> '
+						               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'reykjavik' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'reykjavik' )
+						               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'reykjavik' ),
+					), 'comments' );
+
+				$pagination = paginate_comments_links( array_merge( $args, array( 'echo' => false ) ) );
+
+				$total   = get_comment_pages_count();
+				$current = ( get_query_var( 'cpage' ) ) ? ( absint( get_query_var( 'cpage' ) ) ) : ( 1 );
+
+
+			// Processing
+
+				// Modifying navigation wrapper classes
+
+					$template = str_replace(
+						'<nav class="navigation',
+						'<nav class="navigation pagination comment-pagination',
+						$template
+					);
+
+				// Adding responsive view HTML helper attributes
+
+					$template = str_replace(
+						'<nav',
+						'<nav data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '"',
+						$template
+					);
+
+				// Displaying pagination HTML in the template
+
+					$template = str_replace(
+						'<div class="nav-links">%3$s</div>',
+						'<div class="nav-links">' . $pagination . '</div>',
+						$template
+					);
+
+
+			// Output
+
+				return $template;
+
+		} // /pagination_comments
 
 
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link  https://codex.wordpress.org/Template_Hierarchy
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -20,9 +20,9 @@
 	$args = ( ! isset( $helper ) ) ? ( null ) : ( array( 'helper' => $helper ) );
 
 
-?>
+do_action( 'tha_entry_before', $args );
 
-<?php do_action( 'tha_entry_before', $args ); ?>
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -46,4 +46,6 @@
 
 </article>
 
-<?php do_action( 'tha_entry_after', $args ); ?>
+<?php
+
+do_action( 'tha_entry_after', $args );

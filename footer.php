@@ -1,8 +1,9 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link  https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @see  `includes/frontend/class-footer.php`
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas

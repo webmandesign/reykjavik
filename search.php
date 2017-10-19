@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link  https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -25,6 +25,7 @@ get_header();
 			<h1 class="page-title"><?php
 
 				printf(
+					/* translators: %s: search query. */
 					esc_html__( 'Search Results for: %s', 'reykjavik' ),
 					'<span>' . get_search_query() . '</span>'
 				);
@@ -34,8 +35,12 @@ get_header();
 
 		<?php
 
-	endif;
+		get_template_part( 'templates/parts/loop/loop', 'search' );
 
-	get_template_part( 'templates/parts/loop/loop', 'search' );
+	else :
+
+		get_template_part( 'templates/parts/content/content', 'none' );
+
+	endif;
 
 get_footer();

@@ -123,33 +123,33 @@ class Reykjavik_Customize {
 					// Site title
 
 						$wp_customize->selective_refresh->add_partial( 'blogname', array(
-								'selector'        => '.site-title-text',
-								'render_callback' => __CLASS__ . '::partial_blogname',
-							) );
+							'selector'        => '.site-title-text',
+							'render_callback' => __CLASS__ . '::partial_blogname',
+						) );
 
 					// Site description
 
 						$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-								'selector'        => '.site-description',
-								'render_callback' => __CLASS__ . '::partial_blogdescription',
-							) );
+							'selector'        => '.site-description',
+							'render_callback' => __CLASS__ . '::partial_blogdescription',
+						) );
 
 					// Site info (footer credits)
 
 						$wp_customize->selective_refresh->add_partial( 'texts_site_info', array(
-								'selector'        => '.site-info',
-								'render_callback' => __CLASS__ . '::partial_texts_site_info',
-							) );
+							'selector'        => '.site-info',
+							'render_callback' => __CLASS__ . '::partial_texts_site_info',
+						) );
 
 					// Option pointers only
 
 						$wp_customize->selective_refresh->add_partial( 'archive_title_prefix', array(
-								'selector' => '.archive .intro-title',
-							) );
+							'selector' => '.archive .intro-title',
+						) );
 
 						$wp_customize->selective_refresh->add_partial( 'layout_page_outdent', array(
-								'selector' => '.page-layout-outdented:not(.content-layout-no-paddings):not(.fl-builder) .entry-content',
-							) );
+							'selector' => '.page-layout-outdented:not(.content-layout-no-paddings):not(.fl-builder) .entry-content',
+						) );
 
 		} // /setup
 
@@ -1022,7 +1022,7 @@ class Reykjavik_Customize {
 								'type'        => 'textarea',
 								'id'          => 'texts_site_info',
 								'label'       => esc_html__( 'Footer credits (copyright)', 'reykjavik' ),
-								'description' => sprintf( esc_html__( 'Set %s to disable this area.', 'reykjavik' ), '<code>-</code>' ) . ' ' . esc_html__( 'Leaving the field empty will fall back to default theme setting.', 'reykjavik' ),
+								'description' => sprintf( esc_html__( 'Set %s to disable this area.', 'reykjavik' ), '<code>-</code>' ) . ' ' . esc_html__( 'Leaving the field empty will fall back to default theme setting.', 'reykjavik' ) . ' ' . sprintf( esc_html__( 'You can use %s to display dynamic, always current year.', 'reykjavik' ), '<code>[year]</code>' ),
 								'default'     => '',
 								'validate'    => 'wp_kses_post',
 								'preview_js'  => array(

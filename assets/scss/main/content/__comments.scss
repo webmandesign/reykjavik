@@ -250,24 +250,39 @@
 // Navigation
 
 	.comment-navigation {
-		@extend %font_weight_700;
 
-		div {
-			text-align: inherit;
+		.comments-title + & {
+			display: none;
+
+			// @include responsive( map_get( $breakpoint, 'm' ) ) {
+			// 	margin: ( -$golden +em ) 0 ( $golden +em );
+			// }
+
 		}
 
-		a {
-			padding: ( $golden +em ) 6%;
-
-			&:hover {
-				opacity: 1;
-			}
-
+		a,
+		span {
+			display: none;
 		}
 
 		.nav-links {
-			border-width: 2px;
-			border-style: solid;
+			display: block;
+			padding: 0;
+			margin: 0;
+
+			a,
+			span {
+				padding: ( $golden_major +em ) 0;
+				margin: $golden_minor / 2 +em;
+				margin-#{$left}: 0;
+				line-height: inherit;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					display: inline-block;
+				}
+
+			}
+
 		}
 
 	}

@@ -99,7 +99,7 @@ class Reykjavik_Footer {
 
 			// Output
 
-				echo "\r\n\r\n" . '<footer id="colophon" class="site-footer" role="contentinfo">' . "\r\n\r\n";
+				echo "\r\n\r\n" . '<footer id="colophon" class="site-footer">' . "\r\n\r\n";
 
 		} // /open
 

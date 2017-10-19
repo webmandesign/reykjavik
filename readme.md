@@ -15,6 +15,11 @@
 Follow [WebMan Design on **Twitter**](https://twitter.com/webmandesigneu) and become a fan on [**Facebook**](https://www.facebook.com/webmandesigneu) for staying informed about the theme updates and news.
 
 
+## Documentation
+
+Theme documentation is available on-line at https://www.webmandesign.eu/manual/reykjavik/
+
+
 ## Demo
 
 Full theme demo website at https://themedemos.webmandesign.eu/reykjavik/
@@ -25,14 +30,16 @@ Full theme demo website at https://themedemos.webmandesign.eu/reykjavik/
 The theme was tested and is compatible with Chrome, Safari, Opera, Firefox, Edge, Internet Explorer 11 browsers.
 
 
+## Installation
+
+1. In your admin panel, go to **Appearance &rarr; Themes** and click the "Add New" button.
+2. Click "Upload Theme" and "Choose File", then select the theme's .zip file. Click "Install Now".
+3. Click "Activate" to use your new theme right away.
+
+
 ## Changelog
 
 *For full theme changelog please see the `changelog.md` file.*
-
-
-## Documentation
-
-Theme documentation is available on-line at https://www.webmandesign.eu/manual/reykjavik/ or off-line in `reykjavik/documentation` folder.
 
 
 ## Copyright
@@ -40,51 +47,51 @@ Theme documentation is available on-line at https://www.webmandesign.eu/manual/r
 ### Theme copyright
 
 **Reykjavik WordPress Theme**
-Copyright (c) WebMan Design, Oliver Juhas, https://www.webmandesign.eu
-Distributed under the terms of the GNU GPL
+Copyright (c) WebMan Design, Oliver Juhas, https://www.webmandesign.eu/
+Distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html)
 
 **Reykjavik is based on Underscores**
 Copyright (c) Automattic, Inc.
-Distributed under the terms of the GNU GPL
+Distributed under [GPLv2 or later license](https://www.gnu.org/licenses/gpl-2.0.html)
 http://underscores.me
 
 ### CSS copyright
 
 **Normalize.css**
 Copyright (c) Nicolas Gallagher and Jonathan Neal
-Licensed under the MIT license
+Distributed under [MIT license](https://opensource.org/licenses/MIT)
 https://necolas.github.io/normalize.css/
 
 ### JavaScript copyright
 
 **FitVids.JS**
-Copyright (c) 2013 Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-Licensed under the WTFPL license - http://sam.zoy.org/wtfpl/
-http://fitvidsjs.com
+Copyright (c) 2013 Chris Coyier - https://css-tricks.com + Dave Rupert - https://daverupert.com
+Distributed under the [WTFPL license](https://sam.zoy.org/wtfpl/)
+https://fitvidsjs.com
 
 ### PHP scripts copyright
 
 **TGM-Plugin-Activation**
 Copyright (c) 2011, Thomas Griffin
-Licensed under GPL v2 or later
-http://tgmpluginactivation.com
+Distributed under [GPLv2 or later license](https://www.gnu.org/licenses/gpl-2.0.html)
+https://tgmpluginactivation.com
 
 ### Fonts copyright
 
 **Montserrat**
 Copyright (c) Julieta Ulanovsky, Principal design
-Licensed under the Open Font License
+Distributed under [Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
 https://fonts.google.com/specimen/Montserrat
 
 **Open Sans**
 Copyright (c) Steve Matteson, Principal design
-Licensed under the Apache License, Version 2.0
+Distributed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 https://fonts.google.com/specimen/Open+Sans
 
 **Genericons Neue font icons**
 Copyright (c) Automattic, Inc.
-Distributed under the terms of the GNU GPL
-http://genericons.com
+Distributed under [GPLv2 or later license](https://www.gnu.org/licenses/gpl-2.0.html)
+https://genericons.com
 
 ### Images copyright
 

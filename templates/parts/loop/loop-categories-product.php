@@ -28,7 +28,11 @@
 
 // Requirements check
 
-	if ( is_wp_error( $terms ) || empty( $terms ) ) {
+	if (
+			is_wp_error( $terms )
+			|| empty( $terms )
+			|| ! function_exists( 'wc_get_template' )
+		) {
 		return;
 	}
 
@@ -42,8 +46,8 @@
 
 	foreach ( $terms as $term ) {
 		wc_get_template( 'content-product_cat.php', array(
-				'category' => $term,
-			) );
+			'category' => $term,
+		) );
 	}
 
 	?>

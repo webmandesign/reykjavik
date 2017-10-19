@@ -14,7 +14,8 @@
  * 10) Assets
  * 20) Sharing
  * 30) Infinite scroll
- * 40) Custom Post Types
+ * 40) Content options
+ * 50) Custom Post Types
  */
 class Reykjavik_Jetpack {
 
@@ -49,22 +50,39 @@ class Reykjavik_Jetpack {
 
 				// Setup
 
-					// Responsive videos
+					// Add theme support for Responsive Videos
 
 						add_theme_support( 'jetpack-responsive-videos' );
 
-					// Infinite scroll
+					// Add theme support for Infinite Scroll
 
 						add_theme_support( 'infinite-scroll', apply_filters( 'wmhook_reykjavik_jetpack_setup_infinite_scroll', array(
-								'container'      => 'posts',
-								'footer'         => false,
-								'posts_per_page' => 6,
-								'render'         => 'Reykjavik_Jetpack::infinite_scroll_render',
-								'type'           => 'scroll',
-								'wrapper'        => false,
-							) ) );
+							'container'      => 'posts',
+							'footer'         => false,
+							'posts_per_page' => 6,
+							'render'         => 'Reykjavik_Jetpack::infinite_scroll_render',
+							'type'           => 'scroll',
+							'wrapper'        => false,
+						) ) );
 
-					// Custom post types
+					// Add theme support for Content Options
+
+						/**
+						 * @link  https://jetpack.com/support/content-options/
+						 */
+						add_theme_support( 'jetpack-content-options', array(
+							'author-bio'   => true,
+							'post-details' => array(
+								'stylesheet' => 'reykjavik-stylesheet',
+								'date'       => '.posted-on',
+								// 'categories' => '.cat-links',
+								// 'tags'       => '.tags-links',
+								'author'     => '.byline',
+								'comment'    => '.comments-link',
+							),
+						) );
+
+					// Add theme support for custom post types
 
 						add_theme_support( 'jetpack-portfolio' );
 						add_theme_support( 'jetpack-testimonial' );
@@ -76,6 +94,9 @@ class Reykjavik_Jetpack {
 					// Actions
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets', 100 );
+						add_action( 'wp_enqueue_scripts', 'jetpack_post_details_enqueue_scripts', 120 ); // Load this after `reykjavik-stylesheet` is enqueued.
+
+						add_action( 'tha_entry_bottom', __CLASS__ . '::author_bio' );
 
 					// Filters
 
@@ -86,6 +107,8 @@ class Reykjavik_Jetpack {
 						add_filter( 'sharing_show', __CLASS__ . '::sharing_show', 10, 2 );
 
 						add_filter( 'infinite_scroll_js_settings', __CLASS__ . '::infinite_scroll_js_settings' );
+
+						add_filter( 'jetpack_author_bio_avatar_size', __CLASS__ . '::author_bio_avatar_size' );
 
 						if ( is_callable( 'Reykjavik_Post_Media::size' ) ) {
 							add_filter( 'jetpack_portfolio_thumbnail_size',   'Reykjavik_Post_Media::size' );
@@ -258,7 +281,56 @@ class Reykjavik_Jetpack {
 
 
 	/**
-	 * 40) Custom Post Types
+	 * 40) Content options
+	 */
+
+		/**
+		 * Display author bio
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function author_bio() {
+
+			// Requirements check
+
+				if (
+						! function_exists( 'jetpack_author_bio' )
+						|| ! Reykjavik_Post::is_singular()
+						|| ! in_array( get_post_type(), (array) apply_filters( 'wmhook_{%= prefix_hook %}_jetpack_author_bio_post_type', array( 'post' ) ) )
+					) {
+					return;
+				}
+
+
+			// Output
+
+				jetpack_author_bio();
+
+		} // /author_bio
+
+
+
+		/**
+		 * Author bio avatar size
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function author_bio_avatar_size() {
+
+			// Output
+
+				return 240;
+
+		} // /author_bio_avatar_size
+
+
+
+
+
+	/**
+	 * 50) Custom Post Types
 	 */
 
 		/**

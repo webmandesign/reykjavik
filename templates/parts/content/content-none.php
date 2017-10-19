@@ -1,8 +1,8 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found.
+ * Template part for displaying a message that posts cannot be found
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link  https://codex.wordpress.org/Template_Hierarchy
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -31,8 +31,13 @@
 
 				printf(
 					wp_kses(
+						/* translators: 1: link to WP admin new post page. */
 						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'reykjavik' ),
-						array( 'a' => array( 'href' => array() ) )
+						array(
+							'a' => array(
+								'href' => array(),
+							),
+						)
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				);

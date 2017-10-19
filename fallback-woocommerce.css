@@ -3,6 +3,8 @@
  *
  * WooCommerce fallback styles.
  *
+ * This only enqueues if the theme supports `stylesheet-generator`.
+ *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *

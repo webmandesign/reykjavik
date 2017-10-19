@@ -149,7 +149,7 @@ class Reykjavik_Content {
 
 					// Output
 
-						echo "\r\n\t\t" . '<main id="main" class="site-main" role="main">' . "\r\n\r\n";
+						echo "\r\n\t\t" . '<main id="main" class="site-main">' . "\r\n\r\n";
 
 				} // /open_main
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Theme loading
+ * Loading theme functionality
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link  https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas

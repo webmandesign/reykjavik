@@ -47,16 +47,15 @@ class Reykjavik_Header {
 						add_action( 'tha_html_before', __CLASS__ . '::doctype' );
 
 						add_action( 'wp_head', __CLASS__ . '::head', 1 );
+						add_action( 'wp_head', __CLASS__ . '::head_pingback', 1 );
+						add_action( 'wp_head', __CLASS__ . '::head_chrome_color', 1 );
 
 						add_action( 'tha_body_top', __CLASS__ . '::oldie', 5 );
-
 						add_action( 'tha_body_top', __CLASS__ . '::skip_links', 5 );
-
 						add_action( 'tha_body_top', __CLASS__ . '::site_open' );
 
 						add_action( 'tha_header_top', __CLASS__ . '::open', 1 );
 						add_action( 'tha_header_top', __CLASS__ . '::open_inner', 2 );
-
 						add_action( 'tha_header_top', __CLASS__ . '::site_branding' );
 
 						add_action( 'tha_header_bottom', __CLASS__ . '::close_inner', 1 );
@@ -65,6 +64,7 @@ class Reykjavik_Header {
 					// Filters
 
 						add_filter( 'body_class', __CLASS__ . '::body_class', 98 );
+
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class' );
 
 		} // /__construct
@@ -110,7 +110,7 @@ class Reykjavik_Header {
 
 			// Output
 
-				echo '<!DOCTYPE html>';
+				echo '<!doctype html>';
 
 		} // /doctype
 
@@ -129,6 +129,44 @@ class Reykjavik_Header {
 				get_template_part( 'templates/parts/header/head' );
 
 		} // /head
+
+
+
+		/**
+		 * Add a pingback url auto-discovery header for singularly identifiable articles
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function head_pingback() {
+
+			// Output
+
+				if ( is_singular() && pings_open() ) {
+					echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+				}
+
+		} // /head_pingback
+
+
+
+		/**
+		 * Chrome theme color with support for Chrome Theme Color Changer plugin
+		 *
+		 * @see  https://wordpress.org/plugins/chrome-theme-color-changer
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function head_chrome_color() {
+
+			// Output
+
+				if ( ! class_exists( 'Chrome_Theme_Color_Changer' ) ) {
+					echo '<meta name="theme-color" content="' . esc_attr( get_theme_mod( 'color_header_background', '#fefeff' ) ) . '">';
+				}
+
+		} // /head_chrome_color
 
 
 
@@ -222,7 +260,7 @@ class Reykjavik_Header {
 
 			// Output
 
-				echo "\r\n\r\n" . '<header id="masthead" class="site-header" role="banner">' . "\r\n\r\n";
+				echo "\r\n\r\n" . '<header id="masthead" class="site-header">' . "\r\n\r\n";
 
 		} // /open
 

@@ -328,7 +328,7 @@ class Reykjavik_WooCommerce_Loop {
 
 				$html = str_replace(
 					'<nav class="woocommerce-pagination">',
-					'<nav class="woocommerce-pagination pagination" role="navigation" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
+					'<nav class="woocommerce-pagination pagination" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
 					. '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '</h2>',
 					ob_get_clean()
 				);

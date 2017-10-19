@@ -38,7 +38,7 @@
 
 ?>
 
-<nav class="social-links" role="navigation" aria-labelledby="social-links-label-<?php echo esc_attr( $unique_id ); ?>">
+<nav class="social-links" aria-labelledby="social-links-label-<?php echo esc_attr( $unique_id ); ?>">
 
 	<h2 class="screen-reader-text" id="social-links-label-<?php echo esc_attr( $unique_id ); ?>"><?php esc_html_e( 'Social Menu', 'reykjavik' ); ?></h2>
 

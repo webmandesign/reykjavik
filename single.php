@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link  https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -29,10 +29,9 @@ get_header();
 		get_template_part( 'templates/parts/content/content', apply_filters( 'wmhook_reykjavik_single_content_type', get_post_format() ) );
 
 		// If comments are open or we have at least one comment, load up the comment template.
-
-			if ( comments_open() || get_comments_number() ) {
-				comments_template( '', true );
-			}
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
 
 	endwhile;
 

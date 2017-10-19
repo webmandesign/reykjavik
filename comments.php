@@ -1,11 +1,11 @@
 <?php
 /**
- * The template for displaying comments.
+ * The template for displaying comments
  *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link  https://codex.wordpress.org/Template_Hierarchy
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -38,99 +38,66 @@ do_action( 'tha_comments_before' );
 <div id="comments" class="comments-area">
 <div class="comments-area-inner">
 
-	<h2 class="comments-title">
-		<?php
-
-		printf(
-			esc_html( _nx( '%1$d comment on &ldquo;%2$s&rdquo;', '%1$d comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'reykjavik' ) ),
-			number_format_i18n( get_comments_number() ),
-			'<span>' . get_the_title() . '</span>'
-		);
-
-		?>
-	</h2>
-
 	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
 
-	/**
-	 * Comments list
-	 */
-	if ( have_comments() ) {
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-
-			if (
-					! comments_open()
-					&& get_comments_number()
-					&& post_type_supports( get_post_type(), 'comments' )
-				) :
-
-				?>
-
-				<p class="comments-closed no-comments"><?php esc_html_e( 'Comments are closed.', 'reykjavik' ); ?></p>
-
-				<?php
-
-			endif;
-
-		// Actual comments list
-
-			?>
-
-			<ol class="comment-list">
-				<?php
-
-				wp_list_comments( array(
-						'avatar_size' => 240,
-						'style'       => 'ol',
-						'short_ping'  => true,
-					) );
-
-				?>
-			</ol>
-
+		<h2 class="comments-title">
 			<?php
 
-		// Are there comments to navigate through?
+			$comment_count = get_comments_number();
 
-			if (
-					1 < get_comment_pages_count()
-					&& get_option( 'page_comments' )
-				) :
+			if ( 1 === $comment_count ) {
 
-				$total   = get_comment_pages_count();
-				$current = ( get_query_var( 'cpage' ) ) ? ( absint( get_query_var( 'cpage' ) ) ) : ( 1 );
+				printf(
+					/* translators: 1: title. */
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'reykjavik' ),
+					'<span>' . get_the_title() . '</span>'
+				);
 
-				?>
+			} else {
 
-				<nav id="comment-nav-below" class="pagination comment-pagination" role="navigation" aria-labelledby="comment-nav-below-label" data-current="<?php echo esc_attr( $current ); ?>" data-total="<?php echo esc_attr( $total ); ?>">
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$d thought on &ldquo;%2$s&rdquo;', '%1$d thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'Comments list title.', 'reykjavik' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
 
-					<h2 class="screen-reader-text" id="comment-nav-below-label"><?php esc_html_e( 'Comments Navigation', 'reykjavik' ); ?></h2>
+			}
 
-					<?php
+			?>
+		</h2>
 
-					paginate_comments_links( (array) apply_filters( 'wmhook_reykjavik_pagination_args', array(
-						'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'reykjavik' ) . '<span class="screen-reader-text"> '
-						               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'reykjavik' ) . '</span>',
-						'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'reykjavik' )
-						               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'reykjavik' ),
-					), 'comments' ) );
+		<?php the_comments_navigation(); ?>
 
-					?>
+		<ol class="comment-list">
+			<?php
 
-				</nav>
+			wp_list_comments( array(
+				'avatar_size' => 240,
+				'style'       => 'ol',
+				'short_ping'  => true,
+			) );
 
-				<?php
+			?>
+		</ol>
 
-			endif;
+		<?php
 
-	} // /have_comments()
+		the_comments_navigation();
 
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) :
+			?>
 
+			<p class="comments-closed no-comments"><?php esc_html_e( 'Comments are closed.', 'reykjavik' ); ?></p>
 
-	/**
-	 * Comments form
-	 */
+			<?php
+		endif;
+
+	endif; // Check for have_comments().
+
 	comment_form();
 
 	?>

@@ -1,8 +1,8 @@
 <?php
 /**
- * Image attachment template.
+ * Image attachment template
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link  https://codex.wordpress.org/Template_Hierarchy
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas

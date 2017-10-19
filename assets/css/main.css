@@ -211,7 +211,7 @@ iframe:focus { outline: thin dotted; }
 
 code { position: relative; display: inline-block; padding: 0 0.62em; margin: 0 0.19em; }
 
-mark code, ins code, .highlight code, .form-allowed-tags code, .taxonomy-description code { display: inline; padding: 0 0.38em; background: none; color: inherit; }
+mark code, ins code, .highlight code, .form-allowed-tags code, .archive-description code { display: inline; padding: 0 0.38em; background: none; color: inherit; }
 
 pre { position: relative; max-width: 100%; padding: 1em; margin-bottom: 1.62em; overflow: auto; -moz-tab-size: 2; tab-size: 2; }
 
@@ -347,11 +347,13 @@ input, select, textarea, .mobile-search-form, .widget_archive li::before, .widge
 
 .sidebar .wm-subnav li a, .fl-widget .wm-subnav li a, .sidebar .widget_nav_menu li a, .fl-widget .widget_nav_menu li a, .breadcrumbs { font-size: 0.81rem; }
 
+.entry-author .author-name { font-size: 1.62rem; }
+
 blockquote blockquote, .widget-recent-entries-list .entry-title, .sidebar .widget-recent-entries-list .entry-title, .widget-area .widget-recent-entries-list .entry-title, div.sharedaddy .sd-title { font-size: 1em; }
 
 .font-size-xs, .entry-subtitle { font-size: 0.62em; }
 
-blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption-text, #cancel-comment-reply-link, .comment-form label, .comments-title .add-comment-link, .comment-metadata, .comment .reply, .site-description, .menu-item-description, .single.fl-builder .posts .entry-meta, .single.content-layout-no-paddings .posts .entry-meta, .posts .entry-meta, .nav-links .label, .widget-recent-entries-list .month, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .widget .entry-subtitle { font-size: 0.81em; }
+blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption-text, #cancel-comment-reply-link, .comment-form label, .comments-title .add-comment-link, .comment-metadata, .comment .reply, .site-description, .menu-item-description, .single.fl-builder .posts .entry-meta, .single.content-layout-no-paddings .posts .entry-meta, .posts .entry-meta, .post-navigation .nav-links .label, .widget-recent-entries-list .month, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-author .author-title, .widget .entry-subtitle { font-size: 0.81em; }
 
 .font-size-sm, .site-footer, .sidebar, .sidebar .widget-recent-entries-list .entry-date, .widget-area .widget-recent-entries-list .entry-date { font-size: 0.905em; }
 
@@ -367,13 +369,13 @@ blockquote, .font-size-l, .comments-title, .social-links, .widget-recent-entries
 
 blockquote, .weight-300, .search-results .page-title, .author .intro-title span, .post-table-of-contents .is-passed a, .comments-title span, .intro .entry-subtitle { font-weight: 300; }
 
-blockquote cite, .weight-400, #cancel-comment-reply-link, .comments-title .add-comment-link, .button:disabled, button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled, .main-navigation-container .button > a:disabled, .child-page .more-link:disabled, .entry-title small, .page-title small, .post-table-of-contents .is-current a, .entry-meta-description, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-subtitle, .widget .entry-subtitle { font-weight: 400; }
+blockquote cite, .weight-400, #cancel-comment-reply-link, .comments-title .add-comment-link, .button:disabled, button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled, .main-navigation-container .button > a:disabled, .child-page .more-link:disabled, .entry-title small, .page-title small, .post-table-of-contents .is-current a, .entry-meta-description, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-author .author-title, .entry-subtitle, .widget .entry-subtitle { font-weight: 400; }
 
 .weight-500 { font-weight: 500; }
 
 .weight-600, abbr, .post-table-of-contents a, .pingback a:not(.comment-edit-link), .trackback a:not(.comment-edit-link) { font-weight: 600; }
 
-dt, th, tfoot td, .weight-700, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .nav-links .title, .comments-title, .comment-navigation, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title { font-weight: 700; }
+dt, th, tfoot td, .weight-700, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
 
 .weight-800 { font-weight: 800; }
 
@@ -1049,9 +1051,9 @@ h1:last-child, h2:last-child, h3:last-child, .h1:last-child, .h2:last-child, .h3
 
 @media only screen and (min-width: 55em) { .intro-widgets .widget, .footer-widgets .widget { -webkit-flex-basis: 0%; -ms-flex-preferred-size: 0%; flex-basis: 0%; padding: 2.6244em 0; } }
 
-code, pre, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, tbody tr:hover td, tbody tr:hover th { position: relative; z-index: 1; }
+code, pre, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, .entry-author, tbody tr:hover td, tbody tr:hover th { position: relative; z-index: 1; }
 
-code::before, pre::before, .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before, .pagination .prev::before, .pagination .next::before, .footer-area-site-info::before, .site-footer .breadcrumbs-container::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
+code::before, pre::before, .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before, .pagination .prev::before, .pagination .next::before, .footer-area-site-info::before, .site-footer .breadcrumbs-container::before, .entry-author::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
 
 tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
 
@@ -1069,12 +1071,12 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .site-layout-boxed .site { max-width: 1640px; max-width: 91.11111rem; }
 
-.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs, .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs { width: 88%; margin: 0 auto; }
+.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .post-navigation .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs, .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs { width: 88%; margin: 0 auto; }
 
 .header-layout-fullwidth .site-header-inner, .footer-layout-fullwidth .site-footer-area-inner, .footer-layout-fullwidth .site-footer .breadcrumbs, .fl-row-content { max-width: 1920px; max-width: 106.66667rem; }
 
 /* $content_width */
-.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs { max-width: 1200px; max-width: 66.66667rem; }
+.site-header-inner, .intro-inner, .intro-special .intro, .site-content-inner, .post-navigation .nav-links, .page-template-child-pages:not(.fl-builder) .site-main .entry-content, .list-child-pages-container, .fl-builder .comments-area, .content-layout-no-paddings .comments-area, .content-layout-stretched .comments-area, .site-footer-area-inner, .site .fl-row-fixed-width, .breadcrumbs { max-width: 1200px; max-width: 66.66667rem; }
 
 /* FILE: main/base/__classes.scss */
 @media only screen and (min-width: 55em) { .no-wrap { white-space: nowrap; } }
@@ -1805,27 +1807,27 @@ a .entry-date { cursor: pointer; }
 /* FILE: main/content/__the-posts-navigation.scss */
 .post-navigation { border-top-width: 1px; border-top-style: solid; }
 
-@media only screen and (min-width: 42em) { .nav-links { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; } }
+@media only screen and (min-width: 42em) { .post-navigation .nav-links { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; } }
 
-.nav-links > div { position: relative; }
+.post-navigation .nav-links > div { position: relative; }
 
-@media only screen and (min-width: 42em) { .nav-links > div { -webkit-flex: 1 1 0%; -ms-flex: 1 1 0%; flex: 1 1 0%; } }
+@media only screen and (min-width: 42em) { .post-navigation .nav-links > div { -webkit-flex: 1 1 0%; -ms-flex: 1 1 0%; flex: 1 1 0%; } }
 
-@media only screen and (min-width: 55em) { .nav-links > div { transition: opacity 0.5s; } }
+@media only screen and (min-width: 55em) { .post-navigation .nav-links > div { transition: opacity 0.5s; } }
 
-@media only screen and (min-width: 42em) { .nav-links > div:nth-child(2) { text-align: right; } }
+@media only screen and (min-width: 42em) { .post-navigation .nav-links > div:nth-child(2) { text-align: right; } }
 
-.nav-links a { display: block; padding: 8% 0; margin: 1px; text-decoration: none; color: inherit; }
+.post-navigation .nav-links a { display: block; padding: 8% 0; margin: 1px; text-decoration: none; color: inherit; }
 
-@media only screen and (min-width: 42em) { .nav-links a { padding: 5rem 0; } }
+@media only screen and (min-width: 42em) { .post-navigation .nav-links a { padding: 5rem 0; } }
 
-.nav-links .label { display: block; text-transform: uppercase; white-space: nowrap; opacity: .8; }
+.post-navigation .nav-links .label { display: block; text-transform: uppercase; white-space: nowrap; opacity: .8; }
 
-.nav-links .title { display: block; }
+.post-navigation .nav-links .title { display: block; }
 
-.nav-links:hover > div { opacity: .5; }
+.post-navigation .nav-links:hover > div { opacity: .5; }
 
-.nav-links > div:not(:empty):hover { opacity: 1; }
+.post-navigation .nav-links > div:not(:empty):hover { opacity: 1; }
 
 /* FILE: main/content/__page.scss */
 .page-header + .page-content { margin-top: 1.62em; }
@@ -1944,13 +1946,15 @@ a .entry-date { cursor: pointer; }
 
 .comment-edit-link::before { content: '\f411'; }
 
-.comment-navigation div { text-align: inherit; }
+.comments-title + .comment-navigation { display: none; }
 
-.comment-navigation a { padding: 1.62em 6%; }
+.comment-navigation a, .comment-navigation span { display: none; }
 
-.comment-navigation a:hover { opacity: 1; }
+.comment-navigation .nav-links { display: block; padding: 0; margin: 0; }
 
-.comment-navigation .nav-links { border-width: 2px; border-style: solid; }
+.comment-navigation .nav-links a, .comment-navigation .nav-links span { padding: 0.62em 0; margin: 0.19em; margin-left: 0; line-height: inherit; }
+
+@media only screen and (min-width: 42em) { .comment-navigation .nav-links a, .comment-navigation .nav-links span { display: inline-block; } }
 
 .comment-respond { padding: 0; border-width: 0; }
 
@@ -2286,6 +2290,20 @@ div.sharedaddy { margin-top: 2.6244rem; border-color: inherit; }
 .site .sd-social-icon .sd-content ul li[class*="share-"] a, .site .sd-social-icon .sd-content ul li[class*="share-"] a:hover, .site .sd-social-icon .sd-content ul li[class*="share-"] div.option a { border-width: 2px; border-style: solid; }
 
 .site .sd-social-icon .sd-content ul li[class*="share-"] a.sd-button::before { top: 0; }
+
+.entry-author { margin-top: 3.62674em; padding: 8%; border-width: 1px; border-style: solid; }
+
+.entry-author .author-avatar { width: 3.62674rem; margin-bottom: 0.62em; }
+
+@media only screen and (min-width: 42em) { .entry-author .author-avatar { float: right; } }
+
+.entry-author .author-avatar img { border-radius: 5em; }
+
+.entry-author .author-title { margin-bottom: 1.62em; text-transform: uppercase; }
+
+@media only screen and (min-width: 42em) { .entry-author .author-title { padding-right: 4.62674rem; } }
+
+.entry-author .author-name { display: block; margin-top: 0.19em; text-transform: none; }
 
 .entry-content .portfolio-entry { padding: 1.62em; margin: 1em; border-width: 1px; border-style: solid; border-bottom-width: 2px; border-bottom-color: inherit; }
 

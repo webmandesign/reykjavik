@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying archive pages
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link  https://codex.wordpress.org/Template_Hierarchy
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -29,7 +29,7 @@ get_header();
 			the_archive_title( '<h1 class="page-title">', $paged_suffix . '</h1>' );
 
 			if ( empty( $paged_suffix ) ) {
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
 			}
 
 			?>
@@ -37,8 +37,12 @@ get_header();
 
 		<?php
 
-	endif;
+		get_template_part( 'templates/parts/loop/loop', 'archive' );
 
-	get_template_part( 'templates/parts/loop/loop', 'archive' );
+	else :
+
+		get_template_part( 'templates/parts/content/content', 'none' );
+
+	endif;
 
 get_footer();

@@ -1,8 +1,9 @@
 <?php
 /**
- * The header for our theme.
+ * The header for our theme
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link  https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @see  `includes/frontend/class-header.php`
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -23,7 +24,7 @@
 
 ?>
 
-<html class="no-js" <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
 

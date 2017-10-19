@@ -1,48 +1,51 @@
-/**
- * Theme Name:   Reykjavik
- * Theme URI:    https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
- * Author:       WebMan Design
- * Author URI:   https://www.webmandesign.eu/
- * Version:      0.9.11
- * Text Domain:  reykjavik
- * Domain Path:  /languages
- * License:      GNU General Public License v3
- * License URI:  https://www.gnu.org/licenses/gpl-3.0.html
- * Description:  Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Visual Composer or other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free theme!
- * Tags:         one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
- *
- * Requires at least: 4.7
- *
- * GitHub Theme URI: webmandesign/reykjavik
- *
- * This theme, like WordPress, is licensed under the GPL.
- * Use it to make something cool, have fun, and share what you've learned with others.
- */
+/*!
+Theme Name:   Reykjavik
+Theme URI:    https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
+Author:       WebMan Design
+Author URI:   https://www.webmandesign.eu/
+Version:      0.9.12
+Text Domain:  reykjavik
+Domain Path:  /languages
+License:      GNU General Public License v3
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Description:  Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Visual Composer or other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free theme!
+Tags:         one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+
+Requires at least: 4.7
+
+GitHub Theme URI: webmandesign/reykjavik
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Reykjavik is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
 
 
 
 
 
-/**
- * IMPORTANT NOTICE:
- *
- * Do not place your custom CSS styles here in this file! Use WordPress native "Additional CSS"
- * field (https://codex.wordpress.org/CSS#Custom_CSS_in_WordPress) or a child theme
- * (https://www.webmandesign.eu/manual/reykjavik/#child-theme).
- *
- * If you place your custom CSS here, it will be lost once you update the theme!
- */
+/*!
+IMPORTANT NOTICE:
+
+Do not place your custom CSS styles here in this file! Use WordPress native "Additional CSS"
+field (https://codex.wordpress.org/CSS#Custom_CSS_in_WordPress) or a child theme
+(https://www.webmandesign.eu/manual/reykjavik/#child-theme).
+
+If you place your custom CSS here, it will be lost once you update the theme!
+*/
 
 
 
 
 
-/**
- * The CSS below is added to comply WordPress theme checker.
- * The actual CSS styles are situated in the `assets/css/*.css` files.
- *
- * @link  https://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
- */
+/*!
+The CSS below is added to comply with WordPress theme checker.
+The actual CSS styles are placed in the `assets/css/*.css` files.
+
+@link  https://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
+*/
 
 .sticky,
 .bypostauthor,

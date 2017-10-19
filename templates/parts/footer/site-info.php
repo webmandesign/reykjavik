@@ -1,10 +1,8 @@
 <?php
 /**
- * Site info / footer credits area.
+ * Site info / footer credits area
  *
- * IMPORTANT:
- * Do not remove the HTML comment from `</div><!-- /footer-area-site-info -->`
- * as it is required for customizer partial refresh manipulation.
+ * Allows using "[year]" to output dynamic year.
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -59,20 +57,20 @@
 				<span class="sep"> | </span>
 				<a href="#top" id="back-to-top" class="back-to-top"><?php esc_html_e( 'Back to top &uarr;', 'reykjavik' ); ?></a>
 
-			<?php else : ?>
-
-				<?php
+			<?php else :
 
 				// No need to apply wp_kses_post() on output as it is already validated via Customizer.
 
-					echo (string) $site_info_text;
+					echo str_replace(
+						'[year]',
+						date( 'Y' ),
+						(string) $site_info_text
+					);
 
-				?>
-
-			<?php endif; ?>
+			endif; ?>
 		</div>
 
 		<?php do_action( 'wmhook_reykjavik_site_info_after' ); ?>
 
 	</div>
-</div><!-- /footer-area-site-info -->
+</div>
