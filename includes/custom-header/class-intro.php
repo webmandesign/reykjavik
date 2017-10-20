@@ -65,7 +65,7 @@ class Reykjavik_Intro {
 
 						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::disable', 5 );
 
-						add_filter( 'theme_mod_header_image', __CLASS__ . '::image', 15 ); // Has to be priority 15 for correct customizer previews.
+						add_filter( 'theme_mod_' . 'header_image', __CLASS__ . '::image', 15 ); // Has to be priority 15 for correct customizer previews.
 
 						add_filter( 'customize_partial_render_' . 'custom_header', __CLASS__ . '::special_image_partial_refresh' );
 

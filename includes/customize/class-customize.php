@@ -137,8 +137,9 @@ class Reykjavik_Customize {
 					// Site info (footer credits)
 
 						$wp_customize->selective_refresh->add_partial( 'texts_site_info', array(
-							'selector'        => '.site-info',
-							'render_callback' => __CLASS__ . '::partial_texts_site_info',
+							'selector'            => '.site-info',
+							'render_callback'     => __CLASS__ . '::partial_texts_site_info',
+							'container_inclusive' => false,
 						) );
 
 					// Option pointers only
@@ -148,10 +149,40 @@ class Reykjavik_Customize {
 						) );
 
 						$wp_customize->selective_refresh->add_partial( 'layout_page_outdent', array(
-							'selector' => '.page-layout-outdented:not(.content-layout-no-paddings):not(.fl-builder) .entry-content',
+							'selector'            => '.page-layout-outdented:not(.content-layout-no-paddings):not(.fl-builder) .option-pointer',
+							'render_callback'     => '__return_empty_string',
+							'fallback_refresh'    => false,
+							'container_inclusive' => false,
 						) );
+						/**
+						 * We need to add a helper HTML not to trigger content or page refresh with this option pointer.
+						 * Only required for options with `preview_js` set.
+						 */
+						add_action( 'tha_entry_top', __CLASS__ . '::option_pointer_' . 'layout_page_outdent', 0 );
 
 		} // /setup
+
+
+
+			/**
+			 * Option pointer: layout_page_outdent
+			 *
+			 * This is only required for options with `preview_js` set.
+			 * Outputs a helper HTML for our option pointer so we don't trigger
+			 * any content or page refresh.
+			 *
+			 * @since    1.0.0
+			 * @version  1.0.0
+			 */
+			public static function option_pointer_layout_page_outdent() {
+
+				// Output
+
+					if ( is_customize_preview() && is_page() ) {
+						echo '<small class="option-pointer"></small>';
+					}
+
+			} // /option_pointer_layout_page_outdent
 
 
 
@@ -1236,6 +1267,7 @@ class Reykjavik_Customize {
 									'post-type' => esc_html__( 'Display "Archives:" prefix', 'reykjavik' ),
 									'taxonomy'  => esc_html__( 'Display "Taxonomy:" prefix', 'reykjavik' ),
 								),
+								// No need for `preview_js` as we really need to refresh the page to apply changes.
 							),
 
 
@@ -1399,21 +1431,11 @@ class Reykjavik_Customize {
 
 			// Output
 
-				?>
-
-				<div class="site-info">
-					<?php
-
-					if ( empty( $site_info_text ) ) {
-						esc_html_e( 'Please set your website credits text or the theme default one will be displayed.', 'reykjavik' );
-					} else {
-						echo (string) $site_info_text;
-					}
-
-					?>
-				</div>
-
-				<?php
+				if ( empty( $site_info_text ) ) {
+					esc_html_e( 'Please set your website credits text or the theme default one will be displayed.', 'reykjavik' );
+				} else {
+					echo (string) $site_info_text;
+				}
 
 		} // /partial_texts_site_info
 

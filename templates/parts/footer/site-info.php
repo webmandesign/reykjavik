@@ -2,8 +2,6 @@
 /**
  * Site info / footer credits area
  *
- * Allows using "[year]" to output dynamic year.
- *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
@@ -60,12 +58,7 @@
 			<?php else :
 
 				// No need to apply wp_kses_post() on output as it is already validated via Customizer.
-
-					echo str_replace(
-						'[year]',
-						date( 'Y' ),
-						(string) $site_info_text
-					);
+				echo $site_info_text;
 
 			endif; ?>
 		</div>

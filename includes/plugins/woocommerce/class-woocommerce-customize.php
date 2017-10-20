@@ -471,8 +471,8 @@ class Reykjavik_WooCommerce_Customize {
 			// Processing
 
 				$wp_customize->selective_refresh->add_partial( 'woocommerce_checkout_guide', array(
-						'selector' => '.checkout-guide',
-					) );
+					'selector' => '.checkout-guide',
+				) );
 
 		} // /options_pointers
 

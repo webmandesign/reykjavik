@@ -94,18 +94,21 @@
 			border-width: 1px;
 			border-style: solid;
 
+			&::before {
+				opacity: .03;
+			}
+
 			.author {
 
 				&-avatar {
-					width: power( 1 + $golden_minor, 4 ) +rem;
-					margin-bottom: $golden_major +em;
+					width: 60 *$px;
+					margin-bottom: 1em;
 
 					@include responsive( map_get( $breakpoint, 'm' ) ) {
-						float: $right; // {{RTL}}
-					}
-
-					img {
-						border-radius: 5em;
+						float: $left; // {{RTL}}
+						width: 80px;
+						margin-#{$right}: $golden +em;
+						margin-bottom: $golden +em;
 					}
 
 				}
@@ -115,11 +118,6 @@
 					@extend %font_weight_400;
 					margin-bottom: $golden +em;
 					text-transform: uppercase;
-
-					@include responsive( map_get( $breakpoint, 'm' ) ) {
-						padding-#{$right}: power( 1 + $golden_minor, 4 ) + 1rem; // {{RTL}}
-					}
-
 				}
 
 				&-name {
@@ -128,6 +126,14 @@
 					display: block;
 					margin-top: $golden_minor / 2 +em;
 					text-transform: none;
+				}
+
+				&-bio {
+
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
+						clear: both;
+					}
+
 				}
 
 			}

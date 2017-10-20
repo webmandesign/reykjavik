@@ -67,7 +67,7 @@ class Reykjavik_WooCommerce_Pages {
 
 						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::intro_disable' );
 
-						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
+						add_filter( 'theme_mod_' . 'header_image', __CLASS__ . '::intro_image', 20 );
 
 						add_filter( 'get_the_archive_title', __CLASS__ . '::shop_archive_title' );
 

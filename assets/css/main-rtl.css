@@ -2295,17 +2295,17 @@ div.sharedaddy { margin-top: 2.6244rem; border-color: inherit; }
 
 .entry-author { margin-top: 3.62674em; padding: 8%; border-width: 1px; border-style: solid; }
 
-.entry-author .author-avatar { width: 3.62674rem; margin-bottom: 0.62em; }
+.entry-author::before { opacity: .03; }
 
-@media only screen and (min-width: 42em) { .entry-author .author-avatar { float: left; } }
+.entry-author .author-avatar { width: 3.33333rem; margin-bottom: 1em; }
 
-.entry-author .author-avatar img { border-radius: 5em; }
+@media only screen and (min-width: 42em) { .entry-author .author-avatar { float: right; width: 80px; margin-left: 1.62em; margin-bottom: 1.62em; } }
 
 .entry-author .author-title { margin-bottom: 1.62em; text-transform: uppercase; }
 
-@media only screen and (min-width: 42em) { .entry-author .author-title { padding-left: 4.62674rem; } }
-
 .entry-author .author-name { display: block; margin-top: 0.19em; text-transform: none; }
+
+@media only screen and (min-width: 42em) { .entry-author .author-bio { clear: both; } }
 
 .entry-content .portfolio-entry { padding: 1.62em; margin: 1em; border-width: 1px; border-style: solid; border-bottom-width: 2px; border-bottom-color: inherit; }
 

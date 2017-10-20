@@ -50,6 +50,10 @@ class Reykjavik_Footer {
 
 						add_action( 'tha_body_bottom', __CLASS__ . '::site_close', 100 );
 
+					// Filters
+
+						add_filter( 'theme_mod_' . 'texts_site_info', __CLASS__ . '::site_info_year' );
+
 		} // /__construct
 
 
@@ -134,6 +138,38 @@ class Reykjavik_Footer {
 				get_template_part( 'templates/parts/footer/site', 'info' );
 
 		} // /site_info
+
+
+
+			/**
+			 * Site info: Replacing `[year]` with dynamically generated year
+			 *
+			 * @since    1.0.0
+			 * @version  1.0.0
+			 *
+			 * @param  string $value
+			 */
+			public static function site_info_year( $value ) {
+
+				// Requirements check
+
+					if (
+							empty( $value )
+							|| ! is_string( $value )
+						) {
+						return $value;
+					}
+
+
+				// Output
+
+					return str_replace(
+						'[year]',
+						esc_html( date( 'Y' ) ),
+						(string) $value
+					);
+
+			} // /site_info_year
 
 
 

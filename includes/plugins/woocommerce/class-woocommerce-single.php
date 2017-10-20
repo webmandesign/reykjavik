@@ -79,7 +79,7 @@ class Reykjavik_WooCommerce_Single {
 
 						add_filter( 'template_include', __CLASS__ . '::product_page_template_load', 99 );
 
-						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
+						add_filter( 'theme_mod_' . 'header_image', __CLASS__ . '::intro_image', 20 );
 
 						add_filter( 'woocommerce_get_price_html', __CLASS__ . '::price_separator' );
 

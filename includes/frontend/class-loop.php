@@ -54,7 +54,7 @@ class Reykjavik_Loop {
 
 						add_filter( 'get_the_archive_description', __CLASS__ . '::archive_author_description' );
 
-						add_filter( 'theme_mod_header_image', __CLASS__ . '::intro_image', 20 );
+						add_filter( 'theme_mod_' . 'header_image', __CLASS__ . '::intro_image', 20 );
 
 						add_filter( 'navigation_markup_template', __CLASS__ . '::pagination_comments', 10, 2 );
 
