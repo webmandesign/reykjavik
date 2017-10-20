@@ -110,7 +110,7 @@ A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/p
 
 ### 14th
 
-- Update 0.9.9. Making custom styles work in TinyMCE editor after [great tip from @greenshady](https://themes.trac.wordpress.org/ticket/46546#comment:34) (however, not understanding why this is allowed and generating CSS files in WordPress uploads folder [securely using native WordPress Filesystem API](https://themes.trac.wordpress.org/ticket/46546#comment:30) is not...).
+- Update 0.9.9. Making custom styles work in TinyMCE editor after [great tip from @greenshady](https://themes.trac.wordpress.org/ticket/46546#comment:34) *(**but**, this is the old solution of PHP file pretending to be a CSS file and I do not understand why this solution is allowed and generating proper CSS files in WordPress uploads folder [securely using native WordPress Filesystem API](https://themes.trac.wordpress.org/ticket/46546#comment:30) is not...)*.
 
 ### 16th
 
@@ -118,6 +118,6 @@ A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/p
 
 ### 17th
 
-- Unfortunately, [@poena is stepping away from the review](https://themes.trac.wordpress.org/ticket/46546#comment:42) with noone to take over, leaving the theme review ticket open again...
+- Unfortunately, [@poena is stepping away from the review](https://themes.trac.wordpress.org/ticket/46546#comment:42) with nobody (no TRT moderator) to take over, leaving the theme review ticket open again and on stuck...
 
 ### `@todo: To be continued...?`
