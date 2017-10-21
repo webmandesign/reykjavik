@@ -39,14 +39,6 @@ class Reykjavik_Beaver_Builder_Setup {
 
 			// Processing
 
-				// Setup
-
-					// Enable support for WebMan Templates plugin
-
-						add_theme_support( 'webman-templates' );
-						add_theme_support( 'webman-templates-global' );
-						// add_theme_support( 'webman-templates-amplifier' );
-
 				// Hooks
 
 					// Actions

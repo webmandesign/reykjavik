@@ -95,11 +95,33 @@ https://genericons.com
 
 ### Images copyright
 
-**Images used in theme custom header, footer, screenshot and demo website**
+**Bundled images in `images/footer/` and `images/header/` folders**
+Distributed under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
 https://pixabay.com/en/colorado-rocky-mountain-national-park-1436681/
+
+**Bundled images in `images/starter-content/` folder**
+Created specifically for this WordPress theme.
+Copyright (c) WebMan Design, https://www.webmandesign.eu/
+Distributed under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+* `boat-in-harbor.jpg` - Based on an image from https://openclipart.org
+* `boat-sailing.jpg` - Based on an image from https://openclipart.org
+* `boat-sailing-side-wind.jpg` - Based on an image from https://openclipart.org
+* `waves.jpg` - Drawn specifically for this WordPress theme by WebMan Design, Oliver Juhas, https://www.webmandesign.eu/
+
+**Bundled images in `images/svg/` folder**
+Based on Font Awesome icons, Copyright (c) Dave Gandy
+Distributed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
+http://fontawesome.io
+
+**Bundled image `images/svg/reykjavik-logo.svg`**
+Created specifically for this WordPress theme.
+Copyright (c) WebMan Design, https://www.webmandesign.eu/
+Distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html)
+
+**Images used in theme screenshot and demo website**
 Copyright (c) https://openclipart.org
 Copyright (c) https://unsplash.com
 Copyright (c) https://stocksnap.io
 Copyright (c) https://www.pexels.com
 Copyright (c) https://pixabay.com
-License: CC0, https://creativecommons.org/publicdomain/zero/1.0/deed.en
+License: CC0, https://creativecommons.org/publicdomain/zero/1.0/

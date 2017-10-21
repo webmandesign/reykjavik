@@ -165,7 +165,7 @@ class Reykjavik_Footer {
 
 					return str_replace(
 						'[year]',
-						esc_html( date( 'Y' ) ),
+						esc_html( date_i18n( 'Y' ) ),
 						(string) $value
 					);
 

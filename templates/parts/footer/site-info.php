@@ -41,7 +41,7 @@
 		<div class="site-info">
 			<?php if ( empty( $site_info_text ) ) : ?>
 
-				&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+				&copy; <?php echo date_i18n( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				<span class="sep"> | </span>
 				<?php
 

@@ -124,7 +124,6 @@ class Reykjavik_TGMPA_Plugins {
 									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'reykjavik' ),
 									'slug'        => 'webman-templates',
 									'required'    => false,
-									'source'      => 'https://webmandesign.github.io/webman-templates/downloads/webman-templates.zip',
 								),
 
 								'advanced-custom-fields' => array(
