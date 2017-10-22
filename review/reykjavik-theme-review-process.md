@@ -120,4 +120,11 @@ A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/p
 
 - Unfortunately, [@poena is stepping away from the review](https://themes.trac.wordpress.org/ticket/46546#comment:42) with nobody (no TRT moderator) to take over, leaving the theme review ticket open again and on stuck...
 
+### 21st + 22nd
+
+- Ticket was [assigned to @acosmin](https://themes.trac.wordpress.org/ticket/46546#comment:45)
+- @acosmin provided list of required fixes, pointing out an accessibility review still needs to be done - this is confusing as [I thought @poena already did it](https://themes.trac.wordpress.org/ticket/46546#comment:47). But probably it hasn't been done as [@poena suggests someone from accessibility team will review the theme](https://themes.trac.wordpress.org/ticket/46546#comment:49) too. So, basically, it looks like I still need to [wait for @joedolson](https://themes.trac.wordpress.org/ticket/46546#comment:51) to provide the review before the theme goes live.
+- Meanwhile I've fixed all issues reported in the @acosmin's list, but I'm still waiting for **WebMan Templates** plugin to be added to WPORG plugins repository (submitted on 21st Oct 2017 at 17:18).
+- This is really getting confusing and frustrating. Communicating with too many people from TRT, while left hand does not know what right hand does... But at least the theme review is still ongoing ;)
+
 ### `@todo: To be continued...?`
