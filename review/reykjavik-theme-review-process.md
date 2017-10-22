@@ -106,11 +106,11 @@ A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/p
 
 ### 12th
 
-- Update 0.9.8. Fixing reported issues and unable to add custom styles into TinyMCE editor...
+- Update 0.9.8. Fixing reported issues, I'm actually not able to add custom styles into TinyMCE editor when I can no longer use CSS stylesheet generator. There is a size restriction in adding the styles inline into TinyMCE HTML head and also they are added **before** stylesheets are loaded, so the inline custom styles would require higher specificity, which would mean either coding the custom styles 2 times (one for frontend and one for TinyMCE), or just rise the specificity, which is really not desirable at all on frontend. I'm stuck with this basically...
 
 ### 14th
 
-- Update 0.9.9. Making custom styles work in TinyMCE editor after [great tip from @greenshady](https://themes.trac.wordpress.org/ticket/46546#comment:34) *(**but**, this is the old solution of PHP file pretending to be a CSS file and I do not understand why this solution is allowed and generating proper CSS files in WordPress uploads folder [securely using native WordPress Filesystem API](https://themes.trac.wordpress.org/ticket/46546#comment:30) is not...)*.
+- Update 0.9.9. **Making custom styles work in TinyMCE editor** after all with a [great tip from @greenshady](https://themes.trac.wordpress.org/ticket/46546#comment:34) *(**but**, this is the old solution of PHP file pretending to be a CSS file, which is far from perfect, and I do not understand why this solution is allowed and generating proper CSS files in WordPress uploads folder [securely using native WordPress Filesystem API](https://themes.trac.wordpress.org/ticket/46546#comment:30) is not...)*.
 
 ### 16th
 
