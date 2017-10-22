@@ -89,7 +89,7 @@ A free accessible WordPress theme, [**Reykjavik**](https://www.webmandesign.eu/p
 - @poena provides [list of requirements](https://themes.trac.wordpress.org/ticket/46546#comment:3).
 - Asking for explanation for some of the points and receives the answer from @poena the same day!
 - Discussing issue of **Child Theme Generator**, **TinyMCE Formats Dropdown**, **TGMPA Version** and **Custom Widgets Enhancements**.
-- @jrf is stepping up to explain **TGMPA Version** issue. After discussion it turns out TRT (Theme Review Team) [checks the TGMPA script version upon specific PHP comment](https://themes.trac.wordpress.org/ticket/46546#comment:14)...
+- @jrf is stepping up to explain **TGMPA Version** issue. After discussion it turns out TRT (Theme Review Team) [checks the TGMPA script version upon specific PHP comment](https://themes.trac.wordpress.org/ticket/46546#comment:14)... (yes, not the actual PHP code, but a comment in the code).
 
 ### 6th
 
