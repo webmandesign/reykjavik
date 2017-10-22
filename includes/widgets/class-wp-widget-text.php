@@ -442,6 +442,14 @@
 
 					$instance = parent::update( $new_instance, $old_instance );
 
+					if ( ! isset( $new_instance['icon'] ) ) {
+						$new_instance['icon'] = '';
+					}
+
+					if ( ! isset( $new_instance['image'] ) ) {
+						$new_instance['image'] = '';
+					}
+
 
 				// Processing
 

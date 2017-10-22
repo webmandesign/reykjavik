@@ -290,6 +290,10 @@
 
 					$instance = parent::update( $new_instance, $old_instance );
 
+					if ( ! isset( $new_instance['category'] ) ) {
+						$new_instance['category'] = '';
+					}
+
 
 				// Processing
 

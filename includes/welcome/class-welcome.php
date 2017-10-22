@@ -146,17 +146,17 @@ class Reykjavik_Welcome {
 			// Processing
 
 				add_theme_page(
-						// $page_title
-						esc_html__( 'Welcome', 'reykjavik' ),
-						// $menu_title
-						esc_html__( 'Welcome', 'reykjavik' ),
-						// $capability
-						'edit_theme_options',
-						// $menu_slug
-						'reykjavik-welcome',
-						// $function
-						__CLASS__ . '::render'
-					);
+					// $page_title
+					esc_html__( 'Welcome', 'reykjavik' ),
+					// $menu_title
+					esc_html__( 'Welcome', 'reykjavik' ),
+					// $capability
+					'edit_theme_options',
+					// $menu_slug
+					'reykjavik-welcome',
+					// $function
+					__CLASS__ . '::render'
+				);
 
 		} // /admin_menu
 
