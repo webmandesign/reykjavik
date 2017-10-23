@@ -209,10 +209,10 @@ class Reykjavik_TGMPA_Plugins {
 			// Processing
 
 				$columns = array_merge(
-						array_slice( $columns, 0, 2 ),
-						array( 'description' => esc_html__( 'Description', 'reykjavik' ) ),
-						array_slice( $columns, 2 )
-					);
+					array_slice( $columns, 0, 2 ),
+					array( 'description' => esc_html__( 'Description', 'reykjavik' ) ),
+					array_slice( $columns, 2 )
+				);
 
 
 			// Output
