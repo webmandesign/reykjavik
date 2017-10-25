@@ -73,11 +73,11 @@
 					$output = '';
 
 					$instance = wp_parse_args( $instance, array(
-							'number'    => 5,
-							'show_date' => false,
-							'title'     => '',
-							'category'  => '',
-						) );
+						'number'    => 5,
+						'show_date' => false,
+						'title'     => '',
+						'category'  => '',
+					) );
 
 					if ( empty( $instance['title'] ) ) {
 						$instance['title'] = esc_html__( 'Recent Posts', 'reykjavik' );
@@ -130,76 +130,75 @@
 						'ignore_sticky_posts' => true,
 					), (array) $cat ), $instance ) );
 
-					if ( $r->have_posts() ) {
+					if ( ! $r->have_posts() ) {
+						return;
+					}
 
-						// Title
+					// Title
 
-							if ( trim( $instance['title'] ) ) {
-								$output .= $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base, $args ) . $args['after_title'];
+						if ( trim( $instance['title'] ) ) {
+							$output .= $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base, $args ) . $args['after_title'];
+						}
+
+					$output .= '<div class="' . esc_attr( $posts_container_class ) . '">';
+
+					foreach ( $r->posts as $recent_post ) :
+
+						$recent_post_id = $recent_post->ID;
+
+						$output .= '<article class="' . esc_attr( implode( ' ', (array) get_post_class( '', $recent_post_id ) ) ) . '">';
+
+						// Post date
+
+							if ( $instance['show_date'] ) {
+								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '" rel="bookmark">';
+								$output .= '<time datetime="' . esc_attr( get_the_date( 'c', $recent_post_id ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date( '', $recent_post_id ) ) . ' | ' . esc_attr( get_the_time( '', $recent_post_id ) ) . '">';
+								$output .= '<span class="day">' . esc_html( get_the_date( 'd', $recent_post_id ) ) . '</span> ';
+								$output .= '<span class="month">' . esc_html( get_the_date( 'M', $recent_post_id ) ) . '</span> ';
+								$output .= '</time>';
+								$output .= '</a>';
 							}
 
-						$output .= '<div class="' . esc_attr( $posts_container_class ) . '">';
+						$output .= '<div class="entry-content">';
 
-						while ( $r->have_posts() ) : $r->the_post();
+							// Post title
 
-							$output .= '<article class="' . esc_attr( implode( ' ', (array) get_post_class() ) ) . '">';
+								$output .= '<' . tag_escape( $heading_tag ) . ' class="entry-title">';
+								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '">';
 
-							// Post date
+								if (
+										function_exists( 'get_the_subtitle' )
+										&& $subtitle = get_the_subtitle( $recent_post_id )
+										&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
+									) {
 
-								if ( $instance['show_date'] ) {
-									$output .= '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-									$output .= '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '">';
-									$output .= '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> ';
-									$output .= '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> ';
-									$output .= '</time>';
-									$output .= '</a>';
+									$output .= '<span class="entry-title-primary">' . get_the_title( $recent_post_id ) . '</span>';
+									$output .= ' <span class="entry-subtitle">' . $subtitle . '</span>';
+
+								} else {
+
+									$output .= get_the_title( $recent_post_id );
+
 								}
 
-							$output .= '<div class="entry-content">';
+								$output .= '</a>';
+								$output .= '</' . tag_escape( $heading_tag ) . '>';
 
-								// Post title
+							// Post excerpt
 
-									$output .= '<' . tag_escape( $heading_tag ) . ' class="entry-title">';
-									$output .= '<a href="' . esc_url( get_permalink() ) . '">';
+								$output .= '<div class="entry-summary">' . get_the_excerpt( $recent_post_id ) . '</div>';
 
-									if (
-											function_exists( 'get_the_subtitle' )
-											&& get_the_subtitle()
-											&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
-										) {
+							// Read more link
 
-										$output .= '<span class="entry-title-primary">' . get_the_title() . '</span>';
-										$output .= ' <span class="entry-subtitle">' . get_the_subtitle() . '</span>';
-
-									} else {
-
-										$output .= get_the_title();
-
-									}
-
-									$output .= '</a>';
-									$output .= '</' . tag_escape( $heading_tag ) . '>';
-
-								// Post excerpt
-
-									$output .= '<div class="entry-summary">' . get_the_excerpt() . '</div>';
-
-								// Read more link
-
-									$output .= apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'widget-recent-posts' );
-
-							$output .= '</div>';
-
-							$output .= '</article>';
-
-						endwhile;
+								$output .= apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'widget-recent-posts' );
 
 						$output .= '</div>';
 
-						// Reset the global $the_post as this query will have stomped on it
-						wp_reset_postdata();
+						$output .= '</article>';
 
-					}
+					endforeach;
+
+					$output .= '</div>';
 
 
 				// Output

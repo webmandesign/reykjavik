@@ -111,7 +111,10 @@
 
 					global $post;
 
-					$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+					$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+
+					/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+					$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 					$widget_text  = ( ! empty( $instance['text'] ) ) ? ( $instance['text'] ) : ( '' );
 					$widget_media = array_filter( array(
@@ -274,7 +277,7 @@
 						echo $args['before_title'] . $title . $args['after_title'];
 					}
 
-					$text = preg_replace_callback( '#<[^>]*>#', array( $this, 'inject_video_max_width_style' ), $text );
+					$text = preg_replace_callback( '#<(video|iframe|object|embed)\s[^>]*>#i', array( $this, 'inject_video_max_width_style' ), $text );
 
 					?>
 
@@ -569,13 +572,6 @@
 			 * From WordPress 4.9.0
 			 */
 			public function inject_video_max_width_style( $matches ) {
-
-				// Requirements check
-
-					if ( is_callable( array( $this, 'enqueue_admin_scripts' ) ) ) {
-						$this->enqueue_admin_scripts( $matches );
-					}
-
 
 				// Processing
 
