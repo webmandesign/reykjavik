@@ -130,14 +130,14 @@ class Reykjavik_Sidebar {
 				foreach( $widget_areas as $id => $args ) {
 
 					register_sidebar( array(
-							'id'            => esc_attr( $id ),
-							'name'          => $args['name'],
-							'description'   => $args['description'],
-							'before_widget' => '<section id="%1$s" class="widget %2$s">',
-							'after_widget'  => '</section>',
-							'before_title'  => '<h2 class="widget-title">',
-							'after_title'   => '</h2>'
-						) );
+						'id'            => esc_attr( $id ),
+						'name'          => $args['name'],
+						'description'   => $args['description'],
+						'before_widget' => '<section id="%1$s" class="widget %2$s">',
+						'after_widget'  => '</section>',
+						'before_title'  => '<h2 class="widget-title">',
+						'after_title'   => '</h2>'
+					) );
 
 				} // /foreach
 

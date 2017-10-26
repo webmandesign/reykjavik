@@ -451,8 +451,6 @@ class Reykjavik_Post {
 	 * 30) Pages
 	 */
 
-
-
 		/**
 		 * Disable post media: On all pages
 		 *

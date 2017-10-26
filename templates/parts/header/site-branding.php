@@ -2,10 +2,6 @@
 /**
  * Displays header site branding
  *
- * On front page uses H1 for (unlinked) site title.
- * On subpage uses accessibly hidden H2 for HTML body title
- * and paragraph for linked site title.
- *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
