@@ -26,9 +26,7 @@ do_action( 'tha_sidebars_before' );
 
 ?>
 
-<aside id="secondary" class="widget-area sidebar" aria-labelledby="sidebar-label">
-
-	<h2 class="screen-reader-text" id="sidebar-label"><?php echo esc_html_x( 'Sidebar', 'Sidebar aria label', 'reykjavik' ); ?></h2>
+<aside id="secondary" class="widget-area sidebar" aria-label="<?php echo esc_attr_x( 'Sidebar', 'Sidebar aria label', 'reykjavik' ); ?>">
 
 	<?php
 

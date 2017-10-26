@@ -128,8 +128,7 @@ class Reykjavik_Loop {
 					$total   = ( isset( $wp_query->max_num_pages ) ) ? ( $wp_query->max_num_pages ) : ( 1 );
 					$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
 
-					$output = '<nav class="pagination" aria-labelledby="pagination-label" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
-					          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_html__( 'Posts Navigation', 'reykjavik' ) . '</h2>'
+					$output = '<nav class="pagination" aria-label="' . esc_attr( 'Posts Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
 					          . $output
 					          . '</nav>';
 				}

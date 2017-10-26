@@ -45,7 +45,6 @@
 		else :
 
 			?>
-			<h2 class="screen-reader-text"><?php echo wp_get_document_title(); ?></h2>
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title-text" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php
 

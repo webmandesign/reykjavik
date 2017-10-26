@@ -24,9 +24,7 @@
 
 ?>
 
-<nav id="secondary-navigation" class="secondary-navigation" aria-labelledby="secondary-navigation-label">
-
-	<h2 class="screen-reader-text" id="secondary-navigation-label"><?php esc_html_e( 'Secondary Menu', 'reykjavik' ); ?></h2>
+<nav id="secondary-navigation" class="secondary-navigation" aria-label="<?php esc_attr_e( 'Secondary Menu', 'reykjavik' ); ?>">
 
 	<?php
 

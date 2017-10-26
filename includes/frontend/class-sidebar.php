@@ -129,16 +129,14 @@ class Reykjavik_Sidebar {
 
 				foreach( $widget_areas as $id => $args ) {
 
-					$widget_title_tag = ( 'sidebar' === $id ) ? ( 'h3' ) : ( 'h2' );
-
 					register_sidebar( array(
 							'id'            => esc_attr( $id ),
 							'name'          => $args['name'],
 							'description'   => $args['description'],
 							'before_widget' => '<section id="%1$s" class="widget %2$s">',
 							'after_widget'  => '</section>',
-							'before_title'  => '<' . tag_escape( $widget_title_tag ) . ' class="widget-title">',
-							'after_title'   => '</' . tag_escape( $widget_title_tag ) . '>'
+							'before_title'  => '<h2 class="widget-title">',
+							'after_title'   => '</h2>'
 						) );
 
 				} // /foreach

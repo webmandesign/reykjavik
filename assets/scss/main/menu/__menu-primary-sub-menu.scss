@@ -78,6 +78,7 @@
 
 		li li a::before {
 			content: '\21B3\2002'; // Submenu indentation on mobile screen
+			speak: none;
 			font-weight: 400;
 			opacity: .5;
 		}

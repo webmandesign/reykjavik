@@ -109,8 +109,8 @@ class Reykjavik_WooCommerce_Widgets {
 						'description'   => esc_html__( 'This sidebar replaces the default sidebar area for shop page and product archive pages.', 'reykjavik' ),
 						'before_widget' => '<section id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</section>',
-						'before_title'  => '<h3 class="widget-title screen-reader-text">',
-						'after_title'   => '</h3>'
+						'before_title'  => '<h2 class="widget-title screen-reader-text">',
+						'after_title'   => '</h2>'
 					) );
 
 		} // /register_widget_areas

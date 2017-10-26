@@ -1512,7 +1512,7 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 @media only screen and (min-width: 55em) and (max-width: 79.9375em) { .main-navigation-container li .sub-menu { margin-top: 0; } }
 
-@media only screen and (max-width: 54.9375em) { .main-navigation-container li li a::before { content: '\21B3\2002'; font-weight: 400; opacity: .5; } }
+@media only screen and (max-width: 54.9375em) { .main-navigation-container li li a::before { content: '\21B3\2002'; speak: none; font-weight: 400; opacity: .5; } }
 
 @media only screen and (min-width: 55em) { .no-js .main-navigation-container li:hover > ul, .main-navigation-container li.focus > ul { pointer-events: auto; -webkit-transform: scaleY(1); -ms-transform: scaleY(1); transform: scaleY(1); opacity: 1; } }
 

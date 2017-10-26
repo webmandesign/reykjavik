@@ -22,7 +22,6 @@
 
 // Helper variables
 
-	$unique_id        = uniqid();
 	$social_menu_html = get_transient( 'reykjavik_social_links' );
 	$social_menu_args = array(
 			'theme_location' => 'social',
@@ -38,9 +37,7 @@
 
 ?>
 
-<nav class="social-links" aria-labelledby="social-links-label-<?php echo esc_attr( $unique_id ); ?>">
-
-	<h2 class="screen-reader-text" id="social-links-label-<?php echo esc_attr( $unique_id ); ?>"><?php esc_html_e( 'Social Menu', 'reykjavik' ); ?></h2>
+<nav class="social-links" aria-label="<?php esc_attr_e( 'Social Menu', 'reykjavik' ); ?>">
 
 	<?php
 

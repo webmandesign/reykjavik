@@ -24,9 +24,7 @@
 
 ?>
 
-<nav id="site-navigation" class="main-navigation" aria-labelledby="site-navigation-label">
-
-	<h2 class="screen-reader-text" id="site-navigation-label"><?php esc_html_e( 'Primary Menu', 'reykjavik' ); ?></h2>
+<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'reykjavik' ); ?>">
 
 	<?php if ( $is_mobile_nav_enabled ) : ?>
 	<button id="menu-toggle" class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php echo esc_html_x( 'Menu', 'Mobile navigation toggle button title.', 'reykjavik' ); ?></button>
