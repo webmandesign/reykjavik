@@ -84,6 +84,15 @@ class Reykjavik_WooCommerce_Pages {
 
 						add_filter( 'wmhook_reykjavik_acf_register_field_group', __CLASS__ . '::acf_modify', 10, 3 );
 
+						if ( is_callable( 'Reykjavik_Intro::is_enabled' ) ) {
+							/**
+							 * This is basically the same as using
+							 * `wmhook_reykjavik_title_primary_disable`
+							 * global hook to disable `#primary` section H1.
+							 */
+							add_filter( 'woocommerce_show_page_title', 'Reykjavik_Intro::is_disabled' );
+						}
+
 		} // /__construct
 
 

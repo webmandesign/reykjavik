@@ -1099,6 +1099,10 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .site .background-size-stretch > div { background-size: inherit; }
 
+.skip-link-list { position: absolute; left: 0; top: 0; padding: 0; margin: 0; list-style: none; }
+
+.skip-link-list-item { list-style: inherit; white-space: nowrap; }
+
 .dropcap-text::first-letter { float: right; display: block; padding: 0 0.19em; padding-right: 0; line-height: 1; font-size: 3.24em; }
 
 .inline li, .inline .widget ul li { display: inline-block; padding: 0 0.62em; border-width: 0; border-right-width: 1px; border-right-style: solid; }
@@ -1353,8 +1357,6 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 @media only screen and (min-width: 80em) { .intro-inner { padding-top: 5rem; padding-bottom: 5rem; } }
 
 .intro-title { line-height: 1.19; font-weight: 700; margin: 0; }
-
-.intro .intro-title { color: inherit; }
 
 .intro-title a { display: inline-block; color: inherit; }
 

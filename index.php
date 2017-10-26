@@ -8,6 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link  https://codex.wordpress.org/Template_Hierarchy
+ * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -24,7 +25,7 @@ get_header();
 
 	if ( have_posts() ) :
 
-		if ( is_home() && ! is_front_page() ) :
+		if ( is_home() && ! is_front_page() && ! (bool) apply_filters( 'wmhook_reykjavik_title_primary_disable', false ) ) :
 
 			?>
 

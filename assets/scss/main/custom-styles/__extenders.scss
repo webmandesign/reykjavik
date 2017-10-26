@@ -119,7 +119,7 @@
 		border-color: [[color_intro_text(#{ map_get( $border_opacity_from_text, 'content' ) * 100 })]];
 		//*/
 
-		h2, h3, h4,
+		h1, h2, h3, h4,
 		.h1, .h2, .h3, .h4,
 		a:not(.button),
 		.accent-color {

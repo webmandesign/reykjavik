@@ -51,8 +51,8 @@ class Reykjavik_Header {
 						add_action( 'wp_head', __CLASS__ . '::head_chrome_color', 1 );
 
 						add_action( 'tha_body_top', __CLASS__ . '::oldie', 5 );
-						add_action( 'tha_body_top', __CLASS__ . '::skip_links', 5 );
 						add_action( 'tha_body_top', __CLASS__ . '::site_open' );
+						add_action( 'tha_body_top', __CLASS__ . '::skip_links' );
 
 						add_action( 'tha_header_top', __CLASS__ . '::open', 1 );
 						add_action( 'tha_header_top', __CLASS__ . '::open_inner', 2 );
@@ -207,16 +207,19 @@ class Reykjavik_Header {
 		 */
 		public static function skip_links() {
 
-			// Processing
-
-				$output  = Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip to main navigation', 'reykjavik' ) );
-				$output .= Reykjavik_Library::link_skip_to( 'content' );
-				$output .= Reykjavik_Library::link_skip_to( 'colophon', __( 'Skip to footer', 'reykjavik' ) );
-
-
 			// Output
 
-				echo $output;
+				echo '<ul class="skip-link-list">'
+				     . '<li class="skip-link-list-item">'
+				     . Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip to main navigation', 'reykjavik' ) )
+				     . '</li>'
+				     . '<li class="skip-link-list-item">'
+				     . Reykjavik_Library::link_skip_to( 'content' )
+				     . '</li>'
+				     . '<li class="skip-link-list-item">'
+				     . Reykjavik_Library::link_skip_to( 'colophon', __( 'Skip to footer', 'reykjavik' ) )
+				     . '</li>'
+				     . '</ul>';
 
 		} // /skip_links
 

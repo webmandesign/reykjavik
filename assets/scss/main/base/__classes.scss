@@ -63,6 +63,25 @@
 
 
 
+// Skip links list
+
+	.skip-link-list {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		&-item {
+			list-style: inherit;
+			white-space: nowrap;
+		}
+
+	}
+
+
+
 // Dropcaps
 
 	.dropcap-text {

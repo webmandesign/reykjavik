@@ -22,7 +22,7 @@
 	$class_title  = ( is_single() ) ? ( 'entry-title' ) : ( 'page-title' );
 	$class_title .= ' h1 intro-title';
 
-	$intro_title_tag   = ( is_page() ) ? ( 'h1' ) : ( 'h3' );
+	$intro_title_tag   = ( is_front_page() ) ? ( 'h2' ) : ( 'h1' );
 	$pagination_suffix = Reykjavik_Library::get_the_paginated_suffix( 'small' );
 
 	if ( is_home() && $posts_page && ! is_front_page() ) {
@@ -102,10 +102,6 @@
 
 			$title .= '</' . tag_escape( $intro_title_tag ) . '>';
 
-		}
-
-		if ( 'h3' === $intro_title_tag ) {
-			$title = '<h2 class="screen-reader-text">' . esc_html__( 'Introduction', 'reykjavik' ) . '</h2>' . $title;
 		}
 
 		echo $title;

@@ -34,6 +34,8 @@ class Reykjavik_Intro {
 		/**
 		 * Constructor
 		 *
+		 * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
@@ -56,7 +58,6 @@ class Reykjavik_Intro {
 						add_action( 'wmhook_reykjavik_intro', __CLASS__ . '::content' );
 
 						add_action( 'wmhook_reykjavik_intro_after', __CLASS__ . '::media', -10 );
-
 						add_action( 'wmhook_reykjavik_intro_after', __CLASS__ . '::special_wrapper_close', 0 );
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::special_image', 120 ); // After Reykjavik_Assets::theme_style_file() is hooked.
@@ -64,6 +65,8 @@ class Reykjavik_Intro {
 					// Filters
 
 						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::disable', 5 );
+
+						add_filter( 'wmhook_reykjavik_title_primary_disable', __CLASS__ . '::is_enabled' );
 
 						add_filter( 'theme_mod_' . 'header_image', __CLASS__ . '::image', 15 ); // Has to be priority 15 for correct customizer previews.
 
@@ -121,33 +124,33 @@ class Reykjavik_Intro {
 			// Processing
 
 				add_theme_support( 'custom-header', apply_filters( 'wmhook_reykjavik_custom_header_args', array(
-						'default-text-color' => 'ffffff',
-						'width'              => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][0] ) : ( 1920 ),
-						'height'             => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][1] ) : ( 1080 ),
-						'flex-width'         => true,
-						'flex-height'        => true,
-						'video'              => true,
-						/**
-						 * WordPress issue:
-						 *
-						 * We can not use `random-default` as in that case there is no "Hide image" button displayed in customizer.
-						 * We simply have to set up a `default-image`, unfortunately...
-						 */
-						'default-image'  => '%s/assets/images/header/pixabay-colorado-1436681.png',
-						'random-default' => false,
-					) ) );
+					'default-text-color' => 'ffffff',
+					'width'              => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][0] ) : ( 1920 ),
+					'height'             => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][1] ) : ( 1080 ),
+					'flex-width'         => true,
+					'flex-height'        => true,
+					'video'              => true,
+					/**
+					 * WordPress issue:
+					 *
+					 * We can not use `random-default` as in that case there is no "Hide image" button displayed in customizer.
+					 * We simply have to set up a `default-image`, unfortunately...
+					 */
+					'default-image'  => '%s/assets/images/header/pixabay-colorado-1436681.png',
+					'random-default' => false,
+				) ) );
 
 				// Default custom headers packed with the theme
 
 					register_default_headers( array(
 
-							'pixabay-colorado-1436681' => array(
-								'url'           => '%s/assets/images/header/pixabay-colorado-1436681.png',
-								'thumbnail_url' => '%s/assets/images/header/thumbnail/pixabay-colorado-1436681.png',
-								'description'   => esc_html_x( 'Mountains drawing', 'Header image description.', 'reykjavik' ),
-							),
+						'pixabay-colorado-1436681' => array(
+							'url'           => '%s/assets/images/header/pixabay-colorado-1436681.png',
+							'thumbnail_url' => '%s/assets/images/header/thumbnail/pixabay-colorado-1436681.png',
+							'description'   => esc_html_x( 'Mountains drawing', 'Header image description.', 'reykjavik' ),
+						),
 
-						) );
+					) );
 
 		} // /setup
 
@@ -167,16 +170,9 @@ class Reykjavik_Intro {
 		 */
 		public static function container() {
 
-			// Pre
+			// Requirements check
 
-				$disable = (bool) apply_filters( 'wmhook_reykjavik_intro_disable', false );
-
-				$pre = apply_filters( 'wmhook_reykjavik_intro_container_pre', $disable );
-
-				if ( false !== $pre ) {
-					if ( true !== $pre ) {
-						echo $pre;
-					}
+				if ( self::is_disabled() ) {
 					return;
 				}
 
@@ -236,6 +232,38 @@ class Reykjavik_Intro {
 	/**
 	 * 30) Conditions
 	 */
+
+		/**
+		 * Is Intro disabled?
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function is_disabled() {
+
+			// Output
+
+				return (bool) apply_filters( 'wmhook_reykjavik_intro_disable', false );
+
+		} // /is_disabled
+
+
+
+		/**
+		 * Is Intro enabled?
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function is_enabled() {
+
+			// Output
+
+				return (bool) ! self::is_disabled();
+
+		} // /is_enabled
+
+
 
 		/**
 		 * Disabling conditions
@@ -397,16 +425,9 @@ class Reykjavik_Intro {
 		 */
 		public static function special_image() {
 
-			// Pre
+			// Requirements check
 
-				$disable = (bool) apply_filters( 'wmhook_reykjavik_intro_disable', false );
-
-				$pre = apply_filters( 'wmhook_reykjavik_intro_special_image_pre', $disable );
-
-				if ( false !== $pre ) {
-					if ( true !== $pre ) {
-						echo $pre;
-					}
+				if ( self::is_disabled() ) {
 					return;
 				}
 

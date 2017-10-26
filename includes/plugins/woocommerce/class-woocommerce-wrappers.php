@@ -220,7 +220,7 @@ class Reykjavik_WooCommerce_Wrappers {
 
 			// Output
 
-				echo '<section class="summary-container"><div class="summary-container-inner">';
+				echo '<div class="summary-container"><div class="summary-container-inner">';
 
 		} // /product_info_open
 
@@ -236,7 +236,7 @@ class Reykjavik_WooCommerce_Wrappers {
 
 			// Output
 
-				echo '</div></section>';
+				echo '</div></div>';
 
 		} // /product_info_close
 

@@ -3,6 +3,7 @@
  * Template part for displaying a message that posts cannot be found
  *
  * @link  https://codex.wordpress.org/Template_Hierarchy
+ * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
@@ -19,10 +20,12 @@
 
 <section class="no-results not-found">
 
+	<?php if ( ! (bool) apply_filters( 'wmhook_reykjavik_title_primary_disable', false ) ) : ?>
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'reykjavik' ); ?></h1>
 	</header>
 
+	<?php endif; ?>
 	<div class="page-content">
 
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>

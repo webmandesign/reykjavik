@@ -34,6 +34,8 @@ class Reykjavik_Post {
 		/**
 		 * Constructor
 		 *
+		 * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
@@ -57,11 +59,9 @@ class Reykjavik_Post {
 					// Actions
 
 						add_action( 'tha_entry_top', __CLASS__ . '::title', 20 );
-
 						add_action( 'tha_entry_top', __CLASS__ . '::meta', 30 );
 
 						add_action( 'tha_entry_bottom', __CLASS__ . '::skip_links', 999 );
-
 						add_action( 'tha_entry_bottom', __CLASS__ . '::list_child_pages' );
 
 						add_action( 'tha_content_bottom', __CLASS__ . '::navigation', 95 );
@@ -78,23 +78,20 @@ class Reykjavik_Post {
 
 						add_filter( 'single_post_title', __CLASS__ . '::title_single', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_post_title_pre', __CLASS__ . '::title_single_page' );
-
-						add_filter( 'wmhook_reykjavik_post_title_pre', __CLASS__ . '::title_page_builder' );
-
-						add_filter( 'wmhook_reykjavik_post_title_pre', __CLASS__ . '::is_page_template_blank_maybe_return_empty_string' );
-
 						add_filter( 'post_class', __CLASS__ . '::post_class', 98 );
 
 						add_filter( 'wmhook_reykjavik_post_media_pre', __CLASS__ . '::page_media', 100 );
 
 						add_filter( 'wmhook_reykjavik_post_media_pre', __CLASS__ . '::is_page_builder_ready_maybe_return_empty_string', 100 );
 
-						add_filter( 'wmhook_reykjavik_disable_header', __CLASS__ . '::is_page_template_blank' );
-						add_filter( 'wmhook_reykjavik_disable_footer', __CLASS__ . '::is_page_template_blank' );
+						add_filter( 'wmhook_reykjavik_disable_header',            __CLASS__ . '::is_page_template_blank' );
+						add_filter( 'wmhook_reykjavik_disable_footer',            __CLASS__ . '::is_page_template_blank' );
+						add_filter( 'wmhook_reykjavik_title_primary_disable',        __CLASS__ . '::is_page_template_blank' );
 						add_filter( 'wmhook_reykjavik_breadcrumb_navxt_disabled', __CLASS__ . '::is_page_template_blank' );
 
-						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::intro_disable' );
+						add_filter( 'wmhook_reykjavik_title_primary_disable', __CLASS__ . '::page_builder_primary_title', 20 );
+
+						add_filter( 'wmhook_reykjavik_intro_disable', __CLASS__ . '::intro_disable_if_template' );
 
 		} // /__construct
 
@@ -185,6 +182,8 @@ class Reykjavik_Post {
 		/**
 		 * Post/page heading (title)
 		 *
+		 * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 *
@@ -194,10 +193,14 @@ class Reykjavik_Post {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_post_title_pre', false, $args );
+				$disable = (bool) apply_filters( 'wmhook_reykjavik_post_title_disable', false, $args );
+
+				$pre = apply_filters( 'wmhook_reykjavik_post_title_pre', $disable, $args );
 
 				if ( false !== $pre ) {
-					echo $pre;
+					if ( true !== $pre ) {
+						echo $pre;
+					}
 					return;
 				}
 
@@ -219,14 +222,14 @@ class Reykjavik_Post {
 				$posts_heading_tag = ( isset( $args['helper']['atts']['heading_tag'] ) ) ? ( trim( $args['helper']['atts']['heading_tag'] ) ) : ( 'h2' );
 
 				$args = wp_parse_args( $args, apply_filters( 'wmhook_reykjavik_post_title_defaults', array(
-						'addon'           => '',
-						'class'           => 'entry-title',
-						'class_container' => 'entry-header',
-						'link'            => esc_url( get_permalink() ),
-						'output'          => '<header class="{class_container}"><{tag} class="{class}">{title}</{tag}>{addon}</header>',
-						'tag'             => ( $is_singular ) ? ( 'h1' ) : ( $posts_heading_tag ),
-						'title'           => '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a>',
-					) ) );
+					'addon'           => '',
+					'class'           => 'entry-title',
+					'class_container' => 'entry-header',
+					'link'            => esc_url( get_permalink() ),
+					'output'          => '<header class="{class_container}"><{tag} class="{class}">{title}</{tag}>{addon}</header>',
+					'tag'             => ( $is_singular ) ? ( 'h1' ) : ( $posts_heading_tag ),
+					'title'           => '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a>',
+				) ) );
 
 				// Singular title (no link applied)
 
@@ -244,15 +247,24 @@ class Reykjavik_Post {
 
 					$args = apply_filters( 'wmhook_reykjavik_post_title_args', $args );
 
+				// Is this a primary title and should we display it?
+
+					if (
+							'h1' === $args['tag']
+							&& apply_filters( 'wmhook_reykjavik_title_primary_disable', false )
+						) {
+						return;
+					}
+
 				// Replacements
 
 					$replacements = (array) apply_filters( 'wmhook_reykjavik_post_title_replacements', array(
-							'{addon}'           => $args['addon'],
-							'{class}'           => esc_attr( $args['class'] ),
-							'{class_container}' => esc_attr( $args['class_container'] ),
-							'{tag}'             => tag_escape( $args['tag'] ),
-							'{title}'           => do_shortcode( $args['title'] ),
-						), $args );
+						'{addon}'           => $args['addon'],
+						'{class}'           => esc_attr( $args['class'] ),
+						'{class_container}' => esc_attr( $args['class_container'] ),
+						'{tag}'             => tag_escape( $args['tag'] ),
+						'{title}'           => do_shortcode( $args['title'] ),
+					), $args );
 
 
 			// Output
@@ -293,14 +305,16 @@ class Reykjavik_Post {
 
 
 		/**
-		 * Don't output post/page title if we use a page builder
+		 * Don't output post/page `#primary` title if we use a page builder
 		 *
 		 * This is to target any page builder plugin, including Beaver Builder.
 		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
+		 *
+		 * @param  boolean $disable
 		 */
-		public static function title_page_builder( $pre ) {
+		public static function page_builder_primary_title( $disable ) {
 
 			// Helper variables
 
@@ -316,15 +330,15 @@ class Reykjavik_Post {
 						)
 						&& self::is_page_builder_ready()
 					) {
-					return '';
+					$disable = true;
 				}
 
 
 			// Output
 
-				return $pre;
+				return $disable;
 
-		} // /title_page_builder
+		} // /page_builder_primary_title
 
 
 
@@ -421,7 +435,11 @@ class Reykjavik_Post {
 
 			// Output
 
-				the_post_navigation( (array) apply_filters( 'wmhook_reykjavik_post_navigation_args', $args ) );
+				echo str_replace(
+					' role="navigation"',
+					'',
+					get_the_post_navigation( (array) apply_filters( 'wmhook_reykjavik_post_navigation_args', $args ) )
+				);
 
 		} // /navigation
 
@@ -432,30 +450,6 @@ class Reykjavik_Post {
 	/**
 	 * 30) Pages
 	 */
-
-		/**
-		 * Don't output page title if we have intro
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function title_single_page( $pre ) {
-
-			// Processing
-
-				if (
-						is_page( get_the_ID() )
-						&& ! (bool) apply_filters( 'wmhook_reykjavik_intro_disable', false )
-					) {
-					return '';
-				}
-
-
-			// Output
-
-				return $pre;
-
-		} // /title_single_page
 
 
 
@@ -495,7 +489,7 @@ class Reykjavik_Post {
 		 *
 		 * @param  boolean $disable
 		 */
-		public static function intro_disable( $disable = false ) {
+		public static function intro_disable_if_template( $disable = false ) {
 
 			// Requirements check
 
@@ -514,7 +508,7 @@ class Reykjavik_Post {
 
 				return $disable;
 
-		} // /intro_disable
+		} // /intro_disable_if_template
 
 
 
@@ -568,34 +562,6 @@ class Reykjavik_Post {
 					return is_page_template( 'templates/blank.php' );
 
 			} // /is_page_template_blank
-
-
-
-			/**
-			 * Is page template Blank used on the page?
-			 *
-			 * Return empty string if it is.
-			 * Useful for `pre` filter hooks.
-			 *
-			 * @since    1.0.0
-			 * @version  1.0.0
-			 *
-			 * @param  mixed $pre
-			 */
-			public static function is_page_template_blank_maybe_return_empty_string( $pre ) {
-
-				// Processing
-
-					if ( self::is_page_template_blank() ) {
-						return '';
-					}
-
-
-				// Output
-
-					return $pre;
-
-			} // /is_page_template_blank_maybe_return_empty_string
 
 
 
