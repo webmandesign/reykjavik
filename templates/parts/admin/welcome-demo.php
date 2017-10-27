@@ -27,7 +27,7 @@
 
 	<p>
 		<?php esc_html_e( 'Alternatively (such as when the automated installation fails) you can follow theme documentation instructions for manual demo content installation.', 'reykjavik' ); ?>
-		<a href="https://www.webmandesign.eu/manual/reykjavik/#demo-content"><?php esc_html_e( 'Read the instructions &raquo;', 'reykjavik' ); ?></a>
+		<a href="https://webmandesign.github.io/docs/reykjavik/#demo-content"><?php esc_html_e( 'Read the instructions &raquo;', 'reykjavik' ); ?></a>
 	</p>
 
 	<?php if ( ! class_exists( 'OCDI_Plugin' ) ) : ?>

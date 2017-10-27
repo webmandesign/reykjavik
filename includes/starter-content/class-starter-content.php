@@ -326,7 +326,7 @@ class Reykjavik_Starter_Content {
 
 								'link_documentation' => array(
 									'title' => esc_html_x( 'Docs', 'Short for "documentation". Theme starter content.', 'reykjavik' ),
-									'url'   => 'https://www.webmandesign.eu/manual/reykjavik',
+									'url'   => 'https://webmandesign.github.io/docs/reykjavik',
 								),
 
 							),

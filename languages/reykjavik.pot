@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-20 20:50+0200\n"
+"POT-Creation-Date: 2017-10-27 09:08+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -20,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:25
+#: 404.php:27
 msgid "Oops! That page can not be found."
 msgstr ""
 
-#: 404.php:30
+#: 404.php:33
 msgid ""
 "It looks like nothing was found at this location. Maybe try the search below?"
 msgstr ""
@@ -48,7 +48,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: includes/custom-header/class-intro.php:147
+#: includes/custom-header/class-intro.php:150
 msgctxt "Header image description."
 msgid "Mountains drawing"
 msgstr ""
@@ -558,44 +558,40 @@ msgid ""
 "displayed."
 msgstr ""
 
-#: includes/frontend/class-header.php:212
+#: includes/frontend/class-header.php:214
 msgid "Skip to main navigation"
 msgstr ""
 
-#: includes/frontend/class-header.php:214
+#: includes/frontend/class-header.php:220
 msgid "Skip to footer"
 msgstr ""
 
-#: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:190
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:359
+#: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:189
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:358
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:191
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:361
+#: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:190
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:360
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/frontend/class-loop.php:118 includes/frontend/class-loop.php:192
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:365
+#: includes/frontend/class-loop.php:118 includes/frontend/class-loop.php:191
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:364
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/frontend/class-loop.php:119 includes/frontend/class-loop.php:193
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:367
+#: includes/frontend/class-loop.php:119 includes/frontend/class-loop.php:192
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:366
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
-msgstr ""
-
-#: includes/frontend/class-loop.php:132
-msgid "Posts Navigation"
 msgstr ""
 
 #: includes/frontend/class-menu.php:121
@@ -625,21 +621,21 @@ msgstr ""
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/frontend/class-post.php:370
+#: includes/frontend/class-post.php:384
 msgid "Skip back to main navigation"
 msgstr ""
 
-#: includes/frontend/class-post.php:406
+#: includes/frontend/class-post.php:420
 msgctxt "$s: Custom post type singular label"
 msgid "Previous $s"
 msgstr ""
 
-#: includes/frontend/class-post.php:411
+#: includes/frontend/class-post.php:425
 msgctxt "$s: Custom post type singular label"
 msgid "Next $s"
 msgstr ""
 
-#: includes/frontend/class-post.php:417
+#: includes/frontend/class-post.php:431
 msgid "Published in"
 msgstr ""
 
@@ -1168,37 +1164,37 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:513
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:516
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:517
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:521
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:522
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:525
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:524
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:527
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:527
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:530
 msgid "Reload this page &raquo;"
 msgstr ""
 
@@ -1227,32 +1223,32 @@ msgstr ""
 msgid "Shop Now &rarr;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:332
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:331
 msgid "Products Navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:398
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:397
 msgid "List of products"
 msgstr ""
 
 #. translators: %s: search query.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:267 search.php:29
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:276 search.php:32
 #: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: Custom page template name.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:449
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:458
 #: templates/no-intro.php:19
 msgid "No intro"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:479
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:488
 msgid "Cart content"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:482
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:491
 #, php-format
 msgctxt "Shopping cart items count."
 msgid "(%d item)"
@@ -1260,28 +1256,28 @@ msgid_plural "(%d items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:502
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:511
 msgid "Use your discount coupon code here"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:606
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:615
 msgid "Continue Shopping"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:628
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:829
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:637
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:838
 msgid "Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:821
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:830
 msgid "Shopping Cart"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:837
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:846
 msgid "Order Completed"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:846
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:855
 msgid "Pay for Order"
 msgstr ""
 
@@ -1666,51 +1662,51 @@ msgstr ""
 msgid "Adding set of predefined templates for Beaver Builder page builder."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:132
+#: includes/tgmpa/class-tgmpa-plugins.php:131
 msgid "For easy post and page attributes setup."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:140
+#: includes/tgmpa/class-tgmpa-plugins.php:139
 msgid "Adding e-commerce functionality."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:147
+#: includes/tgmpa/class-tgmpa-plugins.php:146
 msgid ""
 "Adding custom sidebars management, allowing page layout modifications by "
 "removing sidebars."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:154
+#: includes/tgmpa/class-tgmpa-plugins.php:153
 msgid "For installing theme demo content easily."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:189
+#: includes/tgmpa/class-tgmpa-plugins.php:188
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:214
+#: includes/tgmpa/class-tgmpa-plugins.php:213
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:283
+#: includes/tgmpa/class-tgmpa-plugins.php:282
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:286
+#: includes/tgmpa/class-tgmpa-plugins.php:285
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:287
+#: includes/tgmpa/class-tgmpa-plugins.php:286
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:288
+#: includes/tgmpa/class-tgmpa-plugins.php:287
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:289
+#: includes/tgmpa/class-tgmpa-plugins.php:288
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1725,49 +1721,49 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-recent-posts.php:267
+#: includes/widgets/class-wp-widget-recent-posts.php:266
 msgid "Category slug or ID:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:344
+#: includes/widgets/class-wp-widget-text.php:347
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:350
+#: includes/widgets/class-wp-widget-text.php:353
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:351
+#: includes/widgets/class-wp-widget-text.php:354
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:352
+#: includes/widgets/class-wp-widget-text.php:355
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:356
+#: includes/widgets/class-wp-widget-text.php:359
 msgid ""
 "As your theme supports custom icons, you can simply use icon classes from "
 "Appearance &rarr; Icon Font."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:395
+#: includes/widgets/class-wp-widget-text.php:398
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:398
+#: includes/widgets/class-wp-widget-text.php:401
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:403
+#: includes/widgets/class-wp-widget-text.php:406
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:419
+#: includes/widgets/class-wp-widget-text.php:422
 msgid "Remove image"
 msgstr ""
 
@@ -2364,7 +2360,7 @@ msgctxt "Sidebar aria label"
 msgid "Intro widgets"
 msgstr ""
 
-#: sidebar.php:31
+#: sidebar.php:29
 msgctxt "Sidebar aria label"
 msgid "Sidebar"
 msgstr ""
@@ -2690,7 +2686,7 @@ msgid ""
 "theme documentation."
 msgstr ""
 
-#: templates/parts/component/breadcrumbs.php:38
+#: templates/parts/component/breadcrumbs.php:31
 msgid "Breadcrumbs navigation"
 msgstr ""
 
@@ -2744,24 +2740,24 @@ msgstr ""
 msgid "Download attachment file:"
 msgstr ""
 
-#: templates/parts/content/content-none.php:23
+#: templates/parts/content/content-none.php:25
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: templates/parts/content/content-none.php:35
+#: templates/parts/content/content-none.php:38
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: templates/parts/content/content-none.php:49
+#: templates/parts/content/content-none.php:52
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: templates/parts/content/content-none.php:55
+#: templates/parts/content/content-none.php:58
 msgid ""
 "It seems we can not find what you are looking for. Perhaps searching can "
 "help."
@@ -2778,36 +2774,32 @@ msgid "https://wordpress.org/"
 msgstr ""
 
 #: templates/parts/footer/site-info.php:56
-#: templates/parts/menu/menu-social.php:35
+#: templates/parts/menu/menu-social.php:34
 msgid "Back to top &uarr;"
-msgstr ""
-
-#: templates/parts/intro/intro-content.php:108
-msgid "Introduction"
 msgstr ""
 
 #: templates/parts/loop/loop-categories-product.php:42
 msgid "List of categories"
 msgstr ""
 
-#: templates/parts/menu/menu-primary.php:29
+#: templates/parts/menu/menu-primary.php:27
 msgid "Primary Menu"
 msgstr ""
 
-#: templates/parts/menu/menu-primary.php:32
+#: templates/parts/menu/menu-primary.php:30
 msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr ""
 
-#: templates/parts/menu/menu-secondary.php:29
+#: templates/parts/menu/menu-secondary.php:27
 msgid "Secondary Menu"
 msgstr ""
 
-#: templates/parts/menu/menu-social.php:35
+#: templates/parts/menu/menu-social.php:34
 msgid "Back to top"
 msgstr ""
 
-#: templates/parts/menu/menu-social.php:43
+#: templates/parts/menu/menu-social.php:40
 msgid "Social Menu"
 msgstr ""
 

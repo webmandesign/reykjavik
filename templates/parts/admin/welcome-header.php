@@ -47,7 +47,7 @@
 
 	<p class="wm-actions">
 
-		<a href="https://www.webmandesign.eu/manual/reykjavik/" class="button button-primary button-hero"><?php esc_html_e( 'Theme Documentation', 'reykjavik' ); ?></a>
+		<a href="https://webmandesign.github.io/docs/reykjavik/" class="button button-primary button-hero"><?php esc_html_e( 'Theme Documentation', 'reykjavik' ); ?></a>
 
 		<a href="https://www.webmandesign.eu/reference/#links-support" class="button button-hero"><?php esc_html_e( 'Support Center', 'reykjavik' ); ?></a>
 

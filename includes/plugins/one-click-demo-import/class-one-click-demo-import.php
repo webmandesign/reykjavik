@@ -147,7 +147,7 @@ class Reykjavik_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'reykjavik' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'reykjavik' );
-					$text .= ' <a href="https://www.webmandesign.eu/manual/reykjavik/#credits">' . esc_html__( 'Get media for your website &raquo;', 'reykjavik' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/reykjavik/#credits">' . esc_html__( 'Get media for your website &raquo;', 'reykjavik' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -366,6 +366,9 @@ class Reykjavik_One_Click_Demo_Import {
 		/**
 		 * Setup WooCommerce pages
 		 *
+		 * Have to use alternative page slugs in theme demo content
+		 * to prevent issues with WooCommerce setup wizard created pages.
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
@@ -382,31 +385,31 @@ class Reykjavik_One_Click_Demo_Import {
 
 				// Shop page
 
-					$page = get_page_by_path( 'shop' );
+					$page = get_page_by_path( 'our-shop' );
 
 					update_option( 'woocommerce_shop_page_id', $page->ID );
 
 				// Cart page
 
-					$page = get_page_by_path( 'shop/cart' );
+					$page = get_page_by_path( 'our-shop/shopping-cart' );
 
 					update_option( 'woocommerce_cart_page_id', $page->ID );
 
 				// Checkout page
 
-					$page = get_page_by_path( 'shop/checkout' );
+					$page = get_page_by_path( 'our-shop/shop-checkout' );
 
 					update_option( 'woocommerce_checkout_page_id', $page->ID );
 
 				// Terms and Conditions page
 
-					$page = get_page_by_path( 'shop/terms-and-conditions' );
+					$page = get_page_by_path( 'our-shop/terms-and-conditions' );
 
 					update_option( 'woocommerce_terms_page_id', $page->ID );
 
 				// My Account page
 
-					$page = get_page_by_path( 'shop/my-account' );
+					$page = get_page_by_path( 'our-shop/customer-account' );
 
 					update_option( 'woocommerce_myaccount_page_id', $page->ID );
 

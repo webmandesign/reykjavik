@@ -17,7 +17,7 @@ Follow [WebMan Design on **Twitter**](https://twitter.com/webmandesigneu) and be
 
 ## Documentation
 
-Theme documentation is available on-line at https://www.webmandesign.eu/manual/reykjavik/
+Theme documentation is available on-line at https://webmandesign.github.io/docs/reykjavik/
 
 
 ## Demo

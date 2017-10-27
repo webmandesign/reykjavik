@@ -185,7 +185,7 @@ class Reykjavik_TGMPA_Plugins {
 
 			// Adding font weight classes
 
-				$action_links[] = '<a href="' . esc_url( 'https://www.webmandesign.eu/manual/reykjavik/#plugins' ) . '">' . esc_html__( 'Other useful plugins &raquo;', 'reykjavik' ) . '</a>';
+				$action_links[] = '<a href="' . esc_url( 'https://webmandesign.github.io/docs/reykjavik/#plugins' ) . '">' . esc_html__( 'Other useful plugins &raquo;', 'reykjavik' ) . '</a>';
 
 
 		// Output
