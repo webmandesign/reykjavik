@@ -134,7 +134,11 @@
 	%column_base {
 		column-gap: 2em;
 		column-width: 12em;
-		margin: ( power( $golden, 2 ) +em ) 0;
+		margin: ( $golden +em ) 0;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin: ( power( $golden, 2 ) +em ) 0;
+		}
 
 		&:first-child,
 		h1 + &,

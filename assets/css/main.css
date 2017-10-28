@@ -1111,7 +1111,9 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .inline li:hover, .inline .widget ul li:hover { -webkit-transform: none; -ms-transform: none; transform: none; }
 
-.text-columns-2, .text-columns-3 { -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; -webkit-column-width: 12em; -moz-column-width: 12em; column-width: 12em; margin: 2.6244em 0; }
+.text-columns-2, .text-columns-3 { -webkit-column-gap: 2em; -moz-column-gap: 2em; column-gap: 2em; -webkit-column-width: 12em; -moz-column-width: 12em; column-width: 12em; margin: 1.62em 0; }
+
+@media only screen and (min-width: 42em) { .text-columns-2, .text-columns-3 { margin: 2.6244em 0; } }
 
 .text-columns-2:first-child, .text-columns-3:first-child, h1 + .text-columns-2, h1 + .text-columns-3, h2 + .text-columns-2, h2 + .text-columns-3, h3 + .text-columns-2, h3 + .text-columns-3, h4 + .text-columns-2, h4 + .text-columns-3 { margin-top: 0; }
 
@@ -1979,7 +1981,9 @@ a .entry-date { cursor: pointer; }
 .pingback .comment-edit-link, .trackback .comment-edit-link { float: right; }
 
 /* FILE: main/content/__layout-outdented.scss */
-.outdent-content { margin: 2.6244em 0; }
+.outdent-content { margin: 1.62em 0; }
+
+@media only screen and (min-width: 42em) { .outdent-content { margin: 2.6244em 0; } }
 
 .outdent-content:first-child { margin-top: 0; }
 
