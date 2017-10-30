@@ -32,6 +32,8 @@ class Reykjavik_WooCommerce_Customize {
 		/**
 		 * Constructor
 		 *
+		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
@@ -55,7 +57,7 @@ class Reykjavik_WooCommerce_Customize {
 
 						add_filter( 'wmhook_reykjavik_customize_styles_get_variable_styles_types', __CLASS__ . '::variable_styles_types' );
 
-						add_filter( 'wmhook_reykjavik_customize_styles_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
+						add_filter( 'wmhook_reykjavik_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
 
 		} // /__construct
 

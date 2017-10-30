@@ -418,6 +418,7 @@ class Reykjavik_Intro {
 		/**
 		 * Setting custom header image as an intro background for special intro
 		 *
+		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
 		 * @since    1.0.0
@@ -435,7 +436,12 @@ class Reykjavik_Intro {
 			// Processing
 
 				if ( $css = self::get_special_image_css() ) {
-					wp_add_inline_style( 'reykjavik-stylesheet', apply_filters( 'wmhook_reykjavik_esc_css', $css . "\r\n\r\n" ) );
+
+					wp_add_inline_style(
+						(string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+						(string) apply_filters( 'wmhook_reykjavik_esc_css', $css . "\r\n\r\n" )
+					);
+
 				}
 
 		} // /special_image

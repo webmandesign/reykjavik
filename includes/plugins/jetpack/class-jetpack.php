@@ -34,6 +34,8 @@ class Reykjavik_Jetpack {
 		/**
 		 * Constructor
 		 *
+		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
+		 *
 		 * @since    1.0.0
 		 * @version  1.0.0
 		 */
@@ -73,7 +75,7 @@ class Reykjavik_Jetpack {
 						add_theme_support( 'jetpack-content-options', array(
 							'author-bio'   => true,
 							'post-details' => array(
-								'stylesheet' => 'reykjavik-stylesheet',
+								'stylesheet' => (string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
 								'date'       => '.posted-on',
 								// 'categories' => '.cat-links',
 								// 'tags'       => '.tags-links',

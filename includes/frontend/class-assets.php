@@ -354,10 +354,12 @@ class Reykjavik_Assets {
 
 			// Processing
 
-				wp_enqueue_style(
-					'reykjavik-stylesheet',
-					get_stylesheet_uri()
-				);
+				if ( is_child_theme() ) {
+					wp_enqueue_style(
+						'reykjavik-stylesheet',
+						get_stylesheet_uri()
+					);
+				}
 
 		} // /theme_style_file
 

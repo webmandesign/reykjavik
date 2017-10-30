@@ -109,8 +109,8 @@ class Reykjavik_One_Click_Demo_Import {
 
 						array(
 							'import_file_name'       => esc_html__( 'Theme demo content', 'reykjavik' ),
-							'import_file_url'        => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/reykjavik/content/demo-content-reykjavik.xml' ),
-							'import_widget_file_url' => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/reykjavik/widgets/demo-widgets-reykjavik.wie' ),
+							'import_file_url'        => esc_url( get_theme_file_uri( 'includes/starter-content/demo-content-reykjavik.xml' ) ),
+							'import_widget_file_url' => esc_url( get_theme_file_uri( 'includes/starter-content/demo-widgets-reykjavik.wie' ) ),
 							'preview_url'            => 'https://themedemos.webmandesign.eu/reykjavik/',
 						),
 

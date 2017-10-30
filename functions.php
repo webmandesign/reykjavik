@@ -187,12 +187,6 @@
 			require REYKJAVIK_PATH_PLUGINS . 'breadcrumb-navxt/breadcrumb-navxt.php';
 		}
 
-	// Jetpack
-
-		if ( class_exists( 'Jetpack' ) ) {
-			require REYKJAVIK_PATH_PLUGINS . 'jetpack/jetpack.php';
-		}
-
 	// One Click Demo Import
 
 		if ( class_exists( 'OCDI_Plugin' ) && is_admin() ) {
@@ -228,4 +222,11 @@
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'woocommerce/woocommerce.php';
+		}
+
+	// Jetpack
+
+		if ( class_exists( 'Jetpack' ) ) {
+			// Loading after WooCommerce to apply inline styles handle filtering.
+			require REYKJAVIK_PATH_PLUGINS . 'jetpack/jetpack.php';
 		}

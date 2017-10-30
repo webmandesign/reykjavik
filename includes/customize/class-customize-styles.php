@@ -213,6 +213,7 @@ class Reykjavik_Customize_Styles {
 		/**
 		 * Enqueue HTML head inline styles
 		 *
+		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
 		 * @since    1.0.0
@@ -244,8 +245,8 @@ class Reykjavik_Customize_Styles {
 				if ( ! empty( $output ) ) {
 
 					wp_add_inline_style(
-						apply_filters( 'wmhook_reykjavik_customize_styles_inline_styles_handle', 'reykjavik-stylesheet-global' ),
-						apply_filters( 'wmhook_reykjavik_esc_css', $output )
+						(string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+						(string) apply_filters( 'wmhook_reykjavik_esc_css', $output )
 					);
 
 				}
