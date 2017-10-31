@@ -38,6 +38,16 @@
 			@extend %background_overlay_from_text_color;
 		}
 
+		@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
+		// Media query is to prevent Apple mobile devices issue.
+		// @see  https://css-tricks.com/annoying-mobile-double-tap-link-issue/
+
+			&::before {
+				display: none;
+			}
+
+		}
+
 	}
 
 	.prev,
@@ -46,6 +56,16 @@
 
 		&:hover::before {
 			display: none;
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
+		// Media query is to prevent Apple mobile devices issue.
+		// @see  https://css-tricks.com/annoying-mobile-double-tap-link-issue/
+
+			&::before {
+				display: none;
+			}
+
 		}
 
 	}
