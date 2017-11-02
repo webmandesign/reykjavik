@@ -16,6 +16,8 @@
 
 .welcome-wrap hr { height: 0; margin: 2em 0; border: 0; border-top: 1px solid #caccce; }
 
+.welcome-wrap [class$="-col"] { -webkit-align-items: stretch; -ms-flex-align: stretch; align-items: stretch; }
+
 .welcome-wrap .feature-section { padding: 0; border: 0; }
 
 .welcome-wrap .feature-section.col h4 { margin: 1em 0; }

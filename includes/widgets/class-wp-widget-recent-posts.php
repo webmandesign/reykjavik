@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.1
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.0.0
+	 * @version  1.0.1
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.0.1
 			 */
 			public function widget( $args, $instance ) {
 
@@ -168,8 +168,8 @@
 
 								if (
 										function_exists( 'get_the_subtitle' )
-										&& $subtitle = get_the_subtitle( $recent_post_id )
 										&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
+										&& $subtitle = get_the_subtitle( $recent_post_id )
 									) {
 
 									$output .= '<span class="entry-title-primary">' . get_the_title( $recent_post_id ) . '</span>';

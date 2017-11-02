@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.1
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.1
 		 */
 		private function __construct() {
 
@@ -48,16 +48,15 @@ class Reykjavik_One_Click_Demo_Import {
 
 						add_action( 'pt-ocdi/before_content_import', __CLASS__ . '::before' );
 
-						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
-
 						add_action( 'pt-ocdi/before_widgets_import', __CLASS__ . '::before_widgets_import' );
+
+						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
 					// Filters
 
 						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
-
 						add_action( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::jetpack_custom_posts' );
 
 						add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
@@ -99,7 +98,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Import files setup
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.1
 		 */
 		public static function files() {
 
@@ -109,8 +108,8 @@ class Reykjavik_One_Click_Demo_Import {
 
 						array(
 							'import_file_name'       => esc_html__( 'Theme demo content', 'reykjavik' ),
-							'import_file_url'        => esc_url( get_theme_file_uri( 'includes/starter-content/demo-content-reykjavik.xml' ) ),
-							'import_widget_file_url' => esc_url( get_theme_file_uri( 'includes/starter-content/demo-widgets-reykjavik.wie' ) ),
+							'import_file_url'        => esc_url( get_theme_file_uri( 'includes/plugins/one-click-demo-import/demo-content-reykjavik.xml' ) ),
+							'import_widget_file_url' => esc_url( get_theme_file_uri( 'includes/plugins/one-click-demo-import/demo-widgets-reykjavik.wie' ) ),
 							'preview_url'            => 'https://themedemos.webmandesign.eu/reykjavik/',
 						),
 

@@ -213,7 +213,7 @@ iframe:focus { outline: thin dotted; }
 
 code { position: relative; display: inline-block; padding: 0 0.62em; margin: 0 0.19em; }
 
-mark code, ins code, .highlight code, .form-allowed-tags code, .archive-description code { display: inline; padding: 0 0.38em; background: none; color: inherit; }
+mark code, ins code, .highlight code, .form-allowed-tags code, .taxonomy-description code, .archive-description code { display: inline; padding: 0 0.38em; background: none; color: inherit; }
 
 pre { position: relative; max-width: 100%; padding: 1em; margin-bottom: 1.62em; overflow: auto; -moz-tab-size: 2; tab-size: 2; }
 
@@ -267,53 +267,6 @@ th, tfoot td { text-align: right; border-width: 2px; }
 .clearfix::after, .clear::after, .gallery::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .comment-content::after, .widget_text::after, .tagcloud::after, .jetpack_subscription_widget form::after, .site-header-inner::after, .intro-inner::after, .site-content-inner::after, .posts-layout-list .type-post::after, .outdent-content::after, .textwidget::after { content: ''; clear: both; display: table; table-layout: fixed; }
 
 .clear { clear: both; }
-
-/* FILE: starter/base/__player.scss */
-.site .mejs-container { min-height: 50px; margin: 1.62em 0; }
-
-.site .mejs-container .mejs-controls { height: 50px; padding: 0 20px; background: #333334; }
-
-.site .mejs-container .mejs-controls div { margin-top: 10px; }
-
-.site .mejs-container .mejs-controls button { box-shadow: none; }
-
-.site .mejs-container .mejs-controls .mejs-time-rail { height: 100%; padding: 0; margin: 0; }
-
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-total { height: 100%; margin-top: 0; margin-bottom: 0; background: #29292a; }
-
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded { height: 4px; margin-top: 23px; background: #383839; background: repeating-linear-gradient(90deg, transparent, transparent 2px, #383839 2px, #383839 4px); border-radius: 0; }
-
-.site .mejs-container .mejs-controls .mejs-time-rail .mejs-time-current { height: 100%; background: #5b5b5d; }
-
-.site .mejs-container video { height: auto; }
-
-.site .wp-audio-playlist .mejs-container { height: 50px !important; }
-
-.site .mejs-video { width: 100% !important; }
-
-.site .mejs-overlay-button { margin: -50px 0 0 !important; margin-right: -50px !important; }
-
-.site .wp-playlist { padding: 1.62em; margin: 1.62em 0; background-color: #cccccb; border-width: 0; }
-
-.site .wp-playlist .mejs-container { width: 100% !important; }
-
-.site .wp-playlist .wp-playlist-playing { background: none; }
-
-.site .wp-playlist-tracks { margin-top: 1em; }
-
-.site .wp-playlist-item { padding: 0.62em 0; border-color: #bdbdbc; }
-
-.site .wp-playlist-item-length { margin-top: 0.62em; }
-
-.site .wp-playlist-current-item { margin-bottom: 1em; }
-
-.wp-video .mejs-controls, .wp-video-playlist .mejs-controls { visibility: hidden; }
-
-.wp-video:hover .mejs-controls, .wp-video-playlist:hover .mejs-controls { visibility: visible; }
-
-.wp-video .mejs-layer, .wp-video-playlist .mejs-layer { width: 100% !important; height: 100% !important; }
-
-.entry-media .mejs-container, .entry-media .wp-playlist { margin: 0; }
 
 /* FILE: starter/base/__breakpoints.scss */
 body:before { display: none; }

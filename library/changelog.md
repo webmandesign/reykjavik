@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.5.5
+
+* **Fix**: Welcome page columns vertical align in WordPress 4.9
+
+### Files changed:
+
+	changelog.md
+	init.php
+	scss/styles/_welcome.scss
+
+
 ## 2.5.4
 
 * **Fix**: Sanitize class "array" method name

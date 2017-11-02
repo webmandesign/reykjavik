@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.1
  *
  * Contents:
  *
@@ -343,7 +343,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.1
 		 *
 		 * @param  array $classes
 		 */
@@ -459,6 +459,7 @@ class Reykjavik_Header {
 							|| is_category()
 							|| is_tag()
 							|| is_date()
+							|| is_author() // Display author archive as posts, not as custom post type archive.
 						) {
 						$classes[] = 'posts-layout-list';
 					}
