@@ -1,5 +1,20 @@
 # Reykjavik Changelog
 
+## 1.0.2
+
+* **Add**: Recommending Jetpack plugin installation
+* **Update**: Library 2.5.6
+* **Update**: Removed obsolete language files (theme is fully translatable via WPORG repository)
+* **Update**: Theme description and tags
+
+### Files changed:
+
+	changelog.md
+	style.css
+	includes/tgmpa/class-tgmpa-plugins.php
+	library/*.*
+
+
 ## 1.0.1
 
 * **Update**: One Click Demo Import demo files moved to the plugin setup folder

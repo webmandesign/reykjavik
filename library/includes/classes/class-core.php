@@ -2,9 +2,6 @@
 /**
  * Core class
  *
- * @uses  `wmhook_reykjavik_theme_options` global hook
- * @uses  `wmhook_reykjavik_enable_rtl` global hook
- *
  * @package     WebMan WordPress Theme Framework
  * @subpackage  Core
  *

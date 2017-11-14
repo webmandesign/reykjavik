@@ -1,5 +1,16 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.5.6
+
+* **Add**: Float value sanitization method
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-sanitize.php
+
+
 ## 2.5.5
 
 * **Fix**: Welcome page columns vertical align in WordPress 4.9

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.2
  *
  * Contents:
  *
@@ -93,7 +93,7 @@ class Reykjavik_TGMPA_Plugins {
 		 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.2
 		 */
 		public static function recommend() {
 
@@ -132,6 +132,13 @@ class Reykjavik_TGMPA_Plugins {
 									'slug'        => 'advanced-custom-fields',
 									'required'    => false,
 									'is_callable' => 'register_field_group',
+								),
+
+								'jetpack' => array(
+									'name'        => 'Jetpack',
+									'description' => esc_html__( 'Adding portfolio and testimonials functionality.', 'reykjavik' ),
+									'slug'        => 'jetpack',
+									'required'    => false,
 								),
 
 								'woocommerce' => array(
