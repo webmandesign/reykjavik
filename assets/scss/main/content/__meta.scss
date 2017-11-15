@@ -57,7 +57,8 @@
 			margin-bottom: power( $golden, 2 ) +em;
 
 			&-element {
-				margin-#{$right}: $golden +em; // {{RTL}}
+				@extend %font_size_small;
+				display: block;
 			}
 
 		}

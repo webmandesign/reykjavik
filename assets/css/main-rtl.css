@@ -308,7 +308,7 @@ blockquote blockquote, .widget-recent-entries-list .entry-title, .sidebar .widge
 
 .font-size-xs, .entry-subtitle { font-size: 0.62em; }
 
-blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption-text, #cancel-comment-reply-link, .comment-form label, .comments-title .add-comment-link, .comment-metadata, .comment .reply, .site-description, .menu-item-description, .single.fl-builder .posts .entry-meta, .single.content-layout-no-paddings .posts .entry-meta, .posts .entry-meta, .post-navigation .nav-links .label, .widget-recent-entries-list .month, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-author .author-title, .widget .entry-subtitle { font-size: 0.81em; }
+blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption-text, #cancel-comment-reply-link, .comment-form label, .comments-title .add-comment-link, .comment-metadata, .comment .reply, .site-description, .menu-item-description, .single .entry-meta-element, .single.fl-builder .posts .entry-meta, .single.content-layout-no-paddings .posts .entry-meta, .posts .entry-meta, .post-navigation .nav-links .label, .widget-recent-entries-list .month, .sidebar .widget-recent-entries-list .link-more, .widget-area .widget-recent-entries-list .link-more, .entry-author .author-title, .widget .entry-subtitle { font-size: 0.81em; }
 
 .font-size-sm, .site-footer, .sidebar, .sidebar .widget-recent-entries-list .entry-date, .widget-area .widget-recent-entries-list .entry-date { font-size: 0.905em; }
 
@@ -1595,6 +1595,10 @@ blockquote.alignright { margin-right: 0; }
 
 .gallery-caption { padding: 1em; margin-top: -1px; }
 
+.mejs-container { margin-bottom: 1.62em; }
+
+.mejs-container::last-child { margin-bottom: 0; }
+
 /* FILE: main/content/__layout.scss */
 .site-content-inner { padding: 3.1rem 0; }
 
@@ -1755,7 +1759,7 @@ body:not(.group-blog) .entry-meta .author { display: none; }
 
 .single .entry-meta { margin-bottom: 2.6244em; }
 
-.single .entry-meta-element { margin-left: 1.62em; }
+.single .entry-meta-element { display: block; }
 
 .single.fl-builder .entry-meta, .single.content-layout-no-paddings .entry-meta { padding: 1em 0; margin: 0; text-align: center; border-bottom-width: 1px; border-bottom-style: solid; }
 

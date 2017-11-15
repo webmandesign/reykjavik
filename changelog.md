@@ -1,5 +1,19 @@
 # Reykjavik Changelog
 
+## 1.0.4
+
+* **Update**: Future proofing custom Text widget enhancement
+* **Update**: Post meta styles on single post pages
+* **Update**: Media player styles
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/scss/main.scss
+	includes/widgets/class-wp-widget-text.php
+
+
 ## 1.0.3
 
 * **Fix**: Duplicate declaration of `float()` sanitize method
