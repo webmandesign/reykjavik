@@ -144,30 +144,6 @@ final class Reykjavik_Library_Sanitize {
 
 
 		/**
-		 * Sanitize floating point number
-		 *
-		 * Sanitization callback for float number type controls.
-		 * This callback sanitizes `$value` as a float number.
-		 * Has to do a wrapper for `floatval()` here as otherwise
-		 * you can get a PHP warning when using in customizer
-		 * ("floatval() expects exactly 1 parameter, 2 given").
-		 *
-		 * @since    2.5.0
-		 * @version  2.5.0
-		 *
-		 * @param  float $value
-		 */
-		public static function float( $value ) {
-
-			// Output
-
-				return floatval( $value );
-
-		} // /float
-
-
-
-		/**
 		 * Sanitize fonts
 		 *
 		 * Sanitization callback for `font-family` CSS property value.
@@ -205,6 +181,12 @@ final class Reykjavik_Library_Sanitize {
 
 		/**
 		 * Sanitize float
+		 *
+		 * Sanitization callback for float number type controls.
+		 * This callback sanitizes `$value` as a float number.
+		 * Has to do a wrapper for `floatval()` here as otherwise
+		 * you can get a PHP warning when using in customizer
+		 * ("floatval() expects exactly 1 parameter, 2 given").
 		 *
 		 * @since    2.5.6
 		 * @version  2.5.6

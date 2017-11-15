@@ -1,5 +1,16 @@
 # Reykjavik Changelog
 
+## 1.0.3
+
+* **Fix**: Duplicate declaration of `float()` sanitize method
+
+### Files changed:
+
+	changelog.md
+	style.css
+	library/includes/classes/class-sanitize.php
+
+
 ## 1.0.2
 
 * **Add**: Recommending Jetpack plugin installation
