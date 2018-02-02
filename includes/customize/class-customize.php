@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -190,7 +190,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 *
 		 * @param  array $options
 		 */
@@ -933,6 +933,20 @@ class Reykjavik_Customize {
 													array(
 														'property' => 'max-width',
 														'suffix'   => 'px',
+													),
+												),
+
+												implode( ', ', array(
+													// $content_width * $golden_major
+													'.fl-builder div.sharedaddy',
+													'.content-layout-no-paddings div.sharedaddy',
+													'.fl-builder .entry-author',
+													'.content-layout-no-paddings .entry-author',
+												) ) => array(
+													array(
+														'property' => 'max-width',
+														'prefix'   => 'calc(.62*',
+														'suffix'   => 'px) !important',
 													),
 												),
 

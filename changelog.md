@@ -1,5 +1,17 @@
 # Reykjavik Changelog
 
+## 1.0.5
+
+* **Add**:
+* **Update**:
+* **Fix**:
+
+### Files changed:
+
+	changelog.md
+	style.css
+
+
 ## 1.0.4
 
 * **Update**: Future proofing custom Text widget enhancement

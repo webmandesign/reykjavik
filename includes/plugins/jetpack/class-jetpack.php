@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -182,33 +182,21 @@ class Reykjavik_Jetpack {
 		 * Show sharing?
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 *
 		 * @param  boolean $show
 		 * @param  object  $post
 		 */
 		public static function sharing_show( $show = false, $post = null ) {
 
-			// Helper variables
-
-				// Make sure we display sharing on these post types even if page builder used there:
-				$forced_post_types = apply_filters( 'wmhook_reykjavik_jetpack_sharing_show_forced_post_types', array( 'product' ) );
-
-
 			// Processing
 
 				if (
-						in_array( 'the_excerpt', (array) $GLOBALS['wp_current_filter'] )
-						|| ! Reykjavik_Post::is_singular()
-						|| (
-							in_array( 'the_content', (array) $GLOBALS['wp_current_filter'] )
-							&& ! in_array( get_post_type(), (array) $forced_post_types )
-							&& Reykjavik_Post::is_page_builder_ready()
-						)
-					) {
-
+					in_array( 'the_excerpt', (array) $GLOBALS['wp_current_filter'] )
+					|| ! Reykjavik_Post::is_singular()
+					|| post_password_required()
+				) {
 					$show = false;
-
 				}
 
 

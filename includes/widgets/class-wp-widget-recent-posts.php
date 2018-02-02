@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.1
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -25,9 +25,9 @@
  */
 
 	if (
-			! class_exists( 'WP_Widget' )
-			|| ! class_exists( 'WP_Widget_Recent_Posts' )
-		) {
+		! class_exists( 'WP_Widget' )
+		|| ! class_exists( 'WP_Widget_Recent_Posts' )
+	) {
 		return;
 	}
 
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.0.1
+	 * @version  1.0.5
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.1
+			 * @version  1.0.5
 			 */
 			public function widget( $args, $instance ) {
 
@@ -108,6 +108,10 @@
 								$cat = array( 'category_name' => sanitize_title( $instance['category'] ) );
 							}
 						}
+
+					// Fix wrong "Continue reading" link
+
+						$continue_reading_url_to_replace = esc_url( get_permalink( get_the_ID() ) );
 
 
 				// Processing
@@ -167,10 +171,10 @@
 								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '">';
 
 								if (
-										function_exists( 'get_the_subtitle' )
-										&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
-										&& $subtitle = get_the_subtitle( $recent_post_id )
-									) {
+									function_exists( 'get_the_subtitle' )
+									&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
+									&& $subtitle = get_the_subtitle( $recent_post_id )
+								) {
 
 									$output .= '<span class="entry-title-primary">' . get_the_title( $recent_post_id ) . '</span>';
 									$output .= ' <span class="entry-subtitle">' . $subtitle . '</span>';
@@ -190,7 +194,11 @@
 
 							// Read more link
 
-								$output .= apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'widget-recent-posts' );
+								$output .= str_replace(
+									$continue_reading_url_to_replace,
+									esc_url( get_permalink( $recent_post_id ) ),
+									(string) apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'widget-recent-posts' )
+								);
 
 						$output .= '</div>';
 

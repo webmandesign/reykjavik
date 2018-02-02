@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		private function __construct() {
 
@@ -44,7 +44,24 @@ class Reykjavik_WooCommerce_Setup {
 
 					// Declare compatibility
 
-						add_theme_support( 'woocommerce' );
+						add_theme_support( 'woocommerce', array(
+
+							// 'single_image_width'    => 1200,
+							// 'thumbnail_image_width' => 480,
+
+							'product_grid' => array(
+
+								'default_columns' => Reykjavik_WooCommerce_Helpers::return_number( 'shop_columns' ),
+								'min_columns'     => 2,
+								'max_columns'     => 5,
+
+								'default_rows' => 3,
+								'min_rows'     => 2,
+								'max_rows'     => 8,
+
+							),
+
+						) );
 
 						// WC 3.0+ product gallery
 

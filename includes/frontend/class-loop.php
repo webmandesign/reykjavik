@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -95,7 +95,7 @@ class Reykjavik_Loop {
 		 * Pagination
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		public static function pagination() {
 
@@ -128,7 +128,7 @@ class Reykjavik_Loop {
 					$total   = ( isset( $wp_query->max_num_pages ) ) ? ( $wp_query->max_num_pages ) : ( 1 );
 					$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
 
-					$output = '<nav class="pagination" aria-label="' . esc_attr( 'Posts Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
+					$output = '<nav class="pagination" aria-label="' . esc_attr__( 'Posts Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">'
 					          . $output
 					          . '</nav>';
 				}

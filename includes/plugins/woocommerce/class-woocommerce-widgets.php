@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -97,7 +97,7 @@ class Reykjavik_WooCommerce_Widgets {
 		 * Product widget area: registration
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		public static function register_widget_areas() {
 
@@ -110,7 +110,7 @@ class Reykjavik_WooCommerce_Widgets {
 					'before_widget' => '<section id="%1$s" class="widget %2$s">',
 					'after_widget'  => '</section>',
 					'before_title'  => '<h2 class="widget-title screen-reader-text">',
-					'after_title'   => '</h2>'
+					'after_title'   => '</h2>',
 				) );
 
 		} // /register_widget_areas

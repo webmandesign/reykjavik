@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -330,7 +330,7 @@ class Reykjavik_Customize_Styles {
 		 * and processing in oppose to custom CSS variables.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 *
 		 * @param  string $scope
 		 */
@@ -419,6 +419,20 @@ class Reykjavik_Customize_Styles {
 								'styles'   => array(
 									'max-width|1' => $helper['layout_width_content'] . 'px',
 									'max-width|2' => ( $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
+								),
+							),
+
+							'layout-width-content-golden' => array(
+								'selector' => implode( ', ', array(
+									// $content_width * $golden_major
+									'.fl-builder div.sharedaddy',
+									'.content-layout-no-paddings div.sharedaddy',
+									'.fl-builder .entry-author',
+									'.content-layout-no-paddings .entry-author',
+								) ),
+								'styles'   => array(
+									'max-width|1' => absint( .62 * $helper['layout_width_content'] ) . 'px',
+									'max-width|2' => ( .62 * $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
 								),
 							),
 

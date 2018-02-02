@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.4
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -25,9 +25,9 @@
  */
 
 	if (
-			! class_exists( 'WP_Widget' )
-			|| ! class_exists( 'WP_Widget_Text' )
-		) {
+		! class_exists( 'WP_Widget' )
+		|| ! class_exists( 'WP_Widget_Text' )
+	) {
 		return;
 	}
 
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.0.0
+	 * @version  1.0.5
 	 *
 	 * Contents:
 	 *
@@ -419,7 +419,7 @@
 			 * Enqueue assets
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.0.5
 			 */
 			public function enqueue() {
 
@@ -428,23 +428,23 @@
 					// Styles
 
 						wp_enqueue_style(
-								'reykjavik-widget-text',
-								get_theme_file_uri( 'assets/css/options-widget-text.css' ),
-								array(),
-								esc_attr( REYKJAVIK_THEME_VERSION )
-							);
+							'reykjavik-widget-text',
+							get_theme_file_uri( 'assets/css/options-widget-text.css' ),
+							array(),
+							esc_attr( REYKJAVIK_THEME_VERSION )
+						);
 
 					// Scripts
 
 						wp_enqueue_media();
 
 						wp_enqueue_script(
-								'reykjavik-widget-text',
-								get_theme_file_uri( 'assets/js/scripts-widget-text.js' ),
-								array( 'media-upload' ),
-								esc_attr( REYKJAVIK_THEME_VERSION ),
-								true
-							);
+							'reykjavik-widget-text',
+							get_theme_file_uri( 'assets/js/scripts-widget-text.js' ),
+							array( 'media-upload' ),
+							esc_attr( REYKJAVIK_THEME_VERSION ),
+							true
+						);
 
 			} // /enqueue
 

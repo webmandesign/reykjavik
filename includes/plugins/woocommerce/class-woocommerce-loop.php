@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_WooCommerce_Loop {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		private function __construct() {
 
@@ -78,6 +78,8 @@ class Reykjavik_WooCommerce_Loop {
 
 						add_action( 'woocommerce_after_shop_loop', __CLASS__ . '::pagination' );
 
+						add_filter( 'init', __CLASS__ . '::set_shop_columns' );
+
 						add_action( 'wp', __CLASS__ . '::search_results' );
 
 					// Filters
@@ -86,8 +88,6 @@ class Reykjavik_WooCommerce_Loop {
 						add_filter( 'woocommerce_after_shop_loop',  __CLASS__ . '::active_filters', -10 );
 
 						add_filter( 'woocommerce_pagination_args', __CLASS__ . '::pagination_args' );
-
-						add_filter( 'loop_shop_columns', __CLASS__ . '::shop_columns' );
 
 						add_filter( 'the_title', __CLASS__ . '::search_results_product_title', 10, 2 );
 
@@ -125,6 +125,24 @@ class Reykjavik_WooCommerce_Loop {
 	/**
 	 * 10) Setup
 	 */
+
+		/**
+		 * Set shop columns
+		 *
+		 * @since    1.0.5
+		 * @version  1.0.5
+		 */
+		public static function set_shop_columns() {
+
+			// Processing
+
+				if ( ! function_exists( 'wc_reset_product_grid_settings' ) ) {
+					add_filter( 'loop_shop_columns', __CLASS__ . '::shop_columns' );
+				}
+
+		} // /set_shop_columns
+
+
 
 		/**
 		 * Shop columns
@@ -312,23 +330,28 @@ class Reykjavik_WooCommerce_Loop {
 		 * Pagination
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		public static function pagination() {
+
+			// Requirements check
+
+				if (
+					! function_exists( 'woocommerce_pagination' )
+					|| ! function_exists( 'wc_get_loop_prop' )
+				) {
+					return;
+				}
+
 
 			// Processing
 
 				ob_start();
-				wc_get_template( 'loop/pagination.php' );
-
-				global $wp_query;
-
-				$total   = ( isset( $wp_query->max_num_pages ) ) ? ( $wp_query->max_num_pages ) : ( 1 );
-				$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
+				woocommerce_pagination();
 
 				$html = str_replace(
-					'<nav class="woocommerce-pagination">',
-					'<nav class="woocommerce-pagination pagination" aria-label="' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '">',
+					'<nav class="woocommerce-pagination',
+					'<nav aria-label="' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( wc_get_loop_prop( 'current_page' ) ) . '" data-total="' . esc_attr( wc_get_loop_prop( 'total_pages' ) ) . '" class="pagination woocommerce-pagination',
 					ob_get_clean()
 				);
 
