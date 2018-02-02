@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.0.6
  *
  * Contents:
  *
@@ -330,16 +330,13 @@ class Reykjavik_WooCommerce_Loop {
 		 * Pagination
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.0.6
 		 */
 		public static function pagination() {
 
 			// Requirements check
 
-				if (
-					! function_exists( 'woocommerce_pagination' )
-					|| ! function_exists( 'wc_get_loop_prop' )
-				) {
+				if ( ! function_exists( 'woocommerce_pagination' ) ) {
 					return;
 				}
 
@@ -349,9 +346,19 @@ class Reykjavik_WooCommerce_Loop {
 				ob_start();
 				woocommerce_pagination();
 
+				if ( function_exists( 'wc_get_loop_prop' ) ) {
+					$total   = wc_get_loop_prop( 'total_pages' );
+					$current = wc_get_loop_prop( 'current_page' );
+				} else {
+					// WooCommerce 3.3- backwards compatibility
+					global $wp_query;
+					$total   = ( isset( $wp_query->max_num_pages ) ) ? ( $wp_query->max_num_pages ) : ( 1 );
+					$current = ( get_query_var( 'paged' ) ) ? ( absint( get_query_var( 'paged' ) ) ) : ( 1 );
+				}
+
 				$html = str_replace(
 					'<nav class="woocommerce-pagination',
-					'<nav aria-label="' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( wc_get_loop_prop( 'current_page' ) ) . '" data-total="' . esc_attr( wc_get_loop_prop( 'total_pages' ) ) . '" class="pagination woocommerce-pagination',
+					'<nav aria-label="' . esc_attr__( 'Products Navigation', 'reykjavik' ) . '" data-current="' . esc_attr( $current ) . '" data-total="' . esc_attr( $total ) . '" class="pagination woocommerce-pagination',
 					ob_get_clean()
 				);
 

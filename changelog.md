@@ -1,5 +1,16 @@
 # Reykjavik Changelog
 
+## 1.0.6
+
+* **Fix**: WooCommerce 3.3- backwards compatibility
+
+### Files changed:
+
+	changelog.md
+	style.css
+	includes/plugins/woocommerce/class-woocommerce-loop.php
+
+
 ## 1.0.5
 
 * **Add**: Compatibility with WooCommerce 3.3 product grid options
