@@ -41,7 +41,7 @@
 			</p>
 
 			<p>
-				<a href="https://www.paypal.me/webmandesign/20" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'modern' ); ?></a>
+				<a href="https://www.paypal.me/webmandesign/20" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'reykjavik' ); ?></a>
 			</p>
 
 			<p class="welcome-upgrade-thanks">
