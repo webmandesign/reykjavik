@@ -241,6 +241,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 
 			// Default layout
+			// Relevant mostly for related and upsell products lists.
 
 				$columns: 3;
 
@@ -252,29 +253,28 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 				// With sidebar
 
-					$columns: 2;
+					// No longer needed with WooCommerce 3.3+!
 
-					.woocommerce.archive.has-widgets-sidebar & {
-
-						@include responsive( map_get( $breakpoint, 'm' ) ) {
-							width: percentage( 1 / $columns - 2 * $column_gutter );
-							margin-left: percentage( 2 * $gutter / 100 );
-							margin-right: percentage( 2 * $gutter / 100 );
-						}
-
-					}
+					// $columns: 2;
+					// .woocommerce.archive.has-widgets-sidebar & {
+					// 	@include responsive( map_get( $breakpoint, 'm' ) ) {
+					// 		width: percentage( 1 / $columns - 2 * $column_gutter );
+					// 		margin-left: percentage( 2 * $gutter / 100 );
+					// 		margin-right: percentage( 2 * $gutter / 100 );
+					// 	}
+					// }
 
 
 
 			// Forced columns layouts
 
-				.columns-1 & {
+				@include in( 'ul.products.columns-1' ) {
 					width: percentage( 1 - $column_gutter );
 				}
 
 				@for $i from 2 through 6 {
 
-					.columns-#{$i} & {
+					@include in( 'ul.products.columns-#{$i}' ) {
 
 						@include responsive( map_get( $breakpoint, 'l' ) ) {
 							width: percentage( 1 / $i - $column_gutter );
@@ -290,27 +290,14 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 					$columns: 3;
 
-					.columns-4 &,
-					.columns-5 &,
-					.columns-6 & {
+					@for $i from 4 through 6 {
 
-						@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
-							width: percentage( 1 / $columns - $column_gutter );
-						}
+						@include in( 'ul.products.columns-#{$i}' ) {
 
-					}
+							@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+								width: percentage( 1 / $columns - $column_gutter );
+							}
 
-
-
-				// Large devices columns
-
-					$columns: 4;
-
-					.columns-5 &,
-					.columns-6 & {
-
-						@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 'xxl' ) ) {
-							width: percentage( 1 / $columns - $column_gutter );
 						}
 
 					}

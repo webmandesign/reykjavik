@@ -55,8 +55,8 @@
 						max-width: none;
 						max-height: 16em;
 						max-height: 38vh;
-						left: 50%;
-						transform: translateX(-50%);
+						#{$left}: 50%; // {{RTL}}
+						@include rtl_property( transform, translateX( -50% ), translateX( 50% ) ); // {{RTL}}
 					}
 
 				}
@@ -278,6 +278,7 @@
 			}
 
 			&-inner {
+				width: auto;
 				max-width: 38rem;
 				padding: 0;
 				margin: 0;

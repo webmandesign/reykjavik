@@ -27,6 +27,7 @@
 		}
 
 		.no-widgets-sidebar & {
+			clear: both;
 
 			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				margin-left: percentage( -$golden_minor * $golden_minor );

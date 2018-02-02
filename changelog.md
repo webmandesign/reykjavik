@@ -2,14 +2,43 @@
 
 ## 1.0.5
 
-* **Add**:
-* **Update**:
-* **Fix**:
+* **Add**: Compatibility with WooCommerce 3.3 product grid options
+* **Add**: Displaying post category and tags on single post page
+* **Update**: Single post meta display
+* **Update**: Hiding post meta on paginated/parted single post
+* **Update**: Not disabling Jetpack sharing buttons on page builder posts/pages (leaving this to Jetpack per-post option)
+* **Update**: Improving media player (playlist) styles
+* **Update**: Welcome admin page
+* **Fix**: Localization issue
+* **Fix**: WooCommerce 3.3 pagination issue
+* **Fix**: Jetpack Author Bio box styles
+* **Fix**: Single post meta display when page builder is used
+* **Fix**: Single post intro media responsive RTL styles
+* **Fix**: Recent Posts widget "Continue reading" link URL
+* **Fix**: Theme name displays localized when needed
 
 ### Files changed:
 
 	changelog.md
 	style.css
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	includes/customize/class-customize-styles.php
+	includes/customize/class-customize.php
+	includes/frontend/class-header.php
+	includes/frontend/class-loop.php
+	includes/plugins/jetpack/class-jetpack.php
+	includes/plugins/woocommerce/class-woocommerce-loop.php
+	includes/plugins/woocommerce/class-woocommerce-setup.php
+	includes/plugins/woocommerce/class-woocommerce-widgets.php
+	includes/setup/class-setup.php
+	includes/widgets/class-wp-widget-recent-posts.php
+	includes/widgets/class-wp-widget-text.php
+	languages/reykjavik.pot
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/footer/site-info.php
+	templates/parts/meta/entry-meta.php
 
 
 ## 1.0.4

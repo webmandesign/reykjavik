@@ -49,6 +49,19 @@
 
 	}
 
+	.tags-links a {
+		text-transform: none;
+
+		&:not(:last-child)::after {
+			content: ',';
+		}
+
+	}
+
+	body.single[class*="paged-"] .site-main > .entry > & {
+		display: none;
+	}
+
 
 
 	// Single post meta
@@ -58,10 +71,46 @@
 
 			&-element {
 				@extend %font_size_small;
-				display: block;
 			}
 
 		}
+
+
+
+		// Outdented single post meta
+
+			.entry-meta-outdented .site-main > .entry > & {
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					display: inline-block;
+					float: $left; // {{RTL}}
+					max-width: 10em;
+					margin-#{$right}: -100%; // {{RTL}}
+					margin-#{$left}: -1.62rem; // {{RTL}}
+					@include rtl_property( transform, translateX( -100% ), translateX( 100% ) ); // {{RTL}}
+
+					.entry-meta-element {
+						display: block;
+						margin-bottom: 1rem;
+					}
+
+					.entry-meta-description {
+						display: block;
+						font-size: .81em;
+
+						@include in( '^.comments-link' ) {
+							display: inline;
+						}
+
+					}
+
+					.label-updated {
+						display: none;
+					}
+
+				}
+
+			}
 
 
 
@@ -74,6 +123,11 @@
 			text-align: center;
 			border-bottom-width: 1px;
 			border-bottom-style: solid;
+
+			&-element {
+				display: inline;
+			}
+
 		}
 
 		.no-intro.fl-builder &,

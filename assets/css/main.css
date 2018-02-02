@@ -328,7 +328,7 @@ blockquote cite, .weight-400, #cancel-comment-reply-link, .comments-title .add-c
 
 .weight-600, abbr, .post-table-of-contents a, .pingback a:not(.comment-edit-link), .trackback a:not(.comment-edit-link) { font-weight: 600; }
 
-dt, th, tfoot td, .weight-700, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
+dt, th, tfoot td, .weight-700, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .child-page .more-link, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .site .wp-playlist-current-item, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
 
 .weight-800 { font-weight: 800; }
 
@@ -963,7 +963,7 @@ ul li.icon, ul li.icon-bullet { position: relative; list-style: none; }
 
 ul li.icon::before, ul li.icon-bullet::before { position: absolute; left: -1.38em; line-height: inherit; }
 
-blockquote { padding: 0; }
+blockquote { clear: none; padding: 0; }
 
 blockquote:first-child { margin-top: 0; }
 
@@ -1353,7 +1353,7 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 
 .intro-special .intro-media img { display: none; }
 
-.intro-special .intro-inner { max-width: 38rem; padding: 0; margin: 0; }
+.intro-special .intro-inner { width: auto; max-width: 38rem; padding: 0; margin: 0; }
 
 .intro-special .intro-title, .intro-special .intro .page-summary { float: none; width: 100%; }
 
@@ -1595,7 +1595,17 @@ blockquote.alignright { margin-right: 0; }
 
 .mejs-container { margin-bottom: 1.62em; }
 
-.mejs-container::last-child { margin-bottom: 0; }
+.mejs-container:last-child { margin-bottom: 0; }
+
+.site .mejs-container .mejs-controls .mejs-button button { background-color: transparent; color: inherit; }
+
+.wp-playlist { text-align: left; }
+
+.site .wp-playlist { padding: 0; background: none; border-width: 1px; border-style: solid; }
+
+.site .wp-playlist-current-item, .site .wp-playlist-tracks { height: auto; padding: 1.62rem; margin: 0; }
+
+.site .wp-playlist-current-item { padding-bottom: 0.62rem; }
 
 /* FILE: main/content/__layout.scss */
 .site-content-inner { padding: 3.1rem 0; }
@@ -1625,8 +1635,6 @@ html .page-template-child-pages .content-area, html .content-layout-stretched.is
 @media only screen and (min-width: 55em) { .entry-media { margin-bottom: 3.62674rem; } }
 
 .entry-media a { display: inline-block; width: 100%; }
-
-.entry-media .wp-playlist { text-align: left; }
 
 .search-results .entry-media img { width: auto; max-width: 100%; }
 
@@ -1755,11 +1763,23 @@ html .page-template-child-pages .content-area, html .content-layout-stretched.is
 
 body:not(.group-blog) .entry-meta .author { display: none; }
 
+.entry-meta .tags-links a { text-transform: none; }
+
+.entry-meta .tags-links a:not(:last-child)::after { content: ','; }
+
+body.single[class*="paged-"] .site-main > .entry > .entry-meta { display: none; }
+
 .single .entry-meta { margin-bottom: 2.6244em; }
 
-.single .entry-meta-element { display: block; }
+@media only screen and (min-width: 80em) { .entry-meta-outdented .site-main > .entry > .entry-meta { display: inline-block; float: left; max-width: 10em; margin-right: -100%; margin-left: -1.62rem; -webkit-transform: translateX(-100%); -ms-transform: translateX(-100%); transform: translateX(-100%); }
+  .entry-meta-outdented .site-main > .entry > .entry-meta .entry-meta-element { display: block; margin-bottom: 1rem; }
+  .entry-meta-outdented .site-main > .entry > .entry-meta .entry-meta-description { display: block; font-size: .81em; }
+  .entry-meta-outdented .site-main > .entry > .entry-meta .comments-link .entry-meta-description { display: inline; }
+  .entry-meta-outdented .site-main > .entry > .entry-meta .label-updated { display: none; } }
 
 .single.fl-builder .entry-meta, .single.content-layout-no-paddings .entry-meta { padding: 1em 0; margin: 0; text-align: center; border-bottom-width: 1px; border-bottom-style: solid; }
+
+.single.fl-builder .entry-meta-element, .single.content-layout-no-paddings .entry-meta-element { display: inline; }
 
 .no-intro.fl-builder .entry-meta, .no-intro.content-layout-no-paddings .entry-meta { margin-top: -1px; }
 
@@ -1949,6 +1969,8 @@ a .entry-date { cursor: pointer; }
 .outdent-content:first-child { margin-top: 0; }
 
 .outdent-content:last-child { margin-bottom: 0; }
+
+.no-widgets-sidebar .outdent-content { clear: both; }
 
 @media only screen and (min-width: 55em) { .no-widgets-sidebar .outdent-content { margin-left: -14.44%; margin-right: -14.44%; } }
 
@@ -2254,23 +2276,29 @@ div.sharedaddy { margin-top: 2.6244rem; border-color: inherit; }
 
 .site div.sharedaddy:hover .sd-content ul li a.sd-button:hover { opacity: 1; }
 
+.fl-builder div.sharedaddy, .content-layout-no-paddings div.sharedaddy { /* $content_width */ max-width: 744px; max-width: 41.33333rem; margin-left: auto; margin-right: auto; }
+
 .site .sd-social-icon .sd-content ul li[class*="share-"] a, .site .sd-social-icon .sd-content ul li[class*="share-"] a:hover, .site .sd-social-icon .sd-content ul li[class*="share-"] div.option a { border-width: 2px; border-style: solid; }
 
 .site .sd-social-icon .sd-content ul li[class*="share-"] a.sd-button::before { top: 0; }
 
 .entry-author { margin-top: 3.62674em; padding: 8%; border-width: 1px; border-style: solid; }
 
+@media only screen and (min-width: 55em) { .entry-author { padding: 3.62674em; } }
+
 .entry-author::before { opacity: .03; }
 
 .entry-author .author-avatar { width: 3.33333rem; margin-bottom: 1em; }
 
-@media only screen and (min-width: 42em) { .entry-author .author-avatar { float: left; width: 80px; margin-right: 1.62em; margin-bottom: 1.62em; } }
+@media only screen and (min-width: 42em) { .entry-author .author-avatar { float: left; width: 80px; margin-right: 1.62em; } }
 
 .entry-author .author-title { margin-bottom: 1.62em; text-transform: uppercase; }
 
 .entry-author .author-name { display: block; margin-top: 0.19em; text-transform: none; }
 
 @media only screen and (min-width: 42em) { .entry-author .author-bio { clear: both; } }
+
+.fl-builder .entry-author, .content-layout-no-paddings .entry-author { /* $content_width */ max-width: 744px; max-width: 41.33333rem; margin-left: auto; margin-right: auto; }
 
 .entry-content .portfolio-entry { padding: 1.62em; margin: 1em; border-width: 1px; border-style: solid; border-bottom-width: 2px; border-bottom-color: inherit; }
 

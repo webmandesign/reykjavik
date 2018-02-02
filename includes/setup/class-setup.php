@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  *
  * Contents:
  *
@@ -146,13 +146,13 @@ class Reykjavik_Setup {
 		 * Display "Welcome" admin notice
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.0.5
 		 */
 		public static function welcome_admin_notice() {
 
 			// Helper variables
 
-				$theme_name = wp_get_theme( 'reykjavik' )->get( 'Name' );
+				$theme_name = wp_get_theme( 'reykjavik' )->display( 'Name' );
 
 
 			// Output

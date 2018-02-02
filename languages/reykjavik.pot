@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2017-10-27 09:08+0200\n"
+"POT-Creation-Date: 2018-02-02 11:19+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -78,10 +78,10 @@ msgstr ""
 #: includes/customize/class-customize.php:575
 #: includes/customize/class-customize.php:651
 #: includes/customize/class-customize.php:854
-#: includes/customize/class-customize.php:1049
-#: includes/customize/class-customize.php:1073
-#: includes/customize/class-customize.php:1238
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:433
+#: includes/customize/class-customize.php:1063
+#: includes/customize/class-customize.php:1087
+#: includes/customize/class-customize.php:1252
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:435
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr ""
@@ -147,7 +147,7 @@ msgid "Header"
 msgstr ""
 
 #: includes/customize/class-customize.php:348
-#: includes/customize/class-customize.php:951
+#: includes/customize/class-customize.php:965
 msgid "Header"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgid "Intro"
 msgstr ""
 
 #: includes/customize/class-customize.php:444
-#: includes/customize/class-customize.php:976
+#: includes/customize/class-customize.php:990
 msgid "Intro"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgid "Content"
 msgstr ""
 
 #: includes/customize/class-customize.php:586
-#: includes/customize/class-customize.php:999
+#: includes/customize/class-customize.php:1013
 msgid "Content"
 msgstr ""
 
@@ -227,7 +227,7 @@ msgid "Footer"
 msgstr ""
 
 #: includes/customize/class-customize.php:662
-#: includes/customize/class-customize.php:1021
+#: includes/customize/class-customize.php:1035
 msgid "Footer"
 msgstr ""
 
@@ -335,14 +335,14 @@ msgid "Website layout"
 msgstr ""
 
 #: includes/customize/class-customize.php:874
-#: includes/customize/class-customize.php:960
-#: includes/customize/class-customize.php:1030
+#: includes/customize/class-customize.php:974
+#: includes/customize/class-customize.php:1044
 msgid "Fullwidth"
 msgstr ""
 
 #: includes/customize/class-customize.php:875
-#: includes/customize/class-customize.php:961
-#: includes/customize/class-customize.php:1031
+#: includes/customize/class-customize.php:975
+#: includes/customize/class-customize.php:1045
 msgid "Boxed"
 msgstr ""
 
@@ -364,15 +364,15 @@ msgstr ""
 msgid "Content width"
 msgstr ""
 
-#: includes/customize/class-customize.php:957
+#: includes/customize/class-customize.php:971
 msgid "Header layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:982
+#: includes/customize/class-customize.php:996
 msgid "Enable intro widgets"
 msgstr ""
 
-#: includes/customize/class-customize.php:983
+#: includes/customize/class-customize.php:997
 #, php-format
 msgctxt "%s: Linked plugin name."
 msgid ""
@@ -380,78 +380,78 @@ msgid ""
 "plugin to control its appearance further more."
 msgstr ""
 
-#: includes/customize/class-customize.php:986
+#: includes/customize/class-customize.php:1000
 msgid "On singular pages only"
 msgstr ""
 
-#: includes/customize/class-customize.php:987
+#: includes/customize/class-customize.php:1001
 msgid "On both archive and singular pages"
 msgstr ""
 
-#: includes/customize/class-customize.php:1005
+#: includes/customize/class-customize.php:1019
 msgid "Outdent page content"
 msgstr ""
 
-#: includes/customize/class-customize.php:1006
+#: includes/customize/class-customize.php:1020
 msgid ""
 "Page content will be displayed in 2 columns: H2 headings in first, all the "
 "other page content in second column."
 msgstr ""
 
-#: includes/customize/class-customize.php:1006
+#: includes/customize/class-customize.php:1020
 msgid "This does not affect pages using \"With sidebar\" page template."
 msgstr ""
 
-#: includes/customize/class-customize.php:1027
+#: includes/customize/class-customize.php:1041
 msgid "Footer layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:1048
+#: includes/customize/class-customize.php:1062
 msgctxt "Customizer section title."
 msgid "Texts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1055
+#: includes/customize/class-customize.php:1069
 msgid "Footer credits (copyright)"
 msgstr ""
 
-#: includes/customize/class-customize.php:1056
+#: includes/customize/class-customize.php:1070
 #, php-format
 msgid "Set %s to disable this area."
 msgstr ""
 
-#: includes/customize/class-customize.php:1056
+#: includes/customize/class-customize.php:1070
 msgid "Leaving the field empty will fall back to default theme setting."
 msgstr ""
 
-#: includes/customize/class-customize.php:1056
+#: includes/customize/class-customize.php:1070
 #, php-format
 msgid "You can use %s to display dynamic, always current year."
 msgstr ""
 
-#: includes/customize/class-customize.php:1072
+#: includes/customize/class-customize.php:1086
 msgctxt "Customizer section title."
 msgid "Typography"
 msgstr ""
 
-#: includes/customize/class-customize.php:1079
+#: includes/customize/class-customize.php:1093
 msgid "Basic font size in px"
 msgstr ""
 
-#: includes/customize/class-customize.php:1080
+#: includes/customize/class-customize.php:1094
 msgid ""
 "All other font sizes are calculated automatically from this basic font size."
 msgstr ""
 
-#: includes/customize/class-customize.php:1104
+#: includes/customize/class-customize.php:1118
 msgid "Use custom fonts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1111
+#: includes/customize/class-customize.php:1125
 msgid "Custom fonts setup"
 msgstr ""
 
-#: includes/customize/class-customize.php:1112
+#: includes/customize/class-customize.php:1126
 #, php-format
 msgctxt ""
 "%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
@@ -461,7 +461,7 @@ msgid ""
 "Instead, please use any font service (such as %s) plugin you like."
 msgstr ""
 
-#: includes/customize/class-customize.php:1114
+#: includes/customize/class-customize.php:1128
 msgid ""
 "You can set your fonts plugin according to information provided below, or "
 "insert your custom font names (a value of \"font-family\" CSS property) "
@@ -469,90 +469,90 @@ msgid ""
 "fonts on the website)."
 msgstr ""
 
-#: includes/customize/class-customize.php:1121
+#: includes/customize/class-customize.php:1135
 msgid "General text font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1133
+#: includes/customize/class-customize.php:1147
 #: includes/setup/class-setup.php:743
 msgid "Headings font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1145
+#: includes/customize/class-customize.php:1159
 #: includes/setup/class-setup.php:749
 msgid "Logo font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1156
+#: includes/customize/class-customize.php:1170
 msgid "Info: CSS selectors"
 msgstr ""
 
-#: includes/customize/class-customize.php:1157
+#: includes/customize/class-customize.php:1171
 msgid ""
 "Here you can find CSS selectors list associated with each font group in the "
 "theme. You can use these in your custom font plugin settings."
 msgstr ""
 
-#: includes/customize/class-customize.php:1160
+#: includes/customize/class-customize.php:1174
 msgid "General text font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1170
+#: includes/customize/class-customize.php:1184
 msgid "Headings font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1187
+#: includes/customize/class-customize.php:1201
 msgid "Logo font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1237
+#: includes/customize/class-customize.php:1251
 msgctxt "Customizer section title."
 msgid "Others"
 msgstr ""
 
-#: includes/customize/class-customize.php:1244
+#: includes/customize/class-customize.php:1258
 msgid "Show \"Welcome\" page"
 msgstr ""
 
-#: includes/customize/class-customize.php:1245
+#: includes/customize/class-customize.php:1259
 msgid "Under \"Appearance\" WordPress dashboard menu."
 msgstr ""
 
-#: includes/customize/class-customize.php:1253
+#: includes/customize/class-customize.php:1267
 msgid "Enable mobile navigation"
 msgstr ""
 
-#: includes/customize/class-customize.php:1254
+#: includes/customize/class-customize.php:1268
 msgid ""
 "If your website navigation is very simple and you do not want to use the "
 "mobile navigation functionality, you can disable it here."
 msgstr ""
 
-#: includes/customize/class-customize.php:1261
+#: includes/customize/class-customize.php:1275
 msgid "Archive page title prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1264
+#: includes/customize/class-customize.php:1278
 msgid "Display \"Category:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1265
+#: includes/customize/class-customize.php:1279
 msgid "Display \"Tag:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1266
+#: includes/customize/class-customize.php:1280
 msgid "Display \"Author:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1267
+#: includes/customize/class-customize.php:1281
 msgid "Display \"Archives:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1268
+#: includes/customize/class-customize.php:1282
 msgid "Display \"Taxonomy:\" prefix"
 msgstr ""
 
-#: includes/customize/class-customize.php:1435
+#: includes/customize/class-customize.php:1449
 msgid ""
 "Please set your website credits text or the theme default one will be "
 "displayed."
@@ -567,31 +567,35 @@ msgid "Skip to footer"
 msgstr ""
 
 #: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:189
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:358
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:381
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
 #: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:190
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:360
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:383
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
 #: includes/frontend/class-loop.php:118 includes/frontend/class-loop.php:191
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:364
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:387
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
 #: includes/frontend/class-loop.php:119 includes/frontend/class-loop.php:192
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:366
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:389
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
+msgstr ""
+
+#: includes/frontend/class-loop.php:131
+msgid "Posts Navigation"
 msgstr ""
 
 #: includes/frontend/class-menu.php:121
@@ -1112,122 +1116,122 @@ msgstr ""
 msgid "After content only"
 msgstr ""
 
-#: includes/plugins/jetpack/class-jetpack.php:239
+#: includes/plugins/jetpack/class-jetpack.php:229
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:111
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:110
 msgid "Theme demo content"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:150
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
 msgid "Install required plugins!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:164
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:165
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:164
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:516
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:515
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:519
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:521
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:525
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:524
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:527
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:526
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:530
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:529
 msgid "Reload this page &raquo;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:432
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
 msgctxt "Customizer section title."
 msgid "Shop"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:438
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:440
 msgid "Cart and Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:444
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:446
 msgid "Display checkout guide"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:445
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:447
 msgid "Enables the checkout process steps visualization."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:232
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:250
 msgid "Shop Category"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:250
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:268
 msgid "Shop Now &rarr;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:331
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:354
 msgid "Products Navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:397
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:420
 msgid "List of products"
 msgstr ""
 
@@ -1667,46 +1671,50 @@ msgid "For easy post and page attributes setup."
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:139
-msgid "Adding e-commerce functionality."
+msgid "Adding portfolio and testimonials functionality."
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:146
+msgid "Adding e-commerce functionality."
+msgstr ""
+
+#: includes/tgmpa/class-tgmpa-plugins.php:153
 msgid ""
 "Adding custom sidebars management, allowing page layout modifications by "
 "removing sidebars."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:153
+#: includes/tgmpa/class-tgmpa-plugins.php:160
 msgid "For installing theme demo content easily."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:188
+#: includes/tgmpa/class-tgmpa-plugins.php:195
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:213
+#: includes/tgmpa/class-tgmpa-plugins.php:220
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:282
+#: includes/tgmpa/class-tgmpa-plugins.php:289
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:285
+#: includes/tgmpa/class-tgmpa-plugins.php:292
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:286
+#: includes/tgmpa/class-tgmpa-plugins.php:293
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:287
+#: includes/tgmpa/class-tgmpa-plugins.php:294
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:288
+#: includes/tgmpa/class-tgmpa-plugins.php:295
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1721,70 +1729,70 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-recent-posts.php:266
+#: includes/widgets/class-wp-widget-recent-posts.php:274
 msgid "Category slug or ID:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:347
+#: includes/widgets/class-wp-widget-text.php:288
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:353
+#: includes/widgets/class-wp-widget-text.php:294
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:354
+#: includes/widgets/class-wp-widget-text.php:295
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:355
+#: includes/widgets/class-wp-widget-text.php:296
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:359
+#: includes/widgets/class-wp-widget-text.php:300
 msgid ""
 "As your theme supports custom icons, you can simply use icon classes from "
 "Appearance &rarr; Icon Font."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:398
+#: includes/widgets/class-wp-widget-text.php:339
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:401
+#: includes/widgets/class-wp-widget-text.php:342
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:406
+#: includes/widgets/class-wp-widget-text.php:347
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:422
+#: includes/widgets/class-wp-widget-text.php:363
 msgid "Remove image"
 msgstr ""
 
-#: library/includes/classes/class-core.php:180
+#: library/includes/classes/class-core.php:177
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/includes/classes/class-core.php:218
+#: library/includes/classes/class-core.php:215
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: library/includes/classes/class-core.php:310
+#: library/includes/classes/class-core.php:307
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/includes/classes/class-core.php:530
+#: library/includes/classes/class-core.php:527
 msgid "Skip to main content"
 msgstr ""
 
@@ -2542,30 +2550,42 @@ msgstr ""
 #: templates/parts/admin/welcome-promo.php:29
 msgid ""
 "If you like this free WordPress theme, please, consider supporting its "
-"development by purchasing one of WebMan Design products."
+"development by purchasing one of my premium products."
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:33
+#: templates/parts/admin/welcome-promo.php:30
 msgid "Go to WebMan Design website &raquo;"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:38
+#: templates/parts/admin/welcome-promo.php:31
+msgid "Or perhaps you are considering a small donation?"
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:33
+msgid "\"Hey Oliver, have a gallon of coffee on me :)\""
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:37
 msgid "You can also rate it at its WordPress repository page."
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:40
+#: templates/parts/admin/welcome-promo.php:39
 msgid "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:45
+#: templates/parts/admin/welcome-promo.php:44
+msgid "Support theme development"
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:48
 msgid "Thank you!"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:52
+#: templates/parts/admin/welcome-promo.php:55
 msgid "Feel like stepping up?"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:58
+#: templates/parts/admin/welcome-promo.php:61
 #, php-format
 msgctxt "%s = linked theme name."
 msgid ""
@@ -2573,52 +2593,52 @@ msgid ""
 "with this additional functionality:"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:65
+#: templates/parts/admin/welcome-promo.php:68
 msgctxt "Theme feature."
 msgid "Portfolios, Staff, Testimonials management"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:66
+#: templates/parts/admin/welcome-promo.php:69
 msgctxt "Theme feature."
 msgid "Additional layouts and widget areas"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:67
+#: templates/parts/admin/welcome-promo.php:70
 msgctxt "Theme feature."
 msgid "Custom page builder elements"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:68
+#: templates/parts/admin/welcome-promo.php:71
 msgctxt "Theme feature."
 msgid "Sticky header functionality"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:69
+#: templates/parts/admin/welcome-promo.php:72
 msgctxt "Theme feature."
 msgid "Optimized stylesheet generator"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:70
+#: templates/parts/admin/welcome-promo.php:73
 msgctxt "Theme feature."
 msgid "Custom icons uploader"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:71
+#: templates/parts/admin/welcome-promo.php:74
 msgctxt "Theme feature."
 msgid "Additional blog styles"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:72
+#: templates/parts/admin/welcome-promo.php:75
 msgctxt "Theme feature."
 msgid "Child theme generator"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:73
+#: templates/parts/admin/welcome-promo.php:76
 msgctxt "Theme feature."
 msgid "And more&hellip;"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:80
+#: templates/parts/admin/welcome-promo.php:83
 #, php-format
 msgctxt "%s = theme name."
 msgid "Upgrade to %s theme"

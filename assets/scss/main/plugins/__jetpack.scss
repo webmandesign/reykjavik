@@ -44,6 +44,15 @@
 
 		}
 
+		.fl-builder &,
+		.content-layout-no-paddings & {
+			/* $content_width */
+			max-width: $content_width * $golden_major +px;
+			max-width: $content_width * $golden_major * $px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 	}
 
 
@@ -94,6 +103,10 @@
 			border-width: 1px;
 			border-style: solid;
 
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding: power( 1 + $golden_minor, 4 ) +em;
+			}
+
 			&::before {
 				opacity: .03;
 			}
@@ -108,7 +121,6 @@
 						float: $left; // {{RTL}}
 						width: 80px;
 						margin-#{$right}: $golden +em;
-						margin-bottom: $golden +em;
 					}
 
 				}
@@ -136,6 +148,15 @@
 
 				}
 
+			}
+
+			.fl-builder &,
+			.content-layout-no-paddings & {
+				/* $content_width */
+				max-width: $content_width * $golden_major +px;
+				max-width: $content_width * $golden_major * $px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 		}

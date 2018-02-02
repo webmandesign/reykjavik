@@ -55,7 +55,7 @@ class Reykjavik_WooCommerce_Setup {
 								'min_columns'     => 2,
 								'max_columns'     => 5,
 
-								'default_rows' => 3,
+								'default_rows' => 2,
 								'min_rows'     => 2,
 								'max_rows'     => 8,
 

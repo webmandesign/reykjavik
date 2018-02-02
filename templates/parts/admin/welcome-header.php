@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  */
 
 
@@ -24,7 +24,7 @@
 
 		printf(
 			esc_html_x( 'Welcome to %1$s %2$s', '1: theme name, 2: theme version number.', 'reykjavik' ),
-			'<strong>' . wp_get_theme( 'reykjavik' )->get( 'Name' ) . '</strong>',
+			'<strong>' . wp_get_theme( 'reykjavik' )->display( 'Name' ) . '</strong>',
 			'<small>' . REYKJAVIK_THEME_VERSION . '</small>'
 		);
 
@@ -36,7 +36,7 @@
 
 		printf(
 			esc_html_x( 'Thank you for using %1$s WordPress theme by %2$s!', '1: theme name, 2: theme developer link.', 'reykjavik' ),
-			'<strong>' . wp_get_theme( 'reykjavik' )->get( 'Name' ) . '</strong>',
+			'<strong>' . wp_get_theme( 'reykjavik' )->display( 'Name' ) . '</strong>',
 			'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'AuthorURI' ) ) . '"><strong>WebMan Design</strong></a>'
 		);
 

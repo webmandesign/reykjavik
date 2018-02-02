@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.5
  */
 
 
@@ -47,7 +47,7 @@
 
 				printf(
 					esc_html_x( 'Using %1$s %2$s theme.', '1: theme name, 2: linked "WordPress" word.', 'reykjavik' ),
-					'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( 'reykjavik' )->get( 'Name' ) . '</strong></a>',
+					'<a href="' . esc_url( wp_get_theme( 'reykjavik' )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( 'reykjavik' )->display( 'Name' ) . '</strong></a>',
 					'<a href="' . esc_url( __( 'https://wordpress.org/', 'reykjavik' ) ) . '">WordPress</a>'
 				);
 

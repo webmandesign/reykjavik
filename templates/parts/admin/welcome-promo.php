@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.1
+ * @version  1.0.5
  */
 
 
@@ -26,12 +26,11 @@
 			<h2><strong><?php esc_html_e( 'Do you like this theme?', 'reykjavik' ); ?></strong></h2>
 
 			<p>
-				<?php esc_html_e( 'If you like this free WordPress theme, please, consider supporting its development by purchasing one of WebMan Design products.', 'reykjavik' ); ?>
-			</p>
-			<p>
-				<a href="https://www.webmandesign.eu">
-					<?php esc_html_e( 'Go to WebMan Design website &raquo;', 'reykjavik' ); ?>
-				</a>
+				<?php esc_html_e( 'If you like this free WordPress theme, please, consider supporting its development by purchasing one of my premium products.', 'reykjavik' ); ?>
+				(<a href="https://www.webmandesign.eu" target="_blank"><?php esc_html_e( 'Go to WebMan Design website &raquo;', 'reykjavik' ); ?></a>)
+				<?php esc_html_e( 'Or perhaps you are considering a small donation?', 'reykjavik' ); ?>
+				&rarr;
+				<a href="https://www.paypal.me/webmandesign/20" target="_blank"><em><?php esc_html_e( '"Hey Oliver, have a gallon of coffee on me :)"', 'reykjavik' ); ?></em></a>
 			</p>
 
 			<p>
@@ -39,6 +38,10 @@
 				<a href="https://wordpress.org/support/theme/reykjavik/reviews/?filter=5">
 					<?php esc_html_e( "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)", 'reykjavik' ); ?>
 				</a>
+			</p>
+
+			<p>
+				<a href="https://www.paypal.me/webmandesign/20" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'modern' ); ?></a>
 			</p>
 
 			<p class="welcome-upgrade-thanks">

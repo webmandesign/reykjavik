@@ -405,23 +405,23 @@ ul.products-categories .product-category { margin-top: 0; margin-bottom: 2em; }
 
 @media only screen and (min-width: 80em) { ul.products .product { width: 30.57333%; } }
 
-@media only screen and (min-width: 42em) { .woocommerce.archive.has-widgets-sidebar ul.products .product { width: 44.48%; margin-left: 2.76%; margin-right: 2.76%; } }
+ul.products.columns-1 .product { width: 97.24%; }
 
-.columns-1 ul.products .product { width: 97.24%; }
+@media only screen and (min-width: 55em) { ul.products.columns-2 .product { width: 47.24%; } }
 
-@media only screen and (min-width: 55em) { .columns-2 ul.products .product { width: 47.24%; } }
+@media only screen and (min-width: 55em) { ul.products.columns-3 .product { width: 30.57333%; } }
 
-@media only screen and (min-width: 55em) { .columns-3 ul.products .product { width: 30.57333%; } }
+@media only screen and (min-width: 55em) { ul.products.columns-4 .product { width: 22.24%; } }
 
-@media only screen and (min-width: 55em) { .columns-4 ul.products .product { width: 22.24%; } }
+@media only screen and (min-width: 55em) { ul.products.columns-5 .product { width: 17.24%; } }
 
-@media only screen and (min-width: 55em) { .columns-5 ul.products .product { width: 17.24%; } }
+@media only screen and (min-width: 55em) { ul.products.columns-6 .product { width: 13.90667%; } }
 
-@media only screen and (min-width: 55em) { .columns-6 ul.products .product { width: 13.90667%; } }
+@media only screen and (min-width: 55em) and (max-width: 79.9375em) { ul.products.columns-4 .product { width: 30.57333%; } }
 
-@media only screen and (min-width: 55em) and (max-width: 79.9375em) { .columns-4 ul.products .product, .columns-5 ul.products .product, .columns-6 ul.products .product { width: 30.57333%; } }
+@media only screen and (min-width: 55em) and (max-width: 79.9375em) { ul.products.columns-5 .product { width: 30.57333%; } }
 
-@media only screen and (min-width: 80em) and (max-width: 99.9375em) { .columns-5 ul.products .product, .columns-6 ul.products .product { width: 22.24%; } }
+@media only screen and (min-width: 55em) and (max-width: 79.9375em) { ul.products.columns-6 .product { width: 30.57333%; } }
 
 .single-product .products-container { padding: 5rem 0; border-top-width: 1px; border-top-style: solid; }
 
