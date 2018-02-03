@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.0.7
  *
  * Contents:
  *
@@ -190,7 +190,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.0.7
 		 *
 		 * @param  array $options
 		 */
@@ -677,7 +677,7 @@ class Reykjavik_Customize {
 												'.site-footer mark, .site-footer .highlight, .site-footer .pagination .current, .site-footer .bypostauthor > .comment-body .comment-author::before, .site-footer .widget_calendar tbody a, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active' => array(
 													'color'
 												),
-												'.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer input[type="button"]:hover, .site-footer input[type="button"]:focus, .site-footer input[type="button"]:active, .site-footer input[type="reset"]:hover, .site-footer input[type="reset"]:focus, .site-footer input[type="reset"]:active, .site-footer input[type="submit"]:hover, .site-footer input[type="submit"]:focus, .site-footer input[type="submit"]:active' => array(
+												'.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer [type="button"]:hover, .site-footer [type="button"]:focus, .site-footer [type="button"]:active, .site-footer [type="reset"]:hover, .site-footer [type="reset"]:focus, .site-footer [type="reset"]:active, .site-footer [type="submit"]:hover, .site-footer [type="submit"]:focus, .site-footer [type="submit"]:active' => array(
 													'color'
 												),
 
@@ -720,7 +720,7 @@ class Reykjavik_Customize {
 												'.site-footer mark, .site-footer .highlight, .site-footer .pagination .current, .site-footer .bypostauthor > .comment-body .comment-author::before, .site-footer .widget_calendar tbody a, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active' => array(
 													'background-color'
 												),
-												'.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer input[type="button"]:hover, .site-footer input[type="button"]:focus, .site-footer input[type="button"]:active, .site-footer input[type="reset"]:hover, .site-footer input[type="reset"]:focus, .site-footer input[type="reset"]:active, .site-footer input[type="submit"]:hover, .site-footer input[type="submit"]:focus, .site-footer input[type="submit"]:active' => array(
+												'.site-footer .button:hover, .site-footer .button:focus, .site-footer .button:active, .site-footer button:hover, .site-footer button:focus, .site-footer button:active, .site-footer [type="button"]:hover, .site-footer [type="button"]:focus, .site-footer [type="button"]:active, .site-footer [type="reset"]:hover, .site-footer [type="reset"]:focus, .site-footer [type="reset"]:active, .site-footer [type="submit"]:hover, .site-footer [type="submit"]:focus, .site-footer [type="submit"]:active' => array(
 													'background-color'
 												),
 

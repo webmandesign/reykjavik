@@ -434,23 +434,23 @@ ul.products.columns-1 .product { width: 97.24%; }
 
 .cross-sells .thumbnail { float: right; max-width: 3.62674em; margin-left: 1em; }
 
-.cross-sells .products { margin: 0; }
+.cross-sells ul.products { margin: 0; }
 
-.cross-sells .products a { text-decoration: none; }
+.cross-sells ul.products a { text-decoration: none; }
 
-.cross-sells .products .product { width: 100%; padding: 1em; margin: 1em 0 0; border-color: inherit; }
+.cross-sells ul.products .product { width: 100%; padding: 1em; margin: 1em 0 0; border-color: inherit; }
 
-.cross-sells .products .product:first-child { margin-top: 0; }
+.cross-sells ul.products .product:first-child { margin-top: 0; }
 
-.cross-sells .products .product a:first-child { padding: 0; overflow: hidden; }
+.cross-sells ul.products .product a:first-child { padding: 0; overflow: hidden; }
 
-.cross-sells .products .product::before { display: none; }
+.cross-sells ul.products .product::before { display: none; }
 
-.cross-sells .products .product .description { padding: 0 0 1em 4.62674em; text-align: right; }
+.cross-sells ul.products .product .description { padding: 0 0 1em 4.62674em; text-align: right; }
 
-.cross-sells .products .product .star-rating { position: relative; left: auto; top: auto; margin: 0.38em 0; font-size: 0.81em; background-color: transparent; box-shadow: none; }
+.cross-sells ul.products .product .star-rating { position: relative; left: auto; top: auto; margin: 0.38em 0; font-size: 0.81em; background-color: transparent; box-shadow: none; }
 
-.cross-sells .products .product .button { margin-top: 0.62rem; padding: 0.38rem; }
+.cross-sells ul.products .product .button { margin-top: 0.62rem; padding: 0.38rem; }
 
 .cross-sells .onsale { display: none; }
 
@@ -812,7 +812,7 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .woocommerce-Reviews .comment-form .form-submit { clear: both; margin: 0; }
 
-.woocommerce-Reviews .comment-form input[type="submit"] { width: 100%; }
+.woocommerce-Reviews .comment-form [type="submit"] { width: 100%; }
 
 .commentlist { margin-right: 0; list-style: none; }
 

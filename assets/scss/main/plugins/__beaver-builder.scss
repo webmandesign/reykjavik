@@ -202,9 +202,9 @@
 					display: block;
 				}
 
-				input[type="submit"],
-				input[type="text"],
-				input[type="email"],
+				[type="submit"],
+				[type="text"],
+				[type="email"],
 				textarea {
 					width: 100%;
 				}

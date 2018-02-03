@@ -373,9 +373,9 @@
 		$button_elements: (
 			'.button',
 			'button',
-			'input[type="button"]',
-			'input[type="reset"]',
-			'input[type="submit"]',
+			'[type="button"]',
+			'[type="reset"]',
+			'[type="submit"]',
 			'.child-page .more-link'
 		);
 

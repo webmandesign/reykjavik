@@ -27,7 +27,7 @@ form[role="search"],
 			z-index: 1;
 		}
 
-		input[type="submit"],
+		[type="submit"],
 		.search-submit {
 
 			@include haf( ( '&', 'h', 'f', 'a' ) ) {
@@ -42,7 +42,7 @@ form[role="search"],
 
 	}
 
-	.site .fl-builder-content .fl-module & input[type="submit"] {
+	.site .fl-builder-content .fl-module & [type="submit"] {
 
 		@include haf( ( '&', 'h', 'f', 'a' ) ) {
 			@extend %form_search_submit_button;

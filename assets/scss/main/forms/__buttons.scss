@@ -77,9 +77,9 @@
 
 	.button,
 	button,
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"],
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
 	.main-navigation-container .button > a {
 		@extend %button_base;
 	}

@@ -1,5 +1,22 @@
 # Reykjavik Changelog
 
+## 1.0.7
+
+* **Fix**: Hiding WooCommerce 3.3 search form submit button
+* **Fix**: WooCommerce cart cross-sells layout
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/scss/custom-styles-editor.scss
+	assets/scss/custom-styles.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	includes/customize/class-customize.php
+	library/changelog.md
+
+
 ## 1.0.6
 
 * **Fix**: WooCommerce 3.3- backwards compatibility
