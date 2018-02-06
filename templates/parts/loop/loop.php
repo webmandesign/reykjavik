@@ -2,11 +2,13 @@
 /**
  * Default WordPress loop content
  *
+ * Jetpack Infinite Scroll requires `id="posts"`.
+ *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.0.8
  */
 
 
@@ -17,7 +19,7 @@ do_action( 'wmhook_reykjavik_postslist_before' );
 
 ?>
 
-<div class="posts posts-list">
+<div id="posts" class="posts posts-list">
 
 	<?php
 

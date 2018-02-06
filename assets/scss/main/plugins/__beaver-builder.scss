@@ -29,6 +29,12 @@
 
 	.fl-row {
 
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			overflow: hidden; // Required to prevent mobile device horizontal scroll
+		}
+
+
+
 		&-content {
 			@extend %max_width_1920;
 
@@ -82,6 +88,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			width: 100%; // This is overridden in BB layout CSS when needed
+			max-width: 100%; // Required to prevent mobile device horizontal scroll
 		}
 
 		&-content {

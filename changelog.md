@@ -1,5 +1,18 @@
 # Reykjavik Changelog
 
+## 1.0.8
+
+* **Fix**: Jetpack Infinite Scroll compatibility
+* **Fix**: Mobile devices horizontal scroll
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/scss/main.scss
+	templates/parts/loop/loop.php
+
+
 ## 1.0.7
 
 * **Fix**: Hiding WooCommerce 3.3 search form submit button

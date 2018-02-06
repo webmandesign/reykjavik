@@ -1052,7 +1052,7 @@ tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: abso
 
 .site .background-size-stretch > div { background-size: inherit; }
 
-.skip-link-list { position: absolute; left: 0; top: 0; padding: 0; margin: 0; list-style: none; }
+.skip-link-list { position: absolute; right: 0; top: 0; padding: 0; margin: 0; list-style: none; }
 
 .skip-link-list-item { list-style: inherit; white-space: nowrap; }
 
@@ -2178,6 +2178,8 @@ a .entry-date { cursor: pointer; }
 .content-layout-no-paddings .content-area { width: 100%; }
 
 /* FILE: main/plugins/__beaver-builder.scss */
+@media only screen and (max-width: 41.9375em) { .fl-row { overflow: hidden; } }
+
 .site .fl-row-full-height .fl-row-content { -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; }
 
 .fl-row-full-height.split-screen-row .fl-row-content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
@@ -2186,7 +2188,7 @@ a .entry-date { cursor: pointer; }
 
 .fl-col { max-width: 100%; }
 
-.fl-col-group { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; }
+.fl-col-group { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; max-width: 100%; }
 
 .fl-col-content { width: 100%; min-width: 1px; max-width: 100%; }
 
