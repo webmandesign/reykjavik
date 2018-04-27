@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.1.0
  *
  * Contents:
  *
@@ -185,6 +185,16 @@
 
 		if ( function_exists( 'bcn_display' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'breadcrumb-navxt/breadcrumb-navxt.php';
+		}
+
+	// Elementor
+
+		/**
+		 * @subpackage  Page Builder
+		 * @subpackage  Theme Builder
+		 */
+		if ( class_exists( '\Elementor\Plugin' ) ) {
+			require REYKJAVIK_PATH_PLUGINS . 'elementor/elementor.php';
 		}
 
 	// One Click Demo Import

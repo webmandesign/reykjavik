@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.1.0
  *
  * Contents:
  *
@@ -132,7 +132,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Disable intro on shop page.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.1.0
 		 *
 		 * @param  boolean $disable
 		 */
@@ -141,28 +141,29 @@ class Reykjavik_WooCommerce_Pages {
 			// Requirements check
 
 				if (
-						! is_shop()
-						&& ! is_product_taxonomy()
-					) {
+					! is_shop()
+					&& ! is_product_taxonomy()
+				) {
 					return $disable;
 				}
 
 
 			// Helper variables
 
-				$shop_page_id = wc_get_page_id( 'shop' );
-				$shop_page    = get_post( $shop_page_id );
+				$shop_page_id       = wc_get_page_id( 'shop' );
+				$shop_page          = get_post( $shop_page_id );
+				$shop_page_template = ( is_a( $shop_page, 'WP_Post' ) ) ? ( $shop_page->__get( 'page_template' ) ) : ( '' );
 
 
 			// Processing
 
 				if (
-						in_array( $shop_page->__get( 'page_template' ), array(
-							'templates/no-intro.php',
-							'templates/blank.php',
-						) )
-						|| get_post_meta( $shop_page_id, 'no_intro', true )
-					) {
+					in_array( $shop_page_template, array(
+						'templates/no-intro.php',
+						'templates/blank.php',
+					) )
+					|| get_post_meta( $shop_page_id, 'no_intro', true )
+				) {
 					$disable = true;
 				}
 

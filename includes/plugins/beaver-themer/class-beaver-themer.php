@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.1.0
  *
  * Contents:
  *
@@ -32,7 +32,7 @@ class Reykjavik_Beaver_Themer {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.1.0
 		 */
 		private function __construct() {
 
@@ -48,8 +48,9 @@ class Reykjavik_Beaver_Themer {
 
 					// Actions
 
-						add_action( 'wp', __CLASS__ . '::sidebar_disable' );
+						add_action( 'init', __CLASS__ . '::late_load', 900 );
 
+						add_action( 'wp', __CLASS__ . '::sidebar_disable' );
 						add_action( 'wp', __CLASS__ . '::headers_footers', 999 );
 
 					// Filters
@@ -88,6 +89,43 @@ class Reykjavik_Beaver_Themer {
 	/**
 	 * 10) Setup
 	 */
+
+		/**
+		 * Load plugin assets a bit later (see Beaver Builder compatibility)
+		 *
+		 * @since    1.1.0
+		 * @version  1.1.0
+		 */
+		public static function late_load() {
+
+			// Requirements check
+
+				if ( (bool) apply_filters( 'wmhook_reykjavik_beaver_builder_assets_late_load', false ) ) {
+					return;
+				}
+
+
+			// Helper variables
+
+				$priority  = 120;
+				$callbacks = array(
+					'FLThemeBuilderLayoutFrontendEdit::enqueue_scripts' => 11,
+				);
+
+				// Has to be enqueued after `{%= prefix_class %}_Beaver_Builder_Assets::late_load()` UI assets.
+				$order = 3;
+
+
+			// Processing
+
+				foreach ( $callbacks as $callback => $default_priority ) {
+					remove_action( 'wp_enqueue_scripts', $callback, $default_priority );
+					   add_action( 'wp_enqueue_scripts', $callback, $priority + $order++ );
+				}
+
+		} // /late_load
+
+
 
 		/**
 		 * Custom header and footer renderer

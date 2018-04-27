@@ -86,7 +86,7 @@ class Reykjavik_Post {
 
 						add_filter( 'wmhook_reykjavik_disable_header',            __CLASS__ . '::is_page_template_blank' );
 						add_filter( 'wmhook_reykjavik_disable_footer',            __CLASS__ . '::is_page_template_blank' );
-						add_filter( 'wmhook_reykjavik_title_primary_disable',        __CLASS__ . '::is_page_template_blank' );
+						add_filter( 'wmhook_reykjavik_title_primary_disable',     __CLASS__ . '::is_page_template_blank' );
 						add_filter( 'wmhook_reykjavik_breadcrumb_navxt_disabled', __CLASS__ . '::is_page_template_blank' );
 
 						add_filter( 'wmhook_reykjavik_title_primary_disable', __CLASS__ . '::page_builder_primary_title', 20 );

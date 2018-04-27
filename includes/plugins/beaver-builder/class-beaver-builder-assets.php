@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.1.0
  *
  * Contents:
  *
@@ -90,24 +90,35 @@ class Reykjavik_Beaver_Builder_Assets {
 		 * Load plugin stylesheets after the theme stylesheet
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.1.0
 		 */
 		public static function late_load() {
 
+			// Requirements check
+
+				if ( (bool) apply_filters( 'wmhook_reykjavik_beaver_builder_assets_late_load', false ) ) {
+					return;
+				}
+
+
+			// Helper variables
+
+				$priority  = 120;
+				$callbacks = array(
+					'FLBuilder::enqueue_all_layouts_styles_scripts'     => 10,
+					'FLBuilder::enqueue_ui_styles_scripts'              => 11,
+					'FLBuilderUISettingsForms::enqueue_settings_config' => 11,
+				);
+
+				$order = 0;
+
+
 			// Processing
 
-				// Layout stylesheets
-
-					remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_all_layouts_styles_scripts' );
-
-					add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_all_layouts_styles_scripts', 198 );
-
-				// UI stylesheets
-
-					remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts' );
-					remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts', 11 );
-
-					add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts', 198 );
+				foreach ( $callbacks as $callback => $default_priority ) {
+					remove_action( 'wp_enqueue_scripts', $callback, $default_priority );
+					   add_action( 'wp_enqueue_scripts', $callback, $priority + $order++ );
+				}
 
 		} // /late_load
 

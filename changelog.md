@@ -1,5 +1,28 @@
 # Reykjavik Changelog
 
+## 1.1.0
+
+* **Add**: Elementor Pro Theme Builder compatibility!
+* **Fix**: Compatibility with Beaver Builder 2.1+
+* **Fix**: Beaver Themer post preview selector not working
+* **Fix**: Back to top button accessibility
+* **Fix**: Customizer logo partial refresh
+* **Fix**: Preventing PHP error when WooCommerce shop page is not set
+
+### Files changed:
+
+	changelog.md
+	functions.php
+	style.css
+	assets/js/scripts-global.js
+	includes/customize/class-customize.php
+	includes/plugins/beaver-builder/class-beaver-builder-assets.php
+	includes/plugins/beaver-themer/class-beaver-themer.php
+	includes/plugins/elementor/class-elementor.php
+	includes/plugins/elementor/elementor.php
+	includes/plugins/woocommerce/class-woocommerce-pages.php
+
+
 ## 1.0.8
 
 * **Fix**: Jetpack Infinite Scroll compatibility

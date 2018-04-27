@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.7
+ * @version  1.1.0
  *
  * Contents:
  *
@@ -102,7 +102,7 @@ class Reykjavik_Customize {
 		 * Modify native WordPress options and setup partial refresh
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.1.0
 		 *
 		 * @param  object $wp_customize  WP customizer object.
 		 */
@@ -123,7 +123,7 @@ class Reykjavik_Customize {
 					// Site title
 
 						$wp_customize->selective_refresh->add_partial( 'blogname', array(
-							'selector'        => '.site-title-text',
+							'selector'        => '.site-title',
 							'render_callback' => __CLASS__ . '::partial_blogname',
 						) );
 
