@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.0
+ * @version  1.1.1
  *
  * Contents:
  *
@@ -93,34 +93,29 @@ class Reykjavik_Beaver_Themer {
 		/**
 		 * Load plugin assets a bit later (see Beaver Builder compatibility)
 		 *
-		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @since    1.1.1
+		 * @version  1.1.1
 		 */
 		public static function late_load() {
-
-			// Requirements check
-
-				if ( (bool) apply_filters( 'wmhook_reykjavik_beaver_builder_assets_late_load', false ) ) {
-					return;
-				}
-
 
 			// Helper variables
 
 				$priority  = 120;
-				$callbacks = array(
+				$callbacks = (array) apply_filters( 'wmhook_reykjavik_beaver_builder_assets_late_load_callbacks', array(
 					'FLThemeBuilderLayoutFrontendEdit::enqueue_scripts' => 11,
-				);
+				), 'themer' );
 
-				// Has to be enqueued after `{%= prefix_class %}_Beaver_Builder_Assets::late_load()` UI assets.
+				// Has to be enqueued after `Reykjavik_Beaver_Builder_Assets::late_load()` UI assets.
 				$order = 3;
 
 
 			// Processing
 
 				foreach ( $callbacks as $callback => $default_priority ) {
-					remove_action( 'wp_enqueue_scripts', $callback, $default_priority );
-					   add_action( 'wp_enqueue_scripts', $callback, $priority + $order++ );
+					if ( is_callable( $callback ) ) {
+						remove_action( 'wp_enqueue_scripts', $callback, $default_priority );
+						   add_action( 'wp_enqueue_scripts', $callback, $priority + $order++ );
+					}
 				}
 
 		} // /late_load

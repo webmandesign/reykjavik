@@ -1,5 +1,17 @@
 # Reykjavik Changelog
 
+## 1.1.1
+
+* **Fix**: Backwards compatibility with Beaver Builder pre-2.1
+
+### Files changed:
+
+	changelog.md
+	style.css
+	includes/plugins/beaver-builder/class-beaver-builder-assets.php
+	includes/plugins/beaver-themer/class-beaver-themer.php
+
+
 ## 1.1.0
 
 * **Add**: Elementor Pro Theme Builder compatibility!
