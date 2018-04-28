@@ -1,5 +1,10 @@
 # Reykjavik Changelog
 
+## 1.1.2
+
+* **Fix**: Just fixing the installer ZIP
+
+
 ## 1.1.1
 
 * **Fix**: Backwards compatibility with Beaver Builder pre-2.1
