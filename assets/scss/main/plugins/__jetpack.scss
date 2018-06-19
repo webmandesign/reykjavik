@@ -148,6 +148,11 @@
 
 				}
 
+				&-link {
+					display: block;
+					margin-top: 1em;
+				}
+
 			}
 
 			.fl-builder &,
@@ -262,10 +267,12 @@
 
 	// Testimonials
 
+		$gutter: 3.62em;
+
 		.testimonial-entry {
 
 			.entry-content & {
-				margin: 1em;
+				margin: $gutter / 2;
 
 				.testimonial-featured-image {
 					display: inline-block;
@@ -276,6 +283,11 @@
 			}
 
 			&-title {
+
+				a {
+					display: inline-block;
+					vertical-align: top;
+				}
 
 				.entry-subtitle {
 					margin: 0;
@@ -291,24 +303,24 @@
 			flex-wrap: wrap;
 
 			.entry-content & {
-				margin: -1em;
+				margin: -$gutter / 2;
 			}
 
 			.testimonial-entry {
 				$columns: 1; // Default layout on small devices.
-				width: calc( #{ percentage( 1 / $columns ) } - 2em );
+				width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 			}
 
 			@include responsive( map_get( $breakpoint, 'm' ) ) {
 
 				.testimonial-entry {
 					$columns: 2; // Default layout on medium devices.
-					width: calc( #{ percentage( 1 / $columns ) } - 2em );
+					width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 				}
 
 				.testimonial-entry-column-1 {
 					$columns: 1;
-					width: calc( #{ percentage( 1 / $columns ) } - 2em );
+					width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 				}
 
 			}
@@ -318,7 +330,7 @@
 				@for $columns from 3 through 6 {
 
 					.testimonial-entry-column-#{ $columns } {
-						width: calc( #{ percentage( 1 / $columns ) } - 2em );
+						width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 					}
 
 				}

@@ -41,6 +41,7 @@
 
 			.label {
 				font-weight: 700;
+				white-space: nowrap;
 			}
 
 			select {
@@ -76,7 +77,6 @@
 
 			.price {
 				display: block;
-				margin-bottom: 1em;
 			}
 
 		}

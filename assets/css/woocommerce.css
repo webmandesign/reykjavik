@@ -212,7 +212,7 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 .variation dd { float: left; margin-left: 0.38em; }
 
-.single-product .summary .variations .label { font-weight: 700; }
+.single-product .summary .variations .label { font-weight: 700; white-space: nowrap; }
 
 .single-product .summary .variations select { float: right; width: auto; padding-right: 1.62em; padding-top: 0; padding-bottom: 0; background-color: transparent; background-origin: padding-box; border-width: 0; border-bottom-width: 2px; border-bottom-style: solid; border-color: currentColor; cursor: pointer; }
 
@@ -220,7 +220,7 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 .single-product .summary .variations_button .button:first-child { width: 100%; }
 
-.single-product .summary .single_variation .price { display: block; margin-bottom: 1em; }
+.single-product .summary .single_variation .price { display: block; }
 
 .single-product .summary .reset_variations { float: right; margin-top: 0.38em; margin-right: 0.62em; text-decoration: none; font-size: 0.81em; }
 
@@ -373,6 +373,8 @@ ul.products .product .button, ul.products .product .added_to_cart { position: re
 
 ul.products .product .button::before, ul.products .product .added_to_cart::before { content: '\f447'; display: inline-block; margin-right: 0.38em; line-height: 0.62; font-size: 1.38em; vertical-align: middle; }
 
+ul.products .product.outofstock .button::before, ul.products .product.outofstock .added_to_cart::before { display: none; }
+
 ul.products .product .button + .button { margin-top: 1em; }
 
 ul.products .product .button.loading::before { content: '\f420'; -webkit-animation-name: rotate; animation-name: rotate; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-timing-function: linear; animation-timing-function: linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
@@ -495,7 +497,7 @@ ul.products.columns-1 .product { width: 97.24%; }
 
 .single-product .summary .product-description-link-container { margin-top: -1em; text-align: right; }
 
-.single-product .summary .price { font-size: 1.62em; }
+.single-product .summary .price { margin-bottom: 1.62rem; font-size: 1.62em; }
 
 .single-product .summary .stock { display: inline-block; padding: 0.38em 0.62em; font-size: 0.81em; border-width: 1px; border-style: solid; }
 
@@ -905,7 +907,7 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .shipping-calculator-button { font-weight: 700; text-transform: uppercase; border: 2px solid; color: inherit; }
 
-.shipping-calculator-form { padding: 1em 1.62em; }
+.shipping-calculator-form { padding: 1em; }
 
 .cart-empty { margin-bottom: 1em; font-weight: 700; }
 
@@ -978,9 +980,13 @@ html .content-layout-stretched .woocommerce-tabs .woocommerce-Tabs-panel--descri
 
 .wc_payment_methods .payment_box { padding: 1em 1.62em; }
 
+.woocommerce-privacy-policy-text { margin: 1.62em 0; }
+
 .wc-terms-and-conditions { margin-top: 1.62em; text-align: center; }
 
-.woocommerce-terms-and-conditions { padding: 1.62em; margin: 1.62em 0; font-size: 0.905em; border-width: 1px; border-style: dashed; }
+.woocommerce-terms-and-conditions { padding: 1.62em; margin-bottom: 1.62em; font-size: 0.905em; border-width: 1px; border-style: dashed; }
+
+.woocommerce-terms-and-conditions-wrapper { margin-top: 1.62em; }
 
 .woocommerce-terms-and-conditions h2, .woocommerce-terms-and-conditions .h2 { font-size: 1.38em; }
 

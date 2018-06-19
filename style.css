@@ -3,7 +3,7 @@ Theme Name:   Reykjavik
 Theme URI:    https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
 Author:       WebMan Design
 Author URI:   https://www.webmandesign.eu/
-Version:      1.1.2
+Version:      1.2.0
 Text Domain:  reykjavik
 Domain Path:  /languages
 License:      GNU General Public License v3
@@ -35,24 +35,3 @@ field (https://codex.wordpress.org/CSS#Custom_CSS_in_WordPress) or a child theme
 
 If you place your custom CSS here, it will be lost once you update the theme!
 */
-
-
-
-
-
-/*!
-The CSS below is added to comply with WordPress theme checker.
-The actual CSS styles are placed in the `assets/css/*.css` files.
-
-@link  https://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
-*/
-
-.sticky,
-.bypostauthor,
-.alignleft,
-.alignright,
-.aligncenter,
-.wp-caption,
-.wp-caption-text,
-.gallery-caption,
-.screen-reader-text {}

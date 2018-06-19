@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.6
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_WooCommerce_Loop {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.2.0
 		 */
 		private function __construct() {
 
@@ -92,6 +92,8 @@ class Reykjavik_WooCommerce_Loop {
 						add_filter( 'the_title', __CLASS__ . '::search_results_product_title', 10, 2 );
 
 						add_filter( 'wmhook_reykjavik_post_media_image_size', __CLASS__ . '::product_media_size', 15 );
+
+						add_filter( 'wmhook_reykjavik_is_masonry_layout', __CLASS__ . '::is_masonry' );
 
 		} // /__construct
 
@@ -482,6 +484,34 @@ class Reykjavik_WooCommerce_Loop {
 				return $title . ' <span class="price">' . $product->get_price_html() . '</span>';
 
 		} // /search_results_product_title
+
+
+
+		/**
+		 * When to use masonry posts layout?
+		 *
+		 * @since    1.2.0
+		 * @version  1.2.0
+		 *
+		 * @param  boolean $is_masonry
+		 */
+		public static function is_masonry( $is_masonry ) {
+
+			// Processing
+
+				if (
+					( is_shop() || is_product_taxonomy() )
+					&& 'uncropped' === get_option( 'woocommerce_thumbnail_cropping' )
+				) {
+					$is_masonry = true;
+				}
+
+
+			// Output
+
+				return $is_masonry;
+
+		} // /is_masonry
 
 
 

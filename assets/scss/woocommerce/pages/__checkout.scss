@@ -228,7 +228,11 @@
 
 
 
-	// Terms and conditions
+	// Privacy, terms and conditions
+
+		.woocommerce-privacy-policy-text {
+			margin: ( $golden +em ) 0;
+		}
 
 		.wc-terms-and-conditions {
 			margin-top: $golden +em;
@@ -237,10 +241,14 @@
 
 		.woocommerce-terms-and-conditions {
 			padding: $golden +em;
-			margin: ( $golden +em ) 0;
+			margin-bottom: $golden +em;
 			font-size: 1em - $golden_minor / 4;
 			border-width: 1px;
 			border-style: dashed;
+
+			&-wrapper {
+				margin-top: $golden +em;
+			}
 
 			h2, .h2 {
 				font-size: $golden_minor + 1em;

@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.0.5
+	 * @version  1.2.0
 	 *
 	 * Contents:
 	 *
@@ -67,7 +67,7 @@
 			 * Constructor
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 */
 			public function __construct() {
 
@@ -79,11 +79,9 @@
 
 						// Actions
 
-							add_action( 'admin_print_scripts-widgets.php', array( $this, 'enqueue' ) );
+							add_action( 'admin_print_scripts-widgets.php', __CLASS__ . '::enqueue' );
 
-							add_action( 'wp_enqueue_scripts', array( $this, 'assets_beaver_builder' ) );
-
-							add_action( 'wp_head', array( $this, 'style_icon_fallback' ), 5 );
+							add_action( 'wp_head', __CLASS__ . '::style_icon_fallback', 5 );
 
 			} // /__construct
 
@@ -150,7 +148,7 @@
 			 * Get output HTML of widget media: Image
 			 *
 			 * @since    1.0.4
-			 * @version  1.0.4
+			 * @version  1.2.0
 			 *
 			 * @param  array $widget_media  Media setup array.
 			 */
@@ -178,7 +176,10 @@
 					if ( is_numeric( $widget_media['image'] ) ) {
 						$output .= wp_get_attachment_image( absint( $widget_media['image'] ), 'medium' );
 					} else {
-						$output .= '<img src="' . esc_url( $widget_media['image'] ) . '" alt="" />';
+						$output .= '<img
+							src="' . esc_url( $widget_media['image'] ) . '"
+							alt="' . esc_attr__( 'Widget featured image', 'reykjavik' ) . '"
+							/>';
 					}
 
 					$output .= '</div>';
@@ -242,7 +243,7 @@
 			 * Outputs the settings form
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -255,6 +256,10 @@
 
 				// Output
 
+					/**
+					 * Warning:
+					 * Do not use static method call here (self::X), keep using $this->X!
+					 */
 					$this->field_icon( $instance );
 					$this->field_image( $instance );
 
@@ -265,8 +270,11 @@
 			/**
 			 * Option field: Icon
 			 *
+			 * Warning:
+			 * Do not feel tempted to make this a static method!
+			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -284,7 +292,7 @@
 					?>
 
 					<p class="text-widget-media-icon">
-						<label for="<?php echo $this->get_field_id( 'icon' ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'icon' ) ); ?>">
 							<strong><?php esc_html_e( 'Set icon CSS class:', 'reykjavik' ); ?></strong><br>
 							<span class="description" style="display: inline-block; padding: 0 0 .38em">
 								<em>
@@ -304,7 +312,7 @@
 								</em>
 							</span>
 						</label>
-						<input type="text" class="widefat text-widget-media-icon-class" id="<?php echo $this->get_field_id( 'icon' ); ?>" name="<?php echo $this->get_field_name( 'icon' ); ?>" value="<?php echo esc_attr( $instance['icon'] ); ?>" />
+						<input type="text" class="widefat text-widget-media-icon-class" id="<?php echo esc_attr( $this->get_field_id( 'icon' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'icon' ) ); ?>" value="<?php echo esc_attr( $instance['icon'] ); ?>" />
 					</p>
 
 					<?php
@@ -316,8 +324,11 @@
 			/**
 			 * Option field: Image
 			 *
+			 * Warning:
+			 * Do not feel tempted to make this a static method!
+			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -335,7 +346,7 @@
 					?>
 
 					<p class="text-widget-media-image">
-						<label for="<?php echo $this->get_field_id( 'image' ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>">
 							<strong><?php esc_html_e( 'Set image:', 'reykjavik' ); ?></strong><br>
 							<span class="description" style="display: inline-block; padding: 0 0 .38em">
 								<em>
@@ -345,7 +356,7 @@
 						</label>
 						<br>
 						<button class="button button-hero text-widget-media-image-select"><?php esc_html_e( 'Select image', 'reykjavik' ); ?></button>
-						<input type="hidden" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" value="<?php echo esc_attr( $instance['image'] ); ?>" />
+						<input type="hidden" id="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'image' ) ); ?>" value="<?php echo esc_attr( $instance['image'] ); ?>" />
 						<span class="text-widget-media-image-preview"<?php if ( empty( $instance['image'] ) ) { echo ' style="display: none;"'; } ?>>
 							<img src="<?php
 
@@ -358,7 +369,7 @@
 									echo esc_url( $instance['image'] );
 								}
 
-								?>" alt="" />
+								?>" alt="<?php esc_attr_e( 'Widget featured image', 'reykjavik' ); ?>" />
 							<button class="button text-widget-media-image-remove">
 								<span class="screen-reader-text"><?php esc_html_e( 'Remove image', 'reykjavik' ); ?></span>
 							</button>
@@ -419,9 +430,9 @@
 			 * Enqueue assets
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.5
+			 * @version  1.2.0
 			 */
-			public function enqueue() {
+			public static function enqueue() {
 
 				// Processing
 
@@ -450,29 +461,6 @@
 
 
 
-			/**
-			 * Loading assets in Beaver Builder
-			 *
-			 * @since    1.0.0
-			 * @version  1.0.0
-			 */
-			public function assets_beaver_builder() {
-
-				// Requirements check
-
-					if ( ! is_callable( 'FLBuilderModel::is_builder_active' ) || ! FLBuilderModel::is_builder_active() ) {
-						return;
-					}
-
-
-				// Processing
-
-					$this->enqueue();
-
-			} // /assets_beaver_builder
-
-
-
 
 
 		/**
@@ -489,9 +477,9 @@
 			 * stylesheet is enqueued (with any plugin)!
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.4
+			 * @version  1.2.0
 			 */
-			public function style_icon_fallback() {
+			public static function style_icon_fallback() {
 
 				// Output
 

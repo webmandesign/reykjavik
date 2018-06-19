@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.0.5
+	 * @version  1.2.0
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.5
+			 * @version  1.2.0
 			 */
 			public function widget( $args, $instance ) {
 
@@ -156,7 +156,7 @@
 
 							if ( $instance['show_date'] ) {
 								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '" rel="bookmark">';
-								$output .= '<time datetime="' . esc_attr( get_the_date( 'c', $recent_post_id ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date( '', $recent_post_id ) ) . ' | ' . esc_attr( get_the_time( '', $recent_post_id ) ) . '">';
+								$output .= '<time datetime="' . esc_attr( get_the_date( DATE_W3C, $recent_post_id ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date( '', $recent_post_id ) ) . ' | ' . esc_attr( get_the_time( '', $recent_post_id ) ) . '">';
 								$output .= '<span class="day">' . esc_html( get_the_date( 'd', $recent_post_id ) ) . '</span> ';
 								$output .= '<span class="month">' . esc_html( get_the_date( 'M', $recent_post_id ) ) . '</span> ';
 								$output .= '</time>';
@@ -229,7 +229,7 @@
 			 * Outputs the settings form
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -242,6 +242,10 @@
 
 				// Output
 
+					/**
+					 * Warning:
+					 * Do not use static method call here (self::X), keep using $this->X!
+					 */
 					$this->field_category( $instance );
 
 			} // /form
@@ -251,8 +255,11 @@
 			/**
 			 * Option field: Category
 			 *
+			 * Warning:
+			 * Do not feel tempted to make this a static method!
+			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -270,10 +277,10 @@
 					?>
 
 					<p>
-						<label for="<?php echo $this->get_field_id( 'category' ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>">
 							<?php esc_html_e( 'Category slug or ID:', 'reykjavik' ); ?>
 						</label>
-						<input type="text" size="32" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" value="<?php echo esc_attr( $instance['category'] ); ?>" />
+						<input type="text" size="32" id="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>" value="<?php echo esc_attr( $instance['category'] ); ?>" />
 					</p>
 
 					<?php

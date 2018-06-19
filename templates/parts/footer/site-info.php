@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.2.0
  */
 
 
@@ -15,7 +15,7 @@
 
 // Helper variables
 
-	$site_info_text = trim( get_theme_mod( 'texts_site_info' ) );
+	$site_info_text = trim( (string) get_theme_mod( 'texts_site_info' ) );
 
 
 // Requirements check
@@ -51,6 +51,10 @@
 					'<a href="' . esc_url( __( 'https://wordpress.org/', 'reykjavik' ) ) . '">WordPress</a>'
 				);
 
+				if ( function_exists( 'the_privacy_policy_link' ) ) {
+					the_privacy_policy_link( '<span class="sep"> | </span>' );
+				}
+
 				?>
 				<span class="sep"> | </span>
 				<a href="#top" id="back-to-top" class="back-to-top"><?php esc_html_e( 'Back to top &uarr;', 'reykjavik' ); ?></a>
@@ -58,7 +62,7 @@
 			<?php else :
 
 				// No need to apply wp_kses_post() on output as it is already validated via Customizer.
-				echo $site_info_text;
+				echo $site_info_text; /* WPCS: xss ok. */
 
 			endif; ?>
 		</div>

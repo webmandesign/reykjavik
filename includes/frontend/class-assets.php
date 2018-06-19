@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -167,7 +167,7 @@ class Reykjavik_Assets {
 		 * Registering theme scripts
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 */
 		public static function register_scripts() {
 
@@ -179,6 +179,7 @@ class Reykjavik_Assets {
 					'jquery-fitvids'                => array( get_theme_file_uri( 'assets/js/vendors/fitvids/jquery.fitvids.js' ) ),
 					'reykjavik-skip-link-focus-fix' => array( 'src' => get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), 'deps' => array() ),
 					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => $script_global_deps ),
+					'reykjavik-scripts-masonry'     => array( 'src' => get_theme_file_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry' ) ),
 					'reykjavik-scripts-nav-a11y'    => array( get_theme_file_uri( 'assets/js/scripts-navigation-accessibility.js' ) ),
 					'reykjavik-scripts-nav-mobile'  => array( get_theme_file_uri( 'assets/js/scripts-navigation-mobile.js' ) ),
 				);
@@ -279,7 +280,7 @@ class Reykjavik_Assets {
 		 * Frontend scripts enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 */
 		public static function enqueue_scripts() {
 
@@ -312,6 +313,12 @@ class Reykjavik_Assets {
 						if ( get_theme_mod( 'navigation_mobile', true ) ) {
 							$enqueue_assets[25] = 'reykjavik-scripts-nav-mobile';
 						}
+					}
+
+				// Masonry
+
+					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {
+						$enqueue_assets[30] = 'reykjavik-scripts-masonry';
 					}
 
 				// Global theme scripts

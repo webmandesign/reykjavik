@@ -97,6 +97,11 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 					line-height: $golden_major;
 					font-size: 1em + $golden_minor;
 					vertical-align: middle;
+
+					@include in( '.product.outofstock' ) {
+						display: none;
+					}
+
 				}
 
 			}

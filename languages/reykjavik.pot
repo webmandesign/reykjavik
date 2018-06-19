@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-02-02 11:19+0100\n"
+"POT-Creation-Date: 2018-06-19 23:18+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -567,28 +567,28 @@ msgid "Skip to footer"
 msgstr ""
 
 #: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:189
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:381
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:390
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
 #: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:190
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:383
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:392
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
 #: includes/frontend/class-loop.php:118 includes/frontend/class-loop.php:191
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:387
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:396
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
 #: includes/frontend/class-loop.php:119 includes/frontend/class-loop.php:192
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:389
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:398
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
@@ -871,227 +871,227 @@ msgstr ""
 msgid "Font size, extra large"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:147
+#: includes/plugins/beaver-themer/class-beaver-themer.php:180
 msgctxt "Website hooks category name."
 msgid "Page"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:149
+#: includes/plugins/beaver-themer/class-beaver-themer.php:182
 msgctxt "Website hook name."
 msgid "Page Open"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:150
+#: includes/plugins/beaver-themer/class-beaver-themer.php:183
 msgctxt "Website hook name."
 msgid "Page Close"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:155
+#: includes/plugins/beaver-themer/class-beaver-themer.php:188
 msgctxt "Website hooks category name."
 msgid "Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:157
+#: includes/plugins/beaver-themer/class-beaver-themer.php:190
 msgctxt "Website hook name."
 msgid "Before Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:158
+#: includes/plugins/beaver-themer/class-beaver-themer.php:191
 msgctxt "Website hook name."
 msgid "Header Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:159
+#: includes/plugins/beaver-themer/class-beaver-themer.php:192
 msgctxt "Website hook name."
 msgid "Header Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:160
+#: includes/plugins/beaver-themer/class-beaver-themer.php:193
 msgctxt "Website hook name."
 msgid "After Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:165
+#: includes/plugins/beaver-themer/class-beaver-themer.php:198
 msgctxt "Website hooks category name."
 msgid "Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:167
+#: includes/plugins/beaver-themer/class-beaver-themer.php:200
 msgctxt "Website hook name."
 msgid "Before Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:168
+#: includes/plugins/beaver-themer/class-beaver-themer.php:201
 msgctxt "Website hook name."
 msgid "Intro Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:169
+#: includes/plugins/beaver-themer/class-beaver-themer.php:202
 msgctxt "Website hook name."
 msgid "After Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:174
+#: includes/plugins/beaver-themer/class-beaver-themer.php:207
 msgctxt "Website hooks category name."
 msgid "Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:176
+#: includes/plugins/beaver-themer/class-beaver-themer.php:209
 msgctxt "Website hook name."
 msgid "Before Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:177
+#: includes/plugins/beaver-themer/class-beaver-themer.php:210
 msgctxt "Website hook name."
 msgid "Content Area Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:178
+#: includes/plugins/beaver-themer/class-beaver-themer.php:211
 msgctxt "Website hook name."
 msgid "Content Area Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:179
+#: includes/plugins/beaver-themer/class-beaver-themer.php:212
 msgctxt "Website hook name."
 msgid "After Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:184
+#: includes/plugins/beaver-themer/class-beaver-themer.php:217
 msgctxt "Website hooks category name."
 msgid "Post Entry"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:186
+#: includes/plugins/beaver-themer/class-beaver-themer.php:219
 msgctxt "Website hook name."
 msgid "Before Post"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:187
+#: includes/plugins/beaver-themer/class-beaver-themer.php:220
 msgctxt "Website hook name."
 msgid "Post Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:188
+#: includes/plugins/beaver-themer/class-beaver-themer.php:221
 msgctxt "Website hook name."
 msgid "Before Post Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:189
+#: includes/plugins/beaver-themer/class-beaver-themer.php:222
 msgctxt "Website hook name."
 msgid "After Post Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:190
+#: includes/plugins/beaver-themer/class-beaver-themer.php:223
 msgctxt "Website hook name."
 msgid "Post Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:191
+#: includes/plugins/beaver-themer/class-beaver-themer.php:224
 msgctxt "Website hook name."
 msgid "After Post"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:196
+#: includes/plugins/beaver-themer/class-beaver-themer.php:229
 msgctxt "Website hooks category name."
 msgid "Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:198
+#: includes/plugins/beaver-themer/class-beaver-themer.php:231
 msgctxt "Website hook name."
 msgid "Before Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:199
+#: includes/plugins/beaver-themer/class-beaver-themer.php:232
 msgctxt "Website hook name."
 msgid "After Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:204
+#: includes/plugins/beaver-themer/class-beaver-themer.php:237
 msgctxt "Website hooks category name."
 msgid "Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:206
+#: includes/plugins/beaver-themer/class-beaver-themer.php:239
 msgctxt "Website hook name."
 msgid "Before Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:207
+#: includes/plugins/beaver-themer/class-beaver-themer.php:240
 msgctxt "Website hook name."
 msgid "After Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:212
+#: includes/plugins/beaver-themer/class-beaver-themer.php:245
 msgctxt "Website hooks category name."
 msgid "Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:214
+#: includes/plugins/beaver-themer/class-beaver-themer.php:247
 msgctxt "Website hook name."
 msgid "Before Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:215
+#: includes/plugins/beaver-themer/class-beaver-themer.php:248
 msgctxt "Website hook name."
 msgid "After Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:220
+#: includes/plugins/beaver-themer/class-beaver-themer.php:253
 msgctxt "Website hooks category name."
 msgid "Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:222
+#: includes/plugins/beaver-themer/class-beaver-themer.php:255
 msgctxt "Website hook name."
 msgid "Before Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:223
+#: includes/plugins/beaver-themer/class-beaver-themer.php:256
 msgctxt "Website hook name."
 msgid "Sidebar Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:224
+#: includes/plugins/beaver-themer/class-beaver-themer.php:257
 msgctxt "Website hook name."
 msgid "Sidebar Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:225
+#: includes/plugins/beaver-themer/class-beaver-themer.php:258
 msgctxt "Website hook name."
 msgid "After Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:230
+#: includes/plugins/beaver-themer/class-beaver-themer.php:263
 msgctxt "Website hooks category name."
 msgid "Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:232
+#: includes/plugins/beaver-themer/class-beaver-themer.php:265
 msgctxt "Website hook name."
 msgid "Before Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:233
+#: includes/plugins/beaver-themer/class-beaver-themer.php:266
 msgctxt "Website hook name."
 msgid "Footer Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:234
+#: includes/plugins/beaver-themer/class-beaver-themer.php:267
 msgctxt "Website hook name."
 msgid "Footer Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:235
+#: includes/plugins/beaver-themer/class-beaver-themer.php:268
 msgctxt "Website hook name."
 msgid "After Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:237
+#: includes/plugins/beaver-themer/class-beaver-themer.php:270
 msgctxt "Website hook name."
 msgid "Before Site Info"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:238
+#: includes/plugins/beaver-themer/class-beaver-themer.php:271
 msgctxt "Website hook name."
 msgid "After Site Info"
 msgstr ""
@@ -1219,40 +1219,40 @@ msgstr ""
 msgid "Enables the checkout process steps visualization."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:250
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:252
 msgid "Shop Category"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:268
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:270
 msgid "Shop Now &rarr;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:354
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:363
 msgid "Products Navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-loop.php:420
+#: includes/plugins/woocommerce/class-woocommerce-loop.php:429
 msgid "List of products"
 msgstr ""
 
 #. translators: %s: search query.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:276 search.php:32
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:277 search.php:32
 #: templates/parts/intro/intro-content.php:86
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: Custom page template name.
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:458
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:459
 #: templates/no-intro.php:19
 msgid "No intro"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:488
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:489
 msgid "Cart content"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:491
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:492
 #, php-format
 msgctxt "Shopping cart items count."
 msgid "(%d item)"
@@ -1260,28 +1260,28 @@ msgid_plural "(%d items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:511
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:512
 msgid "Use your discount coupon code here"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:615
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:616
 msgid "Continue Shopping"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:637
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:838
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:638
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:839
 msgid "Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:830
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:831
 msgid "Shopping Cart"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:846
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:847
 msgid "Order Completed"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-pages.php:855
+#: includes/plugins/woocommerce/class-woocommerce-pages.php:856
 msgid "Pay for Order"
 msgstr ""
 
@@ -1729,49 +1729,54 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-recent-posts.php:274
+#: includes/widgets/class-wp-widget-recent-posts.php:281
 msgid "Category slug or ID:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:288
+#: includes/widgets/class-wp-widget-text.php:181
+#: includes/widgets/class-wp-widget-text.php:372
+msgid "Widget featured image"
+msgstr ""
+
+#: includes/widgets/class-wp-widget-text.php:296
 msgid "Set icon CSS class:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:294
+#: includes/widgets/class-wp-widget-text.php:302
 #, php-format
 msgid ""
 "For displaying icons on your website use a plugin, such as %1$s or %2$s."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:295
+#: includes/widgets/class-wp-widget-text.php:303
 msgctxt "Plugin name."
 msgid "Better Font Awesome"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:296
+#: includes/widgets/class-wp-widget-text.php:304
 msgctxt "Plugin name."
 msgid "Ionicons Official"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:300
+#: includes/widgets/class-wp-widget-text.php:308
 msgid ""
 "As your theme supports custom icons, you can simply use icon classes from "
 "Appearance &rarr; Icon Font."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:339
+#: includes/widgets/class-wp-widget-text.php:350
 msgid "Set image:"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:342
+#: includes/widgets/class-wp-widget-text.php:353
 msgid "Choose a featured image for this widget."
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:347
+#: includes/widgets/class-wp-widget-text.php:358
 msgid "Select image"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-text.php:363
+#: includes/widgets/class-wp-widget-text.php:374
 msgid "Remove image"
 msgstr ""
 
@@ -2793,7 +2798,7 @@ msgstr ""
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: templates/parts/footer/site-info.php:56
+#: templates/parts/footer/site-info.php:60
 #: templates/parts/menu/menu-social.php:34
 msgid "Back to top &uarr;"
 msgstr ""

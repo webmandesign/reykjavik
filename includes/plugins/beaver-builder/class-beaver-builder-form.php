@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -32,7 +32,7 @@ class Reykjavik_Beaver_Builder_Form {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 */
 		private function __construct() {
 
@@ -44,7 +44,7 @@ class Reykjavik_Beaver_Builder_Form {
 
 						add_filter( 'fl_builder_register_settings_form', __CLASS__ . '::register_settings_form', 10, 2 );
 
-						add_filter( 'fl_builder_render_settings_field', __CLASS__ . '::predefined_classes_dropdown', 10, 2 );
+						add_filter( 'fl_builder_field_js_config', __CLASS__ . '::predefined_classes_dropdown', 10, 2 );
 
 		} // /__construct
 

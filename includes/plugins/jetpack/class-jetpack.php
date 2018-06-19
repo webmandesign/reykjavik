@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -278,26 +278,70 @@ class Reykjavik_Jetpack {
 		 * Display author bio
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 */
 		public static function author_bio() {
 
 			// Requirements check
 
 				if (
-						! function_exists( 'jetpack_author_bio' )
-						|| ! Reykjavik_Post::is_singular()
-						|| ! in_array( get_post_type(), (array) apply_filters( 'wmhook_{%= prefix_hook %}_jetpack_author_bio_post_type', array( 'post' ) ) )
-					) {
+					! function_exists( 'jetpack_author_bio' )
+					|| ! Reykjavik_Post::is_singular()
+					|| post_password_required()
+					|| ! in_array( get_post_type(), (array) apply_filters( 'wmhook_reykjavik_jetpack_author_bio_post_type', array( 'post' ) ) )
+				) {
 					return;
 				}
 
 
 			// Output
 
-				jetpack_author_bio();
+				echo self::get_author_bio();
 
 		} // /author_bio
+
+
+
+		/**
+		 * Get author bio HTML
+		 *
+		 * @since    1.2.0
+		 * @version  1.2.0
+		 *
+		 * @param  boolean $remove_default_paragraph
+		 */
+		public static function get_author_bio( $remove_default_paragraph = true ) {
+
+			// Requirements check
+
+				if ( ! function_exists( 'jetpack_author_bio' ) ) {
+					return;
+				}
+
+
+			// Processing
+
+				ob_start();
+				jetpack_author_bio();
+				$output = ob_get_clean();
+
+				if ( $remove_default_paragraph ) {
+					$output = str_replace(
+						array(
+							'<p class="author-bio">',
+							'</p><!-- .author-bio -->',
+						),
+						'',
+						$output
+					);
+				}
+
+
+			// Output
+
+				return $output;
+
+		} // /get_author_bio
 
 
 

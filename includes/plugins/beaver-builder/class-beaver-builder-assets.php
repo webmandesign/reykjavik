@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.1
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_Beaver_Builder_Assets {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 */
 		private function __construct() {
 
@@ -46,6 +46,7 @@ class Reykjavik_Beaver_Builder_Assets {
 						add_action( 'init', __CLASS__ . '::late_load', 900 );
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets' );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets_widget_text' );
 
 					// Filters
 
@@ -199,6 +200,35 @@ class Reykjavik_Beaver_Builder_Assets {
 
 
 
+		/**
+		 * Loading assets in Beaver Builder
+		 *
+		 * @subpackage  Widgets
+		 *
+		 * @since    1.2.0
+		 * @version  1.2.0
+		 */
+		public static function assets_widget_text() {
+
+			// Requirements check
+
+				if (
+					! is_callable( 'Reykjavik_WP_Widget_Text::enqueue' )
+					|| ! is_callable( 'FLBuilderModel::is_builder_active' )
+					|| ! FLBuilderModel::is_builder_active()
+				) {
+					return;
+				}
+
+
+			// Processing
+
+				Reykjavik_WP_Widget_Text::enqueue();
+
+		} // /assets_widget_text
+
+
+
 
 
 	/**
@@ -209,7 +239,7 @@ class Reykjavik_Beaver_Builder_Assets {
 		 * Custom layout styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.2.0
 		 *
 		 * @param  string $css
 		 * @param  array  $nodes
@@ -232,30 +262,40 @@ class Reykjavik_Beaver_Builder_Assets {
 					}
 
 					if ( $global_row_margins ) {
-						$css .= "\r\n\r\n";
+						$css .= PHP_EOL.PHP_EOL;
 						$css .= '.fl-row-fixed-width .fl-row-content-wrap';
-						$css .= ',';
+						$css .= ', ';
 						$css .= '.fl-row-layout-full-fixed .fl-row-fixed-width > .fl-col-group';
 						$css .= ' { ';
 						$css .= 'width: auto;';
+						$css .= ' ';
+						$css .= 'max-width: calc(100% + ' . esc_attr( $global_row_margins ) . ' + ' . esc_attr( $global_row_margins ) . ');';
+						$css .= ' ';
 						$css .= 'margin-left: -' . esc_attr( $global_row_margins ) . ';';
+						$css .= ' ';
 						$css .= 'margin-right: -' . esc_attr( $global_row_margins ) . ';';
-						$css .= ' }' . "\r\n\r\n";
+						$css .= ' }' . PHP_EOL.PHP_EOL;
 					}
 
 				// Fixing responsive element hiding
 
-					$css .= "\r\n\r\n";
+					$css .= PHP_EOL.PHP_EOL;
 					$css .= '@media (min-width: ' . absint( $global_settings->responsive_breakpoint + 1 ) . 'px) and (max-width: ' . absint( $global_settings->medium_breakpoint ) . 'px) { ';
-					$css .= '.fl-col-group .fl-visible-desktop-medium.fl-col, .fl-col-group .fl-visible-medium.fl-col, .fl-col-group .fl-visible-medium-mobile.fl-col';
+					$css .= '.fl-col-group .fl-visible-desktop-medium.fl-col';
+					$css .= ', ';
+					$css .= '.fl-col-group .fl-visible-medium.fl-col';
+					$css .= ', ';
+					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col';
 					$css .= ' { display: flex; }';
-					$css .= ' }' . "\r\n\r\n";
+					$css .= ' }' . PHP_EOL.PHP_EOL;
 
-					$css .= "\r\n\r\n";
+					$css .= PHP_EOL.PHP_EOL;
 					$css .= '@media (max-width: ' . absint( $global_settings->responsive_breakpoint ) . 'px) { ';
-					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col, .fl-col-group .fl-visible-mobile.fl-col';
+					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col';
+					$css .= ', ';
+					$css .= '.fl-col-group .fl-visible-mobile.fl-col';
 					$css .= ' { display: flex; }';
-					$css .= ' }' . "\r\n\r\n";
+					$css .= ' }' . PHP_EOL.PHP_EOL;
 
 
 			// Output

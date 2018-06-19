@@ -1,5 +1,35 @@
 # Reykjavik Changelog
 
+## 1.2.0
+
+* **Add**: WooCommerce masonry products layout when product images are set to "uncropped"
+* **Update**: WordPress 4.9.6 compatibility (GDPR)
+* **Update**: Improved custom widget enhancements
+* **Update**: Jetpack Testimonials shortcode styles
+* **Update**: Jetpack Author Bio box styles
+* **Update**: Beaver Builder compatibility
+* **Update**: WooCommerce compatibility and styles
+* **Fix**: Beaver Builder row width
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/js/scripts-masonry.js
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	assets/scss/starter/_starter.scss
+	includes/frontend/class-assets.php
+	includes/frontend/class-header.php
+	includes/plugins/beaver-builder/class-beaver-builder-assets.php
+	includes/plugins/beaver-builder/class-beaver-builder-form.php
+	includes/plugins/jetpack/class-jetpack.php
+	includes/plugins/woocommerce/class-woocommerce-loop.php
+	includes/widgets/class-wp-widget-recent-posts.php
+	includes/widgets/class-wp-widget-text.php
+	templates/parts/footer/site-info.php
+
+
 ## 1.1.2
 
 * **Fix**: Just fixing the installer ZIP

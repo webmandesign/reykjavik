@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -343,7 +343,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.2.0
 		 *
 		 * @param  array $classes
 		 */
@@ -396,6 +396,12 @@ class Reykjavik_Header {
 						$classes[] = 'is-singular';
 
 						$post_id = get_the_ID();
+
+						// Privacy Policy page
+
+							if ( (int) get_option( 'wp_page_for_privacy_policy' ) === $post_id ) {
+								$classes[] = 'page-privacy-policy';
+							}
 
 						// Has featured image?
 
@@ -462,6 +468,10 @@ class Reykjavik_Header {
 							|| is_author() // Display author archive as posts, not as custom post type archive.
 						) {
 						$classes[] = 'posts-layout-list';
+					}
+
+					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {
+						$classes[] = 'posts-layout-masonry';
 					}
 
 				// Enable outdented page layout
