@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -34,10 +34,8 @@ class Reykjavik_Jetpack {
 		/**
 		 * Constructor
 		 *
-		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
-		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		private function __construct() {
 
@@ -75,7 +73,7 @@ class Reykjavik_Jetpack {
 						add_theme_support( 'jetpack-content-options', array(
 							'author-bio'   => true,
 							'post-details' => array(
-								'stylesheet' => (string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+								'stylesheet' => 'reykjavik',
 								'date'       => '.posted-on',
 								// 'categories' => '.cat-links',
 								// 'tags'       => '.tags-links',
@@ -306,7 +304,7 @@ class Reykjavik_Jetpack {
 		 * Get author bio HTML
 		 *
 		 * @since    1.2.0
-		 * @version  1.2.0
+		 * @version  1.3.0
 		 *
 		 * @param  boolean $remove_default_paragraph
 		 */
@@ -331,7 +329,10 @@ class Reykjavik_Jetpack {
 							'<p class="author-bio">',
 							'</p><!-- .author-bio -->',
 						),
-						'',
+						array(
+							'<div class="author-bio">',
+							'</div><!-- .author-bio -->',
+						),
 						$output
 					);
 				}

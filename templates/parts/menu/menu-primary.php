@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  */
 
 
@@ -19,7 +19,7 @@
 
 // Helper variables
 
-	$is_mobile_nav_enabled = get_theme_mod( 'navigation_mobile', true );
+	$is_mobile_nav_enabled = Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' );
 
 
 ?>

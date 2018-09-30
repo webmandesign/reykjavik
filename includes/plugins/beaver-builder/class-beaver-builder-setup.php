@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -116,7 +116,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Global settings
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array  $defaults
 		 * @param  string $form_type
@@ -140,7 +140,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 					// "Modules" section
 
-						$defaults->module_margins = absint( round( get_theme_mod( 'typography_size_html', 18 ) * ( pow( 1.62, 2 ) / 2 ) ) );
+						$defaults->module_margins = absint( round( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) * ( pow( 1.62, 2 ) / 2 ) ) );
 
 					// "Responsive Layout" section
 
@@ -229,7 +229,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Add theme color presets
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $color_presets
 		 */
@@ -248,7 +248,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 			// Output
 
-				return array_values( $color_presets );
+				return array_values( array_filter( $color_presets ) );
 
 		} // /color_presets
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -645,7 +645,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Guide output
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  string $template_name
 		 */
@@ -653,7 +653,7 @@ class Reykjavik_WooCommerce_Pages {
 
 			// Requirements check
 
-				if ( ! get_theme_mod( 'woocommerce_checkout_guide', true ) ) {
+				if ( ! Reykjavik_Library_Customize::get_theme_mod( 'woocommerce_checkout_guide' ) ) {
 					return;
 				}
 
@@ -697,7 +697,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Guide generator
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  string $template_name
 		 */
@@ -705,7 +705,7 @@ class Reykjavik_WooCommerce_Pages {
 
 			// Requirements check
 
-				if ( ! get_theme_mod( 'woocommerce_checkout_guide', true ) ) {
+				if ( ! Reykjavik_Library_Customize::get_theme_mod( 'woocommerce_checkout_guide' ) ) {
 					return;
 				}
 

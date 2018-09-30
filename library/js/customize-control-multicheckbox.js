@@ -3,11 +3,13 @@
  *
  * Customizer multiple checkboxes.
  *
- * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
  *
+ * @package    WebMan WordPress Theme Framework
+ * @copyright  WebMan Design, Oliver Juhas
+ *
  * @since    2.1.0
- * @version  2.2.0
+ * @version  2.7.0
  */
 ( function( exports, $ ) {
 	$( wp.customize ).on( 'ready', function() {

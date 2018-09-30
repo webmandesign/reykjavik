@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -212,13 +212,13 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.0
 			 */
 			public static function primary_fallback() {
 
 				// Helper variables
 
-					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( get_theme_mod( 'navigation_mobile', true ), 'fallback' ) );
+					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
 
 
 				// Output
@@ -601,7 +601,7 @@ class Reykjavik_Menu {
 			 * to determine the cause) customizer displays the menu twice.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.0
 			 *
 			 * @param  string $nav_menu
 			 * @param  object $args
@@ -611,9 +611,9 @@ class Reykjavik_Menu {
 				// Requirements check
 
 					if (
-							'primary' !== $args->theme_location
-							|| ! get_theme_mod( 'navigation_mobile', true )
-						) {
+						'primary' !== $args->theme_location
+						|| ! Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' )
+					) {
 						return $nav_menu;
 					}
 

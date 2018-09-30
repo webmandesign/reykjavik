@@ -4,11 +4,13 @@
  *
  * Customizer hidden input field.
  *
- * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
  *
+ * @package    WebMan WordPress Theme Framework
+ * @copyright  WebMan Design, Oliver Juhas
+ *
  * @since    1.0.0
- * @version  1.9.0
+ * @version  2.7.0
  */
 class Reykjavik_Customize_Control_Hidden extends WP_Customize_Control {
 

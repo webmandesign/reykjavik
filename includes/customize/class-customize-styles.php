@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -213,11 +213,10 @@ class Reykjavik_Customize_Styles {
 		/**
 		 * Enqueue HTML head inline styles
 		 *
-		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function inline_styles() {
 
@@ -245,7 +244,7 @@ class Reykjavik_Customize_Styles {
 				if ( ! empty( $output ) ) {
 
 					wp_add_inline_style(
-						(string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+						'reykjavik',
 						(string) apply_filters( 'wmhook_reykjavik_esc_css', $output )
 					);
 
@@ -330,7 +329,7 @@ class Reykjavik_Customize_Styles {
 		 * and processing in oppose to custom CSS variables.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.3.0
 		 *
 		 * @param  string $scope
 		 */
@@ -341,9 +340,9 @@ class Reykjavik_Customize_Styles {
 				$output = array();
 
 				$helper = apply_filters( 'wmhook_reykjavik_customize_styles_get_custom_styles_array_helper', array(
-					'layout_width_site'    => get_theme_mod( 'layout_width_site', 1640 ),
-					'layout_width_content' => get_theme_mod( 'layout_width_content', 1200 ),
-					'typography_size_html' => get_theme_mod( 'typography_size_html', 18 ),
+					'layout_width_site'    => absint( Reykjavik_Library_Customize::get_theme_mod( 'layout_width_site' ) ),
+					'layout_width_content' => absint( Reykjavik_Library_Customize::get_theme_mod( 'layout_width_content' ) ),
+					'typography_size_html' => absint( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) ),
 				), $scope );
 
 
@@ -693,6 +692,32 @@ class Reykjavik_Customize_Styles {
 				return $output;
 
 		} // /generate_css_from_array
+
+
+
+		/**
+		 * Is stylesheet generated?
+		 *
+		 * @subpackage  Customize Options
+		 *
+		 * @since    1.3.0
+		 * @version  1.3.0
+		 */
+		public static function is_stylesheet_generated() {
+
+			// Helper variables
+
+				$wp_upload_dir    = wp_upload_dir();
+				$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
+
+			// Output
+
+				return (bool) apply_filters(
+					'wmhook_reykjavik_is_stylesheet_generated',
+					file_exists( $theme_upload_dir . 'reykjavik-styles.css' )
+				);
+
+		} // /is_stylesheet_generated
 
 
 

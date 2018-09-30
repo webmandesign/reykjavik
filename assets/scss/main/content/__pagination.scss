@@ -36,16 +36,13 @@
 
 		@include haf() {
 			@extend %background_overlay_from_text_color;
-		}
 
-		@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
-		// Media query is to prevent Apple mobile devices issue.
-		// @see  https://css-tricks.com/annoying-mobile-double-tap-link-issue/
-
-			&::before {
-				display: none;
+			// Unfortunate iOS devices fix for double tap...
+			@media screen and (max-width: 1112px) {
+				&::before {
+					display: none;
+				}
 			}
-
 		}
 
 	}
@@ -54,18 +51,15 @@
 	.next {
 		@extend %background_overlay_from_text_color;
 
-		&:hover::before {
-			display: none;
-		}
-
-		@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
-		// Media query is to prevent Apple mobile devices issue.
-		// @see  https://css-tricks.com/annoying-mobile-double-tap-link-issue/
-
+		// Unfortunate iOS devices fix for double tap...
+		@media screen and (max-width: 1112px) {
 			&::before {
 				display: none;
 			}
+		}
 
+		&:hover::before {
+			display: none;
 		}
 
 	}

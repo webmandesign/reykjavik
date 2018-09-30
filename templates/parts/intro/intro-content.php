@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  */
 
 
@@ -44,9 +44,8 @@
 
 			if ( is_singular() && has_excerpt() ) {
 				$page_summary = get_the_excerpt();
-			} elseif ( is_home() && $posts_page && ! is_front_page() ) {
-				$page_for_posts = get_post( absint( $posts_page ) );
-				$page_summary   = apply_filters( 'get_the_excerpt', $page_for_posts->post_excerpt );
+			} elseif ( is_home() && ! is_front_page() && $posts_page && has_excerpt( $posts_page ) ) {
+				$page_summary = get_the_excerpt( absint( $posts_page ) );
 			} elseif ( is_archive() ) {
 				$page_summary = get_the_archive_description();
 			}

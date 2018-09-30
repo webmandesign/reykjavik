@@ -8,10 +8,6 @@
 
 .control-section-theme-options .no-overflow { overflow: hidden; }
 
-.control-section-theme-options .donation-link, .control-section-theme-options .donation-link:hover, .control-section-theme-options .donation-link:active { display: block; width: 100%; padding: 1em 0; text-transform: uppercase; text-align: center; font-weight: bold; font-size: .81em; background: #0aac8e; color: #fafcfe; }
-
-.control-section-theme-options .donation-link:hover { letter-spacing: 1px; }
-
 .control-section-theme-options .customize-section-description-container + .customize-control h3:first-of-type { margin-top: 0; border: 0; }
 
 .control-section-theme-options .customize-control:first-child h3:first-of-type { margin-top: 0; border: 0; }
@@ -56,19 +52,23 @@
 
 .control-section-theme-options input[type=range] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; margin: 1.62em 0; background: transparent; }
 
-.control-section-theme-options input[type=range]:focus { outline: none; }
-
 .control-section-theme-options input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
 
 .control-section-theme-options input[type=range]::-moz-range-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
 
 .control-section-theme-options input[type=range]::-ms-track { width: 100%; height: 1em; cursor: pointer; background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
 
-.control-section-theme-options input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+.control-section-theme-options input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #007cad; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
 
-.control-section-theme-options input[type=range]::-moz-range-thumb { -moz-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+.control-section-theme-options input[type=range]::-moz-range-thumb { -moz-appearance: none; appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #007cad; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
 
-.control-section-theme-options input[type=range]::-ms-thumb { appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #0085ba; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+.control-section-theme-options input[type=range]::-ms-thumb { appearance: none; width: 1.5em; height: 1.5em; margin-top: -0.25em; background: #007cad; border: 0; border-radius: .19em; box-shadow: none; cursor: pointer; }
+
+.control-section-theme-options input[type=range]:focus::-webkit-slider-thumb { background: #ad007c; }
+
+.control-section-theme-options input[type=range]:focus::-moz-range-thumb { background: #ad007c; }
+
+.control-section-theme-options input[type=range]:focus::-ms-thumb { background: #ad007c; }
 
 .control-section-theme-options input[type=range]::-ms-fill-upper { background: #ccc; border: 0; border-radius: 1.5em; box-shadow: none; }
 
@@ -76,6 +76,14 @@
 
 .control-section-theme-options .range-container { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; cursor: default; }
 
-.control-section-theme-options .range-value { position: relative; min-width: 16%; padding: .38rem; margin-left: .38rem; text-align: center; font-size: .9em; background: #0085ba; color: #fff; border-radius: .19rem; cursor: help; }
+.control-section-theme-options .range-container:hover input[type=range]::-webkit-slider-thumb { background: #ad007c; }
+
+.control-section-theme-options .range-container:hover input[type=range]::-moz-range-thumb { background: #ad007c; }
+
+.control-section-theme-options .range-container:hover input[type=range]::-ms-thumb { background: #ad007c; }
+
+.control-section-theme-options .range-value { position: relative; min-width: 16%; padding: .38rem; margin-left: .38rem; text-align: center; font-size: .9em; background: #007cad; color: #fff; border-radius: .19rem; cursor: help; }
 
 .control-section-theme-options .range-value::before { content: ''; position: absolute; width: .38rem; height: .38rem; left: 0; top: 50%; margin: -.19rem; background: inherit; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+.control-section-theme-options .range-container:hover .range-value, .control-section-theme-options input[type=range]:focus + .range-value { background: #ad007c; }

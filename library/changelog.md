@@ -1,5 +1,92 @@
 # WebMan WordPress Theme Framework Changelog
 
+## 2.7.0
+
+* **Add**: Theme options/mods wrapper with automatic default value fallback
+* **Add**: Support for customizer options `validation_callback`
+* **Update**: Improving customizer options setup
+* **Update**: Using `error_log` where appropriate
+* **Update**: Improving security
+* **Update**: Using `PHP_EOL`
+* **Update**: Improving and fixing `$pre` filters
+* **Update**: Removing `get_theme_file_uri()` shim function (WP4.7+)
+* **Update**: Removing custom TinyMCE editor page template class (WP4.7+)
+* **Update**: Adding variable type where applicable
+* **Update**: Removing obsolete WordPress min version requirement in favor of 2 major versions backwards compatibility
+* **Update**: Simplifying assets versioning
+* **Update**: Improving customizer options functionality
+* **Update**: Improving PHP DocBlock and adding @subpackages info
+* **Update**: Improving custom styles output functionality
+* **Update**: Removing obsolete functionality
+* **Update**: Improving code formatting
+* **Update**: WebMan Design Use Child Theme 1.3.0
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-admin.php
+	includes/classes/class-core.php
+	includes/classes/class-customize-control-hidden.php
+	includes/classes/class-customize-control-html.php
+	includes/classes/class-customize-control-multiselect.php
+	includes/classes/class-customize-control-radio-matrix.php
+	includes/classes/class-customize-control-select.php
+	includes/classes/class-customize-styles.php
+	includes/classes/class-customize.php
+	includes/classes/class-sanitize.php
+	includes/classes/class-visual-editor.php
+	includes/vendor/tgmpa/class-tgm-plugin-activation.php
+	includes/vendor/use-child-theme/class-use-child-theme.php
+	js/customize-control-multicheckbox.js
+	js/customize-control-radio-matrix.js
+	js/customize-controls.js
+	scss/customize.scss
+	scss/welcome.scss
+	scss/styles/_customize.scss
+	scss/styles/_welcome.scss
+
+
+## 2.6.1
+
+* **Update**: Removing obsolete code comments
+* **Fix**: Stylesheet generator functionality
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-core.php
+	includes/classes/class-customize-control-radio-matrix.php
+	includes/classes/class-customize-control-select.php
+	includes/classes/class-customize-styles.php
+	includes/classes/class-customize.php
+	includes/classes/class-sanitize.php
+
+
+## 2.6.0
+
+* **Add**: Customizer range control hover color
+* **Update**: Removing filter to enable RTL (generating RTL stylesheets automatically if the compatibility file found in the theme)
+* **Update**: Renaming `custom_mce_format` method and filters to `style_formats`
+* **Update**: Improving stylesheet generator method
+* **Update**: Removing donation link from customizer styles
+* **Update**: Updating code formatting
+* **Update**: Improving `selector_replace` for `preview_js` in theme options
+
+### Files changed:
+
+	changelog.md
+	init.php
+	includes/classes/class-core.php
+	includes/classes/class-customize-control-multiselect.php
+	includes/classes/class-customize-styles.php
+	includes/classes/class-customize.php
+	includes/classes/class-visual-editor.php
+	includes/vendor/tgmpa/class-tgm-plugin-activation.php
+	scss/styles/_customize.scss
+
+
 ## 2.5.6
 
 * **Add**: Float value sanitization method

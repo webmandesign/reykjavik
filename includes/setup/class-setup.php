@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -40,7 +40,7 @@ class Reykjavik_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		private function __construct() {
 
@@ -79,7 +79,7 @@ class Reykjavik_Setup {
 
 						add_filter( 'wmhook_reykjavik_assets_google_fonts_url_fonts_setup', __CLASS__ . '::google_fonts' );
 
-						add_filter( 'wmhook_reykjavik_library_editor_custom_mce_format', __CLASS__ . '::visual_editor_formats' );
+						add_filter( 'wmhook_reykjavik_library_editor_style_formats', __CLASS__ . '::editor_style_formats' );
 
 						add_filter( 'wmhook_reykjavik_widget_css_classes', __CLASS__ . '::widget_css_classes' );
 
@@ -399,7 +399,7 @@ class Reykjavik_Setup {
 		 * Priority -100 to make it available to lower priority callbacks.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @global  int $content_width
 		 */
@@ -407,6 +407,10 @@ class Reykjavik_Setup {
 
 			// Processing
 
+				/**
+				 * We cannot use Reykjavik_Library_Customize::get_theme_mod() here as we are setting
+				 * these before the actual theme options are declared.
+				 */
 				$content_width = absint( get_theme_mod( 'layout_width_content', 1200 ) );
 				$site_width    = absint( get_theme_mod( 'layout_width_site', 1640 ) );
 
@@ -445,7 +449,7 @@ class Reykjavik_Setup {
 		 *   );
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $image_sizes
 		 */
@@ -457,9 +461,9 @@ class Reykjavik_Setup {
 
 				// Intro image size
 
-					if ( 'boxed' === get_theme_mod( 'layout_site', 'fullwidth' ) ) {
+					if ( 'boxed' === Reykjavik_Library_Customize::get_theme_mod( 'layout_site' ) ) {
 
-						$intro_width = absint( get_theme_mod( 'layout_width_site', 1640 ) );
+						$intro_width = absint( Reykjavik_Library_Customize::get_theme_mod( 'layout_width_site' ) );
 
 						if ( 1000 > $intro_width ) {
 							// Can't set site width less then 1000 px,
@@ -595,7 +599,7 @@ class Reykjavik_Setup {
 		 * Custom fonts setup left for plugins.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $fonts_setup
 		 */
@@ -603,7 +607,7 @@ class Reykjavik_Setup {
 
 			// Requirements check
 
-				if ( get_theme_mod( 'typography_custom_fonts', false ) ) {
+				if ( Reykjavik_Library_Customize::get_theme_mod( 'typography_custom_fonts' ) ) {
 					return array();
 				}
 
@@ -677,11 +681,11 @@ class Reykjavik_Setup {
 		 * TinyMCE "Formats" dropdown alteration
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $formats
 		 */
-		public static function visual_editor_formats( $formats ) {
+		public static function editor_style_formats( $formats ) {
 
 			// Requirements check
 
@@ -826,7 +830,7 @@ class Reykjavik_Setup {
 
 				return $formats;
 
-		} // /visual_editor_formats
+		} // /editor_style_formats
 
 
 

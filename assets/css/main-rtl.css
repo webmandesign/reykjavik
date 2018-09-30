@@ -1008,11 +1008,9 @@ h1:last-child, h2:last-child, h3:last-child, .h1:last-child, .h2:last-child, .h3
 
 @media only screen and (min-width: 55em) { .intro-widgets .widget, .footer-widgets .widget { -webkit-flex-basis: 0%; -ms-flex-preferred-size: 0%; flex-basis: 0%; padding: 2.6244em 0; } }
 
-code, pre, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, .entry-author, tbody tr:hover td, tbody tr:hover th { position: relative; z-index: 1; }
+code, pre, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, .entry-author { position: relative; z-index: 1; }
 
 code::before, pre::before, .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before, .pagination .prev::before, .pagination .next::before, .footer-area-site-info::before, .site-footer .breadcrumbs-container::before, .entry-author::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
-
-tbody tr:hover td::after, tbody tr:hover th::after { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
 
 /* FILE: main/base/__performance.scss */
 @media only screen and (max-width: 54.9375em) { .main-navigation-container { will-change: transform; } }
@@ -1676,11 +1674,11 @@ html .page-template-child-pages .content-area, html .content-layout-stretched.is
 
 .pagination .dots { padding-left: 0.62em; padding-right: 0.62em; border-color: transparent; }
 
-@media only screen and (max-width: 79.9375em) { .pagination a::before { display: none; } }
+@media screen and (max-width: 1112px) { .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before { display: none; } }
+
+@media screen and (max-width: 1112px) { .pagination .prev::before, .pagination .next::before { display: none; } }
 
 .pagination .prev:hover::before, .pagination .next:hover::before { display: none; }
-
-@media only screen and (max-width: 79.9375em) { .pagination .prev::before, .pagination .next::before { display: none; } }
 
 @media only screen and (max-width: 41.9375em) { .pagination .prev { float: right; }
   .pagination .next { float: left; } }

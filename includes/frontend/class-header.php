@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -156,14 +156,14 @@ class Reykjavik_Header {
 		 * @see  https://wordpress.org/plugins/chrome-theme-color-changer
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function head_chrome_color() {
 
 			// Output
 
 				if ( ! class_exists( 'Chrome_Theme_Color_Changer' ) ) {
-					echo '<meta name="theme-color" content="' . esc_attr( get_theme_mod( 'color_header_background', '#fefeff' ) ) . '">';
+					echo '<meta name="theme-color" content="' . esc_attr( Reykjavik_Library_Customize::get_theme_mod( 'color_header_background' ) ) . '">';
 				}
 
 		} // /head_chrome_color
@@ -343,7 +343,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $classes
 		 */
@@ -362,25 +362,25 @@ class Reykjavik_Header {
 
 				// Website layout
 
-					if ( $layout_site = get_theme_mod( 'layout_site', 'fullwidth' ) ) {
+					if ( $layout_site = Reykjavik_Library_Customize::get_theme_mod( 'layout_site' ) ) {
 						$classes[] = esc_attr( 'site-layout-' . $layout_site );
 					}
 
 				// Header layout
 
-					if ( $layout_header = get_theme_mod( 'layout_header', 'fullwidth' ) ) {
+					if ( $layout_header = Reykjavik_Library_Customize::get_theme_mod( 'layout_header' ) ) {
 						$classes[] = esc_attr( 'header-layout-' . $layout_header );
 					}
 
 				// Footer layout
 
-					if ( $layout_footer = get_theme_mod( 'layout_footer', 'boxed' ) ) {
+					if ( $layout_footer = Reykjavik_Library_Customize::get_theme_mod( 'layout_footer' ) ) {
 						$classes[] = esc_attr( 'footer-layout-' . $layout_footer );
 					}
 
 				// Is mobile navigation enabled?
 
-					if ( get_theme_mod( 'navigation_mobile', true ) ) {
+					if ( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ) ) {
 						$classes[] = 'has-navigation-mobile';
 					}
 
@@ -480,7 +480,7 @@ class Reykjavik_Header {
 							is_page()
 							&& ! is_attachment() // This is required for attachments added to a page.
 							&& ! is_page_template( 'templates/sidebar.php' )
-							&& get_theme_mod( 'layout_page_outdent', true )
+							&& Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' )
 						) {
 						$classes[] = 'page-layout-outdented';
 					}
@@ -510,7 +510,7 @@ class Reykjavik_Header {
 		 * HTML Body classes in content editor (TinyMCE)
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $init
 		 */
@@ -529,11 +529,14 @@ class Reykjavik_Header {
 
 				// Page classes
 
-					if ( 'page' === get_post_type( $post ) ) {
+					if (
+						'page' === get_post_type( $post )
+						&& false === strpos( $init['body_class'], 'excerpt' )
+					) {
 
 						// Outdented page layout
 
-							if ( get_theme_mod( 'layout_page_outdent', true ) ) {
+							if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
 								$init['body_class'] .= ' page-layout-outdented';
 							}
 

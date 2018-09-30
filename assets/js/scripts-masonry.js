@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.2.0
- * @version  1.2.0
+ * @version  1.3.0
  */
 
 
@@ -25,7 +25,7 @@
 		 */
 
 			var
-				$isShop    = $( document.body ).is( '.archive, .woocommerce' ),
+				$isShop    = $( document.body ).is( '.archive.woocommerce' ),
 				$list      = ( $isShop ) ? ( $( '.products' ) ) : ( $( '.posts' ) ),
 				$itemClass = ( $isShop ) ? ( '.product' ) : ( '.entry' );
 

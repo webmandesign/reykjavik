@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -135,13 +135,13 @@ class Reykjavik_Breadcrumb_NavXT {
 		 * preview when editing breadcrumbs display options (see below).
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function display() {
 
 			// Helper variables
 
-				$display = get_theme_mod( 'breadcrumbs_display', 'after' );
+				$display = Reykjavik_Library_Customize::get_theme_mod( 'breadcrumbs_display' );
 
 
 			// Processing

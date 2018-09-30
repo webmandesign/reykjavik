@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -102,7 +102,7 @@ class Reykjavik_Customize {
 		 * Modify native WordPress options and setup partial refresh
 		 *
 		 * @since    1.0.0
-		 * @version  1.1.0
+		 * @version  1.3.0
 		 *
 		 * @param  object $wp_customize  WP customizer object.
 		 */
@@ -143,10 +143,6 @@ class Reykjavik_Customize {
 						) );
 
 					// Option pointers only
-
-						$wp_customize->selective_refresh->add_partial( 'archive_title_prefix', array(
-							'selector' => '.archive .intro-title',
-						) );
 
 						$wp_customize->selective_refresh->add_partial( 'layout_page_outdent', array(
 							'selector'            => '.page-layout-outdented:not(.content-layout-no-paddings):not(.fl-builder) .option-pointer',
@@ -190,7 +186,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.7
+		 * @version  1.3.0
 		 *
 		 * @param  array $options
 		 */
@@ -236,18 +232,18 @@ class Reykjavik_Customize {
 						),
 
 							'0' . 10 . 'logo' . 20 => array(
-								'section'     => 'title_tagline',
-								'priority'    => 102,
-								'type'        => 'text',
-								'id'          => 'custom_logo_height',
-								'label'       => esc_html__( 'Max logo image height (px)', 'reykjavik' ),
-								'default'     => 50,
-								'validate'    => 'absint',
-								'input_attrs' => array(
+								'section'           => 'title_tagline',
+								'priority'          => 102,
+								'type'              => 'text',
+								'id'                => 'custom_logo_height',
+								'label'             => esc_html__( 'Max logo image height (px)', 'reykjavik' ),
+								'default'           => 50,
+								'sanitize_callback' => 'absint',
+								'input_attrs'       => array(
 									'size'     => 5,
 									'maxwidth' => 3,
 								),
-								'preview_js'  => array(
+								'preview_js'        => array(
 									'custom' => "jQuery( '.custom-logo' ).css( 'max-height', to + 'px' );",
 								),
 							),
@@ -496,6 +492,73 @@ class Reykjavik_Customize {
 
 											),
 										),
+									),
+
+
+
+							/**
+							 * Special Intro colors
+							 */
+
+								100 . 'colors' . 25 . 200 => array(
+									'type'        => 'html',
+									'content'     => '<h3>' . esc_html__( 'Intro overlay', 'reykjavik' ) . '</h3>',
+									'description' => esc_html__( 'Intro overlay is displayed on homepage only.', 'reykjavik' ),
+								),
+
+									100 . 'colors' . 25 . 210 => array(
+										'type'       => 'color',
+										'id'         => 'color_intro_overlay_background',
+										'label'      => esc_html__( 'Background color', 'reykjavik' ),
+										'default'    => '#000000',
+										'preview_js' => array(
+											'css' => array(
+
+												'.intro-special .wp-custom-header::before' => array(
+													'background-color',
+												),
+
+											),
+										),
+										'active_callback' => 'is_front_page',
+									),
+									100 . 'colors' . 25 . 220 => array(
+										'type'       => 'color',
+										'id'         => 'color_intro_overlay_text',
+										'label'      => esc_html__( 'Text color', 'reykjavik' ),
+										'default'    => '#ffffff',
+										'preview_js' => array(
+											'css' => array(
+
+												'.intro-special-has-media .intro' => array(
+													'color',
+												),
+
+											),
+										),
+										'active_callback' => 'is_front_page',
+									),
+									100 . 'colors' . 25 . 230 => array(
+										'type'              => 'range',
+										'id'                => 'color_intro_overlay_opacity',
+										'label'             => esc_html__( 'Overlay opacity', 'reykjavik' ),
+										'default'           => .60,
+										'min'               => .05,
+										'max'               => .95,
+										'step'              => .05,
+										'multiplier'        => 100,
+										'suffix'            => '%',
+										'sanitize_callback' => 'Reykjavik_Library_Sanitize::float',
+										'preview_js'        => array(
+											'css' => array(
+
+												'.intro-special .wp-custom-header::before' => array(
+													'opacity',
+												),
+
+											),
+										),
+										'active_callback'   => 'is_front_page',
 									),
 
 
@@ -821,17 +884,17 @@ class Reykjavik_Customize {
 											),
 										),
 										100 . 'colors' . 40 . 145 => array(
-											'type'       => 'range',
-											'id'         => 'footer_image_opacity',
-											'label'      => esc_html__( 'Background image opacity', 'reykjavik' ),
-											'default'    => .15,
-											'min'        => .05,
-											'max'        => 1,
-											'step'       => .05,
-											'multiplier' => 100,
-											'suffix'     => '%',
-											'validate'   => 'Reykjavik_Library_Sanitize::float',
-											'preview_js' => array(
+											'type'              => 'range',
+											'id'                => 'footer_image_opacity',
+											'label'             => esc_html__( 'Background image opacity', 'reykjavik' ),
+											'default'           => .15,
+											'min'               => .05,
+											'max'               => 1,
+											'step'              => .05,
+											'multiplier'        => 100,
+											'suffix'            => '%',
+											'sanitize_callback' => 'Reykjavik_Library_Sanitize::float',
+											'preview_js'        => array(
 												'css' => array(
 
 													'.site-footer::before' => array(
@@ -1064,13 +1127,13 @@ class Reykjavik_Customize {
 						),
 
 							800 . 'texts' . 500 => array(
-								'type'        => 'textarea',
-								'id'          => 'texts_site_info',
-								'label'       => esc_html__( 'Footer credits (copyright)', 'reykjavik' ),
-								'description' => sprintf( esc_html__( 'Set %s to disable this area.', 'reykjavik' ), '<code>-</code>' ) . ' ' . esc_html__( 'Leaving the field empty will fall back to default theme setting.', 'reykjavik' ) . ' ' . sprintf( esc_html__( 'You can use %s to display dynamic, always current year.', 'reykjavik' ), '<code>[year]</code>' ),
-								'default'     => '',
-								'validate'    => 'wp_kses_post',
-								'preview_js'  => array(
+								'type'              => 'textarea',
+								'id'                => 'texts_site_info',
+								'label'             => esc_html__( 'Footer credits (copyright)', 'reykjavik' ),
+								'description'       => sprintf( esc_html__( 'Set %s to disable this area.', 'reykjavik' ), '<code>-</code>' ) . ' ' . esc_html__( 'Leaving the field empty will fall back to default theme setting.', 'reykjavik' ) . ' ' . sprintf( esc_html__( 'You can use %s to display dynamic, always current year.', 'reykjavik' ), '<code>[year]</code>' ),
+								'default'           => '',
+								'sanitize_callback' => 'wp_kses_post',
+								'preview_js'        => array(
 									'custom' => "jQuery( '.site-info' ).html( to ); if ( '-' === to ) { jQuery( '.footer-area-site-info' ).hide(); } else { jQuery( '.footer-area-site-info:hidden' ).show(); }",
 								),
 							),
@@ -1088,17 +1151,17 @@ class Reykjavik_Customize {
 						),
 
 							900 . 'typography' . 100 => array(
-								'type'        => 'range',
-								'id'          => 'typography_size_html',
-								'label'       => esc_html__( 'Basic font size in px', 'reykjavik' ),
-								'description' => esc_html__( 'All other font sizes are calculated automatically from this basic font size.', 'reykjavik' ),
-								'default'     => 18,
-								'min'         => 12,
-								'max'         => 24,
-								'step'        => 1,
-								'suffix'      => 'px',
-								'validate'    => 'absint',
-								'preview_js'  => array(
+								'type'              => 'range',
+								'id'                => 'typography_size_html',
+								'label'             => esc_html__( 'Basic font size in px', 'reykjavik' ),
+								'description'       => esc_html__( 'All other font sizes are calculated automatically from this basic font size.', 'reykjavik' ),
+								'default'           => 18,
+								'min'               => 12,
+								'max'               => 24,
+								'step'              => 1,
+								'suffix'            => 'px',
+								'sanitize_callback' => 'absint',
+								'preview_js'        => array(
 									'css' => array(
 
 										'html' => array(
@@ -1130,39 +1193,39 @@ class Reykjavik_Customize {
 								),
 
 								900 . 'typography' . 220 => array(
-									'type'            => 'text',
-									'id'              => 'typography_fonts_text',
-									'label'           => esc_html__( 'General text font', 'reykjavik' ),
-									'default'         => "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
-									'input_attrs'     => array(
+									'type'              => 'text',
+									'id'                => 'typography_fonts_text',
+									'label'             => esc_html__( 'General text font', 'reykjavik' ),
+									'default'           => "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
+									'input_attrs'       => array(
 										'placeholder' => "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
 									),
-									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
+									'active_callback'   => __CLASS__ . '::is_typography_custom_fonts',
+									'sanitize_callback' => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 230 => array(
-									'type'            => 'text',
-									'id'              => 'typography_fonts_headings',
-									'label'           => esc_html__( 'Headings font', 'reykjavik' ),
-									'default'         => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-									'input_attrs'     => array(
+									'type'              => 'text',
+									'id'                => 'typography_fonts_headings',
+									'label'             => esc_html__( 'Headings font', 'reykjavik' ),
+									'default'           => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+									'input_attrs'       => array(
 										'placeholder' => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
 									),
-									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
+									'active_callback'   => __CLASS__ . '::is_typography_custom_fonts',
+									'sanitize_callback' => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 240 => array(
-									'type'            => 'text',
-									'id'              => 'typography_fonts_logo',
-									'label'           => esc_html__( 'Logo font', 'reykjavik' ),
-									'default'         => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-									'input_attrs'     => array(
+									'type'              => 'text',
+									'id'                => 'typography_fonts_logo',
+									'label'             => esc_html__( 'Logo font', 'reykjavik' ),
+									'default'           => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+									'input_attrs'       => array(
 										'placeholder' => "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
 									),
-									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
-									'validate'        => 'Reykjavik_Library_Sanitize::fonts',
+									'active_callback'   => __CLASS__ . '::is_typography_custom_fonts',
+									'sanitize_callback' => 'Reykjavik_Library_Sanitize::fonts',
 								),
 
 								900 . 'typography' . 290 => array(
@@ -1267,21 +1330,6 @@ class Reykjavik_Customize {
 								'label'       => esc_html__( 'Enable mobile navigation', 'reykjavik' ),
 								'description' => esc_html__( 'If your website navigation is very simple and you do not want to use the mobile navigation functionality, you can disable it here.', 'reykjavik' ),
 								'default'     => true,
-							),
-
-							950 . 'others' . 120 => array(
-								'type'    => 'multicheckbox',
-								'id'      => 'archive_title_prefix',
-								'label'   => esc_html__( 'Archive page title prefix', 'reykjavik' ),
-								'default' => array( 'category', 'tag', 'author' ),
-								'choices' => array(
-									'category'  => esc_html__( 'Display "Category:" prefix', 'reykjavik' ),
-									'tag'       => esc_html__( 'Display "Tag:" prefix', 'reykjavik' ),
-									'author'    => esc_html__( 'Display "Author:" prefix', 'reykjavik' ),
-									'post-type' => esc_html__( 'Display "Archives:" prefix', 'reykjavik' ),
-									'taxonomy'  => esc_html__( 'Display "Taxonomy:" prefix', 'reykjavik' ),
-								),
-								// No need for `preview_js` as we really need to refresh the page to apply changes.
 							),
 
 
@@ -1434,13 +1482,13 @@ class Reykjavik_Customize {
 		 * Render the site info in the footer for the selective refresh partial
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function partial_texts_site_info() {
 
 			// Helper variables
 
-				$site_info_text = trim( get_theme_mod( 'texts_site_info' ) );
+				$site_info_text = trim( Reykjavik_Library_Customize::get_theme_mod( 'texts_site_info' ) );
 
 
 			// Output

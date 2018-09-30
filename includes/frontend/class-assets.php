@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_Assets {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		private function __construct() {
 
@@ -44,10 +44,12 @@ class Reykjavik_Assets {
 
 					// Actions
 
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::register_inline_styles', 0 );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::register_styles' );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::register_scripts' );
 
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_styles', 100 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_inline_styles', 105 );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::theme_style_file', 110 );
 						add_action( 'wp_enqueue_scripts', __CLASS__ . '::enqueue_scripts', 100 );
 
@@ -105,7 +107,7 @@ class Reykjavik_Assets {
 		 * Registering theme styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function register_styles() {
 
@@ -115,13 +117,11 @@ class Reykjavik_Assets {
 
 				if ( current_theme_supports( 'stylesheet-generator' ) ) {
 
-					$wp_upload_dir             = wp_upload_dir();
-					$theme_upload_dir          = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
 					$dev_prefix                = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
 					$stylesheet_global_version = get_theme_mod( '__stylesheet_timestamp' );
 
 					$stylesheets = array(
-						'global' => ( ! file_exists( $theme_upload_dir . 'reykjavik-styles.css' ) ) ? ( get_theme_file_uri( 'fallback.css' ) ) : ( str_replace( 'reykjavik-styles', $dev_prefix . 'reykjavik-styles', get_theme_mod( '__url_css' ) ) ),
+						'global' => ( Reykjavik_Customize_Styles::is_stylesheet_generated() ) ? ( str_replace( 'reykjavik-styles', $dev_prefix . 'reykjavik-styles', get_theme_mod( '__url_css' ) ) ) : ( false ),
 					);
 
 				} else {
@@ -132,16 +132,31 @@ class Reykjavik_Assets {
 
 				}
 
-				$stylesheets = (array) apply_filters( 'wmhook_reykjavik_assets_register_styles_sheets', $stylesheets );
-
 				if ( empty( $stylesheet_global_version ) ) {
 					$stylesheet_global_version = REYKJAVIK_THEME_VERSION;
 				}
 
 				$register_assets = array(
 					'reykjavik-google-fonts'      => array( self::google_fonts_url() ),
-					'reykjavik-stylesheet-global' => array( 'src' => Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ), 'ver' => $stylesheet_global_version ),
+					'reykjavik-stylesheet-global' => array( 'src' => Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ), 'ver' => $stylesheet_global_version, 'rtl' => 'replace' ),
 				);
+
+				// Fallback CSS stylesheets.
+				if ( empty( $stylesheets['global'] ) ) {
+					$fallback_deps        = array();
+					$fallback_stylesheets = array(
+						// file_name => rtl_data,
+						'main'          => 'replace',
+						'custom-styles' => false,
+					);
+					foreach ( $fallback_stylesheets as $stylesheet => $rtl_data ) {
+						$fallback_deps[ $stylesheet ] = 'reykjavik-stylesheet-fallback-' . $stylesheet;
+						$register_assets[ $fallback_deps[ $stylesheet ] ]['src'] = get_theme_file_uri( 'assets/css/' . $stylesheet . '.css' );
+						$register_assets[ $fallback_deps[ $stylesheet ] ]['rtl'] = $rtl_data;
+					}
+					$register_assets['reykjavik-stylesheet-global']['src']  = '';
+					$register_assets['reykjavik-stylesheet-global']['deps'] = array_values( $fallback_deps );
+				}
 
 				$register_assets = (array) apply_filters( 'wmhook_reykjavik_assets_register_styles', $register_assets, $stylesheets );
 
@@ -156,6 +171,10 @@ class Reykjavik_Assets {
 					$media = ( isset( $atts['media'] ) ) ? ( $atts['media'] ) : ( 'screen' );
 
 					wp_register_style( $handle, $src, $deps, $ver, $media );
+
+					if ( isset( $atts['rtl'] ) && $atts['rtl'] ) {
+						wp_style_add_data( $handle, 'rtl', $atts['rtl'] );
+					}
 
 				} // /foreach
 
@@ -214,7 +233,7 @@ class Reykjavik_Assets {
 		 * Frontend styles enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function enqueue_styles() {
 
@@ -224,27 +243,6 @@ class Reykjavik_Assets {
 
 
 			// Processing
-
-				// SASS debugging - enqueue default (fallback) stylesheet
-
-					if (
-							defined( 'REYKJAVIK_DEBUG_SASS' )
-							&& REYKJAVIK_DEBUG_SASS
-							&& current_theme_supports( 'stylesheet-generator' )
-						) {
-
-						// We must deregister first to register again with the new URL.
-						wp_deregister_style( 'reykjavik-stylesheet-global' );
-
-						wp_register_style(
-							'reykjavik-stylesheet-global',
-							get_theme_file_uri( 'fallback.css' ),
-							false,
-							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-							'screen'
-						);
-
-					}
 
 				// Google Fonts
 
@@ -259,10 +257,6 @@ class Reykjavik_Assets {
 				// Filter enqueue array
 
 					$enqueue_assets = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_styles', $enqueue_assets );
-
-				// RTL setup
-
-					wp_style_add_data( 'reykjavik-stylesheet-global', 'rtl', 'replace' );
 
 				// Enqueue
 
@@ -280,7 +274,7 @@ class Reykjavik_Assets {
 		 * Frontend scripts enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  1.3.0
 		 */
 		public static function enqueue_scripts() {
 
@@ -310,7 +304,7 @@ class Reykjavik_Assets {
 					if ( ! apply_filters( 'wmhook_reykjavik_disable_header', false ) ) {
 						$enqueue_assets[20] = 'reykjavik-scripts-nav-a11y';
 
-						if ( get_theme_mod( 'navigation_mobile', true ) ) {
+						if ( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ) ) {
 							$enqueue_assets[25] = 'reykjavik-scripts-nav-mobile';
 						}
 					}
@@ -369,6 +363,43 @@ class Reykjavik_Assets {
 				}
 
 		} // /theme_style_file
+
+
+
+		/**
+		 * Placeholder for adding inline styles: register.
+		 *
+		 * This should be loaded after all of the theme stylesheets are enqueued,
+		 * and before the child theme stylesheet is enqueued.
+		 * Use the `reykjavik` handle in `wp_add_inline_style`.
+		 * Early registration is required!
+		 *
+		 * @since    1.3.0
+		 * @version  1.3.0
+		 */
+		public static function register_inline_styles() {
+
+			// Processing
+
+				wp_register_style( 'reykjavik', '' );
+
+		} // /register_inline_styles
+
+
+
+		/**
+		 * Placeholder for adding inline styles: enqueue.
+		 *
+		 * @since    1.3.0
+		 * @version  1.3.0
+		 */
+		public static function enqueue_inline_styles() {
+
+			// Processing
+
+				wp_enqueue_style( 'reykjavik' );
+
+		} // /enqueue_inline_styles
 
 
 
@@ -561,7 +592,7 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function editor_stylesheets() {
 
@@ -583,27 +614,21 @@ class Reykjavik_Assets {
 
 				// Editor stylesheet
 
-					if ( current_theme_supports( 'stylesheet-generator' ) ) {
+					if (
+						current_theme_supports( 'stylesheet-generator' )
+						&& Reykjavik_Customize_Styles::is_stylesheet_generated()
+					) {
+						$dev_prefix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
 
-						$wp_upload_dir    = wp_upload_dir();
-						$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
-
-						if ( file_exists( $theme_upload_dir . 'reykjavik-styles' . $stylesheet_suffix . '.css' ) ) {
-
-							$dev_prefix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
-
-							$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
-								'ver',
-								get_theme_mod( '__stylesheet_timestamp' ),
-								Reykjavik_Library::fix_ssl_urls( str_replace(
-									'reykjavik-styles',
-									$dev_prefix . 'reykjavik-styles',
-									get_theme_mod( '__url_css' . $stylesheet_suffix )
-								) )
-							) );
-
-						}
-
+						$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
+							'ver',
+							get_theme_mod( '__stylesheet_timestamp' ),
+							Reykjavik_Library::fix_ssl_urls( str_replace(
+								'reykjavik-styles',
+								$dev_prefix . 'reykjavik-styles',
+								get_theme_mod( '__url_css' . $stylesheet_suffix )
+							) )
+						) );
 					}
 
 					/**
@@ -615,6 +640,16 @@ class Reykjavik_Assets {
 					if ( ! isset( $visual_editor_stylesheets[10] ) ) {
 
 						$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
+							'ver',
+							REYKJAVIK_THEME_VERSION,
+							get_theme_file_uri( 'assets/css/main' . str_replace(
+								'-editor',
+								'',
+								$stylesheet_suffix
+							) . '.css' )
+						) );
+
+						$visual_editor_stylesheets[15] = esc_url_raw( add_query_arg(
 							'ver',
 							REYKJAVIK_THEME_VERSION,
 							get_theme_file_uri( 'assets/css/editor-style' . str_replace(

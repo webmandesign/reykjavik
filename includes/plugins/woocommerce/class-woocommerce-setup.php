@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.5
+		 * @version  1.3.0
 		 */
 		private function __construct() {
 
@@ -78,8 +78,6 @@ class Reykjavik_WooCommerce_Setup {
 						remove_filter( 'wp_nav_menu', 'Reykjavik_Menu::mobile_menu_search', 20 );
 
 					// Actions
-
-						add_action( 'add_meta_boxes', __CLASS__ . '::allow_post_type_templates', 20 );
 
 						add_action( 'init', __CLASS__ . '::shortcodes_enable_subtitle' );
 
@@ -425,13 +423,13 @@ class Reykjavik_WooCommerce_Setup {
 		 * Adding "My Account" page and "Checkout" page links for mobile menu.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function mobile_menu_links() {
 
 			// Requirements check
 
-				if ( ! get_theme_mod( 'navigation_mobile', true ) ) {
+				if ( ! Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ) ) {
 					return;
 				}
 
@@ -479,7 +477,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * to determine the cause) customizer displays the menu twice.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  string $nav_menu
 		 * @param  object $args
@@ -489,9 +487,9 @@ class Reykjavik_WooCommerce_Setup {
 			// Requirements check
 
 				if (
-						'primary' !== $args->theme_location
-						|| ! get_theme_mod( 'navigation_mobile', true )
-					) {
+					'primary' !== $args->theme_location
+					|| ! Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' )
+				) {
 					return $nav_menu;
 				}
 
@@ -529,54 +527,6 @@ class Reykjavik_WooCommerce_Setup {
 				woocommerce_demo_store();
 
 		} // /demo_store
-
-
-
-		/**
-		 * Compatibility with WordPress 4.7 post type templates
-		 *
-		 * Also removes the theme page templates if we disabled
-		 * product intro in theme options.
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function allow_post_type_templates() {
-
-			// Helper variables
-
-				$post = get_post();
-
-
-			// Requirements check
-
-				if (
-						empty( $post )
-						|| 'product' !== $post->post_type
-					) {
-					return;
-				}
-
-
-			// Processing
-
-				$page_templates = (array) get_page_templates( $post );
-
-				if ( count( $page_templates ) ) {
-
-					$post_type_object = get_post_type_object( $post->post_type );
-
-					add_meta_box(
-							'pageparentdiv',
-							$post_type_object->labels->attributes,
-							'page_attributes_meta_box',
-							null,
-							'side'
-						);
-
-				}
-
-		} // /allow_post_type_templates
 
 
 

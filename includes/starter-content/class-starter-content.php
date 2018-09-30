@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -169,7 +169,7 @@ class Reykjavik_Starter_Content {
 		 * Pages
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function pages() {
 
@@ -186,7 +186,7 @@ class Reykjavik_Starter_Content {
 							                  esc_html_x( 'Welcome to our website!', 'Theme starter content', 'reykjavik' ) .
 							                  '</h2><p class="h3">' .
 							                  esc_html_x( 'This is your homepage, which is what most visitors will see when they come to your site for the first time.', 'Theme starter content', 'reykjavik' ) .
-							                  ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.</p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" /><p>&nbsp;</p></div>' .
+							                  ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris eleifend, egestas lectus et, vulputate orci.</p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="Waves illustration" /><p>&nbsp;</p></div>' .
 
 							                  '<h2>' .
 							                  esc_html_x( 'In default page layout&hellip;', 'Theme starter content', 'reykjavik' ) .
@@ -213,7 +213,7 @@ class Reykjavik_Starter_Content {
 							                  '[products visibility="featured" limit="3" columns="3" orderby="date" order="DESC"]' .
 							                  '<p><em><small>' .
 							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your products.', 'Theme starter content', 'reykjavik' ) .
-							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
+							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="Waves illustration" />' .
 							                  '</div>' .
 
 							                  '<h2>' .
@@ -223,7 +223,7 @@ class Reykjavik_Starter_Content {
 							                  '[product_categories limit="3" columns="3"]' .
 							                  '<p><em><small>' .
 							                  esc_html_x( 'You need to have WooCommerce plugin installed and activated for this shortcode to display your product categories.', 'Theme starter content', 'reykjavik' ) .
-							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="" />' .
+							                  '</small></em></p><p>&nbsp;</p><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/waves.jpg" alt="Waves illustration" />' .
 							                  '</div>' .
 
 							                  '<h2>' .

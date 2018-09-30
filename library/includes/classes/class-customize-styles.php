@@ -5,13 +5,15 @@
  * @uses  `wmhook_reykjavik_theme_options` global hook
  * @uses  `wmhook_reykjavik_custom_styles` global hook
  * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
- * @uses  `wmhook_reykjavik_enable_rtl` global hook
  *
- * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
+ * @subpackage  Stylesheet Generator
+ *
+ * @package    WebMan WordPress Theme Framework
+ * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.8.0
- * @version  2.5.3
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -133,18 +135,27 @@ final class Reykjavik_Library_Customize_Styles {
 		/**
 		 * Generate main CSS file
 		 *
-		 * @since    1.0.0
-		 * @version  2.5.0
+		 * @subpackage  Customize Options
 		 *
-		 * @param  array $args
+		 * @since    1.0.0
+		 * @version  2.7.0
+		 *
+		 * @param  string $scope
 		 */
-		public static function generate_main_css( $args = array() ) {
+		public static function generate_main_css( $scope = '' ) {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_library_generate_main_css_pre', ! self::$supports_generator, $args );
+				$scope = trim( (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_scope', $scope ), ' -' );
 
-				if ( false !== $pre ) {
+				if ( ! empty( $scope ) ) {
+					$scope = '-' . $scope;
+				}
+
+				$pre = ( self::$supports_generator ) ? ( null ) : ( false );
+				$pre = apply_filters( 'wmhook_reykjavik_library_generate_main_css_pre', $pre, $scope );
+
+				if ( null !== $pre ) {
 					return $pre;
 				}
 
@@ -153,21 +164,18 @@ final class Reykjavik_Library_Customize_Styles {
 
 				$output = $output_min = '';
 
-				$filesystem = self::get_filesystem();
-
-				$args = apply_filters( 'wmhook_reykjavik_library_generate_main_css_args', wp_parse_args( $args, array(
-						'type' => '',
-					) ) );
-				$args['type'] = trim( $args['type'] );
+				$filesystem    = self::get_filesystem();
+				$required_file = REYKJAVIK_PATH . 'assets/css-generate/generate-css' . $scope . '.php';
 
 
 			// Requirements check
 
 				if (
-						! $filesystem
-						|| ! is_callable( array( $filesystem, 'put_contents' ) )
-						|| ! function_exists( 'wp_mkdir_p' )
-					) {
+					! file_exists( $required_file )
+					|| ! $filesystem
+					|| ! is_callable( array( $filesystem, 'put_contents' ) )
+					|| ! function_exists( 'wp_mkdir_p' )
+				) {
 					return;
 				}
 
@@ -177,8 +185,8 @@ final class Reykjavik_Library_Customize_Styles {
 				// Get the file content with output buffering
 
 					ob_start();
-					require_once REYKJAVIK_PATH . 'assets/css-generate/generate-css' . $args['type'] . '.php';
-					$output = apply_filters( 'wmhook_reykjavik_library_generate_main_css_output', trim( ob_get_clean() ), $args );
+					require_once $required_file;
+					$output = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_output', trim( ob_get_clean() ), $scope );
 
 					// Requirements check
 
@@ -188,7 +196,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 				// Minify output if set
 
-					$output_min = apply_filters( 'wmhook_reykjavik_library_generate_main_css_output_min', $output, $args );
+					$output_min = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_output_min', $output, $scope );
 
 				// Create the theme CSS folder
 
@@ -198,28 +206,23 @@ final class Reykjavik_Library_Customize_Styles {
 					$theme_css_dir = trailingslashit( $wp_upload_dir['basedir'] ) . 'wmtheme-reykjavik';
 
 					if (
-							! ( file_exists( $theme_css_dir ) && is_dir( $theme_css_dir ) )
-							&& ! wp_mkdir_p( $theme_css_dir )
-						) {
+						! ( file_exists( $theme_css_dir ) && is_dir( $theme_css_dir ) )
+						&& ! wp_mkdir_p( $theme_css_dir )
+					) {
 
 						/**
 						 * Display admin notice if we can not write the file,
 						 * and exit the method returning `false`.
 						 */
 
-						set_transient(
-								'reykjavik_admin_notice',
-								array(
-									'<strong>' . esc_html__( "ERROR: Wasn't able to create a theme CSS folder! Contact the theme support.", 'reykjavik' ) . '</strong>',
-									'notice-error',
-									'edit_theme_options',
-									2
-								),
-								( 60 * 60 * 48 )
-							);
+						error_log(
+							__METHOD__ . ': '
+							. 'ERROR: '
+							. 'Theme "' . get_template() . '" was not able to create "' . $theme_css_dir . '" directory.'
+						);
 
-						remove_theme_mod( '__url_css' . $args['type'] );
-						remove_theme_mod( '__path_theme_generated_files' . $args['type'] );
+						remove_theme_mod( '__url_css' . $scope );
+						remove_theme_mod( '__path_theme_generated_files' . $scope );
 
 						return false;
 
@@ -227,17 +230,17 @@ final class Reykjavik_Library_Customize_Styles {
 
 				// Create the theme CSS files
 
-					$file_name = apply_filters( 'wmhook_reykjavik_library_generate_main_css_file_name', 'reykjavik-styles' . $args['type'], $args );
+					$file_name = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_file_name', 'reykjavik-styles' . $scope, $scope );
 
-					$global_css_path     = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path', trailingslashit( $theme_css_dir ) . $file_name . '.css', $args, $file_name, $theme_css_dir );
-					$global_css_path_dev = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . 'dev-' . $file_name . '.css', $args, $file_name, $theme_css_dir );
+					$global_css_path     = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path', trailingslashit( $theme_css_dir ) . $file_name . '.css', $scope, $file_name, $theme_css_dir );
+					$global_css_path_dev = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_path_dev', trailingslashit( $theme_css_dir ) . 'dev-' . $file_name . '.css', $scope, $file_name, $theme_css_dir );
 
-					$global_css_url = apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_url', trailingslashit( $theme_css_url ) . $file_name . '.css', $args, $file_name, $theme_css_url );
+					$global_css_url = (string) apply_filters( 'wmhook_reykjavik_library_generate_main_css_global_css_url', trailingslashit( $theme_css_url ) . $file_name . '.css', $scope, $file_name, $theme_css_url );
 
 					if (
-							$output
-							&& $filesystem->put_contents( $global_css_path, $output_min )
-						) {
+						$output
+						&& $filesystem->put_contents( $global_css_path, $output_min )
+					) {
 
 						/**
 						 * Alright, we've got a CSS string to write,
@@ -253,12 +256,12 @@ final class Reykjavik_Library_Customize_Styles {
 
 						// Store the CSS files paths and urls in DB
 
-							set_theme_mod( '__url_css' . $args['type'], $global_css_url );
-							set_theme_mod( '__path_theme_generated_files' . $args['type'], str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
+							set_theme_mod( '__url_css' . $scope, $global_css_url );
+							set_theme_mod( '__path_theme_generated_files' . $scope, str_replace( $wp_upload_dir['basedir'], '', $theme_css_dir ) );
 
 						// Run custom actions
 
-							do_action( 'wmhook_reykjavik_library_generate_main_css', $args );
+							do_action( 'wmhook_reykjavik_library_generate_main_css', $scope );
 
 						return true;
 
@@ -266,8 +269,8 @@ final class Reykjavik_Library_Customize_Styles {
 
 				// Well, if we've got down here, there is really nothing we can do...
 
-					remove_theme_mod( '__url_css' . $args['type'] );
-					remove_theme_mod( '__path_theme_generated_files' . $args['type'] );
+					remove_theme_mod( '__url_css' . $scope );
+					remove_theme_mod( '__path_theme_generated_files' . $scope );
 
 					return false;
 
@@ -278,14 +281,17 @@ final class Reykjavik_Library_Customize_Styles {
 			/**
 			 * Generate editor CSS file
 			 *
+			 * If the editor version of `assets/css-generate/generate-css-$scope.php` file
+			 * does not exist in the theme, no processing is executed.
+			 *
 			 * @since    1.3.0
-			 * @version  1.3.0
+			 * @version  2.6.0
 			 */
 			public static function generate_main_css_editor() {
 
 				// Output
 
-					self::generate_main_css( array( 'type' => '-editor' ) );
+					self::generate_main_css( 'editor' );
 
 			} // /generate_main_css_editor
 
@@ -294,17 +300,18 @@ final class Reykjavik_Library_Customize_Styles {
 			/**
 			 * Generate RTL CSS file
 			 *
+			 * If the RTL version of `assets/css-generate/generate-css-$scope.php` file
+			 * does not exist in the theme, no processing is executed.
+			 *
 			 * @since    1.3.0
-			 * @version  1.3.0
+			 * @version  2.6.0
 			 */
 			public static function generate_main_css_rtl() {
 
 				// Output
 
-					if ( apply_filters( 'wmhook_reykjavik_enable_rtl', false ) ) {
-						self::generate_main_css( array( 'type' => '-rtl' ) );
-						self::generate_main_css( array( 'type' => '-editor-rtl' ) );
-					}
+					self::generate_main_css( 'rtl' );
+					self::generate_main_css( 'editor-rtl' );
 
 			} // /generate_main_css_rtl
 
@@ -331,6 +338,8 @@ final class Reykjavik_Library_Customize_Styles {
 
 		/**
 		 * Saves stylesheet regeneration timestamp into theme options
+		 *
+		 * @subpackage  Customize Options
 		 *
 		 * @since    2.3.0
 		 * @version  2.3.0
@@ -367,8 +376,10 @@ final class Reykjavik_Library_Customize_Styles {
 		 * @uses  `wmhook_reykjavik_custom_styles` global hook
 		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
+		 * @subpackage  Customize Options
+		 *
 		 * @since    1.0.0
-		 * @version  2.5.3
+		 * @version  2.7.0
 		 *
 		 * @param  string $css    CSS string with variables to replace.
 		 * @param  string $scope  Optional CSS scope (such as 'editor' for generating editor styles).
@@ -380,7 +391,7 @@ final class Reykjavik_Library_Customize_Styles {
 				$pre = apply_filters( 'wmhook_reykjavik_library_custom_styles_pre', false, $css, $scope );
 
 				if ( false !== $pre ) {
-					return $pre;
+					return ( is_string( $pre ) ) ? ( $pre ) : ( $css );
 				}
 
 
@@ -402,9 +413,9 @@ final class Reykjavik_Library_Customize_Styles {
 				$is_customize_preview = is_customize_preview();
 
 				if (
-						! self::$supports_generator
-						&& ! $is_customize_preview
-					) {
+					! self::$supports_generator
+					&& ! $is_customize_preview
+				) {
 
 					$output_cached = '';
 					$cache = (array) get_transient( self::$cache_key );
@@ -455,31 +466,9 @@ final class Reykjavik_Library_Customize_Styles {
 									continue;
 								}
 
-							// If we have an ID, get the default value if set
+							// Get modified option value or fall back to default
 
-								if ( isset( $option['default'] ) && 'image' !== $option['type'] ) {
-									$value = $option['default'];
-								}
-
-							// Get the option value saved in database and apply it when exists
-
-								$mod = get_theme_mod( $option_id );
-
-								/**
-								 * As this is producing CSS output, we allow checking
-								 * for an empty or zero value with checkbox and range controls.
-								 * Checkbox can be used in conditional comments in CSS for example (see below).
-								 * Also image control can have a value of `false` in which case the
-								 * option default value is used. If the image control is of empty string
-								 * the `none` is set as value.
-								 */
-								if (
-										$mod
-										|| is_numeric( $mod )
-										|| in_array( $option['type'], array( 'checkbox', 'image' ) )
-									) {
-									$value = $mod;
-								}
+								$value = Reykjavik_Library_Customize::get_theme_mod( $option_id, $option );
 
 							// Make sure the color value contains '#'
 
@@ -502,8 +491,6 @@ final class Reykjavik_Library_Customize_Styles {
 
 									if ( ! empty( $value ) ) {
 										$value = "url('" . esc_url( $value ) . "')";
-									} elseif ( false === $value ) {
-										$value = "url('" . esc_url( $option['default'] ) . "')";
 									} else {
 										$value = 'none';
 									}
@@ -513,34 +500,27 @@ final class Reykjavik_Library_Customize_Styles {
 							// CSS output
 
 								if ( isset( $option['css_output'] ) ) {
-
 									switch ( $option['css_output'] ) {
+
 										case 'comma_list':
 										case 'comma_list_quoted':
-
-												if ( is_array( $value ) ) {
-
-													if ( 'comma_list_quoted' == $option['css_output'] ) {
-														$value = "'" . implode( "', '", $value ) . "'";
-													} else {
-														$value = implode( ', ', $value );
-													}
-
+											if ( is_array( $value ) ) {
+												if ( 'comma_list_quoted' == $option['css_output'] ) {
+													$value = "'" . implode( "', '", $value ) . "'";
+												} else {
+													$value = implode( ', ', $value );
 												}
-
-												$value .= ',';
-
+											}
+											$value .= ',';
 											break;
 
 										default:
-
-												if ( is_callable( $option['css_output'] ) ) {
-													$value = call_user_func( $option['css_output'], $value, $option );
-												}
-
+											if ( is_callable( $option['css_output'] ) ) {
+												$value = call_user_func( $option['css_output'], $value, $option );
+											}
 											break;
-									} // /switch
 
+									}
 								}
 
 							// Value filtering
@@ -564,7 +544,7 @@ final class Reykjavik_Library_Customize_Styles {
 									if ( 'color' === $option['type'] && ! empty( $rgba_alphas ) ) {
 										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[' . $css_option_id . '(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
+										}
 									}
 
 								// Option related conditional CSS comment
@@ -585,7 +565,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 									}
 
-						} // /foreach
+						}
 
 						// Add WordPress Custom Background and Header support
 
@@ -597,7 +577,7 @@ final class Reykjavik_Library_Customize_Styles {
 									if ( ! empty( $rgba_alphas ) ) {
 										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[background_color(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
+										}
 									}
 								}
 
@@ -617,7 +597,7 @@ final class Reykjavik_Library_Customize_Styles {
 									if ( ! empty( $rgba_alphas ) ) {
 										foreach ( $rgba_alphas as $alpha ) {
 											$replacements[ '[[header_textcolor(' . absint( $alpha ) . ')]]' ] = self::color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
+										}
 									}
 								}
 
@@ -647,9 +627,9 @@ final class Reykjavik_Library_Customize_Styles {
 					 * or when we are not in Customizer and we have no cache.
 					 */
 					if (
-							! self::$supports_generator
-							&& ! $is_customize_preview
-						) {
+						! self::$supports_generator
+						&& ! $is_customize_preview
+					) {
 
 						$cache = (array) get_transient( self::$cache_key );
 
@@ -713,7 +693,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * @see  http://wordpress.findincity.net/view/63538464303732726692954/using-wpfilesystem-in-plugins-to-store-customizer-settings
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.7
+		 * @version  2.7.0
 		 */
 		public static function get_filesystem() {
 
@@ -731,30 +711,26 @@ final class Reykjavik_Library_Customize_Styles {
 				// Require the WordPress filesystem functionality if not found
 
 					if (
-							! function_exists( 'get_filesystem_method' )
-							&& ABSPATH
-						) {
+						! function_exists( 'get_filesystem_method' )
+						&& ABSPATH
+					) {
 						require_once( ABSPATH . 'wp-admin/includes/file.php' );
 					}
 
 				// Check the filesystem method
 
 					if (
-							'direct' !== get_filesystem_method()
-							&& ! defined( 'FTP_USER' )
-						) {
+						'direct' !== get_filesystem_method()
+						&& ! defined( 'FTP_USER' )
+					) {
 
-						// If we don't have filesystem access, display an admin notice
-
-							set_transient(
-									'reykjavik_admin_notice',
-									array(
-										esc_html__( 'The theme writes a files to your server. You do not appear to have your FTP credentials set up in "wp-config.php" file.', 'reykjavik' ) . ' <a href="http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants" target="_blank">' . esc_html__( 'Please set your FTP credentials first.', 'reykjavik' ) . '</a>',
-										'notice-error',
-										'edit_theme_options'
-									),
-									( 60 * 60 * 24 )
-								);
+						error_log(
+							__METHOD__ . ': '
+							. 'ERROR: '
+							. 'Theme "' . get_template() . '" could not get access to your server to write files to WordPress uploads directory.'
+							. ' '
+							. 'Please try to set up FTP credentials in your "wp-confix.php" file (https://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to fix the issue.'
+						);
 
 						return false;
 
@@ -786,7 +762,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * CSS minifier
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.7.0
 		 *
 		 * @param  string $css Code to minimize
 		 */
@@ -797,7 +773,7 @@ final class Reykjavik_Library_Customize_Styles {
 				$pre = apply_filters( 'wmhook_reykjavik_library_minify_css_pre', false, $css );
 
 				if ( false !== $pre ) {
-					return $pre;
+					return ( is_string( $pre ) ) ? ( $pre ) : ( $css );
 				}
 
 
@@ -816,7 +792,7 @@ final class Reykjavik_Library_Customize_Styles {
 
 				// Remove tabs, spaces, line breaks, etc.
 
-					$css = str_replace( array( "\r\n", "\r", "\n", "\t" ), '', $css );
+					$css = str_replace( array( PHP_EOL, "\t" ), '', $css );
 					$css = str_replace( array( '  ', '   ', '    ', '     ' ), ' ', $css );
 					$css = str_replace( array( ' { ', ': ', '; }' ), array( '{', ':', '}' ), $css );
 
@@ -900,7 +876,7 @@ final class Reykjavik_Library_Customize_Styles {
 		 * Duplicating WordPress native function in case it does not exist yet
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.6.0
 		 *
 		 * @link  https://developer.wordpress.org/reference/functions/maybe_hash_hex_color/
 		 * @link  https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/
@@ -912,9 +888,9 @@ final class Reykjavik_Library_Customize_Styles {
 			// Requirements check
 
 				if (
-						function_exists( 'maybe_hash_hex_color' )
-						&& function_exists( 'sanitize_hex_color_no_hash' )
-					) {
+					function_exists( 'maybe_hash_hex_color' )
+					&& function_exists( 'sanitize_hex_color_no_hash' )
+				) {
 					return maybe_hash_hex_color( $color );
 				}
 

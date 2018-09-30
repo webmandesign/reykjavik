@@ -4,17 +4,20 @@
  *
  * @uses  `wmhook_reykjavik_theme_options` global hook
  *
- * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
  *
+ * @package    WebMan WordPress Theme Framework
+ * @copyright  WebMan Design, Oliver Juhas
+ *
  * @since    1.0.0
- * @version  2.5.4
+ * @version  2.7.0
  *
  * Contents:
  *
  *  0) Init
  * 10) Assets
  * 20) Customizer core
+ * 30) Getters
  */
 final class Reykjavik_Library_Customize {
 
@@ -27,6 +30,10 @@ final class Reykjavik_Library_Customize {
 	 */
 
 		private static $instance;
+
+		public static $mods = false;
+
+		public static $theme_options_setup = false;
 
 
 
@@ -89,7 +96,7 @@ final class Reykjavik_Library_Customize {
 		 * Customizer controls assets
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.6
+		 * @version  2.7.0
 		 */
 		public static function assets() {
 
@@ -98,12 +105,12 @@ final class Reykjavik_Library_Customize {
 				// Styles
 
 					wp_enqueue_style(
-							'reykjavik-customize-controls',
-							get_theme_file_uri( REYKJAVIK_LIBRARY_DIR . 'css/customize.css' ),
-							false,
-							esc_attr( REYKJAVIK_THEME_VERSION ),
-							'screen'
-						);
+						'reykjavik-customize-controls',
+						get_theme_file_uri( REYKJAVIK_LIBRARY_DIR . 'css/customize.css' ),
+						false,
+						REYKJAVIK_THEME_VERSION,
+						'screen'
+					);
 
 					// RTL setup
 
@@ -112,12 +119,12 @@ final class Reykjavik_Library_Customize {
 				// Scripts
 
 					wp_enqueue_script(
-							'reykjavik-customize-controls',
-							get_theme_file_uri( REYKJAVIK_LIBRARY_DIR . 'js/customize-controls.js' ),
-							array( 'customize-controls' ),
-							esc_attr( REYKJAVIK_THEME_VERSION ),
-							true
-						);
+						'reykjavik-customize-controls',
+						get_theme_file_uri( REYKJAVIK_LIBRARY_DIR . 'js/customize-controls.js' ),
+						array( 'customize-controls' ),
+						REYKJAVIK_THEME_VERSION,
+						true
+					);
 
 		} // /assets
 
@@ -152,34 +159,34 @@ final class Reykjavik_Library_Customize {
 		 *
 		 *       'css' => array(
 		 *
-		 *           // Sets the whole value to the `css-property-name` of the `selector`
+		 *         // Sets the whole value to the `css-property-name` of the `selector`
 		 *
-		 *             'selector' => array(
-		 *                 'background-color',...
-		 *               ),
+		 *           'selector' => array(
+		 *             'background-color',...
+		 *           ),
 		 *
-		 *           // Sets the `css-property-name` of the `selector` with specific settings
+		 *         // Sets the `css-property-name` of the `selector` with specific settings
 		 *
-		 *             'selector' => array(
-		 *                 array(
-		 *                     'property'         => 'text-shadow',
-		 *                     'prefix'           => '0 1px 1px rgba(',
-		 *                     'suffix'           => ', .5)',
-		 *                     'process_callback' => 'hexToRgb',
-		 *                     'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
-		 *                   ),...
-		 *               ),
+		 *           'selector' => array(
+		 *             array(
+		 *               'property'         => 'text-shadow',
+		 *               'prefix'           => '0 1px 1px rgba(',
+		 *               'suffix'           => ', .5)',
+		 *               'process_callback' => 'hexToRgb',
+		 *               'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
+		 *             ),...
+		 *           ),
 		 *
-		 *           // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
+		 *         // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
 		 *
-		 *             'selector' => array(
-		 *                 'selector_replace' => 'selector-replace-value',
-		 *                 'selector_before'  => '@media only screen and (min-width: 80em) {',
-		 *                 'selector_after'   => '}',
-		 *                 'background-color',...
-		 *               ),
+		 *           'selector' => array(
+		 *             'selector_replace' => 'selector-replace-value',
+		 *             'selector_before'  => '@media only screen and (min-width: 80em) {',
+		 *             'selector_after'   => '}',
+		 *             'background-color',...
+		 *           ),
 		 *
-		 *         ),
+		 *       ),
 		 *
 		 *     // And/or setting custom JavaScript:
 		 *
@@ -189,8 +196,10 @@ final class Reykjavik_Library_Customize {
 		 *
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
+		 * @subpackage  Customize Options
+		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.7.0
 		 */
 		public static function preview_scripts() {
 
@@ -199,13 +208,13 @@ final class Reykjavik_Library_Customize {
 				$pre = apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_pre', false );
 
 				if ( false !== $pre ) {
-					return $pre;
+					return (string) $pre;
 				}
 
 
 			// Helper variables
 
-				$theme_options = apply_filters( 'wmhook_reykjavik_theme_options', array() );
+				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
 
 				ksort( $theme_options );
 
@@ -215,25 +224,22 @@ final class Reykjavik_Library_Customize {
 			// Processing
 
 				if ( is_array( $theme_options ) && ! empty( $theme_options ) ) {
-
 					foreach ( $theme_options as $theme_option ) {
-
 						if ( isset( $theme_option['preview_js'] ) && is_array( $theme_option['preview_js'] ) ) {
 
-							$output_single  = "wp.customize("  . "\r\n";
-							$output_single .= "\t" . "'" . $theme_option['id'] . "',"  . "\r\n";
-							$output_single .= "\t" . "function( value ) {"  . "\r\n";
-							$output_single .= "\t\t" . 'value.bind( function( to ) {' . "\r\n";
+							$output_single  = "wp.customize("  . PHP_EOL;
+							$output_single .= "\t" . "'" . $theme_option['id'] . "',"  . PHP_EOL;
+							$output_single .= "\t" . "function( value ) {"  . PHP_EOL;
+							$output_single .= "\t\t" . 'value.bind( function( to ) {' . PHP_EOL;
 
 							// CSS
 
 								if ( isset( $theme_option['preview_js']['css'] ) ) {
 
-									$output_single .= "\t\t\t" . "var newCss = '';" . "\r\n\r\n";
-									$output_single .= "\t\t\t" . "if ( jQuery( '#jscss-" . $theme_option['id'] . "' ).length ) { jQuery( '#jscss-" . $theme_option['id'] . "' ).remove() }" . "\r\n\r\n";
+									$output_single .= "\t\t\t" . "var newCss = '';" . PHP_EOL.PHP_EOL;
+									$output_single .= "\t\t\t" . "if ( jQuery( '#jscss-" . $theme_option['id'] . "' ).length ) { jQuery( '#jscss-" . $theme_option['id'] . "' ).remove() }" . PHP_EOL.PHP_EOL;
 
 									foreach ( $theme_option['preview_js']['css'] as $selector => $properties ) {
-
 										if ( is_array( $properties ) ) {
 
 											$output_single_css = $selector_before = $selector_after = '';
@@ -243,7 +249,15 @@ final class Reykjavik_Library_Customize {
 												// Selector setup
 
 													if ( 'selector_replace' === $key ) {
-														$selector = str_replace( '@', $property, $selector );
+														if ( is_array( $property ) ) {
+															$selector_replaced = array();
+															foreach ( $property as $replace ) {
+																$selector_replaced[] = str_replace( '@', (string) $replace, $selector );
+															}
+															$selector = implode( ', ', $selector_replaced );
+														} else {
+															$selector = str_replace( '@', (string) $property, $selector );
+														}
 														continue;
 													}
 
@@ -264,12 +278,12 @@ final class Reykjavik_Library_Customize {
 													}
 
 													$property = wp_parse_args( (array) $property, array(
-															'custom'           => '',
-															'prefix'           => '',
-															'process_callback' => '',
-															'property'         => '',
-															'suffix'           => '',
-														) );
+														'custom'           => '',
+														'prefix'           => '',
+														'process_callback' => '',
+														'property'         => '',
+														'suffix'           => '',
+													) );
 
 													$value = ( empty( $property['process_callback'] ) ) ? ( 'to' ) : ( trim( $property['process_callback'] ) . '( to )' );
 
@@ -279,42 +293,39 @@ final class Reykjavik_Library_Customize {
 														$output_single_css .= $property['property'] . ": " . str_replace( '[[value]]', "' + " . $value . " + '", $property['custom'] ) . "; ";
 													}
 
-											} // /foreach
+											}
 
-											$output_single .= "\t\t\t" . "newCss += '" . $selector_before . $selector . " { " . $output_single_css . "}" . $selector_after . " ';" . "\r\n";
+											$output_single .= "\t\t\t" . "newCss += '" . $selector_before . $selector . " { " . $output_single_css . "}" . $selector_after . " ';" . PHP_EOL;
 
 										}
+									}
 
-									} // /foreach
-
-									$output_single .= "\r\n\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . "\r\n";
+									$output_single .= PHP_EOL . "\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . PHP_EOL;
 
 								}
 
 							// Custom JS
 
 								if ( isset( $theme_option['preview_js']['custom'] ) ) {
-									$output_single .= "\t\t" . $theme_option['preview_js']['custom'] . "\r\n";
+									$output_single .= "\t\t" . $theme_option['preview_js']['custom'] . PHP_EOL;
 								}
 
-							$output_single .= "\t\t" . '} );' . "\r\n";
-							$output_single .= "\t" . '}'. "\r\n";
-							$output_single .= ');'. "\r\n";
-							$output_single  = apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_option_' . $theme_option['id'], $output_single );
+							$output_single .= "\t\t" . '} );' . PHP_EOL;
+							$output_single .= "\t" . '}'. PHP_EOL;
+							$output_single .= ');'. PHP_EOL;
+							$output_single  = (string) apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_option_' . $theme_option['id'], $output_single );
 
 							$output .= $output_single;
 
 						}
-
-					} // /foreach
-
+					}
 				}
 
 
 			// Output
 
 				if ( $output = trim( $output ) ) {
-					echo apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_output', '<!-- Theme custom scripts -->' . "\r\n" . '<script type="text/javascript"><!--' . "\r\n" . '( function( $ ) {' . "\r\n\r\n" . trim( $output ) . "\r\n\r\n" . '} )( jQuery );' . "\r\n" . '//--></script>' );
+					echo (string) apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_output', '<!-- Theme custom scripts -->' . PHP_EOL . '<script type="text/javascript"><!--' . PHP_EOL . '( function( $ ) {' . PHP_EOL.PHP_EOL . trim( $output ) . PHP_EOL.PHP_EOL . '} )( jQuery );' . PHP_EOL . '//--></script>' );
 				}
 
 		} // /preview_scripts
@@ -332,8 +343,10 @@ final class Reykjavik_Library_Customize {
 		 *
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
+		 * @subpackage  Customize Options
+		 *
 		 * @since    1.0.0
-		 * @version  2.5.4
+		 * @version  2.7.0
 		 *
 		 * @param  object $wp_customize WP customizer object.
 		 */
@@ -348,9 +361,9 @@ final class Reykjavik_Library_Customize {
 
 			// Pre
 
-				$pre = apply_filters( 'wmhook_reykjavik_library_customize_pre', false, $wp_customize );
+				$pre = apply_filters( 'wmhook_reykjavik_library_customize_pre', null, $wp_customize );
 
-				if ( false !== $pre ) {
+				if ( null !== $pre ) {
 					return $pre;
 				}
 
@@ -361,25 +374,25 @@ final class Reykjavik_Library_Customize {
 
 				ksort( $theme_options );
 
-				$allowed_option_types = apply_filters( 'wmhook_reykjavik_library_customize_allowed_option_types', array(
-						'checkbox',
-						'color',
-						'email',
-						'hidden',
-						'html',
-						'image',
-						'multicheckbox',
-						'multiselect',
-						'password',
-						'radio',
-						'radiomatrix',
-						'range',
-						'section',
-						'select',
-						'text',
-						'textarea',
-						'url',
-					) );
+				$allowed_option_types = (array) apply_filters( 'wmhook_reykjavik_library_customize_allowed_option_types', array(
+					'checkbox',
+					'color',
+					'email',
+					'hidden',
+					'html',
+					'image',
+					'multicheckbox',
+					'multiselect',
+					'password',
+					'radio',
+					'radiomatrix',
+					'range',
+					'section',
+					'select',
+					'text',
+					'textarea',
+					'url',
+				) );
 
 				// To make sure our customizer sections start after WordPress default ones
 
@@ -440,15 +453,16 @@ final class Reykjavik_Library_Customize {
 
 				// Generate customizer options
 
-					if ( is_array( $theme_options ) && ! empty( $theme_options ) ) {
-
+					if (
+						is_array( $theme_options )
+						&& ! empty( $theme_options )
+					) {
 						foreach ( $theme_options as $theme_option ) {
-
 							if (
-									is_array( $theme_option )
-									&& isset( $theme_option['type'] )
-									&& in_array( $theme_option['type'], $allowed_option_types )
-								) {
+								is_array( $theme_option )
+								&& isset( $theme_option['type'] )
+								&& in_array( $theme_option['type'], $allowed_option_types )
+							) {
 
 								// Helper variables
 
@@ -464,6 +478,18 @@ final class Reykjavik_Library_Customize {
 									}
 									if ( isset( $theme_option['description'] ) ) {
 										$description = $theme_option['description'];
+									}
+
+									if ( isset( $theme_option['sanitize_callback'] ) ) {
+										$sanitize_callback = $theme_option['sanitize_callback'];
+									} else {
+										$sanitize_callback = '';
+									}
+
+									if ( isset( $theme_option['validate_callback'] ) ) {
+										$validate_callback = $theme_option['validate_callback'];
+									} else {
+										$validate_callback = '';
 									}
 
 									$transport = ( isset( $theme_option['preview_js'] ) ) ? ( 'postMessage' ) : ( 'refresh' );
@@ -487,35 +513,28 @@ final class Reykjavik_Library_Customize {
 									$panel_type = 'theme-options';
 
 									if ( is_array( $theme_option['in_panel'] ) ) {
-
 										$panel_title = isset( $theme_option['in_panel']['title'] ) ? ( $theme_option['in_panel']['title'] ) : ( '&mdash;' );
 										$panel_id    = isset( $theme_option['in_panel']['id'] ) ? ( $theme_option['in_panel']['id'] ) : ( $panel_type );
 										$panel_type  = isset( $theme_option['in_panel']['type'] ) ? ( $theme_option['in_panel']['type'] ) : ( $panel_type );
-
 									} else {
-
 										$panel_title = $theme_option['in_panel'];
 										$panel_id    = $panel_type;
-
 									}
 
-									$panel_type = apply_filters( 'wmhook_reykjavik_library_customize_panel_type', $panel_type, $theme_option, $theme_options );
-									$panel_id   = apply_filters( 'wmhook_reykjavik_library_customize_panel_id', $panel_id, $theme_option, $theme_options );
+									$panel_type = (string) apply_filters( 'wmhook_reykjavik_library_customize_panel_type', $panel_type, $theme_option, $theme_options );
+									$panel_id   = (string) apply_filters( 'wmhook_reykjavik_library_customize_panel_id', $panel_id, $theme_option, $theme_options );
 
 									if ( $customizer_panel !== $panel_id ) {
-
 										$wp_customize->add_panel(
-												$panel_id,
-												array(
-													'title'       => esc_html( $panel_title ),
-													'description' => ( isset( $theme_option['in_panel-description'] ) ) ? ( $theme_option['in_panel-description'] ) : ( '' ), // Hidden at the top of the panel
-													'priority'    => $priority,
-													'type'        => $panel_type, // Sets also the panel class
-												)
-											);
-
+											$panel_id,
+											array(
+												'title'       => esc_html( $panel_title ),
+												'description' => ( isset( $theme_option['in_panel-description'] ) ) ? ( $theme_option['in_panel-description'] ) : ( '' ), // Hidden at the top of the panel
+												'priority'    => $priority,
+												'type'        => $panel_type, // Sets also the panel class
+											)
+										);
 										$customizer_panel = $panel_id;
-
 									}
 
 								}
@@ -532,14 +551,14 @@ final class Reykjavik_Library_Customize {
 									}
 
 									$customizer_section = array(
-											'id'    => $option_id,
-											'setup' => array(
-													'title'       => $theme_option['create_section'], // Section title
-													'description' => ( isset( $theme_option['create_section-description'] ) ) ? ( $theme_option['create_section-description'] ) : ( '' ), // Displayed at the top of section
-													'priority'    => $priority,
-													'type'        => 'theme-options', // Sets also the section class
-												)
-										);
+										'id'    => $option_id,
+										'setup' => array(
+											'title'       => $theme_option['create_section'], // Section title
+											'description' => ( isset( $theme_option['create_section-description'] ) ) ? ( $theme_option['create_section-description'] ) : ( '' ), // Displayed at the top of section
+											'priority'    => $priority,
+											'type'        => 'theme-options', // Sets also the section class
+										)
+									);
 
 									if ( ! isset( $theme_option['in_panel'] ) ) {
 										$customizer_panel = '';
@@ -548,9 +567,9 @@ final class Reykjavik_Library_Customize {
 									}
 
 									$wp_customize->add_section(
-											$customizer_section['id'],
-											$customizer_section['setup']
-										);
+										$customizer_section['id'],
+										$customizer_section['setup']
+									);
 
 									$customizer_section = $customizer_section['id'];
 
@@ -562,14 +581,14 @@ final class Reykjavik_Library_Customize {
 								 * Generic settings
 								 */
 								$generic = array(
-										'label'           => ( isset( $theme_option['label'] ) ) ? ( $theme_option['label'] ) : ( '' ),
-										'description'     => $description,
-										'section'         => ( isset( $theme_option['section'] ) ) ? ( $theme_option['section'] ) : ( $customizer_section ),
-										'priority'        => ( isset( $theme_option['priority'] ) ) ? ( $theme_option['priority'] ) : ( $priority ),
-										'type'            => $theme_option['type'],
-										'active_callback' => ( isset( $theme_option['active_callback'] ) ) ? ( $theme_option['active_callback'] ) : ( null ),
-										'input_attrs'     => ( isset( $theme_option['input_attrs'] ) ) ? ( $theme_option['input_attrs'] ) : ( array() ),
-									);
+									'label'           => ( isset( $theme_option['label'] ) ) ? ( $theme_option['label'] ) : ( '' ),
+									'description'     => $description,
+									'section'         => ( isset( $theme_option['section'] ) ) ? ( $theme_option['section'] ) : ( $customizer_section ),
+									'priority'        => ( isset( $theme_option['priority'] ) ) ? ( $theme_option['priority'] ) : ( $priority ),
+									'type'            => $theme_option['type'],
+									'active_callback' => ( isset( $theme_option['active_callback'] ) ) ? ( $theme_option['active_callback'] ) : ( '' ),
+									'input_attrs'     => ( isset( $theme_option['input_attrs'] ) ) ? ( $theme_option['input_attrs'] ) : ( array() ),
+								);
 
 
 
@@ -578,393 +597,429 @@ final class Reykjavik_Library_Customize {
 								 */
 								switch ( $theme_option['type'] ) {
 
-									/**
-									 * Checkbox, radio
-									 */
 									case 'checkbox':
 									case 'radio':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Sanitize::checkbox' ) : ( 'Reykjavik_Library_Sanitize::select' ),
-													'sanitize_js_callback' => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Sanitize::checkbox' ) : ( 'Reykjavik_Library_Sanitize::select' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Sanitize::checkbox' ) : ( 'Reykjavik_Library_Sanitize::select' ),
+												'sanitize_js_callback' => ( 'checkbox' === $theme_option['type'] ) ? ( 'Reykjavik_Library_Sanitize::checkbox' ) : ( 'Reykjavik_Library_Sanitize::select' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												array_merge( $generic, array(
-													'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
-												) )
-											);
+											$option_id,
+											array_merge( $generic, array(
+												'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
+											) )
+										);
+										break;
 
-									break;
-
-									/**
-									 * Checkboxex, multiselect
-									 */
 									case 'multicheckbox':
 									case 'multiselect':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'Reykjavik_Library_Sanitize::multi_array' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new Reykjavik_Customize_Control_Multiselect(
-												$wp_customize,
-												$option_id,
-												array_merge( $generic, array(
-													'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
-												) )
-											) );
+											$wp_customize,
+											$option_id,
+											array_merge( $generic, array(
+												'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
+											) )
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Color
-									 */
 									case 'color':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => trim( $default, '#' ),
-													'transport'            => $transport,
-													'sanitize_callback'    => 'sanitize_hex_color_no_hash',
-													'sanitize_js_callback' => 'maybe_hash_hex_color',
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => trim( $default, '#' ),
+												'transport'            => $transport,
+												'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+												'sanitize_js_callback' => 'maybe_hash_hex_color',
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new WP_Customize_Color_Control(
-												$wp_customize,
-												$option_id,
-												$generic
-											) );
+											$wp_customize,
+											$option_id,
+											$generic
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Email
-									 */
 									case 'email':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => 'sanitize_email',
-													'sanitize_js_callback' => 'sanitize_email',
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => 'sanitize_email',
+												'sanitize_js_callback' => 'sanitize_email',
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												$generic
-											);
+											$option_id,
+											$generic
+										);
+										break;
 
-									break;
-
-									/**
-									 * Hidden
-									 */
 									case 'hidden':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new Reykjavik_Customize_Control_Hidden(
-												$wp_customize,
-												$option_id,
-												array(
-													'label'    => 'HIDDEN FIELD',
-													'section'  => $customizer_section,
-													'priority' => $priority,
-												)
-											) );
+											$wp_customize,
+											$option_id,
+											array(
+												'label'    => 'HIDDEN FIELD',
+												'section'  => $customizer_section,
+												'priority' => $priority,
+											)
+										) );
+										break;
 
-									break;
-
-									/**
-									 * HTML
-									 */
 									case 'html':
-
 										if ( empty( $option_id ) ) {
 											$option_id = 'custom-title-' . $priority;
 										}
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'sanitize_callback'    => 'wp_kses_post',
-													'sanitize_js_callback' => 'wp_filter_post_kses',
-												)
-											);
-
+											$option_id,
+											array(
+												'sanitize_callback'    => 'wp_kses_post',
+												'sanitize_js_callback' => 'wp_filter_post_kses',
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new Reykjavik_Customize_Control_HTML(
-												$wp_customize,
-												$option_id,
-												array(
-													'label'           => ( isset( $theme_option['label'] ) ) ? ( $theme_option['label'] ) : ( '' ),
-													'description'     => $description,
-													'content'         => $theme_option['content'],
-													'section'         => ( isset( $theme_option['section'] ) ) ? ( $theme_option['section'] ) : ( $customizer_section ),
-													'priority'        => ( isset( $theme_option['priority'] ) ) ? ( $theme_option['priority'] ) : ( $priority ),
-													'active_callback' => ( isset( $theme_option['active_callback'] ) ) ? ( $theme_option['active_callback'] ) : ( null ),
-												)
-											) );
+											$wp_customize,
+											$option_id,
+											array_merge( $generic, array(
+												'content' => $theme_option['content'],
+											) )
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Image
-									 */
 									case 'image':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_url_raw' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_url_raw' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_url_raw' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_url_raw' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new WP_Customize_Image_Control(
-												$wp_customize,
-												$option_id,
-												array_merge( $generic, array(
-													'context' => $option_id,
-												) )
-											) );
+											$wp_customize,
+											$option_id,
+											array_merge( $generic, array(
+												'context' => $option_id,
+											) )
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Range
-									 */
 									case 'range':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'absint' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'absint' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'absint' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'absint' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												array_merge( $generic, array(
-													'input_attrs' => array(
-														'min'           => $theme_option['min'],
-														'max'           => $theme_option['max'],
-														'step'          => $theme_option['step'],
-														'data-multiply' => ( isset( $theme_option['multiplier'] ) ) ? ( $theme_option['multiplier'] ) : ( 1 ),
-														'data-prefix'   => ( isset( $theme_option['prefix'] ) ) ? ( $theme_option['prefix'] ) : ( '' ),
-														'data-suffix'   => ( isset( $theme_option['suffix'] ) ) ? ( $theme_option['suffix'] ) : ( '' ),
-														'data-decimals' => ( isset( $theme_option['decimal_places'] ) ) ? ( absint( $theme_option['decimal_places'] ) ) : ( 0 ),
-													),
-												) )
-											);
+											$option_id,
+											array_merge( $generic, array(
+												'input_attrs' => array(
+													'min'           => $theme_option['min'],
+													'max'           => $theme_option['max'],
+													'step'          => $theme_option['step'],
+													'data-multiply' => ( isset( $theme_option['multiplier'] ) ) ? ( $theme_option['multiplier'] ) : ( 1 ),
+													'data-prefix'   => ( isset( $theme_option['prefix'] ) ) ? ( $theme_option['prefix'] ) : ( '' ),
+													'data-suffix'   => ( isset( $theme_option['suffix'] ) ) ? ( $theme_option['suffix'] ) : ( '' ),
+													'data-decimals' => ( isset( $theme_option['decimal_places'] ) ) ? ( absint( $theme_option['decimal_places'] ) ) : ( 0 ),
+												),
+											) )
+										);
+										break;
 
-									break;
-
-									/**
-									 * Password
-									 */
 									case 'password':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												$generic
-											);
+											$option_id,
+											$generic
+										);
+										break;
 
-									break;
-
-									/**
-									 * Radio matrix
-									 */
 									case 'radiomatrix':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_attr' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_attr' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new Reykjavik_Customize_Control_Radio_Matrix(
-												$wp_customize,
-												$option_id,
-												array_merge( $generic, array(
-													'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
-													'class'   => ( isset( $theme_option['class'] ) ) ? ( $theme_option['class'] ) : ( '' ),
-												) )
-											) );
+											$wp_customize,
+											$option_id,
+											array_merge( $generic, array(
+												'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
+												'class'   => ( isset( $theme_option['class'] ) ) ? ( $theme_option['class'] ) : ( '' ),
+											) )
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Select (with optgroups)
-									 */
 									case 'select':
-
+										// Supporting optgroups too.
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => 'Reykjavik_Library_Sanitize::select',
-													'sanitize_js_callback' => 'Reykjavik_Library_Sanitize::select',
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => 'Reykjavik_Library_Sanitize::select',
+												'sanitize_js_callback' => 'Reykjavik_Library_Sanitize::select',
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control( new Reykjavik_Customize_Control_Select(
-												$wp_customize,
-												$option_id,
-												array_merge( $generic, array(
-													'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
-												) )
-											) );
+											$wp_customize,
+											$option_id,
+											array_merge( $generic, array(
+												'choices' => ( isset( $theme_option['choices'] ) ) ? ( $theme_option['choices'] ) : ( '' ),
+											) )
+										) );
+										break;
 
-									break;
-
-									/**
-									 * Text
-									 */
 									case 'text':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_textarea' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_textarea' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_textarea' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_textarea' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												$generic
-											);
+											$option_id,
+											$generic
+										);
+										break;
 
-									break;
-
-									/**
-									 * Textarea
-									 */
 									case 'textarea':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_textarea' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_textarea' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_textarea' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_textarea' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												$generic
-											);
+											$option_id,
+											$generic
+										);
+										break;
 
-									break;
-
-									/**
-									 * URL
-									 */
 									case 'url':
-
 										$wp_customize->add_setting(
-												$option_id,
-												array(
-													'type'                 => $type,
-													'default'              => $default,
-													'transport'            => $transport,
-													'sanitize_callback'    => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_url' ),
-													'sanitize_js_callback' => ( isset( $theme_option['validate'] ) ) ? ( $theme_option['validate'] ) : ( 'esc_url' ),
-												)
-											);
-
+											$option_id,
+											array(
+												'type'                 => $type,
+												'default'              => $default,
+												'transport'            => $transport,
+												'sanitize_callback'    => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_url' ),
+												'sanitize_js_callback' => ( $sanitize_callback ) ? ( $sanitize_callback ) : ( 'esc_url' ),
+												'validate_callback'    => $validate_callback,
+											)
+										);
 										$wp_customize->add_control(
-												$option_id,
-												$generic
-											);
+											$option_id,
+											$generic
+										);
+										break;
 
-									break;
-
-									/**
-									 * Default
-									 */
 									default:
-									break;
+										break;
 
-								} // /switch
+								}
 
-							} // /if suitable option array
-
-						} // /foreach
-
-					} // /if skin options are non-empty array
+							}
+						}
+					}
 
 				// Assets needed for customizer preview
 
 					if ( $wp_customize->is_preview() ) {
-
 						add_action( 'wp_footer', __CLASS__ . '::preview_scripts', 99 );
-
 					}
 
 		} // /customize
+
+
+
+
+
+	/**
+	 * 30) Getters
+	 */
+
+		/**
+		 * Get theme mod or fall back to default automatically
+		 *
+		 * @uses  `wmhook_reykjavik_theme_options` global hook
+		 * @link  https://developer.wordpress.org/reference/functions/get_theme_mod/
+		 *
+		 * @subpackage  Customize Options
+		 *
+		 * @since    2.7.0
+		 * @version  2.7.0
+		 *
+		 * @param  string $name
+		 * @param  array  $theme_option_setup
+		 */
+		public static function get_theme_mod( $name, $theme_option_setup = array() ) {
+
+			// Pre
+
+				$pre = apply_filters( 'wmhook_reykjavik_library_customize_get_theme_mod_pre', null, $name, $theme_option_setup );
+
+				if ( null !== $pre ) {
+					return $pre;
+				}
+
+
+			// Helper variables
+
+				$output = false;
+
+				if ( false === self::$mods ) {
+					// Cache theme mods
+					self::$mods = get_theme_mods();
+				}
+
+
+			// Processing
+
+				if ( isset( self::$mods[ $name ] ) ) {
+
+					/**
+					 * Theme option has been modified,
+					 * so we don't need the default value.
+					 */
+					$output = self::$mods[ $name ];
+
+				} else {
+
+					/**
+					 * We haven't found a modified theme option,
+					 * so we need its default value.
+					 */
+					if ( empty( $theme_option_setup ) ) {
+
+						/**
+						 * We don't have single theme option passed,
+						 * get all theme options setup.
+						 */
+						if ( empty( self::$theme_options_setup ) ) {
+							// Cache theme options setup
+							self::$theme_options_setup = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
+						}
+
+						foreach ( self::$theme_options_setup as $option ) {
+							if (
+								isset( $option['default'] )
+								&& isset( $option['id'] )
+								&& $name === $option['id']
+							) {
+								$output = $option['default'];
+								$theme_option_setup = $option;
+								break;
+							}
+						}
+
+					} else {
+
+						/**
+						 * We have single theme option passed,
+						 * get the default value from it.
+						 */
+						if (
+							isset( $theme_option_setup['default'] )
+							&& isset( $theme_option_setup['id'] )
+							&& $name === $theme_option_setup['id']
+						) {
+							$output = $theme_option_setup['default'];
+						}
+
+					}
+
+					/**
+					 * @see  https://developer.wordpress.org/reference/functions/get_theme_mod/
+					 */
+					if ( is_string( $output ) ) {
+						$output = sprintf(
+							$output,
+							get_template_directory_uri(),
+							get_stylesheet_directory_uri()
+						);
+					}
+
+				}
+
+
+			// Output
+
+				return apply_filters( 'theme_mod_' . $name, $output, $theme_option_setup );
+
+		} // /get_theme_mod
 
 
 

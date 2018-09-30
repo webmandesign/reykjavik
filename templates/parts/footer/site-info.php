@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.0
  */
 
 
@@ -15,7 +15,7 @@
 
 // Helper variables
 
-	$site_info_text = trim( (string) get_theme_mod( 'texts_site_info' ) );
+	$site_info_text = trim( (string) Reykjavik_Library_Customize::get_theme_mod( 'texts_site_info' ) );
 
 
 // Requirements check

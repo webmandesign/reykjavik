@@ -64,15 +64,4 @@ In case you upgrade the library (`library/*.*`) and/or other universal pluggable
 Reference of what variables need to be replaced can be found in the scripts themselves.
 
 
-## Debugging
-
-*This information is only relevant for when theme supports `stylesheet-generator`.*
-
-For SASS debugging define a `REYKJAVIK_DEBUG_SASS` constant and set it to `true`.
-
-Or simply use `webman-sass-debug.php` plugin for that.
-
-This will force loading `fallback.css` instead of the customizer-generated stylesheet.
-
-
 *(C) WebMan Design, Oliver Juhas, [https://www.webmandesign.eu]*

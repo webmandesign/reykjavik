@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.2.0
+	 * @version  1.3.0
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.2.0
+			 * @version  1.3.0
 			 */
 			public function widget( $args, $instance ) {
 
@@ -104,7 +104,7 @@
 						if ( isset( $instance['category'] ) && $instance['category'] ) {
 							if ( is_numeric( $instance['category'] ) ) {
 								$cat = array( 'cat' => absint( $instance['category'] ) );
-							} else {
+							} elseif ( is_string( $instance['category'] ) ) {
 								$cat = array( 'category_name' => sanitize_title( $instance['category'] ) );
 							}
 						}
@@ -259,7 +259,7 @@
 			 * Do not feel tempted to make this a static method!
 			 *
 			 * @since    1.0.0
-			 * @version  1.2.0
+			 * @version  1.3.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -278,9 +278,24 @@
 
 					<p>
 						<label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>">
-							<?php esc_html_e( 'Category slug or ID:', 'reykjavik' ); ?>
+							<?php esc_html_e( 'From category:', 'reykjavik' ); ?>
 						</label>
-						<input type="text" size="32" id="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>" value="<?php echo esc_attr( $instance['category'] ); ?>" />
+						<?php
+
+						wp_dropdown_categories( array(
+							'name'              => $this->get_field_name( 'category' ),
+							'id'                => $this->get_field_id( 'category' ),
+							'show_option_none'  => '-',
+							'option_none_value' => '',
+							'orderby'           => 'name',
+							'value_field'       => 'slug',
+							'show_count'        => true,
+							'hide_empty'        => false,
+							'hierarchical'      => true,
+							'selected'          => $instance['category'],
+						) );
+
+						?>
 					</p>
 
 					<?php
@@ -293,7 +308,7 @@
 			 * Handles updating settings for the current widget instance
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.0
 			 *
 			 * @param  array $new_instance  New settings for this instance as input by the user via WP_Widget::form().
 			 * @param  array $old_instance  Old settings for this instance.
@@ -311,7 +326,7 @@
 
 				// Processing
 
-					$instance['category'] = ( is_numeric( $new_instance['category'] ) ) ? ( absint( $new_instance['category'] ) ) : ( sanitize_title( $new_instance['category'] ) );
+					$instance['category'] = ( is_numeric( $new_instance['category'] ) ) ? ( absint( $new_instance['category'] ) ) : ( sanitize_title( (string) $new_instance['category'] ) );
 
 
 				// Output

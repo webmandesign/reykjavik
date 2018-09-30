@@ -1,5 +1,55 @@
 # Reykjavik Changelog
 
+## 1.3.0
+
+* **Add**: Options to change homepage intro overlay colors and opacity
+* **Update**: Library 2.7.0
+* **Update**: Removing archive page title label options in favor of plugin
+* **Update**: Preventing Beaver Builder color presets JS error
+* **Update**: Improved categories selector in enhanced Recent Posts widget
+* **Update**: Localization
+* **Fix**: Blog page excerpt and intro image display
+* **Fix**: WooCommerce product variation select not working in Firefox browser
+* **Fix**: Button styles
+* **Fix**: All Envato Theme Check plugin test requirements
+* **Fix**: Content indentation in page excerpt field when using Rich Text Excerpt plugin
+* **Fix**: Masonry layout not applied on archive pages
+* **Fix**: Jetpack Author Bio display
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/js/scripts-masonry.js
+	assets/scss/custom-styles.scss
+	assets/scss/editor-style.scss
+	assets/scss/main.scss
+	includes/custom-header/class-intro.php
+	includes/customize/class-customize-styles.php
+	includes/customize/class-customize.php
+	includes/frontend/class-assets.php
+	includes/frontend/class-header.php
+	includes/frontend/class-loop.php
+	includes/frontend/class-menu.php
+	includes/frontend/class-sidebar.php
+	includes/plugins/beaver-builder/class-beaver-builder-setup.php
+	includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php
+	includes/plugins/jetpack/class-jetpack.php
+	includes/plugins/woocommerce/class-woocommerce-assets.php
+	includes/plugins/woocommerce/class-woocommerce-customize.php
+	includes/plugins/woocommerce/class-woocommerce-pages.php
+	includes/plugins/woocommerce/class-woocommerce-setup.php
+	includes/setup/class-setup.php
+	includes/starter-content/class-starter-content.php
+	includes/welcome/welcome.php
+	includes/widgets/class-wp-widget-recent-posts.php
+	languages/reykjavik.pot
+	library/*.*
+	templates/parts/footer/site-info.php
+	templates/parts/intro/intro-content.php
+	templates/parts/menu/menu-primary.php
+
+
 ## 1.2.0
 
 * **Add**: WooCommerce masonry products layout when product images are set to "uncropped"

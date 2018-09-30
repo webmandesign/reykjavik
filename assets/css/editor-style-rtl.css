@@ -1,5 +1,2 @@
 /* FILE: editor-style-rtl.scss */
-/*[*/
-@import url("main-rtl.css");
-/*]*/
 body { direction: rtl; unicode-bidi: embed; }

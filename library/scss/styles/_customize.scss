@@ -3,11 +3,13 @@
 //
 // Customize styles
 //
-// @package     WebMan WordPress Theme Framework
 // @subpackage  Customize
 //
+// @package    WebMan WordPress Theme Framework
+// @copyright  WebMan Design, Oliver Juhas
+//
 // @since    1.5.0
-// @version  2.2.1
+// @version  2.7.0
 //
 
 
@@ -67,32 +69,6 @@
 
 			.no-overflow {
 				overflow: hidden;
-			}
-
-
-
-		// Donation link
-
-			.donation-link {
-
-				&,
-				&:hover,
-				&:active {
-					display: block;
-					width: 100%;
-					padding: 1em 0;
-					text-transform: uppercase;
-					text-align: center;
-					font-weight: bold;
-					font-size: .81em;
-					background: #0aac8e;
-					color: #fafcfe;
-				}
-
-				&:hover {
-					letter-spacing: 1px;
-				}
-
 			}
 
 
@@ -277,8 +253,10 @@
 				$range_track_size: 1em;
 				$range_track_color: #ccc;
 				$range_thumb_size: 1.5em;
-				$range_thumb_color: #0085ba;
+				$range_thumb_color: #007cad;
+				$range_thumb_color_hover: #ad007c;
 				$range_value_background: $range_thumb_color;
+				$range_value_background_hover: $range_thumb_color_hover;
 				$range_value_color: #fff;
 
 				@mixin range_track() {
@@ -307,23 +285,27 @@
 					cursor: pointer;
 				}
 
+					@mixin range_thumb_hover() {
+						background: $range_thumb_color_hover;
+					}
+
 				input[type=range] {
 					appearance: none;
 					width: 100%;
 					margin: 1.62em 0;
 					background: transparent;
 
-					&:focus {
-						outline: none;
-					}
-
 					&::-webkit-slider-runnable-track { @include range_track; }
-					&::-moz-range-track { @include range_track; }
-					&::-ms-track { @include range_track; }
+					&::-moz-range-track              { @include range_track; }
+					&::-ms-track                     { @include range_track; }
 
 					&::-webkit-slider-thumb { @include range_thumb; }
-					&::-moz-range-thumb { @include range_thumb; }
-					&::-ms-thumb { @include range_thumb; }
+					&::-moz-range-thumb     { @include range_thumb; }
+					&::-ms-thumb            { @include range_thumb; }
+
+						&:focus::-webkit-slider-thumb { @include range_thumb_hover; }
+						&:focus::-moz-range-thumb     { @include range_thumb_hover; }
+						&:focus::-ms-thumb            { @include range_thumb_hover; }
 
 					&::-ms-fill-upper { @include range_track_colors; }
 					&::-ms-fill-lower { @include range_track_colors; }
@@ -336,6 +318,11 @@
 						display: flex;
 						align-items: center;
 						cursor: default;
+
+						&:hover input[type=range]::-webkit-slider-thumb { @include range_thumb_hover; }
+						&:hover input[type=range]::-moz-range-thumb     { @include range_thumb_hover; }
+						&:hover input[type=range]::-ms-thumb            { @include range_thumb_hover; }
+
 					}
 
 					&-value {
@@ -364,6 +351,11 @@
 
 					}
 
+				}
+
+				.range-container:hover .range-value,
+				input[type=range]:focus + .range-value {
+					background: $range_value_background_hover;
 				}
 
 	}

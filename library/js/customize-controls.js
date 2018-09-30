@@ -6,11 +6,13 @@
  * we conditionally hide corresponding "_attachment", "_position",
  * "_repeat", "_size" and also "_opacity" controls.
  *
- * @package     WebMan WordPress Theme Framework
  * @subpackage  Customize
  *
+ * @package    WebMan WordPress Theme Framework
+ * @copyright  WebMan Design, Oliver Juhas
+ *
  * @since    2.2.0
- * @version  2.2.3
+ * @version  2.7.0
  */
 ( function( exports, $ ) {
 	$( wp.customize ).on( 'ready', function() {
@@ -95,32 +97,38 @@
 				$.each( backgroundImages, function( i, settingId ) {
 					wp.customize( settingId, function( value ) {
 
-						var
-							selectors = [
-								'[id$="' + settingId + '_attachment"]',
-								'[id$="' + settingId + '_opacity"]',
-								'[id$="' + settingId + '_position"]',
-								'[id$="' + settingId + '_repeat"]',
-								'[id$="' + settingId + '_size"]',
-							];
+						// Helper variables
 
-						if ( ! _wpCustomizeSettings.settings[ settingId ].value ) {
-							$( selectors.join() )
-								.hide();
-						}
+							var
+								selectors = [
+									'[id$="' + settingId + '_attachment"]',
+									'[id$="' + settingId + '_opacity"]',
+									'[id$="' + settingId + '_position"]',
+									'[id$="' + settingId + '_repeat"]',
+									'[id$="' + settingId + '_size"]',
+								];
 
-						value
-							.bind( function( to ) {
 
-								if ( ! to ) {
-									$( selectors.join() )
-										.hide();
-								} else {
-									$( selectors.join() )
-										.show();
-								}
+						// Processing
 
-							} );
+							if ( ! _wpCustomizeSettings.settings[ settingId ].value ) {
+								$( selectors.join() )
+									.hide();
+							}
+
+							value
+								.bind( function( to ) {
+
+									if ( ! to ) {
+										$( selectors.join() )
+											.hide();
+									} else {
+										$( selectors.join() )
+											.show();
+									}
+
+								} );
+
 					} );
 				} );
 

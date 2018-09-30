@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -80,7 +80,7 @@ class Reykjavik_WooCommerce_Assets {
 		 * Enqueue assets
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function enqueue() {
 
@@ -88,25 +88,27 @@ class Reykjavik_WooCommerce_Assets {
 
 				// Styles
 
-					if ( current_theme_supports( 'stylesheet-generator' ) ) {
+					if (
+						current_theme_supports( 'stylesheet-generator' )
+						&& ! Reykjavik_Customize_Styles::is_stylesheet_generated()
+					) {
 
-						$wp_upload_dir    = wp_upload_dir();
-						$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
+						wp_enqueue_style(
+							'reykjavik-stylesheet-fallback-woocommerce',
+							get_theme_file_uri( 'assets/css/woocommerce.css' ),
+							array( 'reykjavik-stylesheet-global' ),
+							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+							'screen'
+						);
+						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
 
-						if (
-								! file_exists( $theme_upload_dir . 'reykjavik-styles.css' )
-								|| ( defined( 'REYKJAVIK_DEBUG_SASS' ) && REYKJAVIK_DEBUG_SASS )
-							) {
-
-							wp_enqueue_style(
-								'reykjavik-stylesheet-woocommerce',
-								get_theme_file_uri( 'fallback-woocommerce.css' ),
-								array( 'reykjavik-stylesheet-global' ),
-								esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-								'screen'
-							);
-
-						}
+						wp_enqueue_style(
+							'reykjavik-stylesheet-fallback-custom-styles-woocommerce',
+							get_theme_file_uri( 'assets/css/custom-styles-woocommerce.css' ),
+							array( 'reykjavik-stylesheet-fallback-woocommerce' ),
+							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+							'screen'
+						);
 
 					} else {
 
@@ -117,12 +119,9 @@ class Reykjavik_WooCommerce_Assets {
 							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
 							'screen'
 						);
+						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
 
 					}
-
-					// RTL setup
-
-						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
 
 				// Scripts
 

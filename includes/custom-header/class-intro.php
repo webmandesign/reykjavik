@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -300,7 +300,7 @@ class Reykjavik_Intro {
 		 * Header image URL
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  string $url  Image URL or other custom header value.
 		 */
@@ -336,7 +336,7 @@ class Reykjavik_Intro {
 						$url = (string) $intro_image;
 					}
 
-				} elseif ( has_post_thumbnail( $post_id ) ) {
+				} elseif ( has_post_thumbnail( $post_id ) && ! ( is_home() && is_front_page() ) ) {
 
 					$url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
 					$url = $url[0];
@@ -418,11 +418,10 @@ class Reykjavik_Intro {
 		/**
 		 * Setting custom header image as an intro background for special intro
 		 *
-		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
 		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		public static function special_image() {
 
@@ -438,7 +437,7 @@ class Reykjavik_Intro {
 				if ( $css = self::get_special_image_css() ) {
 
 					wp_add_inline_style(
-						(string) apply_filters( 'wmhook_reykjavik_inline_styles_handle', 'reykjavik-stylesheet-global' ),
+						'reykjavik',
 						(string) apply_filters( 'wmhook_reykjavik_esc_css', $css . "\r\n\r\n" )
 					);
 

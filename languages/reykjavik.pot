@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-06-19 23:18+0200\n"
+"POT-Creation-Date: 2018-09-30 15:41+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -53,326 +53,340 @@ msgctxt "Header image description."
 msgid "Mountains drawing"
 msgstr ""
 
-#: includes/customize/class-customize.php:234
+#: includes/customize/class-customize.php:230
 msgid "Logo image"
 msgstr ""
 
-#: includes/customize/class-customize.php:235
+#: includes/customize/class-customize.php:231
 msgid "Please, do not forget to set the logo max height."
 msgstr ""
 
-#: includes/customize/class-customize.php:235
+#: includes/customize/class-customize.php:231
 msgid ""
 "To make your logo image ready for high DPI screens, please upload twice as "
 "big image."
 msgstr ""
 
-#: includes/customize/class-customize.php:243
+#: includes/customize/class-customize.php:239
 msgid "Max logo image height (px)"
 msgstr ""
 
-#: includes/customize/class-customize.php:264
-#: includes/customize/class-customize.php:295
-#: includes/customize/class-customize.php:337
-#: includes/customize/class-customize.php:433
-#: includes/customize/class-customize.php:575
-#: includes/customize/class-customize.php:651
-#: includes/customize/class-customize.php:854
-#: includes/customize/class-customize.php:1063
-#: includes/customize/class-customize.php:1087
-#: includes/customize/class-customize.php:1252
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:435
+#: includes/customize/class-customize.php:260
+#: includes/customize/class-customize.php:291
+#: includes/customize/class-customize.php:333
+#: includes/customize/class-customize.php:429
+#: includes/customize/class-customize.php:638
+#: includes/customize/class-customize.php:714
+#: includes/customize/class-customize.php:917
+#: includes/customize/class-customize.php:1126
+#: includes/customize/class-customize.php:1150
+#: includes/customize/class-customize.php:1315
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:415
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr ""
 
-#: includes/customize/class-customize.php:265
+#: includes/customize/class-customize.php:261
 msgid "Theme Credits"
 msgstr ""
 
-#: includes/customize/class-customize.php:268
+#: includes/customize/class-customize.php:264
 #, php-format
 msgctxt "1: linked theme name, 2: theme author name."
 msgid "%1$s is a WordPress theme developed by %2$s."
 msgstr ""
 
-#: includes/customize/class-customize.php:275
+#: includes/customize/class-customize.php:271
 #, php-format
 msgctxt "%s: theme author link."
 msgid "You can obtain other professional WordPress themes at %s."
 msgstr ""
 
-#: includes/customize/class-customize.php:280
+#: includes/customize/class-customize.php:276
 msgid "Thank you for using a theme by WebMan Design!"
 msgstr ""
 
-#: includes/customize/class-customize.php:294
-#: includes/customize/class-customize.php:336
-#: includes/customize/class-customize.php:432
-#: includes/customize/class-customize.php:574
-#: includes/customize/class-customize.php:650
+#: includes/customize/class-customize.php:290
+#: includes/customize/class-customize.php:332
+#: includes/customize/class-customize.php:428
+#: includes/customize/class-customize.php:637
+#: includes/customize/class-customize.php:713
 #, php-format
 msgctxt "%s = section name. Customizer section title."
 msgid "Colors: %s"
 msgstr ""
 
-#: includes/customize/class-customize.php:294
+#: includes/customize/class-customize.php:290
 msgctxt "Customizer color section title"
 msgid "Accents"
 msgstr ""
 
-#: includes/customize/class-customize.php:306
+#: includes/customize/class-customize.php:302
 msgid "These colors affect links, buttons and other elements."
 msgstr ""
 
-#: includes/customize/class-customize.php:311
+#: includes/customize/class-customize.php:307
 msgid "Primary accent color"
 msgstr ""
 
-#: includes/customize/class-customize.php:317
+#: includes/customize/class-customize.php:313
 msgid "Accent color"
 msgstr ""
 
-#: includes/customize/class-customize.php:323
+#: includes/customize/class-customize.php:319
 msgid "Accent text color"
 msgstr ""
 
-#: includes/customize/class-customize.php:324
+#: includes/customize/class-customize.php:320
 msgid "Color of text on accent color background."
 msgstr ""
 
-#: includes/customize/class-customize.php:336
+#: includes/customize/class-customize.php:332
 msgctxt "Customizer color section title"
 msgid "Header"
 msgstr ""
 
-#: includes/customize/class-customize.php:348
-#: includes/customize/class-customize.php:965
+#: includes/customize/class-customize.php:344
+#: includes/customize/class-customize.php:1028
 msgid "Header"
 msgstr ""
 
-#: includes/customize/class-customize.php:354
-#: includes/customize/class-customize.php:451
-#: includes/customize/class-customize.php:516
-#: includes/customize/class-customize.php:592
-#: includes/customize/class-customize.php:669
+#: includes/customize/class-customize.php:350
+#: includes/customize/class-customize.php:447
+#: includes/customize/class-customize.php:512
+#: includes/customize/class-customize.php:579
+#: includes/customize/class-customize.php:655
+#: includes/customize/class-customize.php:732
 msgid "Background color"
 msgstr ""
 
-#: includes/customize/class-customize.php:355
+#: includes/customize/class-customize.php:351
 msgid "This color is also used to style a mobile device browser address bar."
 msgstr ""
 
-#: includes/customize/class-customize.php:355
+#: includes/customize/class-customize.php:351
 msgid "You can further customize it with a dedicated plugin."
 msgstr ""
 
-#: includes/customize/class-customize.php:380
-#: includes/customize/class-customize.php:466
-#: includes/customize/class-customize.php:531
-#: includes/customize/class-customize.php:607
-#: includes/customize/class-customize.php:690
+#: includes/customize/class-customize.php:376
+#: includes/customize/class-customize.php:462
+#: includes/customize/class-customize.php:528
+#: includes/customize/class-customize.php:594
+#: includes/customize/class-customize.php:670
+#: includes/customize/class-customize.php:753
 msgid "Text color"
 msgstr ""
 
-#: includes/customize/class-customize.php:411
+#: includes/customize/class-customize.php:407
 msgid "Site title (logo) color"
 msgstr ""
 
-#: includes/customize/class-customize.php:432
+#: includes/customize/class-customize.php:428
 msgctxt "Customizer color section title"
 msgid "Intro"
 msgstr ""
 
-#: includes/customize/class-customize.php:444
-#: includes/customize/class-customize.php:990
+#: includes/customize/class-customize.php:440
+#: includes/customize/class-customize.php:1053
 msgid "Intro"
 msgstr ""
 
-#: includes/customize/class-customize.php:445
+#: includes/customize/class-customize.php:441
 msgid "This is a specially styled, main, dominant page title section."
 msgstr ""
 
-#: includes/customize/class-customize.php:487
-#: includes/customize/class-customize.php:552
-#: includes/customize/class-customize.php:628
-#: includes/customize/class-customize.php:711
+#: includes/customize/class-customize.php:483
+#: includes/customize/class-customize.php:615
+#: includes/customize/class-customize.php:691
+#: includes/customize/class-customize.php:774
 msgid "Headings color"
 msgstr ""
 
-#: includes/customize/class-customize.php:509
+#: includes/customize/class-customize.php:505
+msgid "Intro overlay"
+msgstr ""
+
+#: includes/customize/class-customize.php:506
+msgid "Intro overlay is displayed on homepage only."
+msgstr ""
+
+#: includes/customize/class-customize.php:544
+msgid "Overlay opacity"
+msgstr ""
+
+#: includes/customize/class-customize.php:572
 #: includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php:173
 msgid "Intro widgets"
 msgstr ""
 
-#: includes/customize/class-customize.php:510
+#: includes/customize/class-customize.php:573
 msgid ""
 "Please note that this widgets area is displayed only if it contains some "
 "widgets."
 msgstr ""
 
-#: includes/customize/class-customize.php:574
+#: includes/customize/class-customize.php:637
 msgctxt "Customizer color section title"
 msgid "Content"
 msgstr ""
 
-#: includes/customize/class-customize.php:586
-#: includes/customize/class-customize.php:1013
+#: includes/customize/class-customize.php:649
+#: includes/customize/class-customize.php:1076
 msgid "Content"
 msgstr ""
 
-#: includes/customize/class-customize.php:650
+#: includes/customize/class-customize.php:713
 msgctxt "Customizer color section title"
 msgid "Footer"
 msgstr ""
 
-#: includes/customize/class-customize.php:662
-#: includes/customize/class-customize.php:1035
+#: includes/customize/class-customize.php:725
+#: includes/customize/class-customize.php:1098
 msgid "Footer"
 msgstr ""
 
-#: includes/customize/class-customize.php:663
+#: includes/customize/class-customize.php:726
 msgid ""
 "The main footer widgets area is displayed only if it contains some widgets."
 msgstr ""
 
-#: includes/customize/class-customize.php:734
+#: includes/customize/class-customize.php:797
 msgid "Background image"
 msgstr ""
 
-#: includes/customize/class-customize.php:756
+#: includes/customize/class-customize.php:819
 msgid "Image position"
 msgstr ""
 
-#: includes/customize/class-customize.php:760
+#: includes/customize/class-customize.php:823
 msgctxt "Image position."
 msgid "Top left"
 msgstr ""
 
-#: includes/customize/class-customize.php:761
+#: includes/customize/class-customize.php:824
 msgctxt "Image position."
 msgid "Top center"
 msgstr ""
 
-#: includes/customize/class-customize.php:762
+#: includes/customize/class-customize.php:825
 msgctxt "Image position."
 msgid "Top right"
 msgstr ""
 
-#: includes/customize/class-customize.php:764
+#: includes/customize/class-customize.php:827
 msgctxt "Image position."
 msgid "Center left"
 msgstr ""
 
-#: includes/customize/class-customize.php:765
+#: includes/customize/class-customize.php:828
 msgctxt "Image position."
 msgid "Center"
 msgstr ""
 
-#: includes/customize/class-customize.php:766
+#: includes/customize/class-customize.php:829
 msgctxt "Image position."
 msgid "Center right"
 msgstr ""
 
-#: includes/customize/class-customize.php:768
+#: includes/customize/class-customize.php:831
 msgctxt "Image position."
 msgid "Bottom left"
 msgstr ""
 
-#: includes/customize/class-customize.php:769
+#: includes/customize/class-customize.php:832
 msgctxt "Image position."
 msgid "Bottom center"
 msgstr ""
 
-#: includes/customize/class-customize.php:770
+#: includes/customize/class-customize.php:833
 msgctxt "Image position."
 msgid "Bottom right"
 msgstr ""
 
-#: includes/customize/class-customize.php:786
+#: includes/customize/class-customize.php:849
 msgid "Image size"
 msgstr ""
 
-#: includes/customize/class-customize.php:789
+#: includes/customize/class-customize.php:852
 msgctxt "Image size."
 msgid "Original"
 msgstr ""
 
-#: includes/customize/class-customize.php:790
+#: includes/customize/class-customize.php:853
 msgctxt "Image size."
 msgid "Fit"
 msgstr ""
 
-#: includes/customize/class-customize.php:791
+#: includes/customize/class-customize.php:854
 msgctxt "Image size."
 msgid "Fill"
 msgstr ""
 
-#: includes/customize/class-customize.php:806
+#: includes/customize/class-customize.php:869
 msgid "Tile the image"
 msgstr ""
 
-#: includes/customize/class-customize.php:816
+#: includes/customize/class-customize.php:879
 msgid "Fix image position"
 msgstr ""
 
-#: includes/customize/class-customize.php:826
+#: includes/customize/class-customize.php:889
 msgid "Background image opacity"
 msgstr ""
 
-#: includes/customize/class-customize.php:853
+#: includes/customize/class-customize.php:916
 msgctxt "Customizer section title."
 msgid "Layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:865
+#: includes/customize/class-customize.php:928
 msgctxt "A website container."
 msgid "Site Container"
 msgstr ""
 
-#: includes/customize/class-customize.php:871
+#: includes/customize/class-customize.php:934
 msgid "Website layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:874
-#: includes/customize/class-customize.php:974
-#: includes/customize/class-customize.php:1044
+#: includes/customize/class-customize.php:937
+#: includes/customize/class-customize.php:1037
+#: includes/customize/class-customize.php:1107
 msgid "Fullwidth"
 msgstr ""
 
-#: includes/customize/class-customize.php:875
-#: includes/customize/class-customize.php:975
-#: includes/customize/class-customize.php:1045
+#: includes/customize/class-customize.php:938
+#: includes/customize/class-customize.php:1038
+#: includes/customize/class-customize.php:1108
 msgid "Boxed"
 msgstr ""
 
-#: includes/customize/class-customize.php:883
+#: includes/customize/class-customize.php:946
 msgid "Website max width"
 msgstr ""
 
-#: includes/customize/class-customize.php:884
+#: includes/customize/class-customize.php:947
 msgid "For boxed website layout."
 msgstr ""
 
-#: includes/customize/class-customize.php:884
-#: includes/customize/class-customize.php:908
+#: includes/customize/class-customize.php:947
+#: includes/customize/class-customize.php:971
 #, php-format
 msgid "Default value: %s"
 msgstr ""
 
-#: includes/customize/class-customize.php:907
+#: includes/customize/class-customize.php:970
 msgid "Content width"
 msgstr ""
 
-#: includes/customize/class-customize.php:971
+#: includes/customize/class-customize.php:1034
 msgid "Header layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:996
+#: includes/customize/class-customize.php:1059
 msgid "Enable intro widgets"
 msgstr ""
 
-#: includes/customize/class-customize.php:997
+#: includes/customize/class-customize.php:1060
 #, php-format
 msgctxt "%s: Linked plugin name."
 msgid ""
@@ -380,78 +394,78 @@ msgid ""
 "plugin to control its appearance further more."
 msgstr ""
 
-#: includes/customize/class-customize.php:1000
+#: includes/customize/class-customize.php:1063
 msgid "On singular pages only"
 msgstr ""
 
-#: includes/customize/class-customize.php:1001
+#: includes/customize/class-customize.php:1064
 msgid "On both archive and singular pages"
 msgstr ""
 
-#: includes/customize/class-customize.php:1019
+#: includes/customize/class-customize.php:1082
 msgid "Outdent page content"
 msgstr ""
 
-#: includes/customize/class-customize.php:1020
+#: includes/customize/class-customize.php:1083
 msgid ""
 "Page content will be displayed in 2 columns: H2 headings in first, all the "
 "other page content in second column."
 msgstr ""
 
-#: includes/customize/class-customize.php:1020
+#: includes/customize/class-customize.php:1083
 msgid "This does not affect pages using \"With sidebar\" page template."
 msgstr ""
 
-#: includes/customize/class-customize.php:1041
+#: includes/customize/class-customize.php:1104
 msgid "Footer layout"
 msgstr ""
 
-#: includes/customize/class-customize.php:1062
+#: includes/customize/class-customize.php:1125
 msgctxt "Customizer section title."
 msgid "Texts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1069
+#: includes/customize/class-customize.php:1132
 msgid "Footer credits (copyright)"
 msgstr ""
 
-#: includes/customize/class-customize.php:1070
+#: includes/customize/class-customize.php:1133
 #, php-format
 msgid "Set %s to disable this area."
 msgstr ""
 
-#: includes/customize/class-customize.php:1070
+#: includes/customize/class-customize.php:1133
 msgid "Leaving the field empty will fall back to default theme setting."
 msgstr ""
 
-#: includes/customize/class-customize.php:1070
+#: includes/customize/class-customize.php:1133
 #, php-format
 msgid "You can use %s to display dynamic, always current year."
 msgstr ""
 
-#: includes/customize/class-customize.php:1086
+#: includes/customize/class-customize.php:1149
 msgctxt "Customizer section title."
 msgid "Typography"
 msgstr ""
 
-#: includes/customize/class-customize.php:1093
+#: includes/customize/class-customize.php:1156
 msgid "Basic font size in px"
 msgstr ""
 
-#: includes/customize/class-customize.php:1094
+#: includes/customize/class-customize.php:1157
 msgid ""
 "All other font sizes are calculated automatically from this basic font size."
 msgstr ""
 
-#: includes/customize/class-customize.php:1118
+#: includes/customize/class-customize.php:1181
 msgid "Use custom fonts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1125
+#: includes/customize/class-customize.php:1188
 msgid "Custom fonts setup"
 msgstr ""
 
-#: includes/customize/class-customize.php:1126
+#: includes/customize/class-customize.php:1189
 #, php-format
 msgctxt ""
 "%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
@@ -461,7 +475,7 @@ msgid ""
 "Instead, please use any font service (such as %s) plugin you like."
 msgstr ""
 
-#: includes/customize/class-customize.php:1128
+#: includes/customize/class-customize.php:1191
 msgid ""
 "You can set your fonts plugin according to information provided below, or "
 "insert your custom font names (a value of \"font-family\" CSS property) "
@@ -469,90 +483,66 @@ msgid ""
 "fonts on the website)."
 msgstr ""
 
-#: includes/customize/class-customize.php:1135
+#: includes/customize/class-customize.php:1198
 msgid "General text font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1147
-#: includes/setup/class-setup.php:743
+#: includes/customize/class-customize.php:1210
+#: includes/setup/class-setup.php:747
 msgid "Headings font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1159
-#: includes/setup/class-setup.php:749
+#: includes/customize/class-customize.php:1222
+#: includes/setup/class-setup.php:753
 msgid "Logo font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1170
+#: includes/customize/class-customize.php:1233
 msgid "Info: CSS selectors"
 msgstr ""
 
-#: includes/customize/class-customize.php:1171
+#: includes/customize/class-customize.php:1234
 msgid ""
 "Here you can find CSS selectors list associated with each font group in the "
 "theme. You can use these in your custom font plugin settings."
 msgstr ""
 
-#: includes/customize/class-customize.php:1174
+#: includes/customize/class-customize.php:1237
 msgid "General text font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1184
+#: includes/customize/class-customize.php:1247
 msgid "Headings font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1201
+#: includes/customize/class-customize.php:1264
 msgid "Logo font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1251
+#: includes/customize/class-customize.php:1314
 msgctxt "Customizer section title."
 msgid "Others"
 msgstr ""
 
-#: includes/customize/class-customize.php:1258
+#: includes/customize/class-customize.php:1321
 msgid "Show \"Welcome\" page"
 msgstr ""
 
-#: includes/customize/class-customize.php:1259
+#: includes/customize/class-customize.php:1322
 msgid "Under \"Appearance\" WordPress dashboard menu."
 msgstr ""
 
-#: includes/customize/class-customize.php:1267
+#: includes/customize/class-customize.php:1330
 msgid "Enable mobile navigation"
 msgstr ""
 
-#: includes/customize/class-customize.php:1268
+#: includes/customize/class-customize.php:1331
 msgid ""
 "If your website navigation is very simple and you do not want to use the "
 "mobile navigation functionality, you can disable it here."
 msgstr ""
 
-#: includes/customize/class-customize.php:1275
-msgid "Archive page title prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1278
-msgid "Display \"Category:\" prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1279
-msgid "Display \"Tag:\" prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1280
-msgid "Display \"Author:\" prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1281
-msgid "Display \"Archives:\" prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1282
-msgid "Display \"Taxonomy:\" prefix"
-msgstr ""
-
-#: includes/customize/class-customize.php:1449
+#: includes/customize/class-customize.php:1497
 msgid ""
 "Please set your website credits text or the theme default one will be "
 "displayed."
@@ -566,35 +556,35 @@ msgstr ""
 msgid "Skip to footer"
 msgstr ""
 
-#: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:189
+#: includes/frontend/class-loop.php:114 includes/frontend/class-loop.php:187
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:390
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:190
+#: includes/frontend/class-loop.php:115 includes/frontend/class-loop.php:188
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:392
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/frontend/class-loop.php:118 includes/frontend/class-loop.php:191
+#: includes/frontend/class-loop.php:116 includes/frontend/class-loop.php:189
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:396
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/frontend/class-loop.php:119 includes/frontend/class-loop.php:192
+#: includes/frontend/class-loop.php:117 includes/frontend/class-loop.php:190
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:398
 #: includes/plugins/woocommerce/class-woocommerce-single.php:275
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/frontend/class-loop.php:131
+#: includes/frontend/class-loop.php:129
 msgid "Posts Navigation"
 msgstr ""
 
@@ -1116,7 +1106,7 @@ msgstr ""
 msgid "After content only"
 msgstr ""
 
-#: includes/plugins/jetpack/class-jetpack.php:229
+#: includes/plugins/jetpack/class-jetpack.php:227
 msgid "Load more&hellip;"
 msgstr ""
 
@@ -1202,20 +1192,20 @@ msgstr ""
 msgid "Reload this page &raquo;"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:434
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:414
 msgctxt "Customizer section title."
 msgid "Shop"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:440
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:420
 msgid "Cart and Checkout"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:446
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:426
 msgid "Display checkout guide"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-customize.php:447
+#: includes/plugins/woocommerce/class-woocommerce-customize.php:427
 msgid "Enables the checkout process steps visualization."
 msgstr ""
 
@@ -1237,7 +1227,7 @@ msgstr ""
 
 #. translators: %s: search query.
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:277 search.php:32
-#: templates/parts/intro/intro-content.php:86
+#: templates/parts/intro/intro-content.php:85
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1315,27 +1305,27 @@ msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/class-setup.php:485
+#: includes/setup/class-setup.php:489
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:492
+#: includes/setup/class-setup.php:496
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:493
+#: includes/setup/class-setup.php:497
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:500 includes/setup/class-setup.php:511
+#: includes/setup/class-setup.php:504 includes/setup/class-setup.php:515
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:510
+#: includes/setup/class-setup.php:514
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:518
+#: includes/setup/class-setup.php:522
 msgid "In page intro section."
 msgstr ""
 
@@ -1344,7 +1334,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:624
+#: includes/setup/class-setup.php:628
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1354,68 +1344,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:634
+#: includes/setup/class-setup.php:638
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:703
+#: includes/setup/class-setup.php:707
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:704
+#: includes/setup/class-setup.php:708
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:705
+#: includes/setup/class-setup.php:709
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:706
+#: includes/setup/class-setup.php:710
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:707
+#: includes/setup/class-setup.php:711
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:708
+#: includes/setup/class-setup.php:712
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:709
+#: includes/setup/class-setup.php:713
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:710
+#: includes/setup/class-setup.php:714
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:711
+#: includes/setup/class-setup.php:715
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:716
+#: includes/setup/class-setup.php:720
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:733
+#: includes/setup/class-setup.php:737
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:737
+#: includes/setup/class-setup.php:741
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:755
+#: includes/setup/class-setup.php:759
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:766
+#: includes/setup/class-setup.php:770
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:773
+#: includes/setup/class-setup.php:777
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1423,23 +1413,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:784
+#: includes/setup/class-setup.php:788
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:788
+#: includes/setup/class-setup.php:792
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:799
+#: includes/setup/class-setup.php:803
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:803
+#: includes/setup/class-setup.php:807
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:815
+#: includes/setup/class-setup.php:819
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1730,7 +1720,7 @@ msgid "Recent Posts"
 msgstr ""
 
 #: includes/widgets/class-wp-widget-recent-posts.php:281
-msgid "Category slug or ID:"
+msgid "From category:"
 msgstr ""
 
 #: includes/widgets/class-wp-widget-text.php:181
@@ -1780,149 +1770,134 @@ msgstr ""
 msgid "Remove image"
 msgstr ""
 
-#: library/includes/classes/class-core.php:177
+#: library/includes/classes/class-core.php:157
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/includes/classes/class-core.php:215
+#: library/includes/classes/class-core.php:196
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: library/includes/classes/class-core.php:307
+#: library/includes/classes/class-core.php:289
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/includes/classes/class-core.php:527
+#: library/includes/classes/class-core.php:450
 msgid "Skip to main content"
 msgstr ""
 
-#: library/includes/classes/class-customize-control-html.php:32
+#: library/includes/classes/class-customize-control-html.php:34
 msgid "Please set the `content` parameter for the HTML control."
 msgstr ""
 
-#: library/includes/classes/class-customize-control-multiselect.php:115
+#: library/includes/classes/class-customize-control-multiselect.php:118
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/includes/classes/class-customize-styles.php:213
-msgid ""
-"ERROR: Wasn't able to create a theme CSS folder! Contact the theme support."
-msgstr ""
-
-#: library/includes/classes/class-customize-styles.php:752
-msgid ""
-"The theme writes a files to your server. You do not appear to have your FTP "
-"credentials set up in \"wp-config.php\" file."
-msgstr ""
-
-#: library/includes/classes/class-customize-styles.php:752
-msgid "Please set your FTP credentials first."
-msgstr ""
-
-#: library/includes/classes/class-visual-editor.php:219
+#: library/includes/classes/class-visual-editor.php:185
 msgid "Text styles"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:223
+#: library/includes/classes/class-visual-editor.php:189
 msgid "Dropcap text"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:229
+#: library/includes/classes/class-visual-editor.php:195
 msgid "Uppercase heading or paragraph"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:235
+#: library/includes/classes/class-visual-editor.php:201
 msgid "Highlighted (marked) text"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:241
+#: library/includes/classes/class-visual-editor.php:207
 msgid "Small text"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:246
+#: library/includes/classes/class-visual-editor.php:212
 msgid "Superscript"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:252
+#: library/includes/classes/class-visual-editor.php:218
 msgid "Subscript"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:258
-#: library/includes/classes/class-visual-editor.php:264
-#: library/includes/classes/class-visual-editor.php:270
+#: library/includes/classes/class-visual-editor.php:224
+#: library/includes/classes/class-visual-editor.php:230
+#: library/includes/classes/class-visual-editor.php:236
 #, php-format
 msgctxt "%d = HTML heading size number."
 msgid "Heading %d text style"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:281
+#: library/includes/classes/class-visual-editor.php:247
 msgid "Text sizes"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:285
-#: library/includes/classes/class-visual-editor.php:291
-#: library/includes/classes/class-visual-editor.php:297
-#: library/includes/classes/class-visual-editor.php:303
+#: library/includes/classes/class-visual-editor.php:251
+#: library/includes/classes/class-visual-editor.php:257
+#: library/includes/classes/class-visual-editor.php:263
+#: library/includes/classes/class-visual-editor.php:269
 #, php-format
 msgctxt "%d: Display text size number."
 msgid "Display %d"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:314
+#: library/includes/classes/class-visual-editor.php:280
 msgctxt "Visual editor blockquote formats group title."
 msgid "Quotes"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:318
+#: library/includes/classes/class-visual-editor.php:284
 msgid "Blockquote"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:324
+#: library/includes/classes/class-visual-editor.php:290
 msgid "Pullquote - align left"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:331
+#: library/includes/classes/class-visual-editor.php:297
 msgid "Pullquote - align right"
 msgstr ""
 
-#: library/includes/classes/class-visual-editor.php:338
+#: library/includes/classes/class-visual-editor.php:304
 msgctxt ""
 "Visual editor format label for HTML CITE tag used to set the blockquote "
 "source."
 msgid "Cite"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:346
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:348
 msgid "Install Required Plugins"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:347
-msgid "Install Plugins"
-msgstr ""
-
-#. translators: %s: plugin name.
 #: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:349
-#, php-format
-msgid "Installing Plugin: %s"
+msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:351
 #, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:353
+#, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:352
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:354
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:355
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:357
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -1930,7 +1905,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:361
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:363
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -1938,7 +1913,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:367
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:369
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -1950,7 +1925,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:373
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:375
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -1958,7 +1933,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:379
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:381
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -1966,62 +1941,62 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:385
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:387
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:390
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:392
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:395
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:397
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:400
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:402
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:404
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:406
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:405
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:846
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2552
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3599
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:407
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:848
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2554
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3601
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:406
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3178
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:408
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3180
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:407
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2971
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:409
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2973
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:409
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:411
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:411
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:413
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -2029,117 +2004,117 @@ msgid ""
 msgstr ""
 
 #. translators: 1: dashboard link.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:413
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:415
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:414
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:416
 msgid "Dismiss this notice"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:415
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:417
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:416
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:418
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:541
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:543
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:542
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:544
 msgid "Update Required"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:953
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:955
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:953
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:956
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:955
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:958
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:956
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:958
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:1140
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2967
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:1142
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2969
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
 #. translators: %s: version number
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2001
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2003
 #, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2292
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2294
 msgid "Required"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2295
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2297
 msgid "Recommended"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2311
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2313
 msgid "WordPress Repository"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2314
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2316
 msgid "External Source"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2317
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2319
 msgid "Pre-Packaged"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2334
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2336
 msgid "Not Installed"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2338
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2340
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2340
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2342
 msgid "Active"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2346
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2348
 msgid "Required Update not Available"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2349
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2351
 msgid "Requires Update"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2352
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2354
 msgid "Update recommended"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2361
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2363
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2407
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2409
 #, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -2148,7 +2123,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2411
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2413
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
@@ -2156,7 +2131,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2415
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2417
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
@@ -2164,202 +2139,202 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2419
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2421
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2501
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2503
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2509
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2511
 msgid "Installed version:"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2517
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2519
 msgid "Minimum required version:"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2529
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2531
 msgid "Available version:"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2552
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2554
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2566
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2568
 msgid "Plugin"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2567
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2569
 msgid "Source"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2568
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2570
 msgid "Type"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2572
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2574
 msgid "Version"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2573
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2575
 msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2622
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2624
 #, php-format
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2627
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2629
 #, php-format
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2633
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2635
 #, php-format
 msgid "Activate %2$s"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2703
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2705
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2736
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2738
 msgid "Install"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2742
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2744
 msgid "Update"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2745
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2747
 msgid "Activate"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2776
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2778
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2778
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2780
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2819
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2821
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2821
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2823
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2927
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2929
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2953
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:2955
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3177
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3179
 msgid "Plugin activation failed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3517
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3519
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3520
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3522
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3522
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3524
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3526
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3530
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3530
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3538
 msgid "Show Details"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3528
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3530
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3538
 msgid "Hide Details"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3529
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3531
 msgid "All installations and activations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3531
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3533
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3534
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3536
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3538
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3537
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3539
 msgid "All installations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3539
+#: library/includes/vendor/tgmpa/class-tgm-plugin-activation.php:3541
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: library/includes/vendor/use-child-theme/class-use-child-theme.php:135
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:150
 #, php-format
 msgid "Please use a %s child theme to make changes!"
 msgstr ""
 
-#: library/includes/vendor/use-child-theme/class-use-child-theme.php:136
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:151
 msgid "Create and activate now &raquo;"
 msgstr ""
 
-#: library/includes/vendor/use-child-theme/class-use-child-theme.php:193
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:217
 msgid "All done! You are using a child theme now! Please refresh the page."
 msgstr ""
 
-#: library/includes/vendor/use-child-theme/class-use-child-theme.php:216
+#: library/includes/vendor/use-child-theme/class-use-child-theme.php:247
 msgid "Error: theme folder not writable!"
 msgstr ""
 

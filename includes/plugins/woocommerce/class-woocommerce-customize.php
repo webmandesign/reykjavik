@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -32,10 +32,8 @@ class Reykjavik_WooCommerce_Customize {
 		/**
 		 * Constructor
 		 *
-		 * @uses  `wmhook_reykjavik_inline_styles_handle` global hook
-		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 */
 		private function __construct() {
 
@@ -56,8 +54,6 @@ class Reykjavik_WooCommerce_Customize {
 						add_filter( 'wmhook_reykjavik_customize_styles_get_custom_styles_array', __CLASS__ . '::custom_styles_array', 10, 3 );
 
 						add_filter( 'wmhook_reykjavik_customize_styles_get_variable_styles_types', __CLASS__ . '::variable_styles_types' );
-
-						add_filter( 'wmhook_reykjavik_inline_styles_handle', __CLASS__ . '::inline_styles_handle' );
 
 		} // /__construct
 
@@ -154,22 +150,6 @@ class Reykjavik_WooCommerce_Customize {
 				return $types;
 
 		} // /variable_styles_types
-
-
-
-		/**
-		 * Load inline styles after WooCommerce stylesheet is enqueued
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function inline_styles_handle() {
-
-			// Output
-
-				return 'reykjavik-stylesheet-woocommerce';
-
-		} // /inline_styles_handle
 
 
 

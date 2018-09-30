@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -248,7 +248,7 @@ class Reykjavik_Sidebar {
 		 * Intro sidebar: display conditions
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  bool       $is_active_sidebar
 		 * @param  int|string $index
@@ -264,7 +264,7 @@ class Reykjavik_Sidebar {
 
 			// Helper variables
 
-				$enabled = ( 'always' === get_theme_mod( 'layout_intro_widgets_display' ) ) ? ( ! is_search() ) : ( is_singular() );
+				$enabled = ( 'always' === Reykjavik_Library_Customize::get_theme_mod( 'layout_intro_widgets_display' ) ) ? ( ! is_search() ) : ( is_singular() );
 
 
 			// Processing
