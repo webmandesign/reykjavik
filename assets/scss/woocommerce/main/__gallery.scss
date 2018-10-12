@@ -13,15 +13,15 @@
 	.single-product-images {
 		@extend %wc_clearfix;
 		position: relative;
-		margin-bottom: power( $golden, 2 ) +em;
+		margin-bottom: pow( $golden, 2 ) +em;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $left; // {{RTL}}
 			width: 48%;
 			margin-bottom: 0;
 		}
 
-		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+		@include media( map_get( $breakpoint, 'xl' ) ) {
 			width: percentage( $golden_major - .04 );
 		}
 
@@ -107,11 +107,11 @@
 		}
 
 		&__image {
-			max-width: map_get( $breakpoint, 'l' ) *$px;
+			max-width: map_get( $breakpoint, 'l' ) +px;
 			min-height: 0 !important; // Have to force this to keep Flex slider items responsive.
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				max-width: ( $golden_major - .04 ) * $content_width *$px; /* $content_width */
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				max-width: floor( ( $golden_major - .04 ) * $content_width ) +px; /* $content_width */ // `floor()` matches `absint()`
 			}
 
 			.flex-viewport & {

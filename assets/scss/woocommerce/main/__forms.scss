@@ -13,7 +13,7 @@
 	.woocommerce {
 
 		fieldset {
-			padding: ( $golden +em ) 6% ( power( $golden, 2 ) +em );
+			padding: ( $golden +em ) 6% ( pow( $golden, 2 ) +em );
 			margin-top: 2em;
 			margin-bottom: 2em;
 			border-width: 2px;
@@ -69,7 +69,7 @@
 			width: auto;
 		}
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 
 			&-first,
 			&-last {

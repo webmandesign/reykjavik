@@ -12,6 +12,7 @@
  *
  * @since    1.0.0
  * @version  2.7.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -168,6 +169,7 @@ final class Reykjavik_Library_Visual_Editor {
 		 *
 		 * @since    1.0.0
 		 * @version  2.7.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $init
 		 */
@@ -188,13 +190,13 @@ final class Reykjavik_Library_Visual_Editor {
 									100 . 'text_styles' . 100 => array(
 										'title'    => esc_html__( 'Dropcap text', 'reykjavik' ),
 										'selector' => 'p',
-										'classes'  => 'dropcap-text',
+										'classes'  => 'has-drop-cap',
 									),
 
 									100 . 'text_styles' . 110 => array(
 										'title'    => esc_html__( 'Uppercase heading or paragraph', 'reykjavik' ),
 										'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
-										'classes'  => 'uppercase',
+										'classes'  => 'has-uppercase-text-transform',
 									),
 
 									100 . 'text_styles' . 120 => array(
@@ -250,25 +252,25 @@ final class Reykjavik_Library_Visual_Editor {
 									200 . 'text_sizes' . 100 => array(
 										'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 1 ),
 										'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
-										'classes'  => 'display-1',
+										'classes'  => 'has-display-1-font-size',
 									),
 
 									200 . 'text_sizes' . 110 => array(
 										'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 2 ),
 										'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
-										'classes'  => 'display-2',
+										'classes'  => 'has-display-2-font-size',
 									),
 
 									200 . 'text_sizes' . 120 => array(
 										'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 3 ),
 										'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
-										'classes'  => 'display-3',
+										'classes'  => 'has-display-3-font-size',
 									),
 
 									200 . 'text_sizes' . 130 => array(
 										'title'    => sprintf( esc_html_x( 'Display %d', '%d: Display text size number.', 'reykjavik' ), 4 ),
 										'selector' => 'p, h1, h2, h3, h4, h5, h6, address',
-										'classes'  => 'display-4',
+										'classes'  => 'has-display-4-font-size',
 									),
 
 								),
@@ -359,6 +361,7 @@ final class Reykjavik_Library_Visual_Editor {
 		 *
 		 * @since    1.7.2
 		 * @version  2.7.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $init
 		 */
@@ -366,31 +369,15 @@ final class Reykjavik_Library_Visual_Editor {
 
 			// Requirements check
 
-				global $post;
-
-				if ( ! isset( $post ) ) {
+				if ( ! isset( $init['body_class'] ) ) {
 					return $init;
 				}
 
 
-			// Helper variables
-
-				global $wp_version;
-
-				$class = array();
-
-
 			// Processing
 
-				// Setting custom classes
-
-					// Adding `.entry-content` class for compatibility with `main.css` styles
-
-						$class[] = 'entry-content';
-
-				// Adding custom classes
-
-					$init['body_class'] = $init['body_class'] . ' ' . implode( ' ', $class );
+				// Compatibility with `main.css` styles.
+				$init['body_class'] .= ' entry-content '; // TinyMCE only.
 
 
 			// Output

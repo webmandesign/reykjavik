@@ -10,49 +10,45 @@
 
 // HTML elements
 
-	@if rtl == $language_direction {
-
-		body {
-			direction: rtl;
-			unicode-bidi: embed;
-		}
-
-	}
-
 	a {
 		@extend %break_words;
+	}
 
-		&:hover {}
+		[href^="tel"] {
+			white-space: nowrap;
 
-		&:focus {
-			outline: thin dashed;
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				pointer-events: none;
+				text-decoration: none;
+				color: inherit;
+			}
+
 		}
 
-		&:visited {}
-
+	:focus {
+		outline: thin dashed;
 	}
+
+		body:focus {
+			outline: none;
+		}
 
 	hr {
 		clear: both;
 		height: 2px;
-		margin: ( power( 1 + $golden_minor, 2 ) +rem ) 0;
+		margin: ( pow( 1 + $golden_minor, 2 ) +em ) 0;
 		border-width: 0;
 	}
 
 	abbr[title],
-	acronym[title] {
+	acronym[title],
+	dfn {
 		cursor: help;
 		text-decoration: none;
 	}
 
 	blockquote {
-		@extend %font_size_golden_minor;
-		@extend %font_weight_300;
-		@extend %line_height_golden_minor;
 		clear: both;
-		position: relative;
-		padding: 1em 0;
-		margin: ( $golden +em ) 0;
 
 		p {
 			margin-bottom: 1em;
@@ -73,7 +69,7 @@
 		border-width: 0;
 
 		&::before {
-			content: '\2014\2002';
+			content: '\2014\2002'; // em dash + en space
 		}
 
 		blockquote & {
@@ -88,11 +84,16 @@
 	q {
 
 		&::before {
-			@include rtl_property( content, '\201C', '\201D' ); // {{RTL}}
+			content: open-quote;
 		}
 
 		&::after {
-			@include rtl_property( content, '\201D', '\201C' ); // {{RTL}}
+			content: close-quote;
+		}
+
+		&::before,
+		&::after {
+			display: inline-block; // Required for correct RTL display. // {{RTL}}
 		}
 
 	}
@@ -111,12 +112,27 @@
 		color: inherit;
 	}
 
+	figure {
+		margin: 0 0 ( $golden +em );
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	audio,
+	embed,
+	iframe,
 	img,
-	iframe {
+	object,
+	video {
+		max-width: 100%;
 		vertical-align: middle;
 	}
 
 	img {
+		@extend %font_style_italic;
 		height: auto;
 	}
 
@@ -125,7 +141,7 @@
 		outline: 0;
 
 		&:focus {
-			outline: thin dotted;
+			outline: thin dashed;
 		}
 
 	}
@@ -161,22 +177,31 @@
 		tab-size: 2;
 	}
 
-	small,
-	.small {
+	small {
 		@extend %font_size_small;
 	}
 
-	ul, ol {
-		margin-top: 0;
-		margin-bottom: 1em;
-		margin-#{$left}: $golden_minor + 1em; // {{RTL}}
-		margin-#{$right}: 0; // {{RTL}}
+	menu,
+	ul,
+	ol {
+		padding: 0;
+		margin: 0;
+	}
 
-		li > & {
-			margin-bottom: 0;
+		ul,
+		ol {
+			margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+			margin-bottom: 1em;
+
+			li > & {
+				margin-bottom: 0;
+			}
+
 		}
 
-	}
+		ul {
+			list-style: disc;
+		}
 
 	dl {
 		margin-top: 0;
@@ -195,6 +220,40 @@
 
 	dd {
 		margin-#{$left}: $golden +em; // {{RTL}}
+	}
+
+	table {
+		@extend %line_height_golden_minor;
+		width: 100%;
+		margin: 0 0 ( $golden +em );
+		border-width: 2px;
+		border-style: solid;
+	}
+
+		caption {
+			@extend %font_style_italic;
+			padding: 1em 0;
+			text-align: $left; // {{RTL}}
+			caption-side: bottom;
+		}
+
+		th,
+		td {
+			padding: ( $golden_major +em ) 1em;
+			border-width: 1px;
+			border-style: solid;
+			vertical-align: top;
+		}
+
+		th,
+		tfoot td {
+			@extend %font_weight_700;
+			text-align: $left; // {{RTL}}
+			border-width: 2px;
+		}
+
+	svg {
+		fill: currentColor;
 	}
 
 
@@ -223,8 +282,6 @@
 
 
 // Imports
-
-	@import '_table';
 
 	@import '_classes';
 

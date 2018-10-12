@@ -15,7 +15,7 @@
 		font-size: 100%;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-		@include responsive( map_get( $breakpoint, 's' ) ) {
+		@include media( map_get( $breakpoint, 's' ) ) {
 			font-size: percentage( $font_size / 16 );
 		}
 
@@ -37,7 +37,7 @@
 	pre,
 	pre code {
 		@extend %break_words_disable;
-		white-space: pre-wrap; // http://css-tricks.com/almanac/properties/w/whitespace
+		white-space: pre-wrap; // https://css-tricks.com/almanac/properties/w/whitespace
 		line-height: 1.5;
 	}
 
@@ -48,7 +48,9 @@
 		margin: 0 0 ( $golden +em );
 	}
 
-	.uppercase {
+	.uppercase,
+	.is-uppercase,
+	.has-uppercase-text-transform {
 		text-transform: uppercase;
 	}
 
@@ -68,27 +70,27 @@
 		}
 
 		%font_size_tiny_rem {
-			font-size: 1rem * $golden_major; // .62
+			font-size: 1rem * $golden_major;
 		}
 
 		%font_size_small_rem {
-			font-size: 1rem - $golden_minor / 2; // .81
+			font-size: 1rem - $golden_minor / 2;
 		}
 
 		%font_size_smaller_rem {
-			font-size: 1rem - $golden_minor / 4; // .905
+			font-size: 1rem - $golden_minor / 4;
 		}
 
 		%font_size_higher_rem {
-			font-size: 1rem + $golden_minor / 2; // 1.19
+			font-size: 1rem + $golden_minor / 2;
 		}
 
 		%font_size_golden_minor_rem {
-			font-size: 1rem + $golden_minor; // 1.38
+			font-size: 1rem + $golden_minor;
 		}
 
 		%font_size_golden_rem {
-			font-size: 1rem * $golden; // 1.62
+			font-size: 1rem * $golden;
 		}
 
 	// em
@@ -98,48 +100,63 @@
 		}
 
 		%font_size_tiny {
-			font-size: 1em * $golden_major; // .62
+			font-size: 1em * $golden_major;
 		}
 
 		%font_size_small {
-			font-size: 1em - $golden_minor / 2; // .81
+			font-size: 1em - $golden_minor / 2;
 		}
 
 		%font_size_smaller {
-			font-size: 1em - $golden_minor / 4; // .905
+			font-size: 1em - $golden_minor / 4;
 		}
 
 		%font_size_higher {
-			font-size: 1em + $golden_minor / 2; // 1.19
+			font-size: 1em + $golden_minor / 2;
 		}
 
 		%font_size_golden_minor {
-			font-size: 1em + $golden_minor; // 1.38
+			font-size: 1em + $golden_minor;
 		}
 
 		%font_size_golden {
-			font-size: 1em * $golden; // 1.62
+			font-size: 1em * $golden;
 		}
 
 
 
-		.font-size-xs { // extra small
+		.font-size-xs,
+		.has-xs-font-size,
+		.has-extra-small-font-size {
 			@extend %font_size_tiny;
 		}
 
-		.font-size-s { // small
+		.font-size-s,
+		.has-s-font-size,
+		.has-small-font-size {
 			@extend %font_size_small;
 		}
 
-		.font-size-sm { // small
+		.font-size-sm,
+		.has-sm-font-size,
+		.has-smaller-font-size {
 			@extend %font_size_smaller;
 		}
 
-		.font-size-l { // large
+		.has-regular-font-size {
+			@extend %font_size_1em;
+		}
+
+		.font-size-l,
+		.has-l-font-size,
+		.has-large-font-size {
 			@extend %font_size_golden_minor;
 		}
 
-		.font-size-xl { // extra large
+		.font-size-xl,
+		.has-xl-font-size,
+		.has-extra-large-font-size,
+		.has-larger-font-size {
 			@extend %font_size_golden;
 		}
 
@@ -160,9 +177,8 @@
 			font-weight: $weight;
 		}
 
-
-
-		.weight-#{$weight} {
+		.weight-#{$weight},
+		.has-#{$weight}-font-weight {
 			@extend %font_weight_#{$weight};
 		}
 
@@ -182,11 +198,13 @@
 
 
 
-	.font-style-italic {
+	.font-style-italic,
+	.has-italic-font-style {
 		@extend %font_style_italic;
 	}
 
-	.font-style-normal {
+	.font-style-normal,
+	.has-normal-font-style {
 		@extend %font_style_normal;
 	}
 
@@ -199,23 +217,29 @@
 	}
 
 	%line_height_golden_minor {
-		line-height: 1 + $golden_minor; // 1.38
+		line-height: 1 + $golden_minor;
 	}
 
 	%line_height_golden {
-		line-height: $golden; // 1.62
+		line-height: $golden;
 	}
 
 
 
-	.line-height-xs { // extra small
+	.line-height-xs,
+	.has-xs-line-height,
+	.has-extra-small-line-height {
 		@extend %line_height_1;
 	}
 
-	.line-height-s { // small
+	.line-height-s,
+	.has-s-line-height,
+	.has-small-line-height {
 		@extend %line_height_golden_minor;
 	}
 
-	.line-height-m { // medium
+	.line-height-m,
+	.has-m-line-height,
+	.has-medium-line-height {
 		@extend %line_height_golden;
 	}

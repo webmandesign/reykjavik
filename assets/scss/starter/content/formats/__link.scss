@@ -1,0 +1,25 @@
+/* FILE: starter/formats/__link.scss */
+
+//
+// Post format: Link
+//
+
+
+
+
+
+@if ( index( $supported_post_formats, 'link' ) ) {
+
+	.format-link {
+
+		.entry-content {
+
+			a {
+				font-weight: bolder;
+			}
+
+		}
+
+	}
+
+}

@@ -13,16 +13,19 @@
 	margin-top: 1em;
 	margin-bottom: 1em;
 
-	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 'l' ) ) {
+	@include media(
+		( map_get( $breakpoint, 'm' ), 'min-width' ),
+		( map_get( $breakpoint, 'l' ), 'max-width' )
+	) {
 		float: $right; // {{RTL}}
 	}
 
-	@include responsive( map_get( $breakpoint, 'l' ) ) {
+	@include media( map_get( $breakpoint, 'l' ) ) {
 		float: $left; // {{RTL}}
 		margin-#{$right}: $golden +em;
 	}
 
-	@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
+	@include media( ( map_get( $breakpoint, 's' ), 'max-width' ) ) {
 		float: $right; // {{RTL}}
 	}
 
@@ -35,7 +38,7 @@
 			.menu {
 				margin-top: $golden +rem;
 
-				@include responsive( map_get( $breakpoint, 'm' ) ) {
+				@include media( map_get( $breakpoint, 'm' ) ) {
 					margin-top: 0;
 				}
 
@@ -60,7 +63,7 @@
 				padding: 0;
 				margin: 0;
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					float: $left; // {{RTL}}
 					white-space: nowrap;
 				}
@@ -103,7 +106,7 @@
 
 			.menu {
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 
 					&:hover .current-menu-item > a,
 					&:hover .current-menu-ancestor > a {
@@ -117,7 +120,7 @@
 					border-color: currentColor;
 				}
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 
 					.current-menu-ancestor > a,
 					.current-menu-ancestor > a:hover {
@@ -138,7 +141,7 @@
 					z-index: 10;
 				}
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 
 					.focus,
 					.current-menu-ancestor {

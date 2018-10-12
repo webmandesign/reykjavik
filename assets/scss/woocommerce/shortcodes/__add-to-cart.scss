@@ -16,7 +16,7 @@
 	margin: ( $golden +em ) auto;
 
 	.amount {
-		font-size: power( $golden, 2 ) +em;
+		font-size: pow( $golden, 2 ) +em;
 	}
 
 	.woocommerce-Price-currencySymbol {

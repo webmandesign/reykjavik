@@ -12,7 +12,7 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  1.2.0
+// @version  2.0.0
 //
 
 
@@ -20,58 +20,27 @@
 
 
 //
-// WordPress CSS starter stylesheet
+// WordPress CSS Starter
 //
-// SASS version
+// This stylesheet provides just basic styles for WordPress themes.
+// Using mobile first approach with these breakpoints:
+// 448px, 672px, 880px, 1280px, 1600px, 1920px, 2560px
 //
-// This stylesheet was developed for WebMan themes mainly. Contains styles for the most
-// commonly used elements in WebMan WordPress themes, with support for several plugins.
+// IMPORTANT: See media() mixin info.
 //
-// The stylesheet does not set any (or just minimal) colors. Use additional CSS styles
-// to set background, text and border colors to HTML elements.
-//
-// No styles are provided for pingback and trackback comments.
-//
-// Mobile first approach used.
-// Breakpoints: 448px, 672px, 880px, 1280px, 1600px, 1920px, 2560px
-// These are default predefined breakpoints only. Feel free to set your own ones to match
-// your website content and design. All those breakpoints will be converted to `em` units
-// instead of pixels in responsive mixins by default.
-//
-// Browsers compatibility:
-// =======================
-// - Chrome, Safari, Opera
-// - Firefox
-// - Internet Explorer 9+
-//
-// This CSS stylesheet, like WordPress, is licensed under the GPL.
-// Use it to make something cool, have fun, and share what you've learned with others.
-//
+// @link       https://github.com/webmandesign/wp-css-starter
+// @link       https://www.webmandesign.eu
 // @copyright  WebMan Design, Oliver Juhas
-// @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
+// @license    GPL-3.0, https://www.gnu.org/licenses/gpl-3.0.html
 //
-// @version  3.16.0
-//
-// @link  https://github.com/webmandesign/wp-css-starter
-// @link  http://www.webmandesign.eu
+// @version  5.0.0
 //
 
+@import 'tools/functions';
+@import 'setup/variables';
+@import 'tools/mixins';
 
-
-
-
-// Imports
-
-	@import 'tools/functions';
-
-	@import 'setup/variables';
-
-	@import 'tools/mixins';
-
-	@import 'generic/generic';
-
-	@import 'base/base';
-
-	@import 'typography/typography';
-
-	@import 'content/content';
+@import 'generic/generic';
+@import 'base/base';
+@import 'typography/typography';
+@import 'content/content';

@@ -22,15 +22,10 @@
 	.wp-video {
 		width: 100% !important;
 		height: auto !important;
+		margin-bottom: $golden +em;
 
-		.mejs-container,
-		&-playlist .mejs-container {
-			@extend %video_container;
-
-			.mejs-inner {
-				@extend %video_object;
-			}
-
+		&:last-child {
+			margin-bottom: 0;
 		}
 
 	}

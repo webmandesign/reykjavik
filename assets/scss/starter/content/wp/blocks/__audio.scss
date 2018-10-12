@@ -1,0 +1,21 @@
+/* FILE: starter/wp/blocks/__audio.scss */
+
+//
+// Audio
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'audio' ) ) {
+
+	.wp-block-audio {
+
+		audio {
+			width: 100%;
+		}
+
+	}
+
+}

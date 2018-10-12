@@ -21,7 +21,7 @@ fieldset {
 input,
 select,
 textarea {
-	@extend %font_size_1rem;
+	@extend %font_size_1em;
 }
 
 button,

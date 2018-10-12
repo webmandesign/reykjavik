@@ -1,0 +1,25 @@
+/* FILE: starter/formats/__quote.scss */
+
+//
+// Post format: Quote
+//
+
+
+
+
+
+@if ( index( $supported_post_formats, 'quote' ) ) {
+
+	.format-quote {
+
+		.entry-content {
+
+			a {
+				font-weight: bolder;
+			}
+
+		}
+
+	}
+
+}

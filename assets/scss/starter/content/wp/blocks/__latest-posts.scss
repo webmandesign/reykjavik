@@ -1,0 +1,26 @@
+/* FILE: starter/wp/blocks/__latest-posts.scss */
+
+//
+// Latest Posts
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'latest-posts' ) ) {
+
+	.wp-block-latest-posts {
+
+		&:not(.is-grid) {
+			@extend %block_list_items;
+
+			li {
+				@extend %block_list_items_child;
+			}
+
+		}
+
+	}
+
+}

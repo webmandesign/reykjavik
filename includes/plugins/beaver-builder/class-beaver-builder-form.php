@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -135,7 +135,7 @@ class Reykjavik_Beaver_Builder_Form {
 		 * Add predefined classes helper dropdown
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $field
 		 * @param  name  $name
@@ -156,9 +156,9 @@ class Reykjavik_Beaver_Builder_Form {
 									'label'   => esc_html__( 'Decorations:', 'reykjavik' ),
 									'options' => array(
 
-										'box-shadow-small'  => esc_html__( 'Column shadow, small', 'reykjavik' ),
-										'box-shadow-medium' => esc_html__( 'Column shadow, medium', 'reykjavik' ),
-										'box-shadow-large'  => esc_html__( 'Column shadow, large', 'reykjavik' ),
+										'has-small-box-shadow'  => esc_html__( 'Column shadow, small', 'reykjavik' ),
+										'has-medium-box-shadow' => esc_html__( 'Column shadow, medium', 'reykjavik' ),
+										'has-large-box-shadow'  => esc_html__( 'Column shadow, large', 'reykjavik' ),
 
 									),
 								),
@@ -169,17 +169,17 @@ class Reykjavik_Beaver_Builder_Form {
 									'label'   => esc_html__( 'Layout:', 'reykjavik' ),
 									'options' => array(
 
-										'text-center'      => esc_html__( 'Text center', 'reykjavik' ),
-										'text-left'        => esc_html__( 'Text left', 'reykjavik' ),
-										'text-right'       => esc_html__( 'Text right', 'reykjavik' ),
+										'has-center-text-align' => esc_html__( 'Text center', 'reykjavik' ),
+										'has-left-text-align'   => esc_html__( 'Text left', 'reykjavik' ),
+										'has-right-text-align'  => esc_html__( 'Text right', 'reykjavik' ),
 
-										'fullwidth'        => esc_html__( 'Fullwidth elements', 'reykjavik' ),
+										'fullwidth' => esc_html__( 'Fullwidth elements', 'reykjavik' ),
 
-										'hide-accessibly'  => esc_html__( 'Hide accessibly (displayed in page builder edit mode only)', 'reykjavik' ),
+										'hide-accessibly' => esc_html__( 'Hide accessibly (displayed in page builder edit mode only)', 'reykjavik' ),
 
 										'split-screen-row' => esc_html__( 'Split screen row (apply on full-height row only)', 'reykjavik' ),
 
-										'zindex-10'        => esc_html__( 'Bring element to front (CSS z-index)', 'reykjavik' ),
+										'has-rised-z-index' => esc_html__( 'Bring element to front (CSS z-index)', 'reykjavik' ),
 
 									),
 								),
@@ -203,11 +203,11 @@ class Reykjavik_Beaver_Builder_Form {
 									'label'   => esc_html__( 'Typography:', 'reykjavik' ),
 									'options' => array(
 
-										'font-size-xs' => esc_html__( 'Font size, extra small', 'reykjavik' ),
-										'font-size-s'  => esc_html__( 'Font size, small', 'reykjavik' ),
-										'font-size-sm' => esc_html__( 'Font size, smaller', 'reykjavik' ),
-										'font-size-l'  => esc_html__( 'Font size, large', 'reykjavik' ),
-										'font-size-xl' => esc_html__( 'Font size, extra large', 'reykjavik' ),
+										'has-extra-small-font-size' => esc_html__( 'Font size, extra small', 'reykjavik' ),
+										'has-small-font-size'       => esc_html__( 'Font size, small', 'reykjavik' ),
+										'has-smaller-font-size'     => esc_html__( 'Font size, smaller', 'reykjavik' ),
+										'has-large-font-size'       => esc_html__( 'Font size, large', 'reykjavik' ),
+										'has-extra-large-font-size'      => esc_html__( 'Font size, extra large', 'reykjavik' ),
 
 									),
 								),

@@ -1,0 +1,56 @@
+/* FILE: starter/wp/blocks/__columns.scss */
+
+//
+// Columns
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'columns' ) ) {
+
+	.wp-block-column {
+		flex: 1 1 16em;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
+		&.has-background {
+			padding: $golden +em;
+		}
+
+		&.has-no-padding {
+			padding: 0;
+		}
+
+		&:last-child {
+			margin-bottom: $golden +em;
+		}
+
+		&.has-no-margin {
+			margin: 0;
+		}
+
+		&s {
+			flex-wrap: wrap;
+			margin-left: -1em;
+			margin-right: -1em;
+			margin-bottom: 0;
+
+			&.alignfull {
+
+				@include media( map_get( $breakpoint, 'm' ) ) {
+					margin-left: 0;
+					margin-right: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+}

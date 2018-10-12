@@ -23,12 +23,12 @@
 		border-bottom-width: 2px;
 		border-bottom-color: inherit;
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			padding: 2em;
 			width: calc( 50% - 2em );
 		}
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 
 			.no-widgets-sidebar & {
 				width: calc( 33.33% - 2em );

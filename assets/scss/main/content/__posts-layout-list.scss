@@ -45,16 +45,16 @@
 
 			&-content {
 
-				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				@include media( map_get( $breakpoint, 'xl' ) ) {
 					float: $right; // {{RTL}}
-					width: 62%;
+					width: percentage( $golden_major );
 				}
 
 			}
 
 			&-meta {
 
-				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				@include media( map_get( $breakpoint, 'xl' ) ) {
 					float: $left; // {{RTL}}
 					width: 34%;
 					margin-bottom: 0;

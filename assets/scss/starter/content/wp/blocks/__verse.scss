@@ -1,0 +1,21 @@
+/* FILE: starter/wp/blocks/__verse.scss */
+
+//
+// Verse
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'verse' ) ) {
+
+	.wp-block-verse {
+		padding: 1em;
+		font-family: inherit;
+		font-size: inherit;
+		background: transparent;
+		color: inherit;
+	}
+
+}

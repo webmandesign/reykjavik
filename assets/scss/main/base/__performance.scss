@@ -20,7 +20,7 @@
 
 		.main-navigation-container {
 
-			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 				will-change: transform;
 			}
 
@@ -28,12 +28,17 @@
 
 		.menu-toggle {
 
-			@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
+			@include media(
+				( map_get( $breakpoint, 'm' ), 'max-width' ),
+				( map_get( $breakpoint, 's' ), 'min-height' )
+			) {
 				will-change: transform;
 			}
 
-			@media only screen and (min-width: #{ map_get( $breakpoint, 'm' ) / 16 +em } ) and (max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) / 16 +em } ),
-			       only screen and (max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) / 16 +em } ) {
+			@media
+				( min-width: #{ map_get( $breakpoint, 'm' ) +px } ) and ( max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) +px } ),
+				( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
+			{
 
 				.is-active & {
 					will-change: transform;

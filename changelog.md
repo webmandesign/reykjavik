@@ -1,5 +1,15 @@
 # Reykjavik Changelog
 
+## 2.0.0
+
+* **Update**: Compatible with new Gutenberg editor (WordPress 5.0)
+
+### Files changed:
+
+	changelog.md
+	style.css
+
+
 ## 1.3.0
 
 * **Add**: Options to change homepage intro overlay colors and opacity

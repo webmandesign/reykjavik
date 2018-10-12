@@ -12,8 +12,8 @@
 	@extend %background_overlay_from_text_color;
 	padding: ( $golden +rem ) 0;
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
-		padding: ( power( $golden, 2 ) +rem ) 0;
+	@include media( map_get( $breakpoint, 'm' ) ) {
+		padding: ( pow( $golden, 2 ) +rem ) 0;
 	}
 
 }

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.0.0
  */
 
 
@@ -125,7 +125,7 @@
 
 		.recommended-image-sizes {
 			display: inline-block;
-			padding: 1.62em;
+			padding: 1.618em;
 			border: 2px solid #dadcde;
 		}
 
@@ -134,21 +134,21 @@
 		}
 
 		.recommended-image-sizes table {
-			margin-top: 1.62em;
+			margin-top: 1.618em;
 		}
 
 		.recommended-image-sizes th,
 		.recommended-image-sizes td {
 			width: auto;
-			padding: .38em 1em;
+			padding: .382em 1em;
 			border-bottom: 2px dotted #dadcde;
 			vertical-align: top;
 		}
 
 		.recommended-image-sizes thead th {
-			padding: .62em 1em;
+			padding: .618em 1em;
 			text-transform: uppercase;
-			font-size: .81em;
+			font-size: .809em;
 			border-bottom-style: solid;
 		}
 

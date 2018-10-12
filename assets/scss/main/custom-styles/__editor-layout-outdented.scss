@@ -45,9 +45,9 @@
 			> .outdent-heading {
 
 				&:not(:first-child) {
-					margin-top: power( 1 + $golden_minor, 4 ) +rem;
+					margin-top: pow( 1 + $golden_minor, 4 ) +rem;
 
-					@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					@include media( map_get( $breakpoint, 'xl' ) ) {
 						margin-top: 12%;
 					}
 
@@ -55,7 +55,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: percentage( 1 - $page_content_width / 100 ) !important; // {{RTL}} // Yes, we have to force this one as WP native styles apply !important too.
 
 				// H2 headings outdent
@@ -68,7 +68,9 @@
 						margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
 						margin-bottom: -$golden +em;
 
-						&.uppercase {
+						&.uppercase,
+						&.is-uppercase,
+						&.has-uppercase-text-transform {
 							letter-spacing: .075em;
 						}
 

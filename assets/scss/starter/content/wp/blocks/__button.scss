@@ -1,0 +1,22 @@
+/* FILE: starter/wp/blocks/__button.scss */
+
+//
+// Button
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'button' ) ) {
+
+	.wp-block-button {
+
+		.site &.is-style-outline .wp-block-button__link {
+			background: transparent;
+			color: inherit;
+		}
+
+	}
+
+}

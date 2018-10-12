@@ -119,14 +119,12 @@
 
 	%wc_max_width_1920 {
 		max-width: 1920px;
-		max-width: 1920 * $px;
 	}
 
 	/* $content_width */
 	%wc_content_width {
 		@extend %wc_basic_width;
 		max-width: $content_width +px;
-		max-width: $content_width * $px;
 	}
 
 	%wc_full_width {
@@ -174,9 +172,9 @@
 			padding: ( $golden +em ) 0;
 			margin: 0 ( $golden +rem );
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				flex-basis: 0%;
-				padding: ( power( $golden, 2 ) +em ) 0;
+				padding: ( pow( $golden, 2 ) +em ) 0;
 			}
 
 		}

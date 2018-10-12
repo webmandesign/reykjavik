@@ -13,7 +13,7 @@
 	margin-top: 1em;
 	margin-bottom: 1em;
 
-	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+	@include media( map_get( $breakpoint, 'xl' ) ) {
 		margin-#{$left}: auto; // {{RTL}}
 		margin-#{$right}: 0; // {{RTL}}
 	}

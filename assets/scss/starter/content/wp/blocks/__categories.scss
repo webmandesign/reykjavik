@@ -1,0 +1,17 @@
+/* FILE: starter/wp/blocks/__categories.scss */
+
+//
+// Categories
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'categories' ) ) {
+
+	.wp-block-categories {
+		@extend %block_list_no_style;
+	}
+
+}

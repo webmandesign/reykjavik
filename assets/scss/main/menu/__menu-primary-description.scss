@@ -15,7 +15,7 @@
 
 	// In top level menu items
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 
 			.main-navigation-container .menu > ul > li > a & {
 				display: none;
@@ -27,7 +27,7 @@
 
 	// In megamenu label
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 
 			.main-navigation-container .megamenu > ul > li > a & {
 				margin-bottom: $golden_major +em;

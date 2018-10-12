@@ -30,12 +30,13 @@
 
 	@each $i, $size in $display_text_size {
 
-		.display-#{$i} {
+		.display-#{$i},
+		.has-display-#{$i}-font-size {
 			@extend %display_text_size;
 			font-size: $size * ( $golden_major + $golden_minor / 2 / $i );
 			line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				font-size: $size;
 			}
 

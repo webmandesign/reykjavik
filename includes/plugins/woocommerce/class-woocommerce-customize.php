@@ -252,7 +252,7 @@ class Reykjavik_WooCommerce_Customize {
 		 * Add custom WooCommerce styles array
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 *
 		 * @param  array  $custom_styles
 		 * @param  string $scope
@@ -285,14 +285,14 @@ class Reykjavik_WooCommerce_Customize {
 					// From `woocommerce/main/__gallery.scss` SASS file.
 
 						$custom_styles['woocommerce-product-gallery-media-query-open'] = array(
-							'custom' => "\t" . '@media only screen and (min-width: 55em) {',
+							'custom' => "\t" . '@media (min-width: 880px) {',
 						);
 
 							$custom_styles['woocommerce-product-gallery'] = array(
 								'selector' => '.woocommerce-product-gallery__image',
 								'styles'   => array(
-									'max-width|1' => absint( ( .62 - .04 ) * $helper['layout_width_content'] ) . 'px',
-									'max-width|2' => ( ( .62 - .04 ) * $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
+									'max-width|1' => absint( ( .618 - .04 ) * $helper['layout_width_content'] ) . 'px',
+									'max-width|2' => ( ( .618 - .04 ) * $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
 								),
 							);
 
@@ -331,7 +331,7 @@ class Reykjavik_WooCommerce_Customize {
 		 * Theme options addons and modifications
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $options
 		 */
@@ -356,7 +356,7 @@ class Reykjavik_WooCommerce_Customize {
 						$options[ 100 . 'colors' . 30 . 110 ]['preview_js']['css'][ implode( ', ', $selectors['color_content_background']['as_box_shadow'] ) ] = array(
 								array(
 									'property' => 'box-shadow',
-									'prefix'   => '0 0 0 .62em ',
+									'prefix'   => '0 0 0 .618em ',
 								),
 							);
 					}
@@ -391,7 +391,7 @@ class Reykjavik_WooCommerce_Customize {
 					// From `woocommerce/main/__gallery.scss` SASS file.
 
 						$options[ 300 . 'layout' . 130 ]['preview_js']['css']['.woocommerce-product-gallery__image'] = array(
-								'selector_before' => '@media only screen and (min-width: 55em) { ',
+								'selector_before' => '@media (min-width: 880px) { ',
 								'selector_after'  => ' }',
 								array(
 									'property' => 'width',

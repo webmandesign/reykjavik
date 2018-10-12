@@ -23,7 +23,7 @@
 			display: block;
 			margin: 1em 0;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				float: $right; // {{RTL}}
 				margin: 0;
 			}

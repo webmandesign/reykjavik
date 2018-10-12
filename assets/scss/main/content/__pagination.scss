@@ -9,12 +9,12 @@
 
 
 .pagination {
-	@extend .overflow-hidden;
 	padding: 1px; // To display accessibility outline.
-	margin-top: power( $golden, 2 ) +rem;
+	margin-top: pow( $golden, 2 ) +rem;
 	text-align: center;
+	overflow: hidden;
 
-	@include responsive( map_get( $breakpoint, 'l' ) ) {
+	@include media( map_get( $breakpoint, 'l' ) ) {
 		margin-top: $padding_vertical;
 	}
 
@@ -64,7 +64,7 @@
 
 	}
 
-	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 
 		.prev {
 			float: $left; // {{RTL}}
@@ -76,7 +76,7 @@
 
 	}
 
-	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 		position: relative;
 
 		&::after {

@@ -1,0 +1,17 @@
+/* FILE: starter/wp/blocks/__archives.scss */
+
+//
+// Archives
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'archives' ) ) {
+
+	.wp-block-archives {
+		@extend %block_list_no_style;
+	}
+
+}

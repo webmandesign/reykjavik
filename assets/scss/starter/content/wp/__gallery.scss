@@ -10,11 +10,11 @@
 
 .gallery {
 	@extend .clearfix;
-	@extend .overflow-hidden;
 	clear: both;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 0 ( $golden +em );
+	overflow: hidden;
 
 	a {
 		display: block;
@@ -27,13 +27,13 @@
 		$gutter: 2;  // %
 
 		&-item {
-			@extend .overflow-hidden;
 			flex: 1 1 auto;
 			float: $left; // {{RTL}}
 			position: relative;
 			width: percentage( ( 100 / $columns - $gutter ) / 100 );
 			padding: 0;
 			margin: percentage( $gutter / 2 / 100 );
+			overflow: hidden;
 
 			.gallery-columns-1 & {
 				float: none;
@@ -46,7 +46,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include media( map_get( $breakpoint, 'm' ) ) {
 				$columns: 3; // Default layout on medium devices.
 				width: percentage( ( 100 / $columns - $gutter ) / 100 );
 
@@ -57,7 +57,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 
 				@for $i from 3 through 9 {
 
@@ -75,8 +75,8 @@
 	// Icon (image wrapper inside the .gallery-item)
 
 		&-icon {
-			@extend .overflow-hidden;
 			display: block;
+			overflow: hidden;
 		}
 
 }

@@ -14,7 +14,7 @@
 	a,
 	span {
 		display: none;
-		width: power( $golden, 2 ) +em;
+		width: pow( $golden, 2 ) +em;
 		padding: ( $golden_major +em ) 0;
 		margin: $golden_minor / 2 +em;
 		margin-#{$left}: 0; // {{RTL}}
@@ -28,7 +28,7 @@
 		display: inline-block;
 	}
 
-	> span.dots,
+	.dots,
 	.extend {
 		width: auto;
 	}
@@ -37,7 +37,7 @@
 		@extend %font_weight_700;
 	}
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
+	@include media( map_get( $breakpoint, 'm' ) ) {
 
 		a,
 		span {

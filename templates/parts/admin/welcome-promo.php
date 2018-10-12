@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  2.0.0
  */
 
 
@@ -98,7 +98,7 @@
 
 	.welcome-upgrade {
 		position: relative;
-		padding: 2.62em;
+		padding: 2.618em;
 		background-color: #0f1732;
 		background-image: url('<?php echo esc_url_raw( trailingslashit( get_template_directory_uri() ) ); ?>assets/images/footer/pixabay-colorado-1436681.png');
 		background-size: cover;
@@ -136,7 +136,7 @@
 	}
 
 		.welcome-upgrade .welcome-upgrade-thanks {
-			margin: 1.62rem 0 0;
+			margin: 1.618rem 0 0;
 			font-family: Georgia, serif;
 			font-size: 2.058em;
 			font-style: italic;
@@ -148,7 +148,7 @@
 
 		.welcome-upgrade-button {
 			display: inline-block;
-			padding: .62em 1.62em;
+			padding: .618em 1.618em;
 			margin-top: 1em;
 			text-decoration: none;
 			font-size: 1rem;
@@ -168,7 +168,7 @@
 			}
 
 	.welcome-upgrade li::before {
-		margin: 0 .62em;
+		margin: 0 .618em;
 	}
 
 </style>

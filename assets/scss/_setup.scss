@@ -72,7 +72,7 @@
 	// Mobile menu
 	//
 
-		$mobile_menu_toggle_height: 3.62; // In rem.
+		$mobile_menu_toggle_height: 3.618; // In rem.
 
 
 
@@ -196,7 +196,7 @@
 				'small':  1rem,
 				'medium': 2rem,
 				'large':  3rem,
-			) !default;
+			);
 
 			$column_box_shadows_opacity: .2;
 
@@ -212,8 +212,8 @@
 
 	// Helper variables
 
-		$typography_line_height: 1.62;
-		$typography_margin_bottom: 1.62;
+		$typography_line_height: 1.618;
+		$typography_margin_bottom: 1.618;
 
 
 
@@ -233,7 +233,7 @@
 			'body':     "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
 			'headings': "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
 			'logo':     "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-		) !default;
+		);
 
 
 
@@ -261,43 +261,48 @@
 			// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
 
 			'h1, .h1' : (
-					2.618,
-					1.19,
-					( 4 * $typography_line_height - 2.618 * 1.19 - $typography_margin_bottom ) / 2.618,
-					$typography_margin_bottom / 2.618 / 1.19
-				),
-			'h2, .h2' : (
-					2.058,
-					1.19,
-					( 4 * $typography_line_height - 2.058 * 1.19 - $typography_margin_bottom ) / 2.058,
-					$typography_margin_bottom / 2.058 / 1.19
-				),
-			'h3, .h3' : (
-					1.618,
-					1.38,
-					( 3 * $typography_line_height - 1.618 * 1.38 - $typography_margin_bottom ) / 1.618,
-					$typography_margin_bottom / 1.618 / 1.38
-				),
-			'h4, .h4' : (
-					1.272,
-					1.38,
-					( 3 * $typography_line_height - 1.272 * 1.38 - $typography_margin_bottom ) / 1.272,
-					$typography_margin_bottom / 1.272 / 1.38
-				),
-			'h5, .h5' : (
-					1.000,
-					1.62,
-					( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
-					$typography_margin_bottom / 1.000 / 1.62
-				),
-			'h6, .h6' : (
-					1.000,
-					1.62,
-					( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
-					$typography_margin_bottom / 1.000 / 1.62
-				)
+				2.618,
+				1.191,
+				( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
+				$typography_margin_bottom / 2.618 / 1.191
+			),
 
-		) !default;
+			'h2, .h2' : (
+				2.058,
+				1.191,
+				( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
+				$typography_margin_bottom / 2.058 / 1.191
+			),
+
+			'h3, .h3' : (
+				1.618,
+				1.382,
+				( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
+				$typography_margin_bottom / 1.618 / 1.382
+			),
+
+			'h4, .h4' : (
+				1.272,
+				1.382,
+				( 3 * $typography_line_height - 1.272 * 1.382 - $typography_margin_bottom ) / 1.272,
+				$typography_margin_bottom / 1.272 / 1.382
+			),
+
+			'h5, .h5' : (
+				1.000,
+				1.618,
+				( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+				$typography_margin_bottom / 1.000 / 1.618
+			),
+
+			'h6, .h6' : (
+				1.000,
+				1.618,
+				( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+				$typography_margin_bottom / 1.000 / 1.618
+			)
+
+		);
 
 
 
@@ -312,7 +317,7 @@
 			2 : 3.329em,
 			3 : 4.236em,
 			4 : 5.387em,
-		) !default;
+		);
 
 
 
@@ -354,7 +359,7 @@
 	// Margin elements
 	//
 
-		$tags_margin_bottom: (
+		$elements_margin_bottom: (
 			'h1',
 			'h2',
 			'h3',
@@ -365,8 +370,9 @@
 			'ol',
 			'ul',
 			'blockquote',
+			'figure',
 			'.gallery',
-			'.tiled-gallery'
+			'.tiled-gallery',
 		);
 
 
@@ -375,19 +381,24 @@
 	// Button elements
 	//
 
-		$button_elements: (
+		$elements_button: (
 			'.button',
 			'button',
 			'[type="button"]',
 			'[type="reset"]',
 			'[type="submit"]',
-			'.child-page .more-link'
 		);
 
-		$button_elements_beaver_builder: ();
+		$elements_button_beaver_builder: ();
 
 		$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
 
-		@each $button_element in $button_elements {
-			$button_elements_beaver_builder: append( $button_elements_beaver_builder, '#{$beaver_builder_button_prepend} #{$button_element}', comma );
+		@each $button in $elements_button {
+			$elements_button_beaver_builder: append( $elements_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
 		}
+
+		$elements_button: append( $elements_button, (
+			'.child-page .more-link',
+			'.main-navigation-container .button > a',
+			'.site .wp-block-button__link:not(.has-background)',
+		) );

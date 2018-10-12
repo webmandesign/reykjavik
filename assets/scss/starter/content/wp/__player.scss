@@ -1,0 +1,44 @@
+/* FILE: starter/wp/__player.scss */
+
+//
+// WordPress media player
+//
+
+
+
+
+
+.mejs {
+
+	&-container {
+		margin-bottom: $golden +em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.wp-video &,
+		.wp-video-playlist & {
+			@extend %video_container;
+
+			.mejs-inner {
+				@extend %video_object;
+			}
+
+		}
+
+		.posts & {
+			min-width: 0 !important; // Overriding inline element styles.
+		}
+
+		.entry-media & a {
+			width: auto;
+		}
+
+		.entry-media & .mejs-horizontal-volume-slider {
+			width: 56px;
+		}
+
+	}
+
+}

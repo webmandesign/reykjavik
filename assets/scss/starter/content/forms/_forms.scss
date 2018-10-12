@@ -74,7 +74,7 @@
 		padding-#{$right}: 21px;
 		line-height: $golden;
 
-		// Inspiration from Foundation @link  http://foundation.zurb.com/sites/docs/forms.html#select-menus
+		// Inspiration from Foundation @link  https://foundation.zurb.com/sites/docs/forms.html#select-menus
 		//
 		// Dropdown selector image source at `helpers` folder of GitHub repository
 		// and processed with https://www.base64-image.de/
@@ -97,8 +97,10 @@
 
 	}
 
-	input[disabled] {
+	[disabled],
+	[aria-disabled="true"] {
 		cursor: default;
+		pointer-events: none;
 		opacity: .66;
 	}
 

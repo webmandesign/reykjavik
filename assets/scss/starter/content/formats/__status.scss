@@ -1,0 +1,26 @@
+/* FILE: starter/formats/__status.scss */
+
+//
+// Post format: Status
+//
+
+
+
+
+
+@if ( index( $supported_post_formats, 'status' ) ) {
+
+	.format-status {
+		cursor: help;
+
+		.entry-content {
+
+			a {
+				font-weight: bolder;
+			}
+
+		}
+
+	}
+
+}

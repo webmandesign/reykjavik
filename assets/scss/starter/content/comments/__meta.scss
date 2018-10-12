@@ -9,22 +9,22 @@
 
 
 .comment-meta {
-	@extend .overflow-hidden;
 	clear: both;
 	padding-bottom: $golden_major +em;
 	margin-bottom: 1em;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
+	overflow: hidden;
 
 	.avatar {
 		display: block;
-		width: 60 *$px;
+		width: 5em - $golden;
 		margin-bottom: 1em;
 		border-radius: 50%;
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			position: absolute;
-			width: 90 *$px;
+			width: 5em;
 			#{$left}: 0; // {{RTL}}
 			top: $golden +em;
 			margin-bottom: 0;
@@ -36,7 +36,7 @@
 
 .comment-author {
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
+	@include media( map_get( $breakpoint, 'm' ) ) {
 		float: $left; // {{RTL}}
 	}
 
@@ -45,7 +45,7 @@
 .comment-metadata {
 	@extend %font_size_small;
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
+	@include media( map_get( $breakpoint, 'm' ) ) {
 		float: $right; // {{RTL}}
 	}
 

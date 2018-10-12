@@ -1,6 +1,10 @@
 /////////////////////
 //
-// Setup variables
+// Variables
+//
+// To override these variables, you can redefine them in your SASS files.
+// All the `!default` variables can be redefined easily.
+// Import your variables file BEFORE the actual `starter` import.
 //
 /////////////////////
 
@@ -8,44 +12,80 @@
 
 
 
-// To override these variables, you can redefine them in your SASS files.
-// All the `!default` variables can be redefined easily.
-// Import your variables file BEFORE the actual `starter` import.
-
-
-
-
-
 //
-// Globals
+// Setup variables
 //
 
-	// RTL support
+	// Preferred unit type.
+	//
+	// Used in media queries.
+	// "absolute" (px, pt) vs "relative" (em, rem, %)
+
+		$preferred_units: absolute !default;
+
+	// Right To Left languages support.
 	//
 	// There are `{{RTL}}` notes left in the code where change is applicable.
 
 		$language_direction: ltr !default;
+		$left: left;
+		$right: right;
 
 		@if rtl == $language_direction {
 			$left: right;
 			$right: left;
-		} @else {
-			$left: left;
-			$right: right;
 		}
 
-	// Golden ratio
+	// Blocks support.
 
-		// (Rounding to nearest hundredth to prevent calculation issues between browsers.)
+		$supported_blocks: (
+			'archives',
+			'audio',
+			'button',
+			'categories',
+			'code',
+			'columns',
+			'drop-cap',
+			'latest-comments',
+			'latest-posts',
+			'pullquote',
+			'spacer',
+			'verse',
+		) !default;
 
-		$golden:       1.62 !default;
-		$golden_major: 0.62 !default;
-		$golden_minor: 0.38 !default;
+	// Post Formats support.
 
-	// Responsive breakpoints (in px)
+		$supported_post_formats: (
+			// 'link',
+			// 'quote',
+			// 'status',
+		) !default;
+
+	// Plugin support: Jetpack modules.
+	//
+	// @link  https://jetpack.com/
+	// @link  https://jetpack.com/support/
+	// @link  https://jetpack.com/support/control-jetpacks-modules-on-one-page/
+
+		$supported_jetpack_modules: (
+			'contact-form',
+			'infinite-scroll',
+			'related-posts',
+			'responsive-videos',
+			'sharing',
+			'tiled-gallery',
+			'widgets',
+		) !default;
+
+
+
+//
+// Global variables
+//
+
+	// Responsive breakpoints (in px).
 
 		$breakpoint: (
-
 			's'     :  448, // =  28em // Starting mobile landscape
 			'm'     :  672, // =  42em // Starting tablet portrait
 			'l'     :  880, // =  55em // Starting tablet landscape
@@ -53,14 +93,28 @@
 			'xxl'   : 1600, // = 100em // Starting desktop
 			'xxxl'  : 1920, // = 120em // Starting desktop full HD
 			'xxxxl' : 2560, // = 160em // Starting desktop WQHD
-
 		) !default;
 
-	// Typography
+	// Golden ratio.
+
+		$golden:       1.618 !default;
+		$golden_major: 0.618 !default;
+		$golden_minor: 0.382 !default;
+
+
+
+//
+// Typography variables
+//
+
+	// Base font size and spacing.
 
 		$font_size: 16 !default;
 
-	// Headings
+		$typography_line_height: $golden !default;
+		$typography_margin_bottom: $golden !default;
+
+	// Headings font size, line height and vertical margins.
 
 		$h_tags_1: 'h1, .h1' !default;
 		$h_tags_2: 'h2, .h2' !default;
@@ -73,6 +127,8 @@
 
 		$h_tags_setup: (
 
+			// @see  "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/
+
 			// $selector : (
 			//   $size
 			//   $line_height
@@ -81,57 +137,45 @@
 			// )
 
 			$h_tags_1 : (
-					power( 1 + $golden_minor, 4 ),
-					1 + $golden_minor / 2,
-					( 4 * $golden - power( 1 + $golden_minor, 4 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( 1 + $golden_minor, 4 ),
-					$golden / power( 1 + $golden_minor, 4 ) / ( 1 + $golden_minor / 2 )
-				),
+				2.618,
+				1.191,
+				( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
+				$typography_margin_bottom / 2.618 / 1.191
+			),
 
 			$h_tags_2 : (
-					power( ( 1 + $golden_minor ), 3 ),
-					1 + $golden_minor / 2,
-					( 4 * $golden - power( ( 1 + $golden_minor ), 3 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( ( 1 + $golden_minor ), 3 ),
-					$golden / power( ( 1 + $golden_minor ), 3 ) / ( 1 + $golden_minor / 2 )
-				),
+				2.058,
+				1.191,
+				( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
+				$typography_margin_bottom / 2.058 / 1.191
+			),
 
 			$h_tags_3 : (
-					power( ( 1 + $golden_minor ), 2 ),
-					1 + $golden_minor,
-					( 4 * $golden - power( ( 1 + $golden_minor ), 2 ) * ( 1 + $golden_minor ) - $golden ) / power( ( 1 + $golden_minor ), 2 ),
-					$golden / power( ( 1 + $golden_minor ), 2 ) / ( 1 + $golden_minor )
-				),
+				1.618,
+				1.382,
+				( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
+				$typography_margin_bottom / 1.618 / 1.382
+			),
 
 			$h_tags_4 : (
-					$golden,
-					1 + $golden_minor,
-					( 3 * $golden - $golden * ( 1 + $golden_minor ) - $golden ) / $golden,
-					$golden / $golden / ( 1 + $golden_minor )
-				),
+				1.272,
+				( 1.618 / 1.272 ),
+				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
+				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
+			),
 
 			$h_tags_5 : (
-					1 + $golden_minor,
-					$golden,
-					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
-					$golden / ( 1 + $golden_minor ) / $golden
-				),
+				1.272,
+				( 1.618 / 1.272 ),
+				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
+				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
+			),
 
 			$h_tags_6 : (
-					1 + $golden_minor,
-					$golden,
-					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
-					$golden / ( 1 + $golden_minor ) / $golden
-				)
+				1.272,
+				( 1.618 / 1.272 ),
+				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
+				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
+			),
 
 		) !default;
-
-	// Supported post formats
-
-		$supported_post_formats: () !default;
-
-
-
-//
-// Helpers
-//
-
-	$px: 1 / $font_size * 1rem; // Use this only when not setting the theme base font size via Customizer

@@ -14,7 +14,7 @@
 	.widget {
 
 		.sidebar & {
-			margin: 0 0 ( power( $golden, 2 ) +em );
+			margin: 0 0 ( pow( $golden, 2 ) +em );
 
 			&:last-child {
 				margin-bottom: 0;
@@ -75,7 +75,7 @@
 			th,
 			td {
 				width: auto;
-				height: power( $golden, 2 ) +em;
+				height: pow( $golden, 2 ) +em;
 				padding: 0;
 				text-align: center;
 			}
@@ -88,7 +88,7 @@
 				display: block;
 				width: 100%;
 				height: 100%;
-				line-height: power( $golden, 2 );
+				line-height: pow( $golden, 2 );
 			}
 
 		}
@@ -145,46 +145,8 @@
 
 
 
-// Tag Cloud widget
-
-	.tagcloud {
-		@extend %line_height_golden;
-
-		.widget & {
-
-			a {
-				float: $left; // {{RTL}}
-				position: relative;
-				display: inline-block;
-				width: auto;
-				padding: ( $golden_minor / 2 +rem ) ( $golden_major +rem );
-				margin: 2px 2px 0;
-				margin-#{$left}: 0; // {{RTL}}
-				white-space: nowrap;
-				background-color: transparent;
-				color: inherit;
-				border-width: 1px;
-				border-style: solid;
-				z-index: 0;
-				transition: background .3s,
-				            color .3s,
-				            border .3s;
-
-				@include haf() {
-					text-decoration: none;
-				}
-
-			}
-
-		}
-
-	}
-
-
-
 // Text widget
 
-	.widget_text,
-	.tagcloud {
+	.widget_text {
 		@extend .clearfix;
 	}

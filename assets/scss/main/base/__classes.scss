@@ -10,49 +10,49 @@
 
 // Generic utility
 
-	.no-wrap {
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+	.no-wrap,
+	.has-nowrap-white-space {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			white-space: nowrap;
 		}
 	}
 
-	.text-#{$left} {
+	.text-#{$left},
+	.has-#{$left}-text-align {
 		text-align: $left !important; // {{RTL}}
 	}
 
-	.text-center {
+	.text-center,
+	.has-center-text-align {
 		text-align: center !important;
 	}
 
-	.text-#{$right} {
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+	.text-#{$right},
+	.has-#{$right}-text-align {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			text-align: $right !important; // {{RTL}}
 		}
 	}
 
-	@for $i from 1 through 10 {
-
-		%padding_percent_#{ $i * 2 } {
-			padding: percentage( $i * 2 / 100 );
-		}
-
-	}
-
-	.mt0 {
+	.mt0,
+	.has-no-margin-top {
 		margin-top: 0 !important;
 	}
 
-	.mb0 {
+	.mb0,
+	.has-no-margin-bottom {
 		margin-bottom: 0 !important;
 	}
 
 	.zindex-10,
-	.z-index-10 {
+	.z-index-10,
+	.has-rised-z-index {
 		position: relative;
 		z-index: 10;
 	}
 
-	.background-size-stretch {
+	.background-size-stretch,
+	.has-stretched-background-size {
 		background-size: 100% 100%;
 
 		.site & > div {
@@ -84,15 +84,12 @@
 
 // Dropcaps
 
-	.dropcap-text {
+	.dropcap-text,
+	.has-dropcap-text,
+	p.has-drop-cap:not(:focus) {
 
 		&::first-letter {
-			float: $left; // {{RTL}}
-			display: block;
-			padding: 0 ( $golden_minor / 2 +em );
-			padding-#{$left}: 0; // {{RTL}}
-			line-height: 1;
-			font-size: $golden * 2em; // 2 lines of text.
+			@extend %drop-cap;
 		}
 
 	}
@@ -136,8 +133,8 @@
 		column-width: 12em;
 		margin: ( $golden +em ) 0;
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
-			margin: ( power( $golden, 2 ) +em ) 0;
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			margin: ( pow( $golden, 2 ) +em ) 0;
 		}
 
 		&:first-child,
@@ -176,7 +173,8 @@
 
 	@for $i from 2 through 3 {
 
-		.text-columns-#{$i} {
+		.text-columns-#{$i},
+		.has-#{$i}-text-columns {
 			@extend %column_base;
 			column-count: $i;
 		}

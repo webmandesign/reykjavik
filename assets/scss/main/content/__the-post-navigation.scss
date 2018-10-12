@@ -15,7 +15,7 @@
 	.nav-links {
 		@extend %content_width;
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			display: flex;
 			flex-wrap: wrap;
 		}
@@ -23,17 +23,17 @@
 		> div {
 			position: relative;
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include media( map_get( $breakpoint, 'm' ) ) {
 				flex: 1 1 0%;
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				transition: opacity ( $large_animation_speed +s );
 			}
 
 			&:nth-child(2) {
 
-				@include responsive( map_get( $breakpoint, 'm' ) ) {
+				@include media( map_get( $breakpoint, 'm' ) ) {
 					// Two links
 					text-align: $right; // {{RTL}}
 				}
@@ -49,7 +49,7 @@
 			text-decoration: none;
 			color: inherit;
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include media( map_get( $breakpoint, 'm' ) ) {
 				padding: $padding_vertical 0;
 			}
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -510,7 +510,7 @@ class Reykjavik_Header {
 		 * HTML Body classes in content editor (TinyMCE)
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $init
 		 */
@@ -520,35 +520,37 @@ class Reykjavik_Header {
 
 				global $post;
 
-				if ( ! is_admin() || ! isset( $post ) ) {
+				if (
+					! isset( $init['body_class'] )
+					|| ! is_admin()
+					|| ! $post instanceof WP_Post
+				) {
 					return $init;
 				}
 
 
 			// Processing
 
-				// Page classes
+				if (
+					'page' === get_post_type( $post )
+					&& false === strpos( $init['body_class'], 'excerpt' )
+				) {
 
-					if (
-						'page' === get_post_type( $post )
-						&& false === strpos( $init['body_class'], 'excerpt' )
-					) {
+					// Outdented page layout
 
-						// Outdented page layout
+						if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
+							$init['body_class'] .= ' page-layout-outdented';
+						}
 
-							if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
-								$init['body_class'] .= ' page-layout-outdented';
-							}
+					// Any page builder ready
 
-						// Any page builder ready
+						$content_layout = (string) get_post_meta( $post->ID, 'content_layout', true );
 
-							$content_layout = (string) get_post_meta( $post->ID, 'content_layout', true );
+						if ( in_array( $content_layout, array( 'stretched', 'no-paddings' ) ) ) {
+							$init['body_class'] .= ' content-layout-no-paddings';
+						}
 
-							if ( in_array( $content_layout, array( 'stretched', 'no-paddings' ) ) ) {
-								$init['body_class'] .= ' content-layout-no-paddings';
-							}
-
-					}
+				}
 
 
 			// Output

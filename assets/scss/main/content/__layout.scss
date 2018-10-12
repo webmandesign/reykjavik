@@ -17,12 +17,12 @@
 			@extend .clearfix;
 			padding: ( $golden_major * $padding_vertical ) 0;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				padding-top: $padding_vertical;
 				padding-bottom: $padding_vertical;
 			}
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-top: $golden * $padding_vertical;
 				padding-bottom: $golden * $padding_vertical;
 			}
@@ -45,7 +45,7 @@
 
 	.content-area {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			width: percentage( $page_content_width / 100 );
 
 			.has-widgets-sidebar & {
@@ -61,8 +61,7 @@
 			.posts-layout-list.no-widgets-sidebar &,
 			.single.no-widgets-sidebar &,
 			.attachment.no-widgets-sidebar & {
-				max-width: 38em;
-				max-width: 70ch;
+				max-width: 36em;
 			}
 
 		}

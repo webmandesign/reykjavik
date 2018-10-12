@@ -28,7 +28,8 @@
 
 	#{$h_tags},
 	.post-navigation,
-	.dropcap-text::first-letter {
+	.dropcap-text::first-letter ,
+	.has-dropcap-text::first-letter {
 		@extend %site_content_headings_color;
 	}
 
@@ -102,7 +103,8 @@
 		a,
 		h1, h2, h3, h4,
 		.h1, .h2, .h3, .h4,
-		.dropcap-text::first-letter {
+		.dropcap-text::first-letter,
+		.has-dropcap-text::first-letter {
 			color: inherit; //*
 		}
 

@@ -17,8 +17,9 @@
 			&.alignleft,
 			&.alignright {
 				padding: 0;
+				margin-top: 0;
 
-				@include responsive( map_get( $breakpoint, 's' ) ) {
+				@include media( map_get( $breakpoint, 's' ) ) {
 					width: 35%;
 				}
 
@@ -40,6 +41,15 @@
 			}
 
 		}
+
+
+
+// Caption
+
+	.wp-caption,
+	figcaption {
+		text-transform: uppercase;
+	}
 
 
 
