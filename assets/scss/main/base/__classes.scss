@@ -18,17 +18,20 @@
 	}
 
 	.text-#{$left},
-	.has-#{$left}-text-align {
+	.has-#{$left}-text-align,
+	.has-#{$left}-content {
 		text-align: $left !important; // {{RTL}}
 	}
 
 	.text-center,
-	.has-center-text-align {
+	.has-center-text-align,
+	.has-center-content {
 		text-align: center !important;
 	}
 
 	.text-#{$right},
-	.has-#{$right}-text-align {
+	.has-#{$right}-text-align,
+	.has-#{$right}-content {
 		@include media( map_get( $breakpoint, 'm' ) ) {
 			text-align: $right !important; // {{RTL}}
 		}

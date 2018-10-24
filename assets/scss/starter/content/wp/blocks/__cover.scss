@@ -1,0 +1,26 @@
+/* FILE: starter/wp/blocks/__cover.scss */
+
+//
+// Cover
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'cover' ) ) {
+
+	.wp-block-cover {
+		min-height: $golden_major * 100vh;
+		padding: 2em 10%;
+
+		& &-text {
+			width: 100%;
+			max-width: 24em;
+			padding: 0;
+			text-align: inherit;
+		}
+
+	}
+
+}

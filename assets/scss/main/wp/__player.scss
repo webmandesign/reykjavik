@@ -1,0 +1,50 @@
+/* FILE: main/wp/__player.scss */
+
+//
+// Media player
+//
+
+
+
+
+
+.mejs-container {
+	margin-bottom: $golden +em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.site & .mejs-controls .mejs-button button {
+		background-color: transparent;
+		color: inherit;
+	}
+
+}
+
+.wp-playlist {
+	// Keep the text in playlist left/right even if container text is centered
+	text-align: $left; // {{RTL}}
+
+	.site & {
+		// Wrapping within `.site` class to override WordPress default styles.
+		padding: 0;
+		background: none;
+		border-width: 1px;
+		border-style: solid;
+
+		&-current-item,
+		&-tracks {
+			height: auto;
+			padding: $golden +rem;
+			margin: 0;
+		}
+
+		&-current-item {
+			@extend %font_weight_700;
+			padding-bottom: $golden_major +rem;
+		}
+
+	}
+
+}

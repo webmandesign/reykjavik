@@ -6,13 +6,14 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.0.0
  *
  * Contents:
  *
- *  0) Init
- * 10) Include SVG images
- * 20) Return SVG markup
+ *   0) Init
+ *  10) Include SVG images
+ *  20) Return SVG markup
+ * 100) Helpers
  */
 class Reykjavik_SVG {
 
@@ -25,6 +26,8 @@ class Reykjavik_SVG {
 	 */
 
 		private static $instance;
+
+		public static $transient = 'reykjavik_social_icons_symbols';
 
 
 
@@ -106,10 +109,8 @@ class Reykjavik_SVG {
 		/**
 		 * Get markup for social icons we need only
 		 *
-		 * @uses  `wmhook_reykjavik_social_links_icons` global hook
-		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 */
 		public static function get_social_icons_symbols() {
 
@@ -117,7 +118,7 @@ class Reykjavik_SVG {
 
 				$is_customize_preview = is_customize_preview();
 
-				$output = ( $is_customize_preview ) ? ( '' ) : ( (string) get_transient( 'reykjavik_social_icons_symbols' ) );
+				$output = ( $is_customize_preview ) ? ( '' ) : ( (string) get_transient( self::$transient ) );
 
 				// Output cache if it's set
 
@@ -125,9 +126,11 @@ class Reykjavik_SVG {
 						return $output;
 					}
 
-				$social_icons      = (array) apply_filters( 'wmhook_reykjavik_social_links_icons', array() );
+				$social_icons      = self::get_social_icons();
 				$menu_locations    = get_nav_menu_locations();
 				$social_menu_items = ( isset( $menu_locations['social'] ) ) ? ( wp_get_nav_menu_items( $menu_locations['social'] ) ) : ( array() );
+
+				$set_cache = false;
 
 
 			// Requirements check
@@ -164,13 +167,15 @@ class Reykjavik_SVG {
 							}
 						}
 
+						$set_cache = true;
+
 					}
 
 				$output = ob_get_clean();
 
-				// Cache the markup
-
-					set_transient( 'reykjavik_social_icons_symbols', $output );
+				if ( $set_cache ) {
+					set_transient( self::$transient, $output );
+				}
 
 
 			// Output
@@ -185,13 +190,13 @@ class Reykjavik_SVG {
 		 * Flush social icons symbols markup cache
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 */
 		public static function social_icons_symbols_cache_flush() {
 
 			// Processing
 
-				delete_transient( 'reykjavik_social_icons_symbols' );
+				delete_transient( self::$transient );
 
 		} // /social_icons_symbols_cache_flush
 
@@ -207,7 +212,7 @@ class Reykjavik_SVG {
 		 * Site navigation
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 *
 		 * @param array $args {
 		 *     Parameters needed to display an SVG.
@@ -225,9 +230,9 @@ class Reykjavik_SVG {
 			// Requirements check
 
 				if (
-						empty( $args )
-						|| false === array_key_exists( 'icon', $args )
-					) {
+					empty( $args )
+					|| false === array_key_exists( 'icon', $args )
+				) {
 					return;
 				}
 
@@ -237,13 +242,13 @@ class Reykjavik_SVG {
 				$output = array();
 
 				$args = wp_parse_args( $args, array(
-						'icon'     => '',
-						'title'    => '',
-						'desc'     => '',
-						'class'    => 'svgicon',
-						'base'     => 'icon',
-						'fallback' => false,
-					) );
+					'icon'     => '',
+					'title'    => '',
+					'desc'     => '',
+					'class'    => 'svgicon',
+					'base'     => 'icon',
+					'fallback' => false,
+				) );
 
 				$args = (array) apply_filters( 'wmhook_reykjavik_svg_get_args', $args );
 
@@ -316,6 +321,31 @@ class Reykjavik_SVG {
 				return implode( '', $output );
 
 		} // /get
+
+
+
+
+
+	/**
+	 * 100) Helpers
+	 */
+
+		/**
+		 * Get social links icons setup array.
+		 *
+		 * Array key = a part of link URL.
+		 * Array value = a part SVG symbol ID.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function get_social_icons() {
+
+			// Output
+
+				return (array) apply_filters( 'wmhook_reykjavik_svg_get_social_icons', array() );
+
+		} // /get_social_icons
 
 
 

@@ -1086,15 +1086,16 @@ class Reykjavik_Setup {
 					'wp-edit-post',
 					"
 					// When changing page template, change the Gutenberg editor container class.
-					( function() {
+					( function( $ ) {
 						wp.domReady( function() {
 
 							var
-								editorGutenberg = $( '#editor' ),
-								templateSelect  = '.editor-page-attributes__template select';
+								editorGutenberg  = $( '#editor' ),
+								dropdownSelector = '.editor-page-attributes__template select';
 
 							editorGutenberg
-								.on( 'change.set-gutenberg-editor-class', templateSelect, function() {
+								.on( 'change.set-editor-class', dropdownSelector, function() {
+
 									var
 										pageTemplate = $( this ).val() || 'default';
 
@@ -1111,12 +1112,13 @@ class Reykjavik_Setup {
 
 									$( document )
 										.trigger( 'editor-classchange' );
-								} )
-								.find( templateSelect )
-									.trigger( 'change.set-gutenberg-editor-class' );
 
-							} );
-						} )();
+								} )
+								.find( dropdownSelector )
+									.trigger( 'change.set-editor-class' );
+
+						} );
+					} )( jQuery );
 					"
 				);
 

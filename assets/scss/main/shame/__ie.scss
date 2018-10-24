@@ -36,7 +36,10 @@
 // IE 11 specific styles
 //
 
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	@media
+		( -ms-high-contrast: none ),
+		( -ms-high-contrast: active )
+	{
 
 		//
 		// In IE11 when an element is a child of `flex-direction: column;` parent,
@@ -59,7 +62,10 @@
 // IE 11 specific styles with additional media queries
 //
 
-	@media all and (min-width: #{ map_get( $breakpoint, 'l' ) / 16 +em }) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	@media
+		( min-width: #{ map_get( $breakpoint, 'l' ) +px } ) and ( -ms-high-contrast: none ),
+		( -ms-high-contrast: active )
+	{
 
 		.main-navigation-container .megamenu > ul > li {
 			min-width: 14em;

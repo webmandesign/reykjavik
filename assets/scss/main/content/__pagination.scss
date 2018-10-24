@@ -38,7 +38,7 @@
 			@extend %background_overlay_from_text_color;
 
 			// Unfortunate iOS devices fix for double tap...
-			@media screen and (max-width: 1112px) {
+			@include media( ( '1112px', 'max-width' ) ) {
 				&::before {
 					display: none;
 				}
@@ -52,7 +52,7 @@
 		@extend %background_overlay_from_text_color;
 
 		// Unfortunate iOS devices fix for double tap...
-		@media screen and (max-width: 1112px) {
+		@include media( ( '1112px', 'max-width' ) ) {
 			&::before {
 				display: none;
 			}

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.0.0
  */
 
 
@@ -24,15 +24,15 @@
 
 	$social_menu_html = get_transient( 'reykjavik_social_links' );
 	$social_menu_args = array(
-			'theme_location' => 'social',
-			'container'      => false,
-			'menu_class'     => 'social-links-items',
-			'depth'          => 1,
-			'link_before'    => '<span class="screen-reader-text">',
-			'link_after'     => '</span>',
-			'fallback_cb'    => false,
-			'items_wrap'     => '<ul data-id="%1$s" class="%2$s">%3$s<li class="back-to-top-link"><a href="#" class="back-to-top" title="' . esc_attr__( 'Back to top', 'reykjavik' ) . '"><span class="screen-reader-text">' . esc_html__( 'Back to top &uarr;', 'reykjavik' ) . '</span></a></li></ul>',
-		);
+		'theme_location' => 'social',
+		'container'      => false,
+		'menu_class'     => 'social-links-items',
+		'depth'          => 1,
+		'link_before'    => '<span class="screen-reader-text">',
+		'link_after'     => '</span><!--{{icon}}-->',
+		'fallback_cb'    => false,
+		'items_wrap'     => '<ul data-id="%1$s" class="%2$s">%3$s<li class="back-to-top-link"><a href="#" class="back-to-top" title="' . esc_attr__( 'Back to top', 'reykjavik' ) . '"><span class="screen-reader-text">' . esc_html__( 'Back to top &uarr;', 'reykjavik' ) . '</span></a></li></ul>',
+	);
 
 
 ?>

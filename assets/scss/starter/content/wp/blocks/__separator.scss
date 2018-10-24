@@ -1,0 +1,32 @@
+/* FILE: starter/wp/blocks/__separator.scss */
+
+//
+// Separator
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'separator' ) ) {
+
+	.wp-block-separator {
+
+		&.is-style-dots::before {
+			content: ' \2022 \2022 \2022'; // &bull;
+			padding-#{$left}: $golden_major +em; // {{RTL}}
+			font-size: $golden +em;
+			letter-spacing: $golden_major +em;
+			color: inherit;
+		}
+
+		&.is-style-short,
+		&.is-style-default {
+			max-width: 12em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
+}

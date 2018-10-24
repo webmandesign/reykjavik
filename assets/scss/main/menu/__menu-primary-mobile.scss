@@ -201,8 +201,10 @@
 
 		// Medium screens
 
-			@media only screen and (min-width: #{ map_get( $breakpoint, 'm' ) / 16 +em } ) and (max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) / 16 +em } ),
-			       only screen and (max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) / 16 +em } ) {
+			@media
+				( min-width: #{ map_get( $breakpoint, 'm' ) +px } ) and ( max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) +px } ),
+				( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
+			{
 				margin-#{$right}: $golden +rem; // {{RTL}}
 
 				.is-active & {

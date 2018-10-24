@@ -120,15 +120,6 @@
 					border-color: currentColor;
 				}
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
-
-					.current-menu-ancestor > a,
-					.current-menu-ancestor > a:hover {
-						border-color: currentColor;
-					}
-
-				}
-
 			}
 
 
