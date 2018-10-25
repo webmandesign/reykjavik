@@ -8,6 +8,14 @@
 
 
 
+// Local setup
+
+	$horizontal_alignment_margin: percentage( .06 );
+
+	$horizontal_alignment_width: percentage( $golden_major - .06 );
+
+
+
 // Imports
 
 	@import '_sticky';

@@ -296,6 +296,10 @@ class Reykjavik_Setup {
 
 					add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
 
+				// Responsive embeds
+
+					// add_theme_support( 'responsive-embeds' );
+
 				// Custom menus
 
 					/**

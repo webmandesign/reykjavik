@@ -12,6 +12,12 @@
 
 	.wp-block-audio {
 
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $horizontal_alignment_width;
+		}
+
 		audio {
 			width: 100%;
 		}

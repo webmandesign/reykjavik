@@ -11,8 +11,26 @@
 @if ( index( $supported_blocks, 'cover' ) ) {
 
 	.wp-block-cover {
-		min-height: $golden_major * 100vh;
-		padding: 2em 10%;
+		min-height: 27em;
+		padding: 2em;
+
+		&.alignleft,
+		&.alignright {
+			max-width: $horizontal_alignment_width;
+		}
+
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			min-height: 20em;
+		}
+
+		&.alignwide,
+		&.alignfull {
+			min-height: $golden_major * 100vh;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
 
 		& &-text {
 			width: 100%;

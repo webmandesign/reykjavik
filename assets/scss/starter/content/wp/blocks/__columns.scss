@@ -13,7 +13,12 @@
 	.wp-block-column {
 		flex: 1 1 16em;
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
+		&,
+		// Required specificity overrides from default block styles…
+		&:nth-child(odd),
+		&:nth-child(even),
+		&:not(:first-child),
+		&:not(:last-child) {
 			padding-left: 1em;
 			padding-right: 1em;
 		}

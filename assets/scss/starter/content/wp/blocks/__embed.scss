@@ -1,0 +1,23 @@
+/* FILE: starter/wp/blocks/__embed.scss */
+
+//
+// Embed
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'embed' ) ) {
+
+	.wp-block-embed {
+
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			max-width: $horizontal_alignment_width;
+		}
+
+	}
+
+}

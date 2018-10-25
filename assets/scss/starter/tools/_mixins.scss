@@ -299,6 +299,8 @@
 			$selectors: append( $selectors, '&:active', comma );
 		} @else if 'l' == $state {
 			$selectors: append( $selectors, '&:link', comma );
+		} @else if 'v' == $state {
+			$selectors: append( $selectors, '&:visited', comma );
 		} @else if '&' == $state {
 			$selectors: append( $selectors, '&', comma );
 		} @else {

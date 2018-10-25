@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://www.webmandesign.eu/reference/#links-support\n"
-"POT-Creation-Date: 2018-10-12 12:43+0200\n"
+"POT-Creation-Date: 2018-10-25 19:40+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -652,22 +652,22 @@ msgstr ""
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/frontend/class-menu.php:121
+#: includes/frontend/class-menu.php:119
 msgctxt "Navigational menu location"
 msgid "Primary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:122
+#: includes/frontend/class-menu.php:120
 msgctxt "Navigational menu location"
 msgid "Secondary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:123
+#: includes/frontend/class-menu.php:121
 msgctxt "Navigational menu location"
 msgid "Social Links"
 msgstr ""
 
-#: includes/frontend/class-menu.php:182 includes/frontend/class-menu.php:193
+#: includes/frontend/class-menu.php:180 includes/frontend/class-menu.php:191
 msgid "Skip to menu toggle button"
 msgstr ""
 

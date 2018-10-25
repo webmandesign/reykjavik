@@ -10,13 +10,13 @@
 
 .alignleft {
 	float: left;
-	margin-right: 6%;
+	margin-right: $horizontal_alignment_margin;
 	margin-bottom: 1em;
 }
 
 .alignright {
 	float: right;
-	margin-left: 6%;
+	margin-left: $horizontal_alignment_margin;
 	margin-bottom: 1em;
 }
 
