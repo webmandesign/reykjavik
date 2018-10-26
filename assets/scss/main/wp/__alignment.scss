@@ -59,41 +59,22 @@ $content_indent: 100 - $page_content_width;
 
 	}
 
-	// First and last full aligned block in a page/CPT content
-	// should "remove" the page/CPT vertical padding really.
+	// First and last full aligned block in a page content
+	// should "remove" the page vertical padding really.
 	// On blog posts this is not needed as there is still a post
 	// meta displayed on top.
+	//
 	// @see  .site-content-inner @ main/content/__layout.scss
-	.is-singular:not(.single-post) & {
+	.page & {
 
 		&:first-child {
-			margin-top: -$golden_major * $padding_vertical;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-top: -$padding_vertical;
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-top: -$golden * $padding_vertical;
-			}
-
+			@extend %disregard_content_padding_top;
 		}
 
 		&:last-child {
-			margin-bottom: -$golden_major * $padding_vertical;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-bottom: -$padding_vertical;
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-bottom: -$golden * $padding_vertical;
-			}
-
+			@extend %disregard_content_padding_bottom;
 		}
 
 	}
 
 }
-
-

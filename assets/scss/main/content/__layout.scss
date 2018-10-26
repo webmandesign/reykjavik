@@ -29,6 +29,32 @@
 
 		}
 
+			%disregard_content_padding_top {
+				margin-top: -$golden_major * $padding_vertical;
+
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					margin-top: -$padding_vertical;
+				}
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					margin-top: -$golden * $padding_vertical;
+				}
+
+			}
+
+			%disregard_content_padding_bottom {
+				margin-bottom: -$golden_major * $padding_vertical;
+
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					margin-bottom: -$padding_vertical;
+				}
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					margin-bottom: -$golden * $padding_vertical;
+				}
+
+			}
+
 
 
 		// Do not show the outline on the skip link target

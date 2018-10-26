@@ -148,15 +148,15 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Primary navigation args
+			 * Get menu args: Primary.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  2.0.0
 			 *
 			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
 			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
 			 */
-			public static function primary_menu_args( $mobile_nav = true, $fallback = false ) {
+			public static function get_menu_args_primary( $mobile_nav = true, $fallback = false ) {
 
 				// Helper variables
 
@@ -202,7 +202,7 @@ class Reykjavik_Menu {
 
 					return $args;
 
-			} // /primary_menu_args
+			} // /get_menu_args_primary
 
 
 
@@ -210,13 +210,13 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.0
+			 * @version  2.0.0
 			 */
 			public static function primary_fallback() {
 
 				// Helper variables
 
-					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
+					$output = wp_page_menu( array( 'echo' => false ) + (array) self::get_menu_args_primary( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
 
 
 				// Output
@@ -408,6 +408,33 @@ class Reykjavik_Menu {
 
 
 			/**
+			 * Get menu args: Social.
+			 *
+			 * @since    2.0.0
+			 * @version  2.0.0
+			 *
+			 * @param  string $items_wrap
+			 */
+			public static function get_menu_args_social( $items_wrap = '<ul data-id="%1$s" class="%2$s">%3$s</ul>' ) {
+
+				// Output
+
+					return array(
+						'theme_location' => 'social',
+						'container'      => false,
+						'menu_class'     => 'social-links-items',
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span><!--{{icon}}-->',
+						'fallback_cb'    => false,
+						'items_wrap'     => (string) $items_wrap,
+					);
+
+			} // /get_menu_args_social
+
+
+
+			/**
 			 * Social links supported icons
 			 *
 			 * @since    1.0.0
@@ -484,30 +511,36 @@ class Reykjavik_Menu {
 			 */
 			public static function nav_menu_item_social_icon( $item_output, $item, $depth, $args ) {
 
+				// Requirements check
+
+					if ( false === strpos( $item_output, '<!--{{icon}}-->' ) ) {
+						return $item_output;
+					}
+
+
+				// Variables
+
+					$social_icons = Reykjavik_SVG::get_social_icons();
+					$social_icon  = 'chain';
+
+
 				// Processing
 
-					if ( false !== strpos( $item_output, '<!--{{icon}}-->' ) ) {
-
-						$social_icons = Reykjavik_SVG::get_social_icons();
-						$social_icon  = 'chain';
-
-						foreach ( $social_icons as $url => $icon ) {
-							if ( false !== strpos( $item_output, $url ) ) {
-								$social_icon = $icon;
-								break;
-							}
+					foreach ( $social_icons as $url => $icon ) {
+						if ( false !== strpos( $item_output, $url ) ) {
+							$social_icon = $icon;
+							break;
 						}
-
-						$item_output = str_replace(
-							'<!--{{icon}}-->',
-							'<!--{{icon}}-->' . Reykjavik_SVG::get( array(
-								'icon' => esc_attr( $social_icon ),
-								'base' => 'social-icon',
-							) ),
-							$item_output
-						);
-
 					}
+
+					$item_output = str_replace(
+						'<!--{{icon}}-->',
+						'<!--{{icon}}-->' . Reykjavik_SVG::get( array(
+							'icon' => esc_attr( $social_icon ),
+							'base' => 'social-icon',
+						) ),
+						$item_output
+					);
 
 
 				// Output
@@ -519,10 +552,14 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Display social links in Menu widget
+			 * Sets Social menu args for menu in widget.
+			 *
+			 * Checks whether the menu:
+			 * - is associated with `social` location,
+			 * - or has "[soc]" in menu title/name (useful for forcing the menu args on any menu in widget).
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  2.0.0
 			 *
 			 * @param  array  $nav_menu_args Array of parameters for `wp_nav_menu()` function.
 			 * @param  string $nav_menu      Menu slug assigned in the widget.
@@ -532,29 +569,34 @@ class Reykjavik_Menu {
 
 				// Helper variables
 
-					$nav_menu_obj = wp_get_nav_menu_object( $nav_menu );
-					$locations    = get_nav_menu_locations();
+					$locations = get_nav_menu_locations();
+
+					$locations['social'] = ( isset( $locations['social'] ) ) ? ( $locations['social'] ) : ( false );
 
 
 				// Requirements check
 
 					if (
-							! isset( $locations['social'] )
-							|| ! $locations['social']
-							|| absint( $locations['social'] ) !== absint( $nav_menu_obj->term_id )
-						) {
+						! isset( $nav_menu->term_id )
+						|| (
+							false === stripos( $nav_menu->name, '[soc]' )
+							&& $locations['social'] !== $nav_menu->term_id
+						)
+					) {
 						return $nav_menu_args;
 					}
 
 
 				// Processing
 
+					$menu_args = self::get_menu_args_social();
+
 					$nav_menu_args['container_class'] = 'social-links';
 					$nav_menu_args['menu_class']      = 'social-links-items';
-					$nav_menu_args['depth']           = 1;
-					$nav_menu_args['link_before']     = '<span class="screen-reader-text">';
-					$nav_menu_args['link_after']      = '</span>';
-					$nav_menu_args['items_wrap']      = '<ul id="%1$s" class="%2$s">%3$s</ul>';
+					$nav_menu_args['depth']           = $menu_args['depth'];
+					$nav_menu_args['link_before']     = $menu_args['link_before'];
+					$nav_menu_args['link_after']      = $menu_args['link_after'];
+					$nav_menu_args['items_wrap']      = $menu_args['items_wrap'];
 
 
 				// Output
@@ -566,16 +608,39 @@ class Reykjavik_Menu {
 
 
 			/**
+			 * Get transient cache key: Social menu.
+			 *
+			 * @since    2.0.0
+			 * @version  2.0.0
+			 */
+			public static function get_cache_key_social() {
+
+				// Processing
+
+					return apply_filters(
+						'wmhook_reykjavik_get_cache_key',
+						'reykjavik_social_links',
+						'menu-social'
+					);
+
+			} // /get_cache_key_social
+
+
+
+			/**
 			 * Flush social menu cache
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  2.0.0
 			 */
 			public static function social_cache_flush() {
 
 				// Processing
 
-					delete_transient( 'reykjavik_social_links' );
+					wp_cache_delete(
+						self::get_cache_key_social(),
+						'reykjavik_' . get_bloginfo( 'language' )
+					);
 
 			} // /social_cache_flush
 

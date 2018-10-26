@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  2.0.0
  */
 
 
@@ -31,7 +31,7 @@
 
 	<?php endif; ?>
 	<div id="site-navigation-container" class="main-navigation-container">
-		<?php wp_nav_menu( Reykjavik_Menu::primary_menu_args( $is_mobile_nav_enabled ) ); ?>
+		<?php wp_nav_menu( Reykjavik_Menu::get_menu_args_primary( $is_mobile_nav_enabled ) ); ?>
 	</div>
 
 </nav>

@@ -1529,18 +1529,6 @@ blockquote.alignright { margin-right: 0; }
 
 @media (min-width: 1280px) { .page-layout-outdented .alignfull { margin-right: calc( 14.88492% - 50vw); } }
 
-.is-singular:not(.single-post) .alignfull:first-child { margin-top: -3.09rem; }
-
-@media (min-width: 880px) { .is-singular:not(.single-post) .alignfull:first-child { margin-top: -5rem; } }
-
-@media (min-width: 1280px) { .is-singular:not(.single-post) .alignfull:first-child { margin-top: -8.09rem; } }
-
-.is-singular:not(.single-post) .alignfull:last-child { margin-bottom: -3.09rem; }
-
-@media (min-width: 880px) { .is-singular:not(.single-post) .alignfull:last-child { margin-bottom: -5rem; } }
-
-@media (min-width: 1280px) { .is-singular:not(.single-post) .alignfull:last-child { margin-bottom: -8.09rem; } }
-
 /* FILE: main/content/_content.scss */
 /* FILE: main/content/__layout.scss */
 .site-content-inner { padding: 3.09rem 0; }
@@ -1548,6 +1536,18 @@ blockquote.alignright { margin-right: 0; }
 @media (min-width: 880px) { .site-content-inner { padding-top: 5rem; padding-bottom: 5rem; } }
 
 @media (min-width: 1280px) { .site-content-inner { padding-top: 8.09rem; padding-bottom: 8.09rem; } }
+
+.site-content .page .alignfull:first-child, .page .site-content .alignfull:first-child, .site-content .single-jetpack-portfolio .alignfull:first-child, .single-jetpack-portfolio .site-content .alignfull:first-child { margin-top: -3.09rem; }
+
+@media (min-width: 880px) { .site-content .page .alignfull:first-child, .page .site-content .alignfull:first-child, .site-content .single-jetpack-portfolio .alignfull:first-child, .single-jetpack-portfolio .site-content .alignfull:first-child { margin-top: -5rem; } }
+
+@media (min-width: 1280px) { .site-content .page .alignfull:first-child, .page .site-content .alignfull:first-child, .site-content .single-jetpack-portfolio .alignfull:first-child, .single-jetpack-portfolio .site-content .alignfull:first-child { margin-top: -8.09rem; } }
+
+.site-content .page .alignfull:last-child, .page .site-content .alignfull:last-child, .site-content .single-jetpack-portfolio .alignfull:last-child, .single-jetpack-portfolio .site-content .alignfull:last-child { margin-bottom: -3.09rem; }
+
+@media (min-width: 880px) { .site-content .page .alignfull:last-child, .page .site-content .alignfull:last-child, .site-content .single-jetpack-portfolio .alignfull:last-child, .single-jetpack-portfolio .site-content .alignfull:last-child { margin-bottom: -5rem; } }
+
+@media (min-width: 1280px) { .site-content .page .alignfull:last-child, .page .site-content .alignfull:last-child, .site-content .single-jetpack-portfolio .alignfull:last-child, .single-jetpack-portfolio .site-content .alignfull:last-child { margin-bottom: -8.09rem; } }
 
 .site-content[tabindex="-1"]:focus { outline: 0; }
 
