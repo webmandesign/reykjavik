@@ -68,7 +68,7 @@ class Reykjavik_Menu {
 
 						add_filter( 'nav_menu_css_class', __CLASS__ . '::nav_menu_item_classes', 10, 4 );
 
-						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 3 );
+						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 2 );
 
 						add_filter( 'wp_nav_menu', __CLASS__ . '::mobile_menu_search', 20, 2 ); // See below for priority info.
 
@@ -392,7 +392,7 @@ class Reykjavik_Menu {
 		 */
 
 			/**
-			 * Social links
+			 * Social links.
 			 *
 			 * @since    1.0.0
 			 * @version  1.0.0
@@ -435,7 +435,7 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Social links supported icons
+			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
 			 * @version  2.0.0
@@ -561,13 +561,12 @@ class Reykjavik_Menu {
 			 * @since    1.0.0
 			 * @version  2.0.0
 			 *
-			 * @param  array  $nav_menu_args Array of parameters for `wp_nav_menu()` function.
-			 * @param  string $nav_menu      Menu slug assigned in the widget.
-			 * @param  array  $args          Widget parameters.
+			 * @param  array  $nav_menu_args  An array of arguments passed to wp_nav_menu() to retrieve a navigation menu.
+			 * @param  string $nav_menu       Nav menu object for the current menu.
 			 */
-			public static function social_widget( $nav_menu_args, $nav_menu, $args ) {
+			public static function social_widget( $nav_menu_args, $nav_menu ) {
 
-				// Helper variables
+				// Variables
 
 					$locations = get_nav_menu_locations();
 
@@ -608,7 +607,7 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Get transient cache key: Social menu.
+			 * Get cache key: Social menu.
 			 *
 			 * @since    2.0.0
 			 * @version  2.0.0
@@ -628,7 +627,7 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Flush social menu cache
+			 * Flush social menu cache.
 			 *
 			 * @since    1.0.0
 			 * @version  2.0.0

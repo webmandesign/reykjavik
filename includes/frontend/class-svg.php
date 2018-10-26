@@ -86,7 +86,7 @@ class Reykjavik_SVG {
 		 */
 		public static function include_files() {
 
-			// Processing
+			// Output
 
 				// Social icons SVG sprite.
 
@@ -136,7 +136,7 @@ class Reykjavik_SVG {
 				}
 
 
-			// Helper variables
+			// Variables
 
 				$output = array();
 

@@ -22,7 +22,6 @@
 
 // Helper variables
 
-
 	$cache_key   = Reykjavik_Menu::get_cache_key_social();
 	$cache_group = 'reykjavik_' . get_bloginfo( 'language' );
 
@@ -57,8 +56,14 @@
 		 * @see  Reykjavik_Menu::social_cache_flush()
 		 */
 		if ( empty( $social_menu_html ) ) {
-			$social_menu_html = wp_nav_menu( array_merge( array( 'echo' => false ), $social_menu_args ) );
-			$social_menu_html = str_replace( ' id=', ' data-id=', $social_menu_html ); // Fix for multiple displays
+			$social_menu_args['echo'] = false;
+
+			$social_menu_html = wp_nav_menu( $social_menu_args );
+			$social_menu_html = str_replace(
+				' id=',
+				' data-id=',
+				$social_menu_html
+			);
 
 			wp_cache_add(
 				$cache_key,
