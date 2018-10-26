@@ -65,7 +65,7 @@
 				$social_menu_html
 			);
 
-			wp_cache_add(
+			wp_cache_set(
 				$cache_key,
 				$social_menu_html,
 				$cache_group,

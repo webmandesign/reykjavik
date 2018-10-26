@@ -67,6 +67,10 @@
 
 	.page-layout-outdented:not(.content-layout-no-paddings) {
 
+		.content-area {
+			max-width: none;
+		}
+
 		.entry-content-inner {
 
 			> h2,

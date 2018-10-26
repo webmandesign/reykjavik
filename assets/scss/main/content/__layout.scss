@@ -85,6 +85,7 @@
 			}
 
 			.posts-layout-list.no-widgets-sidebar &,
+			.page.no-widgets-sidebar &,
 			.single.no-widgets-sidebar &,
 			.attachment.no-widgets-sidebar & {
 				max-width: 36em;
@@ -114,14 +115,9 @@
 		.content-area {
 			float: none;
 			width: 100%;
+			max-width: none;
 			padding: 0;
 			margin: 0;
-
-			html & {
-				// Unfortunately, we need to rise specificity for `max-width` due to possible IE shame styles overrides later.
-				max-width: none;
-			}
-
 		}
 
 	}

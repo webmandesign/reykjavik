@@ -18,8 +18,9 @@
 				padding: 0;
 			}
 
-			.content-area {
+			&.is-singular .content-area {
 				width: 100%;
+				max-width: none;
 			}
 
 			.site-main > .entry > .entry-header {
@@ -38,10 +39,10 @@
 				@extend %screen_reader_hiding;
 			}
 
-		}
+			&.is-singular {
+				@extend %fullwidth_sections_layout;
+			}
 
-		&-stretched.is-singular {
-			@extend %fullwidth_sections_layout;
 		}
 
 }
