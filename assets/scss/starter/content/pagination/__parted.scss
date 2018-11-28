@@ -45,7 +45,7 @@
 
 	}
 
-	@include media( map_get( $breakpoint, 'm' ) ) {
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
 
 		&.top {
 			float: $left; // {{RTL}}

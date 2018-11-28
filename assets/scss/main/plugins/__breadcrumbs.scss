@@ -68,8 +68,8 @@
 		body:not(.no-intro):not(.fl-builder):not(.content-layout-no-paddings) .site-content & {
 			margin-bottom: $golden * -1em;
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-bottom: pow( $golden, 2 ) * -1em;
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				margin-bottom: power( $golden, 2 ) * -1em;
 			}
 
 		}
@@ -79,14 +79,14 @@
 			padding-top: 1em;
 			padding-bottom: 1em;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				padding-top: $golden +em;
 				padding-bottom: $golden +em;
 			}
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: pow( $golden, 2 ) +em;
-				padding-bottom: pow( $golden, 2 ) +em;
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: power( $golden, 2 ) +em;
+				padding-bottom: power( $golden, 2 ) +em;
 			}
 
 			.footer-layout-fullwidth & {
@@ -119,7 +119,7 @@
 				.site-footer & {
 					display: inline-block;
 
-					@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+					@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 						float: none;
 
 						&,

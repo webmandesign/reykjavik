@@ -11,13 +11,13 @@
 
 
 .cross-sells {
-	margin-bottom: pow( $golden, 2 ) +em;
+	margin-bottom: power( $golden, 2 ) +em;
 
 
 
 	.thumbnail {
 		float: $left; // {{RTL}}
-		max-width: pow( 1 + $golden_minor, 4 ) +em;
+		max-width: power( 1 + $golden_minor, 4 ) +em;
 		margin-#{$right}: 1em;
 	}
 
@@ -54,7 +54,7 @@
 
 
 			.description {
-				padding: 0 0 1em ( pow( 1 + $golden_minor, 4 ) + 1em );
+				padding: 0 0 1em ( power( 1 + $golden_minor, 4 ) + 1em );
 				text-align: $left; // {{RTL}}
 			}
 

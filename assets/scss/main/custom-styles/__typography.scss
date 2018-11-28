@@ -13,14 +13,12 @@
 /**if(typography_custom_fonts)
 
 	html,
-	.site .font-body,
-	.site .has-root-font-family {
+	.site .font-body {
 		font-family: [[typography_fonts_text]];
 	}
 
 	.site .font-headings,
 	.site .font-headings-primary,
-	.site .has-headings-font-family,
 	h1, .h1,
 	h2, .h2,
 	h3, .h3,
@@ -32,13 +30,14 @@
 
 	.site .font-logo,
 	.site .font-headings-secondary,
-	.site .has-site-title-font-family,
-	h1[class*="display-"],
-	h2[class*="display-"],
-	h3[class*="display-"],
-	.h1[class*="display-"],
-	.h2[class*="display-"],
-	.h3[class*="display-"],
+	h1.display-1, h2.display-1, h3.display-1,
+	.display-1.h1, .display-1.h2, .display-1.h3,
+	h1.display-2, h2.display-2, h3.display-2,
+	.display-2.h1, .display-2.h2, .display-2.h3,
+	h1.display-3, h2.display-3, h3.display-3,
+	.display-3.h1, .display-3.h2, .display-3.h3,
+	h1.display-4, h2.display-4, h3.display-4,
+	.display-4.h1, .display-4.h2, .display-4.h3,
 	.site-title {
 		font-family: [[typography_fonts_logo]];
 	}

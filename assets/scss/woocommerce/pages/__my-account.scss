@@ -18,7 +18,7 @@
 		@extend %wc_clearfix;
 
 		h2 {
-			margin-top: pow( 1 + $golden_minor, 4 ) +rem;
+			margin-top: power( 1 + $golden_minor, 4 ) +rem;
 		}
 
 		a {
@@ -58,14 +58,14 @@
 			border-width: 2px;
 			border-style: dashed;
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
-				padding-top: pow( 1 + $golden_minor, 3 ) +em;
-				padding-bottom: pow( 1 + $golden_minor, 3 ) +em;
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				padding-top: power( 1 + $golden_minor, 3 ) +em;
+				padding-bottom: power( 1 + $golden_minor, 3 ) +em;
 			}
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: pow( 1 + $golden_minor, 4 ) +em;
-				padding-bottom: pow( 1 + $golden_minor, 4 ) +em;
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: power( 1 + $golden_minor, 4 ) +em;
+				padding-bottom: power( 1 + $golden_minor, 4 ) +em;
 			}
 
 		}
@@ -109,14 +109,14 @@
 
 			&-navigation {
 				font-size: 1em - $golden_minor / 2;
-				margin-bottom: pow( $golden, 2 ) +rem;
+				margin-bottom: power( $golden, 2 ) +rem;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					float: $left; // {{RTL}}
 					width: 32%; // 6% margin
 				}
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					width: 22%; // 6% margin
 				}
 
@@ -148,7 +148,7 @@
 					            color ( $small_animation_speed +s ),
 					            box-shadow ( $small_animation_speed +s );
 
-					@include media( map_get( $breakpoint, 'm' ) ) {
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
 						padding-left: 2em;
 						padding-right: 2em;
 					}
@@ -209,12 +209,12 @@
 
 			&-content {
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					float: $right; // {{RTL}}
-					width: percentage( $golden_major );
+					width: 62%;
 				}
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					width: 72%;
 				}
 

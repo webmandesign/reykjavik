@@ -29,7 +29,7 @@
 
 	.fl-row {
 
-		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 			overflow: hidden; // Required to prevent mobile device horizontal scroll
 		}
 
@@ -103,8 +103,7 @@
 
 				@each $box_shadow_name, $box_shadow_size in $column_box_shadows {
 
-					.box-shadow-#{$box_shadow_name} > &,
-					.has-#{$box_shadow_name}-box-shadow > & {
+					.box-shadow-#{$box_shadow_name} > & {
 						box-shadow: 0 ( $box_shadow_size / 3 ) $box_shadow_size rgba( #000, $column_box_shadows_opacity );
 					}
 

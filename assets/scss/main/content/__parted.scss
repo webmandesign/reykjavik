@@ -9,7 +9,7 @@
 
 
 .post-table-of-contents {
-	margin-top: pow( $golden, 2 ) +rem;
+	margin-top: power( $golden, 2 ) +rem;
 
 	a {
 		@extend %font_weight_600;
@@ -42,7 +42,7 @@
 
 	a {
 		padding: ( $golden_major +em ) 1em;
-		padding-#{$left}: pow( $golden, 2 ) +em; // {{RTL}}
+		padding-#{$left}: power( $golden, 2 ) +em; // {{RTL}}
 
 		.entry-content & {
 			border-width: 0;

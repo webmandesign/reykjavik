@@ -47,10 +47,8 @@
 		content: '\f304';
 	}
 
-	@media
-		( min-width: #{ map_get( $breakpoint, 'm' ) +px } ),
-		( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
-	{
+	@media only screen and (min-width: #{ map_get( $breakpoint, 'm' ) / 16 +em } ),
+	       only screen and (max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) / 16 +em } ) {
 		display: none;
 	}
 

@@ -25,9 +25,9 @@
 			padding: ( $golden +em ) 0;
 			margin: 0 ( $golden +rem );
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				flex-basis: 0%;
-				padding: ( pow( $golden, 2 ) +em ) 0;
+				padding: ( power( $golden, 2 ) +em ) 0;
 			}
 
 		}

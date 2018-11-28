@@ -67,7 +67,7 @@
 	// Single post meta
 
 		.single & {
-			margin-bottom: pow( $golden, 2 ) +em;
+			margin-bottom: power( $golden, 2 ) +em;
 
 			&-element {
 				@extend %font_size_small;
@@ -81,12 +81,12 @@
 
 			.entry-meta-outdented .site-main > .entry > & {
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					display: inline-block;
 					float: $left; // {{RTL}}
 					max-width: 10em;
 					margin-#{$right}: -100%; // {{RTL}}
-					margin-#{$left}: -1.618rem; // {{RTL}}
+					margin-#{$left}: -1.62rem; // {{RTL}}
 					@include rtl_property( transform, translateX( -100% ), translateX( 100% ) ); // {{RTL}}
 
 					.entry-meta-element {
@@ -96,7 +96,7 @@
 
 					.entry-meta-description {
 						display: block;
-						font-size: .809em;
+						font-size: .81em;
 
 						@include in( '^.comments-link' ) {
 							display: inline;

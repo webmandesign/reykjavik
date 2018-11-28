@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.2.0
  *
  * Contents:
  *
@@ -274,7 +274,7 @@
 			 * Do not feel tempted to make this a static method!
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -294,7 +294,7 @@
 					<p class="text-widget-media-icon">
 						<label for="<?php echo esc_attr( $this->get_field_id( 'icon' ) ); ?>">
 							<strong><?php esc_html_e( 'Set icon CSS class:', 'reykjavik' ); ?></strong><br>
-							<span class="description" style="display: inline-block; padding: 0 0 .382em">
+							<span class="description" style="display: inline-block; padding: 0 0 .38em">
 								<em>
 									<?php
 
@@ -328,7 +328,7 @@
 			 * Do not feel tempted to make this a static method!
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.2.0
 			 *
 			 * @param  array $instance  Current settings.
 			 */
@@ -348,7 +348,7 @@
 					<p class="text-widget-media-image">
 						<label for="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>">
 							<strong><?php esc_html_e( 'Set image:', 'reykjavik' ); ?></strong><br>
-							<span class="description" style="display: inline-block; padding: 0 0 .382em">
+							<span class="description" style="display: inline-block; padding: 0 0 .38em">
 								<em>
 									<?php esc_html_e( 'Choose a featured image for this widget.', 'reykjavik' ); ?>
 								</em>

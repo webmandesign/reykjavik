@@ -9,12 +9,12 @@
 
 
 .pagination {
+	@extend .overflow-hidden;
 	padding: 1px; // To display accessibility outline.
-	margin-top: pow( $golden, 2 ) +rem;
+	margin-top: power( $golden, 2 ) +rem;
 	text-align: center;
-	overflow: hidden;
 
-	@include media( map_get( $breakpoint, 'l' ) ) {
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
 		margin-top: $padding_vertical;
 	}
 
@@ -38,7 +38,7 @@
 			@extend %background_overlay_from_text_color;
 
 			// Unfortunate iOS devices fix for double tap...
-			@include media( ( '1112px', 'max-width' ) ) {
+			@media screen and (max-width: 1112px) {
 				&::before {
 					display: none;
 				}
@@ -52,7 +52,7 @@
 		@extend %background_overlay_from_text_color;
 
 		// Unfortunate iOS devices fix for double tap...
-		@include media( ( '1112px', 'max-width' ) ) {
+		@media screen and (max-width: 1112px) {
 			&::before {
 				display: none;
 			}
@@ -64,7 +64,7 @@
 
 	}
 
-	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 
 		.prev {
 			float: $left; // {{RTL}}
@@ -76,7 +76,7 @@
 
 	}
 
-	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 		position: relative;
 
 		&::after {

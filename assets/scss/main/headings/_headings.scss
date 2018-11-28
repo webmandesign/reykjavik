@@ -29,8 +29,7 @@
 
 			#{$h_tags} {
 
-				&.weight-#{$weight},
-				&.has-#{$weight}-font-weight {
+				&.weight-#{$weight} {
 					font-weight: $weight;
 				}
 
@@ -40,7 +39,7 @@
 
 	@include h_tags( $golden_major + $golden_minor / 2, true ); // Heading styles on small devices
 
-	@include media( map_get( $breakpoint, 'm' ) ) {
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
 		@include h_tags(); // Heading styles on large devices
 	}
 

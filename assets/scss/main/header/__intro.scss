@@ -31,7 +31,7 @@
 				height: 33vh;
 				overflow: hidden;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					height: 66vh;
 				}
 
@@ -45,7 +45,7 @@
 
 			// Make sure the images are not too small on mobile screens
 
-				@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 					overflow: hidden;
 
 					.site & img {
@@ -72,7 +72,7 @@
 			@extend %content_width;
 			padding: ( $golden_major * $padding_vertical ) 0;
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				padding-top: $padding_vertical;
 				padding-bottom: $padding_vertical;
 			}
@@ -99,7 +99,7 @@
 
 			&.has-page-summary {
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					float: $left; // {{RTL}}
 					width: percentage( $page_content_width / 100 );
 				}
@@ -125,11 +125,12 @@
 
 	.page-summary {
 		margin-top: $golden +em;
-		max-width: 36em;
+		max-width: 38em;
+		max-width: 70ch;
 
 		.has-page-summary + & {
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				float: $right; // {{RTL}}
 				width: percentage( ( 100 - $page_content_width - $page_content_gutter ) / 100 );
 				margin: 0;
@@ -264,7 +265,7 @@
 			position: relative;
 			z-index: 10;
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				font-size: 1em + $golden_minor / 2;
 			}
 
@@ -278,7 +279,7 @@
 
 			&-inner {
 				width: auto;
-				max-width: 36rem;
+				max-width: 38rem;
 				padding: 0;
 				margin: 0;
 			}
@@ -290,10 +291,10 @@
 			}
 
 			&-title {
-				font-size: pow( 1 + $golden_minor, 3 ) +em;
+				font-size: power( 1 + $golden_minor, 3 ) +em;
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
-					font-size: pow( 1 + $golden_minor, 4 ) +em;
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					font-size: power( 1 + $golden_minor, 4 ) +em;
 				}
 
 			}
@@ -304,7 +305,7 @@
 				}
 
 			.page-summary {
-				margin-top: pow( $golden, 2 ) +em;
+				margin-top: power( $golden, 2 ) +em;
 			}
 
 		}

@@ -21,16 +21,16 @@
 			display: none;
 		}
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: pow( $golden, 2 ) +rem;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( $golden, 2 ) +rem;
 		}
 
 		.products:not(.products-categories) + & {
 			margin-top: $golden +em;
 			margin-bottom: 0;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-top: pow( $golden, 2 ) +em;
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin-top: power( $golden, 2 ) +em;
 			}
 
 		}

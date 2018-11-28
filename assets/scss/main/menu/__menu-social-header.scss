@@ -14,7 +14,7 @@
 		float: $right; // {{RTL}}
 		white-space: nowrap;
 
-		@include media( map_get( $breakpoint, 'xl' ) ) {
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
 			padding-#{$left}: $golden +em; // {{RTL}}
 			margin-#{$left}: auto; // {{RTL}}
 		}

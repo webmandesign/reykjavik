@@ -27,12 +27,12 @@
 
 body {
 
-	&::before { // Using :before instead of ::before for compatibility
+	&:before { // Using :before instead of ::before for compatibility
 		display: none; // Prevent from displaying
 
 		@each $device, $width in $breakpoint {
 
-			@include media( $width ) {
+			@include responsive( $width ) {
 				content: 'device_#{$device}';
 			}
 

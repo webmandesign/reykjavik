@@ -13,7 +13,7 @@
 
 	&-inner {
 
-		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 			// Preventing mobile horizontal scrolling
 			// (Required for horizontal_widget_area.)
 			overflow: hidden;
@@ -23,8 +23,8 @@
 
 	.widget {
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: ( pow( $golden, 2 ) + 1em ) 0;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: ( power( $golden, 2 ) + 1em ) 0;
 		}
 
 	}

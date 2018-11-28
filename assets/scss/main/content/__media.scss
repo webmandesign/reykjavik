@@ -11,10 +11,10 @@
 // Entry media
 
 	.entry-media {
-		margin-bottom: pow( $golden, 2 ) +rem;
+		margin-bottom: power( $golden, 2 ) +rem;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
 		}
 
 		a {
@@ -36,7 +36,7 @@
 				$single_post_media_width: 47; // In %
 				$single_post_media_gutter: 6; // In %
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					position: relative;
 					float: $left; // {{RTL}}
 					width: percentage( $single_post_media_width / 100 );
@@ -45,7 +45,7 @@
 					z-index: 1;
 				}
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 
 					.no-widgets-sidebar & {
 						margin-#{$left}: percentage( -$single_post_media_width / 100 / 2 ); // {{RTL}}
@@ -53,7 +53,7 @@
 
 				}
 
-				@include media( map_get( $breakpoint, 'xxl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xxl' ) ) {
 					margin-#{$left}: percentage( -$single_post_media_width / 100 / 4 ); // {{RTL}}
 				}
 
@@ -77,7 +77,7 @@
 					margin: 0 0 ( $golden +em ); // Due to possible icon child page featured image.
 				}
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					margin: calc( -2em - 1px ); // Cover border around post entry.
 					margin-bottom: 2em;
 

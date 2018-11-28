@@ -12,7 +12,7 @@
 
 	.menu > ul > li {
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			padding-top: $golden_minor +rem;
 			padding-bottom: $golden_minor +rem;
 			margin-#{$left}: $golden_major +rem; // {{RTL}}

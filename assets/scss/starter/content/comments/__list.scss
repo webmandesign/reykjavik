@@ -24,13 +24,13 @@
 	> li,
 	.children > li {
 		position: relative;
-		min-height: 5em;
+		min-height: 100 *$px;
 		padding: ( $golden +em ) 0 0;
 		margin: 0;
 		background: none;
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			padding-#{$left}: 5em; // {{RTL}}
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding-#{$left}: 80 *$px; // {{RTL}}
 		}
 
 	}
@@ -40,8 +40,8 @@
 		margin: 0;
 		margin-#{$left}: $golden +em; // {{RTL}}
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin-#{$left}: 5em - $golden; // {{RTL}}
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-#{$left}: -60 *$px; // {{RTL}}
 		}
 
 	}
@@ -51,7 +51,7 @@
 .comment-body {
 	padding: ( $golden +em ) 0;
 
-	@include media( map_get( $breakpoint, 'm' ) ) {
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
 		padding-left: $golden +em;
 		padding-right: $golden +em;
 	}

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -33,13 +33,17 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.0
 		 */
 		private function __construct() {
 
 			// Processing
 
 				// Hooks
+
+					// Actions
+
+						add_action( 'customize_save_after', __CLASS__ . '::theme_colors_cache_flush', 100 );
 
 					// Filters
 
@@ -112,7 +116,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Global settings
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array  $defaults
 		 * @param  string $form_type
@@ -136,7 +140,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 					// "Modules" section
 
-						$defaults->module_margins = absint( round( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) * ( pow( 1.618, 2 ) / 2 ) ) );
+						$defaults->module_margins = absint( round( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) * ( pow( 1.62, 2 ) / 2 ) ) );
 
 					// "Responsive Layout" section
 
@@ -162,35 +166,62 @@ class Reykjavik_Beaver_Builder_Setup {
 	 */
 
 		/**
-		 * Converting Reykjavik_Customize::get_theme_colors() to BB format.
+		 * Retrieves all theme colors in array
 		 *
-		 * Converting colors to Beaver Builder format.
-		 *
-		 * @subpackage  Customize
-		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @since    1.0.0
+		 * @version  1.0.0
 		 */
-		public static function get_colors() {
+		public static function get_theme_colors() {
 
-			// Variables
+			// Requirements check
 
-				$theme_colors = (array) Reykjavik_Customize::get_theme_colors();
+				$theme_colors = get_transient( 'reykjavik_theme_colors' );
+
+				if ( ! empty( $theme_colors ) ) {
+					return (array) $theme_colors;
+				}
+
+
+			// Helper variables
+
+				$mods          = (array) get_theme_mods();
+				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
 
 
 			// Processing
 
-				$theme_colors = array_column( $theme_colors, 'color' );
-				$theme_colors = array_values( $theme_colors );
-				$theme_colors = array_unique( $theme_colors );
-				asort( $theme_colors );
+				foreach ( $theme_options as $key => $option ) {
+					if ( 'color' === $option['type'] && isset( $option['default'] ) ) {
+						$theme_colors[ $option['id'] ] = ( isset( $mods[ $option['id'] ] ) ) ? ( sanitize_hex_color_no_hash( $mods[ $option['id'] ] ) ) : ( sanitize_hex_color_no_hash( $option['default'] ) );
+					}
+				}
+
+				// Cache the colors
+
+					set_transient( 'reykjavik_theme_colors', $theme_colors );
 
 
 			// Output
 
 				return $theme_colors;
 
-		} // /get_colors
+		} // /get_theme_colors
+
+
+
+		/**
+		 * Flush theme colors array cache
+		 *
+		 * @since    1.0.0
+		 * @version  1.0.0
+		 */
+		public static function theme_colors_cache_flush() {
+
+			// Processing
+
+				delete_transient( 'reykjavik_theme_colors' );
+
+		} // /theme_colors_cache_flush
 
 
 
@@ -198,23 +229,20 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Add theme color presets
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $color_presets
 		 */
 		public static function color_presets( $color_presets = array() ) {
 
-			// Variables
+			// Helper variables
 
-				$theme_colors = self::get_colors();
+				$theme_colors = array_unique( array_values( (array) self::get_theme_colors() ) );
 
 
 			// Processing
 
-				$color_presets = array_map(
-					'sanitize_hex_color_no_hash',
-					array_unique( array_merge( (array) $color_presets, $theme_colors ) )
-				);
+				$color_presets = array_map( 'sanitize_hex_color_no_hash', array_unique( array_merge( (array) $color_presets, $theme_colors ) ) );
 				asort( $color_presets );
 
 
@@ -230,15 +258,20 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Remove theme color from array when saving BB color presets
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.0
 		 *
 		 * @param  array $color_presets
 		 */
 		public static function color_presets_save( $color_presets = array() ) {
 
+			// Helper variables
+
+				$theme_colors = array_unique( array_values( (array) self::get_theme_colors() ) );
+
+
 			// Output
 
-				return array_values( array_diff( (array) $color_presets, self::get_colors() ) );
+				return array_values( array_diff( (array) $color_presets, $theme_colors ) );
 
 		} // /color_presets_save
 

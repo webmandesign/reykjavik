@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.0.0
  *
  * Contents:
  *
@@ -93,7 +93,7 @@ class Reykjavik_Advanced_Custom_Fields {
 		 * Intro metaboxes
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.0
 		 */
 		public static function intro() {
 
@@ -263,7 +263,7 @@ class Reykjavik_Advanced_Custom_Fields {
 
 					),
 					'options' => array(
-						'position'       => ( function_exists( 'has_blocks' ) ) ? ( 'side' ) : ( 'normal' ),
+						'position'       => 'normal',
 						'layout'         => 'default',
 						'hide_on_screen' => array(),
 					),
@@ -284,7 +284,7 @@ class Reykjavik_Advanced_Custom_Fields {
 		 * Child pages list metaboxes
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.0
 		 */
 		public static function child_pages() {
 
@@ -356,7 +356,7 @@ class Reykjavik_Advanced_Custom_Fields {
 
 					),
 					'options' => array(
-						'position'       => ( function_exists( 'has_blocks' ) ) ? ( 'side' ) : ( 'normal' ),
+						'position'       => 'normal',
 						'layout'         => 'default',
 						'hide_on_screen' => array(),
 					),

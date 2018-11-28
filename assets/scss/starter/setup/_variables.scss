@@ -1,10 +1,6 @@
 /////////////////////
 //
-// Variables
-//
-// To override these variables, you can redefine them in your SASS files.
-// All the `!default` variables can be redefined easily.
-// Import your variables file BEFORE the actual `starter` import.
+// Setup variables
 //
 /////////////////////
 
@@ -12,86 +8,44 @@
 
 
 
+// To override these variables, you can redefine them in your SASS files.
+// All the `!default` variables can be redefined easily.
+// Import your variables file BEFORE the actual `starter` import.
+
+
+
+
+
 //
-// Setup variables
+// Globals
 //
 
-	// Preferred unit type.
-	//
-	// Used in media queries.
-	// "absolute" (px, pt) vs "relative" (em, rem, %)
-
-		$preferred_units: absolute !default;
-
-	// Right To Left languages support.
+	// RTL support
 	//
 	// There are `{{RTL}}` notes left in the code where change is applicable.
 
 		$language_direction: ltr !default;
-		$left: left;
-		$right: right;
 
 		@if rtl == $language_direction {
 			$left: right;
 			$right: left;
+		} @else {
+			$left: left;
+			$right: right;
 		}
 
-	// Blocks support.
+	// Golden ratio
 
-		$supported_blocks: (
-			'archives',
-			'audio',
-			'button',
-			'categories',
-			'code',
-			'columns',
-			'cover',
-			'drop-cap',
-			'embed',
-			'gallery',
-			'latest-comments',
-			'latest-posts',
-			'pullquote',
-			'separator',
-			'spacer',
-			'table',
-			'verse',
-			'video',
-		) !default;
+		// (Rounding to nearest hundredth to prevent calculation issues between browsers.)
 
-	// Post Formats support.
+		$golden:       1.62 !default;
+		$golden_major: 0.62 !default;
+		$golden_minor: 0.38 !default;
 
-		$supported_post_formats: (
-			// 'link',
-			// 'quote',
-			// 'status',
-		) !default;
-
-	// Plugin support: Jetpack modules.
-	//
-	// @link  https://jetpack.com/
-	// @link  https://jetpack.com/support/
-	// @link  https://jetpack.com/support/control-jetpacks-modules-on-one-page/
-
-		$supported_jetpack_modules: (
-			'contact-form',
-			'infinite-scroll',
-			'related-posts',
-			'responsive-videos',
-			'sharing',
-			'tiled-gallery',
-			'widgets',
-		) !default;
-
-
-
-//
-// Global variables
-//
-
-	// Responsive breakpoints (in px).
+	// Responsive breakpoints (in px)
 
 		$breakpoint: (
+
 			's'     :  448, // =  28em // Starting mobile landscape
 			'm'     :  672, // =  42em // Starting tablet portrait
 			'l'     :  880, // =  55em // Starting tablet landscape
@@ -99,28 +53,14 @@
 			'xxl'   : 1600, // = 100em // Starting desktop
 			'xxxl'  : 1920, // = 120em // Starting desktop full HD
 			'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+
 		) !default;
 
-	// Golden ratio.
-
-		$golden:       1.618 !default;
-		$golden_major: 0.618 !default;
-		$golden_minor: 0.382 !default;
-
-
-
-//
-// Typography variables
-//
-
-	// Base font size and spacing.
+	// Typography
 
 		$font_size: 16 !default;
 
-		$typography_line_height: $golden !default;
-		$typography_margin_bottom: $golden !default;
-
-	// Headings font size, line height and vertical margins.
+	// Headings
 
 		$h_tags_1: 'h1, .h1' !default;
 		$h_tags_2: 'h2, .h2' !default;
@@ -133,8 +73,6 @@
 
 		$h_tags_setup: (
 
-			// @see  "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/
-
 			// $selector : (
 			//   $size
 			//   $line_height
@@ -143,45 +81,57 @@
 			// )
 
 			$h_tags_1 : (
-				2.618,
-				1.191,
-				( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
-				$typography_margin_bottom / 2.618 / 1.191
-			),
+					power( 1 + $golden_minor, 4 ),
+					1 + $golden_minor / 2,
+					( 4 * $golden - power( 1 + $golden_minor, 4 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( 1 + $golden_minor, 4 ),
+					$golden / power( 1 + $golden_minor, 4 ) / ( 1 + $golden_minor / 2 )
+				),
 
 			$h_tags_2 : (
-				2.058,
-				1.191,
-				( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
-				$typography_margin_bottom / 2.058 / 1.191
-			),
+					power( ( 1 + $golden_minor ), 3 ),
+					1 + $golden_minor / 2,
+					( 4 * $golden - power( ( 1 + $golden_minor ), 3 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( ( 1 + $golden_minor ), 3 ),
+					$golden / power( ( 1 + $golden_minor ), 3 ) / ( 1 + $golden_minor / 2 )
+				),
 
 			$h_tags_3 : (
-				1.618,
-				1.382,
-				( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
-				$typography_margin_bottom / 1.618 / 1.382
-			),
+					power( ( 1 + $golden_minor ), 2 ),
+					1 + $golden_minor,
+					( 4 * $golden - power( ( 1 + $golden_minor ), 2 ) * ( 1 + $golden_minor ) - $golden ) / power( ( 1 + $golden_minor ), 2 ),
+					$golden / power( ( 1 + $golden_minor ), 2 ) / ( 1 + $golden_minor )
+				),
 
 			$h_tags_4 : (
-				1.272,
-				( 1.618 / 1.272 ),
-				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
-				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
-			),
+					$golden,
+					1 + $golden_minor,
+					( 3 * $golden - $golden * ( 1 + $golden_minor ) - $golden ) / $golden,
+					$golden / $golden / ( 1 + $golden_minor )
+				),
 
 			$h_tags_5 : (
-				1.272,
-				( 1.618 / 1.272 ),
-				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
-				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
-			),
+					1 + $golden_minor,
+					$golden,
+					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
+					$golden / ( 1 + $golden_minor ) / $golden
+				),
 
 			$h_tags_6 : (
-				1.272,
-				( 1.618 / 1.272 ),
-				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
-				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
-			),
+					1 + $golden_minor,
+					$golden,
+					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
+					$golden / ( 1 + $golden_minor ) / $golden
+				)
 
 		) !default;
+
+	// Supported post formats
+
+		$supported_post_formats: () !default;
+
+
+
+//
+// Helpers
+//
+
+	$px: 1 / $font_size * 1rem; // Use this only when not setting the theme base font size via Customizer

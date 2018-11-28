@@ -8,7 +8,7 @@
 
 
 
-$gutter: 1.382; // In %
+$gutter: 1.38; // In %
 
 $column_gutter: 2 * $gutter / 100; // Calculation for column gutter inside SASS `percentage()` function
 
@@ -54,7 +54,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 			.description {
 				padding: $golden +em;
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					padding: 2em;
 				}
 
@@ -190,7 +190,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 	// Categories list
 
 		&-categories {
-			margin-bottom: pow( $golden, 2 ) +em;
+			margin-bottom: power( $golden, 2 ) +em;
 
 			.product-category {
 				margin-top: 0;
@@ -207,7 +207,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 			.woocommerce.archive.has-widgets-sidebar & {
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					margin-left: percentage( -2 * $gutter / 100 );
 					margin-right: percentage( -2 * $gutter / 100 );
 				}
@@ -222,10 +222,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 				@if 1 < $columns {
 
-					@include media(
-						( map_get( $breakpoint, 's' ), 'min-width' ),
-						( map_get( $breakpoint, 'l' ), 'max-width' )
-					) {
+					@include responsive_minmax( map_get( $breakpoint, 's' ), map_get( $breakpoint, 'l' ) ) {
 						width: percentage( 1 / $columns - $column_gutter );
 					}
 
@@ -240,10 +237,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 				.single-product &,
 				.woocommerce.archive.no-widgets-sidebar & {
 
-					@include media(
-						( map_get( $breakpoint, 'l' ), 'min-width' ),
-						( map_get( $breakpoint, 'xl' ), 'max-width' )
-					) {
+					@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
 						width: percentage( 1 / $columns - $column_gutter );
 					}
 
@@ -256,7 +250,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 				$columns: 3;
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					width: percentage( 1 / $columns - $column_gutter );
 				}
 
@@ -268,7 +262,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 					// $columns: 2;
 					// .woocommerce.archive.has-widgets-sidebar & {
-					// 	@include media( map_get( $breakpoint, 'm' ) ) {
+					// 	@include responsive( map_get( $breakpoint, 'm' ) ) {
 					// 		width: percentage( 1 / $columns - 2 * $column_gutter );
 					// 		margin-left: percentage( 2 * $gutter / 100 );
 					// 		margin-right: percentage( 2 * $gutter / 100 );
@@ -287,7 +281,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 					@include in( 'ul.products.columns-#{$i}' ) {
 
-						@include media( map_get( $breakpoint, 'l' ) ) {
+						@include responsive( map_get( $breakpoint, 'l' ) ) {
 							width: percentage( 1 / $i - $column_gutter );
 						}
 
@@ -305,10 +299,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 						@include in( 'ul.products.columns-#{$i}' ) {
 
-							@include media(
-								( map_get( $breakpoint, 'l' ), 'min-width' ),
-								( map_get( $breakpoint, 'xl' ), 'max-width' )
-							) {
+							@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
 								width: percentage( 1 / $columns - $column_gutter );
 							}
 
@@ -329,7 +320,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 		border-top-width: 1px;
 		border-top-style: solid;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
 			padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
 		}

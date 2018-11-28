@@ -23,7 +23,7 @@ p.no-comments {
 
 	&,
 	&:last-child {
-		margin-bottom: pow( $golden, 2 ) +em;
+		margin-bottom: power( $golden, 2 ) +em;
 	}
 
 	a {
@@ -34,7 +34,7 @@ p.no-comments {
 		display: block;
 		margin: 0 0 1em;
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
 			display: inline-block;
 			float: $right; // {{RTL}}
 			margin: ( -$golden_minor / 2 +em ) 0;

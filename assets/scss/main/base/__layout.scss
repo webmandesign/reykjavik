@@ -22,12 +22,13 @@
 
 	.site-layout-boxed {
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: 30px;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: $golden +em;
 		}
 
 		.site {
 			max-width: $boxed_width +px;
+			max-width: $boxed_width * $px;
 		}
 
 	}
@@ -45,12 +46,14 @@
 
 	%max_width_1920 {
 		max-width: 1920px;
+		max-width: 1920 * $px;
 	}
 
 	/* $content_width */
 	%content_width {
 		@extend %basic_width;
 		max-width: $content_width +px;
+		max-width: $content_width * $px;
 	}
 
 	%full_width {

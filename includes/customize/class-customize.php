@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -29,11 +29,6 @@ class Reykjavik_Customize {
 
 		private static $instance;
 
-		/**
-		 * Theme colors cache transient name.
-		 */
-		public static $cache_colors = 'reykjavik_cache_theme_colors';
-
 
 
 		/**
@@ -44,7 +39,7 @@ class Reykjavik_Customize {
 		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.0
 		 */
 		private function __construct() {
 
@@ -61,8 +56,6 @@ class Reykjavik_Customize {
 					// Actions
 
 						add_action( 'customize_register', __CLASS__ . '::setup' );
-
-						add_action( 'customize_save_after', __CLASS__ . '::theme_colors_cache_flush', 100 );
 
 					// Filters
 
@@ -193,7 +186,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $options
 		 */
@@ -355,7 +348,6 @@ class Reykjavik_Customize {
 										'type'        => 'color',
 										'id'          => 'color_header_background',
 										'label'       => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'     => array( 'name' => __( 'Header background color', 'reykjavik' ) ),
 										'description' => esc_html__( 'This color is also used to style a mobile device browser address bar.', 'reykjavik' ) . ' <a href="https://wordpress.org/plugins/chrome-theme-color-changer/">' . esc_html__( 'You can further customize it with a dedicated plugin.', 'reykjavik' ) . '</a>',
 										'default'     => '#fefeff',
 										'preview_js'  => array(
@@ -365,12 +357,12 @@ class Reykjavik_Customize {
 													'background-color'
 												),
 												'.main-navigation-container li ul' => array(
-													'selector_before' => '@media (min-width: 880px) { ',
+													'selector_before' => '@media only screen and (min-width: 55em) { ',
 													'selector_after'  => ' }',
 													'background-color',
 												),
 												'.main-navigation-container' => array(
-													'selector_before' => '@media (max-width: 879px) { ',
+													'selector_before' => '@media only screen and (max-width: 54.9375em) { ',
 													'selector_after'  => ' }',
 													'background-color',
 												),
@@ -382,7 +374,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_header_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Header text color', 'reykjavik' ) ),
 										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
@@ -397,12 +388,12 @@ class Reykjavik_Customize {
 													),
 												),
 												'.main-navigation-container li ul' => array(
-													'selector_before' => '@media (min-width: 880px) { ',
+													'selector_before' => '@media only screen and (min-width: 55em) { ',
 													'selector_after'  => ' }',
 													'color',
 												),
 												'.main-navigation-container' => array(
-													'selector_before' => '@media (max-width: 879px) { ',
+													'selector_before' => '@media only screen and (max-width: 54.9375em) { ',
 													'selector_after'  => ' }',
 													'color',
 												),
@@ -454,7 +445,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro background color', 'reykjavik' ) ),
 										'default'    => '#fafafb',
 										'preview_js' => array(
 											'css' => array(
@@ -470,7 +460,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro text color', 'reykjavik' ) ),
 										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
@@ -492,7 +481,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro headings color', 'reykjavik' ) ),
 										'default'    => '#232324',
 										'preview_js' => array(
 											'css' => array(
@@ -522,7 +510,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_overlay_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro overlay background color', 'reykjavik' ) ),
 										'default'    => '#000000',
 										'preview_js' => array(
 											'css' => array(
@@ -539,7 +526,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_overlay_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro overlay text color', 'reykjavik' ) ),
 										'default'    => '#ffffff',
 										'preview_js' => array(
 											'css' => array(
@@ -591,7 +577,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro widgets background color', 'reykjavik' ) ),
 										'default'    => '#0f1732',
 										'preview_js' => array(
 											'css' => array(
@@ -607,7 +592,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro widgets text color', 'reykjavik' ) ),
 										'default'    => '#d3d3d4',
 										'preview_js' => array(
 											'css' => array(
@@ -629,7 +613,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_intro_widgets_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Intro widgets headings color', 'reykjavik' ) ),
 										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
@@ -670,7 +653,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Content background color', 'reykjavik' ) ),
 										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
@@ -686,7 +668,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Content text color', 'reykjavik' ) ),
 										'default'    => '#535354',
 										'preview_js' => array(
 											'css' => array(
@@ -708,7 +689,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_content_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Content headings color', 'reykjavik' ) ),
 										'default'    => '#232324',
 										'preview_js' => array(
 											'css' => array(
@@ -750,7 +730,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_background',
 										'label'      => esc_html__( 'Background color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Footer background color', 'reykjavik' ) ),
 										'default'    => '#0f1732',
 										'preview_js' => array(
 											'css' => array(
@@ -772,7 +751,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_text',
 										'label'      => esc_html__( 'Text color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Footer text color', 'reykjavik' ) ),
 										'default'    => '#d3d3d4',
 										'preview_js' => array(
 											'css' => array(
@@ -794,7 +772,6 @@ class Reykjavik_Customize {
 										'type'       => 'color',
 										'id'         => 'color_footer_headings',
 										'label'      => esc_html__( 'Headings color', 'reykjavik' ),
-										'palette'    => array( 'name' => __( 'Footer headings color', 'reykjavik' ) ),
 										'default'    => '#fefeff',
 										'preview_js' => array(
 											'css' => array(
@@ -1031,7 +1008,7 @@ class Reykjavik_Customize {
 												) ) => array(
 													array(
 														'property' => 'max-width',
-														'prefix'   => 'calc(.618*',
+														'prefix'   => 'calc(.62*',
 														'suffix'   => 'px) !important',
 													),
 												),
@@ -1263,7 +1240,6 @@ class Reykjavik_Customize {
 										. implode( ', ', array(
 												'html',
 												'.site .font-body',
-												'.site .has-root-font-family',
 											) )
 										. '</pre>'
 
@@ -1274,7 +1250,6 @@ class Reykjavik_Customize {
 										. implode( ', ', array(
 												'.site .font-headings',
 												'.site .font-headings-primary',
-												'.site .has-headings-font-family',
 
 												'h1, .h1',
 												'h2, .h2',
@@ -1293,14 +1268,36 @@ class Reykjavik_Customize {
 												'.site-title',
 												'.site .font-logo',
 												'.site .font-headings-secondary',
-												'.site .has-site-title-font-family',
 
-												'h1[class*="display-"]',
-												'h2[class*="display-"]',
-												'h3[class*="display-"]',
-												'.h1[class*="display-"]',
-												'.h2[class*="display-"]',
-												'.h3[class*="display-"]',
+												'h1.display-1',
+												'h1.display-2',
+												'h1.display-3',
+												'h1.display-4',
+
+												'h2.display-1',
+												'h2.display-2',
+												'h2.display-3',
+												'h2.display-4',
+
+												'h3.display-1',
+												'h3.display-2',
+												'h3.display-3',
+												'h3.display-4',
+
+												'.h1.display-1',
+												'.h1.display-2',
+												'.h1.display-3',
+												'.h1.display-4',
+
+												'.h2.display-1',
+												'.h2.display-2',
+												'.h2.display-3',
+												'.h2.display-4',
+
+												'.h3.display-1',
+												'.h3.display-2',
+												'.h3.display-3',
+												'.h3.display-4',
 											) )
 										. '</pre>',
 									'active_callback' => __CLASS__ . '::is_typography_custom_fonts',
@@ -1511,72 +1508,6 @@ class Reykjavik_Customize {
 	/**
 	 * 100) Helpers
 	 */
-
-		/**
-		 * Get all theme colors in array and cache them.
-		 *
-		 * @subpackage  Customize Options
-		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
-		 */
-		public static function get_theme_colors() {
-
-			// Requirements check
-
-				$colors = get_transient( self::$cache_colors );
-
-				if ( ! empty( $colors ) ) {
-					return (array) $colors;
-				}
-
-
-			// Variables
-
-				$mods          = (array) get_theme_mods();
-				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
-
-
-			// Processing
-
-				foreach ( $theme_options as $option ) {
-					if ( 'color' === $option['type'] && isset( $option['default'] ) ) {
-						$color = ( isset( $mods[ $option['id'] ] ) ) ? ( $mods[ $option['id'] ] ) : ( $option['default'] );
-						$colors[ $option['id'] ] = array(
-							'id'    => $option['id'],
-							'color' => sanitize_hex_color_no_hash( $color ),
-							'name'  => ( isset( $option['palette']['name'] ) ) ? ( $option['palette']['name'] ) : ( $option['label'] ),
-							'slug'  => ( isset( $option['palette']['slug'] ) ) ? ( $option['palette']['slug'] ) : ( $option['id'] ),
-						);
-					}
-				}
-
-				set_transient( self::$cache_colors, $colors );
-
-
-			// Output
-
-				return $colors;
-
-		} // /get_theme_colors
-
-
-
-			/**
-			 * Flush theme colors array cache.
-			 *
-			 * @since    2.0.0
-			 * @version  2.0.0
-			 */
-			public static function theme_colors_cache_flush() {
-
-				// Processing
-
-					delete_transient( self::$cache_colors );
-
-			} // /theme_colors_cache_flush
-
-
 
 		/**
 		 * Alpha values (%) for generating rgba() colors

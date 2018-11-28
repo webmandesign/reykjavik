@@ -1,5 +1,5 @@
 /* FILE: options-widget-text.scss */
-.text-widget-media-image-select { -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; }
+.text-widget-media-image-select { box-sizing: border-box; width: 100%; }
 
 .fl-lightbox .text-widget-media-image-select { width: auto; }
 
@@ -15,6 +15,6 @@
 
 .text-widget-media-image-remove::after { -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 
-.text-widget-media-icon, .text-widget-media-image { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 1.618em; margin: 1.618em 0; border: 2px dashed rgba(0, 0, 0, 0.1); }
+.text-widget-media-icon, .text-widget-media-image { box-sizing: border-box; padding: 1.62em; margin: 1.62em 0; border: 2px dashed rgba(0, 0, 0, 0.1); }
 
-.text-widget-media-image-preview { padding: .382rem; margin-top: 1rem; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: .382rem; background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), -o-linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), -o-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%), -o-linear-gradient(135deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%); background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%), linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }
+.text-widget-media-image-preview { padding: .38rem; margin-top: 1rem; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: .38rem; background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, rgba(255, 255, 255, 0.1) 25%), linear-gradient(45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%), linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 75%, rgba(0, 0, 0, 0.05) 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }

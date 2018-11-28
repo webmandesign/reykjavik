@@ -71,14 +71,12 @@
 /**if(typography_custom_fonts)
 
 	.mce-content-body,
-	.mce-content-body .font-body,
-	.mce-content-body .has-root-font-family {
+	.mce-content-body .font-body {
 		font-family: [[typography_fonts_text]];
 	}
 
 	.mce-content-body .font-headings,
 	.mce-content-body .font-headings-primary,
-	.mce-content-body .has-headings-font-family,
 	h1, .h1,
 	h2, .h2,
 	h3, .h3,
@@ -90,13 +88,14 @@
 
 	.mce-content-body .font-logo,
 	.mce-content-body .font-headings-secondary,
-	.mce-content-body .has-site-title-font-family,
-	h1[class*="display-"],
-	h2[class*="display-"],
-	h3[class*="display-"],
-	.h1[class*="display-"],
-	.h2[class*="display-"],
-	.h3[class*="display-"] {
+	h1.display-1, h2.display-1, h3.display-1,
+	.display-1.h1, .display-1.h2, .display-1.h3,
+	h1.display-2, h2.display-2, h3.display-2,
+	.display-2.h1, .display-2.h2, .display-2.h3,
+	h1.display-3, h2.display-3, h3.display-3,
+	.display-3.h1, .display-3.h2, .display-3.h3,
+	h1.display-4, h2.display-4, h3.display-4,
+	.display-4.h1, .display-4.h2, .display-4.h3 {
 		font-family: [[typography_fonts_logo]];
 	}
 

@@ -27,7 +27,7 @@
 // Sharing
 
 	div.sharedaddy {
-		margin-top: pow( $golden, 2 ) +rem;
+		margin-top: power( $golden, 2 ) +rem;
 		border-color: inherit;
 
 		.sd-title {
@@ -47,7 +47,8 @@
 		.fl-builder &,
 		.content-layout-no-paddings & {
 			/* $content_width */
-			max-width: floor( $content_width * $golden_major ) +px; // `floor()` matches `absint()`
+			max-width: $content_width * $golden_major +px;
+			max-width: $content_width * $golden_major * $px;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -97,13 +98,13 @@
 
 		.entry-author {
 			@extend %background_overlay_from_text_color;
-			margin-top: pow( 1 + $golden_minor, 4 ) +em;
+			margin-top: power( 1 + $golden_minor, 4 ) +em;
 			padding: 8%;
 			border-width: 1px;
 			border-style: solid;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding: pow( 1 + $golden_minor, 4 ) +em;
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding: power( 1 + $golden_minor, 4 ) +em;
 			}
 
 			&::before {
@@ -113,10 +114,10 @@
 			.author {
 
 				&-avatar {
-					width: 60px;
+					width: 60 *$px;
 					margin-bottom: 1em;
 
-					@include media( map_get( $breakpoint, 'm' ) ) {
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
 						float: $left; // {{RTL}}
 						width: 80px;
 						margin-#{$right}: $golden +em;
@@ -141,7 +142,7 @@
 
 				&-bio {
 
-					@include media( map_get( $breakpoint, 'm' ) ) {
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
 						clear: both;
 					}
 
@@ -157,7 +158,8 @@
 			.fl-builder &,
 			.content-layout-no-paddings & {
 				/* $content_width */
-				max-width: floor( $content_width * $golden_major ) +px; // `floor()` matches `absint()`
+				max-width: $content_width * $golden_major +px;
+				max-width: $content_width * $golden_major * $px;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -180,7 +182,7 @@
 				border-bottom-width: 2px;
 				border-bottom-color: inherit;
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					padding: 2em;
 				}
 
@@ -189,7 +191,7 @@
 					margin: calc( #{ $golden * -1em } - 1px ); // Cover border around post entry.
 					margin-bottom: $golden +em;
 
-					@include media( map_get( $breakpoint, 'm' ) ) {
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
 						margin: calc( -2em - 1px ); // Cover border around post entry.
 						margin-bottom: 2em;
 					}
@@ -221,7 +223,7 @@
 				width: calc( #{ percentage( 1 / $columns ) } - 2em );
 			}
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
 
 				.portfolio-entry {
 					$columns: 2; // Default layout on medium devices.
@@ -235,7 +237,7 @@
 
 			}
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 
 				@for $columns from 3 through 6 {
 
@@ -261,29 +263,11 @@
 
 		}
 
-		// First and last full aligned block in a project content
-		// should "remove" the project vertical padding really.
-		// On blog posts this is not needed as there is still a post
-		// meta displayed on top.
-		//
-		// @see  .site-content-inner @ main/content/__layout.scss
-		.single-jetpack-portfolio .alignfull {
-
-			&:first-child {
-				@extend %disregard_content_padding_top;
-			}
-
-			&:last-child {
-				@extend %disregard_content_padding_bottom;
-			}
-
-		}
-
 
 
 	// Testimonials
 
-		$gutter: 3.618em;
+		$gutter: 3.62em;
 
 		.testimonial-entry {
 
@@ -327,7 +311,7 @@
 				width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 			}
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
 
 				.testimonial-entry {
 					$columns: 2; // Default layout on medium devices.
@@ -341,7 +325,7 @@
 
 			}
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 
 				@for $columns from 3 through 6 {
 

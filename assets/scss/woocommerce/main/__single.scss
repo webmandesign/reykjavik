@@ -26,12 +26,12 @@
 				@extend %wc_content_width;
 				padding: $padding_vertical 0;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
 					padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
 				}
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					padding-top: $golden * $padding_vertical;
 					padding-bottom: $golden * $padding_vertical;
 				}
@@ -52,12 +52,12 @@
 			.summary {
 				margin: 0;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
 					float: $right; // {{RTL}}
 					width: 48%;
 				}
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					width: percentage( $golden_minor - .02 );
 				}
 
@@ -74,7 +74,7 @@
 						font-size: $golden_minor + 1em;
 					}
 
-					@include media( map_get( $breakpoint, 's' ) ) {
+					@include responsive( map_get( $breakpoint, 's' ) ) {
 
 						.star-rating {
 							float: $left; // {{RTL}}
@@ -206,7 +206,7 @@
 
 						.button {
 
-							@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
+							@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
 								display: block;
 								width: 100%;
 								margin-top: $golden +rem;
@@ -259,7 +259,7 @@
 		// Product meta
 
 			.product_meta {
-				margin-top: pow( 1 + $golden_minor, 4 ) +em;
+				margin-top: power( 1 + $golden_minor, 4 ) +em;
 				font-size: 1em - $golden_minor / 4;
 
 				> span {

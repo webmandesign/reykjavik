@@ -14,8 +14,9 @@
 
 	ul.order_details {
 		@extend %wc_zigzag;
-		max-width: 36em;
-		margin: ( pow( 1 + $golden_minor, 4 ) +em ) 0;
+		max-width: 38em;
+		max-width: 70ch;
+		margin: ( power( 1 + $golden_minor, 4 ) +em ) 0;
 		list-style: none;
 
 		li {
@@ -44,7 +45,7 @@
 // Order details
 
 	.shop_table {
-		margin-bottom: pow( 1 + $golden_minor, 4 ) +em;
+		margin-bottom: power( 1 + $golden_minor, 4 ) +em;
 
 		&.order_details,
 		.woocommerce-order-pay & {
@@ -84,7 +85,7 @@
 // Failed order
 
 	.woocommerce-thankyou-order-failed {
-		padding-top: pow( $golden, 2 ) +em;
+		padding-top: power( $golden, 2 ) +em;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
@@ -92,7 +93,7 @@
 		border-top-width: 2px;
 		border-top-style: dashed;
 
-		@include media( map_get( $breakpoint, 'xl' ) ) {
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
 			padding-left: percentage( $golden_minor / 2 );
 			padding-right: percentage( $golden_minor / 2 );
 		}
@@ -105,8 +106,8 @@
 		}
 
 		&-actions {
-			padding-bottom: pow( $golden, 2 ) +em;
-			margin-bottom: pow( $golden, 2 ) +em;
+			padding-bottom: power( $golden, 2 ) +em;
+			margin-bottom: power( $golden, 2 ) +em;
 			text-align: center;
 			border-bottom-width: 2px;
 			border-bottom-style: dashed;
@@ -142,7 +143,7 @@
 			border-radius: 2em;
 			vertical-align: middle;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				display: inline-block;
 				margin-#{$right}: $golden_minor +em; // {{RTL}}
 				margin-bottom: 0;

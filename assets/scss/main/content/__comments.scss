@@ -13,15 +13,15 @@
 	.comments-area {
 		clear: both;
 		padding: ( $golden +rem ) 0 0;
-		margin: ( pow( $golden, 2 ) +rem ) 0 0;
+		margin: ( power( $golden, 2 ) +rem ) 0 0;
 		border-top-width: 2px;
 		border-top-style: solid;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			margin-top: $padding_vertical;
 		}
 
-		@include media( map_get( $breakpoint, 'xl' ) ) {
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
 			margin-top: $golden * $padding_vertical;
 		}
 
@@ -39,7 +39,7 @@
 
 			.page.no-widgets-sidebar &-inner {
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
 					width: percentage( $golden_major );
 					margin-left: auto;
 					margin-right: auto;
@@ -60,12 +60,12 @@
 			.content-layout-stretched & {
 				// No sidebar here
 				@extend %content_width;
-				padding: ( pow( 1 + $golden_minor, 5 ) +rem ) 0;
+				padding: ( power( 1 + $golden_minor, 5 ) +rem ) 0;
 				border-width: 0;
 
 				&-inner {
 
-					@include media( map_get( $breakpoint, 'xl' ) ) {
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
 						width: percentage( $golden_major );
 						margin-left: auto;
 						margin-right: auto;
@@ -86,7 +86,7 @@
 		> li,
 		.children > li {
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
 				padding-#{$left}: 100px; // {{RTL}}
 			}
 
@@ -102,12 +102,12 @@
 		@extend %font_weight_700;
 		margin-bottom: $golden +rem;
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin-bottom: pow( $golden, 2 ) +rem;
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-bottom: power( $golden, 2 ) +rem;
 		}
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: pow( $golden, 3 ) +rem;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( $golden, 3 ) +rem;
 		}
 
 		.add-comment-link {
@@ -140,7 +140,7 @@
 		.avatar {
 			border-radius: 0;
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
 				width: 80px;
 			}
 
@@ -184,7 +184,7 @@
 
 		.avatar {
 
-			@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 				border-left: ( $golden_minor +em ) solid;
 			}
 
@@ -193,7 +193,7 @@
 		&::before {
 			@extend %genericon;
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
 				// Avatar is 80x80 px
 				content: '\f411';
 				position: absolute;
@@ -254,7 +254,7 @@
 		.comments-title + & {
 			display: none;
 
-			// @include media( map_get( $breakpoint, 'm' ) ) {
+			// @include responsive( map_get( $breakpoint, 'm' ) ) {
 			// 	margin: ( -$golden +em ) 0 ( $golden +em );
 			// }
 
@@ -277,7 +277,7 @@
 				margin-#{$left}: 0;
 				line-height: inherit;
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
 					display: inline-block;
 				}
 

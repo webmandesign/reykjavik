@@ -47,12 +47,12 @@
 	mark,
 	.highlight {
 		/*[*/
-		box-shadow:  .382em 0 0 map_get( $colors, 'accent' ),
-		            -.382em 0 0 map_get( $colors, 'accent' );
+		box-shadow:  .38em 0 0 map_get( $colors, 'accent' ),
+		            -.38em 0 0 map_get( $colors, 'accent' );
 		/*]*/
 		/*//
-		box-shadow:  .382em 0 0 [[color_accent]],
-		            -.382em 0 0 [[color_accent]];
+		box-shadow:  .38em 0 0 [[color_accent]],
+		            -.38em 0 0 [[color_accent]];
 		//*/
 	}
 
@@ -60,7 +60,7 @@
 
 		a {
 
-			@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 				/*[*/
 				background-color: map_get( $colors, 'accent' );
 				color: map_get( $colors, 'accent_text' );
@@ -79,8 +79,8 @@
 
 // Buttons
 
-	#{$elements_button},
-	#{$elements_button_beaver_builder},
+	#{$button_elements},
+	#{$button_elements_beaver_builder},
 	.main-navigation-container .button > a {
 		@extend %button_default_colors;
 	}

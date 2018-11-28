@@ -35,28 +35,28 @@
 
 	// Font forcing classes
 
-		.site {
+		.font {
 
-			.font-body,
-			.has-root-font-family {
-				@extend %font_body;
-			}
+			.site & {
 
-			.font-headings,
-			.font-headings-primary,
-			.has-headings-font-family {
-				@extend %font_headings;
-			}
+				&-body {
+					@extend %font_body;
+				}
 
-			.font-logo,
-			.font-headings-secondary,
-			.has-site-title-font-family {
-				@extend %font_logo;
-			}
+				&-headings,
+				&-headings-primary {
+					@extend %font_headings;
+				}
 
-			.font-inherit,
-			.has-inherited-font-family {
-				@extend %font_inherit;
+				&-logo,
+				&-headings-secondary {
+					@extend %font_logo;
+				}
+
+				&-inherit {
+					@extend %font_inherit;
+				}
+
 			}
 
 		}

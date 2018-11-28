@@ -1,0 +1,117 @@
+/* FILE: main/content/__wp.scss */
+
+//
+// WordPress default styles
+//
+
+
+
+
+
+// Alignments
+
+	// Pullquotes
+
+		blockquote {
+
+			&.alignleft,
+			&.alignright {
+				padding: 0;
+
+				@include responsive( map_get( $breakpoint, 's' ) ) {
+					width: 35%;
+				}
+
+			}
+
+			&.alignleft {
+				margin-left: 0;
+
+				&::before {
+					float: $right; // {{RTL}}
+					margin-#{$right}: 0; // {{RTL}}
+					margin-#{$left}: .25em; // {{RTL}}
+				}
+
+			}
+
+			&.alignright {
+				margin-right: 0;
+			}
+
+		}
+
+
+
+// Gallery
+
+	.gallery {
+
+		img {
+			width: 100%;
+		}
+
+		&-columns-1 .gallery-item {
+			margin-top: 2em;
+		}
+
+		&-caption {
+			@extend %font_style_italic;
+			padding: 1em;
+			margin-top: -1px; // To prevent a gap in certain cases.
+		}
+
+	}
+
+
+
+// Sticky posts
+
+	.sticky {
+		/* No special styles here. */
+	}
+
+
+
+// Media player
+
+	.mejs-container {
+		margin-bottom: $golden +em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.site & .mejs-controls .mejs-button button {
+			background-color: transparent;
+			color: inherit;
+		}
+
+	}
+
+	.wp-playlist {
+		// Keep the text in playlist left/right even if container text is centered
+		text-align: $left; // {{RTL}}
+
+		.site & {
+			// Wrapping within `.site` class to override WordPress default styles.
+			padding: 0;
+			background: none;
+			border-width: 1px;
+			border-style: solid;
+
+			&-current-item,
+			&-tracks {
+				height: auto;
+				padding: $golden +rem;
+				margin: 0;
+			}
+
+			&-current-item {
+				@extend %font_weight_700;
+				padding-bottom: $golden_major +rem;
+			}
+
+		}
+
+	}

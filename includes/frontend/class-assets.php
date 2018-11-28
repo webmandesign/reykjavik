@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -107,7 +107,7 @@ class Reykjavik_Assets {
 		 * Registering theme styles
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 */
 		public static function register_styles() {
 
@@ -137,7 +137,6 @@ class Reykjavik_Assets {
 				}
 
 				$register_assets = array(
-					'genericons-neue'             => array( get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
 					'reykjavik-google-fonts'      => array( self::google_fonts_url() ),
 					'reykjavik-stylesheet-global' => array( 'src' => Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ), 'ver' => $stylesheet_global_version, 'rtl' => 'replace' ),
 				);
@@ -234,7 +233,7 @@ class Reykjavik_Assets {
 		 * Frontend styles enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 */
 		public static function enqueue_styles() {
 
@@ -250,10 +249,6 @@ class Reykjavik_Assets {
 					if ( self::google_fonts_url() ) {
 						$enqueue_assets[5] = 'reykjavik-google-fonts';
 					}
-
-				// Genericons Neue
-
-					$enqueue_assets[6] = 'genericons-neue';
 
 				// Main
 
@@ -597,7 +592,7 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 */
 		public static function editor_stylesheets() {
 
@@ -615,11 +610,7 @@ class Reykjavik_Assets {
 
 				// Google Fonts stylesheet
 
-					$visual_editor_stylesheets[0] = str_replace( ',', '%2C', self::google_fonts_url() );
-
-				// Genericons Neue
-
-					$visual_editor_stylesheets[5] = get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' );
+					$visual_editor_stylesheets[5] = str_replace( ',', '%2C', self::google_fonts_url() );
 
 				// Editor stylesheet
 

@@ -9,7 +9,6 @@
  *
  * @since    1.0.0
  * @version  2.7.0
- * @version  2.0.0
  *
  * Contents:
  *
@@ -328,13 +327,10 @@ final class Reykjavik_Library {
 
 
 		/**
-		 * Checks for more tag in post content.
-		 *
-		 * If more tag present, also retrieve its custom text value.
+		 * Checks for <!--more--> tag in post content
 		 *
 		 * @since    1.0.0
 		 * @version  2.7.0
-		 * @version  2.0.0
 		 *
 		 * @param  mixed $post
 		 */
@@ -349,37 +345,25 @@ final class Reykjavik_Library {
 				}
 
 
-			// Variables
-
-				$output = false;
+			// Helper variables
 
 				if ( empty( $post ) ) {
 					$post = $GLOBALS['post'];
 				} elseif ( is_numeric( $post ) ) {
-					$post = get_post( $post );
+					$post = get_post( absint( $post ) );
 				}
 
 
 			// Requirements check
 
-				if ( ! $post instanceof WP_Post ) {
+				if ( ! isset( $post->post_content ) ) {
 					return;
-				}
-
-
-			// Processing
-
-				if ( preg_match( '/<!--more(.*?)?-->/', $post->post_content, $matches ) ) {
-					$output = true;
-					if ( ! empty( $matches[1] ) ) {
-						$output = strip_tags( wp_kses_no_null( trim( $matches[1] ) ) );
-					}
 				}
 
 
 			// Output
 
-				return $output;
+				return (bool) strpos( $post->post_content, '<!--more-->' );
 
 		} // /has_more_tag
 

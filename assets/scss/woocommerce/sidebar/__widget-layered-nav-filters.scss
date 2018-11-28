@@ -9,7 +9,7 @@
 
 
 .widget_layered_nav_filters {
-	margin-bottom: pow( $golden, 2 ) +em;
+	margin-bottom: power( $golden, 2 ) +em;
 
 	ul {
 
@@ -47,7 +47,7 @@
 	}
 
 	.products + & {
-		margin-top: pow( $golden, 2 ) +em;
+		margin-top: power( $golden, 2 ) +em;
 	}
 
 }

@@ -14,8 +14,8 @@
 		@extend .clearfix;
 		margin: ( $golden +em ) 0;
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin: ( pow( $golden, 2 ) +em ) 0;
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin: ( power( $golden, 2 ) +em ) 0;
 		}
 
 		&:first-child {
@@ -29,19 +29,19 @@
 		.no-widgets-sidebar & {
 			clear: both;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				margin-left: percentage( -$golden_minor * $golden_minor );
 				margin-right: percentage( -$golden_minor * $golden_minor );
 			}
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				margin-left: percentage( -$golden_major / 2 );
 				margin-right: percentage( -$golden_major / 2 );
 			}
 
 		}
 
-		@include media( map_get( $breakpoint, 'xxl' ) ) {
+		@include responsive( map_get( $breakpoint, 'xxl' ) ) {
 			margin-#{$left}: percentage( -$golden_minor * $golden_minor ); // {{RTL}}
 		}
 
@@ -67,19 +67,15 @@
 
 	.page-layout-outdented:not(.content-layout-no-paddings) {
 
-		.content-area {
-			max-width: none;
-		}
-
 		.entry-content-inner {
 
 			> h2,
 			> .outdent-heading {
 
 				&:not(:first-child) {
-					margin-top: pow( 1 + $golden_minor, 4 ) +rem;
+					margin-top: power( 1 + $golden_minor, 4 ) +rem;
 
-					@include media( map_get( $breakpoint, 'xl' ) ) {
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
 						margin-top: 12%;
 					}
 
@@ -87,7 +83,7 @@
 
 			}
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: percentage( 1 - $page_content_width / 100 ); // {{RTL}}
 
 				// H2 headings outdent
@@ -100,9 +96,7 @@
 						margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
 						margin-bottom: -$golden +em;
 
-						&.uppercase,
-						&.is-uppercase,
-						&.has-uppercase-text-transform {
+						&.uppercase {
 							letter-spacing: .075em;
 						}
 
@@ -137,7 +131,7 @@
 
 		.post-password-required .entry-content-inner {
 
-			@include media( map_get( $breakpoint, 'xl' ) ) {
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: 0; // RTL
 			}
 

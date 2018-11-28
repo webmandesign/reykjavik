@@ -75,6 +75,11 @@
 
 // Main button elements
 
-	#{$elements_button} {
+	.button,
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
+	.main-navigation-container .button > a {
 		@extend %button_base;
 	}

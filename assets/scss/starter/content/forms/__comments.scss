@@ -65,7 +65,7 @@
 	@extend %line_height_golden;
 }
 
-@include media( map_get( $breakpoint, 's' ) ) {
+@include responsive() {
 
 	.comment-form-author,
 	.comment-form-email {

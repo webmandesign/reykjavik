@@ -12,10 +12,10 @@
 
 	.sidebar {
 		@extend %line_height_golden;
-		margin: ( $golden +em ) 0 0;
-		padding: ( $golden +em ) 0 0;
+		margin: ( $golden +rem ) 0 0;
+		padding: ( $golden +rem ) 0 0;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			float: $right; // {{RTL}}
 			margin-top: 0;
 			padding-top: 0;

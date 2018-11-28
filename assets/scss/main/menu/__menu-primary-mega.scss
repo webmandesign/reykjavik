@@ -10,7 +10,7 @@
 
 
 
-@include media( map_get( $breakpoint, 'l' ) ) {
+@include responsive( map_get( $breakpoint, 'l' ) ) {
 
 	.main-navigation-container .megamenu {
 
@@ -30,7 +30,7 @@
 						vertical-align: top;
 
 						+ li {
-							margin-#{$left}: pow( $golden, 2 ) +rem; // {{RTL}}
+							margin-#{$left}: power( $golden, 2 ) +rem; // {{RTL}}
 						}
 
 						a {
@@ -83,7 +83,7 @@
 								// Sub-sub-sub-menu
 
 									ul {
-										box-shadow: 0 .382em 1em rgba( #000, .25 );
+										box-shadow: 0 .38em 1em rgba( #000, .25 );
 									}
 
 							}
@@ -127,10 +127,7 @@
 
 
 
-@include media(
-	( map_get( $breakpoint, 'l' ), 'min-width' ),
-	( map_get( $breakpoint, 'xl' ), 'max-width' )
-) {
+@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
 
 	.main-navigation-container .megamenu {
 		position: static;

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.0
  *
  * Contents:
  *
@@ -329,7 +329,7 @@ class Reykjavik_Customize_Styles {
 		 * and processing in oppose to custom CSS variables.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  string $scope
 		 */
@@ -366,7 +366,7 @@ class Reykjavik_Customize_Styles {
 							),
 
 							'typography-media-query-open' => array(
-								'custom' => "\t" . '@media (min-width: 448px) {',
+								'custom' => "\t" . '@media only screen and (min-width: 28em) {',
 							),
 
 								'typography-font-size-html' => array(
@@ -393,7 +393,8 @@ class Reykjavik_Customize_Styles {
 									'.site-layout-boxed .site',
 								) ),
 								'styles'   => array(
-									'max-width' => $helper['layout_width_site'] . 'px',
+									'max-width|1' => $helper['layout_width_site'] . 'px',
+									'max-width|2' => ( $helper['layout_width_site'] / $helper['typography_size_html'] ) . 'rem',
 								),
 							),
 
@@ -415,7 +416,8 @@ class Reykjavik_Customize_Styles {
 									'.breadcrumbs',
 								) ),
 								'styles'   => array(
-									'max-width' => $helper['layout_width_content'] . 'px',
+									'max-width|1' => $helper['layout_width_content'] . 'px',
+									'max-width|2' => ( $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
 								),
 							),
 
@@ -428,7 +430,8 @@ class Reykjavik_Customize_Styles {
 									'.content-layout-no-paddings .entry-author',
 								) ),
 								'styles'   => array(
-									'max-width' => absint( .618 * $helper['layout_width_content'] ) . 'px',
+									'max-width|1' => absint( .62 * $helper['layout_width_content'] ) . 'px',
+									'max-width|2' => ( .62 * $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
 								),
 							),
 
@@ -459,7 +462,7 @@ class Reykjavik_Customize_Styles {
 							),
 
 							'editor-' . 'typography-media-query-open' => array(
-								'custom' => "\t" . '@media (min-width: 448px) {',
+								'custom' => "\t" . '@media only screen and (min-width: 28em) {',
 							),
 
 								'editor-' . 'typography-font-size-body' => array(
