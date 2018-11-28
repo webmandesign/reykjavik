@@ -30,14 +30,40 @@ $content_indent: 100 - $page_content_width;
 }
 
 .alignwide {
-	/* $content_width */
-	max-width: $content_width +px;
-	margin-#{$left}: calc( 50% - #{ $content_width / 2 +px } ); // {{RTL}}
+	width: auto;
+
+	// @see  main/content/__layout-outdented.scss
+
+	.no-widgets-sidebar & {
+		clear: both;
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			margin-left: percentage( -$golden_minor * $golden_minor );
+			margin-right: percentage( -$golden_minor * $golden_minor );
+		}
+
+		@include media( map_get( $breakpoint, 'xl' ) ) {
+			margin-left: percentage( -$golden_major / 2 );
+			margin-right: percentage( -$golden_major / 2 );
+		}
+
+	}
+
+	@include media( map_get( $breakpoint, 'xxl' ) ) {
+		margin-#{$left}: percentage( -$golden_minor * $golden_minor ); // {{RTL}}
+	}
+
+	.page:not(.page-layout-outdented) & {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 	.page-layout-outdented & {
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
 			width: percentage( 1 / ( $page_content_width / 100 ) );
+			/* $content_width */
+			max-width: $content_width +px;
 			margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
 		}
 

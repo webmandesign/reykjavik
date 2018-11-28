@@ -1521,9 +1521,19 @@ blockquote.alignright { margin-right: 0; }
 
 .alignwide + .alignwide, .alignfull + .alignwide, .alignwide + .alignfull, .alignfull + .alignfull { margin-top: -1.618em; }
 
-.alignwide { /* $content_width */ max-width: 1200px; margin-right: calc( 50% - 600px); }
+.alignwide { width: auto; }
 
-@media (min-width: 1280px) { .page-layout-outdented .alignwide { width: 170.23015%; margin-right: -70.23015%; } }
+.no-widgets-sidebar .alignwide { clear: both; }
+
+@media (min-width: 880px) { .no-widgets-sidebar .alignwide { margin-left: -14.5924%; margin-right: -14.5924%; } }
+
+@media (min-width: 1280px) { .no-widgets-sidebar .alignwide { margin-left: -30.9%; margin-right: -30.9%; } }
+
+@media (min-width: 1600px) { .alignwide { margin-right: -14.5924%; } }
+
+.page:not(.page-layout-outdented) .alignwide { margin-left: 0; margin-right: 0; }
+
+@media (min-width: 1280px) { .page-layout-outdented .alignwide { width: 170.23015%; /* $content_width */ max-width: 1200px; margin-right: -70.23015%; } }
 
 .alignfull { max-width: 100vw; margin-right: calc( 50% - 50vw); }
 
@@ -1554,7 +1564,7 @@ blockquote.alignright { margin-right: 0; }
 @media (min-width: 880px) { .content-area { width: 58.744%; }
   .has-widgets-sidebar .content-area { float: right; }
   .no-widgets-sidebar .content-area { float: none; margin-left: auto; margin-right: auto; }
-  .posts-layout-list.no-widgets-sidebar .content-area, .page.no-widgets-sidebar .content-area, .single.no-widgets-sidebar .content-area, .attachment.no-widgets-sidebar .content-area { max-width: 36em; } }
+  .posts-layout-list.no-widgets-sidebar .content-area, .single.no-widgets-sidebar .content-area, .attachment.no-widgets-sidebar .content-area { max-width: 36em; } }
 
 .error404 .content-area, .no-widgets-sidebar .content-area { width: 100%; }
 

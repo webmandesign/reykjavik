@@ -614,7 +614,7 @@ class Reykjavik_Menu {
 			 */
 			public static function get_cache_key_social() {
 
-				// Processing
+				// Output
 
 					return apply_filters(
 						'wmhook_reykjavik_get_cache_key',
