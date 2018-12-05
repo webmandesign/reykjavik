@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_Menu {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 */
 		private function __construct() {
 
@@ -151,7 +151,7 @@ class Reykjavik_Menu {
 			 * Get menu args: Primary.
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 *
 			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
 			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
@@ -210,7 +210,7 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 */
 			public static function primary_fallback() {
 
@@ -267,7 +267,7 @@ class Reykjavik_Menu {
 		 * Primary menu only.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
@@ -307,7 +307,7 @@ class Reykjavik_Menu {
 		 * Primary menu only.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
@@ -410,8 +410,8 @@ class Reykjavik_Menu {
 			/**
 			 * Get menu args: Social.
 			 *
-			 * @since    2.0.0
-			 * @version  2.0.0
+			 * @since    1.3.1
+			 * @version  1.3.1
 			 *
 			 * @param  string $items_wrap
 			 */
@@ -438,7 +438,7 @@ class Reykjavik_Menu {
 			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 */
 			public static function social_links_icons() {
 
@@ -464,6 +464,7 @@ class Reykjavik_Menu {
 						'medium.com'        => 'medium',
 						'paypal.com'        => 'paypal',
 						'pscp.tv'           => 'periscope',
+						'tel:'              => 'phone',
 						'pinterest.com'     => 'pinterest',
 						'getpocket.com'     => 'get-pocket',
 						'reddit.com'        => 'reddit',
@@ -502,7 +503,7 @@ class Reykjavik_Menu {
 			 * Note that the menu has to be set to output `<!--{{icon}}-->` placeholders!
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 *
 			 * @param  string  $item_output The menu item output.
 			 * @param  WP_Post $item        Menu item object.
@@ -559,7 +560,7 @@ class Reykjavik_Menu {
 			 * - or has "[soc]" in menu title/name (useful for forcing the menu args on any menu in widget).
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 *
 			 * @param  array  $nav_menu_args  An array of arguments passed to wp_nav_menu() to retrieve a navigation menu.
 			 * @param  string $nav_menu       Nav menu object for the current menu.
@@ -609,8 +610,8 @@ class Reykjavik_Menu {
 			/**
 			 * Get cache key: Social menu.
 			 *
-			 * @since    2.0.0
-			 * @version  2.0.0
+			 * @since    1.3.1
+			 * @version  1.3.1
 			 */
 			public static function get_cache_key_social() {
 
@@ -630,7 +631,7 @@ class Reykjavik_Menu {
 			 * Flush social menu cache.
 			 *
 			 * @since    1.0.0
-			 * @version  2.0.0
+			 * @version  1.3.1
 			 */
 			public static function social_cache_flush() {
 

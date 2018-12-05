@@ -361,7 +361,7 @@ final class Reykjavik_Library_Visual_Editor {
 		 *
 		 * @since    1.7.2
 		 * @version  2.7.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  array $init
 		 */

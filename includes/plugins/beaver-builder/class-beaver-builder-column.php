@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -80,7 +80,7 @@ class Reykjavik_Beaver_Builder_Column {
 		 * Modify CSS classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $class
 		 * @param  object $node
@@ -99,15 +99,6 @@ class Reykjavik_Beaver_Builder_Column {
 
 					if ( ! empty( $node->settings->predefined_color ) ) {
 						$class .= ' ' . esc_attr( trim( $node->settings->predefined_color ) );
-					}
-
-				// Custom background class
-
-					if (
-							( 'color' == $node->settings->bg_type && ! empty( $node->settings->bg_color ) )
-							|| ( 'photo' == $node->settings->bg_type && ! empty( $node->settings->bg_image ) )
-						) {
-						$class .= ' fl-col-custom-background';
 					}
 
 

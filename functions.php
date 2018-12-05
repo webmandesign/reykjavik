@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -159,7 +159,7 @@
 
 	// Advanced Custom Fields
 
-		if ( function_exists( 'register_field_group' ) && is_admin() ) {
+		if ( function_exists( 'acf_add_local_field_group' ) && is_admin() ) {
 			require REYKJAVIK_PATH_PLUGINS . 'advanced-custom-fields/advanced-custom-fields.php';
 		}
 

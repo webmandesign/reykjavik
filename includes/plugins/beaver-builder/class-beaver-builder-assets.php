@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_Beaver_Builder_Assets {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  1.3.1
 		 */
 		private function __construct() {
 
@@ -52,7 +52,7 @@ class Reykjavik_Beaver_Builder_Assets {
 
 						add_filter( 'fl_builder_layout_style_media', __CLASS__ . '::stylesheet_layout_media' );
 
-						add_filter( 'fl_builder_render_css', __CLASS__ . '::layout_styles', 10, 2 );
+						add_filter( 'fl_builder_render_css', __CLASS__ . '::layout_styles', 10, 3 );
 
 		} // /__construct
 
@@ -239,63 +239,64 @@ class Reykjavik_Beaver_Builder_Assets {
 		 * Custom layout styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $css
 		 * @param  array  $nodes
+		 * @param  object $global_settings
 		 */
-		public static function layout_styles( $css, $nodes ) {
-
-			// Helper variables
-
-				$global_settings = FLBuilderModel::get_global_settings();
-
+		public static function layout_styles( $css, $nodes, $global_settings ) {
 
 			// Processing
 
+				$css .= PHP_EOL.PHP_EOL;
+
 				// Row width compensation
 
-					$global_row_margins = $global_settings->module_margins;
+					$settings = array(
+						'module_margins'            => false,
+						'module_margins_medium'     => '@media (max-width: ' . absint( $global_settings->medium_breakpoint ) . 'px)',
+						'module_margins_responsive' => '@media (max-width: ' . absint( $global_settings->responsive_breakpoint ) . 'px)',
+					);
 
-					if ( is_numeric( $global_row_margins ) ) {
-						$global_row_margins .= 'px';
-					}
+					foreach ( $settings as $setting => $wrapper ) {
+						$margin_compensation = ( isset( $global_settings->{ $setting } ) ) ? ( $global_settings->{ $setting } ) : ( false );
 
-					if ( $global_row_margins ) {
-						$css .= PHP_EOL.PHP_EOL;
-						$css .= '.fl-row-fixed-width .fl-row-content-wrap';
-						$css .= ', ';
-						$css .= '.fl-row-layout-full-fixed .fl-row-fixed-width > .fl-col-group';
-						$css .= ' { ';
-						$css .= 'width: auto;';
-						$css .= ' ';
-						$css .= 'max-width: calc(100% + ' . esc_attr( $global_row_margins ) . ' + ' . esc_attr( $global_row_margins ) . ');';
-						$css .= ' ';
-						$css .= 'margin-left: -' . esc_attr( $global_row_margins ) . ';';
-						$css .= ' ';
-						$css .= 'margin-right: -' . esc_attr( $global_row_margins ) . ';';
-						$css .= ' }' . PHP_EOL.PHP_EOL;
+						if ( is_numeric( $margin_compensation ) ) {
+							$margin_compensation .= ( isset( $global_settings->{ $setting . '_unit' } ) ) ? ( $global_settings->{ $setting . '_unit' } ) : ( 'px' );
+
+							$indent = ( $wrapper ) ? ( "\t" ) : ( '' );
+
+							$css .= ( $wrapper ) ? ( $wrapper . ' {'.PHP_EOL ) : ( '' );
+							$css .= $indent . '.fl-row-fixed-width .fl-row-content-wrap,'.PHP_EOL;
+							$css .= $indent . '.fl-row-layout-full-fixed .fl-row-fixed-width > .fl-col-group {'.PHP_EOL;
+							$css .= $indent . "\t".'width: auto;'.PHP_EOL;
+							$css .= $indent . "\t".'max-width: calc(100% + ' . esc_attr( $margin_compensation ) . ' + ' . esc_attr( $margin_compensation ) . ');'.PHP_EOL;
+							$css .= $indent . "\t".'margin-left: -' . esc_attr( $margin_compensation ) . ';'.PHP_EOL;
+							$css .= $indent . "\t".'margin-right: -' . esc_attr( $margin_compensation ) . ';'.PHP_EOL;
+							$css .= $indent . '}'.PHP_EOL;
+							$css .= ( $wrapper ) ? ( '}'.PHP_EOL ) : ( '' );
+						}
 					}
 
 				// Fixing responsive element hiding
 
 					$css .= PHP_EOL.PHP_EOL;
-					$css .= '@media (min-width: ' . absint( $global_settings->responsive_breakpoint + 1 ) . 'px) and (max-width: ' . absint( $global_settings->medium_breakpoint ) . 'px) { ';
-					$css .= '.fl-col-group .fl-visible-desktop-medium.fl-col';
-					$css .= ', ';
-					$css .= '.fl-col-group .fl-visible-medium.fl-col';
-					$css .= ', ';
-					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col';
-					$css .= ' { display: flex; }';
-					$css .= ' }' . PHP_EOL.PHP_EOL;
 
-					$css .= PHP_EOL.PHP_EOL;
-					$css .= '@media (max-width: ' . absint( $global_settings->responsive_breakpoint ) . 'px) { ';
-					$css .= '.fl-col-group .fl-visible-medium-mobile.fl-col';
-					$css .= ', ';
-					$css .= '.fl-col-group .fl-visible-mobile.fl-col';
-					$css .= ' { display: flex; }';
-					$css .= ' }' . PHP_EOL.PHP_EOL;
+					$css .= '@media (min-width: ' . absint( $global_settings->responsive_breakpoint + 1 ) . 'px) and (max-width: ' . absint( $global_settings->medium_breakpoint ) . 'px) {'.PHP_EOL;
+					$css .= "\t".'.fl-col-group .fl-visible-desktop-medium.fl-col,'.PHP_EOL;
+					$css .= "\t".'.fl-col-group .fl-visible-medium.fl-col,'.PHP_EOL;
+					$css .= "\t".'.fl-col-group .fl-visible-medium-mobile.fl-col {'.PHP_EOL;
+					$css .= "\t\t".'display: flex;'.PHP_EOL;
+					$css .= "\t".'}'.PHP_EOL;
+					$css .= '}'.PHP_EOL;
+
+					$css .= '@media (max-width: ' . absint( $global_settings->responsive_breakpoint ) . 'px) {'.PHP_EOL;
+					$css .= "\t".'.fl-col-group .fl-visible-medium-mobile.fl-col,'.PHP_EOL;
+					$css .= "\t".'.fl-col-group .fl-visible-mobile.fl-col {'.PHP_EOL;
+					$css .= "\t\t".'display: flex;'.PHP_EOL;
+					$css .= "\t".'}'.PHP_EOL;
+					$css .= '}'.PHP_EOL;
 
 
 			// Output

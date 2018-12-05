@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -82,7 +82,7 @@ class Reykjavik_SVG {
 		 * Add SVG images to the footer.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 */
 		public static function include_files() {
 
@@ -111,7 +111,7 @@ class Reykjavik_SVG {
 		 * Get SVG icon by reference from SVG sprite.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 *
 		 * @param array $args {
 		 *     Parameters needed to display an SVG.
@@ -235,8 +235,8 @@ class Reykjavik_SVG {
 		 * Array key   = a part of link URL.
 		 * Array value = a part SVG symbol ID.
 		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @since    1.3.1
+		 * @version  1.3.1
 		 */
 		public static function get_social_icons() {
 

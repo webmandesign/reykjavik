@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -107,7 +107,7 @@ class Reykjavik_Assets {
 		 * Registering theme styles
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 */
 		public static function register_styles() {
 
@@ -234,7 +234,7 @@ class Reykjavik_Assets {
 		 * Frontend styles enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 */
 		public static function enqueue_styles() {
 
@@ -248,12 +248,12 @@ class Reykjavik_Assets {
 				// Google Fonts
 
 					if ( self::google_fonts_url() ) {
-						$enqueue_assets[5] = 'reykjavik-google-fonts';
+						$enqueue_assets[0] = 'reykjavik-google-fonts';
 					}
 
 				// Genericons Neue
 
-					$enqueue_assets[6] = 'genericons-neue';
+					$enqueue_assets[5] = 'genericons-neue';
 
 				// Main
 
@@ -597,7 +597,7 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 */
 		public static function editor_stylesheets() {
 

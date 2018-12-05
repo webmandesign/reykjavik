@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -510,7 +510,7 @@ class Reykjavik_Header {
 		 * HTML Body classes in content editor (TinyMCE)
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  array $init
 		 */

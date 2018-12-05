@@ -10,6 +10,43 @@
 	style.css
 
 
+## 1.3.1
+
+* **Add**: More social icons
+* **Update**: WordPress 5.0 ready
+* **Update**: Loading Genericons Neue as separate stylesheet
+* **Update**: Advanced Custom Fields plugin compatibility
+* **Update**: Beaver Themer plugin compatibility
+* **Fix**: Making social icons menu multilingual ready
+* **Fix**: Compatibility with Beaver Builder 2.2
+* **Fix**: Link in theme demo content (widgets)
+
+### Files changed:
+
+	changelog.md
+	functions.php
+	style.css
+	assets/fonts/genericons-neue/*.*
+	assets/images/svg/social-icons.svg
+	assets/scss/main.scss
+	includes/frontend/class-assets.php
+	includes/frontend/class-header.php
+	includes/frontend/class-menu.php
+	includes/frontend/class-svg.php
+	includes/plugins/advanced-custom-fields/advanced-custom-fields.php
+	includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php
+	includes/plugins/beaver-builder/class-beaver-builder-assets.php
+	includes/plugins/beaver-builder/class-beaver-builder-column.php
+	includes/plugins/beaver-builder/class-beaver-builder-row.php
+	includes/plugins/beaver-themer/class-beaver-themer.php
+	includes/plugins/woocommerce/class-woocommerce-pages.php
+	includes/plugins/woocommerce/class-woocommerce-setup.php
+	includes/tgmpa/class-tgmpa-plugins.php
+	library/includes/classes/class-visual-editor.php
+	templates/parts/menu/menu-primary.php
+	templates/parts/menu/menu-social.php
+
+
 ## 1.3.0
 
 * **Add**: Options to change homepage intro overlay colors and opacity
