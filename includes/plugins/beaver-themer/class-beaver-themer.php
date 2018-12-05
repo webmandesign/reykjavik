@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.1.1
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -32,7 +32,7 @@ class Reykjavik_Beaver_Themer {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.1.0
+		 * @version  1.3.1
 		 */
 		private function __construct() {
 
@@ -50,8 +50,8 @@ class Reykjavik_Beaver_Themer {
 
 						add_action( 'init', __CLASS__ . '::late_load', 900 );
 
-						add_action( 'wp', __CLASS__ . '::sidebar_disable' );
 						add_action( 'wp', __CLASS__ . '::headers_footers', 999 );
+						add_action( 'wp', __CLASS__ . '::site_content',    999 );
 
 					// Filters
 
@@ -161,6 +161,45 @@ class Reykjavik_Beaver_Themer {
 					}
 
 		} // /headers_footers
+
+
+
+		/**
+		 * Setup site content.
+		 *
+		 * @since    1.3.1
+		 * @version  1.3.1
+		 */
+		public static function site_content() {
+
+			// Requirements check
+
+				if ( is_admin() ) {
+					return;
+				}
+
+
+			// Helper variables
+
+				$layouts = array_keys( (array) FLThemeBuilderLayoutData::get_current_page_layouts() );
+
+
+			// Processing
+
+				if ( count( array_intersect( $layouts, array( 'singular', '404', 'archive' ) ) ) ) {
+
+					// Removing intro
+					remove_action( 'tha_content_top', 'Reykjavik_Intro::container', 15 );
+
+					// Disabling sidebar
+					add_filter( 'wmhook_reykjavik_sidebar_disable', '__return_true' );
+
+					// Removing post navigation
+					// remove_action( 'tha_content_bottom', 'Reykjavik_Post::navigation', 95 );
+
+				}
+
+		} // /site_content
 
 
 
@@ -275,36 +314,6 @@ class Reykjavik_Beaver_Themer {
 				);
 
 		} // /parts
-
-
-
-
-
-	/**
-	 * 100) Others
-	 */
-
-		/**
-		 * Disable sidebar
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function sidebar_disable() {
-
-			// Helper variables
-
-				$layouts      = array_keys( (array) FLThemeBuilderLayoutData::get_current_page_layouts() );
-				$disable_here = array( 'singular', '404', 'archive' );
-
-
-			// Processing
-
-				if ( count( array_intersect( $layouts, $disable_here ) ) ) {
-					add_filter( 'wmhook_reykjavik_sidebar_disable', '__return_true' );
-				}
-
-		} // /sidebar_disable
 
 
 

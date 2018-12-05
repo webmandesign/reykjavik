@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.2
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -93,7 +93,7 @@ class Reykjavik_TGMPA_Plugins {
 		 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.2
+		 * @version  1.3.1
 		 */
 		public static function recommend() {
 
@@ -131,7 +131,7 @@ class Reykjavik_TGMPA_Plugins {
 									'description' => esc_html__( 'For easy post and page attributes setup.', 'reykjavik' ),
 									'slug'        => 'advanced-custom-fields',
 									'required'    => false,
-									'is_callable' => 'register_field_group',
+									'is_callable' => 'acf_add_local_field_group',
 								),
 
 								'jetpack' => array(

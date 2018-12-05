@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -35,7 +35,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 */
 		private function __construct() {
 
@@ -82,7 +82,7 @@ class Reykjavik_WooCommerce_Pages {
 
 						add_filter( 'wmhook_reykjavik_woocommerce_checkout_guide', __CLASS__ . '::guide_steps', 10, 2 );
 
-						add_filter( 'wmhook_reykjavik_acf_register_field_group', __CLASS__ . '::acf_modify', 10, 3 );
+						add_filter( 'wmhook_reykjavik_acf_field_group', __CLASS__ . '::acf_modify', 10, 3 );
 
 						if ( is_callable( 'Reykjavik_Intro::is_enabled' ) ) {
 							/**

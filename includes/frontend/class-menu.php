@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_Menu {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 */
 		private function __construct() {
 
@@ -60,17 +60,15 @@ class Reykjavik_Menu {
 
 					// Filters
 
-						add_filter( 'wmhook_reykjavik_social_links_icons', __CLASS__ . '::social_links_icons' );
+						add_filter( 'wmhook_reykjavik_svg_get_social_icons', __CLASS__ . '::social_links_icons' );
 
-						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_social_icons', 10, 4 );
-
+						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_social_icon', 10, 4 );
 						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_description', 20, 4 );
-
 						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_expander', 30, 4 );
 
 						add_filter( 'nav_menu_css_class', __CLASS__ . '::nav_menu_item_classes', 10, 4 );
 
-						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 3 );
+						add_filter( 'widget_nav_menu_args', __CLASS__ . '::social_widget', 10, 2 );
 
 						add_filter( 'wp_nav_menu', __CLASS__ . '::mobile_menu_search', 20, 2 ); // See below for priority info.
 
@@ -150,15 +148,15 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Primary navigation args
+			 * Get menu args: Primary.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.1
 			 *
 			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
 			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
 			 */
-			public static function primary_menu_args( $mobile_nav = true, $fallback = false ) {
+			public static function get_menu_args_primary( $mobile_nav = true, $fallback = false ) {
 
 				// Helper variables
 
@@ -204,7 +202,7 @@ class Reykjavik_Menu {
 
 					return $args;
 
-			} // /primary_menu_args
+			} // /get_menu_args_primary
 
 
 
@@ -212,13 +210,13 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.0
+			 * @version  1.3.1
 			 */
 			public static function primary_fallback() {
 
 				// Helper variables
 
-					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
+					$output = wp_page_menu( array( 'echo' => false ) + (array) self::get_menu_args_primary( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
 
 
 				// Output
@@ -269,7 +267,7 @@ class Reykjavik_Menu {
 		 * Primary menu only.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
@@ -285,11 +283,12 @@ class Reykjavik_Menu {
 						&& trim( $item->description )
 					) {
 
+					// `</a>` is required here as `$args->link_after` could also be an empty string.
 					$item_output = str_replace(
-							$args->link_after . '</a>',
-							'<span class="menu-item-description">' . trim( $item->description ) . '</span>' . $args->link_after . '</a>',
-							$item_output
-						);
+						$args->link_after . '</a>',
+						'<span class="menu-item-description">' . trim( $item->description ) . '</span>' . $args->link_after . '</a>',
+						$item_output
+					);
 
 				}
 
@@ -308,7 +307,7 @@ class Reykjavik_Menu {
 		 * Primary menu only.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
@@ -320,15 +319,16 @@ class Reykjavik_Menu {
 			// Processing
 
 				if (
-						'primary' === $args->theme_location
-						&& in_array( 'menu-item-has-children', (array) $item->classes )
-					) {
+					'primary' === $args->theme_location
+					&& in_array( 'menu-item-has-children', (array) $item->classes )
+				) {
 
+					// `</a>` is required here as `$args->link_after` could also be an empty string.
 					$item_output = str_replace(
-							$args->link_after . '</a>',
-							$args->link_after . ' <span class="expander" aria-hidden="true"></span></a>', // Accessibility: on focus, no screen reader text required
-							$item_output
-						);
+						$args->link_after . '</a>',
+						$args->link_after . ' <span class="expander" aria-hidden="true"></span></a>', // Accessibility: on focus, no screen reader text required
+						$item_output
+					);
 
 				}
 
@@ -392,7 +392,7 @@ class Reykjavik_Menu {
 		 */
 
 			/**
-			 * Social links
+			 * Social links.
 			 *
 			 * @since    1.0.0
 			 * @version  1.0.0
@@ -408,158 +408,195 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Social links supported icons
+			 * Get menu args: Social.
+			 *
+			 * @since    1.3.1
+			 * @version  1.3.1
+			 *
+			 * @param  string $items_wrap
+			 */
+			public static function get_menu_args_social( $items_wrap = '<ul data-id="%1$s" class="%2$s">%3$s</ul>' ) {
+
+				// Output
+
+					return array(
+						'theme_location' => 'social',
+						'container'      => false,
+						'menu_class'     => 'social-links-items',
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span><!--{{icon}}-->',
+						'fallback_cb'    => false,
+						'items_wrap'     => (string) $items_wrap,
+					);
+
+			} // /get_menu_args_social
+
+
+
+			/**
+			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.1
 			 */
 			public static function social_links_icons() {
 
 				// Output
 
 					return array(
-							'behance.net'       => 'behance',
-							'bitbucket.org'     => 'bitbucket',
-							'codepen.io'        => 'codepen',
-							'deviantart.com'    => 'deviantart',
-							'digg.com'          => 'digg',
-							'dribbble.com'      => 'dribbble',
-							'dropbox.com'       => 'dropbox',
-							'facebook.com'      => 'facebook',
-							'flickr.com'        => 'flickr',
-							'foursquare.com'    => 'foursquare',
-							'plus.google.com'   => 'google-plus',
-							'github.com'        => 'github',
-							'instagram.com'     => 'instagram',
-							'linkedin.com'      => 'linkedin',
-							'mailto:'           => 'envelope',
-							'medium.com'        => 'medium',
-							'paypal.com'        => 'paypal',
-							'pinterest.com'     => 'pinterest',
-							'getpocket.com'     => 'get-pocket',
-							'reddit.com'        => 'reddit',
-							'skype.com'         => 'skype',
-							'skype:'            => 'skype',
-							'slack.com'         => 'slack',
-							'slideshare.net'    => 'slideshare',
-							'snapchat.com'      => 'snapchat',
-							'soundcloud.com'    => 'soundcloud',
-							'spotify.com'       => 'spotify',
-							'stackoverflow.com' => 'stack-overflow',
-							'stumbleupon.com'   => 'stumbleupon',
-							'trello.com'        => 'trello',
-							'tripadvisor.'      => 'tripadvisor',
-							'tumblr.com'        => 'tumblr',
-							'twitch.tv'         => 'twitch',
-							'twitter.com'       => 'twitter',
-							'vimeo.com'         => 'vimeo',
-							'vine.co'           => 'vine',
-							'vk.com'            => 'vk',
-							'wordpress.org'     => 'wordpress',
-							'wordpress.com'     => 'wordpress',
-							'yelp.com'          => 'yelp',
-							'youtube.com'       => 'youtube',
-						);
+						'behance.net'       => 'behance',
+						'bitbucket.org'     => 'bitbucket',
+						'codepen.io'        => 'codepen',
+						'deviantart.com'    => 'deviantart',
+						'digg.com'          => 'digg',
+						'docker.com'        => 'dockerhub',
+						'dribbble.com'      => 'dribbble',
+						'dropbox.com'       => 'dropbox',
+						'facebook.com'      => 'facebook',
+						'flickr.com'        => 'flickr',
+						'foursquare.com'    => 'foursquare',
+						'plus.google.com'   => 'google-plus',
+						'github.com'        => 'github',
+						'instagram.com'     => 'instagram',
+						'linkedin.com'      => 'linkedin',
+						'mailto:'           => 'envelope',
+						'medium.com'        => 'medium',
+						'paypal.com'        => 'paypal',
+						'pscp.tv'           => 'periscope',
+						'tel:'              => 'phone',
+						'pinterest.com'     => 'pinterest',
+						'getpocket.com'     => 'get-pocket',
+						'reddit.com'        => 'reddit',
+						'/feed'             => 'rss',
+						'skype.com'         => 'skype',
+						'skype:'            => 'skype',
+						'slack.com'         => 'slack',
+						'slideshare.net'    => 'slideshare',
+						'snapchat.com'      => 'snapchat',
+						'soundcloud.com'    => 'soundcloud',
+						'spotify.com'       => 'spotify',
+						'stackoverflow.com' => 'stack-overflow',
+						'stumbleupon.com'   => 'stumbleupon',
+						'trello.com'        => 'trello',
+						'tripadvisor.'      => 'tripadvisor',
+						'tumblr.com'        => 'tumblr',
+						'twitch.tv'         => 'twitch',
+						'twitter.com'       => 'twitter',
+						'vimeo.com'         => 'vimeo',
+						'vine.co'           => 'vine',
+						'vk.com'            => 'vk',
+						'wordpress.org'     => 'wordpress',
+						'wordpress.com'     => 'wordpress',
+						'xing.com'          => 'xing',
+						'yelp.com'          => 'yelp',
+						'youtube.com'       => 'youtube',
+					);
 
 			} // /social_links_icons
 
 
 
 			/**
-			 * Display SVG icons in social links menu
+			 * Display SVG icons in social links menu.
 			 *
-			 * @uses  `wmhook_reykjavik_social_links_icons` global hook
+			 * Note that the menu has to be set to output `<!--{{icon}}-->` placeholders!
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.1
 			 *
 			 * @param  string  $item_output The menu item output.
 			 * @param  WP_Post $item        Menu item object.
 			 * @param  int     $depth       Depth of the menu.
 			 * @param  array   $args        wp_nav_menu() arguments.
 			 */
-			public static function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+			public static function nav_menu_item_social_icon( $item_output, $item, $depth, $args ) {
 
-				// Helper variables
+				// Requirements check
 
-					$locations = get_nav_menu_locations();
+					if ( false === strpos( $item_output, '<!--{{icon}}-->' ) ) {
+						return $item_output;
+					}
+
+
+				// Variables
+
+					$social_icons = Reykjavik_SVG::get_social_icons();
+					$social_icon  = 'chain';
 
 
 				// Processing
 
-					if (
-							isset( $locations['social'] )
-							&& isset( $args->menu->term_id )
-							&& absint( $locations['social'] ) === absint( $args->menu->term_id )
-						) {
-
-						$social_icons = (array) apply_filters( 'wmhook_reykjavik_social_links_icons', array() );
-						$social_icon  = 'chain';
-
-						foreach ( $social_icons as $url => $icon ) {
-							if ( false !== strpos( $item_output, $url ) ) {
-								$social_icon = $icon;
-								break;
-							}
+					foreach ( $social_icons as $url => $icon ) {
+						if ( false !== strpos( $item_output, $url ) ) {
+							$social_icon = $icon;
+							break;
 						}
-
-						$item_output = str_replace(
-								$args->link_after,
-								'</span>' . Reykjavik_SVG::get( array(
-									'icon' => esc_attr( $social_icon ),
-									'base' => 'social-icon',
-								) ),
-								$item_output
-							);
-
 					}
+
+					$item_output = str_replace(
+						'<!--{{icon}}-->',
+						'<!--{{icon}}-->' . Reykjavik_SVG::get( array(
+							'icon' => esc_attr( $social_icon ),
+							'base' => 'social-icon',
+						) ),
+						$item_output
+					);
 
 
 				// Output
 
 					return $item_output;
 
-			} // /nav_menu_social_icons
+			} // /nav_menu_item_social_icon
 
 
 
 			/**
-			 * Display social links in Menu widget
+			 * Sets Social menu args for menu in widget.
+			 *
+			 * Checks whether the menu:
+			 * - is associated with `social` location,
+			 * - or has "[soc]" in menu title/name (useful for forcing the menu args on any menu in widget).
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.1
 			 *
-			 * @param  array  $nav_menu_args Array of parameters for `wp_nav_menu()` function.
-			 * @param  string $nav_menu      Menu slug assigned in the widget.
-			 * @param  array  $args          Widget parameters.
+			 * @param  array  $nav_menu_args  An array of arguments passed to wp_nav_menu() to retrieve a navigation menu.
+			 * @param  string $nav_menu       Nav menu object for the current menu.
 			 */
-			public static function social_widget( $nav_menu_args, $nav_menu, $args ) {
+			public static function social_widget( $nav_menu_args, $nav_menu ) {
 
-				// Helper variables
+				// Variables
 
-					$nav_menu_obj = wp_get_nav_menu_object( $nav_menu );
-					$locations    = get_nav_menu_locations();
+					$locations = get_nav_menu_locations();
+
+					$locations['social'] = ( isset( $locations['social'] ) ) ? ( $locations['social'] ) : ( false );
 
 
 				// Requirements check
 
 					if (
-							! isset( $locations['social'] )
-							|| ! $locations['social']
-							|| absint( $locations['social'] ) !== absint( $nav_menu_obj->term_id )
-						) {
+						! isset( $nav_menu->term_id )
+						|| (
+							false === stripos( $nav_menu->name, '[soc]' )
+							&& $locations['social'] !== $nav_menu->term_id
+						)
+					) {
 						return $nav_menu_args;
 					}
 
 
 				// Processing
 
+					$menu_args = self::get_menu_args_social();
+
 					$nav_menu_args['container_class'] = 'social-links';
 					$nav_menu_args['menu_class']      = 'social-links-items';
-					$nav_menu_args['depth']           = 1;
-					$nav_menu_args['link_before']     = '<span class="screen-reader-text">';
-					$nav_menu_args['link_after']      = '</span>';
-					$nav_menu_args['items_wrap']      = '<ul id="%1$s" class="%2$s">%3$s</ul>';
+					$nav_menu_args['depth']           = $menu_args['depth'];
+					$nav_menu_args['link_before']     = $menu_args['link_before'];
+					$nav_menu_args['link_after']      = $menu_args['link_after'];
+					$nav_menu_args['items_wrap']      = $menu_args['items_wrap'];
 
 
 				// Output
@@ -571,16 +608,39 @@ class Reykjavik_Menu {
 
 
 			/**
-			 * Flush social menu cache
+			 * Get cache key: Social menu.
+			 *
+			 * @since    1.3.1
+			 * @version  1.3.1
+			 */
+			public static function get_cache_key_social() {
+
+				// Output
+
+					return apply_filters(
+						'wmhook_reykjavik_get_cache_key',
+						'reykjavik_social_links',
+						'menu-social'
+					);
+
+			} // /get_cache_key_social
+
+
+
+			/**
+			 * Flush social menu cache.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.3.1
 			 */
 			public static function social_cache_flush() {
 
 				// Processing
 
-					delete_transient( 'reykjavik_social_links' );
+					wp_cache_delete(
+						self::get_cache_key_social(),
+						'reykjavik_' . get_bloginfo( 'language' )
+					);
 
 			} // /social_cache_flush
 

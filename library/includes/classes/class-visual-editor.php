@@ -12,6 +12,7 @@
  *
  * @since    1.0.0
  * @version  2.7.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -359,6 +360,7 @@ final class Reykjavik_Library_Visual_Editor {
 		 *
 		 * @since    1.7.2
 		 * @version  2.7.0
+		 * @version  1.3.1
 		 *
 		 * @param  array $init
 		 */
@@ -366,31 +368,15 @@ final class Reykjavik_Library_Visual_Editor {
 
 			// Requirements check
 
-				global $post;
-
-				if ( ! isset( $post ) ) {
+				if ( ! isset( $init['body_class'] ) ) {
 					return $init;
 				}
 
 
-			// Helper variables
-
-				global $wp_version;
-
-				$class = array();
-
-
 			// Processing
 
-				// Setting custom classes
-
-					// Adding `.entry-content` class for compatibility with `main.css` styles
-
-						$class[] = 'entry-content';
-
-				// Adding custom classes
-
-					$init['body_class'] = $init['body_class'] . ' ' . implode( ' ', $class );
+				// Compatibility with `main.css` styles.
+				$init['body_class'] .= ' entry-content '; // TinyMCE only.
 
 
 			// Output

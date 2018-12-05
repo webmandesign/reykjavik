@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.3.1
  *
  * Contents:
  *
@@ -193,7 +193,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * HTML Body classes in content editor (TinyMCE)
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.3.1
 		 *
 		 * @param  array $init
 		 */
@@ -203,24 +203,22 @@ class Reykjavik_WooCommerce_Setup {
 
 				global $post;
 
-				if ( ! is_admin() || ! isset( $post ) ) {
+				if (
+					! isset( $init['body_class'] )
+					|| ! is_admin()
+					|| ! is_callable( 'wc_get_page_id' )
+					|| ! $post instanceof WP_Post
+				) {
 					return $init;
 				}
 
 
 			// Processing
 
-				// Shop page classes
-
-					if (
-							'page' === get_post_type( $post )
-							&& wc_get_page_id( 'shop' ) == $post->ID
-						) {
-
-						$init['body_class']  = str_replace( ' page-layout-outdented', '', $init['body_class'] );
-						$init['body_class'] .= ' woocommerce-page-shop';
-
-					}
+				if ( wc_get_page_id( 'shop' ) == $post->ID ) {
+					$init['body_class']  = str_replace( ' page-layout-outdented', '', $init['body_class'] );
+					$init['body_class'] .= ' woocommerce-page-shop ';
+				}
 
 
 			// Output
