@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -151,7 +151,7 @@ class Reykjavik_Menu {
 			 * Get menu args: Primary.
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.1
+			 * @version  1.4.0
 			 *
 			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
 			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
@@ -177,21 +177,21 @@ class Reykjavik_Menu {
 							$args['container_class'] = 'menu';
 							$args['depth']           = 4;
 							$args['fallback_cb']     = 'Reykjavik_Menu::primary_fallback';
-							$args['items_wrap']      = '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
+							$args['items_wrap']      = '<ul id="menu-primary" class="menu-primary">%3$s<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
 
 							if ( ! $mobile_nav ) {
-								$args['items_wrap'] = '<ul id="menu-primary" class="menu-primary" role="menubar">%3$s</ul>';
+								$args['items_wrap'] = '<ul id="menu-primary" class="menu-primary">%3$s</ul>';
 							}
 
 					} else {
 
 						// For `wp_page_menu()`
 
-							$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback" role="menubar">';
+							$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback">';
 							$args['after']  = '<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
 
 							if ( ! $mobile_nav ) {
-								$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback" role="menubar">';
+								$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback">';
 								$args['after']  = '</ul>';
 							}
 
