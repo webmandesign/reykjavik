@@ -203,12 +203,6 @@
 			require REYKJAVIK_PATH_PLUGINS . 'one-click-demo-import/one-click-demo-import.php';
 		}
 
-	// Smart Slider 3
-
-		if ( class_exists( 'N2SS3' ) ) {
-			require REYKJAVIK_PATH_PLUGINS . 'smart-slider/smart-slider.php';
-		}
-
 	// Subtitles
 
 		if ( class_exists( 'Subtitles' ) ) {

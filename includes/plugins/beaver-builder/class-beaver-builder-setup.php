@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -116,7 +116,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Global settings
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 *
 		 * @param  array  $defaults
 		 * @param  string $form_type
@@ -129,7 +129,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 					// "Default Page Heading" section
 
-						$defaults->show_default_heading     = 1;
+						$defaults->show_default_heading     = '1';
 						$defaults->default_heading_selector = '.fl-builder .intro-container, .fl-theme-builder-singular .intro-container, .fl-theme-builder-404 .intro-container, .fl-theme-builder-archive .intro-container';
 
 					// "Rows" section
