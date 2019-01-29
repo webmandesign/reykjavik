@@ -1,5 +1,30 @@
 # Reykjavik Changelog
 
+## 1.4.0
+
+* **Update**: Support URL
+* **Update**: Improving code
+* **Update**: Improving security
+* **Update**: Improving accessibility
+* **Update**: Adding WPCS comments to code
+* **Update**: Improving customizer functionality
+* **Update**: Using CSS variables instead of generating customized styles
+* **Update**: Removing obsolete functionality
+* **Update**: Updating readme file
+* **Update**: Setting `use strict` in JavaScript
+* **Update**: Removing all `locate_template()` function references
+* **Update**: Localization
+* **Update**: Documentation
+* **Update**: Removing old theme v2.0.0 upgrade notices and code (to update from pre v2.0.0 to v2.3.0, user need to install v2.0.0 first)
+* **Fix**: Styling issues
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+
+
 ## 1.3.1
 
 * **Add**: More social icons

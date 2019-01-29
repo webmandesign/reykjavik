@@ -9,6 +9,7 @@
  *
  * @since    1.0.0
  * @version  2.7.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -94,6 +95,7 @@ final class Reykjavik_Library {
 		 *
 		 * @since    1.0.0
 		 * @version  2.6.0
+		 * @version  1.4.0
 		 */
 		public static function theme_upgrade() {
 
@@ -109,11 +111,8 @@ final class Reykjavik_Library {
 					empty( $current_theme_version )
 					|| $new_theme_version != $current_theme_version
 				) {
-
-					do_action( 'wmhook_reykjavik_library_theme_upgrade', $current_theme_version, $new_theme_version );
-
+					do_action( 'wmhook_reykjavik_library_theme_upgrade', $new_theme_version, $current_theme_version );
 					set_transient( 'reykjavik_version', $new_theme_version );
-
 				}
 
 		} // /theme_upgrade
@@ -305,6 +304,7 @@ final class Reykjavik_Library {
 			 *
 			 * @since    1.0.0
 			 * @version  1.0.0
+			 * @version  1.4.0
 			 *
 			 * @param  string $tag            Wrapper tag.
 			 * @param  string $singular_only  Display only on singular posts of specific type.
@@ -319,7 +319,7 @@ final class Reykjavik_Library {
 				// Output
 
 					if ( $output ) {
-						echo $output;
+						echo $output; // WPCS: XSS OK.
 					}
 
 			} // /the_paginated_suffix
@@ -380,6 +380,7 @@ final class Reykjavik_Library {
 		 *
 		 * @since    1.3.0
 		 * @version  1.3.3
+		 * @version  1.4.0
 		 *
 		 * @param  string $content
 		 */
@@ -389,9 +390,13 @@ final class Reykjavik_Library {
 
 				if ( is_ssl() ) {
 					$content = str_ireplace( 'http:', 'https:', $content );
-					$content = str_ireplace( 'xmlns="https:', 'xmlns="http:', $content );
-					$content = str_ireplace( "xmlns='https:", "xmlns='http:", $content );
+				} else {
+					$content = str_ireplace( 'https:', 'http:', $content );
 				}
+
+				// Has to be `http:` only.
+				$content = str_ireplace( 'xmlns="https:', 'xmlns="http:', $content );
+				$content = str_ireplace( "xmlns='https:", "xmlns='http:", $content );
 
 
 			// Output

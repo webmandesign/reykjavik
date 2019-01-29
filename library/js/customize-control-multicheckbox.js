@@ -10,8 +10,12 @@
  *
  * @since    2.1.0
  * @version  2.7.0
+ * @version  1.4.0
  */
 ( function( exports, $ ) {
+
+	'use strict';
+
 	$( wp.customize ).on( 'ready', function() {
 
 

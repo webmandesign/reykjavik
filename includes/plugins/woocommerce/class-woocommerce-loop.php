@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.2.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -332,7 +332,7 @@ class Reykjavik_WooCommerce_Loop {
 		 * Pagination
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.6
+		 * @version  1.4.0
 		 */
 		public static function pagination() {
 
@@ -367,7 +367,7 @@ class Reykjavik_WooCommerce_Loop {
 
 			// Output
 
-				echo $html;
+				echo $html; // WPCS: XSS OK.
 
 		} // /pagination
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -697,7 +697,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Guide generator
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 *
 		 * @param  string $template_name
 		 */
@@ -795,7 +795,7 @@ class Reykjavik_WooCommerce_Pages {
 
 			// Output
 
-				echo $output;
+				echo $output; // WPCS: XSS OK.
 
 		} // /guide_generator
 

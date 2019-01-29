@@ -11,6 +11,7 @@
  *
  * @since    1.0.0
  * @version  2.7.0
+ * @version  1.4.0
  */
 class Reykjavik_Customize_Control_Radio_Matrix extends WP_Customize_Control {
 
@@ -46,10 +47,10 @@ class Reykjavik_Customize_Control_Radio_Matrix extends WP_Customize_Control {
 
 				?>
 
-				<span class="customize-control-title"><?php echo $this->label; ?></span>
-				<?php if ( $this->description ) : ?><span class="description customize-control-description"><?php echo $this->description; ?></span><?php endif; ?>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<?php if ( $this->description ) : ?><span class="description customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span><?php endif; ?>
 
-				<div class="<?php echo trim( 'custom-radio-container ' . $this->class ); ?>">
+				<div class="<?php echo esc_attr( trim( 'custom-radio-container ' . $this->class ) ); ?>">
 					<?php
 
 					$i = 0;
@@ -68,9 +69,9 @@ class Reykjavik_Customize_Control_Radio_Matrix extends WP_Customize_Control {
 
 						?>
 
-						<label for="<?php echo esc_attr( $this->id . ++$i ); ?>"<?php echo $active_class . $title; ?>>
-							<?php echo $name; ?>
-							<input class="custom-radio-item" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $this->id ); ?>" id="<?php echo esc_attr( $this->id . $i ); ?>" <?php echo $this->get_link() . $checked; ?> />
+						<label for="<?php echo esc_attr( $this->id . ++$i ); ?>"<?php echo $active_class . $title; /* WPCS: XSS OK. */ ?>>
+							<?php echo wp_kses_post( $name ); ?>
+							<input class="custom-radio-item" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $this->id ); ?>" id="<?php echo esc_attr( $this->id . $i ); ?>" <?php echo $this->get_link() . $checked; /* WPCS: XSS OK. */ ?> />
 						</label>
 
 						<?php

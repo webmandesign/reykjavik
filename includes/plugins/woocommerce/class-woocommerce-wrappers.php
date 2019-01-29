@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -106,21 +106,11 @@ class Reykjavik_WooCommerce_Wrappers {
 		 * Template wrappers: Open
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  string $template_name
 		 */
 		public static function template_part_wrapper_open( $template_name ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_reykjavik_woocommerce_wrappers_template_part_wrapper_open_pre', false, $template_name );
-
-				if ( false !== $pre ) {
-					echo $pre;
-					return;
-				}
-
 
 			// Output
 
@@ -161,21 +151,11 @@ class Reykjavik_WooCommerce_Wrappers {
 		 * Template wrappers: Close
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  string $template_name
 		 */
 		public static function template_part_wrapper_close( $template_name ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_reykjavik_woocommerce_wrappers_template_part_wrapper_close_pre', false, $template_name );
-
-				if ( false !== $pre ) {
-					echo $pre;
-					return;
-				}
-
 
 			// Output
 

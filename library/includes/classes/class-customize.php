@@ -11,6 +11,7 @@
  *
  * @since    1.0.0
  * @version  2.7.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -152,45 +153,50 @@ final class Reykjavik_Library_Customize {
 		 * The actual JavaScript is outputted in the footer of the page.
 		 *
 		 * @example
-		 *
 		 *   'preview_js' => array(
 		 *
 		 *     // Setting CSS styles:
+		 *     'css' => array(
 		 *
-		 *       'css' => array(
-		 *
-		 *         // Sets the whole value to the `css-property-name` of the `selector`
-		 *
-		 *           'selector' => array(
-		 *             'background-color',...
-		 *           ),
-		 *
-		 *         // Sets the `css-property-name` of the `selector` with specific settings
-		 *
-		 *           'selector' => array(
-		 *             array(
-		 *               'property'         => 'text-shadow',
-		 *               'prefix'           => '0 1px 1px rgba(',
-		 *               'suffix'           => ', .5)',
-		 *               'process_callback' => 'hexToRgb',
-		 *               'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
-		 *             ),...
-		 *           ),
-		 *
-		 *         // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
-		 *
-		 *           'selector' => array(
-		 *             'selector_replace' => 'selector-replace-value',
-		 *             'selector_before'  => '@media only screen and (min-width: 80em) {',
-		 *             'selector_after'   => '}',
-		 *             'background-color',...
-		 *           ),
-		 *
+		 *       // CSS variables (the `[[id]]` gets replaced with option ID)
+		 * 			 ':root' => array(
+		 *         '--[[id]]',
+		 *       ),
+		 * 			 ':root' => array(
+		 *         array(
+		 *           'property' => '--[[id]]',
+		 *           'suffix'   => 'px',
+		 *         ),
 		 *       ),
 		 *
-		 *     // And/or setting custom JavaScript:
+		 *       // Sets the whole value to the `css-property-name` of the `selector`
+		 *       'selector' => array(
+		 *         'background-color',...
+		 *       ),
 		 *
-		 *       'custom' => 'JavaScript here', // Such as "jQuery( '.site-title.type-text' ).toggleClass( 'styled' );"
+		 *       // Sets the `css-property-name` of the `selector` with specific settings
+		 *       'selector' => array(
+		 *         array(
+		 *           'property'         => 'text-shadow',
+		 *           'prefix'           => '0 1px 1px rgba(',
+		 *           'suffix'           => ', .5)',
+		 *           'process_callback' => 'themeSlug.Customize.hexToRgb',
+		 *           'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
+		 *         ),...
+		 *       ),
+		 *
+		 *       // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
+		 *       'selector' => array(
+		 *         'selector_replace' => 'selector-replace-value',
+		 *         'selector_before'  => '@media (min-width: 80em) {',
+		 *         'selector_after'   => '}',
+		 *         'background-color',...
+		 *       ),
+		 *
+		 *     ),
+		 *
+		 *     // And/or setting custom JavaScript:
+		 *     'custom' => 'JavaScript here', // Such as "$( '.site-header' ).toggleClass( 'sticky' );"
 		 *
 		 *   );
 		 *
@@ -200,6 +206,7 @@ final class Reykjavik_Library_Customize {
 		 *
 		 * @since    1.0.0
 		 * @version  2.7.0
+		 * @version  1.4.0
 		 */
 		public static function preview_scripts() {
 
@@ -223,12 +230,19 @@ final class Reykjavik_Library_Customize {
 
 			// Processing
 
-				if ( is_array( $theme_options ) && ! empty( $theme_options ) ) {
+				if (
+					is_array( $theme_options )
+					&& ! empty( $theme_options )
+				) {
 					foreach ( $theme_options as $theme_option ) {
-						if ( isset( $theme_option['preview_js'] ) && is_array( $theme_option['preview_js'] ) ) {
+						if (
+							isset( $theme_option['preview_js'] )
+							&& is_array( $theme_option['preview_js'] )
+						) {
+							$option_id = sanitize_title( $theme_option['id'] );
 
 							$output_single  = "wp.customize("  . PHP_EOL;
-							$output_single .= "\t" . "'" . $theme_option['id'] . "',"  . PHP_EOL;
+							$output_single .= "\t" . "'" . $option_id . "',"  . PHP_EOL;
 							$output_single .= "\t" . "function( value ) {"  . PHP_EOL;
 							$output_single .= "\t\t" . 'value.bind( function( to ) {' . PHP_EOL;
 
@@ -237,11 +251,10 @@ final class Reykjavik_Library_Customize {
 								if ( isset( $theme_option['preview_js']['css'] ) ) {
 
 									$output_single .= "\t\t\t" . "var newCss = '';" . PHP_EOL.PHP_EOL;
-									$output_single .= "\t\t\t" . "if ( jQuery( '#jscss-" . $theme_option['id'] . "' ).length ) { jQuery( '#jscss-" . $theme_option['id'] . "' ).remove() }" . PHP_EOL.PHP_EOL;
+									$output_single .= "\t\t\t" . "if ( $( '#jscss-" . $option_id . "' ).length ) { $( '#jscss-" . $option_id . "' ).remove() }" . PHP_EOL.PHP_EOL;
 
 									foreach ( $theme_option['preview_js']['css'] as $selector => $properties ) {
 										if ( is_array( $properties ) ) {
-
 											$output_single_css = $selector_before = $selector_after = '';
 
 											foreach ( $properties as $key => $property ) {
@@ -285,12 +298,19 @@ final class Reykjavik_Library_Customize {
 														'suffix'           => '',
 													) );
 
+													// Replace `[[id]]` placeholder with an option ID.
+													$property['property'] = str_replace(
+														'[[id]]',
+														$option_id,
+														$property['property']
+													);
+
 													$value = ( empty( $property['process_callback'] ) ) ? ( 'to' ) : ( trim( $property['process_callback'] ) . '( to )' );
 
 													if ( empty( $property['custom'] ) ) {
-														$output_single_css .= $property['property'] . ": " . $property['prefix'] . "' + " . $value . " + '" . $property['suffix'] . "; ";
+														$output_single_css .= $property['property'] . ": " . $property['prefix'] . "' + " . esc_attr( $value ) . " + '" . $property['suffix'] . "; ";
 													} else {
-														$output_single_css .= $property['property'] . ": " . str_replace( '[[value]]', "' + " . $value . " + '", $property['custom'] ) . "; ";
+														$output_single_css .= $property['property'] . ": " . str_replace( '[[value]]', "' + " . esc_attr( $value ) . " + '", $property['custom'] ) . "; ";
 													}
 
 											}
@@ -300,7 +320,7 @@ final class Reykjavik_Library_Customize {
 										}
 									}
 
-									$output_single .= PHP_EOL . "\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . PHP_EOL;
+									$output_single .= PHP_EOL . "\t\t\t" . "$( document ).find( 'head' ).append( $( '<style id=\'jscss-" . $option_id . "\'> ' + newCss + '</style>' ) );" . PHP_EOL;
 
 								}
 
@@ -313,7 +333,8 @@ final class Reykjavik_Library_Customize {
 							$output_single .= "\t\t" . '} );' . PHP_EOL;
 							$output_single .= "\t" . '}'. PHP_EOL;
 							$output_single .= ');'. PHP_EOL;
-							$output_single  = (string) apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_option_' . $theme_option['id'], $output_single );
+
+							$output_single  = (string) apply_filters( 'wmhook_reykjavik_library_customize_preview_scripts_option_' . $option_id, $output_single );
 
 							$output .= $output_single;
 
@@ -347,6 +368,7 @@ final class Reykjavik_Library_Customize {
 		 *
 		 * @since    1.0.0
 		 * @version  2.7.0
+		 * @version  1.4.0
 		 *
 		 * @param  object $wp_customize WP customizer object.
 		 */
@@ -396,7 +418,7 @@ final class Reykjavik_Library_Customize {
 
 				// To make sure our customizer sections start after WordPress default ones
 
-					$priority = absint( apply_filters( 'wmhook_reykjavik_library_customize_priority', 200 ) );
+					$priority = absint( apply_filters( 'wmhook_reykjavik_library_customize_priority', 0 ) );
 
 				// Default section name in case not set (should be overwritten anyway)
 
@@ -409,13 +431,6 @@ final class Reykjavik_Library_Customize {
 
 
 			// Processing
-
-				// Moving "Widgets" panel after the custom "Theme" panel
-				// @link  https://developer.wordpress.org/themes/advanced-topics/customizer-api/#sections
-
-					if ( $wp_customize->get_panel( 'widgets' ) ) {
-						$wp_customize->get_panel( 'widgets' )->priority = $priority + 10;
-					}
 
 				// Set live preview for predefined controls
 
@@ -470,8 +485,8 @@ final class Reykjavik_Library_Customize {
 
 									$option_id = $default = $description = '';
 
-									if ( isset( $theme_option['id'] ) ) {
-										$option_id = $theme_option['id'];
+									if ( isset( $option_id ) ) {
+										$option_id = $option_id;
 									}
 									if ( isset( $theme_option['default'] ) ) {
 										$default = $theme_option['default'];
