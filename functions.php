@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -222,13 +222,6 @@
 		}
 
 	// WooCommerce
-
-		/**
-		 * Regenerate styles on WooCommerce activation and deactivation.
-		 * Has to be outside WooCommerce compatibility files and outside WooCommerce class exists check.
-		 */
-		register_activation_hook(   'woocommerce/woocommerce.php', 'Reykjavik_Setup::regenerate_styles' );
-		register_deactivation_hook( 'woocommerce/woocommerce.php', 'Reykjavik_Setup::regenerate_styles' );
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'woocommerce/woocommerce.php';

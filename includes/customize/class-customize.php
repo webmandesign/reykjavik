@@ -33,10 +33,6 @@ class Reykjavik_Customize {
 		/**
 		 * Constructor
 		 *
-		 * @uses  `wmhook_reykjavik_theme_options` global hook
-		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
-		 * @uses  `wmhook_reykjavik_custom_styles_alphas` global hook
-		 *
 		 * @since    1.0.0
 		 * @version  1.4.0
 		 */
