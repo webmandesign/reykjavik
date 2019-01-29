@@ -6,14 +6,13 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
  *   0) Init
  *  10) CSS output
  *  20) Enqueue
- *  30) Setup
  * 100) Helpers
  */
 class Reykjavik_Customize_Styles {
@@ -26,30 +25,13 @@ class Reykjavik_Customize_Styles {
 	 * 0) Init
 	 */
 
-		private static $instance;
-
-
-
 		/**
-		 * Constructor
-		 *
-		 * @uses  `wmhook_reykjavik_custom_styles` global hook
+		 * Initialization.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 */
-		private function __construct() {
-
-			// Requirements check
-
-				if ( ! is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-					/**
-					 * There is really no point of running this
-					 * if we don't have the functionality needed.
-					 */
-					return;
-				}
-
+		public static function init() {
 
 			// Processing
 
@@ -57,39 +39,18 @@ class Reykjavik_Customize_Styles {
 
 					// Actions
 
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 109 );
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::inline_styles', 110 );
 
-						add_action( 'wp_ajax_reykjavik_editor_styles',         __CLASS__ . '::get_editor_custom_stylesheet' );
-						add_action( 'wp_ajax_no_priv_reykjavik_editor_styles', __CLASS__ . '::get_editor_custom_stylesheet' );
+						add_action( 'wp_ajax_reykjavik_editor_styles',         __CLASS__ . '::get_editor_css_variables' );
+						add_action( 'wp_ajax_no_priv_reykjavik_editor_styles', __CLASS__ . '::get_editor_css_variables' );
+
+						add_action( 'customize_save_after', __CLASS__ . '::customize_timestamp' );
 
 					// Filters
 
-						add_filter( 'wmhook_reykjavik_custom_styles', __CLASS__ . '::get_css_raw', 10, 2 );
-
 						add_filter( 'wmhook_reykjavik_assets_editor', __CLASS__ . '::editor_stylesheet' );
 
-		} // /__construct
-
-
-
-		/**
-		 * Initialization (get instance)
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function init() {
-
-			// Processing
-
-				if ( null === self::$instance ) {
-					self::$instance = new self;
-				}
-
-
-			// Output
-
-				return self::$instance;
+						add_filter( 'wmhook_reykjavik_esc_css', 'wp_strip_all_tags' );
 
 		} // /init
 
@@ -102,105 +63,69 @@ class Reykjavik_Customize_Styles {
 	 */
 
 		/**
-		 * Get processed CSS string
-		 *
-		 * Note that this CSS output is not being escaped with `wmhook_reykjavik_esc_css` global hook!
-		 * You need to escape this CSS string on your own just before outputting it.
+		 * Get custom CSS.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $scope
+		 * @version  1.4.0
 		 */
-		public static function get_css( $scope = '' ) {
+		public static function get_css() {
 
-			// Helper variables
+			// Variables
 
 				$output = '';
 
 
 			// Processing
 
-				if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-					/**
-					 * self::get_css_raw() is hooked into the Reykjavik_Library_Customize_Styles::custom_styles()
-					 * and we get processed CSS string from it here.
-					 */
-					$output .= Reykjavik_Library_Customize_Styles::custom_styles( $output, $scope );
-				}
+				// @todo  If required. Otherwise write a comment.
 
 
 			// Output
 
-				return (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_styles', $output );
+				return (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_css', $output );
 
 		} // /get_css
 
 
 
 		/**
-		 * Get unprocessed, raw custom styles
+		 * Get processed CSS variables string.
 		 *
-		 * @uses  `wmhook_reykjavik_generate_css_replacements` global hook
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $css
-		 * @param  string $scope
+		 * @since    1.4.0
+		 * @version  1.4.0
 		 */
-		public static function get_css_raw( $css = '', $scope = '' ) {
+		public static function get_css_variables() {
 
-			// Pre
+			// Variables
 
-				$pre = apply_filters( 'wmhook_reykjavik_customize_styles_get_css_raw_pre', false, $css, $scope );
-
-				if ( false !== $pre ) {
-					return $pre;
-				}
-
-
-			// Helper variables
-
-				$output = '';
-
-				$replacements = (array) apply_filters( 'wmhook_reykjavik_generate_css_replacements', array() );
+				$css_vars = '';
 
 
 			// Processing
 
-				// Add CSS generated from array
+				if ( is_callable( 'Reykjavik_Library_CSS_Variables::get_variables_string' ) ) {
+					$css_vars = Reykjavik_Library_CSS_Variables::get_variables_string();
+				}
 
-					$output .= self::generate_css_from_array( (array) self::get_custom_styles_array( $scope ) );
-
-				// Add stylesheets containing custom CSS variables
-
-					$output .= "\r\n\r\n" . self::get_variable_styles( $scope );
-
-				// Filter the output
-
-					$output = (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_css_raw', $output, $scope );
-
-				// Apply replacements
-
-					if ( ! empty( $replacements ) ) {
-						$output = strtr( $output, $replacements );
-					}
-
-				// CSS generator info comment
-
-					$output .= "\r\n\r\n\r\n" . '/* ';
-					$output .= sprintf( 'Using Reykjavik theme by WebMan Design (https://www.webmandesign.eu), version %s.', REYKJAVIK_THEME_VERSION );
-					$output .= ' ';
-					$output .= sprintf( 'CSS generated on %s.', gmdate( 'Y/m/d H:i, e' ) );
-					$output .= ' */';
+				if ( ! empty( $css_vars ) ) {
+					$css_vars =
+						'/* START CSS variables */'
+						. PHP_EOL
+						. ':root { '
+						. PHP_EOL
+						. $css_vars
+						. PHP_EOL
+						. '}'
+						. PHP_EOL
+						. '/* END CSS variables */';
+				}
 
 
 			// Output
 
-				return $output;
+				return (string) $css_vars;
 
-		} // /get_css_raw
+		} // /get_css_variables
 
 
 
@@ -211,43 +136,26 @@ class Reykjavik_Customize_Styles {
 	 */
 
 		/**
-		 * Enqueue HTML head inline styles
-		 *
-		 * @uses  `wmhook_reykjavik_esc_css` global hook
+		 * Enqueue HTML head inline styles.
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 */
 		public static function inline_styles() {
 
-			// Requirements check
+			// Variables
 
-				/**
-				 * If `stylesheet-generator` is supported,
-				 * we only enqueue styles in Customizer preview screen.
-				 */
-				if (
-						current_theme_supports( 'stylesheet-generator' )
-						&& ! is_customize_preview()
-					) {
-					return;
-				}
-
-
-			// Helper variables
-
-				$output = trim( (string) self::get_css() );
+				$css  = (string) self::get_css_variables();
+				$css .= (string) self::get_css();
 
 
 			// Processing
 
-				if ( ! empty( $output ) ) {
-
+				if ( ! empty( $css ) ) {
 					wp_add_inline_style(
 						'reykjavik',
-						(string) apply_filters( 'wmhook_reykjavik_esc_css', $output )
+						(string) self::esc_css( $css, 'customize-styles' )
 					);
-
 				}
 
 		} // /inline_styles
@@ -255,12 +163,10 @@ class Reykjavik_Customize_Styles {
 
 
 		/**
-		 * Enqueue custom styles into Visual editor using Ajax
-		 *
-		 * This only runs if the theme does not support `stylesheet-generator`.
+		 * Enqueue custom styles into Content editor using Ajax.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  array $visual_editor_stylesheets
 		 */
@@ -268,12 +174,16 @@ class Reykjavik_Customize_Styles {
 
 			// Processing
 
-				if ( ! current_theme_supports( 'stylesheet-generator' ) ) {
-					/**
-					 * @see  `stargazer_get_editor_styles` https://github.com/justintadlock/stargazer/blob/master/inc/stargazer.php
-					 */
-					$visual_editor_stylesheets[20] = add_query_arg( 'action', 'reykjavik_editor_styles', admin_url( 'admin-ajax.php' ) );
-				}
+				/**
+				 * @see  `stargazer_get_editor_styles` https://github.com/justintadlock/stargazer/blob/master/inc/stargazer.php
+				 */
+				$visual_editor_stylesheets[90] = esc_url_raw( add_query_arg(
+					array(
+						'action' => 'reykjavik_editor_styles',
+						'ver'    => REYKJAVIK_THEME_VERSION . '.' . get_theme_mod( '__customize_timestamp' ),
+					),
+					admin_url( 'admin-ajax.php' )
+				) );
 
 
 			// Output
@@ -285,299 +195,30 @@ class Reykjavik_Customize_Styles {
 
 
 		/**
-		 * Ajax callback for outputting custom styles for Visual editor
-		 *
-		 * This only runs if the theme does not support `stylesheet-generator`.
+		 * Ajax callback for outputting custom styles for Visual editor.
 		 *
 		 * @see  https://github.com/justintadlock/stargazer/blob/master/inc/custom-colors.php
-		 * @uses  `wmhook_reykjavik_esc_css` global hook
 		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @since    1.4.0
+		 * @version  1.4.0
 		 */
-		public static function get_editor_custom_stylesheet() {
+		public static function get_editor_css_variables() {
 
-			// Requirements check
+			// Variables
 
-				if ( current_theme_supports( 'stylesheet-generator' ) ) {
-					return;
-				}
+				$css_vars = self::get_css_variables();
 
 
 			// Processing
 
-				header( 'Content-type: text/css' );
-
-				echo apply_filters( 'wmhook_reykjavik_esc_css', self::get_css( 'editor' ) );
+				if ( ! empty( $css_vars ) ) {
+					header( 'Content-type: text/css' );
+					echo (string) self::esc_css( $css_vars, 'customize-styles-editor' );
+				}
 
 				die();
 
-		} // /get_editor_custom_stylesheet
-
-
-
-
-
-	/**
-	 * 30) Setup
-	 */
-
-		/**
-		 * Getting array of more advanced custom styles
-		 *
-		 * These styles are set in array as they require more calculation
-		 * and processing in oppose to custom CSS variables.
-		 *
-		 * @since    1.0.0
-		 * @version  1.3.0
-		 *
-		 * @param  string $scope
-		 */
-		public static function get_custom_styles_array( $scope = '' ) {
-
-			// Helper variables
-
-				$output = array();
-
-				$helper = apply_filters( 'wmhook_reykjavik_customize_styles_get_custom_styles_array_helper', array(
-					'layout_width_site'    => absint( Reykjavik_Library_Customize::get_theme_mod( 'layout_width_site' ) ),
-					'layout_width_content' => absint( Reykjavik_Library_Customize::get_theme_mod( 'layout_width_content' ) ),
-					'typography_size_html' => absint( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) ),
-				), $scope );
-
-
-			// Processing
-
-				if ( empty( $scope ) ) {
-				// Frontend styles
-
-					$output = array(
-
-						'customizer-styles-title' => array(
-							'custom' => '/* Customizer styles: calculated, frontend */',
-						),
-
-						/**
-						 * Typography
-						 */
-
-							'typography' => array(
-								'custom' => '/* Typography */',
-							),
-
-							'typography-media-query-open' => array(
-								'custom' => "\t" . '@media only screen and (min-width: 28em) {',
-							),
-
-								'typography-font-size-html' => array(
-									'selector' => 'html',
-									'styles'   => array(
-										'font-size' => ( $helper['typography_size_html'] / 16 * 100 ) . '%',
-									),
-								),
-
-							'typography-media-query-close' => array(
-								'custom' => "\t" . '}',
-							),
-
-						/**
-						 * Layout
-						 */
-
-							'layout' => array(
-								'custom' => '/* Layout */',
-							),
-
-							'layout-width-site' => array(
-								'selector' => implode( ', ', array(
-									'.site-layout-boxed .site',
-								) ),
-								'styles'   => array(
-									'max-width|1' => $helper['layout_width_site'] . 'px',
-									'max-width|2' => ( $helper['layout_width_site'] / $helper['typography_size_html'] ) . 'rem',
-								),
-							),
-
-							'layout-width-content' => array(
-								'selector' => implode( ', ', array(
-									// All the selectors with `@extend %content_width;` from SASS files // $content_width
-									'.site-header-inner',
-									'.intro-inner',
-									'.intro-special .intro',
-									'.site-content-inner',
-									'.nav-links',
-									'.page-template-child-pages:not(.fl-builder) .site-main .entry-content',
-									'.list-child-pages-container',
-									'.fl-builder .comments-area',
-									'.content-layout-no-paddings .comments-area',
-									'.content-layout-stretched .comments-area',
-									'.site-footer-area-inner',
-									'.site .fl-row-fixed-width',
-									'.breadcrumbs',
-								) ),
-								'styles'   => array(
-									'max-width|1' => $helper['layout_width_content'] . 'px',
-									'max-width|2' => ( $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
-								),
-							),
-
-							'layout-width-content-golden' => array(
-								'selector' => implode( ', ', array(
-									// $content_width * $golden_major
-									'.fl-builder div.sharedaddy',
-									'.content-layout-no-paddings div.sharedaddy',
-									'.fl-builder .entry-author',
-									'.content-layout-no-paddings .entry-author',
-								) ),
-								'styles'   => array(
-									'max-width|1' => absint( .62 * $helper['layout_width_content'] ) . 'px',
-									'max-width|2' => ( .62 * $helper['layout_width_content'] / $helper['typography_size_html'] ) . 'rem',
-								),
-							),
-
-					);
-
-				} else {
-				// Visual Editor styles
-
-					$output = array(
-
-						'editor-' . 'customizer-styles-title' => array(
-							'custom' => '/* Customizer styles: calculated, visual editor */',
-						),
-
-						/**
-						 * Typography
-						 */
-
-							'editor-' . 'typography' => array(
-								'custom' => '/* Typography */',
-							),
-
-							'editor-' . 'typography-font-size-html' => array(
-								'selector' => 'html',
-								'styles'   => array(
-									'font-size' => '100%', // First, we have to reset the initial font size
-								),
-							),
-
-							'editor-' . 'typography-media-query-open' => array(
-								'custom' => "\t" . '@media only screen and (min-width: 28em) {',
-							),
-
-								'editor-' . 'typography-font-size-body' => array(
-									'selector' => '.mce-content-body',
-									'styles'   => array(
-										'font-size' => ( $helper['typography_size_html'] / 16 * 100 ) . '%',
-									),
-								),
-
-							'editor-' . 'typography-media-query-close' => array(
-								'custom' => "\t" . '}',
-							),
-
-						/**
-						 * Layout
-						 */
-
-							'editor-' . 'layout' => array(
-								'custom' => '/* Layout */',
-							),
-
-							'editor-' . 'layout-max-width' => array(
-								'selector' => 'html, html[lang]', // We need to try for higher specificity to override later default setup.
-								'styles'   => array(
-									'max-width' => ( $helper['layout_width_content'] + 40 ) . 'px',
-								),
-							),
-
-					);
-
-				}
-
-
-			// Output
-
-				return (array) apply_filters( 'wmhook_reykjavik_customize_styles_get_custom_styles_array', $output, $scope, $helper );
-
-		} // /get_custom_styles_array
-
-
-
-		/**
-		 * Get styles from variable stylesheets
-		 *
-		 * The stylesheets containing custom CSS variables
-		 * are enqueued and processed here,
-		 * and pure CSS string is outputted.
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $scope
-		 */
-		public static function get_variable_styles( $scope = '' ) {
-
-			// Requirements check
-
-				if ( ! is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles' ) ) {
-					return '';
-				}
-
-
-			// Helper variables
-
-				/**
-				 * These files are being loaded from a child theme first, if found.
-				 * You can simply override these stylesheet files (`assets/css/custom-styles-$scope-$type.css`)
-				 * by redefining them in your child theme.
-				 *
-				 * But it is probably better to just define a new additional stylesheet file of the scope in your
-				 * child theme, such as `child-theme/assets/css/custom-styles-add.css` and do the magic there.
-				 * IMPORTANT: So, do not create additional stylesheet files in parent theme's `assets/css/` folder!
-				 */
-				$types = apply_filters( 'wmhook_reykjavik_customize_styles_get_variable_styles_types', array(
-
-					// Frontend ($scope='') stylesheet types
-					'' => array(
-						'',    // Default stylesheet file of the scope.
-						'add', // Additional stylesheet file of the scope.
-					),
-
-					// Visual editor ($scope='editor') stylesheet types
-					'editor' => array(
-						'',    // Default stylesheet file of the scope.
-						'add', // Additional stylesheet file of the scope.
-					),
-
-				) );
-
-
-			// Processing
-
-				ob_start();
-
-				if ( isset( $types[ $scope ] ) ) {
-					foreach ( (array) $types[ $scope ] as $type ) {
-
-						$file_path = 'assets/css/custom-styles-' . sanitize_file_name( $scope ) . '-' . sanitize_file_name( $type ) . '.css';
-						$file_path = str_replace(
-							array( '--', '-.' ),
-							array( '-', '.' ),
-							$file_path
-						);
-
-						locate_template( $file_path, true, false );
-
-					}
-				}
-
-
-			// Output
-
-				return ob_get_clean();
-
-		} // /get_variable_styles
+		} // /get_editor_css_variables
 
 
 
@@ -588,136 +229,39 @@ class Reykjavik_Customize_Styles {
 	 */
 
 		/**
-		 * Turns styles array into CSS string
+		 * Customizer save timestamp.
 		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @subpackage  Customize Options
 		 *
-		 * @param  array $styles_array
+		 * @since    1.4.0
+		 * @version  1.4.0
 		 */
-		public static function generate_css_from_array( $styles_array = array() ) {
-
-			// Requirements check
-
-				if (
-						empty( $styles_array )
-						|| ! is_array( $styles_array )
-					) {
-					return '';
-				}
-
-
-			// Helper variables
-
-				$output = '';
-
-
-			// Processing
-
-				foreach ( $styles_array as $selector ) {
-
-					// Check condition first, if set
-
-						if (
-								isset( $selector['condition'] )
-								&& ! trim( $selector['condition'] )
-							) {
-							continue;
-						}
-
-					// Process the array
-
-						if (
-								isset( $selector['selector'] )
-								&& $selector['selector']
-								&& isset( $selector['styles'] )
-								&& is_array( $selector['styles'] )
-								&& ! empty( $selector['styles'] )
-							) {
-
-							// When CSS selector and styles set up
-
-								$selector_styles = $prepend = '';
-
-								$prepend = ( ! isset( $selector['prepend'] ) ) ? ( "\t\t" ) : ( $selector['prepend'] );
-
-								if ( is_array( $selector['selector'] ) ) {
-
-									// Replace placeholders in selector string
-									// array( 'selector string with {p}', 'placeholder' )
-
-										$selector['selector'] = str_replace( '{p}', $selector['selector'][1], $selector['selector'][0] );
-
-								}
-
-								$selector['selector'] = str_replace( ', ', ",\r\n" . $prepend, $selector['selector'] );
-
-								foreach ( $selector['styles'] as $property => $style ) {
-									if ( trim( $style ) ) {
-
-										// This is for multiple overridden properties
-
-											if ( strpos( $property, '|' ) ) {
-												$property = explode( '|', $property );
-												$property = $property[0];
-											}
-
-										$selector_styles .= $prepend . "\t" . $property . ': ' . trim( $style ) . ';' . "\r\n";
-
-									}
-								} // /foreach
-
-								if ( $selector_styles ) {
-									$output .= $prepend . $selector['selector'] . ' {';
-									$output .= "\r\n" . $selector_styles;
-									$output .= $prepend . '}' . "\r\n\r\n";
-								}
-
-						} elseif (
-								isset( $selector['custom'] )
-								&& $selector['custom']
-							) {
-
-							// Custom texts
-
-								$output .= "\r\n\t" . $selector['custom'] . "\r\n\r\n";
-
-						}
-
-				} // /foreach
-
+		public static function customize_timestamp() {
 
 			// Output
 
-				return $output;
+				set_theme_mod( '__customize_timestamp', esc_attr( gmdate( 'ymdHis' ) ) );
 
-		} // /generate_css_from_array
+		} // /customize_timestamp
 
 
 
 		/**
-		 * Is stylesheet generated?
+		 * Escape CSS code.
 		 *
-		 * @subpackage  Customize Options
+		 * @since    1.4.0
+		 * @version  1.4.0
 		 *
-		 * @since    1.3.0
-		 * @version  1.3.0
+		 * @param  string $css
+		 * @param  string $scope  Optional CSS code identification for better filtering.
 		 */
-		public static function is_stylesheet_generated() {
-
-			// Helper variables
-
-				$wp_upload_dir    = wp_upload_dir();
-				$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
+		public static function esc_css( $css = '', $scope = '' ) {
 
 			// Output
 
-				return (bool) apply_filters(
-					'wmhook_reykjavik_is_stylesheet_generated',
-					file_exists( $theme_upload_dir . 'reykjavik-styles.css' )
-				);
+				return (string) apply_filters( 'wmhook_reykjavik_esc_css', $css, $scope );
 
-		} // /is_stylesheet_generated
+		} // /esc_css
 
 
 

@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -40,7 +40,7 @@ class Reykjavik_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 */
 		private function __construct() {
 
@@ -49,13 +49,6 @@ class Reykjavik_Setup {
 				// Setup
 
 					self::content_width();
-
-					/**
-					 * Declare support for stylesheet file generator
-					 *
-					 * Has to be declared early for theme upgrades to regenerate styles correctly.
-					 */
-					// add_theme_support( 'stylesheet-generator' );
 
 				// Hooks
 
@@ -239,7 +232,7 @@ class Reykjavik_Setup {
 		 * as indicating support for post thumbnails.
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 */
 		public static function setup() {
 
@@ -310,12 +303,12 @@ class Reykjavik_Setup {
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
 					 */
 					add_theme_support( 'html5', array(
-							'caption',
-							'comment-form',
-							'comment-list',
-							'gallery',
-							'search-form',
-						) );
+						'caption',
+						'comment-form',
+						'comment-list',
+						'gallery',
+						'search-form',
+					) );
 
 				// Custom header
 
@@ -329,8 +322,8 @@ class Reykjavik_Setup {
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
 					 */
 					add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
-							'default-color' => 'e3e3e4',
-						) ) );
+						'default-color' => 'e3e3e4',
+					) ) );
 
 				// Post formats
 
@@ -349,39 +342,17 @@ class Reykjavik_Setup {
 					// Image sizes (x, y, crop)
 
 						if ( ! empty( $image_sizes ) ) {
-
 							foreach ( $image_sizes as $size => $setup ) {
-
 								if ( ! in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
-
 									add_image_size(
 										$size,
 										$image_sizes[ $size ][0],
 										$image_sizes[ $size ][1],
 										$image_sizes[ $size ][2]
 									);
-
 								}
-
-							} // /foreach
-
+							}
 						}
-
-				// Force-regenerate styles
-
-					if ( get_transient( 'reykjavik_regenerate_styles' ) ) {
-
-						if ( is_callable( 'Reykjavik_Library_Customize_Styles::generate_main_css_all' ) ) {
-							Reykjavik_Library_Customize_Styles::generate_main_css_all();
-						}
-
-						if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles_cache_flush' ) ) {
-							Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
-						}
-
-						delete_transient( 'reykjavik_regenerate_styles' );
-
-					}
 
 		} // /setup
 
@@ -839,22 +810,6 @@ class Reykjavik_Setup {
 	/**
 	 * 70) Others
 	 */
-
-		/**
-		 * Set transient to force styles regeneration
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function regenerate_styles() {
-
-			// Processing
-
-				set_transient( 'reykjavik_regenerate_styles', true, 2 * 60 * 60 );
-
-		} // /regenerate_styles
-
-
 
 		/**
 		 * Register post meta
