@@ -11,9 +11,9 @@
 // Body
 
 	body {
-		// This gets overridden with WordPress custom-background styles in HTML head,
-		// but is used in editor styles, that's why we need to define it here.
-		background-color: map_get( $colors, 'body_background' ); //*
+		// Default body background.
+		// @see  add_theme_support( 'custom-background', $args );
+		background-color: #e3e3e4;
 	}
 
 	*,

@@ -24,14 +24,10 @@
 		// Overlay
 
 			.wp-custom-header::before {
-				/*[*/
-				background-color: map_get( $colors, 'intro_overlay_background' );
-				opacity: .6;
-				/*]*/
-				/*//
-				background-color: [[color_intro_overlay_background]];
-				opacity: [[color_intro_overlay_opacity]];
-				//*/
+				background-color: map_get( $customize_options, 'color_intro_overlay_background' );
+				opacity: map_get( $customize_options, 'color_intro_overlay_opacity' );
+				background-color: var(--color_intro_overlay_background);
+				opacity: var(--color_intro_overlay_opacity);
 			}
 
 
@@ -47,12 +43,8 @@
 		// Front page title and excerpt (the intro text)
 
 			&-has-media .intro {
-				/*[*/
-				color: map_get( $colors, 'intro_overlay_text' );
-				/*]*/
-				/*//
-				color: [[color_intro_overlay_text]];
-				//*/
+				color: map_get( $customize_options, 'color_intro_overlay_text' );
+				color: var(--color_intro_overlay_text);
 
 				h2, h3, h4,
 				.h1, .h2, .h3, .h4,

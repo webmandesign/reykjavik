@@ -41,62 +41,39 @@
 
 
 
-// Default fonts
+// Typography
+
+	html {
+		font-size: 100%;
+	}
+
+	// Do not apply custom font size in editor!
+	// @link  https://support.webmandesign.eu/forums/topic/wpbakery-text-block-scroll-problem-when-using-list-elements/
+	// @media only screen and (min-width: 28em) {
+	// 	html {
+	// 		font-size: map_get( $customize_options, 'typography_size_html' );
+	// 		font-size: var(--typography_size_html);
+	// 	}
+	// }
 
 	.mce-content-body,
 	.mce-content-body .font-body {
-		font-family: #{ map_get( $font_family, 'body' ) };
+		font-family: #{ map_get( $customize_options, 'typography_fonts_text' ) };
+		font-family: var(--typography_fonts_text);
 	}
 
 	.mce-content-body .font-headings,
 	.mce-content-body .font-headings-primary {
-		font-family: #{ map_get( $font_family, 'headings' ) };
+		font-family: #{ map_get( $customize_options, 'typography_fonts_headings' ) };
+		font-family: var(--typography_fonts_headings);
 	}
 
 	.mce-content-body .font-logo,
 	.mce-content-body .font-headings-secondary {
-		font-family: #{ map_get( $font_family, 'logo' ) };
+		font-family: #{ map_get( $customize_options, 'typography_fonts_logo' ) };
+		font-family: var(--typography_fonts_logo);
 	}
 
 	.mce-content-body .font-inherit {
 		font-family: inherit;
 	}
-
-
-
-//
-// Do not remove this! It is conditional CSS comment!
-//
-
-/**if(typography_custom_fonts)
-
-	.mce-content-body,
-	.mce-content-body .font-body {
-		font-family: [[typography_fonts_text]];
-	}
-
-	.mce-content-body .font-headings,
-	.mce-content-body .font-headings-primary,
-	h1, .h1,
-	h2, .h2,
-	h3, .h3,
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		font-family: [[typography_fonts_headings]];
-	}
-
-	.mce-content-body .font-logo,
-	.mce-content-body .font-headings-secondary,
-	h1.display-1, h2.display-1, h3.display-1,
-	.display-1.h1, .display-1.h2, .display-1.h3,
-	h1.display-2, h2.display-2, h3.display-2,
-	.display-2.h1, .display-2.h2, .display-2.h3,
-	h1.display-3, h2.display-3, h3.display-3,
-	.display-3.h1, .display-3.h2, .display-3.h3,
-	h1.display-4, h2.display-4, h3.display-4,
-	.display-4.h1, .display-4.h2, .display-4.h3 {
-		font-family: [[typography_fonts_logo]];
-	}
-
-endif(typography_custom_fonts)**/

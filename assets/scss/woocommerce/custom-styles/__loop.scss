@@ -14,12 +14,8 @@ ul.products {
 
 		.star-rating {
 			@extend %site_content_colors;
-			/*[*/
-			box-shadow: 0 0 0 ( $golden_major +em ) map_get( $colors, 'content_background' );
-			/*]*/
-			/*//
-			box-shadow: 0 0 0 #{ $golden_major +em } [[color_content_background]];
-			//*/
+			box-shadow: 0 0 0 ( $golden_major +em ) map_get( $customize_options, 'color_content_background' );
+			box-shadow: 0 0 0 ( $golden_major +em ) var(--color_content_background);
 		}
 
 		.button,

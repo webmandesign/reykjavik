@@ -25,13 +25,12 @@
 	// There are `{{RTL}}` notes left in the code where change is applicable.
 
 		$language_direction: ltr !default;
+		$left: left;
+		$right: right;
 
 		@if rtl == $language_direction {
 			$left: right;
 			$right: left;
-		} @else {
-			$left: left;
-			$right: right;
 		}
 
 	// Golden ratio

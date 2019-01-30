@@ -111,7 +111,9 @@
 			min-height: 0 !important; // Have to force this to keep Flex slider items responsive.
 
 			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				max-width: ( $golden_major - .04 ) * $content_width *$px; /* $content_width */
+				/* $content_width */
+				max-width: calc( #{ $golden_major - .04 } * #{ map_get( $customize_options, 'layout_width_content' ) } );
+				max-width: calc( #{ $golden_major - .04 } * var(--layout_width_content) );
 			}
 
 			.flex-viewport & {

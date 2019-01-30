@@ -125,8 +125,8 @@
 	/* $content_width */
 	%wc_content_width {
 		@extend %wc_basic_width;
-		max-width: $content_width +px;
-		max-width: $content_width * $px;
+		max-width: map_get( $customize_options, 'layout_width_content' );
+		max-width: var(--layout_width_content);
 	}
 
 	%wc_full_width {

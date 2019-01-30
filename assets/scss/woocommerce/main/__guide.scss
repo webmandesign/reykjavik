@@ -111,16 +111,18 @@
 
 			// Step arrow
 
+				$direction_multiplier: 1;
 				@if rtl == $language_direction {
 					$direction_multiplier: -1;
-				} @else {
-					$direction_multiplier: 1;
+				}
+
+				&::after {
+					@extend %wc_genericon;
 				}
 
 				@include responsive( map_get( $breakpoint, 'l' ) ) {
 
 					&::after {
-						@extend %wc_genericon;
 						@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
 						position: absolute;
 						#{$right}: 0; // {{RTL}}

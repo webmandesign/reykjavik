@@ -77,7 +77,9 @@ class Reykjavik_Customize_Styles {
 
 			// Processing
 
-				// @todo  If required. Otherwise write a comment.
+				if ( empty( Reykjavik_Library_Customize::get_theme_mod( 'footer_image' ) ) {
+					$css .= PHP_EOL . '.site-footer:not(.is-customize-preview)::before { display: none; }';
+				}
 
 
 			// Output

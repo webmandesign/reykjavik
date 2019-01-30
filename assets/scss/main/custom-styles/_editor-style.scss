@@ -31,6 +31,12 @@
 			padding: 20px;
 		}
 
+		html,
+		html[lang] {
+			max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + 40px );
+			max-width: calc( var(--layout_width_content) + 40px );
+		}
+
 		body {
 			width: 100%;
 			max-width: 38em;

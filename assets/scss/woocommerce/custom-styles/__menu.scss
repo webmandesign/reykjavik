@@ -9,16 +9,12 @@
 
 
 .shop-mobile-menu-links {
-	/*[*/
-	background-color: map_get( $colors, 'header_background' );
-	color: map_get( $colors, 'header_text' );
-	border-color: rgba( map_get( $colors, 'header_text' ), map_get( $border_opacity_from_text, 'header' ) );
-	/*]*/
-	/*//
-	background-color: [[color_header_background]];
-	color: [[color_header_text]];
-	border-color: [[color_header_text(#{ map_get( $border_opacity_from_text, 'header' ) * 100 })]];
-	//*/
+	background-color: map_get( $customize_options, 'color_header_background' );
+	color: map_get( $customize_options, 'color_header_text' );
+	border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+	background-color: var(--color_header_background);
+	color: var(--color_header_text);
+	border-color: var(--color_header_text--a20);
 
 	.button:not(:hover):not(:focus):not(:active) {
 		background: transparent;
