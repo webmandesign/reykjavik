@@ -485,8 +485,8 @@ final class Reykjavik_Library_Customize {
 
 									$option_id = $default = $description = '';
 
-									if ( isset( $option_id ) ) {
-										$option_id = $option_id;
+									if ( isset( $theme_option['id'] ) ) {
+										$option_id = $theme_option['id'];
 									}
 									if ( isset( $theme_option['default'] ) ) {
 										$default = $theme_option['default'];
