@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.4.0
- * @version  1.4.0
+ * @version  1.4.1
  *
  * Contents:
  *
@@ -66,7 +66,7 @@ class Reykjavik_Library_CSS_Variables {
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
 		 * @since    1.4.0
-		 * @version  1.4.0
+		 * @version  1.4.1
 		 */
 		public static function get_variables_array() {
 
@@ -153,7 +153,8 @@ class Reykjavik_Library_CSS_Variables {
 						);
 					}
 
-					$css_vars[ '--' . sanitize_title( $option['id'] ) ] = esc_attr( $value );
+					// Do not apply `esc_attr()` as it will escape quote marks, such as in background image URL.
+					$css_vars[ '--' . sanitize_title( $option['id'] ) ] = $value;
 
 					/**
 					 * Filters CSS variables output in array after each single variable processing.

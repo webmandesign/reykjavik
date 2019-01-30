@@ -1,5 +1,17 @@
 # Reykjavik Changelog
 
+## 1.4.1
+
+* **Fix**: Background image URL escaping in CSS code
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	library/includes/classes/class-css-variables.php
+
+
 ## 1.4.0
 
 * **Add**: WP Subtitle plugin compatibility
