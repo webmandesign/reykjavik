@@ -145,7 +145,7 @@
 			border-color: rgba( map_get( $customize_options, 'color_intro_widgets_text' ), 20 / 100 );
 			background-color: var(--color_intro_widgets_background);
 			color: var(--color_intro_widgets_text);
-			border-color: var(--color_intro_widgets_text-20);
+			border-color: var(--color_intro_widgets_text--a20);
 
 			h2, h3, h4,
 			.h1, .h2, .h3, .h4,

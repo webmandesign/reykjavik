@@ -203,9 +203,9 @@
 			require REYKJAVIK_PATH_PLUGINS . 'one-click-demo-import/one-click-demo-import.php';
 		}
 
-	// Subtitles
+	// Subtitles & WP Subtitle
 
-		if ( class_exists( 'Subtitles' ) ) {
+		if ( function_exists( 'get_the_subtitle' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'subtitles/subtitles.php';
 		}
 
