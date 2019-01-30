@@ -9,9 +9,9 @@
 @keyframes rotate { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
   100% { -webkit-transform: rotate(359deg); transform: rotate(359deg); } }
 
-.has-intro .woocommerce-products-header .page-title, .woocommerce-cart .coupon label, .woocommerce-checkout .checkout_coupon label, .woocommerce input[type="checkbox"]:first-child, .woocommerce input[type="radio"]:first-child, ul.products .product .entry-subtitle, .has-intro .site-main > .page-title { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; line-height: 1px; overflow: hidden; }
+.has-intro .woocommerce-products-header .page-title, .woocommerce-cart .coupon label, .woocommerce-checkout .checkout_coupon label, .woocommerce input[type="checkbox"]:first-child, .woocommerce input[type="radio"]:first-child, ul.products .product .entry-subtitle, .has-intro .site-main > .page-title { clip: rect(1px, 1px, 1px, 1px); -webkit-clip-path: inset(50%); clip-path: inset(50%); position: absolute !important; width: 1px; height: 1px; line-height: 1px; overflow: hidden; }
 
-.woocommerce label[for="rememberme"] input[type="checkbox"]:first-child { clip: auto; position: static !important; height: auto; width: auto; line-height: normal; overflow: visible; }
+.woocommerce label[for="rememberme"] input[type="checkbox"]:first-child { clip: auto !important; -webkit-clip-path: none; clip-path: none; position: static !important; height: auto; width: auto; line-height: normal; overflow: visible; }
 
 .shop_table .product-remove a::before, .woocommerce-remove-coupon::before, p.stars a::before, .single-product-images .woocommerce-product-gallery__trigger::before, .shop-mobile-menu-links .button::before, .widget_shopping_cart .remove::before, .title .edit::before, .woocommerce-password-strength::before, .woocommerce-password-hint::before, .single-product .summary .reset_variations::before, .star-rating, .woocommerce-result-count::before, .woocommerce-ordering::before, ul.products .product .button::before, ul.products .product .added_to_cart::before, .checkout-guide-title::after, .demo_store::before, .woocommerce-store-notice::before, .woocommerce-store-notice__dismiss-link::before, .woocommerce-tabs .tabs a::before, .return-to-shop .button::before, .woocommerce-thankyou-order-failed::before, .woocommerce-thankyou-order-received::before, .woocommerce-MyAccount-navigation a::before, .digital-downloads li::before, .widget_layered_nav li::before, .widget_layered_nav_filters a::after, .widget_product_categories li::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
 
@@ -730,7 +730,7 @@ ul.products.columns-1 .product { width: 97.24%; }
 
 @media only screen and (min-width: 55em) { .woocommerce-tabs.tabs-count-1 .panel { padding-top: 0; } }
 
-@media only screen and (min-width: 55em) { .woocommerce-tabs .panel > h2:first-child { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; line-height: 1px; overflow: hidden; }
+@media only screen and (min-width: 55em) { .woocommerce-tabs .panel > h2:first-child { clip: rect(1px, 1px, 1px, 1px); -webkit-clip-path: inset(50%); clip-path: inset(50%); position: absolute !important; width: 1px; height: 1px; line-height: 1px; overflow: hidden; }
   .woocommerce-tabs .panel > h2:first-child + * { margin-top: 0; } }
 
 /* FILE: woocommerce/tabs/__description.scss */

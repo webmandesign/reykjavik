@@ -928,7 +928,7 @@ class Reykjavik_Customize {
 									'type'        => 'radio',
 									'id'          => 'layout_intro_widgets_display',
 									'label'       => esc_html__( 'Enable intro widgets', 'reykjavik' ),
-									'description' => sprintf( esc_html_x( 'If you enable this widget area also for archives, we recommend using %s plugin to control its appearance further more.', '%s: Linked plugin name.', 'reykjavik' ), '<a href="https://wordpress.org/plugins/woosidebars/">WooSidebars</a>' ),
+									'description' => esc_html__( 'If you enable this widget area also for archives, we recommend using a sidebar management plugin to control its appearance further more.', 'reykjavik' ),
 									'default'     => '',
 									'choices'     => array(
 										''       => esc_html__( 'On singular pages only', 'reykjavik' ),

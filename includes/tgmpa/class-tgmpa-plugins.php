@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -93,7 +93,7 @@ class Reykjavik_TGMPA_Plugins {
 		 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.4.0
 		 */
 		public static function recommend() {
 
@@ -105,64 +105,51 @@ class Reykjavik_TGMPA_Plugins {
 				 */
 				$plugins = apply_filters( 'wmhook_reykjavik_tgmpa_plugins_recommend_plugins', array(
 
-						/**
-						 * WordPress Repository plugins
-						 */
+					'beaver-builder' => array(
+						'name'        => 'Beaver Builder',
+						'description' => esc_html__( 'Easy to use front-end page builder.', 'reykjavik' ),
+						'slug'        => 'beaver-builder-lite-version',
+						'required'    => false,
+						'is_callable' => 'FLBuilder::init',
+					),
 
-							// Recommended
+					'webman-templates' => array(
+						'name'        => 'WebMan Templates',
+						'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'reykjavik' ),
+						'slug'        => 'webman-templates',
+						'required'    => false,
+					),
 
-								'beaver-builder' => array(
-									'name'        => 'Beaver Builder',
-									'description' => esc_html__( 'Easy to use front-end page builder.', 'reykjavik' ),
-									'slug'        => 'beaver-builder-lite-version',
-									'required'    => false,
-									'is_callable' => 'FLBuilder::init',
-								),
+					'advanced-custom-fields' => array(
+						'name'        => 'Advanced Custom Fields',
+						'description' => esc_html__( 'For easy post and page attributes setup.', 'reykjavik' ),
+						'slug'        => 'advanced-custom-fields',
+						'required'    => false,
+						'is_callable' => 'acf_add_local_field_group',
+					),
 
-								'webman-templates' => array(
-									'name'        => 'WebMan Templates',
-									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'reykjavik' ),
-									'slug'        => 'webman-templates',
-									'required'    => false,
-								),
+					'jetpack' => array(
+						'name'        => 'Jetpack',
+						'description' => esc_html__( 'Adding portfolio and testimonials functionality.', 'reykjavik' ),
+						'slug'        => 'jetpack',
+						'required'    => false,
+					),
 
-								'advanced-custom-fields' => array(
-									'name'        => 'Advanced Custom Fields',
-									'description' => esc_html__( 'For easy post and page attributes setup.', 'reykjavik' ),
-									'slug'        => 'advanced-custom-fields',
-									'required'    => false,
-									'is_callable' => 'acf_add_local_field_group',
-								),
+					'woocommerce' => array(
+						'name'        => 'WooCommerce',
+						'description' => esc_html__( 'Adding e-commerce functionality.', 'reykjavik' ),
+						'slug'        => 'woocommerce',
+						'required'    => false,
+					),
 
-								'jetpack' => array(
-									'name'        => 'Jetpack',
-									'description' => esc_html__( 'Adding portfolio and testimonials functionality.', 'reykjavik' ),
-									'slug'        => 'jetpack',
-									'required'    => false,
-								),
+					'one-click-demo-import' => array(
+						'name'        => 'One Click Demo Import',
+						'description' => esc_html__( 'For installing theme demo content easily.', 'reykjavik' ),
+						'slug'        => 'one-click-demo-import',
+						'required'    => false,
+					),
 
-								'woocommerce' => array(
-									'name'        => 'WooCommerce',
-									'description' => esc_html__( 'Adding e-commerce functionality.', 'reykjavik' ),
-									'slug'        => 'woocommerce',
-									'required'    => false,
-								),
-
-								'woosidebars' => array(
-									'name'        => 'WooSidebars',
-									'description' => esc_html__( 'Adding custom sidebars management, allowing page layout modifications by removing sidebars.', 'reykjavik' ),
-									'slug'        => 'woosidebars',
-									'required'    => false,
-								),
-
-								'one-click-demo-import' => array(
-									'name'        => 'One Click Demo Import',
-									'description' => esc_html__( 'For installing theme demo content easily.', 'reykjavik' ),
-									'slug'        => 'one-click-demo-import',
-									'required'    => false,
-								),
-
-					) );
+				) );
 
 				$config = apply_filters( 'wmhook_reykjavik_tgmpa_plugins_recommend_config', array() );
 

@@ -6327,7 +6327,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris el
 		<guid isPermaLink="false">http://themedemos.webmandesign.eu/reykjavik/?page_id=202</guid>
 		<description/>
 		<content:encoded><![CDATA[<h2>How to further control sidebar display?</h2>
-Sidebars and other widgetized areas display can be further controlled with <a href="https://wordpress.org/plugins/woosidebars/" target="_blank" rel="noopener noreferrer"><strong>WooSidebars</strong></a> plugin. If you only want to control display of specific widgets, you can use <a href="https://wordpress.org/plugins/jetpack/" target="_blank" rel="noopener noreferrer"><strong>Jetpack</strong></a> plugin’s <a href="https://jetpack.com/support/widget-visibility/" target="_blank" rel="noopener noreferrer">Visibility module</a> for that. Both of these will give you a great control over you website layouts.
+Sidebars and other widgetized areas display can be further controlled with a sidebar management plugin. If you only want to control display of specific widgets, you can use <a href="https://wordpress.org/plugins/jetpack/" target="_blank" rel="noopener noreferrer"><strong>Jetpack</strong></a> plugin’s <a href="https://jetpack.com/support/widget-visibility/" target="_blank" rel="noopener noreferrer">Visibility module</a> for that. Both of these will give you a great control over you website layouts.
 
 <hr />
 <p class="h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan aliquet erat sed tincidunt. Vestibulum cursus neque quis dignissim hendrerit.</p>
