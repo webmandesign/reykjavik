@@ -38,7 +38,7 @@ Please see `changelog.md` file.
 == Upgrade Notice ==
 
 = 1.4.0 =
-* Using CSS variables instead of generating a customized stylesheet, improving security, improving code.
+* Using CSS variables instead of generating a customized stylesheet, improving security, improving code, improving accessibility.
 
 
 == Resources ==
