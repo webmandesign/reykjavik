@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -185,7 +185,7 @@ class Reykjavik_Post {
 		 * @uses  `wmhook_reykjavik_title_primary_disable` global hook to disable `#primary` section H1
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  array $args Heading setup arguments
 		 */
@@ -199,7 +199,7 @@ class Reykjavik_Post {
 
 				if ( false !== $pre ) {
 					if ( true !== $pre ) {
-						echo $pre;
+						echo $pre; // Functionality bypass via filter.
 					}
 					return;
 				}
@@ -573,16 +573,16 @@ class Reykjavik_Post {
 			 * The output HTML is being cached.
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  1.4.0
 			 */
 			public static function list_child_pages() {
 
 				// Requirements check
 
 					if (
-							! is_page_template( 'templates/child-pages.php' )
-							|| ! self::is_singular()
-						) {
+						! is_page_template( 'templates/child-pages.php' )
+						|| ! self::is_singular()
+					) {
 						return;
 					}
 
@@ -599,17 +599,16 @@ class Reykjavik_Post {
 						ob_start();
 						get_template_part( 'templates/parts/loop/loop', 'child-pages' );
 
-						$output = ob_get_clean();
+						$output = wp_kses_post( ob_get_clean() );
 
-						// Cache child pages HTML output for a week
-
-							set_transient( $cache_key, $output, 7 * 24 * 60 * 60 );
+						// Cache child pages HTML output for a week.
+						set_transient( $cache_key, $output, 7 * 24 * 60 * 60 );
 					}
 
 
 				// Output
 
-					echo $output;
+					echo $output; // WPCS: XSS OK.
 
 			} // /list_child_pages
 

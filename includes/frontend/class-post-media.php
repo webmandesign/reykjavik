@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -121,7 +121,7 @@ class Reykjavik_Post_Media {
 		 * Entry media
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  array $args  Optional post helper variables.
 		 */
@@ -132,7 +132,7 @@ class Reykjavik_Post_Media {
 				$pre = apply_filters( 'wmhook_reykjavik_post_media_pre', false, $args );
 
 				if ( false !== $pre ) {
-					echo $pre;
+					echo $pre; // Functionality bypass via filter.
 					return;
 				}
 

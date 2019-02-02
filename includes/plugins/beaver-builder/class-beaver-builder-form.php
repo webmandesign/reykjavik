@@ -145,75 +145,69 @@ class Reykjavik_Beaver_Builder_Form {
 			// Processing
 
 				if ( 'class' == $name ) {
-
 					$field['options'] = array(
 
-							'' => esc_html__( '- Choose from predefined classes -', 'reykjavik' ),
+						'' => esc_html__( '- Choose from predefined classes -', 'reykjavik' ),
 
-							// Decoration classes
+						// Decoration classes
+						'optgroup-decoration' => array(
+							'label'   => esc_html__( 'Decorations:', 'reykjavik' ),
+							'options' => array(
 
-								'optgroup-decoration' => array(
-									'label'   => esc_html__( 'Decorations:', 'reykjavik' ),
-									'options' => array(
+								'has-small-box-shadow'  => esc_html__( 'Column shadow, small', 'reykjavik' ),
+								'has-medium-box-shadow' => esc_html__( 'Column shadow, medium', 'reykjavik' ),
+								'has-large-box-shadow'  => esc_html__( 'Column shadow, large', 'reykjavik' ),
 
-										'has-small-box-shadow'  => esc_html__( 'Column shadow, small', 'reykjavik' ),
-										'has-medium-box-shadow' => esc_html__( 'Column shadow, medium', 'reykjavik' ),
-										'has-large-box-shadow'  => esc_html__( 'Column shadow, large', 'reykjavik' ),
+							),
+						),
 
-									),
-								),
+						// Layout classes
+						'optgroup-layout' => array(
+							'label'   => esc_html__( 'Layout:', 'reykjavik' ),
+							'options' => array(
 
-							// Layout classes
+								'has-center-text-align' => esc_html__( 'Text center', 'reykjavik' ),
+								'has-left-text-align'   => esc_html__( 'Text left', 'reykjavik' ),
+								'has-right-text-align'  => esc_html__( 'Text right', 'reykjavik' ),
 
-								'optgroup-layout' => array(
-									'label'   => esc_html__( 'Layout:', 'reykjavik' ),
-									'options' => array(
+								'fullwidth' => esc_html__( 'Fullwidth elements', 'reykjavik' ),
 
-										'has-center-text-align' => esc_html__( 'Text center', 'reykjavik' ),
-										'has-left-text-align'   => esc_html__( 'Text left', 'reykjavik' ),
-										'has-right-text-align'  => esc_html__( 'Text right', 'reykjavik' ),
+								'hide-accessibly' => esc_html__( 'Hide accessibly (displayed in page builder edit mode only)', 'reykjavik' ),
 
-										'fullwidth' => esc_html__( 'Fullwidth elements', 'reykjavik' ),
+								'split-screen-row' => esc_html__( 'Split screen row (apply on full-height row only)', 'reykjavik' ),
 
-										'hide-accessibly' => esc_html__( 'Hide accessibly (displayed in page builder edit mode only)', 'reykjavik' ),
+								'has-rised-z-index' => esc_html__( 'Bring element to front (CSS z-index)', 'reykjavik' ),
 
-										'split-screen-row' => esc_html__( 'Split screen row (apply on full-height row only)', 'reykjavik' ),
+							),
+						),
 
-										'has-rised-z-index' => esc_html__( 'Bring element to front (CSS z-index)', 'reykjavik' ),
+						// Widget classes
+						'optgroup-widget' => array(
+							'label'   => esc_html__( 'Widgets:', 'reykjavik' ),
+							'options' => array(
 
-									),
-								),
+								'widget-title-style'           => esc_html__( 'Use default widget title styling', 'reykjavik' ),
+								'hide-widget-title-accessibly' => esc_html__( 'Hide widget title accessibly', 'reykjavik' ),
+								'hide-widget-title'            => esc_html__( 'Hide widget title forcefully', 'reykjavik' ),
 
-							// Widget classes
+							),
+						),
 
-								'optgroup-widget' => array(
-									'label'   => esc_html__( 'Widgets:', 'reykjavik' ),
-									'options' => array(
+						// Typography classes
+						'optgroup-typography' => array(
+							'label'   => esc_html__( 'Typography:', 'reykjavik' ),
+							'options' => array(
 
-										'widget-title-style'           => esc_html__( 'Use default widget title styling', 'reykjavik' ),
-										'hide-widget-title-accessibly' => esc_html__( 'Hide widget title accessibly', 'reykjavik' ),
-										'hide-widget-title'            => esc_html__( 'Hide widget title forcefully', 'reykjavik' ),
+								'has-extra-small-font-size' => esc_html__( 'Font size, extra small', 'reykjavik' ),
+								'has-small-font-size'       => esc_html__( 'Font size, small', 'reykjavik' ),
+								'has-smaller-font-size'     => esc_html__( 'Font size, smaller', 'reykjavik' ),
+								'has-large-font-size'       => esc_html__( 'Font size, large', 'reykjavik' ),
+								'has-extra-large-font-size'      => esc_html__( 'Font size, extra large', 'reykjavik' ),
 
-									),
-								),
+							),
+						),
 
-							// Typography classes
-
-								'optgroup-typography' => array(
-									'label'   => esc_html__( 'Typography:', 'reykjavik' ),
-									'options' => array(
-
-										'has-extra-small-font-size' => esc_html__( 'Font size, extra small', 'reykjavik' ),
-										'has-small-font-size'       => esc_html__( 'Font size, small', 'reykjavik' ),
-										'has-smaller-font-size'     => esc_html__( 'Font size, smaller', 'reykjavik' ),
-										'has-large-font-size'       => esc_html__( 'Font size, large', 'reykjavik' ),
-										'has-extra-large-font-size'      => esc_html__( 'Font size, extra large', 'reykjavik' ),
-
-									),
-								),
-
-						);
-
+					);
 				}
 
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -80,7 +80,7 @@ class Reykjavik_WooCommerce_Assets {
 		 * Enqueue assets
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 */
 		public static function enqueue() {
 
@@ -88,40 +88,22 @@ class Reykjavik_WooCommerce_Assets {
 
 				// Styles
 
-					if (
-						current_theme_supports( 'stylesheet-generator' )
-						&& ! Reykjavik_Customize_Styles::is_stylesheet_generated()
-					) {
+					wp_enqueue_style(
+						'reykjavik-stylesheet-woocommerce',
+						get_theme_file_uri( 'assets/css/woocommerce.css' ),
+						array( 'reykjavik-stylesheet-global' ),
+						esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+						'screen'
+					);
+					wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
 
-						wp_enqueue_style(
-							'reykjavik-stylesheet-fallback-woocommerce',
-							get_theme_file_uri( 'assets/css/woocommerce.css' ),
-							array( 'reykjavik-stylesheet-global' ),
-							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-							'screen'
-						);
-						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
-
-						wp_enqueue_style(
-							'reykjavik-stylesheet-fallback-custom-styles-woocommerce',
-							get_theme_file_uri( 'assets/css/custom-styles-woocommerce.css' ),
-							array( 'reykjavik-stylesheet-fallback-woocommerce' ),
-							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-							'screen'
-						);
-
-					} else {
-
-						wp_enqueue_style(
-							'reykjavik-stylesheet-woocommerce',
-							get_theme_file_uri( 'assets/css/woocommerce.css' ),
-							array( 'reykjavik-stylesheet-global' ),
-							esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-							'screen'
-						);
-						wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
-
-					}
+					wp_enqueue_style(
+						'reykjavik-stylesheet-custom-woocommerce',
+						get_theme_file_uri( 'assets/css/custom-styles-woocommerce.css' ),
+						array( 'reykjavik-stylesheet-woocommerce' ),
+						esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
+						'screen'
+					);
 
 				// Scripts
 

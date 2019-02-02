@@ -25,7 +25,7 @@
 		margin-#{$right}: $golden +em;
 	}
 
-	@include media( ( map_get( $breakpoint, 's' ), 'max-width' ) ) {
+	@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
 		float: $right; // {{RTL}}
 	}
 

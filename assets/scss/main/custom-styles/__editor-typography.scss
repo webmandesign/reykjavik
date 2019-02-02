@@ -41,63 +41,43 @@
 
 
 
-// Default fonts
+// Typography
 
-	.mce-content-body,
-	.mce-content-body .font-body {
-		font-family: #{ map_get( $font_family, 'body' ) };
+	html {
+		font-size: 100%;
 	}
 
-	.mce-content-body .font-headings,
-	.mce-content-body .font-headings-primary {
-		font-family: #{ map_get( $font_family, 'headings' ) };
-	}
-
-	.mce-content-body .font-logo,
-	.mce-content-body .font-headings-secondary {
-		font-family: #{ map_get( $font_family, 'logo' ) };
-	}
-
-	.mce-content-body .font-inherit {
-		font-family: inherit;
-	}
-
-
-
-//
-// Do not remove this! It is conditional CSS comment!
-//
-
-/**if(typography_custom_fonts)
+	// Do not apply custom font size in editor!
+	// @link  https://support.webmandesign.eu/forums/topic/wpbakery-text-block-scroll-problem-when-using-list-elements/
+	// @media only screen and (min-width: 28em) {
+	// 	html {
+	// 		font-size: map_get( $customize_options, 'typography_size_html' );
+	// 		font-size: var(--typography_size_html);
+	// 	}
+	// }
 
 	.mce-content-body,
 	.mce-content-body .font-body,
 	.mce-content-body .has-root-font-family {
-		font-family: [[typography_fonts_text]];
+		font-family: #{ map_get( $customize_options, 'typography_fonts_text' ) };
+		font-family: var(--typography_fonts_text);
 	}
 
 	.mce-content-body .font-headings,
 	.mce-content-body .font-headings-primary,
-	.mce-content-body .has-headings-font-family,
-	h1, .h1,
-	h2, .h2,
-	h3, .h3,
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		font-family: [[typography_fonts_headings]];
+	.mce-content-body .has-headings-font-family {
+		font-family: #{ map_get( $customize_options, 'typography_fonts_headings' ) };
+		font-family: var(--typography_fonts_headings);
 	}
 
 	.mce-content-body .font-logo,
 	.mce-content-body .font-headings-secondary,
-	.mce-content-body .has-site-title-font-family,
-	h1[class*="display-"],
-	h2[class*="display-"],
-	h3[class*="display-"],
-	.h1[class*="display-"],
-	.h2[class*="display-"],
-	.h3[class*="display-"] {
-		font-family: [[typography_fonts_logo]];
+	.mce-content-body .has-site-title-font-family {
+		font-family: #{ map_get( $customize_options, 'typography_fonts_logo' ) };
+		font-family: var(--typography_fonts_logo);
 	}
 
-endif(typography_custom_fonts)**/
+	.mce-content-body .font-inherit,
+	.mce-content-body .has-inherited-font-family {
+		font-family: inherit;
+	}

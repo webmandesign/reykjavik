@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  */
 
 
@@ -26,5 +26,5 @@
 	<span class="entry-meta-description">
 		<?php echo esc_html_x( 'Tagged as:', 'Post meta info description: tags list.', 'reykjavik' ); ?>
 	</span>
-	<?php echo $tags; ?>
+	<?php echo $tags; /* WPCS: XSS OK. */ ?>
 </span>

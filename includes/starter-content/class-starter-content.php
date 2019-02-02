@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -88,7 +88,7 @@ class Reykjavik_Starter_Content {
 		 * Widgets
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 */
 		public static function widgets() {
 
@@ -96,70 +96,70 @@ class Reykjavik_Starter_Content {
 
 				self::$content['widgets'] = array(
 
-						'sidebar' => array(
+					'sidebar' => array(
 
-							'search',
+						'search',
 
-							'text_sidebar' => array(
-								'text',
-								array(
-									'title' => esc_html_x( 'How to hide sidebar?', 'Theme starter content', 'reykjavik' ),
-									'text'  => esc_html_x( 'Remove all widgets from sidebar to hide it.', 'Theme starter content', 'reykjavik' ) . ' ' . esc_html_x( 'Or use WooSidebars plugin to manage all widget areas on your website and create your own ones.', 'Theme starter content', 'reykjavik' ),
-								),
+						'text_sidebar' => array(
+							'text',
+							array(
+								'title' => esc_html_x( 'How to hide sidebar?', 'Theme starter content', 'reykjavik' ),
+								'text'  => esc_html_x( 'Remove all widgets from sidebar to hide it.', 'Theme starter content', 'reykjavik' ) . ' ' . esc_html_x( 'Or use a sidebar management plugin to manage all widget areas on your website and create your own ones.', 'Theme starter content', 'reykjavik' ),
 							),
-
 						),
 
-						'intro' => array(
+					),
 
-							'text_intro_1' => array(
-								'text',
-								array(
-									'title' => esc_html_x( 'Intro Widgets', 'Theme starter content', 'reykjavik' ),
-									'text'  => esc_html_x( 'This is an Intro Widgets area displayed on a special page template.', 'Theme starter content', 'reykjavik' ),
-									'icon'  => 'genericons-neue genericons-neue-anchor',
-									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-in-harbor.jpg',
-								),
+					'intro' => array(
+
+						'text_intro_1' => array(
+							'text',
+							array(
+								'title' => esc_html_x( 'Intro Widgets', 'Theme starter content', 'reykjavik' ),
+								'text'  => esc_html_x( 'This is an Intro Widgets area displayed on a special page template.', 'Theme starter content', 'reykjavik' ),
+								'icon'  => 'genericons-neue genericons-neue-anchor',
+								'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-in-harbor.jpg',
 							),
-
-							'text_intro_2' => array(
-								'text',
-								array(
-									'title' => 'Lorem Ipsum',
-									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
-									'icon'  => 'genericons-neue genericons-neue-cart',
-									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing.jpg',
-								),
-							),
-
-							'text_intro_3' => array(
-								'text',
-								array(
-									'title' => 'Lorem Ipsum',
-									'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
-									'icon'  => 'genericons-neue genericons-neue-phone',
-									'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing-side-wind.jpg',
-								),
-							),
-
 						),
 
-						'footer' => array(
-							'meta',
-
-							'text_empty' => array(
-								'text',
-								array(
-									'title' => '',
-									'text'  => '',
-								),
+						'text_intro_2' => array(
+							'text',
+							array(
+								'title' => 'Lorem Ipsum',
+								'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
+								'icon'  => 'genericons-neue genericons-neue-cart',
+								'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing.jpg',
 							),
-
-							'text_business_info',
-							'text_about',
 						),
 
-					);
+						'text_intro_3' => array(
+							'text',
+							array(
+								'title' => 'Lorem Ipsum',
+								'text'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in mauris.',
+								'icon'  => 'genericons-neue genericons-neue-phone',
+								'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/starter-content/boat-sailing-side-wind.jpg',
+							),
+						),
+
+					),
+
+					'footer' => array(
+						'meta',
+
+						'text_empty' => array(
+							'text',
+							array(
+								'title' => '',
+								'text'  => '',
+							),
+						),
+
+						'text_business_info',
+						'text_about',
+					),
+
+				);
 
 		} // /widgets
 

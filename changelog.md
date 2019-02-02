@@ -1,13 +1,106 @@
 # Reykjavik Changelog
 
-## 2.0.0
+## 1.4.1
 
-* **Update**: Compatible with new Gutenberg editor (WordPress 5.0)
+* **Fix**: Background image URL escaping in CSS code
 
 ### Files changed:
 
 	changelog.md
+	readme.txt
 	style.css
+	library/includes/classes/class-css-variables.php
+
+
+## 1.4.0
+
+* **Add**: WP Subtitle plugin compatibility
+* **Update**: Support URL
+* **Update**: Improving code
+* **Update**: Improving security
+* **Update**: Improving accessibility
+* **Update**: Adding WPCS comments to code
+* **Update**: `.screen-reader-text` CSS class styles
+* **Update**: Improving customizer functionality
+* **Update**: Using CSS variables instead of generating customized stylesheet
+* **Update**: Removing obsolete functionality
+* **Update**: Updating readme file
+* **Update**: Setting `use strict` in JavaScript
+* **Update**: Removing all `locate_template()` function references
+* **Update**: Removing Smart Slider 3 code
+* **Update**: Localization
+* **Update**: Documentation
+
+### Files changed:
+
+	changelog.md
+	functions.php
+	readme.txt
+	style.css
+	assets/js/customize-preview.js
+	assets/js/scripts-beaver-builder-editor.js
+	assets/js/scripts-global.js
+	assets/js/scripts-masonry.js
+	assets/js/scripts-navigation-accessibility.js
+	assets/js/scripts-navigation-mobile.js
+	assets/js/scripts-widget-text.js
+	assets/js/scripts-woocommerce.js
+	assets/js/skip-link-focus-fix.js
+	assets/scss/_css-vars.scss
+	assets/scss/_setup.scss
+	assets/scss/custom-styles-editor.scss
+	assets/scss/custom-styles-woocommerce.scss
+	assets/scss/custom-styles.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	assets/scss/starter/_starter.scss
+	includes/custom-header/class-intro.php
+	includes/customize/class-customize-styles.php
+	includes/customize/class-customize.php
+	includes/frontend/class-assets.php
+	includes/frontend/class-loop.php
+	includes/frontend/class-menu.php
+	includes/frontend/class-post-media.php
+	includes/frontend/class-post.php
+	includes/plugins/beaver-builder/class-beaver-builder-setup.php
+	includes/plugins/elementor/class-elementor.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/plugins/subtitles/class-subtitles.php
+	includes/plugins/subtitles/subtitles.php
+	includes/plugins/woocommerce/class-woocommerce-assets.php
+	includes/plugins/woocommerce/class-woocommerce-customize.php
+	includes/plugins/woocommerce/class-woocommerce-loop.php
+	includes/plugins/woocommerce/class-woocommerce-pages.php
+	includes/plugins/woocommerce/class-woocommerce-setup.php
+	includes/plugins/woocommerce/class-woocommerce-wrappers.php
+	includes/setup/class-setup.php
+	includes/starter-content/class-starter-content.php
+	includes/tgmpa/class-tgmpa-plugins.php
+	includes/welcome/class-welcome.php
+	includes/widgets/class-wp-widget-recent-posts.php
+	languages/*.*
+	library/init.php
+	library/includes/classes/class-admin.php
+	library/includes/classes/class-core.php
+	library/includes/classes/class-css-variables.php
+	library/includes/classes/class-customize-control-html.php
+	library/includes/classes/class-customize-control-multiselect.php
+	library/includes/classes/class-customize-control-radio-matrix.php
+	library/includes/classes/class-customize-control-select.php
+	library/includes/classes/class-customize.php
+	library/includes/classes/class-sanitize.php
+	library/js/customize-control-multicheckbox.js
+	library/js/customize-control-radio-matrix.js
+	library/js/customize-controls.js
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/admin/welcome-quickstart.php
+	templates/parts/header/site-branding.php
+	templates/parts/intro/intro-content.php
+	templates/parts/menu/menu-social.php
+	templates/parts/meta/entry-meta-element-category.php
+	templates/parts/meta/entry-meta-element-comments.php
+	templates/parts/meta/entry-meta-element-tags.php
 
 
 ## 1.3.1

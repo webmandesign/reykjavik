@@ -6,14 +6,13 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
  *   0) Init
  *  10) Classes
  *  20) Breadcrumbs
- *  30) Subtitles
  * 100) Others
  */
 class Reykjavik_WooCommerce_Setup {
@@ -34,7 +33,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 */
 		private function __construct() {
 
@@ -78,8 +77,6 @@ class Reykjavik_WooCommerce_Setup {
 						remove_filter( 'wp_nav_menu', 'Reykjavik_Menu::mobile_menu_search', 20 );
 
 					// Actions
-
-						add_action( 'init', __CLASS__ . '::shortcodes_enable_subtitle' );
 
 						add_action( 'init', __CLASS__ . '::remove_gallery_noscript' );
 
@@ -285,88 +282,6 @@ class Reykjavik_WooCommerce_Setup {
 				}
 
 		} // /breadcrumb_navxt
-
-
-
-
-
-	/**
-	 * 30) Subtitles
-	 */
-
-		/**
-		 * Subtitles plugin support: Force subtitle display
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  boolean $subtitle_view_supported
-		 */
-		public static function subtitle_view_support_add( $subtitle_view_supported ) {
-
-			// Processing
-
-				add_filter( 'subtitle_view_supported', '__return_true' );
-
-		} // /subtitle_view_support_add
-
-
-
-		/**
-		 * Subtitles plugin support: Remove forced subtitle display
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  boolean $subtitle_view_supported
-		 */
-		public static function subtitle_view_support_remove( $subtitle_view_supported ) {
-
-			// Processing
-
-				remove_filter( 'subtitle_view_supported', '__return_true' );
-
-		} // /subtitle_view_support_remove
-
-
-
-		/**
-		 * Subtitles plugin support in WooCommerce shortcodes
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function shortcodes_enable_subtitle() {
-
-			// Requirements check
-
-				if ( ! class_exists( 'Subtitles' ) ) {
-					return;
-				}
-
-
-			// Helper variables
-
-				$shortcodes = array(
-						'product_cat',
-						'recent_products',
-						'products',
-						'sale_products',
-						'best_selling_products',
-						'top_rated_products',
-						'featured_products',
-						'product_attribute',
-					);
-
-
-			// Processing
-
-				foreach ( $shortcodes as $shortcode ) {
-					add_action( 'woocommerce_shortcode_before_' . $shortcode . '_loop', __CLASS__ . '::subtitle_view_support_add' );
-					add_action( 'woocommerce_shortcode_after_' . $shortcode . '_loop', __CLASS__ . '::subtitle_view_support_remove' );
-				}
-
-		} // /shortcodes_enable_subtitle
 
 
 

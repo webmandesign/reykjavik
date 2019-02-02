@@ -82,7 +82,7 @@
 			border-style: solid;
 			overflow-y: auto;
 
-			@include media( ( map_get( $breakpoint, 's' ), 'max-width' ) ) {
+			@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
 				max-height: 75vh;
 			}
 

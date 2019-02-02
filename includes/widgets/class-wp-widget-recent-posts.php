@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.3.0
+	 * @version  1.4.0
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.0
+			 * @version  1.4.0
 			 */
 			public function widget( $args, $instance ) {
 
@@ -115,6 +115,8 @@
 
 
 				// Processing
+
+					do_action( 'wmhook_reykjavik_widget_recent_posts_before', $args, $instance );
 
 					/**
 					 * Filter the arguments for the Recent Posts widget.
@@ -170,20 +172,7 @@
 								$output .= '<' . tag_escape( $heading_tag ) . ' class="entry-title">';
 								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '">';
 
-								if (
-									function_exists( 'get_the_subtitle' )
-									&& ! in_the_loop() // Prevent duplicate Subtitle display in page content
-									&& $subtitle = get_the_subtitle( $recent_post_id )
-								) {
-
-									$output .= '<span class="entry-title-primary">' . get_the_title( $recent_post_id ) . '</span>';
-									$output .= ' <span class="entry-subtitle">' . $subtitle . '</span>';
-
-								} else {
-
-									$output .= get_the_title( $recent_post_id );
-
-								}
+								$output .= get_the_title( $recent_post_id );
 
 								$output .= '</a>';
 								$output .= '</' . tag_escape( $heading_tag ) . '>';
@@ -214,6 +203,8 @@
 					if ( $output ) {
 						echo $args['before_widget'] . $output . $args['after_widget'];
 					}
+
+					do_action( 'wmhook_reykjavik_widget_recent_posts_after', $args, $instance );
 
 			} // /widget
 

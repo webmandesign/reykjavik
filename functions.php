@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -203,15 +203,9 @@
 			require REYKJAVIK_PATH_PLUGINS . 'one-click-demo-import/one-click-demo-import.php';
 		}
 
-	// Smart Slider 3
+	// Subtitles & WP Subtitle
 
-		if ( class_exists( 'N2SS3' ) ) {
-			require REYKJAVIK_PATH_PLUGINS . 'smart-slider/smart-slider.php';
-		}
-
-	// Subtitles
-
-		if ( class_exists( 'Subtitles' ) ) {
+		if ( function_exists( 'get_the_subtitle' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'subtitles/subtitles.php';
 		}
 
@@ -222,13 +216,6 @@
 		}
 
 	// WooCommerce
-
-		/**
-		 * Regenerate styles on WooCommerce activation and deactivation.
-		 * Has to be outside WooCommerce compatibility files and outside WooCommerce class exists check.
-		 */
-		register_activation_hook(   'woocommerce/woocommerce.php', 'Reykjavik_Setup::regenerate_styles' );
-		register_deactivation_hook( 'woocommerce/woocommerce.php', 'Reykjavik_Setup::regenerate_styles' );
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			require REYKJAVIK_PATH_PLUGINS . 'woocommerce/woocommerce.php';

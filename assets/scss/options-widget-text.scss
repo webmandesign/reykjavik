@@ -7,7 +7,7 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  2.0.0
+// @version  1.0.0
 //
 
 
@@ -91,16 +91,16 @@
 
 	%container {
 		box-sizing: border-box;
-		padding: 1.618em;
-		margin: 1.618em 0;
+		padding: 1.62em;
+		margin: 1.62em 0;
 		border: 2px dashed rgba(#000,.1);
 	}
 
 	%checker_background {
-		padding: .382rem;
+		padding: .38rem;
 		margin-top: 1rem;
 		border: 1px solid rgba(#000,.15);
-		border-radius: .382rem;
+		border-radius: .38rem;
 		background-image: linear-gradient( 45deg, rgba(#000,.05) 25%, rgba(#fff,.1) 25%),
 		                  linear-gradient(-45deg, rgba(#000,.05) 25%, rgba(#fff,.1) 25%),
 		                  linear-gradient( 45deg, rgba(#fff,.1) 75%, rgba(#000,.05) 75%),

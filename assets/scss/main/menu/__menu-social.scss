@@ -47,7 +47,7 @@
 		text-decoration: none;
 		color: inherit;
 
-		@include media( map_get( $breakpoint, 's' ) ) {
+		@include media() {
 			padding-left: $golden_minor / 2 +em;
 			padding-right: $golden_minor / 2 +em;
 		}

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  */
 
 
@@ -50,7 +50,7 @@
 		if ( $description || is_customize_preview() ) :
 
 			?>
-			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<p class="site-description"><?php echo $description; /* WPCS: XSS OK. */ ?></p>
 			<?php
 
 		endif;

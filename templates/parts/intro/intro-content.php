@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  1.4.0
  */
 
 
@@ -103,7 +103,7 @@
 
 		}
 
-		echo $title;
+		echo $title; // WPCS: XSS OK.
 
 
 
@@ -115,7 +115,7 @@
 		?>
 
 		<div class="page-summary">
-			<?php echo $page_summary; ?>
+			<?php echo $page_summary; /* WPCS: XSS OK. */ ?>
 		</div>
 
 		<?php

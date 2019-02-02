@@ -30,7 +30,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  1.1.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -197,10 +197,9 @@ class Reykjavik_Elementor {
 		 * Setup display of custom sections
 		 *
 		 * @subpackage  Theme Builder
-		 * @subpackage  Customize Options
 		 *
 		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @version  1.4.0
 		 */
 		public static function display_setup() {
 

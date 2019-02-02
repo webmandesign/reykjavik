@@ -63,7 +63,8 @@ $content_indent: 100 - $page_content_width;
 		@include media( map_get( $breakpoint, 'xl' ) ) {
 			width: percentage( 1 / ( $page_content_width / 100 ) );
 			/* $content_width */
-			max-width: $content_width +px;
+			max-width: map_get( $customize_options, 'layout_width_content' );
+			max-width: var(--layout_width_content);
 			margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
 		}
 

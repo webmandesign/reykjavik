@@ -1,245 +1,88 @@
-/////////////////////
+/* FILE: _setup.scss */
+
 //
-// Support
+// Stylesheets setup.
 //
-/////////////////////
-
-	//
-	// Post formats
-	//
-	// @see  includes/frontend/class-post-media.php
-	//
-
-		$supported_post_formats: ();
-
-
-
-
-
-/////////////////////
+// @package    Reykjavik
+// @copyright  WebMan Design, Oliver Juhas
 //
-// Logo
+// @since    1.0.0
+// @version  2.0.0
 //
-/////////////////////
 
-	$custom_logo_height: 50; // In px
+// Theme options
 
+	$customize_options: (
 
+		// Logo
 
+			'custom_logo_height': 50px,
 
+		// Colors
 
-/////////////////////
-//
-// Layout
-//
-/////////////////////
+			// For accessibility test with http://jxnblk.com/colorable/demos/text/
 
-	//
-	// Breakpoints info:
-	//
-	// 's'     :  448, // =  28em // Starting mobile landscape
-	// 'm'     :  672, // =  42em // Starting tablet portrait
-	// 'l'     :  880, // =  55em // Starting tablet landscape
-	// 'xl'    : 1280, // =  80em // Starting laptop
-	// 'xxl'   : 1600, // = 100em // Starting desktop
-	// 'xxxl'  : 1920, // = 120em // Starting desktop full HD
-	// 'xxxxl' : 2560, // = 160em // Starting desktop WQHD
-	//
+			'color_accent': #273a7d,
+			'color_accent_text': #fefeff,
 
-	//
-	// Site widths
-	//
+			'color_header_background': #fefeff,
+			'color_header_text': #535354,
+			'color_header_headings': #232324,
 
-		$boxed_width: 1640;   // In px // Default max boxed site width
-		$content_width: 1200; // In px // Default content width
+			'color_intro_background': #fafafb,
+			'color_intro_text': #535354,
+			'color_intro_headings': #232324,
+			'color_intro_overlay_background': #000000,
+			'color_intro_overlay_text': #ffffff,
 
-		$page_content_width: 61.8; // In %
-		$page_content_gutter: 8; // In %
+			'color_intro_overlay_opacity': 0.6,
 
-			$page_content_width: $page_content_width - ( $page_content_gutter * .382 );
+			'color_intro_widgets_background': #0f1732,
+			'color_intro_widgets_text': #d3d3d4,
+			'color_intro_widgets_headings': #fefeff,
 
+			'color_content_background': #fefeff,
+			'color_content_text': #535354,
+			'color_content_headings': #232324,
 
+			'color_footer_background': #0f1732,
+			'color_footer_text': #d3d3d4,
+			'color_footer_headings': #fefeff,
 
-	//
-	// Paddings
-	//
+			'footer_image': url('../images/footer/pixabay-colorado-1436681.png'),
+			'footer_image_position': 50% 50%,
+			'footer_image_size': cover,
+			'footer_image_repeat': repeat,
+			'footer_image_attachment': scroll,
+			'footer_image_opacity': 0.15,
 
-		$padding_vertical: 5rem;
+		// Layout
 
+			'layout_width_site': 1640px,
+			'layout_width_content': 1200px,
 
+		// Typography
 
-	//
-	// Mobile menu
-	//
+			'typography_size_html': 18px,
+			'typography_fonts_text': ( 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif ),
+			'typography_fonts_headings': ( 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif ),
+			'typography_fonts_logo': ( 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif ),
 
-		$mobile_menu_toggle_height: 3.618; // In rem.
+	);
 
 
 
-
-
-/////////////////////
-//
-// Appearance
-//
-/////////////////////
-
-	//
-	// Special color classes
-	//
-
-		$special_color_class_prefix: 'set-colors-';
-
-
-
-	//
-	// Automated color calculation
-	//
-
-		$border_opacity_from_text: (
-
-			'general': .20,
-
-			'header':  .20,
-			'content': .20,
-			'footer':  .20,
-
-		);
-
-		$overlay_from_text_color_opacity: .07;
-
-
-
-	//
-	// Theme colors
-	// For accessibility test with http://jxnblk.com/colorable/demos/text/
-	//
-	// //* = Doesn't change via Customizer.
-	//
-
-		$colors: (
-
-			// Accent color
-
-				'accent':      #273a7d, // Reykjavik coat of arms. @link  https://en.wikipedia.org/wiki/File:Reykjavik_Coat_of_Arms.svg
-				'accent_text': #fefeff,
-
-			// Body
-
-				'body_background': #e3e3e4,
-
-			// Site header
-
-				'header_background': #fefeff,
-				'header_text':       #535354,
-				'header_headings':   #232324,
-
-			// Intro
-
-				'intro_background': #fafafb,
-				'intro_text':       #535354,
-				'intro_headings':   #232324,
-
-				// Special Intro overlay
-
-					'intro_overlay_background': #000,
-					'intro_overlay_text':       #fff,
-
-				// Intro widgets
-
-					'intro_widgets_background': #0f1732,
-					'intro_widgets_text':       #d3d3d4,
-					'intro_widgets_headings':   #fefeff,
-
-			// Site content
-
-				'content_background': #fefeff,
-				'content_text':       #535354,
-				'content_headings':   #232324,
-
-			// Site footer
-
-				'footer_background': #0f1732,
-				'footer_text':       #d3d3d4,
-				'footer_headings':   #fefeff,
-
-			// Predefined colors
-
-				'error_background': rgba( #e00, .85 ),   //*
-				'error_text':       #fff,                //*
-
-				'info_background': rgba( #05e, .85 ),    //*
-				'info_text':       #fff,                 //*
-
-				'success_background': rgba( #072, .85 ), //*
-				'success_text':       #fff,              //*
-
-				'warning_background': rgba( #fd0, .85 ), //*
-				'warning_text':       #310,              //*
-
-		);
-
-
-
-	//
-	// Decorations
-	//
-
-		// Animation speeds
-
-			$small_animation_speed: .3; // Seconds
-			$large_animation_speed: .5; // Seconds
-
-		// Drop shadows
-
-			$column_box_shadows: (
-				'small':  1rem,
-				'medium': 2rem,
-				'large':  3rem,
-			);
-
-			$column_box_shadows_opacity: .2;
-
-
-
-
-
-/////////////////////
-//
 // Typography
-//
-/////////////////////
 
-	// Helper variables
+	// Starter CSS backwards compatibility.
+	$font_size: map_get( $customize_options, 'typography_size_html' ) / 1px; // "/ 1px" makes the value unitless.
+
+	// Spacing
 
 		$typography_line_height: 1.618;
 		$typography_margin_bottom: 1.618;
 
-
-
-	//
-	// Font size
-	//
-
-		$font_size: 18; // Don't forget to set this also in Reykjavik_Customize_Styles::get_custom_styles_array() class!
-
-
-
-	//
-	// Font families
-	//
-
-		$font_family: (
-			'body':     "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
-			'headings': "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-			'logo':     "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-		);
-
-
-
-	//
 	// Headings
-	//
 
 		$h_tags_setup: (
 
@@ -300,18 +143,13 @@
 				1.618,
 				( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
 				$typography_margin_bottom / 1.000 / 1.618
-			)
+			),
 
 		);
 
-
-
-	//
-	// Special typography
-	//
+	// Display font size
 
 		// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
-
 		$display_text_size: (
 			1 : 2.618em,
 			2 : 3.329em,
@@ -321,44 +159,89 @@
 
 
 
-
-
-/////////////////////
-//
-// Icons
-//
-/////////////////////
+// Others
 
 	//
+	// Breakpoints info:
+	//
+	// 's'     :  448, // =  28em // Starting mobile landscape
+	// 'm'     :  672, // =  42em // Starting tablet portrait
+	// 'l'     :  880, // =  55em // Starting tablet landscape
+	// 'xl'    : 1280, // =  80em // Starting laptop
+	// 'xxl'   : 1600, // = 100em // Starting desktop
+	// 'xxxl'  : 1920, // = 120em // Starting desktop full HD
+	// 'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+	//
+
+	// Predefined colors
+
+		$colors: (
+
+			'error_background': rgba( #e00, .85 ),
+			'error_text':       #fff,
+
+			'info_background': rgba( #05e, .85 ),
+			'info_text':       #fff,
+
+			'success_background': rgba( #072, .85 ),
+			'success_text':       #fff,
+
+			'warning_background': rgba( #fd0, .85 ),
+			'warning_text':       #310,
+
+		);
+
+	// Dimensions
+
+		$page_content_width: 61.8; // In %
+		$page_content_gutter: 8; // In %
+
+			$page_content_width: $page_content_width - ( $page_content_gutter * .382 );
+
+	// Spacing
+
+		$padding_vertical: 5rem;
+
+		$mobile_menu_toggle_height: 3.618; // In rem.
+
+	// Opacity
+
+		$overlay_from_text_color_opacity: .07;
+
+	// Animation
+
+		$small_animation_speed: .3; // Seconds
+		$large_animation_speed: .5; // Seconds
+
+	// Decorations
+
+		// Drop shadows
+
+			$column_box_shadows: (
+				'small':  1rem,
+				'medium': 2rem,
+				'large':  3rem,
+			);
+
+			$column_box_shadows_opacity: .2;
+
 	// Entry meta
-	//
 
 		$entry_meta_icons: (
-
 			// class: char
-
 			'author':          '\f304',
 			'cat-links':       '\f301',
 			'comments-link a': '\f300',
 			'entry-date':      '\f303',
 			'tags-links':      '\f302',
-
 		);
 
+	// Elements
 
+		// Special color classes
+		$special_color_class_prefix: 'set-colors-';
 
-
-
-/////////////////////
-//
-// Element groups
-//
-/////////////////////
-
-	//
-	// Margin elements
-	//
-
+		// Margin bottom
 		$elements_margin_bottom: (
 			'h1',
 			'h2',
@@ -375,12 +258,7 @@
 			'.tiled-gallery',
 		);
 
-
-
-	//
-	// Button elements
-	//
-
+		// Buttons
 		$elements_button: (
 			'.button',
 			'button',
@@ -388,15 +266,11 @@
 			'[type="reset"]',
 			'[type="submit"]',
 		);
-
 		$elements_button_beaver_builder: ();
-
 		$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
-
 		@each $button in $elements_button {
 			$elements_button_beaver_builder: append( $elements_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
 		}
-
 		$elements_button: append( $elements_button, (
 			'.child-page .more-link',
 			'.main-navigation-container .button > a',

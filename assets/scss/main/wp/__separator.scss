@@ -11,7 +11,7 @@
 .wp-block-separator {
 
 	&.is-style-dots::before {
-		opacity: map_get( $border_opacity_from_text, 'general' );
+		opacity: .2;
 	}
 
 	&.is-style-short,

@@ -156,9 +156,10 @@
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			clip: rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
 			position: absolute !important;
-			height: 1px;
 			width: 1px;
+			height: 1px;
 			line-height: 1px;
 			overflow: hidden;
 

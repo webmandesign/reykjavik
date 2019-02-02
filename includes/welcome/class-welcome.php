@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -84,21 +84,20 @@ class Reykjavik_Welcome {
 		 * Render the screen content
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 */
 		public static function render() {
 
 			// Helper variables
 
 				$sections = (array) apply_filters( 'wmhook_reykjavik_welcome_render_sections', array(
-						0   => 'header',
-						10  => 'promo',
-						20  => 'quickstart',
-						30  => 'filesystem',
-						40  => 'demo',
-						50  => 'wordpress',
-						100 => 'footer',
-					) );
+					0   => 'header',
+					10  => 'promo',
+					20  => 'quickstart',
+					30  => 'demo',
+					40  => 'wordpress',
+					100 => 'footer',
+				) );
 
 				ksort( $sections );
 

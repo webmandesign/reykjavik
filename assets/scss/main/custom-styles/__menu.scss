@@ -13,14 +13,10 @@
 	.main-navigation-container li ul {
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			/*[*/
-			background-color: map_get( $colors, 'header_background' );
-			color: map_get( $colors, 'header_text' );
-			/*]*/
-			/*//
-			background-color: [[color_header_background]];
-			color: [[color_header_text]];
-			//*/
+			background-color: map_get( $customize_options, 'color_header_background' );
+			color: map_get( $customize_options, 'color_header_text' );
+			background-color: var(--color_header_background);
+			color: var(--color_header_text);
 		}
 
 	}
@@ -33,16 +29,12 @@
 	.main-navigation-container {
 
 		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-			/*[*/
-			background-color: map_get( $colors, 'header_background' );
-			color: map_get( $colors, 'header_text' );
-			border-color: rgba( map_get( $colors, 'header_text' ), map_get( $border_opacity_from_text, 'header' ) );
-			/*]*/
-			/*//
-			background-color: [[color_header_background]];
-			color: [[color_header_text]];
-			border-color: [[color_header_text(#{ map_get( $border_opacity_from_text, 'header' ) * 100 })]];
-			//*/
+			background-color: map_get( $customize_options, 'color_header_background' );
+			color: map_get( $customize_options, 'color_header_text' );
+			border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+			background-color: var(--color_header_background);
+			color: var(--color_header_text);
+			border-color: var(--color_header_text--a20);
 		}
 
 	}

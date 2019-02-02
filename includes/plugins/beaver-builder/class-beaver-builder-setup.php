@@ -112,7 +112,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Global settings
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  array  $defaults
 		 * @param  string $form_type
@@ -125,7 +125,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 					// "Default Page Heading" section
 
-						$defaults->show_default_heading     = 1;
+						$defaults->show_default_heading     = '1';
 						$defaults->default_heading_selector = '.fl-builder .intro-container, .fl-theme-builder-singular .intro-container, .fl-theme-builder-404 .intro-container, .fl-theme-builder-archive .intro-container';
 
 					// "Rows" section
@@ -136,7 +136,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 					// "Modules" section
 
-						$defaults->module_margins = absint( round( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) * ( pow( 1.618, 2 ) / 2 ) ) );
+						$defaults->module_margins = absint( round( Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' ) * ( pow( 1.62, 2 ) / 2 ) ) );
 
 					// "Responsive Layout" section
 

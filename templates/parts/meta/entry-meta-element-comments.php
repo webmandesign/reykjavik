@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.4.0
  */
 
 
@@ -16,9 +16,9 @@
 // Requirements check
 
 	if (
-			post_password_required()
-			|| ! comments_open( get_the_ID() )
-		) {
+		post_password_required()
+		|| ! comments_open( get_the_ID() )
+	) {
 		return;
 	}
 
@@ -36,7 +36,7 @@
 			<?php echo esc_html_x( 'Comments:', 'Post meta info description: comments count.', 'reykjavik' ); ?>
 		</span>
 		<span class="comments-count">
-			<?php echo $comments_number; ?>
+			<?php echo $comments_number; /* WPCS: XSS OK. */ ?>
 		</span>
 	</a>
 </span>

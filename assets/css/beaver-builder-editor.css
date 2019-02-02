@@ -35,6 +35,6 @@ body .fl-builder-settings-tab { width: 100%; }
 
 .site .hide-accessibly { position: relative; }
 
-.site .hide-accessibly:not(:hover)::before { content: '\f404'; display: block; position: absolute; left: 50%; top: 50%; font-size: 3.618em; font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; color: #f00; text-shadow: 0 1px 1px #fff; speak: none; z-index: 100; pointer-events: none; opacity: .33; -webkit-transform: translateX(-50%) translateY(-50%); -ms-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); }
+.site .hide-accessibly:not(:hover)::before { content: '\f404'; display: block; position: absolute; left: 50%; top: 50%; font-size: 3.62em; font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; color: #f00; text-shadow: 0 1px 1px #fff; speak: none; z-index: 100; pointer-events: none; opacity: .33; -webkit-transform: translateX(-50%) translateY(-50%); -ms-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); }
 
 .fl-col-group .fl-visible-desktop.fl-col, .fl-col-group .fl-visible-desktop-medium.fl-col, .fl-col-group .fl-visible-medium.fl-col, .fl-col-group .fl-visible-medium-mobile.fl-col, .fl-col-group .fl-visible-mobile.fl-col { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; }

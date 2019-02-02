@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -246,7 +246,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Sets correct shop archive title
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  string $title
 		 */
@@ -255,9 +255,9 @@ class Reykjavik_WooCommerce_Pages {
 			// Requirements check
 
 				if (
-						! is_shop()
-						&& ! is_product_taxonomy()
-					) {
+					! is_shop()
+					&& ! is_product_taxonomy()
+				) {
 					return $title;
 				}
 
@@ -270,31 +270,14 @@ class Reykjavik_WooCommerce_Pages {
 			// Processing
 
 				if ( is_search() ) {
-
 					// Search results title override (removing WooCommerce paged suffix)
-
-						$title = sprintf(
-								esc_html__( 'Search Results for: %s', 'reykjavik' ),
-								'<span>' . get_search_query() . '</span>'
-							);
-
+					$title = sprintf(
+						esc_html__( 'Search Results for: %s', 'reykjavik' ),
+						'<span>' . get_search_query() . '</span>'
+					);
 				} else {
-
 					$title = woocommerce_page_title( false );
-
 				}
-
-				// Support for subtitle
-
-					if (
-							is_shop()
-							&& ! is_search()
-							&& function_exists( 'get_the_subtitle' )
-							&& $shop_page_subtitle = get_the_subtitle( $shop_page_id )
-						) {
-						$title  = '<span class="entry-title-primary">' . $title . '</span>';
-						$title .= ' <span class="entry-subtitle">' . $shop_page_subtitle . '</span>';
-					}
 
 
 			// Output
@@ -697,7 +680,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * Guide generator
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.4.0
 		 *
 		 * @param  string $template_name
 		 */
@@ -795,7 +778,7 @@ class Reykjavik_WooCommerce_Pages {
 
 			// Output
 
-				echo $output;
+				echo $output; // WPCS: XSS OK.
 
 		} // /guide_generator
 

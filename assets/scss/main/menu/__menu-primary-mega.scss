@@ -83,7 +83,7 @@
 								// Sub-sub-sub-menu
 
 									ul {
-										box-shadow: 0 .382em 1em rgba( #000, .25 );
+										box-shadow: 0 ( $golden_minor +em ) 1em rgba( #000, .25 );
 									}
 
 							}

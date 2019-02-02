@@ -86,7 +86,7 @@
 					float: $left; // {{RTL}}
 					max-width: 10em;
 					margin-#{$right}: -100%; // {{RTL}}
-					margin-#{$left}: -1.618rem; // {{RTL}}
+					margin-#{$left}: -$golden +rem; // {{RTL}}
 					@include rtl_property( transform, translateX( -100% ), translateX( 100% ) ); // {{RTL}}
 
 					.entry-meta-element {

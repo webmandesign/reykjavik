@@ -1,0 +1,37 @@
+/* FILE: _css-vars.scss */
+
+//
+// CSS variables.
+//
+// @package    Reykjavik
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.4.0
+// @version  1.4.0
+//
+
+:root {
+
+	@each $option, $value in $customize_options {
+		// Converting values to string to prevent issues.
+		--#{$option}: #{$value+''};
+	}
+
+	// RGBA colors:
+	// @see  Reykjavik_Customize::rgba_alphas()
+	$customize_options_rgba: (
+		'color_content_text',
+		'color_footer_text',
+		'color_header_text',
+		'color_intro_text',
+		'color_intro_widgets_text',
+	);
+	@each $option_rgba in $customize_options_rgba {
+		// As all of the RGBA options use the same alpha value,
+		// we just set it here directly (the `20`).
+		$value: rgba( map_get( $customize_options, $option_rgba ), 20 / 100 );
+		// Converting values to string to prevent issues.
+		--#{$option_rgba}--a20: #{$value+''};
+	}
+
+}

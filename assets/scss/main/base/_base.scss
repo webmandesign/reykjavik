@@ -71,7 +71,7 @@
 			float: $left; // {{RTL}}
 			margin-#{$right}: .25em; // {{RTL}}
 			line-height: 1;
-			font-size: 1.618em;
+			font-size: $golden +em;
 			opacity: .5;
 		}
 

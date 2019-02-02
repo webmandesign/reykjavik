@@ -31,6 +31,12 @@
 			padding: 20px;
 		}
 
+		html,
+		html[lang] {
+			max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + 40px );
+			max-width: calc( var(--layout_width_content) + 40px );
+		}
+
 		body {
 			width: 100%;
 			max-width: 36em;
@@ -41,7 +47,7 @@
 			}
 
 			&.page-template-sidebar {
-				padding-#{$right}: 38.2% !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
+				padding-#{$right}: percentage( $golden_minor ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
 			}
 
 			*,
@@ -74,7 +80,7 @@
 		}
 
 		.wpview-content {
-			margin: 0 0 1.618em;
+			margin: 0 0 ( $golden +em );
 		}
 
 

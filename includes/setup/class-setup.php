@@ -13,14 +13,14 @@
  *
  * Contents:
  *
- *  0) Init
- * 10) Installation
- * 20) Setup
- * 30) Globals
- * 40) Images
- * 50) Typography
- * 60) Visual editor
- * 70) Others
+ *   0) Init
+ *  10) Installation
+ *  20) Setup
+ *  30) Globals
+ *  40) Images
+ *  50) Typography
+ *  60) Visual editor
+ * 100) Others
  */
 class Reykjavik_Setup {
 
@@ -49,13 +49,6 @@ class Reykjavik_Setup {
 				// Setup
 
 					self::content_width();
-
-					/**
-					 * Declare support for stylesheet file generator
-					 *
-					 * Has to be declared early for theme upgrades to regenerate styles correctly.
-					 */
-					// add_theme_support( 'stylesheet-generator' );
 
 				// Hooks
 
@@ -88,7 +81,7 @@ class Reykjavik_Setup {
 
 						add_filter( 'wmhook_reykjavik_widget_css_classes', __CLASS__ . '::widget_css_classes' );
 
-						add_filter( 'wmhook_reykjavik_customize_styles_get_css_raw', __CLASS__ . '::get_color_palette_css' );
+						add_filter( 'wmhook_reykjavik_customize_styles_get_css', __CLASS__ . '::get_color_palette_css' );
 
 		} // /__construct
 
@@ -153,7 +146,7 @@ class Reykjavik_Setup {
 		 * Display "Welcome" admin notice
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.0.5
 		 */
 		public static function welcome_admin_notice() {
 
@@ -203,7 +196,7 @@ class Reykjavik_Setup {
 				<style type="text/css" media="screen">
 
 					.notice.theme-welcome-notice {
-						padding: 2.618em;
+						padding: 2.62em;
 						text-align: center;
 						background: rgba(0,0,0,.01);
 						border: 1em solid rgba(255,255,255,.85);
@@ -219,7 +212,7 @@ class Reykjavik_Setup {
 					}
 
 					.theme-welcome-notice .call-to-action {
-						margin-top: 1.618em;
+						margin-top: 1.62em;
 					}
 
 				</style>
@@ -296,10 +289,6 @@ class Reykjavik_Setup {
 
 					add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
 
-				// Responsive embeds
-
-					// add_theme_support( 'responsive-embeds' );
-
 				// Custom menus
 
 					/**
@@ -333,12 +322,12 @@ class Reykjavik_Setup {
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
 					 */
 					add_theme_support( 'html5', array(
-							'caption',
-							'comment-form',
-							'comment-list',
-							'gallery',
-							'search-form',
-						) );
+						'caption',
+						'comment-form',
+						'comment-list',
+						'gallery',
+						'search-form',
+					) );
 
 				// Custom header
 
@@ -352,8 +341,8 @@ class Reykjavik_Setup {
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
 					 */
 					add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
-							'default-color' => 'e3e3e4',
-						) ) );
+						'default-color' => 'e3e3e4',
+					) ) );
 
 				// Post formats
 
@@ -372,39 +361,17 @@ class Reykjavik_Setup {
 					// Image sizes (x, y, crop)
 
 						if ( ! empty( $image_sizes ) ) {
-
 							foreach ( $image_sizes as $size => $setup ) {
-
 								if ( ! in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
-
 									add_image_size(
 										$size,
 										$image_sizes[ $size ][0],
 										$image_sizes[ $size ][1],
 										$image_sizes[ $size ][2]
 									);
-
 								}
-
-							} // /foreach
-
+							}
 						}
-
-				// Force-regenerate styles
-
-					if ( get_transient( 'reykjavik_regenerate_styles' ) ) {
-
-						if ( is_callable( 'Reykjavik_Library_Customize_Styles::generate_main_css_all' ) ) {
-							Reykjavik_Library_Customize_Styles::generate_main_css_all();
-						}
-
-						if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles_cache_flush' ) ) {
-							Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
-						}
-
-						delete_transient( 'reykjavik_regenerate_styles' );
-
-					}
 
 		} // /setup
 
@@ -472,7 +439,7 @@ class Reykjavik_Setup {
 		 *   );
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.3.0
 		 *
 		 * @param  array $image_sizes
 		 */
@@ -506,14 +473,14 @@ class Reykjavik_Setup {
 				$image_sizes = array(
 
 						'thumbnail' => array(
-								absint( $content_width * .618 ),
-								absint( $content_width * .618 * 9 / 16 ),
+								absint( $content_width * .62 ),
+								absint( $content_width * .62 * 9 / 16 ),
 								true,
 								esc_html__( 'In posts list.', 'reykjavik' ),
 							),
 
 						'medium' => array(
-								absint( $content_width * .618 ),
+								absint( $content_width * .62 ),
 								0,
 								false,
 								esc_html__( 'As featured image preview on single post page.', 'reykjavik' ) . '<br>' .
@@ -852,24 +819,8 @@ class Reykjavik_Setup {
 
 
 	/**
-	 * 70) Others
+	 * 100) Others
 	 */
-
-		/**
-		 * Set transient to force styles regeneration
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function regenerate_styles() {
-
-			// Processing
-
-				set_transient( 'reykjavik_regenerate_styles', true, 2 * 60 * 60 );
-
-		} // /regenerate_styles
-
-
 
 		/**
 		 * Register post meta

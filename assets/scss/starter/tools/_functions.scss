@@ -44,29 +44,6 @@
 
 
 //
-// Convert px value to rem or em.
-//
-// @since    1.0.0
-// @version  5.0.0
-//
-// @param  int $value           Value of px to convert.
-// @param  int $base_font_size  If set, the output is in em relative to this base (font-size) value.
-//
-@function px( $value, $base_font_size: 0 ) {
-
-	// Output
-
-		@if 0 < $base_font_size {
-			@return $value / $base_font_size +em;
-		} @else {
-			@return $value / $font_size +rem;
-		}
-
-} // /px
-
-
-
-//
 // Repeat CSS selectors several times.
 //
 // @since    1.0.0
@@ -101,3 +78,90 @@
 		@return $output;
 
 } // /repeat_selector
+
+
+
+//
+// Replace string.
+//
+// @since    5.0.0
+// @version  5.0.0
+//
+// @param  string $search
+// @param  string $replace
+// @param  string $subject
+//
+@function str_replace( $search, $replace, $subject ) {
+
+	// Variables
+
+		$index: str-index( $subject, $search );
+
+
+	// Processing
+
+		@if $index {
+			@return str-slice( $subject, 1, $index - 1 ) + $replace + str_replace( $search, $replace, str-slice( $subject, $index + str-length( $search ) ) );
+		}
+
+
+	// Output
+
+		@return $subject;
+
+} // /str_replace
+
+
+
+
+//
+// Encode symbols for URL.
+//
+// @since    5.0.0
+// @version  5.0.0
+//
+// @param  string $string
+//
+@function url_encode( $url ) {
+
+	// Variables
+
+		$encodes: (
+			"%": "%25",
+			"<": "%3C",
+			">": "%3E",
+			" ": "%20",
+			"!": "%21",
+			"*": "%2A",
+			"'": "%27",
+			'"': "%22",
+			"(": "%28",
+			")": "%29",
+			";": "%3B",
+			":": "%3A",
+			"@": "%40",
+			"&": "%26",
+			"=": "%3D",
+			"+": "%2B",
+			"$": "%24",
+			",": "%2C",
+			"/": "%2F",
+			"?": "%3F",
+			"#": "%23",
+			"[": "%5B",
+			"]": "%5D",
+		);
+
+
+	// Processing
+
+		@each $search, $replace in $encodes {
+			$url: str_replace( $search, $replace, $url );
+		}
+
+
+	// Output
+
+		@return $url;
+
+} // /url_encode

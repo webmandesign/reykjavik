@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -255,7 +255,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Setup theme options
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 */
 		public static function theme_options() {
 
@@ -280,8 +280,8 @@ class Reykjavik_One_Click_Demo_Import {
 						set_theme_mod( 'footer_image', esc_url_raw( $footer_image_url ) );
 						set_theme_mod( 'footer_image_opacity', .10 );
 
-						if ( is_callable( 'Reykjavik_Library_Customize_Styles::custom_styles_cache_flush' ) ) {
-							Reykjavik_Library_Customize_Styles::custom_styles_cache_flush();
+						if ( is_callable( 'Reykjavik_Library_CSS_Variables::cache_flush' ) ) {
+							Reykjavik_Library_CSS_Variables::cache_flush();
 						}
 
 					}

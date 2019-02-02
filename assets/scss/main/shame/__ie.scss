@@ -46,13 +46,12 @@
 		// the browser can't calculate the height of the element properly.
 		// Applying this strange fix to take care of correct height calculation.
 		//
-
-			.site-header > *,
-			.child-page > *,
-			.fl-module,
-			.fl-col .fl-col-group {
-				min-height: 1px;
-			}
+		.site-header > *,
+		.child-page > *,
+		.fl-module,
+		.fl-col .fl-col-group {
+			min-height: 1px;
+		}
 
 	}
 

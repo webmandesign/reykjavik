@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.5
+ * @version  1.4.0
  */
 
 
@@ -49,7 +49,7 @@
 
 		<a href="https://webmandesign.github.io/docs/reykjavik/" class="button button-primary button-hero"><?php esc_html_e( 'Theme Documentation', 'reykjavik' ); ?></a>
 
-		<a href="https://www.webmandesign.eu/reference/#links-support" class="button button-hero"><?php esc_html_e( 'Support Center', 'reykjavik' ); ?></a>
+		<a href="https://support.webmandesign.eu" class="button button-hero"><?php esc_html_e( 'Support Center', 'reykjavik' ); ?></a>
 
 	</p>
 

@@ -22,7 +22,7 @@
 			margin: 0 ( -$golden - $golden_minor +rem );
 			border-top-width: 1px;
 			border-top-style: solid;
-			box-shadow: 0 .382em 1em rgba( #000, .25 );
+			box-shadow: 0 ( $golden_minor +em ) 1em rgba( #000, .25 );
 			opacity: 0;
 			z-index: 9;
 			pointer-events: none;

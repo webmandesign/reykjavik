@@ -11,50 +11,30 @@
 // Accent (includes buttons)
 
 	%accent_colors {
-		/*[*/
-		background-color: map_get( $colors, 'accent' );
-		color: map_get( $colors, 'accent_text' );
-		/*]*/
-		/*//
-		background-color: [[color_accent]];
-		color: [[color_accent_text]];
-		//*/
+		background-color: map_get( $customize_options, 'color_accent' );
+		color: map_get( $customize_options, 'color_accent_text' );
+		background-color: var(--color_accent);
+		color: var(--color_accent_text);
 	}
 
 	%accent_background_color {
-		/*[*/
-		background-color: map_get( $colors, 'accent' );
-		/*]*/
-		/*//
-		background-color: [[color_accent]];
-		//*/
+		background-color: map_get( $customize_options, 'color_accent' );
+		background-color: var(--color_accent);
 	}
 
 	%accent_color {
-		/*[*/
-		color: map_get( $colors, 'accent' );
-		/*]*/
-		/*//
-		color: [[color_accent]];
-		//*/
+		color: map_get( $customize_options, 'color_accent' );
+		color: var(--color_accent);
 	}
 
 	%accent_text_color {
-		/*[*/
-		color: map_get( $colors, 'accent_text' );
-		/*]*/
-		/*//
-		color: [[color_accent_text]];
-		//*/
+		color: map_get( $customize_options, 'color_accent_text' );
+		color: var(--color_accent_text);
 	}
 
 	%accent_border_color {
-		/*[*/
-		border-color: map_get( $colors, 'accent' );
-		/*]*/
-		/*//
-		border-color: [[color_accent]];
-		//*/
+		border-color: map_get( $customize_options, 'color_accent' );
+		border-color: var(--color_accent);
 	}
 
 
@@ -65,12 +45,8 @@
 			@extend %accent_colors;
 
 			&:focus {
-				/*[*/
-				outline: thin dashed map_get( $colors, 'accent' );
-				/*]*/
-				/*//
-				outline: thin dashed [[color_accent]];
-				//*/
+				outline: thin dashed map_get( $customize_options, 'color_accent' );
+				outline: thin dashed var(--color_accent);
 			}
 
 		}
@@ -80,25 +56,17 @@
 // Site header
 
 	%site_header_colors {
-		/*[*/
-		background-color: map_get( $colors, 'header_background' );
-		color: map_get( $colors, 'header_text' );
-		border-color: rgba( map_get( $colors, 'header_text' ), map_get( $border_opacity_from_text, 'header' ) );
-		/*]*/
-		/*//
-		background-color: [[color_header_background]];
-		color: [[color_header_text]];
-		border-color: [[color_header_text(#{ map_get( $border_opacity_from_text, 'header' ) * 100 })]];
-		//*/
+		background-color: map_get( $customize_options, 'color_header_background' );
+		color: map_get( $customize_options, 'color_header_text' );
+		border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+		background-color: var(--color_header_background);
+		color: var(--color_header_text);
+		border-color: var(--color_header_text--a20);
 
 		h2, h3, h4,
 		.h1, .h2, .h3, .h4 {
-			/*[*/
-			color: map_get( $colors, 'header_headings' );
-			/*]*/
-			/*//
-			color: [[color_header_headings]];
-			//*/
+			color: map_get( $customize_options, 'color_header_headings' );
+			color: var(--color_header_headings);
 		}
 
 	}
@@ -108,27 +76,19 @@
 // Intro
 
 	%intro_colors {
-		/*[*/
-		background-color: map_get( $colors, 'intro_background' );
-		color: map_get( $colors, 'intro_text' );
-		border-color: rgba( map_get( $colors, 'intro_text' ), map_get( $border_opacity_from_text, 'content' ) );
-		/*]*/
-		/*//
-		background-color: [[color_intro_background]];
-		color: [[color_intro_text]];
-		border-color: [[color_intro_text(#{ map_get( $border_opacity_from_text, 'content' ) * 100 })]];
-		//*/
+		background-color: map_get( $customize_options, 'color_intro_background' );
+		color: map_get( $customize_options, 'color_intro_text' );
+		border-color: rgba( map_get( $customize_options, 'color_intro_text' ), 20 / 100 );
+		background-color: var(--color_intro_background);
+		color: var(--color_intro_text);
+		border-color: var(--color_intro_text--a20);
 
 		h1, h2, h3, h4,
 		.h1, .h2, .h3, .h4,
 		a:not(.button),
 		.accent-color {
-			/*[*/
-			color: map_get( $colors, 'intro_headings' );
-			/*]*/
-			/*//
-			color: [[color_intro_headings]];
-			//*/
+			color: map_get( $customize_options, 'color_intro_headings' );
+			color: var(--color_intro_headings);
 		}
 
 	}
@@ -138,25 +98,17 @@
 // Site content
 
 	%site_content_colors {
-		/*[*/
-		background-color: map_get( $colors, 'content_background' );
-		color: map_get( $colors, 'content_text' );
-		border-color: rgba( map_get( $colors, 'content_text' ), map_get( $border_opacity_from_text, 'content' ) );
-		/*]*/
-		/*//
-		background-color: [[color_content_background]];
-		color: [[color_content_text]];
-		border-color: [[color_content_text(#{ map_get( $border_opacity_from_text, 'content' ) * 100 })]];
-		//*/
+		background-color: map_get( $customize_options, 'color_content_background' );
+		color: map_get( $customize_options, 'color_content_text' );
+		border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
+		background-color: var(--color_content_background);
+		color: var(--color_content_text);
+		border-color: var(--color_content_text--a20);
 	}
 
 	%site_content_headings_color {
-		/*[*/
-		color: map_get( $colors, 'content_headings' );
-		/*]*/
-		/*//
-		color: [[color_content_headings]];
-		//*/
+		color: map_get( $customize_options, 'color_content_headings' );
+		color: var(--color_content_headings);
 	}
 
 
@@ -164,27 +116,19 @@
 // Site footer
 
 	%site_footer_colors {
-		/*[*/
-		background-color: map_get( $colors, 'footer_background' );
-		color: map_get( $colors, 'footer_text' );
-		border-color: rgba( map_get( $colors, 'footer_text' ), map_get( $border_opacity_from_text, 'footer' ) );
-		/*]*/
-		/*//
-		background-color: [[color_footer_background]];
-		color: [[color_footer_text]];
-		border-color: [[color_footer_text(#{ map_get( $border_opacity_from_text, 'footer' ) * 100 })]];
-		//*/
+		background-color: map_get( $customize_options, 'color_footer_background' );
+		color: map_get( $customize_options, 'color_footer_text' );
+		border-color: rgba( map_get( $customize_options, 'color_footer_text' ), 20 / 100 );
+		background-color: var(--color_footer_background);
+		color: var(--color_footer_text);
+		border-color: var(--color_footer_text--a20);
 
 		h2, h3, h4,
 		.h1, .h2, .h3, .h4,
 		a,
 		.accent-color {
-			/*[*/
-			color: map_get( $colors, 'footer_headings' );
-			/*]*/
-			/*//
-			color: [[color_footer_headings]];
-			//*/
+			color: map_get( $customize_options, 'color_footer_headings' );
+			color: var(--color_footer_headings);
 		}
 
 	}
@@ -196,27 +140,19 @@
 	// Sidebar: Intro widgets
 
 		%sidebar_intro_widgets_colors {
-			/*[*/
-			background-color: map_get( $colors, 'intro_widgets_background' );
-			color: map_get( $colors, 'intro_widgets_text' );
-			border-color: rgba( map_get( $colors, 'intro_widgets_text' ), map_get( $border_opacity_from_text, 'general' ) );
-			/*]*/
-			/*//
-			background-color: [[color_intro_widgets_background]];
-			color: [[color_intro_widgets_text]];
-			border-color: [[color_intro_widgets_text(#{ map_get( $border_opacity_from_text, 'general' ) * 100 })]];
-			//*/
+			background-color: map_get( $customize_options, 'color_intro_widgets_background' );
+			color: map_get( $customize_options, 'color_intro_widgets_text' );
+			border-color: rgba( map_get( $customize_options, 'color_intro_widgets_text' ), 20 / 100 );
+			background-color: var(--color_intro_widgets_background);
+			color: var(--color_intro_widgets_text);
+			border-color: var(--color_intro_widgets_text--a20);
 
 			h2, h3, h4,
 			.h1, .h2, .h3, .h4,
 			a,
 			.accent-color {
-				/*[*/
-				color: map_get( $colors, 'intro_widgets_headings' );
-				/*]*/
-				/*//
-				color: [[color_intro_widgets_headings]];
-				//*/
+				color: map_get( $customize_options, 'color_intro_widgets_headings' );
+				color: var(--color_intro_widgets_headings);
 			}
 
 		}

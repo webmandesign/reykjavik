@@ -22,33 +22,23 @@
 	.site-footer {
 
 		&::before {
-			background-image: url('../images/footer/pixabay-colorado-1436681.png'); //*
-			/*//
-			background-image: url('[[get_template_directory_uri]]/assets/images/footer/pixabay-colorado-1436681.png');
-			//*/
-			/*[*/
-			background-position: 50% 50%;
-			background-size: cover;
-			opacity: .15;
-			/*]*/
-			/*//
-			background-image: [[footer_image]];
-			background-position: [[footer_image_position]];
-			background-size: [[footer_image_size]];
-			opacity: [[footer_image_opacity]];
-			//*/
-			/**if!(footer_image_repeat)
-			background-repeat: no-repeat;
-			endif!(footer_image_repeat)**/
-			/**if(footer_image_attachment)
-			background-attachment: fixed;
-			endif(footer_image_attachment)**/
+			background-image: map_get( $customize_options, 'footer_image' );
+			background-position: map_get( $customize_options, 'footer_image_position' );
+			background-size: map_get( $customize_options, 'footer_image_size' );
+			background-repeat: map_get( $customize_options, 'footer_image_repeat' );
+			background-attachment: map_get( $customize_options, 'footer_image_attachment' );
+			opacity: map_get( $customize_options, 'footer_image_opacity' );
+
+			background-image: var(--footer_image);
+			background-position: var(--footer_image_position);
+			background-size: var(--footer_image_size);
+			background-repeat: var(--footer_image_repeat);
+			background-attachment: var(--footer_image_attachment);
+			opacity: var(--footer_image_opacity);
 		}
 
 		&:not(.is-customize-preview)::before {
-			/**if!(footer_image)
-			display: none;
-			endif!(footer_image)**/
+			// @see  Reykjavik_Customize_Styles::get_css()
 		}
 
 		&.is-customize-preview::before {
@@ -66,14 +56,10 @@
 
 		#{$accent_color_elements} {
 			text-shadow: none; //*
-			/*[*/
-			background-color: map_get( $colors, 'footer_headings' );
-			color: map_get( $colors, 'footer_background' );
-			/*]*/
-			/*//
-			background-color: [[color_footer_headings]];
-			color: [[color_footer_background]];
-			//*/
+			background-color: map_get( $customize_options, 'color_footer_headings' );
+			color: map_get( $customize_options, 'color_footer_background' );
+			background-color: var(--color_footer_headings);
+			color: var(--color_footer_background);
 		}
 
 		.button,
@@ -84,14 +70,10 @@
 			text-shadow: none; //*
 
 			@include haf() {
-				/*[*/
-				background-color: map_get( $colors, 'footer_headings' );
-				color: map_get( $colors, 'footer_background' );
-				/*]*/
-				/*//
-				background-color: [[color_footer_headings]];
-				color: [[color_footer_background]];
-				//*/
+				background-color: map_get( $customize_options, 'color_footer_headings' );
+				color: map_get( $customize_options, 'color_footer_background' );
+				background-color: var(--color_footer_headings);
+				color: var(--color_footer_background);
 			}
 
 		}

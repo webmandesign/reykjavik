@@ -30,26 +30,6 @@
 
 	}
 
-	select,
-	input:not([type]),
-	input[type="color"],
-	input[type="date"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="email"],
-	input[type="month"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="text"],
-	input[type="time"],
-	input[type="url"],
-	input[type="week"],
-	input[type="range"] {
-		width: 17em;
-	}
-
 	textarea {
 		@extend %break_words;
 		vertical-align: top;
@@ -67,41 +47,41 @@
 		vertical-align: baseline;
 	}
 
+	// @link  https://www.filamentgroup.com/lab/select-css.html
 	select {
+		$selector_svg_size: 15px;
+		$selector_svg: '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="66"><path stroke="#{ rgba( #fff, .66 ) }" fill="#{ rgba( #000, .66 ) }" stroke-width="10" d="m10.23893,4.84475l39.69582,52.85933l39.69582,-52.85933l-79.39163,0z" /></svg>';
+
 		@extend %break_words_disable;
-		position: relative;
-		height: auto;
-		padding-#{$right}: 21px;
-		line-height: $golden;
+		display: inline-block;
+		max-width: 100%;
+		padding: .5em 1em;
+		padding-#{$right}: calc( 1em + #{$selector_svg_size} );
+		appearance: none;
+		background: none;
+		background-image: url('data:image/svg+xml;utf8,#{ url_encode( $selector_svg ) }');
+		background-size: $selector_svg_size auto;
+		background-position: $right 1em top 50%;
+		background-repeat: no-repeat;
+		color: inherit;
 
-		// Inspiration from Foundation @link  https://foundation.zurb.com/sites/docs/forms.html#select-menus
-		//
-		// Dropdown selector image source at `helpers` folder of GitHub repository
-		// and processed with https://www.base64-image.de/
+		&::-ms-expand {
+			display: none;
+		}
 
-			-webkit-appearance: none;
-				 -moz-appearance: none;
-			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAASCAYAAAAQeC39AAAACXBIWXMAABuvAAAbrwFeGpEcAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADNJREFUeNrt1MENADAIAzFGZ/N0B4T41JYyQD5Xxb96aY6dSNIbcwxUURVVEVRRFVVx6AEDTK7MSHGk9QAAAABJRU5ErkJggg=='); // Don't use SVG here: it's not IE ready and will be stripped out with `wmhook_THEMESLUG_esc_css` filter
-			background-size: 21px 9px;
-			background-position: $right center; // {{RTL}}
-			background-repeat: no-repeat;
-
-			&:disabled {
-				cursor: default;
-				opacity: .66;
-			}
-
-			&::-ms-expand {
-				display: none;
-			}
+		option {
+			background: #fff;
+			color: #000;
+		}
 
 	}
 
+	:disabled,
 	[disabled],
 	[aria-disabled="true"] {
 		cursor: default;
 		pointer-events: none;
-		opacity: .66;
+		opacity: .5;
 	}
 
 

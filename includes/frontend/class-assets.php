@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.4.0
  *
  * Contents:
  *
@@ -107,59 +107,20 @@ class Reykjavik_Assets {
 		 * Registering theme styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.4.0
 		 */
 		public static function register_styles() {
 
 			// Helper variables
 
-				$stylesheet_global_version = '';
-
-				if ( current_theme_supports( 'stylesheet-generator' ) ) {
-
-					$dev_prefix                = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
-					$stylesheet_global_version = get_theme_mod( '__stylesheet_timestamp' );
-
-					$stylesheets = array(
-						'global' => ( Reykjavik_Customize_Styles::is_stylesheet_generated() ) ? ( str_replace( 'reykjavik-styles', $dev_prefix . 'reykjavik-styles', get_theme_mod( '__url_css' ) ) ) : ( false ),
-					);
-
-				} else {
-
-					$stylesheets = array(
-						'global' => get_theme_file_uri( 'assets/css/main.css' ),
-					);
-
-				}
-
-				if ( empty( $stylesheet_global_version ) ) {
-					$stylesheet_global_version = REYKJAVIK_THEME_VERSION;
-				}
-
 				$register_assets = array(
-					'genericons-neue'             => array( get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
-					'reykjavik-google-fonts'      => array( self::google_fonts_url() ),
-					'reykjavik-stylesheet-global' => array( 'src' => Reykjavik_Library::fix_ssl_urls( $stylesheets['global'] ), 'ver' => $stylesheet_global_version, 'rtl' => 'replace' ),
+					'genericons-neue'             => array( 'src' => get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
+					'reykjavik-google-fonts'      => array( 'src' => self::google_fonts_url() ),
+					'reykjavik-stylesheet-custom' => array( 'src' => get_theme_file_uri( 'assets/css/custom-styles.css' ) ),
+					'reykjavik-stylesheet-global' => array( 'src' => get_theme_file_uri( 'assets/css/main.css' ), 'rtl' => 'replace' ),
 				);
 
-				// Fallback CSS stylesheets.
-				if ( empty( $stylesheets['global'] ) ) {
-					$fallback_deps        = array();
-					$fallback_stylesheets = array(
-						// file_name => rtl_data,
-						'main'          => 'replace',
-						'custom-styles' => false,
-					);
-					foreach ( $fallback_stylesheets as $stylesheet => $rtl_data ) {
-						$fallback_deps[ $stylesheet ] = 'reykjavik-stylesheet-fallback-' . $stylesheet;
-						$register_assets[ $fallback_deps[ $stylesheet ] ]['src'] = get_theme_file_uri( 'assets/css/' . $stylesheet . '.css' );
-						$register_assets[ $fallback_deps[ $stylesheet ] ]['rtl'] = $rtl_data;
-					}
-					$register_assets['reykjavik-stylesheet-global']['src']  = '';
-					$register_assets['reykjavik-stylesheet-global']['deps'] = array_values( $fallback_deps );
-				}
-
-				$register_assets = (array) apply_filters( 'wmhook_reykjavik_assets_register_styles', $register_assets, $stylesheets );
+				$register_assets = (array) apply_filters( 'wmhook_reykjavik_assets_register_styles', $register_assets );
 
 
 			// Processing
@@ -177,7 +138,7 @@ class Reykjavik_Assets {
 						wp_style_add_data( $handle, 'rtl', $atts['rtl'] );
 					}
 
-				} // /foreach
+				}
 
 		} // /register_styles
 
@@ -234,7 +195,7 @@ class Reykjavik_Assets {
 		 * Frontend styles enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.4.0
 		 */
 		public static function enqueue_styles() {
 
@@ -246,22 +207,21 @@ class Reykjavik_Assets {
 			// Processing
 
 				// Google Fonts
-
-					if ( self::google_fonts_url() ) {
-						$enqueue_assets[0] = 'reykjavik-google-fonts';
-					}
+				if ( self::google_fonts_url() ) {
+					$enqueue_assets[0] = 'reykjavik-google-fonts';
+				}
 
 				// Genericons Neue
-
-					$enqueue_assets[5] = 'genericons-neue';
+				$enqueue_assets[5] = 'genericons-neue';
 
 				// Main
+				$enqueue_assets[10] = 'reykjavik-stylesheet-global';
 
-					$enqueue_assets[10] = 'reykjavik-stylesheet-global';
+				// Custom
+				$enqueue_assets[20] = 'reykjavik-stylesheet-custom';
 
 				// Filter enqueue array
-
-					$enqueue_assets = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_styles', $enqueue_assets );
+				$enqueue_assets = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_styles', $enqueue_assets );
 
 				// Enqueue
 
@@ -521,7 +481,7 @@ class Reykjavik_Assets {
 		 * https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.4.0
 		 *
 		 * @param  array $fonts Fallback fonts.
 		 */
@@ -549,6 +509,8 @@ class Reykjavik_Assets {
 					$fonts_setup = (array) $fonts;
 				}
 
+				$http = ( is_ssl() ) ? ( 'https' ) : ( 'http' );
+
 
 			// Requirements check
 
@@ -570,12 +532,13 @@ class Reykjavik_Assets {
 				} // /foreach
 
 				if ( ! empty( $family ) ) {
-
-					$output = esc_url_raw( add_query_arg( array( // Use `esc_url_raw()` for HTTP requests.
+					$output = esc_url_raw( add_query_arg(
+						array(
 							'family' => implode( '|', (array) array_unique( $family ) ),
 							'subset' => implode( ',', (array) $subset ), // Subset can be array if multiselect Customizer input field used
-						), 'https://fonts.googleapis.com/css' ) );
-
+						),
+						$http . '://fonts.googleapis.com/css'
+					) );
 				}
 
 
@@ -597,13 +560,13 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.4.0
 		 */
 		public static function editor_stylesheets() {
 
 			// Helper variables
 
-				$stylesheet_suffix = '-editor';
+				$stylesheet_suffix = '';
 				if ( is_rtl() ) {
 					$stylesheet_suffix .= '-rtl';
 				}
@@ -614,73 +577,35 @@ class Reykjavik_Assets {
 			// Processing
 
 				// Google Fonts stylesheet
-
-					$visual_editor_stylesheets[0] = str_replace( ',', '%2C', self::google_fonts_url() );
+				$visual_editor_stylesheets[0] = str_replace( ',', '%2C', self::google_fonts_url() );
 
 				// Genericons Neue
-
-					$visual_editor_stylesheets[5] = get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' );
+				$visual_editor_stylesheets[5] = get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' );
 
 				// Editor stylesheet
 
-					if (
-						current_theme_supports( 'stylesheet-generator' )
-						&& Reykjavik_Customize_Styles::is_stylesheet_generated()
-					) {
-						$dev_prefix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( 'dev-' ) : ( '' );
+					$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
+						'ver',
+						REYKJAVIK_THEME_VERSION,
+						get_theme_file_uri( 'assets/css/main' . $stylesheet_suffix . '.css' )
+					) );
 
-						$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
-							'ver',
-							get_theme_mod( '__stylesheet_timestamp' ),
-							Reykjavik_Library::fix_ssl_urls( str_replace(
-								'reykjavik-styles',
-								$dev_prefix . 'reykjavik-styles',
-								get_theme_mod( '__url_css' . $stylesheet_suffix )
-							) )
-						) );
-					}
+					$visual_editor_stylesheets[15] = esc_url_raw( add_query_arg(
+						'ver',
+						REYKJAVIK_THEME_VERSION,
+						get_theme_file_uri( 'assets/css/editor-style' . $stylesheet_suffix . '.css' )
+					) );
 
-					/**
-					 * If we don't have generated editor stylesheet enqueued yet, load a fallback stylesheets.
-					 *
-					 * In Reykjavik_Customize_Styles::editor_stylesheet() the fallback custom styles stylesheet
-					 * will be overridden if the theme does not support `stylesheet-generator`.
-					 */
-					if ( ! isset( $visual_editor_stylesheets[10] ) ) {
-
-						$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
-							'ver',
-							REYKJAVIK_THEME_VERSION,
-							get_theme_file_uri( 'assets/css/main' . str_replace(
-								'-editor',
-								'',
-								$stylesheet_suffix
-							) . '.css' )
-						) );
-
-						$visual_editor_stylesheets[15] = esc_url_raw( add_query_arg(
-							'ver',
-							REYKJAVIK_THEME_VERSION,
-							get_theme_file_uri( 'assets/css/editor-style' . str_replace(
-								'-editor',
-								'',
-								$stylesheet_suffix
-							) . '.css' )
-						) );
-
-						$visual_editor_stylesheets[20] = esc_url_raw( add_query_arg(
-							'ver',
-							REYKJAVIK_THEME_VERSION,
-							get_theme_file_uri( 'assets/css/custom-styles-editor.css' )
-						) );
-
-					}
+					$visual_editor_stylesheets[20] = esc_url_raw( add_query_arg(
+						'ver',
+						REYKJAVIK_THEME_VERSION,
+						get_theme_file_uri( 'assets/css/custom-styles-editor.css' )
+					) );
 
 				// Icons stylesheet
-
-					if ( class_exists( 'WM_Icons' ) && $icons_font_stylesheet = get_option( 'wmamp-icon-font' ) ) {
-						$visual_editor_stylesheets[100] = esc_url_raw( $icons_font_stylesheet );
-					}
+				if ( class_exists( 'WM_Icons' ) && $icons_font_stylesheet = get_option( 'wmamp-icon-font' ) ) {
+					$visual_editor_stylesheets[100] = esc_url_raw( $icons_font_stylesheet );
+				}
 
 				// Filter and order
 
