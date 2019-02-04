@@ -1,5 +1,17 @@
 # Reykjavik Changelog
 
+## 1.4.2
+
+* **Fix**: Displaying default background image URL when no image set in theme options
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	includes/customize/class-customize-styles.php
+
+
 ## 1.4.1
 
 * **Fix**: Background image URL escaping in CSS code
