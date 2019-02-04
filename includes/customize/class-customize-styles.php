@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.4.2
  *
  * Contents:
  *
@@ -66,13 +66,13 @@ class Reykjavik_Customize_Styles {
 		 * Get custom CSS.
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  1.4.2
 		 */
 		public static function get_css() {
 
 			// Variables
 
-				$output = '';
+				$css = '';
 
 
 			// Processing
@@ -84,7 +84,7 @@ class Reykjavik_Customize_Styles {
 
 			// Output
 
-				return (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_css', $output );
+				return (string) apply_filters( 'wmhook_reykjavik_customize_styles_get_css', $css );
 
 		} // /get_css
 
