@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.0
  *
  * Contents:
  *
@@ -43,7 +43,7 @@
 	 * Widget class
 	 *
 	 * @since    1.0.0
-	 * @version  1.4.0
+	 * @version  1.5.0
 	 *
 	 * Contents:
 	 *
@@ -64,7 +64,7 @@
 			 * Output HTML
 			 *
 			 * @since    1.0.0
-			 * @version  1.4.0
+			 * @version  1.5.0
 			 */
 			public function widget( $args, $instance ) {
 
@@ -109,10 +109,6 @@
 							}
 						}
 
-					// Fix wrong "Continue reading" link
-
-						$continue_reading_url_to_replace = esc_url( get_permalink( get_the_ID() ) );
-
 
 				// Processing
 
@@ -148,19 +144,18 @@
 
 					$output .= '<div class="' . esc_attr( $posts_container_class ) . '">';
 
-					foreach ( $r->posts as $recent_post ) :
+					while ( $r->have_posts() ) {
+						$r->the_post();
 
-						$recent_post_id = $recent_post->ID;
-
-						$output .= '<article class="' . esc_attr( implode( ' ', (array) get_post_class( '', $recent_post_id ) ) ) . '">';
+						$output .= '<article class="' . esc_attr( implode( ' ', (array) get_post_class() ) ) . '">';
 
 						// Post date
 
 							if ( $instance['show_date'] ) {
-								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '" rel="bookmark">';
-								$output .= '<time datetime="' . esc_attr( get_the_date( DATE_W3C, $recent_post_id ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date( '', $recent_post_id ) ) . ' | ' . esc_attr( get_the_time( '', $recent_post_id ) ) . '">';
-								$output .= '<span class="day">' . esc_html( get_the_date( 'd', $recent_post_id ) ) . '</span> ';
-								$output .= '<span class="month">' . esc_html( get_the_date( 'M', $recent_post_id ) ) . '</span> ';
+								$output .= '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
+								$output .= '<time datetime="' . esc_attr( get_the_date( DATE_W3C ) ) . '" class="published entry-date" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time() ) . '">';
+								$output .= '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> ';
+								$output .= '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> ';
 								$output .= '</time>';
 								$output .= '</a>';
 							}
@@ -170,30 +165,23 @@
 							// Post title
 
 								$output .= '<' . tag_escape( $heading_tag ) . ' class="entry-title">';
-								$output .= '<a href="' . esc_url( get_permalink( $recent_post_id ) ) . '">';
+								$output .= '<a href="' . esc_url( get_permalink() ) . '">';
 
-								$output .= get_the_title( $recent_post_id );
+								$output .= get_the_title();
 
 								$output .= '</a>';
 								$output .= '</' . tag_escape( $heading_tag ) . '>';
 
 							// Post excerpt
 
-								$output .= '<div class="entry-summary">' . get_the_excerpt( $recent_post_id ) . '</div>';
-
-							// Read more link
-
-								$output .= str_replace(
-									$continue_reading_url_to_replace,
-									esc_url( get_permalink( $recent_post_id ) ),
-									(string) apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'widget-recent-posts' )
-								);
+								$output .= get_the_excerpt();
 
 						$output .= '</div>';
 
 						$output .= '</article>';
+					}
 
-					endforeach;
+					wp_reset_postdata();
 
 					$output .= '</div>';
 

@@ -16,7 +16,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.5.0
  */
 
 
@@ -116,17 +116,19 @@
 	<?php if ( has_excerpt() ) : ?>
 
 	<div class="child-page-summary">
-		<?php echo get_the_excerpt(); ?>
+		<?php
+
+		if ( ! $has_more_link ) {
+			add_filter( 'wmhook_reykjavik_summary_continue_reading_pre', '__return_empty_string' );
+		}
+
+		the_excerpt();
+
+		remove_filter( 'wmhook_reykjavik_summary_continue_reading_pre', '__return_empty_string' );
+
+		?>
 	</div>
 
 	<?php endif; ?>
-
-	<?php
-
-	if ( $has_more_link ) {
-		echo apply_filters( 'wmhook_reykjavik_summary_continue_reading', '', 'child-page' );
-	}
-
-	?>
 
 </article>

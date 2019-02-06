@@ -1667,13 +1667,15 @@ a .entry-date { cursor: pointer; }
 @media only screen and (min-width: 55em) { .child-page { width: calc( 33.33% - 2em); }
   .child-page:nth-child(1):nth-last-child(2), .child-page:nth-child(2):nth-last-child(1) { width: calc( 50% - 2em); } }
 
-.child-page p { margin-bottom: 1em; }
+.child-page .entry-summary { margin-bottom: 0; }
+
+.child-page p:not(:last-child) { margin-bottom: 1em; }
 
 .child-page-image { margin-bottom: 2.6244rem; }
 
 .child-page-title { margin: 0; margin-bottom: 1.38rem; }
 
-.child-page .link-more { display: block; padding-top: 1.62em; margin-top: auto; }
+.child-page .link-more { margin-top: 1.62em; }
 
 .child-page .more-link { display: inline-block; border-color: currentColor; }
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.0
  */
 
 
@@ -42,6 +42,8 @@
 
 		// Page summary setup
 
+			add_filter( 'wmhook_reykjavik_summary_continue_reading_pre', '__return_empty_string' );
+
 			if ( is_singular() && has_excerpt() ) {
 				$page_summary = get_the_excerpt();
 			} elseif ( is_home() && ! is_front_page() && $posts_page && has_excerpt( $posts_page ) ) {
@@ -49,6 +51,8 @@
 			} elseif ( is_archive() ) {
 				$page_summary = get_the_archive_description();
 			}
+
+			remove_filter( 'wmhook_reykjavik_summary_continue_reading_pre', '__return_empty_string' );
 
 			if ( $page_summary ) {
 				$class_title .= ' has-page-summary';
@@ -115,7 +119,7 @@
 		?>
 
 		<div class="page-summary">
-			<?php echo $page_summary; /* WPCS: XSS OK. */ ?>
+			<?php echo apply_filters( 'the_excerpt', $page_summary ); ?>
 		</div>
 
 		<?php

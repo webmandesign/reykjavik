@@ -199,7 +199,11 @@
 
 				}
 
-				p {
+				.entry-summary {
+					margin-bottom: 0;
+				}
+
+				p:not(:last-child) {
 					margin-bottom: 1em;
 				}
 
@@ -226,9 +230,7 @@
 
 					.link-more {
 						// The container
-						display: block;
-						padding-top: $golden +em;
-						margin-top: auto;
+						margin-top: $golden +em;
 					}
 
 					.more-link {
