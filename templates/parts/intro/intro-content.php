@@ -116,12 +116,16 @@
 	 */
 	if ( $page_summary ) :
 
-		?>
+		if ( strpos( $page_summary, 'entry-summary' ) ) {
+			$page_summary = str_replace(
+				'entry-summary',
+				'page-summary entry-summary',
+				$page_summary
+			);
+		} else {
+			$page_summary = '<div class="page-summary">' . PHP_EOL . $page_summary . PHP_EOL . '</div>';
+		}
 
-		<div class="page-summary">
-			<?php echo apply_filters( 'the_excerpt', $page_summary ); ?>
-		</div>
-
-		<?php
+		echo apply_filters( 'the_excerpt', $page_summary );
 
 	endif;

@@ -3,12 +3,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-01-30 15:00+0100\n"
+"POT-Creation-Date: 2019-02-07 20:12+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
 "Language: en\n"
-"MIME-Version: 1.4.0\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
@@ -608,11 +608,15 @@ msgstr ""
 msgid "Skip to menu toggle button"
 msgstr ""
 
-#: includes/frontend/class-post-summary.php:114
+#: includes/frontend/class-menu.php:329
+msgid "(Focus the link to toggle submenu.)"
+msgstr ""
+
+#: includes/frontend/class-post-summary.php:88
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/frontend/class-post-summary.php:114
+#: includes/frontend/class-post-summary.php:90
 msgid "Enter the password to view it."
 msgstr ""
 
@@ -1228,7 +1232,7 @@ msgstr ""
 
 #. translators: %s: search query.
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:275 search.php:32
-#: templates/parts/intro/intro-content.php:85
+#: templates/parts/intro/intro-content.php:89
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1714,7 +1718,7 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-recent-posts.php:272
+#: includes/widgets/class-wp-widget-recent-posts.php:260
 msgid "From category:"
 msgstr ""
 
@@ -2638,13 +2642,13 @@ msgstr ""
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: templates/parts/component/link-more-product.php:33
+#: templates/parts/component/link-more-product.php:32
 #, php-format
 msgctxt "%s: Product name."
 msgid "View product%s&hellip;"
 msgstr ""
 
-#: templates/parts/component/link-more.php:23
+#: templates/parts/component/link-more.php:22
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
@@ -2772,14 +2776,14 @@ msgctxt "Post meta info description: comments count."
 msgid "Comments:"
 msgstr ""
 
-#: templates/parts/meta/entry-meta-element-date.php:25
-#: templates/parts/meta/entry-meta-element-date.php:28
+#: templates/parts/meta/entry-meta-element-date.php:20
+#: templates/parts/meta/entry-meta-element-date.php:23
 msgctxt "Post meta info description: publish date."
 msgid "Posted on:"
 msgstr ""
 
-#: templates/parts/meta/entry-meta-element-date.php:33
-#: templates/parts/meta/entry-meta-element-date.php:35
+#: templates/parts/meta/entry-meta-element-date.php:28
+#: templates/parts/meta/entry-meta-element-date.php:30
 msgctxt "Post meta info description: update date."
 msgid "Last updated on:"
 msgstr ""
