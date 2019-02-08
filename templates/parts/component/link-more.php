@@ -15,17 +15,15 @@
 
 // Variables
 
-	$post_id      = get_the_ID();
 	$has_more_tag = Reykjavik_Library::has_more_tag();
-	$more_tag     = ( $has_more_tag ) ? ( '#more-' . $post_id ) : ( '' );
+	$more_tag     = ( $has_more_tag ) ? ( '#more-' . get_the_ID() ) : ( '' );
 	$hidden_title = the_title( '<span class="screen-reader-text"> &ldquo;', '&rdquo;</span>', false );
 
 
 ?>
 
 <div class="link-more">
-	<a href="<?php echo esc_url( get_permalink( $post_id ) . $more_tag ); ?>" class="more-link">
-		<?php
+	<a href="<?php the_permalink(); echo esc_url( $more_tag ); ?>" class="more-link"><?php
 
 		if ( is_string( $has_more_tag ) ) {
 			printf(
@@ -39,6 +37,5 @@
 			);
 		}
 
-		?>
-	</a>
+	?></a>
 </div>

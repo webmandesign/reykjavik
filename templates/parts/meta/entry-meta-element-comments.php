@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.0
  */
 
 
@@ -31,7 +31,7 @@
 ?>
 
 <span class="entry-meta-element comments-link">
-	<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>#comments" title="<?php echo esc_attr( sprintf( esc_html_x( 'Comments: %s', '%s: number of comments.', 'reykjavik' ), number_format_i18n( $comments_number ) ) ); ?>">
+	<a href="<?php the_permalink(); ?>#comments" title="<?php echo esc_attr( sprintf( esc_html_x( 'Comments: %s', '%s: number of comments.', 'reykjavik' ), number_format_i18n( $comments_number ) ) ); ?>">
 		<span class="entry-meta-description">
 			<?php echo esc_html_x( 'Comments:', 'Post meta info description: comments count.', 'reykjavik' ); ?>
 		</span>

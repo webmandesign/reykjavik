@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.0
  */
 
 
@@ -73,22 +73,28 @@
 	 */
 
 		$siteNavigation
-			.on( 'touchstart click', '.menu-item-has-children > a .expander', function( e ) {
+			.on( 'touchstart', '.menu-item-has-children > a', function( e ) {
 
 				// Helper variables
 
 					var
-						$this = $( this ).parent().parent(); // Get the LI element
+						el = $( this ).parent( 'li' );
 
 
 				// Processing
 
-					e.preventDefault();
+					/**
+					 * First touch does not trigger the link, only opens the submenu.
+					 * Second touch does trigger the link.
+					 */
+					if ( ! el.hasClass( 'focus' ) ) {
+						e.preventDefault();
 
-					$this
-						.toggleClass( 'focus' )
-						.siblings()
-							.removeClass( 'focus' );
+						el
+							.toggleClass( 'focus' )
+							.siblings( '.focus' )
+								.removeClass( 'focus' );
+					}
 
 			} );
 

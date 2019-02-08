@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.0
  *
  * Contents:
  *
@@ -302,12 +302,12 @@ class Reykjavik_Menu {
 
 
 		/**
-		 * Menu item modification: submenu expander
+		 * Menu item modification: submenu expander.
 		 *
 		 * Primary menu only.
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.5.0
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
@@ -326,7 +326,7 @@ class Reykjavik_Menu {
 					// `</a>` is required here as `$args->link_after` could also be an empty string.
 					$item_output = str_replace(
 						$args->link_after . '</a>',
-						$args->link_after . ' <span class="expander" aria-hidden="true"></span></a>', // Accessibility: on focus, no screen reader text required
+						$args->link_after . ' <span class="expander" aria-label="' . esc_attr__( '(Focus the link to toggle submenu.)', 'reykjavik' ) . '"></span></a>',
 						$item_output
 					);
 

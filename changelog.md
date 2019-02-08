@@ -1,5 +1,34 @@
 # Reykjavik Changelog
 
+## 1.5.0
+
+* **Update**: Improving touch screen navigation
+* **Update**: Improving accessibility
+* **Update**: Improving excerpt display
+* **Update**: Improving Recent Posts widget enhancements
+* **Update**: Improving security
+* **Update**: Removing obsolete code
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-navigation-accessibility.js
+	assets/scss/main.scss
+	includes/frontend/class-menu.php
+	includes/frontend/class-post-summary.php
+	includes/widgets/class-wp-widget-recent-posts.php
+	languages/reykjavik.pot
+	templates/parts/component/link-more.php
+	templates/parts/component/link-more-product.php
+	templates/parts/content/content.php
+	templates/parts/content/content-child-page.php
+	templates/parts/intro/intro-content.php
+	templates/parts/meta/entry-meta-element-comments.php
+	templates/parts/meta/entry-meta-element-date.php
+
+
 ## 1.4.2
 
 * **Fix**: Displaying default background image URL when no image set in theme options

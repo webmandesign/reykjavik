@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.5.0
  */
 
 
@@ -33,7 +33,7 @@ do_action( 'tha_entry_before', $args );
 		do_action( 'tha_entry_content_before', $args );
 
 		if ( is_single( get_the_ID() ) ) {
-			the_content( apply_filters( 'wmhook_reykjavik_summary_continue_reading', '' ) );
+			the_content();
 		} else {
 			the_excerpt();
 		}
