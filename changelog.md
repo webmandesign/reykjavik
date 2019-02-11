@@ -1,5 +1,17 @@
 # Reykjavik Changelog
 
+## 1.5.1
+
+* **Update**: Preventing JavaScript error for CSS variables incompatible browsers fallback
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	library/includes/classes/class-css-variables.php
+
+
 ## 1.5.0
 
 * **Update**: Improving touch screen navigation
