@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.4.0
- * @version  1.4.1
+ * @version  1.5.1
  *
  * Contents:
  *
@@ -259,7 +259,7 @@ class Reykjavik_Library_CSS_Variables {
 		 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 		 *
 		 * @since    1.4.0
-		 * @version  1.4.0
+		 * @version  1.5.1
 		 */
 		public static function compatibility() {
 
@@ -274,7 +274,12 @@ class Reykjavik_Library_CSS_Variables {
 
 				wp_add_inline_script(
 					'css-vars-ponyfill',
-					"cssVars( { onlyVars: true, exclude: 'link:not([href^=\"" . esc_url_raw( get_theme_root_uri() ) . "\"])' } );"
+					'window.onload = function() {' . PHP_EOL .
+					"\t" . 'cssVars( {' . PHP_EOL .
+					"\t\t" . 'onlyVars: true,' . PHP_EOL .
+					"\t\t" . 'exclude: \'link:not([href^="' . esc_url_raw( get_theme_root_uri() ) . '"])\'' . PHP_EOL .
+					"\t" . '} );' . PHP_EOL .
+					'};'
 				);
 
 		} // /compatibility
