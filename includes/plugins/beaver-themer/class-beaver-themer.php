@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -24,17 +24,13 @@ class Reykjavik_Beaver_Themer {
 	 * 0) Init
 	 */
 
-		private static $instance;
-
-
-
 		/**
-		 * Constructor
+		 * Initialization
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  1.5.2
 		 */
-		private function __construct() {
+		public static function init() {
 
 			// Processing
 
@@ -56,29 +52,6 @@ class Reykjavik_Beaver_Themer {
 					// Filters
 
 						add_filter( 'fl_theme_builder_part_hooks', __CLASS__ . '::parts' );
-
-		} // /__construct
-
-
-
-		/**
-		 * Initialization (get instance)
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function init() {
-
-			// Processing
-
-				if ( null === self::$instance ) {
-					self::$instance = new self;
-				}
-
-
-			// Output
-
-				return self::$instance;
 
 		} // /init
 
@@ -126,11 +99,18 @@ class Reykjavik_Beaver_Themer {
 		 * Custom header and footer renderer
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.5.2
 		 */
 		public static function headers_footers() {
 
-			// Helper variables
+			// Requirements check
+
+				if ( is_admin() ) {
+					return;
+				}
+
+
+			// Variables
 
 				$header_ids = FLThemeBuilderLayoutData::get_current_page_header_ids();
 				$footer_ids = FLThemeBuilderLayoutData::get_current_page_footer_ids();
@@ -141,23 +121,25 @@ class Reykjavik_Beaver_Themer {
 				// Custom header
 
 					if ( ! empty( $header_ids ) ) {
-
 						remove_all_actions( 'tha_header_top' );
 						remove_all_actions( 'tha_header_bottom' );
 
 						add_action( 'tha_header_top', 'FLThemeBuilderLayoutRenderer::render_header', 20 );
 
+						add_action( 'wp_enqueue_scripts', __CLASS__ . '::dequeue_header_scripts', 110 );
+
+						add_filter( 'wmhook_reykjavik_skip_links_no_header', '__return_true' );
 					}
 
 				// Custom footer
 
 					if ( ! empty( $footer_ids ) ) {
-
 						remove_all_actions( 'tha_footer_top' );
 						remove_all_actions( 'tha_footer_bottom' );
 
 						add_action( 'tha_footer_top', 'FLThemeBuilderLayoutRenderer::render_footer', 20 );
 
+						add_filter( 'wmhook_reykjavik_skip_links_no_footer', '__return_true' );
 					}
 
 		} // /headers_footers
@@ -200,6 +182,23 @@ class Reykjavik_Beaver_Themer {
 				}
 
 		} // /site_content
+
+
+
+		/**
+		 * Dequeue theme header scripts
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function dequeue_header_scripts() {
+
+			// Processing
+
+				wp_dequeue_script( 'reykjavik-scripts-nav-a11y' );
+				wp_dequeue_script( 'reykjavik-scripts-nav-mobile' );
+
+		} // /dequeue_header_scripts
 
 
 

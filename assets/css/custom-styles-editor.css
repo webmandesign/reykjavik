@@ -55,7 +55,7 @@ mark, .highlight { -webkit-box-shadow: 0.382em 0 0 #273a7d, -0.382em 0 0 #273a7d
 
 @media (max-width: 671px) { .pagination a { background-color: #273a7d; color: #fefeff; background-color: var(--color_accent); color: var(--color_accent_text); } }
 
-/* FILE: main/custom-styles/__typography-editor.scss */
+/* FILE: main/custom-styles/__editor-typography.scss */
 .mce-content-body { line-height: 1.618; }
 
 .mce-content-body h1, .mce-content-body .h1 { line-height: 1.191; }

@@ -30,7 +30,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  1.4.0
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -51,21 +51,17 @@ class Reykjavik_Elementor {
 	 * 0) Init
 	 */
 
-		private static $instance;
-
-
-
 		/**
-		 * Constructor
+		 * Initialization
 		 *
 		 * @subpackage  Theme Builder
 		 *
 		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @version  1.5.2
 		 */
-		private function __construct() {
+		public static function init() {
 
-			// Helper variables
+			// Variables
 
 				$theme_builder = self::get_theme_builder( false );
 
@@ -75,6 +71,8 @@ class Reykjavik_Elementor {
 				// Hooks
 
 					// Actions
+
+						add_action( 'wp', __CLASS__ . '::disable_sidebar' );
 
 						if ( $theme_builder ) {
 							add_action( 'elementor/theme/register_locations', __CLASS__ . '::register_locations' );
@@ -89,33 +87,6 @@ class Reykjavik_Elementor {
 					// Filters
 
 						add_filter( 'wp_parse_str', __CLASS__ . '::upgrade_link' );
-
-						if ( $theme_builder ) {
-							add_filter( 'get_post_metadata', __CLASS__ . '::content_layout', 10, 3 );
-						}
-
-		} // /__construct
-
-
-
-		/**
-		 * Initialization (get instance)
-		 *
-		 * @since    1.1.0
-		 * @version  1.1.0
-		 */
-		public static function init() {
-
-			// Processing
-
-				if ( null === self::$instance ) {
-					self::$instance = new self;
-				}
-
-
-			// Output
-
-				return self::$instance;
 
 		} // /init
 
@@ -133,28 +104,62 @@ class Reykjavik_Elementor {
 		 * By defining the `ELEMENTOR_PARTNER_ID` constant, Elementor's `Utils::get_pro_link()`
 		 * method produces URL with incorrect `partner_id` argument. Should be `ref` instead.
 		 *
-		 * This is a temporary fix for the issue hooking onto `wp_parse_str` that is being used
-		 * within `add_query_arg()` function. And hoping to hit Elementor's upgrade URL only
-		 * by targeting URLs with `utm_campaign=gopro` argument...
-		 *
 		 * Waiting for Elementor to fix the `partner_id` URL argument.
+		 * UPDATE 20180507: They will not fix it, basically, this is intended...
 		 *
 		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @version  1.5.2
 		 *
 		 * @param  array $url_args  The array populated with variables.
 		 */
 		public static function upgrade_link( $url_args = array() ) {
 
+			// Variables
+
+				$ref_id = 2179;
+
+				/**
+				 * @see Elementor\Utils::get_pro_link
+				 */
+				$theme  = wp_get_theme( get_stylesheet() )->get( 'Name' );
+				$theme  = sanitize_key( $theme );
+
+
 			// Processing
 
+				/**
+				 * We need to define this so Elementor runs `add_query_arg()`
+				 * second time, after `utm_term` is added.
+				 * We can use any value here.
+				 */
+				if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+					define( 'ELEMENTOR_PARTNER_ID', $ref_id );
+				}
+
+				/**
+				 * Setting our referral ID,
+				 * Unsetting UTMs.
+				 */
 				if (
-					defined( 'ELEMENTOR_PARTNER_ID' )
-					&& isset( $url_args['utm_campaign'] )
+					isset( $url_args['utm_campaign'] )
 					&& 'gopro' === $url_args['utm_campaign']
 					&& ! isset( $url_args['ref'] )
 				) {
-					$url_args['ref'] = ELEMENTOR_PARTNER_ID;
+					$url_args['ref']        = $ref_id;
+					$url_args['utm_source'] = 'wm-theme';
+					unset( $url_args['utm_campaign'] );
+					unset( $url_args['utm_medium'] );
+					unset( $url_args['utm_source'] );
+				}
+
+				/**
+				 * Unsetting theme name UTM.
+				 */
+				if (
+					isset( $url_args['utm_term'] )
+					&& $theme === $url_args['utm_term']
+				) {
+					unset( $url_args['utm_term'] );
 				}
 
 
@@ -199,11 +204,11 @@ class Reykjavik_Elementor {
 		 * @subpackage  Theme Builder
 		 *
 		 * @since    1.1.0
-		 * @version  1.4.0
+		 * @version  1.5.2
 		 */
 		public static function display_setup() {
 
-			// Helper variables
+			// Variables
 
 				$locations = self::get_locations();
 
@@ -234,6 +239,8 @@ class Reykjavik_Elementor {
 								add_action( 'tha_header_top', __CLASS__ . '::header' );
 
 								add_action( 'wp_enqueue_scripts', __CLASS__ . '::dequeue_header_scripts', 110 );
+
+								add_filter( 'wmhook_reykjavik_skip_links_no_header', '__return_true' );
 								break;
 
 							/**
@@ -246,6 +253,8 @@ class Reykjavik_Elementor {
 								remove_all_actions( 'tha_footer_bottom' );
 
 								add_action( 'tha_footer_top', __CLASS__ . '::footer' );
+
+								add_filter( 'wmhook_reykjavik_skip_links_no_footer', '__return_true' );
 								break;
 
 							/**
@@ -253,8 +262,7 @@ class Reykjavik_Elementor {
 							 *
 							 * For all the locations that are editable by Elementor in content area we need
 							 * to remove theme content wrappers and all sections and elements hooked into
-							 * THA content wrapper action hooks. This will also effectively remove a sidebar
-							 * from such locations.
+							 * THA content wrapper action hooks.
 							 *
 							 * As we do not register support for such locations (see `register_locations()`
 							 * above), Elementor Theme Builder will take over the whole theme content area
@@ -262,10 +270,14 @@ class Reykjavik_Elementor {
 							 */
 							default:
 								if ( $location_args['edit_in_content'] ) {
-									remove_all_actions( 'tha_content_before' );
-									remove_all_actions( 'tha_content_top' );
-									remove_all_actions( 'tha_content_bottom' );
-									remove_all_actions( 'tha_content_after' );
+									// Removing intro.
+									remove_action( 'tha_content_top', 'Reykjavik_Intro::container', 15 );
+
+									// Removing next/previous post navigation.
+									remove_action( 'tha_content_bottom', 'Reykjavik_Post::navigation', 95 );
+
+									// Make sure we apply correct content layout.
+									add_filter( 'get_post_metadata', __CLASS__ . '::content_layout', 10, 3 );
 
 									// We still need to disable sidebar for correct body class.
 									add_filter( 'wmhook_reykjavik_sidebar_disable', '__return_true' );
@@ -432,6 +444,24 @@ class Reykjavik_Elementor {
 	 */
 
 		/**
+		 * Disable sidebar when in edit mode.
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function disable_sidebar() {
+
+			// Processing
+
+				if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+					add_filter( 'wmhook_reykjavik_sidebar_disable', '__return_true' );
+				}
+
+		} // /disable_sidebar
+
+
+
+		/**
 		 * Dequeue theme header scripts
 		 *
 		 * @subpackage  Theme Builder
@@ -457,7 +487,7 @@ class Reykjavik_Elementor {
 		 * @subpackage  Custom Fields
 		 *
 		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @version  1.5.2
 		 *
 		 * @param  null|array|string $value
 		 * @param  absint            $post_id
@@ -467,10 +497,7 @@ class Reykjavik_Elementor {
 
 			// Processing
 
-				if (
-					'content_layout' === $meta_key
-					&& 'elementor_library' === get_post_type( $post_id )
-				) {
+				if ( 'content_layout' === $meta_key ) {
 					return 'stretched';
 				}
 

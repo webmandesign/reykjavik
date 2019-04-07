@@ -3,12 +3,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-01-30 15:00+0100\n"
+"POT-Creation-Date: 2019-04-07 17:30+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
 "Language: en\n"
-"MIME-Version: 1.4.0\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
@@ -80,7 +80,7 @@ msgstr ""
 #: includes/customize/class-customize.php:817
 #: includes/customize/class-customize.php:997
 #: includes/customize/class-customize.php:1021
-#: includes/customize/class-customize.php:1152
+#: includes/customize/class-customize.php:1153
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:76
 msgctxt "Customizer panel title."
 msgid "Theme Options"
@@ -370,9 +370,9 @@ msgstr ""
 
 #: includes/customize/class-customize.php:847
 #: includes/customize/class-customize.php:871
-#: includes/customize/class-customize.php:1069
-#: includes/customize/class-customize.php:1086
-#: includes/customize/class-customize.php:1103
+#: includes/customize/class-customize.php:1070
+#: includes/customize/class-customize.php:1087
+#: includes/customize/class-customize.php:1104
 #, php-format
 msgid "Default value: %s"
 msgstr ""
@@ -462,11 +462,17 @@ msgstr ""
 msgid "Use custom fonts"
 msgstr ""
 
-#: includes/customize/class-customize.php:1057
-msgid "Custom fonts setup"
+#: includes/customize/class-customize.php:1052
+msgid ""
+"Disables theme default fonts loading and lets you set up your own custom "
+"fonts."
 msgstr ""
 
 #: includes/customize/class-customize.php:1058
+msgid "Custom fonts setup"
+msgstr ""
+
+#: includes/customize/class-customize.php:1059
 #, php-format
 msgctxt ""
 "%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
@@ -476,7 +482,7 @@ msgid ""
 "Instead, please use any font service (such as %s) plugin you like."
 msgstr ""
 
-#: includes/customize/class-customize.php:1060
+#: includes/customize/class-customize.php:1061
 msgid ""
 "You can set your fonts plugin according to information provided below, or "
 "insert your custom font names (a value of \"font-family\" CSS property) "
@@ -484,77 +490,70 @@ msgid ""
 "fonts on the website)."
 msgstr ""
 
-#: includes/customize/class-customize.php:1067
+#: includes/customize/class-customize.php:1068
 msgid "General text font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1084
-#: includes/setup/class-setup.php:718
+#: includes/customize/class-customize.php:1085
+#: includes/setup/class-setup.php:653
 msgid "Headings font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1101
-#: includes/setup/class-setup.php:724
+#: includes/customize/class-customize.php:1102
+#: includes/setup/class-setup.php:659
 msgid "Logo font"
 msgstr ""
 
-#: includes/customize/class-customize.php:1117
+#: includes/customize/class-customize.php:1118
 msgid "Info: CSS selectors"
 msgstr ""
 
-#: includes/customize/class-customize.php:1118
+#: includes/customize/class-customize.php:1119
 msgid ""
-"Here you can find CSS selectors list associated with each font group in the "
-"theme. You can use these in your custom font plugin settings."
+"Here you can find CSS selectors/variables list associated with each font "
+"group in the theme. You can use these in your custom font plugin settings."
 msgstr ""
 
-#: includes/customize/class-customize.php:1121
+#: includes/customize/class-customize.php:1122
 msgid "General text font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1128
+#: includes/customize/class-customize.php:1129
 msgid "Headings font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1135
+#: includes/customize/class-customize.php:1136
 msgid "Logo font CSS selectors:"
 msgstr ""
 
-#: includes/customize/class-customize.php:1151
+#: includes/customize/class-customize.php:1152
 msgctxt "Customizer section title."
 msgid "Others"
 msgstr ""
 
-#: includes/customize/class-customize.php:1158
+#: includes/customize/class-customize.php:1159
+#: templates/parts/admin/notice-welcome.php:41
 msgid "Show \"Welcome\" page"
 msgstr ""
 
-#: includes/customize/class-customize.php:1159
+#: includes/customize/class-customize.php:1160
 msgid "Under \"Appearance\" WordPress dashboard menu."
 msgstr ""
 
-#: includes/customize/class-customize.php:1167
+#: includes/customize/class-customize.php:1168
 msgid "Enable mobile navigation"
 msgstr ""
 
-#: includes/customize/class-customize.php:1168
+#: includes/customize/class-customize.php:1169
 msgid ""
 "If your website navigation is very simple and you do not want to use the "
 "mobile navigation functionality, you can disable it here."
 msgstr ""
 
-#: includes/customize/class-customize.php:1291
+#: includes/customize/class-customize.php:1292
 msgid ""
 "Please set your website credits text or the theme default one will be "
 "displayed."
-msgstr ""
-
-#: includes/frontend/class-header.php:214
-msgid "Skip to main navigation"
-msgstr ""
-
-#: includes/frontend/class-header.php:220
-msgid "Skip to footer"
 msgstr ""
 
 #: includes/frontend/class-loop.php:114 includes/frontend/class-loop.php:187
@@ -608,11 +607,15 @@ msgstr ""
 msgid "Skip to menu toggle button"
 msgstr ""
 
-#: includes/frontend/class-post-summary.php:114
+#: includes/frontend/class-menu.php:329
+msgid "(Focus the link to toggle submenu.)"
+msgstr ""
+
+#: includes/frontend/class-post-summary.php:84
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/frontend/class-post-summary.php:114
+#: includes/frontend/class-post-summary.php:86
 msgid "Enter the password to view it."
 msgstr ""
 
@@ -862,227 +865,227 @@ msgstr ""
 msgid "Font size, extra large"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:219
+#: includes/plugins/beaver-themer/class-beaver-themer.php:218
 msgctxt "Website hooks category name."
 msgid "Page"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:221
+#: includes/plugins/beaver-themer/class-beaver-themer.php:220
 msgctxt "Website hook name."
 msgid "Page Open"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:222
+#: includes/plugins/beaver-themer/class-beaver-themer.php:221
 msgctxt "Website hook name."
 msgid "Page Close"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:227
+#: includes/plugins/beaver-themer/class-beaver-themer.php:226
 msgctxt "Website hooks category name."
 msgid "Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:229
+#: includes/plugins/beaver-themer/class-beaver-themer.php:228
 msgctxt "Website hook name."
 msgid "Before Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:230
+#: includes/plugins/beaver-themer/class-beaver-themer.php:229
 msgctxt "Website hook name."
 msgid "Header Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:231
+#: includes/plugins/beaver-themer/class-beaver-themer.php:230
 msgctxt "Website hook name."
 msgid "Header Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:232
+#: includes/plugins/beaver-themer/class-beaver-themer.php:231
 msgctxt "Website hook name."
 msgid "After Header"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:237
+#: includes/plugins/beaver-themer/class-beaver-themer.php:236
 msgctxt "Website hooks category name."
 msgid "Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:239
+#: includes/plugins/beaver-themer/class-beaver-themer.php:238
 msgctxt "Website hook name."
 msgid "Before Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:240
+#: includes/plugins/beaver-themer/class-beaver-themer.php:239
 msgctxt "Website hook name."
 msgid "Intro Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:241
+#: includes/plugins/beaver-themer/class-beaver-themer.php:240
 msgctxt "Website hook name."
 msgid "After Intro"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:246
+#: includes/plugins/beaver-themer/class-beaver-themer.php:245
 msgctxt "Website hooks category name."
 msgid "Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:248
+#: includes/plugins/beaver-themer/class-beaver-themer.php:247
 msgctxt "Website hook name."
 msgid "Before Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:249
+#: includes/plugins/beaver-themer/class-beaver-themer.php:248
 msgctxt "Website hook name."
 msgid "Content Area Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:250
+#: includes/plugins/beaver-themer/class-beaver-themer.php:249
 msgctxt "Website hook name."
 msgid "Content Area Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:251
+#: includes/plugins/beaver-themer/class-beaver-themer.php:250
 msgctxt "Website hook name."
 msgid "After Content Area"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:256
+#: includes/plugins/beaver-themer/class-beaver-themer.php:255
 msgctxt "Website hooks category name."
 msgid "Post Entry"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:258
+#: includes/plugins/beaver-themer/class-beaver-themer.php:257
 msgctxt "Website hook name."
 msgid "Before Post"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:259
+#: includes/plugins/beaver-themer/class-beaver-themer.php:258
 msgctxt "Website hook name."
 msgid "Post Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:260
+#: includes/plugins/beaver-themer/class-beaver-themer.php:259
 msgctxt "Website hook name."
 msgid "Before Post Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:261
+#: includes/plugins/beaver-themer/class-beaver-themer.php:260
 msgctxt "Website hook name."
 msgid "After Post Content"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:262
+#: includes/plugins/beaver-themer/class-beaver-themer.php:261
 msgctxt "Website hook name."
 msgid "Post Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:263
+#: includes/plugins/beaver-themer/class-beaver-themer.php:262
 msgctxt "Website hook name."
 msgid "After Post"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:268
+#: includes/plugins/beaver-themer/class-beaver-themer.php:267
 msgctxt "Website hooks category name."
 msgid "Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:270
+#: includes/plugins/beaver-themer/class-beaver-themer.php:269
 msgctxt "Website hook name."
 msgid "Before Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:271
+#: includes/plugins/beaver-themer/class-beaver-themer.php:270
 msgctxt "Website hook name."
 msgid "After Comments"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:276
+#: includes/plugins/beaver-themer/class-beaver-themer.php:275
 msgctxt "Website hooks category name."
 msgid "Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:278
+#: includes/plugins/beaver-themer/class-beaver-themer.php:277
 msgctxt "Website hook name."
 msgid "Before Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:279
+#: includes/plugins/beaver-themer/class-beaver-themer.php:278
 msgctxt "Website hook name."
 msgid "After Posts List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:284
+#: includes/plugins/beaver-themer/class-beaver-themer.php:283
 msgctxt "Website hooks category name."
 msgid "Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:286
+#: includes/plugins/beaver-themer/class-beaver-themer.php:285
 msgctxt "Website hook name."
 msgid "Before Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:287
+#: includes/plugins/beaver-themer/class-beaver-themer.php:286
 msgctxt "Website hook name."
 msgid "After Child Pages List"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:292
+#: includes/plugins/beaver-themer/class-beaver-themer.php:291
 msgctxt "Website hooks category name."
 msgid "Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:294
+#: includes/plugins/beaver-themer/class-beaver-themer.php:293
 msgctxt "Website hook name."
 msgid "Before Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:295
+#: includes/plugins/beaver-themer/class-beaver-themer.php:294
 msgctxt "Website hook name."
 msgid "Sidebar Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:296
+#: includes/plugins/beaver-themer/class-beaver-themer.php:295
 msgctxt "Website hook name."
 msgid "Sidebar Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:297
+#: includes/plugins/beaver-themer/class-beaver-themer.php:296
 msgctxt "Website hook name."
 msgid "After Sidebar"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:302
+#: includes/plugins/beaver-themer/class-beaver-themer.php:301
 msgctxt "Website hooks category name."
 msgid "Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:304
+#: includes/plugins/beaver-themer/class-beaver-themer.php:303
 msgctxt "Website hook name."
 msgid "Before Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:305
+#: includes/plugins/beaver-themer/class-beaver-themer.php:304
 msgctxt "Website hook name."
 msgid "Footer Top"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:306
+#: includes/plugins/beaver-themer/class-beaver-themer.php:305
 msgctxt "Website hook name."
 msgid "Footer Bottom"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:307
+#: includes/plugins/beaver-themer/class-beaver-themer.php:306
 msgctxt "Website hook name."
 msgid "After Footer"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:309
+#: includes/plugins/beaver-themer/class-beaver-themer.php:308
 msgctxt "Website hook name."
 msgid "Before Site Info"
 msgstr ""
 
-#: includes/plugins/beaver-themer/class-beaver-themer.php:310
+#: includes/plugins/beaver-themer/class-beaver-themer.php:309
 msgctxt "Website hook name."
 msgid "After Site Info"
 msgstr ""
@@ -1136,7 +1139,7 @@ msgid "Get media for your website &raquo;"
 msgstr ""
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
-msgid "Install required plugins!"
+msgid "Install demo required plugins!"
 msgstr ""
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
@@ -1159,37 +1162,43 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:515
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:170
+msgid ""
+"(Note that this set of plugins may differ from plugins recommended under "
+"Appearance &rarr; Install Plugins!)"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:521
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:519
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:525
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:520
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:526
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:524
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:530
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:526
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:532
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:529
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:535
 msgid "Reload this page &raquo;"
 msgstr ""
 
@@ -1228,7 +1237,7 @@ msgstr ""
 
 #. translators: %s: search query.
 #: includes/plugins/woocommerce/class-woocommerce-pages.php:275 search.php:32
-#: templates/parts/intro/intro-content.php:85
+#: templates/parts/intro/intro-content.php:89
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -1290,43 +1299,27 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:160
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Thank you for installing %s!"
-msgstr ""
-
-#: includes/setup/class-setup.php:167
-msgid "Please read \"Welcome\" page for information about the theme setup."
-msgstr ""
-
-#: includes/setup/class-setup.php:174
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Get started with %s"
-msgstr ""
-
-#: includes/setup/class-setup.php:460
+#: includes/setup/class-setup.php:395
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:467
+#: includes/setup/class-setup.php:402
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:468
+#: includes/setup/class-setup.php:403
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:475 includes/setup/class-setup.php:486
+#: includes/setup/class-setup.php:410 includes/setup/class-setup.php:421
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:485
+#: includes/setup/class-setup.php:420
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:493
+#: includes/setup/class-setup.php:428
 msgid "In page intro section."
 msgstr ""
 
@@ -1335,7 +1328,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:599
+#: includes/setup/class-setup.php:534
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1345,68 +1338,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:609
+#: includes/setup/class-setup.php:544
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:678
+#: includes/setup/class-setup.php:613
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:679
+#: includes/setup/class-setup.php:614
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:680
+#: includes/setup/class-setup.php:615
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:681
+#: includes/setup/class-setup.php:616
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:682
+#: includes/setup/class-setup.php:617
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:683
+#: includes/setup/class-setup.php:618
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:684
+#: includes/setup/class-setup.php:619
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:685
+#: includes/setup/class-setup.php:620
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:686
+#: includes/setup/class-setup.php:621
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:691
+#: includes/setup/class-setup.php:626
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:708
+#: includes/setup/class-setup.php:643
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:712
+#: includes/setup/class-setup.php:647
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:730
+#: includes/setup/class-setup.php:665
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:741
+#: includes/setup/class-setup.php:676
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:748
+#: includes/setup/class-setup.php:683
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1414,23 +1407,23 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:759
+#: includes/setup/class-setup.php:694
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:763
+#: includes/setup/class-setup.php:698
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:774
+#: includes/setup/class-setup.php:709
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:778
+#: includes/setup/class-setup.php:713
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:790
+#: includes/setup/class-setup.php:725
 msgid "Outdented heading style"
 msgstr ""
 
@@ -1705,16 +1698,35 @@ msgid ""
 "to install WooCommerce plugin suggested below."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:149
-#: includes/welcome/class-welcome.php:151
+#: includes/welcome/class-welcome.php:150
+#: includes/welcome/class-welcome.php:152
 msgid "Welcome"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:219
+#, php-format
+msgctxt "%1$s: heart icon, %2$s: star icons"
+msgid "If you %1$s like this theme, please rate it %2$s"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:225
+msgid "And/or please consider a donation, thank you 🙏😊"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:243
+msgid ""
+"Have a suggestion for improvement or something is not working as it should?"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:245
+msgid "Contact support center &rarr;"
 msgstr ""
 
 #: includes/widgets/class-wp-widget-recent-posts.php:83
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/widgets/class-wp-widget-recent-posts.php:272
+#: includes/widgets/class-wp-widget-recent-posts.php:260
 msgid "From category:"
 msgstr ""
 
@@ -1782,7 +1794,8 @@ msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/includes/classes/class-core.php:455
+#: library/includes/classes/class-core.php:457
+#: templates/parts/header/links-skip.php:23
 msgid "Skip to main content"
 msgstr ""
 
@@ -2411,6 +2424,16 @@ msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
+#: templates/parts/admin/notice-welcome.php:28
+#, php-format
+msgctxt "%s: Theme name."
+msgid "Thank you for installing %s theme!"
+msgstr ""
+
+#: templates/parts/admin/notice-welcome.php:35
+msgid "Visit \"Welcome\" page for information on how to set up your website."
+msgstr ""
+
 #: templates/parts/admin/welcome-demo.php:22
 msgid "Installing the theme demo content"
 msgstr ""
@@ -2446,7 +2469,7 @@ msgid ""
 "process."
 msgstr ""
 
-#: templates/parts/admin/welcome-footer.php:22
+#: templates/parts/admin/welcome-footer.php:28
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "Options &raquo; Others."
@@ -2468,11 +2491,11 @@ msgstr ""
 msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 
-#: templates/parts/admin/welcome-header.php:50
+#: templates/parts/admin/welcome-header.php:52
 msgid "Theme Documentation"
 msgstr ""
 
-#: templates/parts/admin/welcome-header.php:52
+#: templates/parts/admin/welcome-header.php:54
 msgid "Support Center"
 msgstr ""
 
@@ -2638,13 +2661,13 @@ msgstr ""
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: templates/parts/component/link-more-product.php:33
+#: templates/parts/component/link-more-product.php:32
 #, php-format
 msgctxt "%s: Product name."
 msgid "View product%s&hellip;"
 msgstr ""
 
-#: templates/parts/component/link-more.php:23
+#: templates/parts/component/link-more.php:22
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
@@ -2726,6 +2749,14 @@ msgstr ""
 msgid "Back to top &uarr;"
 msgstr ""
 
+#: templates/parts/header/links-skip.php:22
+msgid "Skip to main navigation"
+msgstr ""
+
+#: templates/parts/header/links-skip.php:24
+msgid "Skip to footer"
+msgstr ""
+
 #: templates/parts/loop/loop-categories-product.php:42
 msgid "List of categories"
 msgstr ""
@@ -2772,14 +2803,14 @@ msgctxt "Post meta info description: comments count."
 msgid "Comments:"
 msgstr ""
 
-#: templates/parts/meta/entry-meta-element-date.php:25
-#: templates/parts/meta/entry-meta-element-date.php:28
+#: templates/parts/meta/entry-meta-element-date.php:20
+#: templates/parts/meta/entry-meta-element-date.php:23
 msgctxt "Post meta info description: publish date."
 msgid "Posted on:"
 msgstr ""
 
-#: templates/parts/meta/entry-meta-element-date.php:33
-#: templates/parts/meta/entry-meta-element-date.php:35
+#: templates/parts/meta/entry-meta-element-date.php:28
+#: templates/parts/meta/entry-meta-element-date.php:30
 msgctxt "Post meta info description: update date."
 msgid "Last updated on:"
 msgstr ""

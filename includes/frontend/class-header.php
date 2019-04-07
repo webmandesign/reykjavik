@@ -6,15 +6,16 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.1
+ * @version  1.5.2
  *
  * Contents:
  *
- *  0) Init
- * 10) HTML head
- * 20) Body start
- * 30) Site header
- * 40) Setup
+ *   0) Init
+ *  10) HTML head
+ *  20) Body start
+ *  30) Site header
+ *  40) Setup
+ * 100) Others
  */
 class Reykjavik_Header {
 
@@ -34,7 +35,7 @@ class Reykjavik_Header {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.5.2
 		 */
 		private function __construct() {
 
@@ -66,6 +67,8 @@ class Reykjavik_Header {
 						add_filter( 'body_class', __CLASS__ . '::body_class', 98 );
 
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class' );
+
+						add_filter( 'wmhook_reykjavik_library_link_skip_to_pre', __CLASS__ . '::skip_links_no_header', 10, 2 );
 
 		} // /__construct
 
@@ -203,23 +206,13 @@ class Reykjavik_Header {
 		 * Skip links: Body top
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.5.2
 		 */
 		public static function skip_links() {
 
 			// Output
 
-				echo '<ul class="skip-link-list">'
-				     . '<li class="skip-link-list-item">'
-				     . Reykjavik_Library::link_skip_to( 'site-navigation', __( 'Skip to main navigation', 'reykjavik' ) )
-				     . '</li>'
-				     . '<li class="skip-link-list-item">'
-				     . Reykjavik_Library::link_skip_to( 'content' )
-				     . '</li>'
-				     . '<li class="skip-link-list-item">'
-				     . Reykjavik_Library::link_skip_to( 'colophon', __( 'Skip to footer', 'reykjavik' ) )
-				     . '</li>'
-				     . '</ul>';
+				get_template_part( 'templates/parts/header/links', 'skip' );
 
 		} // /skip_links
 
@@ -558,6 +551,75 @@ class Reykjavik_Header {
 				return $init;
 
 		} // /editor_body_class
+
+
+
+
+
+	/**
+	 * 100) Others
+	 */
+
+		/**
+		 * Is header disabled?
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function is_disabled() {
+
+			// Output
+
+				return (bool) apply_filters( 'wmhook_reykjavik_header_is_disabled', false );
+
+		} // /is_disabled
+
+
+
+		/**
+		 * Is header enabled?
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function is_enabled() {
+
+			// Output
+
+				return (bool) apply_filters( 'wmhook_reykjavik_header_is_enabled', ! self::is_disabled() );
+
+		} // /is_enabled
+
+
+
+		/**
+		 * Skip links: Remove header related links.
+		 *
+		 * When we display no header, remove all related skip links.
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 *
+		 * @param  string $pre  Pre output.
+		 * @param  string $id   Link target element ID.
+		 */
+		public static function skip_links_no_header( $pre, $id ) {
+
+			// Processing
+
+				if (
+					(bool) apply_filters( 'wmhook_reykjavik_skip_links_no_header', self::is_disabled() )
+					&& in_array( $id, array( 'site-navigation' ) )
+				) {
+					$pre = '';
+				}
+
+
+			// Output
+
+				return $pre;
+
+		} // /skip_links_no_header
 
 
 

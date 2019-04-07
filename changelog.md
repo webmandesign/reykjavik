@@ -1,5 +1,49 @@
 # Reykjavik Changelog
 
+## 1.5.2
+
+* **Update**: Custom typography info in theme options
+* **Update**: Updating info about demo required plugins
+* **Update**: Improving Beaver Themer compatibility
+* **Update**: Elementor Pro Theme Builder compatibility
+* **Update**: Welcome page and notice
+* **Update**: Improving accessibility skip links
+* **Update**: Improving code
+* **Update**: Styles
+* **Update**: Localization
+* **Fix**: "Continue reading" broken HTML for posts with more tag
+
+### Files changed:
+
+	changelog.md
+	footer.php
+	header.php
+	readme.txt
+	style.css
+	assets/scss/custom-styles.scss
+	includes/customize/class-customize.php
+	includes/frontend/class-assets.php
+	includes/frontend/class-footer.php
+	includes/frontend/class-header.php
+	includes/frontend/class-post-summary.php
+	includes/frontend/class-post.php
+	includes/plugins/bb-header-footer/class-bb-header-footer.php
+	includes/plugins/beaver-themer/class-beaver-themer.php
+	includes/plugins/elementor/class-elementor.php
+	includes/plugins/elementor/elementor.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/class-setup.php
+	includes/welcome/class-welcome.php
+	languages/reykjavik.pot
+	library/includes/classes/class-core.php
+	templates/parts/admin/notice-welcome.php
+	templates/parts/admin/welcome-footer.php
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/content/content-child-page.php
+	templates/parts/header/links-skip.php
+
+
 ## 1.5.1
 
 * **Update**: Preventing JavaScript error for CSS variables incompatible browsers fallback

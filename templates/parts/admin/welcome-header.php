@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.2
  */
 
 
@@ -43,6 +43,8 @@
 		?>
 		<br>
 		<?php esc_html_e( 'Please take time to read the steps below to set up your website.', 'reykjavik' ); ?>
+		<br>
+		<?php echo Reykjavik_Welcome::get_info_like(); ?>
 	</div>
 
 	<p class="wm-actions">

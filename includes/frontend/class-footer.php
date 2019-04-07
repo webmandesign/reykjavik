@@ -6,13 +6,14 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.5.2
  *
  * Contents:
  *
- *  0) Init
- * 10) Site footer
- * 20) Body ending
+ *   0) Init
+ *  10) Site footer
+ *  20) Body ending
+ * 100) Others
  */
 class Reykjavik_Footer {
 
@@ -32,7 +33,7 @@ class Reykjavik_Footer {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  1.5.2
 		 */
 		private function __construct() {
 
@@ -53,6 +54,8 @@ class Reykjavik_Footer {
 					// Filters
 
 						add_filter( 'theme_mod_' . 'texts_site_info', __CLASS__ . '::site_info_year' );
+
+						add_filter( 'wmhook_reykjavik_library_link_skip_to_pre', __CLASS__ . '::skip_links_no_footer', 10, 2 );
 
 		} // /__construct
 
@@ -192,6 +195,75 @@ class Reykjavik_Footer {
 				echo "\r\n" . '</div><!-- /#page -->' . "\r\n\r\n";
 
 		} // /site_close
+
+
+
+
+
+	/**
+	 * 100) Others
+	 */
+
+		/**
+		 * Is footer disabled?
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function is_disabled() {
+
+			// Output
+
+				return (bool) apply_filters( 'wmhook_reykjavik_footer_is_disabled', false );
+
+		} // /is_disabled
+
+
+
+		/**
+		 * Is footer enabled?
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 */
+		public static function is_enabled() {
+
+			// Output
+
+				return (bool) apply_filters( 'wmhook_reykjavik_footer_is_enabled', ! self::is_disabled() );
+
+		} // /is_enabled
+
+
+
+		/**
+		 * Skip links: Remove footer related links.
+		 *
+		 * When we display no footer, remove all related skip links.
+		 *
+		 * @since    1.5.2
+		 * @version  1.5.2
+		 *
+		 * @param  string $pre  Pre output.
+		 * @param  string $id   Link target element ID.
+		 */
+		public static function skip_links_no_footer( $pre, $id ) {
+
+			// Processing
+
+				if (
+					(bool) apply_filters( 'wmhook_reykjavik_skip_links_no_footer', self::is_disabled() )
+					&& in_array( $id, array( 'colophon' ) )
+				) {
+					$pre = '';
+				}
+
+
+			// Output
+
+				return $pre;
+
+		} // /skip_links_no_footer
 
 
 
