@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.2
  */
 
 
@@ -35,7 +35,7 @@
 
 			<p>
 				<?php esc_html_e( 'You can also rate it at its WordPress repository page.', 'reykjavik' ); ?>
-				<a href="https://wordpress.org/support/theme/reykjavik/reviews/?filter=5">
+				<a href="https://wordpress.org/support/theme/reykjavik/reviews/#new-post">
 					<?php esc_html_e( "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)", 'reykjavik' ); ?>
 				</a>
 			</p>

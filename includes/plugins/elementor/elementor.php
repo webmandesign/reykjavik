@@ -14,7 +14,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  1.1.0
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -41,13 +41,5 @@
 /**
  * 10) Plugin integration
  */
-
-	/**
-	 * Upgrade link
-	 *
-	 * @since    1.1.0
-	 * @version  1.1.0
-	 */
-	define( 'ELEMENTOR_PARTNER_ID', 2179 );
 
 	require REYKJAVIK_PATH_PLUGINS . 'elementor/class-elementor.php';

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -239,7 +239,7 @@ class Reykjavik_Assets {
 		 * Frontend scripts enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.5.2
 		 */
 		public static function enqueue_scripts() {
 
@@ -266,7 +266,7 @@ class Reykjavik_Assets {
 
 				// Navigation scripts
 
-					if ( ! apply_filters( 'wmhook_reykjavik_disable_header', false ) ) {
+					if ( Reykjavik_Header::is_enabled() ) {
 						$enqueue_assets[20] = 'reykjavik-scripts-nav-a11y';
 
 						if ( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ) ) {

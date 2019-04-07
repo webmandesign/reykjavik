@@ -2,8 +2,8 @@
 Contributors: webmandesign
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7.0
-Tested up to: 5.0.3
-Stable tag: 1.5.1
+Tested up to: 5.1.1
+Stable tag: 1.5.2
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,8 +37,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 1.5.1 =
-Preventing JavaScript error for CSS variables incompatible browsers fallback.
+= 1.5.2 =
+Fixing "Continue reading" broken HTML for posts with more tag, updating themer plugins compatibility, improving accessibility skip links, updating info and code.
 
 
 == Resources ==

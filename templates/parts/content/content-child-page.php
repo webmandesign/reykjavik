@@ -16,7 +16,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.2
  */
 
 
@@ -71,29 +71,29 @@
 
 	<?php if ( $page_image_url && '-' != $page_image_url ) : ?>
 
-		<figure class="child-page-image">
-			<?php
+	<figure class="child-page-image">
+		<?php
 
-			if ( $has_more_link ) {
-				echo '<a href="' . esc_url( get_permalink( $child_id ) ) . '">';
-			}
+		if ( $has_more_link ) {
+			echo '<a href="' . esc_url( get_permalink( $child_id ) ) . '">';
+		}
 
-			?>
+		?>
 
-			<img
-				src="<?php echo esc_url( $page_image_url ); ?>"
-				alt="<?php echo esc_attr( $image_alt_attr ); ?>"
-				title="<?php echo the_title_attribute( 'echo=0&post=' . $child_id ); ?>"
-				/>
+		<img
+			src="<?php echo esc_url( $page_image_url ); ?>"
+			alt="<?php echo esc_attr( $image_alt_attr ); ?>"
+			title="<?php echo the_title_attribute( 'echo=0&post=' . $child_id ); ?>"
+			/>
 
-			<?php
+		<?php
 
-			if ( $has_more_link ) {
-				echo '</a>';
-			}
+		if ( $has_more_link ) {
+			echo '</a>';
+		}
 
-			?>
-		</figure>
+		?>
+	</figure>
 
 	<?php endif; ?>
 

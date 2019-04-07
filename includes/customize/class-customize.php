@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -175,7 +175,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  1.5.2
 		 *
 		 * @param  array $options
 		 */
@@ -1046,10 +1046,11 @@ class Reykjavik_Customize {
 						),
 
 						900 . 'typography' . 200 => array(
-							'type'    => 'checkbox',
-							'id'      => 'typography_custom_fonts',
-							'label'   => esc_html__( 'Use custom fonts', 'reykjavik' ),
-							'default' => false,
+							'type'        => 'checkbox',
+							'id'          => 'typography_custom_fonts',
+							'label'       => esc_html__( 'Use custom fonts', 'reykjavik' ),
+							'description' => esc_html__( 'Disables theme default fonts loading and lets you set up your own custom fonts.', 'reykjavik' ),
+							'default'     => false,
 						),
 
 							900 . 'typography' . 210 => array(
@@ -1115,7 +1116,7 @@ class Reykjavik_Customize {
 							900 . 'typography' . 290 => array(
 								'type'            => 'html',
 								'content'         => '<h3>' . esc_html__( 'Info: CSS selectors', 'reykjavik' ) . '</h3>'
-									. '<p class="description">' . esc_html__( 'Here you can find CSS selectors list associated with each font group in the theme. You can use these in your custom font plugin settings.', 'reykjavik' ) . '</p>'
+									. '<p class="description">' . esc_html__( 'Here you can find CSS selectors/variables list associated with each font group in the theme. You can use these in your custom font plugin settings.', 'reykjavik' ) . '</p>'
 
 									. '<p>'
 									. '<strong>' . esc_html__( 'General text font CSS selectors:', 'reykjavik' ) . '</strong>'

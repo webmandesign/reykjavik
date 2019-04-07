@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  1.5.2
  */
 
 
@@ -18,5 +18,11 @@
 ?>
 
 </div> <!-- /.welcome-content -->
+
+<p>
+	<?php echo Reykjavik_Welcome::get_info_support(); ?>
+	<br>
+	<?php echo Reykjavik_Welcome::get_info_like(); ?>
+</p>
 
 <p><small><em><?php esc_html_e( 'You can disable this page in Appearance &raquo; Customize &raquo; Theme Options &raquo; Others.', 'reykjavik' ); ?></em></small></p>

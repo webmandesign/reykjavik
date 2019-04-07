@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.2
  *
  * Contents:
  *
@@ -23,10 +23,6 @@ class Reykjavik_Post_Summary {
 	/**
 	 * 0) Init
 	 */
-
-		private static $instance;
-
-
 
 		/**
 		 * Initialization.
@@ -70,7 +66,7 @@ class Reykjavik_Post_Summary {
 		 * If the post has more tag, display the content appropriately.
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.0
+		 * @version  1.5.2
 		 *
 		 * @param  string $excerpt
 		 */
@@ -111,7 +107,7 @@ class Reykjavik_Post_Summary {
 						$excerpt = '';
 					}
 
-					$excerpt = apply_filters( 'the_content', $excerpt . get_the_content( self::get_continue_reading_html() ) );
+					$excerpt = apply_filters( 'the_content', $excerpt . get_the_content( '' ) . self::get_continue_reading_html() );
 
 				}
 
@@ -191,7 +187,7 @@ class Reykjavik_Post_Summary {
 		/**
 		 * Adding "Continue reading" link to excerpt
 		 *
-		 * @since    1.5.0
+		 * @since    1.0.0
 		 * @version  1.5.0
 		 *
 		 * @param  string  $post_excerpt  The post excerpt.
