@@ -15,6 +15,13 @@
 
 
 
+// Requirements check
+
+	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+		return;
+	}
+
+
 ?>
 
 <div class="wm-notes special" style="padding: 2em; font-size: inherit;">

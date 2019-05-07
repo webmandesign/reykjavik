@@ -6,11 +6,18 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.5.2
- * @version  1.5.2
+ * @version  2.0.0
  */
 
 
 
+
+
+// Requirements check
+
+	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+		return;
+	}
 
 
 // Variables

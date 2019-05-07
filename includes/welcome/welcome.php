@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -24,7 +24,8 @@
 
 	if (
 		! is_admin()
-		|| ! Reykjavik_Library_Customize::get_theme_mod( 'admin_welcome_page' )
+		// Reykjavik_Library_Customize::get_theme_mod() does not work here yet.
+		|| ! get_theme_mod( 'admin_welcome_page', true )
 	) {
 		return;
 	}

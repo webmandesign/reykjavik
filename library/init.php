@@ -7,7 +7,7 @@
  * This way we prevent creating additional options in the database.
  *
  * @link  https://github.com/webmandesign/webman-theme-framework
- * @link  http://www.webmandesign.eu
+ * @link  https://www.webmandesign.eu
  *
  * @package    WebMan WordPress Theme Framework
  * @copyright  WebMan Design, Oliver Juhas
