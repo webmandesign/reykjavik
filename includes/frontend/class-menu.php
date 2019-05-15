@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.3
  *
  * Contents:
  *
@@ -438,7 +438,7 @@ class Reykjavik_Menu {
 			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.1
+			 * @version  1.5.3
 			 */
 			public static function social_links_icons() {
 
@@ -456,7 +456,8 @@ class Reykjavik_Menu {
 						'facebook.com'      => 'facebook',
 						'flickr.com'        => 'flickr',
 						'foursquare.com'    => 'foursquare',
-						'plus.google.com'   => 'google-plus',
+						'plus.google.'      => 'google-plus',
+						'google.'           => 'google',
 						'github.com'        => 'github',
 						'instagram.com'     => 'instagram',
 						'linkedin.com'      => 'linkedin',
@@ -486,6 +487,7 @@ class Reykjavik_Menu {
 						'vimeo.com'         => 'vimeo',
 						'vine.co'           => 'vine',
 						'vk.com'            => 'vk',
+						'wa.me'             => 'whatsapp',
 						'wordpress.org'     => 'wordpress',
 						'wordpress.com'     => 'wordpress',
 						'xing.com'          => 'xing',

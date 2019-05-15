@@ -8,20 +8,27 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  1.5.3
  */
 
 
 
 
 
+// Requirements check
+
+	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+		return;
+	}
+
+
 ?>
 
 <h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'reykjavik' ); ?></h2>
 
-<div class="feature-section two-col">
+<div class="feature-section two-col has-2-columns" style="max-width: none;">
 
-	<div class="first-feature col">
+	<div class="first-feature col column">
 
 		<span class="dropcap">1</span>
 
@@ -41,7 +48,7 @@
 
 	</div>
 
-	<div class="last-feature col">
+	<div class="last-feature col column">
 
 		<span class="dropcap">2</span>
 

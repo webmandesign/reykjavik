@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  1.5.3
  */
 
 
@@ -39,6 +39,12 @@ wp_head();
 <body <?php body_class(); ?>>
 
 <?php
+
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+}
 
 do_action( 'tha_body_top' );
 

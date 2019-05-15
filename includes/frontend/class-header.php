@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  1.5.3
  *
  * Contents:
  *
@@ -336,7 +336,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  1.5.3
 		 *
 		 * @param  array $classes
 		 */
@@ -389,12 +389,6 @@ class Reykjavik_Header {
 						$classes[] = 'is-singular';
 
 						$post_id = get_the_ID();
-
-						// Privacy Policy page
-
-							if ( (int) get_option( 'wp_page_for_privacy_policy' ) === $post_id ) {
-								$classes[] = 'page-privacy-policy';
-							}
 
 						// Has featured image?
 
