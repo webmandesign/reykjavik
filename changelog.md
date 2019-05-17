@@ -1,5 +1,39 @@
 # Reykjavik Changelog
 
+## 2.0.0
+
+* **Add**: 
+* **Update**: 
+* **Fix**: 
+
+### Files changed:
+
+
+## 1.5.3
+
+* **Add**: Adding WhatsApp and Google social icon
+* **Update**: Implementing WordPress 5.2 code updates
+* **Fix**: Preventing PHP error after theme activation
+
+### Files changed:
+
+	changelog.md
+	header.php
+	readme.txt
+	style.css
+	assets/images/svg/social-icons.svg
+	includes/frontend/class-header.php
+	includes/frontend/class-menu.php
+	includes/welcome/welcome.php
+	templates/parts/admin/notice-welcome.php
+	templates/parts/admin/welcome-demo.php
+	templates/parts/admin/welcome-footer.php
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/admin/welcome-quickstart.php
+	templates/parts/admin/welcome-wordpress.php
+
+
 ## 1.5.2
 
 * **Update**: Custom typography info in theme options
