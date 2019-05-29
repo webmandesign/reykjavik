@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_Assets {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -57,6 +57,8 @@ class Reykjavik_Assets {
 
 						add_action( 'comment_form_before', __CLASS__ . '::enqueue_comments_reply' );
 
+						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_edit_post_scripts' );
+
 					// Filters
 
 						add_filter( 'wp_resource_hints', __CLASS__ . '::resource_hints', 10, 2 );
@@ -65,10 +67,8 @@ class Reykjavik_Assets {
 
 						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
 
-						if ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) {
-							add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
-							add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
-						}
+						add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
+						add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
 
 		} // /__construct
 
@@ -148,18 +148,16 @@ class Reykjavik_Assets {
 		 * Registering theme scripts
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  2.0.0
 		 */
 		public static function register_scripts() {
 
 			// Helper variables
 
-				$script_global_deps = ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) ? ( array( 'jquery-fitvids' ) ) : ( array( 'jquery' ) );
-
 				$register_assets = array(
 					'jquery-fitvids'                => array( get_theme_file_uri( 'assets/js/vendors/fitvids/jquery.fitvids.js' ) ),
 					'reykjavik-skip-link-focus-fix' => array( 'src' => get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), 'deps' => array() ),
-					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => $script_global_deps ),
+					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery-fitvids' ) ),
 					'reykjavik-scripts-masonry'     => array( 'src' => get_theme_file_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry' ) ),
 					'reykjavik-scripts-nav-a11y'    => array( get_theme_file_uri( 'assets/js/scripts-navigation-accessibility.js' ) ),
 					'reykjavik-scripts-nav-mobile'  => array( get_theme_file_uri( 'assets/js/scripts-navigation-mobile.js' ) ),
@@ -465,6 +463,36 @@ class Reykjavik_Assets {
 				return $html;
 
 		} // /enqueue_fitvids
+
+
+
+		/**
+		 * Enqueues post editor scripts.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function enqueue_edit_post_scripts() {
+
+			// Processing
+
+				wp_enqueue_script(
+					'reykjavik-edit-post',
+					get_theme_file_uri( 'assets/js/scripts-edit-post.js' ),
+					array( 'wp-edit-post' ),
+					REYKJAVIK_THEME_VERSION,
+					true
+				);
+
+				wp_localize_script(
+					'reykjavik-edit-post',
+					'reykjavikPost',
+					array(
+						'page_template' => basename( get_page_template_slug(), '.php' ),
+					)
+				);
+
+		} // /enqueue_edit_post_scripts
 
 
 

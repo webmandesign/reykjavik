@@ -64,11 +64,6 @@ class Reykjavik_Setup {
 
 						add_action( 'admin_init', __CLASS__ . '::image_sizes_notice' );
 
-						/**
-						 * @todo  Temporary Gutenberg solution.
-						 */
-						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::editor_page_template' );
-
 					// Filters
 
 						add_filter( 'wmhook_reykjavik_enable_rtl', '__return_true' );
@@ -954,65 +949,6 @@ class Reykjavik_Setup {
 				return (array) apply_filters( 'wmhook_reykjavik_setup_get_font_sizes', $sizes );
 
 		} // /get_font_sizes
-
-
-
-		/**
-		 * Applies page template class to Gutenberg editor container.
-		 *
-		 * This is a temporary solution while the functionality is not ported into the editor.
-		 * @see  https://github.com/WordPress/gutenberg/issues/8948
-		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
-		 *
-		 * @todo  Temporary Gutenberg solution.
-		 */
-		public static function editor_page_template() {
-
-			// Processing
-
-				wp_add_inline_script(
-					'wp-edit-post',
-					"
-					// When changing page template, change the Gutenberg editor container class.
-					( function( $ ) {
-						wp.domReady( function() {
-
-							var
-								editorGutenberg  = $( '#editor' ),
-								dropdownSelector = '.editor-page-attributes__template select';
-
-							editorGutenberg
-								.on( 'change.set-editor-class', dropdownSelector, function() {
-
-									var
-										pageTemplate = $( this ).val() || 'default';
-
-									pageTemplate = pageTemplate
-										.substr( pageTemplate.lastIndexOf( '/' ) + 1, pageTemplate.length )
-										.replace( /\.php$/, '' )
-										.replace( /\./g, '-' );
-
-									editorGutenberg
-										.removeClass( function( index, className ) {
-											return ( className.match( /\bpage-template-[^ ]+/ ) || [] ).join( ' ' );
-										} )
-										.addClass( 'page-template-' + pageTemplate );
-
-									$( document )
-										.trigger( 'editor-classchange' );
-
-								} )
-								.find( dropdownSelector )
-									.trigger( 'change.set-editor-class' );
-
-						} );
-					} )( jQuery );
-					"
-				);
-
-		} // /editor_page_template
 
 
 

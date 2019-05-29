@@ -49,10 +49,6 @@ class Reykjavik_Jetpack {
 
 				// Setup
 
-					// Add theme support for Responsive Videos
-
-						add_theme_support( 'jetpack-responsive-videos' );
-
 					// Add theme support for Infinite Scroll
 
 						add_theme_support( 'infinite-scroll', apply_filters( 'wmhook_reykjavik_jetpack_setup_infinite_scroll', array(

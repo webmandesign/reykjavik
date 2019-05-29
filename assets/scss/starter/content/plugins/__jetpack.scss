@@ -210,27 +210,6 @@
 
 
 
-// Responsive videos
-@if ( index( $supported_jetpack_modules, 'responsive-videos' ) ) {
-
-	.jetpack-video-wrapper {
-		margin: 0 0 ( $golden +em );
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		.entry-media &,
-		.fl-video & {
-			margin: 0;
-		}
-
-	}
-
-}
-
-
-
 // Sharing
 @if ( index( $supported_jetpack_modules, 'sharing' ) ) {
 
