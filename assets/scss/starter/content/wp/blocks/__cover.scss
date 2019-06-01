@@ -3,6 +3,14 @@
 //
 // Cover
 //
+// Custom CSS class:
+// - has-aligncenter-content
+// - has-alignfull-content
+// - has-alignleft-content
+// - has-alignright-content
+// - has-alignwide-content
+// - has-full-height
+//
 
 
 
@@ -11,18 +19,12 @@
 @if ( index( $supported_blocks, 'cover' ) ) {
 
 	.wp-block-cover {
-		min-height: 27em;
+		min-height: 20em;
 		padding: 2em;
 
 		&.alignleft,
 		&.alignright {
 			max-width: $horizontal_alignment_width;
-		}
-
-		&.alignleft,
-		&.aligncenter,
-		&.alignright {
-			min-height: 20em;
 		}
 
 		&.alignwide,
@@ -32,11 +34,41 @@
 			padding-right: 10%;
 		}
 
-		& &-text {
+		&.has-full-height {
+			min-height: 100vh;
+		}
+
+		&__inner-container {
 			width: 100%;
-			max-width: 24em;
+			max-width: 24rem;
 			padding: 0;
 			text-align: inherit;
+
+			.has-alignwide-content & {
+				max-width: 36rem;
+			}
+
+			.has-alignfull-content & {
+				max-width: none;
+			}
+
+			.has-alignleft-content & {
+				margin-right: auto;
+			}
+
+			.has-alignright-content & {
+				margin-left: auto;
+			}
+
+			.has-aligncenter-content & {
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+
+		a:not(.button) {
+			color: inherit;
 		}
 
 	}

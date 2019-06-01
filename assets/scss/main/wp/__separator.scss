@@ -14,10 +14,4 @@
 		opacity: .2;
 	}
 
-	&.is-style-short,
-	&.is-style-default {
-		max-width: 6em;
-		border-bottom-width: $golden_minor / 2 +em;
-	}
-
 }

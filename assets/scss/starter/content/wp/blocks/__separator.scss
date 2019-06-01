@@ -11,6 +11,13 @@
 @if ( index( $supported_blocks, 'separator' ) ) {
 
 	.wp-block-separator {
+		max-width: 16em;
+		margin-left: auto;
+		margin-right: auto;
+
+		&.is-style-wide {
+			max-width: none;
+		}
 
 		&.is-style-dots::before {
 			content: ' \2022 \2022 \2022'; // &bull;
@@ -18,13 +25,6 @@
 			font-size: $golden +em;
 			letter-spacing: $golden_major +em;
 			color: inherit;
-		}
-
-		&.is-style-short,
-		&.is-style-default {
-			max-width: 12em;
-			margin-left: auto;
-			margin-right: auto;
 		}
 
 	}

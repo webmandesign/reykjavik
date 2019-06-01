@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -32,7 +32,7 @@ class Reykjavik_Content {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -57,6 +57,10 @@ class Reykjavik_Content {
 						add_action( 'tha_content_bottom', __CLASS__ . '::close_container_inner', 90 );
 
 						add_action( 'tha_content_bottom', __CLASS__ . '::close_container', 100 );
+
+					// Filters
+
+						add_filter( 'render_block', __CLASS__ . '::render_block', 5 );
 
 		} // /__construct
 
@@ -288,6 +292,34 @@ class Reykjavik_Content {
 				return $html;
 
 		} // /headings_level_up
+
+
+
+		/**
+		 * Block editor output modifications.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 *
+		 * @param  string $block_content
+		 */
+		public static function render_block( $block_content ) {
+
+			// Processing
+
+				// Button block class.
+				$block_content = str_replace(
+					'wp-block-button__link',
+					'wp-block-button__link button',
+					$block_content
+				);
+
+
+			// Output
+
+				return $block_content;
+
+		} // /render_block
 
 
 

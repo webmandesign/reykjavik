@@ -211,6 +211,10 @@ class Reykjavik_Setup {
 
 					add_theme_support( 'align-wide' );
 
+				// Responsive embedded content.
+
+					add_theme_support( 'responsive-embeds' );
+
 				// Block color palettes.
 
 					add_theme_support( 'editor-color-palette', self::get_color_palette() );

@@ -11,7 +11,7 @@
 @if ( index( $supported_blocks, 'pullquote' ) ) {
 
 	%pullquote {
-		padding: ( $golden +em ) 0;
+		padding: ( pow( $golden, 2 ) +rem ) 6%;
 		text-align: inherit;
 		border-top-width: $golden_minor +em;
 		border-top-style: solid;
@@ -22,6 +22,8 @@
 		&.alignright {
 			clear: none;
 			width: 50%;
+			padding-left: 0;
+			padding-right: 0;
 			margin-left: 6%;
 			margin-right: 6%;
 
@@ -66,27 +68,11 @@
 
 		}
 
-		&.alignfull {
-			padding-left: $golden +em;
-			padding-right: $golden +em;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-left: pow( $golden, 2 ) +em;
-				padding-right: pow( $golden, 2 ) +em;
-			}
-
-		}
-
 		&.is-style-solid-color {
-			padding: $golden +em;
-			border-width: 0;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding: pow( $golden, 2 ) +em;
-			}
 
 			blockquote {
-				max-width: 32em;
+				max-width: none;
+				text-align: inherit;
 			}
 
 		}

@@ -11,6 +11,8 @@
 @if ( index( $supported_blocks, 'gallery' ) ) {
 
 	.wp-block-gallery {
+		margin-left: 0;
+		margin-right: 0;
 
 		&.alignleft,
 		&.alignright {

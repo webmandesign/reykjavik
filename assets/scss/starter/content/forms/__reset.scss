@@ -18,12 +18,6 @@ fieldset {
 	border-width: 0;
 }
 
-input,
-select,
-textarea {
-	@extend %font_size_1em;
-}
-
 button,
 input,
 select,
@@ -42,12 +36,6 @@ textarea {
 
 select {
 	padding: calc( #{ $golden_major +em } - 4px ); // Compensating for border width
-}
-
-option {
-	// Fixing select options colors
-	background: #fafcfe !important;
-	color: #6a6c6e !important;
 }
 
 textarea,

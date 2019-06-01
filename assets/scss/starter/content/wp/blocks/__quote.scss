@@ -1,0 +1,38 @@
+/* FILE: starter/wp/blocks/__quote.scss */
+
+//
+// Quote
+//
+
+
+
+
+
+@if ( index( $supported_blocks, 'quote' ) ) {
+
+	.wp-block-quote {
+
+		&.is-style-large {
+			padding: 0;
+			margin: 0;
+
+			&:not(:last-child) {
+				margin-bottom: $golden +rem;
+			}
+
+			p {
+				line-height: inherit;
+				font-size: $golden +rem;
+				font-style: inherit;
+			}
+
+			cite {
+				@extend %font_size_small;
+				text-align: inherit;
+			}
+
+		}
+
+	}
+
+}

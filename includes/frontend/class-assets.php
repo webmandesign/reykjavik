@@ -67,9 +67,6 @@ class Reykjavik_Assets {
 
 						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
 
-						add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
-						add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
-
 		} // /__construct
 
 
@@ -155,9 +152,8 @@ class Reykjavik_Assets {
 			// Helper variables
 
 				$register_assets = array(
-					'jquery-fitvids'                => array( get_theme_file_uri( 'assets/js/vendors/fitvids/jquery.fitvids.js' ) ),
 					'reykjavik-skip-link-focus-fix' => array( 'src' => get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), 'deps' => array() ),
-					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery-fitvids' ) ),
+					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery' ) ),
 					'reykjavik-scripts-masonry'     => array( 'src' => get_theme_file_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry' ) ),
 					'reykjavik-scripts-nav-a11y'    => array( get_theme_file_uri( 'assets/js/scripts-navigation-accessibility.js' ) ),
 					'reykjavik-scripts-nav-mobile'  => array( get_theme_file_uri( 'assets/js/scripts-navigation-mobile.js' ) ),
@@ -429,40 +425,6 @@ class Reykjavik_Assets {
 				}
 
 		} // /enqueue_comments_reply
-
-
-
-		/**
-		 * Enqueues FitVids only when needed
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $html The generated HTML of the shortcodes
-		 */
-		public static function enqueue_fitvids( $html ) {
-
-			// Requirements check
-
-				if (
-						is_admin()
-						|| empty( $html )
-						|| ! is_string( $html )
-					) {
-					return $html;
-				}
-
-
-			// Processing
-
-				wp_enqueue_script( 'jquery-fitvids' );
-
-
-			// Output
-
-				return $html;
-
-		} // /enqueue_fitvids
 
 
 

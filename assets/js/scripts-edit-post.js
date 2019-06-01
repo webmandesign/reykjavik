@@ -12,57 +12,58 @@
 
 	'use strict';
 
-	/**
-	 * Need to set the initial page template.
-	 * @see  Reykjavik_Assets::enqueue_edit_post_scripts()
-	 */
-	window.reykjavikPost = window.reykjavikPost || { 'page_template' : '' };
+	if ( 'undefined' === typeof wp ) {
+		return;
+	}
 
 	/**
-	 * Applies page template class to post editor.
+	 * Apply page template class to post editor.
 	 *
 	 * This is a temporary solution until it's in core.
 	 * @see  https://github.com/WordPress/gutenberg/issues/8948
 	 */
-	function editorPageTemplate() {
+	wp.domReady( function() {
 
-		var
-			postEditor = $( '#editor' ),
-			templateDropdownSelector = 'select[name="page_template"], .editor-page-attributes__template select';
+		// Variables
 
-		postEditor
-			// Set initial template class.
-			.addClass( 'page-template-' + ( reykjavikPost.page_template || 'default' ) )
-			// Set correct template class when it's changed.
-			.on( 'change.set-editor-class', templateDropdownSelector, function() {
+			var
+				postEditor     = $( '#editor' ),
+				templateSelect = '.editor-page-attributes__template select',
+				/**
+				 * Initial page template.
+				 * @see  Reykjavik_Assets::enqueue_edit_post_scripts()
+				 */
+				wpPost = window.reykjavikPost || { 'page_template' : '' };
 
-				var
-					pageTemplate = $( this ).val() || 'default';
 
-				pageTemplate = pageTemplate
-					.substr( pageTemplate.lastIndexOf( '/' ) + 1, pageTemplate.length )
-					.replace( /\.php$/, '' )
-					.replace( /\./g, '-' );
+		// Processing
 
-				postEditor
-					.removeClass( function( index, className ) {
-						return ( className.match( /\bpage-template-[^ ]+/ ) || [] ).join( ' ' );
-					} )
-					.addClass( 'page-template-' + pageTemplate );
+			postEditor
+				// Set initial template class.
+				.addClass( 'page-template-' + ( wpPost.page_template || 'default' ) )
+				// Set correct template class when it's changed.
+				.on( 'change.set-editor-class', templateSelect, function() {
 
-				// Run the same action as in the pre-block post editor.
-				$( document )
-					.trigger( 'editor-classchange' );
+					var
+						pageTemplate = $( this ).val() || 'default';
 
-			} );
+					pageTemplate = pageTemplate
+						.substr( pageTemplate.lastIndexOf( '/' ) + 1, pageTemplate.length )
+						.replace( /\.php$/, '' )
+						.replace( /\./g, '-' );
 
-	} // /editorPageTemplate
+					postEditor
+						.removeClass( function( index, className ) {
+							return ( className.match( /\bpage-template-[^ ]+/ ) || [] ).join( ' ' );
+						} )
+						.addClass( 'page-template-' + pageTemplate );
 
-	// Run the page template functionality.
-	if ( 'undefined' === typeof wp ) {
-		$( document ).ready( editorPageTemplate );
-	} else {
-		wp.domReady( editorPageTemplate );
-	}
+					// Run the same action as in the pre-block post editor.
+					$( document )
+						.trigger( 'editor-classchange' );
+
+				} );
+
+	} );
 
 } )( jQuery );

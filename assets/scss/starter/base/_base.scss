@@ -36,9 +36,14 @@
 	hr {
 		clear: both;
 		height: 2px;
-		margin: ( pow( 1 + $golden_minor, 2 ) +em ) 0;
 		border-width: 0;
 	}
+
+		hr,
+		.wp-block-separator {
+			margin-top: pow( 1 + $golden_minor, 2 ) +em;
+			margin-bottom: pow( 1 + $golden_minor, 2 ) +em;
+		}
 
 	abbr[title],
 	acronym[title],

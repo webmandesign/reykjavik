@@ -3,6 +3,11 @@
 //
 // Columns
 //
+// Custom CSS class:
+// - has-golden-padding
+// - has-no-margin
+// - has-no-padding
+//
 
 
 
@@ -11,19 +16,13 @@
 @if ( index( $supported_blocks, 'columns' ) ) {
 
 	.wp-block-column {
-		flex: 1 1 16em;
 
-		&,
-		// Required specificity overrides from default block styles…
-		&:nth-child(odd),
-		&:nth-child(even),
-		&:not(:first-child),
-		&:not(:last-child) {
-			padding-left: 1em;
-			padding-right: 1em;
+		&s {
+			margin-bottom: 0;
 		}
 
-		&.has-background {
+		&.has-background,
+		&.has-golden-padding {
 			padding: $golden +em;
 		}
 
@@ -37,23 +36,6 @@
 
 		&.has-no-margin {
 			margin: 0;
-		}
-
-		&s {
-			flex-wrap: wrap;
-			margin-left: -1em;
-			margin-right: -1em;
-			margin-bottom: 0;
-
-			&.alignfull {
-
-				@include media( map_get( $breakpoint, 'm' ) ) {
-					margin-left: 0;
-					margin-right: 0;
-				}
-
-			}
-
 		}
 
 	}

@@ -45,7 +45,6 @@ Please see `changelog.md` file.
 
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Normalize.css © Nicolas Gallagher and Jonathan Neal, MIT
-* FitVids.js © 2013 Chris Coyier, WTFPL license
 * Genericons Neue © Automattic, GPL v2 or later
 * social-icons.svg © Based on Font Awesome icons font by Dave Gandy, SIL Open Font License 1.1
 * reykjavik-logo.svg © WebMan Design, GPL v3
