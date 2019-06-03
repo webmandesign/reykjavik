@@ -474,7 +474,7 @@ class Reykjavik_Customize {
 									'id'         => 'color_intro_overlay_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
 									'palette'    => array( 'name' => __( 'Intro overlay background color', 'reykjavik' ) ),
-									'default'    => '#000000',
+									'default'    => '#fafafb',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(
@@ -490,7 +490,7 @@ class Reykjavik_Customize {
 									'id'         => 'color_intro_overlay_text',
 									'palette'    => array( 'name' => __( 'Intro overlay text color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
-									'default'    => '#ffffff',
+									'default'    => '#fefeff',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(

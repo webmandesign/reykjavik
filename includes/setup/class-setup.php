@@ -76,8 +76,6 @@ class Reykjavik_Setup {
 
 						add_filter( 'wmhook_reykjavik_widget_css_classes', __CLASS__ . '::widget_css_classes' );
 
-						add_filter( 'wmhook_reykjavik_customize_styles_get_css', __CLASS__ . '::get_color_palette_css' );
-
 		} // /__construct
 
 
@@ -809,6 +807,13 @@ class Reykjavik_Setup {
 		/**
 		 * Get color palette setup array.
 		 *
+		 * Theme mod color classes are constructed with "-mod" suffix:
+		 * - .has-theme-option-slug-mod-color
+		 * - .has-theme-option-slug-mod-background-color
+		 *
+		 * These should be styled in the theme stylesheet already,
+		 * so no need to output any inline CSS code on front-end.
+		 *
 		 * @since    2.0.0
 		 * @version  2.0.0
 		 */
@@ -829,7 +834,9 @@ class Reykjavik_Setup {
 				foreach ( $colors_unique as $slug => $color ) {
 					$palette[] = array(
 						'name'  => $colors[ $slug ]['name'],
-						'slug'  => str_replace( array( '_', 'color-' ), array( '-', '' ), $slug ),
+						// Making the slug create `.has-theme-option-slug-mod-(background)-color` CSS classes.
+						// (Though block editor automatically changes "_" to "-", we play safe here.)
+						'slug'  => str_replace( '_', '-', $slug ) . '-mod',
 						'color' => maybe_hash_hex_color( $color ),
 					);
 				}
@@ -840,47 +847,6 @@ class Reykjavik_Setup {
 				return (array) apply_filters( 'wmhook_reykjavik_setup_get_color_palette', $palette );
 
 		} // /get_color_palette
-
-
-
-		/**
-		 * Color palette CSS.
-		 *
-		 * Adding color palette classes styles into generated CSS.
-		 * Better to have these styles added via this method rather than
-		 * styling classes directly in stylesheet as now we can generate
-		 * needed color palette classes only.
-		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
-		 *
-		 * @param  string $css
-		 */
-		public static function get_color_palette_css( $css ) {
-
-			// Helper variables
-
-				$css_colors = PHP_EOL . '/* Color palette classes: */' . PHP_EOL;
-				$palette    = self::get_color_palette();
-
-
-			// Processing
-
-				foreach ( $palette as $args ) {
-					$css_colors .= '.has-' . $args['slug'] . '-background-color { background-color: ' . $args['color'] . '; }';
-					$css_colors .= PHP_EOL;
-					$css_colors .= '.has-' . $args['slug'] . '-color { color: ' . $args['color'] . '; }';
-					$css_colors .= PHP_EOL;
-				}
-
-				$css_colors = (string) apply_filters( 'wmhook_reykjavik_content_editor_get_color_palette_css', $css_colors );
-
-
-			// Output
-
-				return $css . $css_colors;
-
-		} // /get_color_palette_css
 
 
 

@@ -24,6 +24,20 @@
 
 
 
+// Editor color classes
+
+	@each $option, $value in $customize_options {
+		@if str-index( #{$option}, 'color_' ) {
+			// Making the slug create `.has-theme-option-slug-mod-(background)-color` CSS classes.
+			// @see  Reykjavik_Setup::get_color_palette()
+			$selector: str_replace( '_', '-', $option ) + '-mod';
+			.has-#{$selector}-background-color { background-color: var(--#{$option}); }
+			.has-#{$selector}-color { color: var(--#{$option}); }
+		}
+	}
+
+
+
 // Headings
 
 	#{$h_tags},
