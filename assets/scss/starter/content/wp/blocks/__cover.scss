@@ -16,7 +16,7 @@
 
 
 
-@if ( index( $supported_blocks, 'cover' ) ) {
+@if ( index( $support__block, 'cover' ) ) {
 
 	.wp-block-cover {
 		min-height: 20em;

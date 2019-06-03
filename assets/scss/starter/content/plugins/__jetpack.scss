@@ -9,7 +9,7 @@
 
 
 // Contact form
-@if ( index( $supported_jetpack_modules, 'contact-form' ) ) {
+@if ( index( $support__jetpack, 'contact-form' ) ) {
 
 	.contact-form {
 
@@ -28,7 +28,7 @@
 
 
 // Infinite scroll
-@if ( index( $supported_jetpack_modules, 'infinite-scroll' ) ) {
+@if ( index( $support__jetpack, 'infinite-scroll' ) ) {
 
 	.neverending {
 
@@ -121,7 +121,7 @@
 
 
 // Related posts
-@if ( index( $supported_jetpack_modules, 'related-posts' ) ) {
+@if ( index( $support__jetpack, 'related-posts' ) ) {
 
 	div#jp-relatedposts {
 		font-size: 1em;
@@ -211,7 +211,7 @@
 
 
 // Responsive videos
-@if ( index( $supported_jetpack_modules, 'responsive-videos' ) ) {
+@if ( index( $support__jetpack, 'responsive-videos' ) ) {
 
 	.jetpack-video-wrapper {
 		margin: 0 0 ( $golden +em );
@@ -232,7 +232,7 @@
 
 
 // Sharing
-@if ( index( $supported_jetpack_modules, 'sharing' ) ) {
+@if ( index( $support__jetpack, 'sharing' ) ) {
 
 	div.sharedaddy {
 		padding: ( $golden +em ) 0 0;
@@ -315,7 +315,7 @@
 
 
 // Tiled gallery
-@if ( index( $supported_jetpack_modules, 'tiled-gallery' ) ) {
+@if ( index( $support__jetpack, 'tiled-gallery' ) ) {
 
 	.tiled-gallery-item {
 		overflow: hidden;
@@ -326,7 +326,7 @@
 
 
 // Widgets
-@if ( index( $supported_jetpack_modules, 'widgets' ) ) {
+@if ( index( $support__jetpack, 'widgets' ) ) {
 
 	// Blog Subscriptions
 

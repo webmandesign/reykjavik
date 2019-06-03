@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'pullquote' ) ) {
+@if ( index( $support__block, 'pullquote' ) ) {
 
 	%pullquote {
 		padding: ( pow( $golden, 2 ) +rem ) 6%;

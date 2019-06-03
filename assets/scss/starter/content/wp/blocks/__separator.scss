@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'separator' ) ) {
+@if ( index( $support__block, 'separator' ) ) {
 
 	.wp-block-separator {
 		max-width: 16em;

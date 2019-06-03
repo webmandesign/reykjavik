@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'video' ) ) {
+@if ( index( $support__block, 'video' ) ) {
 
 	.wp-block-video {
 

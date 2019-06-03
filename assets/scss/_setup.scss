@@ -74,9 +74,6 @@
 
 // Typography
 
-	// Starter CSS backwards compatibility.
-	$font_size: map_get( $customize_options, 'typography_size_html' ) / 1px; // "/ 1px" makes the value unitless.
-
 	// Spacing
 
 		$typography_line_height: 1.618;
@@ -84,7 +81,7 @@
 
 	// Headings
 
-		$h_tags_setup: (
+		$setup_headings: (
 
 			// $selector : (
 			//   $size

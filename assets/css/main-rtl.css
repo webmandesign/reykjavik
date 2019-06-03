@@ -131,10 +131,11 @@ body { direction: rtl; unicode-bidi: embed; }
 
 ::placeholder { line-height: normal; }
 
-@media (prefers-reduced-motion: reduce) { * { -webkit-animation: none !important; animation: none !important; -webkit-transition: none !important; -o-transition: none !important; transition: none !important; }
-  *::before, *::after { -webkit-animation: inherit; animation: inherit; -webkit-transition: inherit; -o-transition: inherit; transition: inherit; } }
+@media (prefers-reduced-motion: reduce), (update: slow) { *, *::before, *::after { -webkit-animation-duration: 0.001ms !important; animation-duration: 0.001ms !important; -webkit-animation-iteration-count: 1 !important; animation-iteration-count: 1 !important; -webkit-transition-duration: 0.001ms !important; -o-transition-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
 
 /* FILE: starter/base/_base.scss */
+body { overflow-x: hidden; }
+
 [href^="tel"] { white-space: nowrap; }
 
 @media (min-width: 672px) { [href^="tel"] { pointer-events: none; text-decoration: none; color: inherit; } }
@@ -266,8 +267,6 @@ body::before { display: none; }
 
 /* FILE: starter/typography/_typography.scss */
 html { font-size: 100%; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-
-@media (min-width: 448px) { html { font-size: 112.5%; } }
 
 pre, code, kbd, tt, var { font-family: 'Lucida Console', Monaco, 'Courier New', monospace; font-size: 1em; font-style: normal; font-weight: 400; text-transform: none; text-decoration: none; }
 

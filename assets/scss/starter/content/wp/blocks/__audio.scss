@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'audio' ) ) {
+@if ( index( $support__block, 'audio' ) ) {
 
 	.wp-block-audio {
 

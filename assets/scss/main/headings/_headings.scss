@@ -10,7 +10,7 @@
 
 // Basic headings styles
 
-	#{$h_tags} {
+	#{$elements_headings} {
 		@extend %font_headings;
 	}
 
@@ -27,7 +27,7 @@
 
 			$weight: $i * 100;
 
-			#{$h_tags} {
+			#{$elements_headings} {
 
 				&.weight-#{$weight},
 				&.has-#{$weight}-font-weight {

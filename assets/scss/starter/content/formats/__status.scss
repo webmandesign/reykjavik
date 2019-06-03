@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_post_formats, 'status' ) ) {
+@if ( index( $support__post_format, 'status' ) ) {
 
 	.format-status {
 		cursor: help;

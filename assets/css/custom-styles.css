@@ -7,85 +7,85 @@ body { background-color: #e3e3e4; }
 
 *, *::after, *::before { border-color: inherit; }
 
-.has-color-accent-mod-background-color { background-color: var(--color_accent); }
-
 .has-color-accent-mod-color { color: var(--color_accent); }
 
-.has-color-accent-text-mod-background-color { background-color: var(--color_accent_text); }
+.has-color-accent-mod-background-color { background-color: var(--color_accent); }
 
 .has-color-accent-text-mod-color { color: var(--color_accent_text); }
 
-.has-color-header-background-mod-background-color { background-color: var(--color_header_background); }
+.has-color-accent-text-mod-background-color { background-color: var(--color_accent_text); }
 
 .has-color-header-background-mod-color { color: var(--color_header_background); }
 
-.has-color-header-text-mod-background-color { background-color: var(--color_header_text); }
+.has-color-header-background-mod-background-color { background-color: var(--color_header_background); }
 
 .has-color-header-text-mod-color { color: var(--color_header_text); }
 
-.has-color-header-headings-mod-background-color { background-color: var(--color_header_headings); }
+.has-color-header-text-mod-background-color { background-color: var(--color_header_text); }
 
 .has-color-header-headings-mod-color { color: var(--color_header_headings); }
 
-.has-color-intro-background-mod-background-color { background-color: var(--color_intro_background); }
+.has-color-header-headings-mod-background-color { background-color: var(--color_header_headings); }
 
 .has-color-intro-background-mod-color { color: var(--color_intro_background); }
 
-.has-color-intro-text-mod-background-color { background-color: var(--color_intro_text); }
+.has-color-intro-background-mod-background-color { background-color: var(--color_intro_background); }
 
 .has-color-intro-text-mod-color { color: var(--color_intro_text); }
 
-.has-color-intro-headings-mod-background-color { background-color: var(--color_intro_headings); }
+.has-color-intro-text-mod-background-color { background-color: var(--color_intro_text); }
 
 .has-color-intro-headings-mod-color { color: var(--color_intro_headings); }
 
-.has-color-intro-overlay-background-mod-background-color { background-color: var(--color_intro_overlay_background); }
+.has-color-intro-headings-mod-background-color { background-color: var(--color_intro_headings); }
 
 .has-color-intro-overlay-background-mod-color { color: var(--color_intro_overlay_background); }
 
-.has-color-intro-overlay-text-mod-background-color { background-color: var(--color_intro_overlay_text); }
+.has-color-intro-overlay-background-mod-background-color { background-color: var(--color_intro_overlay_background); }
 
 .has-color-intro-overlay-text-mod-color { color: var(--color_intro_overlay_text); }
 
-.has-color-intro-overlay-opacity-mod-background-color { background-color: var(--color_intro_overlay_opacity); }
+.has-color-intro-overlay-text-mod-background-color { background-color: var(--color_intro_overlay_text); }
 
 .has-color-intro-overlay-opacity-mod-color { color: var(--color_intro_overlay_opacity); }
 
-.has-color-intro-widgets-background-mod-background-color { background-color: var(--color_intro_widgets_background); }
+.has-color-intro-overlay-opacity-mod-background-color { background-color: var(--color_intro_overlay_opacity); }
 
 .has-color-intro-widgets-background-mod-color { color: var(--color_intro_widgets_background); }
 
-.has-color-intro-widgets-text-mod-background-color { background-color: var(--color_intro_widgets_text); }
+.has-color-intro-widgets-background-mod-background-color { background-color: var(--color_intro_widgets_background); }
 
 .has-color-intro-widgets-text-mod-color { color: var(--color_intro_widgets_text); }
 
-.has-color-intro-widgets-headings-mod-background-color { background-color: var(--color_intro_widgets_headings); }
+.has-color-intro-widgets-text-mod-background-color { background-color: var(--color_intro_widgets_text); }
 
 .has-color-intro-widgets-headings-mod-color { color: var(--color_intro_widgets_headings); }
 
-.has-color-content-background-mod-background-color { background-color: var(--color_content_background); }
+.has-color-intro-widgets-headings-mod-background-color { background-color: var(--color_intro_widgets_headings); }
 
 .has-color-content-background-mod-color { color: var(--color_content_background); }
 
-.has-color-content-text-mod-background-color { background-color: var(--color_content_text); }
+.has-color-content-background-mod-background-color { background-color: var(--color_content_background); }
 
 .has-color-content-text-mod-color { color: var(--color_content_text); }
 
-.has-color-content-headings-mod-background-color { background-color: var(--color_content_headings); }
+.has-color-content-text-mod-background-color { background-color: var(--color_content_text); }
 
 .has-color-content-headings-mod-color { color: var(--color_content_headings); }
 
-.has-color-footer-background-mod-background-color { background-color: var(--color_footer_background); }
+.has-color-content-headings-mod-background-color { background-color: var(--color_content_headings); }
 
 .has-color-footer-background-mod-color { color: var(--color_footer_background); }
 
-.has-color-footer-text-mod-background-color { background-color: var(--color_footer_text); }
+.has-color-footer-background-mod-background-color { background-color: var(--color_footer_background); }
 
 .has-color-footer-text-mod-color { color: var(--color_footer_text); }
 
-.has-color-footer-headings-mod-background-color { background-color: var(--color_footer_headings); }
+.has-color-footer-text-mod-background-color { background-color: var(--color_footer_text); }
 
 .has-color-footer-headings-mod-color { color: var(--color_footer_headings); }
+
+.has-color-footer-headings-mod-background-color { background-color: var(--color_footer_headings); }
 
 ::-webkit-input-placeholder, :disabled::-webkit-input-placeholder { color: inherit !important; }
 

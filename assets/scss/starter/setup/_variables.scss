@@ -38,7 +38,7 @@
 
 	// Blocks support.
 
-		$supported_blocks: (
+		$support__block: (
 			'audio',
 			'button',
 			'code',
@@ -60,7 +60,7 @@
 
 	// Post Formats support.
 
-		$supported_post_formats: (
+		$support__post_format: (
 			// 'link',
 			// 'quote',
 			// 'status',
@@ -72,7 +72,7 @@
 	// @link  https://jetpack.com/support/
 	// @link  https://jetpack.com/support/control-jetpacks-modules-on-one-page/
 
-		$supported_jetpack_modules: (
+		$support__jetpack: (
 			'contact-form',
 			'infinite-scroll',
 			'related-posts',
@@ -114,23 +114,21 @@
 
 	// Base font size and spacing.
 
-		$font_size: 16 !default;
-
 		$typography_line_height: $golden !default;
 		$typography_margin_bottom: $golden !default;
 
 	// Headings font size, line height and vertical margins.
 
-		$h_tags_1: 'h1, .h1' !default;
-		$h_tags_2: 'h2, .h2' !default;
-		$h_tags_3: 'h3, .h3' !default;
-		$h_tags_4: 'h4, .h4' !default;
-		$h_tags_5: 'h5, .h5' !default;
-		$h_tags_6: 'h6, .h6' !default;
+		$elements_heading_1: 'h1, .h1' !default;
+		$elements_heading_2: 'h2, .h2' !default;
+		$elements_heading_3: 'h3, .h3' !default;
+		$elements_heading_4: 'h4, .h4' !default;
+		$elements_heading_5: 'h5, .h5' !default;
+		$elements_heading_6: 'h6, .h6' !default;
 
-		$h_tags: $h_tags_1, $h_tags_2, $h_tags_3, $h_tags_4, $h_tags_5, $h_tags_6;
+		$elements_headings: $elements_heading_1, $elements_heading_2, $elements_heading_3, $elements_heading_4, $elements_heading_5, $elements_heading_6;
 
-		$h_tags_setup: (
+		$setup_headings: (
 
 			// @see  "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/
 
@@ -141,42 +139,42 @@
 			//   $margin_bottom [ $margin_bottom / $size / $line_height ]
 			// )
 
-			$h_tags_1 : (
+			$elements_heading_1 : (
 				2.618,
 				1.191,
 				( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
 				$typography_margin_bottom / 2.618 / 1.191
 			),
 
-			$h_tags_2 : (
+			$elements_heading_2 : (
 				2.058,
 				1.191,
 				( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
 				$typography_margin_bottom / 2.058 / 1.191
 			),
 
-			$h_tags_3 : (
+			$elements_heading_3 : (
 				1.618,
 				1.382,
 				( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
 				$typography_margin_bottom / 1.618 / 1.382
 			),
 
-			$h_tags_4 : (
+			$elements_heading_4 : (
 				1.272,
 				( 1.618 / 1.272 ),
 				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
 				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
 			),
 
-			$h_tags_5 : (
+			$elements_heading_5 : (
 				1.272,
 				( 1.618 / 1.272 ),
 				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,
 				$typography_margin_bottom / 1.272 / ( 1.618 / 1.272 )
 			),
 
-			$h_tags_6 : (
+			$elements_heading_6 : (
 				1.272,
 				( 1.618 / 1.272 ),
 				( 3 * $typography_line_height - 1.272 * ( 1.618 / 1.272 ) - $typography_margin_bottom ) / 1.272,

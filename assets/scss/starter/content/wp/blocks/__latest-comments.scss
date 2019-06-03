@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'latest-comments' ) ) {
+@if ( index( $support__block, 'latest-comments' ) ) {
 
 	.wp-block-latest-comments {
 		@extend %block_list_items;

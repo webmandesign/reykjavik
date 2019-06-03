@@ -39,19 +39,14 @@
 		line-height: normal;
 	}
 
-	// @link  https://valhead.com/2017/06/23/reduced-motion-query/
-	@media ( prefers-reduced-motion: reduce ) {
-
-		* {
-			animation: none !important;
-			transition: none !important;
-
-			&::before,
-			&::after {
-				animation: inherit;
-				transition: inherit;
-			}
-
+	// Accessibility improvement, adapted from CSS-Tricks article code.
+	// @link  https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/
+	@media (prefers-reduced-motion: reduce), (update: slow) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
 		}
-
 	}

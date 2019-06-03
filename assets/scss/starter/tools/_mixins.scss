@@ -130,7 +130,7 @@
 //
 @mixin h_tags( $multiplier: 1, $global_styles: false ) {
 
-	@each $selector, $settings in $h_tags_setup {
+	@each $selector, $settings in $setup_headings {
 
 		$size          : nth( $settings, 1 );
 		$line_height   : nth( $settings, 2 );
@@ -165,7 +165,7 @@
 
 	@if $global_styles {
 
-		#{$h_tags} {
+		#{$elements_headings} {
 			@extend %break_words;
 			@extend %line_height_golden_minor;
 			padding: 0;

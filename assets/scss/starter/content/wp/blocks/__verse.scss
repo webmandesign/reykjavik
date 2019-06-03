@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'verse' ) ) {
+@if ( index( $support__block, 'verse' ) ) {
 
 	.wp-block-verse {
 		font-family: inherit;

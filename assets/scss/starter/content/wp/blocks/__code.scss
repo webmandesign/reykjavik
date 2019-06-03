@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'code' ) ) {
+@if ( index( $support__block, 'code' ) ) {
 
 	$code_font_size: 14px;
 	$code_line_height: 21px;

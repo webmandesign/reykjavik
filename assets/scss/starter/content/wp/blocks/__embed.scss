@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'embed' ) ) {
+@if ( index( $support__block, 'embed' ) ) {
 
 	.wp-block-embed {
 

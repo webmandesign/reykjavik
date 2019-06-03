@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_post_formats, 'link' ) ) {
+@if ( index( $support__post_format, 'link' ) ) {
 
 	.format-link {
 

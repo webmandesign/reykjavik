@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'latest-posts' ) ) {
+@if ( index( $support__block, 'latest-posts' ) ) {
 
 	.wp-block-latest-posts {
 

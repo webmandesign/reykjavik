@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_blocks, 'spacer' ) ) {
+@if ( index( $support__block, 'spacer' ) ) {
 
 	.wp-block-spacer {
 		margin-bottom: 0;

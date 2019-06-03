@@ -13,7 +13,7 @@
 
 
 
-@if ( index( $supported_blocks, 'drop-cap' ) ) {
+@if ( index( $support__block, 'drop-cap' ) ) {
 
 	%drop-cap {
 		float: $left; // {{RTL}}

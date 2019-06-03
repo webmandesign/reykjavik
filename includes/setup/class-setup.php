@@ -808,8 +808,8 @@ class Reykjavik_Setup {
 		 * Get color palette setup array.
 		 *
 		 * Theme mod color classes are constructed with "-mod" suffix:
-		 * - .has-theme-option-slug-mod-color
-		 * - .has-theme-option-slug-mod-background-color
+		 * - .has-{$theme-mod-slug}-mod-color
+		 * - .has-{$theme-mod-slug}-mod-background-color
 		 *
 		 * These should be styled in the theme stylesheet already,
 		 * so no need to output any inline CSS code on front-end.
@@ -834,7 +834,7 @@ class Reykjavik_Setup {
 				foreach ( $colors_unique as $slug => $color ) {
 					$palette[] = array(
 						'name'  => $colors[ $slug ]['name'],
-						// Making the slug create `.has-theme-option-slug-mod-(background)-color` CSS classes.
+						// Making the slug create `.has-{$theme-mod-slug}-mod-(background)-color` CSS classes.
 						// (Though block editor automatically changes "_" to "-", we play safe here.)
 						'slug'  => str_replace( '_', '-', $slug ) . '-mod',
 						'color' => maybe_hash_hex_color( $color ),

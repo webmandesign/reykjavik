@@ -14,11 +14,6 @@
 		@extend %line_height_golden;
 		font-size: 100%;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-		@include media( map_get( $breakpoint, 's' ) ) {
-			font-size: percentage( $font_size / 16 );
-		}
-
 	}
 
 	pre,
@@ -124,6 +119,8 @@
 		}
 
 
+
+		// Block editor font size classes included here:
 
 		.font-size-xs,
 		.has-xs-font-size,

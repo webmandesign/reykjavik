@@ -17,7 +17,7 @@
 
 		// Heading tags and classes
 
-			@each $selector, $settings in $h_tags_setup {
+			@each $selector, $settings in $setup_headings {
 
 				#{$selector} {
 					line-height: nth( $settings, 2 );

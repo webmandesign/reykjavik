@@ -13,7 +13,7 @@
 
 
 
-@if ( index( $supported_blocks, 'columns' ) ) {
+@if ( index( $support__block, 'columns' ) ) {
 
 	.wp-block-column {
 

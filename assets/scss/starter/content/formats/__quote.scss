@@ -8,7 +8,7 @@
 
 
 
-@if ( index( $supported_post_formats, 'quote' ) ) {
+@if ( index( $support__post_format, 'quote' ) ) {
 
 	.format-quote {
 
