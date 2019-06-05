@@ -1,0 +1,20 @@
+/* FILE: starter/wp/blocks/_table.scss */
+
+@if ( index( $support__block, 'table' ) ) {
+
+	.wp-block-table {
+
+		&.alignleft,
+		&.alignright {
+			max-width: $horizontal_alignment_width;
+		}
+
+		&.is-style-stripes {
+			border-top: 2px solid;
+			border-bottom: 2px solid;
+			border-color: inherit;
+		}
+
+	}
+
+}

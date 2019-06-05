@@ -1,0 +1,13 @@
+/* FILE: starter/wp/__index.scss */
+
+$horizontal_alignment_margin: percentage( .06 );
+$horizontal_alignment_width: percentage( $golden_major - .06 );
+
+@import 'sticky';
+@import 'caption';
+@import 'gallery';
+@import 'smilie';
+@import 'player';
+@import 'embed';
+@import 'blocks/_index';
+@import 'alignment';

@@ -1,0 +1,37 @@
+/* FILE: starter/wp/blocks/_columns.scss */
+
+//
+// Custom CSS class:
+// - has-golden-padding
+// - has-no-margin
+// - has-no-padding
+//
+
+@if ( index( $support__block, 'columns' ) ) {
+
+	.wp-block-column {
+
+		&s {
+			margin-bottom: 0;
+		}
+
+		&.has-background,
+		&.has-golden-padding {
+			padding: $golden +em;
+		}
+
+		&.has-no-padding {
+			padding: 0;
+		}
+
+		&:last-child {
+			margin-bottom: $golden +em;
+		}
+
+		&.has-no-margin {
+			margin: 0;
+		}
+
+	}
+
+}

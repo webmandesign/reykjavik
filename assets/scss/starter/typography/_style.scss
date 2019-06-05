@@ -1,0 +1,19 @@
+/* FILE: starter/typography/_style.scss */
+
+%font_style_italic {
+	font-style: italic;
+}
+
+	.font-style-italic,
+	.has-italic-font-style {
+		@extend %font_style_italic;
+	}
+
+%font_style_normal {
+	font-style: normal;
+}
+
+	.font-style-normal,
+	.has-normal-font-style {
+		@extend %font_style_normal;
+	}

@@ -1,0 +1,24 @@
+/* FILE: starter/wp/blocks/_button.scss */
+
+@if ( index( $support__block, 'button' ) ) {
+
+	.wp-block-button {
+
+		&__link {
+
+			.is-style-outline & {
+				background: transparent;
+				color: inherit;
+				border: 2px solid;
+
+				@include haf() {
+					box-shadow: inset 0 0 0 1px;
+				}
+
+			}
+
+		}
+
+	}
+
+}

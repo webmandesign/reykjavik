@@ -23,7 +23,6 @@
 	}
 
 	a {
-		display: block;
 		text-decoration: none;
 		font-size: .9em;
 		font-style: italic;
@@ -33,26 +32,32 @@
 			text-decoration: underline;
 		}
 
+		&:first-child::before {
+			@extend %genericon;
+			content: '\f50b';
+			margin-#{$right}: .25rem; // {{RTL}}
+			font-size: $golden +em;
+			line-height: 1;
+			vertical-align: middle;
+		}
+
 	}
 
 	& a#{&}__button {
 		display: inline-block;
+		margin-#{$left}: $golden +em; // {{RTL}}
 		text-transform: uppercase;
 		font-weight: 700;
 		font-style: normal;
 		letter-spacing: .05em;
 		background: transparent;
 		border: 2px solid;
+		vertical-align: middle;
 
 		@include haf( ( '&', 'h', 'f', 'a', 'v' ) ) {
 			color: inherit;
 		}
 
-	}
-
-	& * + &__button {
-		margin-#{$left}: 0; // {{RTL}}
-		margin-top: $golden_major +em;
 	}
 
 }

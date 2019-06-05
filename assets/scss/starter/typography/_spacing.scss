@@ -1,0 +1,31 @@
+/* FILE: starter/typography/_spacing.scss */
+
+%line_height_1 {
+	line-height: 1;
+}
+
+	.line-height-xs,
+	.has-xs-line-height,
+	.has-extra-small-line-height {
+		@extend %line_height_1;
+	}
+
+%line_height_golden_minor {
+	line-height: 1 + $golden_minor;
+}
+
+	.line-height-s,
+	.has-s-line-height,
+	.has-small-line-height {
+		@extend %line_height_golden_minor;
+	}
+
+%line_height_golden {
+	line-height: $golden;
+}
+
+	.line-height-m,
+	.has-m-line-height,
+	.has-medium-line-height {
+		@extend %line_height_golden;
+	}
