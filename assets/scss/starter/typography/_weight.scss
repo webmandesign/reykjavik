@@ -1,11 +1,23 @@
 /* FILE: starter/typography/_weight.scss */
 
-// 400 = normal
-// 700 = bold
 //
-// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+// Custom CSS class:
+// - has-100-font-weight
+// - has-200-font-weight
+// - has-300-font-weight
+// - has-400-font-weight
+// - has-500-font-weight
+// - has-600-font-weight
+// - has-700-font-weight
+// - has-800-font-weight
+// - has-900-font-weight
+//
 
 @for $i from 1 through 9 {
+	// 400 = normal
+	// 700 = bold
+	//
+	// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
 
 	$weight: $i * 100;
 

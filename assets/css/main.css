@@ -397,6 +397,8 @@ html, .line-height-m, .has-m-line-height, .has-medium-line-height, .has-regular-
 
 [class^="wp-block-"]:last-child { margin-bottom: 0; }
 
+[class^="wp-block-"] figcaption { margin: 0; padding: 0.618em; }
+
 p.has-background { padding: 1.618rem; }
 
 .wp-block-latest-comments, .wp-block-latest-posts:not(.is-grid) { margin-left: 0; margin-right: 0; list-style: none; border-top-width: 0.382em; border-top-style: solid; border-bottom-width: 0.382em; border-bottom-style: solid; }

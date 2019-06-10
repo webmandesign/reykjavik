@@ -1,5 +1,10 @@
 /* FILE: starter/typography/_base.scss */
 
+//
+// Custom CSS class:
+// - has-uppercase-text-transform
+//
+
 html {
 	@extend %line_height_golden;
 	font-size: 100%;
