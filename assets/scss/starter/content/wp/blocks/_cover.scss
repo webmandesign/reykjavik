@@ -7,7 +7,9 @@
 // - has-alignleft-content
 // - has-alignright-content
 // - has-alignwide-content
-// - has-full-height
+// - has-full-screen-min-height
+// - has-half-screen-min-height
+// - has-phi-screen-min-height
 //
 
 @if ( index( $support__block, 'cover' ) ) {
@@ -28,7 +30,15 @@
 			padding-right: 10%;
 		}
 
-		&.has-full-height {
+		&.has-half-screen-min-height {
+			min-height: 50vh;
+		}
+
+		&.has-phi-screen-min-height {
+			min-height: $golden_major * 100vh;
+		}
+
+		&.has-full-screen-min-height {
 			min-height: 100vh;
 		}
 

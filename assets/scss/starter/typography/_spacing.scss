@@ -26,6 +26,7 @@
 
 	.line-height-m,
 	.has-m-line-height,
-	.has-medium-line-height {
+	.has-medium-line-height,
+	.has-regular-line-height {
 		@extend %line_height_golden;
 	}
