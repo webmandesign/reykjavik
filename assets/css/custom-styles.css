@@ -165,7 +165,7 @@ mark, .highlight { -webkit-box-shadow: 0.382em 0 0 #273a7d, -0.382em 0 0 #273a7d
 @media (max-width: 879px) { .main-navigation:not(.is-active) .menu-toggle:not(:hover):not(:focus):not(:active), .main-navigation-container { background-color: #fefeff; color: #535354; border-color: rgba(83, 83, 84, 0.2); background-color: var(--color_header_background); color: var(--color_header_text); border-color: var(--color_header_text--a20); } }
 
 /* FILE: main/custom-styles/__intro.scss */
-.intro-special .wp-custom-header::before { background-color: #fafafb; opacity: 0.6; background-color: var(--color_intro_overlay_background); opacity: var(--color_intro_overlay_opacity); }
+.intro-special .wp-custom-header::before { background-color: #0f1732; opacity: 0.6; background-color: var(--color_intro_overlay_background); opacity: var(--color_intro_overlay_opacity); }
 
 .intro-special .has-header-video { background-color: #222223; }
 

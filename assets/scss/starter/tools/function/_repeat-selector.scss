@@ -1,0 +1,35 @@
+//
+// Repeat CSS selectors several times.
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @example
+//   .foo {
+//     @at-root #{ repeat_selector( &, 2 ) } {
+//       ...
+//     }
+//   }
+//
+// @param  int $selector  The CSS selector to repeat.
+// @param  int $multiply  How many times to repeat the selector?
+//
+@function repeat_selector( $selector, $multiply: 1 ) {
+
+	// Variables
+
+		$output: '';
+
+
+	// Processing
+
+		@for $i from 1 through $multiply {
+			$output: $output + $selector;
+		}
+
+
+	// Output
+
+		@return $output;
+
+} // /repeat_selector

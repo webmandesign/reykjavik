@@ -9,7 +9,7 @@ form[role="search"],
 	margin: 0;
 	text-align: $left; // {{RTL}}
 
-	input[type="search"],
+	[type="search"],
 	.search-field {
 		position: relative;
 		width: 100%;

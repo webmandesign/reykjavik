@@ -8,7 +8,7 @@ label {
 		cursor: pointer;
 	}
 
-	+ input[type="checkbox"] {
+	+ [type="checkbox"] {
 		margin-#{$left}: $golden_minor +em; // {{RTL}}
 	}
 
@@ -21,8 +21,8 @@ textarea {
 	resize: vertical;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
 	position: relative;
 	width: 1em;
 	height: 1em;
@@ -43,7 +43,7 @@ select {
 	padding-#{$right}: calc( 1em + #{$selector_svg_size} );
 	appearance: none;
 	background: none;
-	background-image: url('data:image/svg+xml;utf8,#{ url_encode( $selector_svg ) }');
+	background-image: url('data:image/svg+xml;utf8,#{ encode_url( $selector_svg ) }');
 	background-size: $selector_svg_size auto;
 	background-position: $right 1em top 50%;
 	background-repeat: no-repeat;

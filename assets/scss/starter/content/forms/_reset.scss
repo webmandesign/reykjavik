@@ -37,18 +37,7 @@ select[size] {
 	line-height: $golden;
 }
 
-textarea,
-input:not([type]),
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="tel"] ,
-input[type="text"],
-input[type="url"] {
-	-webkit-appearance: none;
-}
-
-input[type="search"] {
+[type="search"] {
 	box-sizing: border-box;
 }
 

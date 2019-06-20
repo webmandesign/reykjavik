@@ -53,12 +53,12 @@ blockquote {
 		margin-bottom: 1em;
 	}
 
-	p:last-child {
-		margin: 0;
-	}
-
 	blockquote {
 		@extend %font_size_1em;
+	}
+
+	:last-child {
+		margin: 0;
 	}
 
 }

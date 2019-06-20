@@ -1,10 +1,11 @@
 /* FILE: main.scss */
 /* FILE: _setup.scss */
 /* FILE: _css-vars.scss */
-:root { --custom_logo_height: 50px; --color_accent: #273a7d; --color_accent_text: #fefeff; --color_header_background: #fefeff; --color_header_text: #535354; --color_header_headings: #232324; --color_intro_background: #fafafb; --color_intro_text: #535354; --color_intro_headings: #232324; --color_intro_overlay_background: #fafafb; --color_intro_overlay_text: #fefeff; --color_intro_overlay_opacity: 0.6; --color_intro_widgets_background: #0f1732; --color_intro_widgets_text: #d3d3d4; --color_intro_widgets_headings: #fefeff; --color_content_background: #fefeff; --color_content_text: #535354; --color_content_headings: #232324; --color_footer_background: #0f1732; --color_footer_text: #d3d3d4; --color_footer_headings: #fefeff; --footer_image: url("../images/footer/pixabay-colorado-1436681.png"); --footer_image_position: 50% 50%; --footer_image_size: cover; --footer_image_repeat: repeat; --footer_image_attachment: scroll; --footer_image_opacity: 0.15; --layout_width_site: 1640px; --layout_width_content: 1200px; --typography_size_html: 18px; --typography_fonts_text: "Open Sans", "Helvetica Neue", "Arial", sans-serif; --typography_fonts_headings: "Montserrat", "Helvetica Neue", "Arial", sans-serif; --typography_fonts_logo: "Montserrat", "Helvetica Neue", "Arial", sans-serif; --color_content_text--a20: rgba(83, 83, 84, 0.2); --color_footer_text--a20: rgba(211, 211, 212, 0.2); --color_header_text--a20: rgba(83, 83, 84, 0.2); --color_intro_text--a20: rgba(83, 83, 84, 0.2); --color_intro_widgets_text--a20: rgba(211, 211, 212, 0.2); }
+:root { --custom_logo_height: 50px; --color_accent: #273a7d; --color_accent_text: #fefeff; --color_header_background: #fefeff; --color_header_text: #535354; --color_header_headings: #232324; --color_intro_background: #fafafb; --color_intro_text: #535354; --color_intro_headings: #232324; --color_intro_overlay_background: #0f1732; --color_intro_overlay_text: #fefeff; --color_intro_overlay_opacity: 0.6; --color_intro_widgets_background: #0f1732; --color_intro_widgets_text: #d3d3d4; --color_intro_widgets_headings: #fefeff; --color_content_background: #fefeff; --color_content_text: #535354; --color_content_headings: #232324; --color_footer_background: #0f1732; --color_footer_text: #d3d3d4; --color_footer_headings: #fefeff; --footer_image: url("../images/footer/pixabay-colorado-1436681.png"); --footer_image_position: 50% 50%; --footer_image_size: cover; --footer_image_repeat: repeat; --footer_image_attachment: scroll; --footer_image_opacity: 0.15; --layout_width_site: 1640px; --layout_width_content: 1200px; --typography_size_html: 18px; --typography_fonts_text: "Open Sans", "Helvetica Neue", "Arial", sans-serif; --typography_fonts_headings: "Montserrat", "Helvetica Neue", "Arial", sans-serif; --typography_fonts_logo: "Montserrat", "Helvetica Neue", "Arial", sans-serif; --color_content_text--a20: rgba(83, 83, 84, 0.2); --color_footer_text--a20: rgba(211, 211, 212, 0.2); --color_header_text--a20: rgba(83, 83, 84, 0.2); --color_intro_text--a20: rgba(83, 83, 84, 0.2); --color_intro_widgets_text--a20: rgba(211, 211, 212, 0.2); }
 
 /* FILE: starter/__index.scss */
 /* inStyle (v1.6.3) https://github.com/salsita/inStyle 2016 | MIT @mixin ============================= */
+/* FILE: starter/content/__index.scss */
 /* FILE: starter/generic/__index.scss */
 /* FILE: starter/generic/_normalize.scss */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -153,7 +154,7 @@ blockquote { clear: both; }
 
 blockquote p { margin-bottom: 1em; }
 
-blockquote p:last-child { margin: 0; }
+blockquote :last-child { margin: 0; }
 
 cite { border-width: 0; }
 
@@ -243,8 +244,10 @@ pre, pre code, select { overflow-wrap: normal; word-wrap: normal; -webkit-hyphen
 
 .vertical-align-bottom, .has-bottom-vertical-align { vertical-align: bottom; }
 
+.entry-summary { margin: 0 0 1.618em; }
+
 /* FILE: starter/base/_clearing.scss */
-.clearfix::after, .clear::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .gallery::after, .comment-content::after, .widget_text::after, .jetpack_subscription_widget form::after, .site-header-inner::after, .intro-inner::after, .site-content-inner::after, .posts-layout-list .type-post::after, .outdent-content::after, .textwidget::after { content: ''; clear: both; display: table; table-layout: fixed; }
+.clearfix::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .clear::after, .gallery::after, .comment-content::after, .widget_text::after, .jetpack_subscription_widget form::after, .site-header-inner::after, .intro-inner::after, .site-content-inner::after, .posts-layout-list .type-post::after, .outdent-content::after, .textwidget::after { content: ''; clear: both; display: table; table-layout: fixed; }
 
 .clear { clear: both; }
 
@@ -311,7 +314,7 @@ blockquote cite, .weight-400, .has-400-font-weight, #cancel-comment-reply-link, 
 
 .weight-600, .has-600-font-weight, abbr, .post-table-of-contents a, .pingback a:not(.comment-edit-link), .trackback a:not(.comment-edit-link) { font-weight: 600; }
 
-dt, th, tfoot td, .weight-700, .has-700-font-weight, .link-more, .comment-form label, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, [type="button"], [type="reset"], [type="submit"], .child-page .more-link, .main-navigation-container .button > a, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .site .wp-playlist-current-item, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
+dt, th, tfoot td, .link-more, .weight-700, .has-700-font-weight, .comment-form label, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, [type="button"], [type="reset"], [type="submit"], .child-page .more-link, .main-navigation-container .button > a, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .site .wp-playlist-current-item, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
 
 .weight-800, .has-800-font-weight { font-weight: 800; }
 
@@ -328,10 +331,6 @@ cite, .font-style-normal, .has-normal-font-style, .widget_calendar caption, addr
 table, .line-height-s, .has-s-line-height, .has-small-line-height, .wp-caption-text, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .widget-title, .widget-title-style .widgettitle, .site-branding-text, .main-navigation-container li ul a, .entry-subtitle { line-height: 1.382; }
 
 html, .line-height-m, .has-m-line-height, .has-medium-line-height, .has-regular-line-height, .form-allowed-tags, .sidebar, blockquote, .mobile-search-form { line-height: 1.618; }
-
-/* FILE: starter/content/__index.scss */
-/* FILE: starter/content/_base.scss */
-.entry-summary { margin: 0 0 1.618em; }
 
 /* FILE: starter/wp/__index.scss */
 /* FILE: starter/wp/_sticky.scss */
@@ -539,9 +538,7 @@ select { padding: calc( 0.618em - 4px); }
 
 textarea, select[multiple], select[size] { height: auto; line-height: 1.618; }
 
-textarea, input:not([type]), input[type="email"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"] { -webkit-appearance: none; }
-
-input[type="search"] { -webkit-box-sizing: border-box; box-sizing: border-box; }
+[type="search"] { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 :invalid { -webkit-box-shadow: none; box-shadow: none; }
 
@@ -550,11 +547,11 @@ label { display: inline-block; padding-bottom: 0.191em; }
 
 label[for] { cursor: pointer; }
 
-label + input[type="checkbox"] { margin-left: 0.382em; }
+label + [type="checkbox"] { margin-left: 0.382em; }
 
 textarea { vertical-align: top; overflow-y: auto; resize: vertical; }
 
-input[type="checkbox"], input[type="radio"] { position: relative; width: 1em; height: 1em; bottom: -0.191em; margin-right: 0.382em; vertical-align: baseline; }
+[type="checkbox"], [type="radio"] { position: relative; width: 1em; height: 1em; bottom: -0.191em; margin-right: 0.382em; vertical-align: baseline; }
 
 select { display: inline-block; max-width: 100%; padding: .5em 1em; padding-right: calc( 1em + 15px); -webkit-appearance: none; -moz-appearance: none; appearance: none; background: none; background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%2266%22%3E%3Cpath%20stroke%3D%22rgba%28255%2C%20255%2C%20255%2C%200.66%29%22%20fill%3D%22rgba%280%2C%200%2C%200%2C%200.66%29%22%20stroke-width%3D%2210%22%20d%3D%22m10.23893%2C4.84475l39.69582%2C52.85933l39.69582%2C-52.85933l-79.39163%2C0z%22%20%2F%3E%3C%2Fsvg%3E"); background-size: 15px auto; background-position: right 1em top 50%; background-repeat: no-repeat; color: inherit; }
 
@@ -589,7 +586,7 @@ select option { background: #fff; color: #000; }
 /* FILE: starter/form/_search.scss */
 form[role="search"], .form-search, .search-form { display: block; position: relative; max-width: 100%; margin: 0; text-align: left; }
 
-form[role="search"] input[type="search"], form[role="search"] .search-field, .form-search input[type="search"], .form-search .search-field, .search-form input[type="search"], .search-form .search-field { position: relative; width: 100%; text-align: inherit; z-index: 0; }
+form[role="search"] [type="search"], form[role="search"] .search-field, .form-search [type="search"], .form-search .search-field, .search-form [type="search"], .search-form .search-field { position: relative; width: 100%; text-align: inherit; z-index: 0; }
 
 /* FILE: starter/form/_post-password.scss */
 .post-password-form { max-width: 36em; padding: 2.61792em 12%; margin-left: auto; margin-right: auto; text-align: center; border-width: 2px; border-style: dashed; }

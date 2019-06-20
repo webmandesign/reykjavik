@@ -1,0 +1,39 @@
+//
+// Selectors for container with specific number of children.
+//
+// @link  http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/
+//
+// IMPORTANT (for LibSass)!
+// ========================
+//
+// To compile correctly with LibSass, we have to move the `@include children()` part
+// out of SASS selectors nesting structure and include the whole selectors path again
+// in the `children()` mixin.
+//
+// Otherwise those selectors would be prepended with the nested hierarchy (so, will be duplicated).
+//
+// Even `@at-root` won't help in this case (plus it's being used in the `children()` mixin).
+//
+// On the other hand, we have to use LibSass to prevent more complicated issues with line breaks
+// in nested selectors...
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  string $selector A child selector.
+// @param  int    $count    Number of children in container.
+// @param  int    $min      Optional starting number of children in container.
+//
+@mixin children( $selector, $count: 2, $min: 1 ) {
+
+	$selectors: ();
+
+	@for $i from $min through $count {
+		$selectors: append( $selectors, '#{$selector}:nth-child(#{$i}):nth-last-child(#{ $count + 1 - $i })', comma );
+	}
+
+	@at-root #{$selectors} {
+		@content;
+	}
+
+} // /children

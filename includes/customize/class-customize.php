@@ -474,7 +474,7 @@ class Reykjavik_Customize {
 									'id'         => 'color_intro_overlay_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
 									'palette'    => array( 'name' => __( 'Intro overlay background color', 'reykjavik' ) ),
-									'default'    => '#fafafb',
+									'default'    => '#0f1732',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(

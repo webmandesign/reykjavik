@@ -1,0 +1,29 @@
+//
+// Replace string.
+//
+// @since    5.0.0
+// @version  5.0.0
+//
+// @param  string $search
+// @param  string $replace
+// @param  string $subject
+//
+@function str_replace( $search, $replace, $subject ) {
+
+	// Variables
+
+		$index: str-index( $subject, $search );
+
+
+	// Processing
+
+		@if $index {
+			@return str-slice( $subject, 1, $index - 1 ) + $replace + str_replace( $search, $replace, str-slice( $subject, $index + str-length( $search ) ) );
+		}
+
+
+	// Output
+
+		@return $subject;
+
+} // /str_replace

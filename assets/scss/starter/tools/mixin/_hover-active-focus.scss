@@ -1,0 +1,35 @@
+//
+// :hover, :active, :focus states.
+//
+// You can optionally use :link and &.
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  string $state
+//
+@mixin haf( $states: ( 'h', 'a', 'f' ) ) {
+
+	$selectors: ();
+
+	@each $state in $states {
+		@if 'f' == $state {
+			$selectors: append( $selectors, '&:focus', comma );
+		} @else if 'a' == $state {
+			$selectors: append( $selectors, '&:active', comma );
+		} @else if 'l' == $state {
+			$selectors: append( $selectors, '&:link', comma );
+		} @else if 'v' == $state {
+			$selectors: append( $selectors, '&:visited', comma );
+		} @else if '&' == $state {
+			$selectors: append( $selectors, '&', comma );
+		} @else {
+			$selectors: append( $selectors, '&:hover', comma );
+		}
+	}
+
+	#{ $selectors } {
+		@content;
+	}
+
+} // /haf

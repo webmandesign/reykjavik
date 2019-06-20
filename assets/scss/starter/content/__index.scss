@@ -1,6 +1,8 @@
 /* FILE: starter/content/__index.scss */
 
-@import 'base';
+@import 'generic/_index';
+@import 'base/_index';
+@import 'typography/_index';
 @import 'wp/_index';
 @import 'forms/_index';
 @import 'media/_index';
