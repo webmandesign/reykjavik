@@ -45,7 +45,7 @@
 			margin-#{$left}: percentage( -$golden_minor * $golden_minor ); // {{RTL}}
 		}
 
-		.page:not(.page-layout-outdented) & {
+		body.page:not(.page-layout-outdented) & {
 			margin-left: 0;
 			margin-right: 0;
 		}

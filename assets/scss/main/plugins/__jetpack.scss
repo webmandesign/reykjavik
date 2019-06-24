@@ -263,24 +263,6 @@
 
 		}
 
-		// First and last full aligned block in a project content
-		// should "remove" the project vertical padding really.
-		// On blog posts this is not needed as there is still a post
-		// meta displayed on top.
-		//
-		// @see  .site-content-inner @ main/content/__layout.scss
-		.single-jetpack-portfolio .alignfull {
-
-			&:first-child {
-				@extend %disregard_content_padding_top;
-			}
-
-			&:last-child {
-				@extend %disregard_content_padding_bottom;
-			}
-
-		}
-
 
 
 	// Testimonials

@@ -26,6 +26,8 @@ class Reykjavik_Content {
 
 		private static $instance;
 
+		private static $site_layout;
+
 
 
 		/**
@@ -37,6 +39,10 @@ class Reykjavik_Content {
 		private function __construct() {
 
 			// Processing
+
+				// Setup
+
+					self::$site_layout = Reykjavik_Library_Customize::get_theme_mod( 'layout_site' );
 
 				// Hooks
 
@@ -60,7 +66,7 @@ class Reykjavik_Content {
 
 					// Filters
 
-						add_filter( 'render_block', __CLASS__ . '::render_block', 5 );
+						add_filter( 'render_block', __CLASS__ . '::render_block', 5, 2 );
 
 		} // /__construct
 
@@ -301,9 +307,10 @@ class Reykjavik_Content {
 		 * @since    2.0.0
 		 * @version  2.0.0
 		 *
-		 * @param  string $block_content
+     * @param  string $block_content  The pre-rendered content. Default null.
+     * @param  array  $block          The block being rendered.
 		 */
-		public static function render_block( $block_content ) {
+		public static function render_block( $block_content, $block ) {
 
 			// Processing
 
@@ -313,6 +320,21 @@ class Reykjavik_Content {
 					'wp-block-button__link button',
 					$block_content
 				);
+
+				// Wide/full align wrapper (for simplified styles).
+				if ( ! isset( $block['attrs']['align'] ) ) {
+					$block['attrs']['align'] = '';
+				}
+				if ( ! isset( $block['attrs']['className'] ) ) {
+					$block['attrs']['className'] = '';
+				}
+				if (
+					in_array( $block['attrs']['align'], array( 'wide', 'full' ) )
+					|| false !== strpos( $block['attrs']['className'], 'alignwide' )
+					|| false !== strpos( $block['attrs']['className'], 'alignfull' )
+				) {
+					$block_content = '<div class="align-wrap">' . $block_content . '</div>';
+				}
 
 
 			// Output

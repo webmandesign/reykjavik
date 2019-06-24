@@ -3,6 +3,10 @@
 //
 // Site content layout
 //
+// Custom CSS class:
+// - disregard-content-padding-top
+// - disregard-content-padding-bottom
+//
 
 
 
@@ -29,7 +33,7 @@
 
 		}
 
-			%disregard_content_padding_top {
+			.disregard-content-padding-top {
 				margin-top: -$golden_major * $padding_vertical;
 
 				@include media( map_get( $breakpoint, 'l' ) ) {
@@ -42,7 +46,7 @@
 
 			}
 
-			%disregard_content_padding_bottom {
+			.disregard-content-padding-bottom {
 				margin-bottom: -$golden_major * $padding_vertical;
 
 				@include media( map_get( $breakpoint, 'l' ) ) {

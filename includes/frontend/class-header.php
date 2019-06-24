@@ -336,7 +336,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.3
+		 * @version  2.0.0
 		 *
 		 * @param  array $classes
 		 */
@@ -470,16 +470,6 @@ class Reykjavik_Header {
 							&& Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' )
 						) {
 						$classes[] = 'page-layout-outdented';
-					}
-
-				// Enable outdented single post meta
-
-					if ( (bool) apply_filters( 'wmhook_reykjavik_header_body_classes_enable_entry_meta_outdented',
-						is_single( get_the_ID() )
-						&& ! is_active_sidebar( 'sidebar' )
-						&& ! Reykjavik_Post::is_page_builder_ready()
-					) ) {
-						$classes[] = 'entry-meta-outdented';
 					}
 
 
