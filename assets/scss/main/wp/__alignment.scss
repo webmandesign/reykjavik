@@ -23,6 +23,47 @@ $content_indent: 100 - $page_content_width;
 	width: 100vw;
 	margin-#{$left}: calc( 50% - 50vw ); // {{RTL}}
 	margin-bottom: $golden +em;
+	pointer-events: none;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	& + & {
+		// Removing vertical margin here in favor of Spacer block
+		// used to space out the wide/full aligned blocks.
+		margin-top: -$golden +em;
+	}
+
+	// Sidebar is displayed:
+	.has-widgets-sidebar & {
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			width: auto;
+			margin-#{$left}: calc( 50% / #{ $page_content_width / 100 } - 50vw );
+		}
+
+	}
+
+	// Boxed site layout:
+	.site-layout-boxed & {
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+	}
+
+		// Boxed site layout + sidebar:
+		.site-layout-boxed.has-widgets-sidebar & {
+
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				padding-#{$right}: 0;
+				margin-#{$left}: calc( 50% / #{ $page_content_width / 100 } - 50vw );
+			}
+
+		}
 
 	// Applied on pages only:
 	.page-layout-outdented & {
@@ -35,49 +76,39 @@ $content_indent: 100 - $page_content_width;
 
 	}
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	& + & {
-		// Removing vertical margin here in favor of Spacer block
-		// used to space out the wide/full aligned blocks.
-		margin-top: -$golden +em;
-	}
-
-	.site-layout-boxed & {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-	}
-
 }
 
-
+.alignwide,
+.alignfull {
+	pointer-events: auto;
+}
 
 .alignwide {
+	$alignwide_overlap: 10; // in %
+
 	/* $content_width */
 	max-width: map_get( $customize_options, 'layout_width_content' );
 	max-width: var(--layout_width_content);
 	margin: 0 auto;
 
+	// Sidebar is displayed:
+	.has-widgets-sidebar & {
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			max-width: #{ round( map_get( $customize_options, 'layout_width_site' ) * ( $page_content_width + $alignwide_overlap ) / 100 ) };
+			max-width: calc( var(--layout_width_content) * #{ ( $page_content_width + $alignwide_overlap ) / 100 } );
+			margin-#{$right}: 0;
+		}
+
+	}
+
 	// Applied on pages only:
 	// We have to use `body` as `.page` is also applied on `article` tag.
-
-		.site-layout-fullwidth.page:not(.page-layout-outdented) & {
-			/* $content_width */
-			max-width: map_get( $customize_options, 'layout_width_content' ) * 1.33;
-			max-width: calc( var(--layout_width_content) * 1.2 );
-		}
-
-		.site-layout-boxed.page:not(.page-layout-outdented) & {
-			/* $content_width */
-			max-width: map_get( $customize_options, 'layout_width_content' ) * 1.33;
-			max-width: calc( var(--layout_width_content) * 1.2 );
-		}
+	body.page:not(.page-layout-outdented) & {
+		/* $content_width */
+		max-width: #{ round( map_get( $customize_options, 'layout_width_content' ) * ( 100 + 2 * $alignwide_overlap ) / 100 ) };
+		max-width: calc( var(--layout_width_content) * #{ ( 100 + 2 * $alignwide_overlap ) / 100 } );
+	}
 
 }
 
@@ -86,10 +117,24 @@ $content_indent: 100 - $page_content_width;
 	max-width: 100%;
 	margin: 0;
 
+	// Boxed site layout:
 	.site-layout-boxed & {
 		width: map_get( $customize_options, 'layout_width_site' );
 		width: var(--layout_width_site);
 		margin: 0 auto;
 	}
+
+		// Boxed site layout + sidebar:
+		.site-layout-boxed.has-widgets-sidebar & {
+
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				width: auto;
+				/* $content_width */
+				max-width: calc( #{ map_get( $customize_options, 'layout_width_site' ) } / 2 + #{ map_get( $customize_options, 'layout_width_content' ) } * #{ $page_content_width / 100 } - #{ map_get( $customize_options, 'layout_width_content' ) } / 2 );
+				max-width: calc( var(--layout_width_site) / 2 + var(--layout_width_content) * #{ $page_content_width / 100 } - var(--layout_width_content) / 2 );
+				margin-#{$right}: 0;
+			}
+
+		}
 
 }
