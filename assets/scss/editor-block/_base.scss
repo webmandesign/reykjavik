@@ -1,0 +1,24 @@
+/* FILE: editor-block/_base.scss */
+
+body .editor-styles-wrapper {
+	background-color: map_get( $customize_options, 'color_content_background' );
+	color: map_get( $customize_options, 'color_content_text' );
+	border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
+
+	background-color: var(--color_content_background);
+	color: var(--color_content_text);
+	border-color: var(--color_content_text--a20);
+
+	*,
+	*::after,
+	*::before {
+		border-color: inherit;
+	}
+
+	#{ $elements_headings } {
+		@extend %font_headings;
+		color: map_get( $customize_options, 'color_content_headings' );
+		color: var(--color_content_headings);
+	}
+
+}

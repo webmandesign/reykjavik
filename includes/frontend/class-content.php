@@ -333,7 +333,9 @@ class Reykjavik_Content {
 					|| false !== strpos( $block['attrs']['className'], 'alignwide' )
 					|| false !== strpos( $block['attrs']['className'], 'alignfull' )
 				) {
-					$block_content = '<div class="align-wrap">' . $block_content . '</div>';
+					$class  = 'align-wrap';
+					$class .= 'align-wrap-wp-block-' . sanitize_html_class( str_replace( 'core/', '', $block['blockName'] ) );
+					$block_content = '<div class="' . esc_attr( $class ) . '">' . $block_content . '</div>';
 				}
 
 

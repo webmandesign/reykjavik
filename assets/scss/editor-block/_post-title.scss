@@ -1,0 +1,7 @@
+/* FILE: editor-block/_post-title.scss */
+
+.editor-post-title__block .editor-post-title__input {
+	@extend %font_headings;
+	color: map_get( $customize_options, 'color_content_headings' );
+	color: var(--color_content_headings);
+}

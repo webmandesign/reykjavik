@@ -1,0 +1,52 @@
+/* FILE: editor-block/_typography.scss */
+
+%font_body {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_text' ) };
+	font-family: var(--typography_fonts_text);
+}
+
+	.has-root-font-family {
+		@extend %font_body;
+	}
+
+%font_headings {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_headings' ) };
+	font-family: var(--typography_fonts_headings);
+}
+
+	.has-headings-font-family {
+		@extend %font_headings;
+	}
+
+%font_logo {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_logo' ) };
+	font-family: var(--typography_fonts_logo);
+	text-rendering: auto;
+}
+
+	.has-site-title-font-family {
+		@extend %font_logo;
+	}
+
+%font_inherit {
+	font-family: inherit;
+}
+
+	.has-inherited-font-family {
+		@extend %font_inherit;
+	}
+
+body .editor-styles-wrapper {
+	@extend %font_body;
+	line-height: $golden;
+
+	@include media( map_get( $breakpoint, 's' ) ) {
+		font-size: map_get( $customize_options, 'typography_size_html' );
+		font-size: var(--typography_size_html);
+	}
+
+}
+
+.editor-default-block-appender textarea.editor-default-block-appender__content {
+	@extend %font_inherit;
+}

@@ -1,0 +1,28 @@
+/* FILE: editor-block/_block.scss */
+
+.wp-block {
+	// Post content width when no sidebar is displayed.
+	max-width: 36em;
+	margin-bottom: $golden +em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&[data-align="wide"] {
+		max-width: map_get( $customize_options, 'layout_width_content' );
+		max-width: var(--layout_width_content);
+	}
+
+	&[data-align="wide"],
+	&[data-align="full"] {
+
+		& + & {
+			// Removing vertical margin here in favor of Spacer block
+			// used to space out the wide/full aligned blocks.
+			margin-top: -$golden +em;
+		}
+
+	}
+
+}

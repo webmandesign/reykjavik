@@ -186,80 +186,64 @@ class Reykjavik_Setup {
 					 */
 
 					// wp-content/languages/themes/reykjavik/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', trailingslashit( WP_LANG_DIR ) . 'themes/' . get_template() );
+					load_theme_textdomain( 'reykjavik', trailingslashit( WP_LANG_DIR ) . 'themes/' . get_template() );
 
 					// wp-content/themes/child-theme/languages/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', get_stylesheet_directory() . '/languages' );
+					load_theme_textdomain( 'reykjavik', get_stylesheet_directory() . '/languages' );
 
 					// wp-content/themes/reykjavik/languages/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', get_template_directory() . '/languages' );
+					load_theme_textdomain( 'reykjavik', get_template_directory() . '/languages' );
 
 				// Declare support for child theme stylesheet automatic enqueuing
+				add_theme_support( 'child-theme-stylesheet' );
 
-					add_theme_support( 'child-theme-stylesheet' );
-
-				// Add editor stylesheets
-
-					add_editor_style( $editor_styles );
-
-				// Wide alignment.
-
-					add_theme_support( 'align-wide' );
-
-				// Responsive embedded content.
-
-					add_theme_support( 'responsive-embeds' );
+				// Add support for editor styles.
+				add_editor_style( $editor_styles );
+				/**
+				 * add_theme_support( 'editor-styles' );
+				 *
+				 * This is not OK for this theme! Do not ever use it here!
+				 * As the theme applies more advanced styles for TinyMCE,
+				 * the stylesheet would be enqueued into block editor too,
+				 * which would mess block editor styles greatly...
+				 *
+				 * @see  Reykjavik_Assets::enqueue_styles_editor()
+				 */
 
 				// Block color palettes.
-
-					add_theme_support( 'editor-color-palette', self::get_color_palette() );
+				add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
 				// Block font sizes.
+				add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
 
-					add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
+				// Wide alignment.
+				add_theme_support( 'align-wide' );
 
-				// Custom menus
-
-					/**
-					 * @see  includes/frontend/class-menu.php
-					 */
+				// Responsive embedded content.
+				add_theme_support( 'responsive-embeds' );
 
 				// Title tag
-
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
-					 */
-					add_theme_support( 'title-tag' );
+				add_theme_support( 'title-tag' );
 
 				// Site logo
-
-					/**
-					 * @link  https://codex.wordpress.org/Theme_Logo
-					 */
-					add_theme_support( 'custom-logo' );
+				add_theme_support( 'custom-logo' );
 
 				// Feed links
-
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Feed_Links
-					 */
-					add_theme_support( 'automatic-feed-links' );
+				add_theme_support( 'automatic-feed-links' );
 
 				// Enable HTML5 markup
+				add_theme_support( 'html5', array(
+					'caption',
+					'comment-form',
+					'comment-list',
+					'gallery',
+					'search-form',
+				) );
 
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
-					 */
-					add_theme_support( 'html5', array(
-						'caption',
-						'comment-form',
-						'comment-list',
-						'gallery',
-						'search-form',
-					) );
+				// Custom background
+				add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
+					'default-color' => 'e3e3e4',
+				) ) );
 
 				// Custom header
 
@@ -267,14 +251,11 @@ class Reykjavik_Setup {
 					 * @see  includes/custom-header/class-intro.php
 					 */
 
-				// Custom background
+				// Custom menus
 
 					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
+					 * @see  includes/frontend/class-menu.php
 					 */
-					add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
-						'default-color' => 'e3e3e4',
-					) ) );
 
 				// Post formats
 

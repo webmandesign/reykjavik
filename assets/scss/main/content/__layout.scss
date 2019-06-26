@@ -4,8 +4,8 @@
 // Site content layout
 //
 // Custom CSS class:
-// - disregard-content-padding-top
-// - disregard-content-padding-bottom
+// - compensate-content-padding-top
+// - compensate-content-padding-bottom
 //
 
 
@@ -33,7 +33,7 @@
 
 		}
 
-			.disregard-content-padding-top {
+			.compensate-content-padding-top {
 				margin-top: -$golden_major * $padding_vertical;
 
 				@include media( map_get( $breakpoint, 'l' ) ) {
@@ -46,7 +46,7 @@
 
 			}
 
-			.disregard-content-padding-bottom {
+			.compensate-content-padding-bottom {
 				margin-bottom: -$golden_major * $padding_vertical;
 
 				@include media( map_get( $breakpoint, 'l' ) ) {
@@ -88,8 +88,8 @@
 				margin-right: auto;
 			}
 
+			.has-blocks &,
 			.posts-layout-list.no-widgets-sidebar &,
-			// .page.no-widgets-sidebar &,
 			.single.no-widgets-sidebar &,
 			.attachment.no-widgets-sidebar & {
 				max-width: 36em;

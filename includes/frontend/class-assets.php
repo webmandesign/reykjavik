@@ -57,6 +57,7 @@ class Reykjavik_Assets {
 
 						add_action( 'comment_form_before', __CLASS__ . '::enqueue_comments_reply' );
 
+						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_styles_editor' );
 						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_edit_post_scripts' );
 
 					// Filters
@@ -425,6 +426,42 @@ class Reykjavik_Assets {
 				}
 
 		} // /enqueue_comments_reply
+
+
+
+		/**
+		 * Enqueues block editor stylesheets.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function enqueue_styles_editor() {
+
+			// Processing
+
+				if ( $url_google_fonts = self::google_fonts_url() ) {
+					wp_enqueue_style(
+						'reykjavik-google-fonts',
+						$url_google_fonts,
+						array(),
+						REYKJAVIK_THEME_VERSION
+					);
+				}
+
+				wp_enqueue_style(
+					'reykjavik-editor-blocks',
+					get_theme_file_uri( 'assets/css/editor-style-blocks.css' ),
+					array(),
+					REYKJAVIK_THEME_VERSION
+				);
+				wp_style_add_data( 'reykjavik-editor-blocks', 'rtl', 'replace' );
+
+				wp_add_inline_style(
+					'reykjavik-editor-blocks',
+					Reykjavik_Customize_Styles::esc_css( Reykjavik_Customize_Styles::get_css_variables(), 'customize-styles-editor' )
+				);
+
+		} // /enqueue_styles_editor
 
 
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -35,7 +35,7 @@ class Reykjavik_Header {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  1.5.2
 		 */
 		private function __construct() {
 
@@ -67,7 +67,6 @@ class Reykjavik_Header {
 						add_filter( 'body_class', __CLASS__ . '::body_class', 98 );
 
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class' );
-						add_filter( 'admin_body_class', __CLASS__ . '::block_editor_body_class' );
 
 						add_filter( 'wmhook_reykjavik_library_link_skip_to_pre', __CLASS__ . '::skip_links_no_header', 10, 2 );
 
@@ -414,6 +413,24 @@ class Reykjavik_Header {
 								$classes[] = 'content-layout-no-paddings';
 							}
 
+						// Page.
+
+							if (
+								is_page()
+								&& ! is_attachment() // This is required for attachments added to a page.
+								&& ! is_page_template( 'templates/sidebar.php' )
+							) {
+
+								if ( has_blocks() ) {
+									// Required for making the page content area narrow when using block editor.
+									$classes[] = 'has-blocks';
+								} else if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
+									// Enable outdented page layout (only when not built with block editor).
+									$classes[] = 'page-layout-outdented';
+								}
+
+							}
+
 					} else {
 
 						// Add a class of hfeed to non-singular pages
@@ -449,28 +466,17 @@ class Reykjavik_Header {
 				// Posts layout
 
 					if (
-							is_home()
-							|| is_category()
-							|| is_tag()
-							|| is_date()
-							|| is_author() // Display author archive as posts, not as custom post type archive.
-						) {
+						is_home()
+						|| is_category()
+						|| is_tag()
+						|| is_date()
+						|| is_author() // Display author archive as posts, not as custom post type archive.
+					) {
 						$classes[] = 'posts-layout-list';
 					}
 
 					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {
 						$classes[] = 'posts-layout-masonry';
-					}
-
-				// Enable outdented page layout
-
-					if (
-							is_page()
-							&& ! is_attachment() // This is required for attachments added to a page.
-							&& ! is_page_template( 'templates/sidebar.php' )
-							&& Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' )
-						) {
-						$classes[] = 'page-layout-outdented';
 					}
 
 
@@ -536,48 +542,6 @@ class Reykjavik_Header {
 				return $init;
 
 		} // /editor_body_class
-
-
-
-		/**
-		 * HTML Body classes in block editor.
-		 *
-		 * @since    2.0.0
-		 * @version  2.0.0
-		 *
-		 * @param  string $classes
-		 */
-		public static function block_editor_body_class( $classes = '' ) {
-
-			// Requirements check
-
-				global $post;
-
-				if (
-					! is_admin()
-					|| ! $post instanceof WP_Post
-				) {
-					return $classes;
-				}
-
-
-			// Processing
-
-				if ( 'page' === get_post_type( $post ) ) {
-
-					// Outdented page layout?
-					if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
-						$classes .= ' page-layout-outdented';
-					}
-
-				}
-
-
-			// Output
-
-				return $classes . ' ';
-
-		} // /block_editor_body_class
 
 
 

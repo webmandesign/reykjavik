@@ -1,0 +1,26 @@
+/* FILE: editor-style-blocks-rtl.scss */
+
+//
+// Blocks editor RTL styles.
+//
+// @see  Reykjavik_Assets::enqueue_styles_editor()
+//
+// @package    Reykjavik
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.0.0
+// @version  2.0.0
+//
+
+$language_direction: rtl;
+
+@import 'setup';
+@import 'css-vars';
+
+.editor-styles-wrapper {
+
+	@import 'starter/__index';
+
+	@import 'main/main';
+
+}
