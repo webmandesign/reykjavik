@@ -15,6 +15,7 @@
 // Site content width holder
 
 	.site-content {
+		@extend .clearfix;
 
 		&-inner {
 			@extend %content_width;

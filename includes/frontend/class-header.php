@@ -67,6 +67,7 @@ class Reykjavik_Header {
 						add_filter( 'body_class', __CLASS__ . '::body_class', 98 );
 
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class' );
+						add_filter( 'admin_body_class', __CLASS__ . '::block_editor_body_class' );
 
 						add_filter( 'wmhook_reykjavik_library_link_skip_to_pre', __CLASS__ . '::skip_links_no_header', 10, 2 );
 
@@ -542,6 +543,59 @@ class Reykjavik_Header {
 				return $init;
 
 		} // /editor_body_class
+
+
+
+		/**
+		 * HTML Body classes in block editor.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 *
+		 * @param  string $classes
+		 */
+		public static function block_editor_body_class( $classes = '' ) {
+
+			// Requirements check
+
+				global $post;
+
+				if (
+					! is_admin()
+					|| ! $post instanceof WP_Post
+				) {
+					return $classes;
+				}
+
+
+			// Processing
+
+				// Block editor dark theme.
+
+					$content_color = sanitize_hex_color_no_hash( Reykjavik_Library_Customize::get_theme_mod( 'color_content_background' ) );
+
+					/**
+					 * Color darkness code inspiration:
+					 * @link  https://github.com/mexitek/phpColors
+					 */
+					if ( 6 === strlen( $content_color ) ) {
+						$r = hexdec( $color[0] . $color[1] );
+						$g = hexdec( $color[2] . $color[3] );
+						$b = hexdec( $color[4] . $color[5] );
+
+						$content_color_darkness = ( $r * 299 + $g * 587 + $b * 114 ) / 1000;
+
+						if ( 130 >= $content_color_darkness ) {
+							$classes .= ' is-dark-theme';
+						}
+					}
+
+
+			// Output
+
+				return $classes . ' ';
+
+		} // /block_editor_body_class
 
 
 

@@ -247,10 +247,8 @@ pre, pre code, select { overflow-wrap: normal; word-wrap: normal; -webkit-hyphen
 
 .vertical-align-bottom, .has-bottom-vertical-align { vertical-align: bottom; }
 
-.entry-summary { margin: 0 0 1.618em; }
-
 /* FILE: starter/base/_clearing.scss */
-.clearfix::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .clear::after, .gallery::after, .comment-content::after, .widget_text::after, .jetpack_subscription_widget form::after, .site-header-inner::after, .intro-inner::after, .site-content-inner::after, .posts-layout-list .type-post::after, .outdent-content::after, .textwidget::after { content: ''; clear: both; display: table; table-layout: fixed; }
+.clearfix::after, .clear::after, .gallery::after, .comment-content::after, .widget_text::after, .jetpack_subscription_widget form::after, .site-header::after, .site-header-inner::after, .intro-inner::after, .site-content::after, .site-content-inner::after, .posts-layout-list .type-post::after, .entry-content::after, .outdent-content::after, .site-footer::after, .textwidget::after { content: ''; clear: both; display: table; table-layout: fixed; }
 
 .clear { clear: both; }
 
@@ -317,7 +315,7 @@ blockquote cite, .weight-400, .has-400-font-weight, #cancel-comment-reply-link, 
 
 .weight-600, .has-600-font-weight, abbr, .post-table-of-contents a, .pingback a:not(.comment-edit-link), .trackback a:not(.comment-edit-link) { font-weight: 600; }
 
-dt, th, tfoot td, .link-more, .weight-700, .has-700-font-weight, .comment-form label, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, [type="button"], [type="reset"], [type="submit"], .child-page .more-link, .main-navigation-container .button > a, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .site .wp-playlist-current-item, .attachment-download-label, .post-table-of-contents a::before, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
+dt, th, tfoot td, .weight-700, .has-700-font-weight, .comment-form label, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, strong, .button, button, [type="button"], [type="reset"], [type="submit"], .child-page .more-link, .main-navigation-container .button > a, .search-results .page-title span, .widget-title, .widget-title-style .widgettitle, .site-title, .site .wp-playlist-current-item, .attachment-download-label, .post-table-of-contents a::before, .link-more, .entry-meta-element, .post-navigation .nav-links .title, .comments-title, .sidebar .widget .current_page_item > a, .fl-widget .widget .current_page_item > a, .sidebar .widget .current-menu-item > a, .fl-widget .widget .current-menu-item > a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title, .entry-author .author-name { font-weight: 700; }
 
 .weight-800, .has-800-font-weight { font-weight: 800; }
 
@@ -1725,6 +1723,8 @@ blockquote.alignright { margin-right: 0; }
 .entry-summary + .link-more { margin-top: 1rem; }
 
 /* FILE: main/content/__post.scss */
+.entry-summary { margin: 0 0 1.618em; }
+
 .entry-summary.has-more-tag { text-transform: uppercase; }
 
 /* FILE: main/content/__meta.scss */

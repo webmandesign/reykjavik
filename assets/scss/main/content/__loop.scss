@@ -84,6 +84,7 @@
 // More link
 
 	.link-more {
+		@extend %font_weight_700;
 
 		.entry-summary + & {
 			margin-top: 1rem;

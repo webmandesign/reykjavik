@@ -13,6 +13,30 @@
 
 
 //
+// Global variables
+//
+
+	// Responsive breakpoints (in px).
+
+		$breakpoint: (
+			's'     :  448, // =  28em // Starting mobile landscape
+			'm'     :  672, // =  42em // Starting tablet portrait
+			'l'     :  880, // =  55em // Starting tablet landscape
+			'xl'    : 1280, // =  80em // Starting laptop
+			'xxl'   : 1600, // = 100em // Starting desktop
+			'xxxl'  : 1920, // = 120em // Starting desktop full HD
+			'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+		) !default;
+
+	// Golden ratio.
+
+		$golden:       1.618 !default;
+		$golden_major: 0.618 !default;
+		$golden_minor: 0.382 !default;
+
+
+
+//
 // Setup variables
 //
 
@@ -58,6 +82,9 @@
 			'video',
 		) !default;
 
+		$alignment_margin: percentage( .06 ) !default;
+		$alignment_width: percentage( $golden_major - .06 ) !default;
+
 	// Post Formats support.
 
 		$support__post_format: (
@@ -81,30 +108,6 @@
 			'tiled-gallery',
 			'widgets',
 		) !default;
-
-
-
-//
-// Global variables
-//
-
-	// Responsive breakpoints (in px).
-
-		$breakpoint: (
-			's'     :  448, // =  28em // Starting mobile landscape
-			'm'     :  672, // =  42em // Starting tablet portrait
-			'l'     :  880, // =  55em // Starting tablet landscape
-			'xl'    : 1280, // =  80em // Starting laptop
-			'xxl'   : 1600, // = 100em // Starting desktop
-			'xxxl'  : 1920, // = 120em // Starting desktop full HD
-			'xxxxl' : 2560, // = 160em // Starting desktop WQHD
-		) !default;
-
-	// Golden ratio.
-
-		$golden:       1.618 !default;
-		$golden_major: 0.618 !default;
-		$golden_minor: 0.382 !default;
 
 
 

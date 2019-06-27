@@ -11,3 +11,25 @@
 // @since    1.0.0
 // @version  2.0.0
 //
+
+@import 'setup';
+@import 'css-vars';
+
+@import 'starter/__index';
+
+// Selection from main styles:
+
+	@import 'main/icons/icons';
+	@import 'main/base/base'; // @todo
+	@import 'main/typography/typography'; // @todo
+	@import 'main/forms/forms'; // @todo Buttons
+	@import 'main/headings/headings';
+	// main/wp/
+		@import 'main/wp/_caption';
+		@import 'main/wp/_file';
+		@import 'main/wp/_gallery';
+		@import 'main/wp/_player';
+		@import 'main/wp/_pullquote';
+		@import 'main/wp/_quote';
+		@import 'main/wp/_separator';
+		@import 'main/wp/_verse';

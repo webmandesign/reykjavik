@@ -587,7 +587,7 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.0
 		 */
 		public static function editor_stylesheets() {
 
@@ -612,12 +612,6 @@ class Reykjavik_Assets {
 				// Editor stylesheet
 
 					$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
-						'ver',
-						REYKJAVIK_THEME_VERSION,
-						get_theme_file_uri( 'assets/css/main' . $stylesheet_suffix . '.css' )
-					) );
-
-					$visual_editor_stylesheets[15] = esc_url_raw( add_query_arg(
 						'ver',
 						REYKJAVIK_THEME_VERSION,
 						get_theme_file_uri( 'assets/css/editor-style' . $stylesheet_suffix . '.css' )

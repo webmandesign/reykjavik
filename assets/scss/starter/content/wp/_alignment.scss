@@ -2,13 +2,13 @@
 
 .alignleft {
 	float: left;
-	margin-right: $horizontal_alignment_margin;
+	margin-right: $alignment_margin;
 	margin-bottom: 1em;
 }
 
 .alignright {
 	float: right;
-	margin-left: $horizontal_alignment_margin;
+	margin-left: $alignment_margin;
 	margin-bottom: 1em;
 }
 
