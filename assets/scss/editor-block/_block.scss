@@ -3,6 +3,7 @@
 .wp-block {
 	// Post content width when no sidebar is displayed.
 	max-width: 36em;
+	max-width: calc( 36em + 14px + 14px ); // Compensate for block editor interface margins.
 	margin-bottom: $golden +em;
 
 	&:last-child {

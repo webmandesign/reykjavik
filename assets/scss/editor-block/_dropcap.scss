@@ -1,0 +1,10 @@
+/* FILE: editor-block/_dropcap.scss */
+
+.has-dropcap-text,
+p.has-drop-cap:not(:focus) {
+
+	&::first-letter {
+		@extend %drop-cap;
+	}
+
+}

@@ -579,9 +579,9 @@ class Reykjavik_Header {
 					 * @link  https://github.com/mexitek/phpColors
 					 */
 					if ( 6 === strlen( $content_color ) ) {
-						$r = hexdec( $color[0] . $color[1] );
-						$g = hexdec( $color[2] . $color[3] );
-						$b = hexdec( $color[4] . $color[5] );
+						$r = hexdec( $content_color[0] . $content_color[1] );
+						$g = hexdec( $content_color[2] . $content_color[3] );
+						$b = hexdec( $content_color[4] . $content_color[5] );
 
 						$content_color_darkness = ( $r * 299 + $g * 587 + $b * 114 ) / 1000;
 

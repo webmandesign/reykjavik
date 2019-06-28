@@ -26,7 +26,7 @@ $content_indent: 100 - $page_content_width;
 	pointer-events: none;
 
 	&:last-child,
-	&-wp-block-columns {
+	&[data-block="columns"] {
 		margin-bottom: 0;
 	}
 

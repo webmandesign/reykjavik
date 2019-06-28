@@ -855,6 +855,18 @@ div.sharedaddy .sd-social .sd-button .share-count { background: inherit; color: 
 .wp-custom-header .wp-custom-header-video-button::before { position: absolute; width: 100%; right: 0; top: 0; text-align: center; text-indent: 0; }
 
 /* FILE: main/base/_base.scss */
+/* FILE: main/base/__extender.scss */
+.intro-widgets, .footer-widgets { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; padding-top: 1.618em; padding-bottom: 1.618em; margin-left: -1.618rem; margin-right: -1.618rem; }
+
+.intro-widgets .widget, .footer-widgets .widget { position: relative; -webkit-box-flex: 1; -ms-flex: 1 1 10em; flex: 1 1 10em; padding: 1.618em 0; margin: 0 1.618rem; }
+
+@media (min-width: 880px) { .intro-widgets .widget, .footer-widgets .widget { -ms-flex-preferred-size: 0%; flex-basis: 0%; padding: 2.61792em 0; } }
+
+code, pre, .wp-block-file, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, .entry-author { position: relative; z-index: 1; }
+
+code::before, pre::before, .wp-block-file::before, .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before, .pagination .prev::before, .pagination .next::before, .footer-area-site-info::before, .site-footer .breadcrumbs-container::before, .entry-author::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
+
+/* FILE: main/base/__elements.scss */
 a { text-decoration: underline; }
 
 a:hover, a:active, a:focus { text-decoration: none; }
@@ -908,17 +920,6 @@ th, tfoot td { border-top-width: 1px; border-bottom-width: 1px; }
 tfoot { border-top-width: 2px; border-top-style: solid; }
 
 h1:last-child, h2:last-child, h3:last-child, .h1:last-child, .h2:last-child, .h3:last-child, p:last-child, ol:last-child, ul:last-child, blockquote:last-child, figure:last-child, .gallery:last-child, .tiled-gallery:last-child { margin-bottom: 0; }
-
-/* FILE: main/base/__extender.scss */
-.intro-widgets, .footer-widgets { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; padding-top: 1.618em; padding-bottom: 1.618em; margin-left: -1.618rem; margin-right: -1.618rem; }
-
-.intro-widgets .widget, .footer-widgets .widget { position: relative; -webkit-box-flex: 1; -ms-flex: 1 1 10em; flex: 1 1 10em; padding: 1.618em 0; margin: 0 1.618rem; }
-
-@media (min-width: 880px) { .intro-widgets .widget, .footer-widgets .widget { -ms-flex-preferred-size: 0%; flex-basis: 0%; padding: 2.61792em 0; } }
-
-code, pre, .wp-block-file, .pagination a:hover, .pagination a:active, .pagination a:focus, .pagination .prev, .pagination .next, .footer-area-site-info, .site-footer .breadcrumbs-container, .entry-author { position: relative; z-index: 1; }
-
-code::before, pre::before, .wp-block-file::before, .pagination a:hover::before, .pagination a:active::before, .pagination a:focus::before, .pagination .prev::before, .pagination .next::before, .footer-area-site-info::before, .site-footer .breadcrumbs-container::before, .entry-author::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
 
 /* FILE: main/base/__performance.scss */
 @media (max-width: 879px) { .main-navigation-container { will-change: transform; } }
@@ -1081,6 +1082,7 @@ form[role="search"] input[type="search"], form[role="search"] .search-field, .se
 .comment-form ::placeholder { text-transform: uppercase; font-size: .809em; opacity: 1; }
 
 /* FILE: main/headings/_headings.scss */
+/* FILE: main/headings/__base.scss */
 h1.h2, h1.h3, h1.display-1, h1.display-2, h1.display-3, h1.display-4 { font-style: inherit; }
 
 h1.weight-100, h1.has-100-font-weight, .h1.weight-100, .h1.has-100-font-weight, h2.weight-100, h2.has-100-font-weight, .h2.weight-100, .h2.has-100-font-weight, h3.weight-100, h3.has-100-font-weight, .h3.weight-100, .h3.has-100-font-weight, h4.weight-100, h4.has-100-font-weight, .h4.weight-100, .h4.has-100-font-weight, h5.weight-100, h5.has-100-font-weight, .h5.weight-100, .h5.has-100-font-weight, h6.weight-100, h6.has-100-font-weight, .h6.weight-100, .h6.has-100-font-weight { font-weight: 100; }
@@ -1551,7 +1553,7 @@ blockquote.alignright { margin-right: 0; }
 
 .align-wrap { clear: both; width: 100vw; margin-right: calc( 50% - 50vw); margin-bottom: 1.618em; pointer-events: none; }
 
-.align-wrap:last-child, .align-wrap-wp-block-columns { margin-bottom: 0; }
+.align-wrap:last-child, .align-wrap[data-block="columns"] { margin-bottom: 0; }
 
 .align-wrap + .align-wrap { margin-top: -1.618em; }
 

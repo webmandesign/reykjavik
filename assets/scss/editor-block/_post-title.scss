@@ -1,7 +1,16 @@
 /* FILE: editor-block/_post-title.scss */
 
-.editor-post-title__block .editor-post-title__input {
-	@extend %font_headings;
-	color: map_get( $customize_options, 'color_content_headings' );
-	color: var(--color_content_headings);
+.editor-post-title__block {
+
+	@include media( map_get( $breakpoint, 's' ) ) {
+		font-size: map_get( $customize_options, 'typography_size_html' );
+		font-size: var(--typography_size_html);
+	}
+
+	.editor-post-title__input {
+		@extend %font_headings;
+		color: map_get( $customize_options, 'color_content_headings' );
+		color: var(--color_content_headings);
+	}
+
 }

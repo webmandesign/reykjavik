@@ -333,9 +333,12 @@ class Reykjavik_Content {
 					|| false !== strpos( $block['attrs']['className'], 'alignwide' )
 					|| false !== strpos( $block['attrs']['className'], 'alignfull' )
 				) {
-					$class  = 'align-wrap';
-					$class .= 'align-wrap-wp-block-' . sanitize_html_class( str_replace( 'core/', '', $block['blockName'] ) );
-					$block_content = '<div class="' . esc_attr( $class ) . '">' . $block_content . '</div>';
+					$atts = array(
+						'class="align-wrap"',
+						'data-block="' . sanitize_html_class( str_replace( 'core/', '', $block['blockName'] ) ) . '"',
+						'data-block-class="' . esc_attr( $block['attrs']['className'] ) . '"',
+					);
+					$block_content = '<div ' . implode( ' ', $atts ) . '>' . $block_content . '</div>';
 				}
 
 

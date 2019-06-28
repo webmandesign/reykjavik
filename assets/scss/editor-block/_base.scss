@@ -16,7 +16,6 @@ body .editor-styles-wrapper {
 	}
 
 	#{ $elements_headings } {
-		@extend %font_headings;
 		color: map_get( $customize_options, 'color_content_headings' );
 		color: var(--color_content_headings);
 	}

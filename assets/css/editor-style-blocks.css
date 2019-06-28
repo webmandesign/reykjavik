@@ -90,7 +90,7 @@ li > .editor-styles-wrapper ul, li > .editor-styles-wrapper ol { margin-bottom: 
 
 .editor-styles-wrapper svg { fill: currentColor; }
 
-.editor-styles-wrapper a, .editor-styles-wrapper p, .editor-styles-wrapper address { overflow-wrap: break-word; word-wrap: break-word; }
+.editor-styles-wrapper a, .editor-styles-wrapper p, .editor-styles-wrapper address, .editor-styles-wrapper h1, .editor-styles-wrapper .h1, .editor-styles-wrapper h2, .editor-styles-wrapper .h2, .editor-styles-wrapper h3, .editor-styles-wrapper .h3, .editor-styles-wrapper h4, .editor-styles-wrapper .h4, .editor-styles-wrapper h5, .editor-styles-wrapper .h5, .editor-styles-wrapper h6, .editor-styles-wrapper .h6 { overflow-wrap: break-word; word-wrap: break-word; }
 
 .editor-styles-wrapper pre, .editor-styles-wrapper pre code { overflow-wrap: normal; word-wrap: normal; -webkit-hyphens: manual; -ms-hyphens: manual; hyphens: manual; }
 
@@ -136,7 +136,7 @@ blockquote .editor-styles-wrapper cite, .editor-styles-wrapper code, .editor-sty
 
 .editor-styles-wrapper .font-size-sm, .editor-styles-wrapper .has-sm-font-size, .editor-styles-wrapper .has-smaller-font-size { font-size: 0.9045em; }
 
-.editor-styles-wrapper .font-size-l, .editor-styles-wrapper .has-l-font-size, .editor-styles-wrapper .has-large-font-size { font-size: 1.382em; }
+.editor-styles-wrapper .font-size-l, .editor-styles-wrapper .has-l-font-size, .editor-styles-wrapper .has-large-font-size, .editor-styles-wrapper blockquote { font-size: 1.382em; }
 
 .editor-styles-wrapper .font-size-xl, .editor-styles-wrapper .has-xl-font-size, .editor-styles-wrapper .has-extra-large-font-size, .editor-styles-wrapper .has-larger-font-size { font-size: 1.618em; }
 
@@ -144,29 +144,29 @@ blockquote .editor-styles-wrapper cite, .editor-styles-wrapper code, .editor-sty
 
 .editor-styles-wrapper .weight-200, .editor-styles-wrapper .has-200-font-weight { font-weight: 200; }
 
-.editor-styles-wrapper .weight-300, .editor-styles-wrapper .has-300-font-weight { font-weight: 300; }
+.editor-styles-wrapper .weight-300, .editor-styles-wrapper .has-300-font-weight, .editor-styles-wrapper blockquote { font-weight: 300; }
 
 blockquote .editor-styles-wrapper cite, .editor-styles-wrapper .weight-400, .editor-styles-wrapper .has-400-font-weight { font-weight: 400; }
 
 .editor-styles-wrapper .weight-500, .editor-styles-wrapper .has-500-font-weight { font-weight: 500; }
 
-.editor-styles-wrapper .weight-600, .editor-styles-wrapper .has-600-font-weight { font-weight: 600; }
+.editor-styles-wrapper .weight-600, .editor-styles-wrapper .has-600-font-weight, .editor-styles-wrapper abbr { font-weight: 600; }
 
-.editor-styles-wrapper dt, .editor-styles-wrapper th, .editor-styles-wrapper tfoot td, .editor-styles-wrapper .weight-700, .editor-styles-wrapper .has-700-font-weight { font-weight: 700; }
+.editor-styles-wrapper dt, .editor-styles-wrapper th, .editor-styles-wrapper tfoot td, .editor-styles-wrapper .weight-700, .editor-styles-wrapper .has-700-font-weight, .editor-styles-wrapper strong, .editor-styles-wrapper .site .wp-playlist-current-item, .site .editor-styles-wrapper .wp-playlist-current-item { font-weight: 700; }
 
 .editor-styles-wrapper .weight-800, .editor-styles-wrapper .has-800-font-weight { font-weight: 800; }
 
 .editor-styles-wrapper .weight-900, .editor-styles-wrapper .has-900-font-weight { font-weight: 900; }
 
-.editor-styles-wrapper img, .editor-styles-wrapper caption, .editor-styles-wrapper .font-style-italic, .editor-styles-wrapper .has-italic-font-style { font-style: italic; }
+.editor-styles-wrapper img, .editor-styles-wrapper caption, .editor-styles-wrapper .font-style-italic, .editor-styles-wrapper .has-italic-font-style, .editor-styles-wrapper .gallery-caption { font-style: italic; }
 
-.editor-styles-wrapper cite, .editor-styles-wrapper .font-style-normal, .editor-styles-wrapper .has-normal-font-style { font-style: normal; }
+.editor-styles-wrapper cite, .editor-styles-wrapper .font-style-normal, .editor-styles-wrapper .has-normal-font-style, .editor-styles-wrapper address { font-style: normal; }
 
 .editor-styles-wrapper .line-height-xs, .editor-styles-wrapper .has-xs-line-height, .editor-styles-wrapper .has-extra-small-line-height { line-height: 1; }
 
-.editor-styles-wrapper table, .editor-styles-wrapper .line-height-s, .editor-styles-wrapper .has-s-line-height, .editor-styles-wrapper .has-small-line-height, .editor-styles-wrapper .wp-caption-text { line-height: 1.382; }
+.editor-styles-wrapper table, .editor-styles-wrapper .line-height-s, .editor-styles-wrapper .has-s-line-height, .editor-styles-wrapper .has-small-line-height, .editor-styles-wrapper .wp-caption-text, .editor-styles-wrapper h1, .editor-styles-wrapper .h1, .editor-styles-wrapper h2, .editor-styles-wrapper .h2, .editor-styles-wrapper h3, .editor-styles-wrapper .h3, .editor-styles-wrapper h4, .editor-styles-wrapper .h4, .editor-styles-wrapper h5, .editor-styles-wrapper .h5, .editor-styles-wrapper h6, .editor-styles-wrapper .h6 { line-height: 1.382; }
 
-.editor-styles-wrapper html, .editor-styles-wrapper .line-height-m, .editor-styles-wrapper .has-m-line-height, .editor-styles-wrapper .has-medium-line-height, .editor-styles-wrapper .has-regular-line-height { line-height: 1.618; }
+.editor-styles-wrapper html, .editor-styles-wrapper .line-height-m, .editor-styles-wrapper .has-m-line-height, .editor-styles-wrapper .has-medium-line-height, .editor-styles-wrapper .has-regular-line-height, .editor-styles-wrapper blockquote { line-height: 1.618; }
 
 .editor-styles-wrapper .sticky { /* Placeholder for sticky post styles. */ /* See further in stylesheet for actual styles. */ }
 
@@ -281,6 +281,8 @@ blockquote .editor-styles-wrapper cite, .editor-styles-wrapper .weight-400, .edi
 
 .editor-styles-wrapper .wp-block-cover a:not(.button) { color: inherit; }
 
+.editor-styles-wrapper .has-dropcap-text::first-letter, .editor-styles-wrapper p.has-drop-cap:not(:focus)::first-letter { float: left; padding: 0 0.191em; padding-left: 0; margin: 0; font-size: 3.236em; font-weight: inherit; line-height: 1; }
+
 .editor-styles-wrapper .wp-block-embed.alignleft, .editor-styles-wrapper .wp-block-embed.aligncenter, .editor-styles-wrapper .wp-block-embed.alignright { max-width: 55.8%; }
 
 .editor-styles-wrapper .wp-block-gallery { margin-left: 0; margin-right: 0; }
@@ -342,7 +344,7 @@ blockquote .editor-styles-wrapper cite, .editor-styles-wrapper .weight-400, .edi
 /* FILE: editor-block/_typography.scss */
 .has-root-font-family, body .editor-styles-wrapper { font-family: Open Sans, Helvetica Neue, Arial, sans-serif; font-family: var(--typography_fonts_text); }
 
-.has-headings-font-family, .editor-post-title__block .editor-post-title__input, body .editor-styles-wrapper h1, body .editor-styles-wrapper .h1, body .editor-styles-wrapper h2, body .editor-styles-wrapper .h2, body .editor-styles-wrapper h3, body .editor-styles-wrapper .h3, body .editor-styles-wrapper h4, body .editor-styles-wrapper .h4, body .editor-styles-wrapper h5, body .editor-styles-wrapper .h5, body .editor-styles-wrapper h6, body .editor-styles-wrapper .h6 { font-family: Montserrat, Helvetica Neue, Arial, sans-serif; font-family: var(--typography_fonts_headings); }
+.has-headings-font-family, .editor-post-title__block .editor-post-title__input, .editor-styles-wrapper h1, .editor-styles-wrapper .h1, .editor-styles-wrapper h2, .editor-styles-wrapper .h2, .editor-styles-wrapper h3, .editor-styles-wrapper .h3, .editor-styles-wrapper h4, .editor-styles-wrapper .h4, .editor-styles-wrapper h5, .editor-styles-wrapper .h5, .editor-styles-wrapper h6, .editor-styles-wrapper .h6 { font-family: Montserrat, Helvetica Neue, Arial, sans-serif; font-family: var(--typography_fonts_headings); }
 
 .has-site-title-font-family { font-family: Montserrat, Helvetica Neue, Arial, sans-serif; font-family: var(--typography_fonts_logo); text-rendering: auto; }
 
@@ -353,6 +355,8 @@ body .editor-styles-wrapper { line-height: 1.618; }
 @media (min-width: 448px) { body .editor-styles-wrapper { font-size: 18px; font-size: var(--typography_size_html); } }
 
 /* FILE: editor-block/_post-title.scss */
+@media (min-width: 448px) { .editor-post-title__block { font-size: 18px; font-size: var(--typography_size_html); } }
+
 .editor-post-title__block .editor-post-title__input { color: #232324; color: var(--color_content_headings); }
 
 /* FILE: editor-block/_base.scss */
@@ -362,11 +366,190 @@ body .editor-styles-wrapper *, body .editor-styles-wrapper *::after, body .edito
 
 body .editor-styles-wrapper h1, body .editor-styles-wrapper .h1, body .editor-styles-wrapper h2, body .editor-styles-wrapper .h2, body .editor-styles-wrapper h3, body .editor-styles-wrapper .h3, body .editor-styles-wrapper h4, body .editor-styles-wrapper .h4, body .editor-styles-wrapper h5, body .editor-styles-wrapper .h5, body .editor-styles-wrapper h6, body .editor-styles-wrapper .h6 { color: #232324; color: var(--color_content_headings); }
 
+/* FILE: editor-block/_dropcap.scss */
 /* FILE: editor-block/_block.scss */
-.wp-block { max-width: 36em; margin-bottom: 1.618em; }
+.wp-block { max-width: 36em; max-width: calc( 36em + 14px + 14px); margin-bottom: 1.618em; }
 
 .wp-block:last-child { margin-bottom: 0; }
 
 .wp-block[data-align="wide"] { max-width: 1200px; max-width: var(--layout_width_content); }
 
 .wp-block[data-align="wide"] + .wp-block[data-align="wide"], .wp-block[data-align="full"] + .wp-block[data-align="wide"], .wp-block[data-align="wide"] + .wp-block[data-align="full"], .wp-block[data-align="full"] + .wp-block[data-align="full"] { margin-top: -1.618em; }
+
+/* FILE: editor-block/_main.scss */
+.editor-styles-wrapper { /* FILE: main/base/__extender.scss */ /* FILE: main/base/__elements.scss */ /* FILE: main/icons/_icons.scss */ /* FILE: main/headings/__base.scss */ }
+
+.editor-styles-wrapper code, .editor-styles-wrapper pre, .editor-styles-wrapper .wp-block-file { position: relative; z-index: 1; }
+
+.editor-styles-wrapper code::before, .editor-styles-wrapper pre::before, .editor-styles-wrapper .wp-block-file::before { content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: currentColor; border-radius: inherit; opacity: 0.07; z-index: -1; }
+
+.editor-styles-wrapper a { text-decoration: underline; }
+
+.editor-styles-wrapper a:hover, .editor-styles-wrapper a:active, .editor-styles-wrapper a:focus { text-decoration: none; }
+
+.editor-styles-wrapper ul, .editor-styles-wrapper ol { margin-bottom: 1.618em; }
+
+.editor-styles-wrapper ul { list-style: square; }
+
+.editor-styles-wrapper ul li.icon, .editor-styles-wrapper ul li.icon-bullet { position: relative; list-style: none; }
+
+.editor-styles-wrapper ul li.icon::before, .editor-styles-wrapper ul li.icon-bullet::before { position: absolute; left: -1.382em; line-height: inherit; }
+
+.editor-styles-wrapper blockquote { clear: none; margin: 1.618em 0; }
+
+.editor-styles-wrapper blockquote:first-child { margin-top: 0; }
+
+.editor-styles-wrapper blockquote::before { content: '\f106'; float: left; margin-right: .25em; line-height: .9; font-size: 1.618em; opacity: .5; }
+
+.editor-styles-wrapper blockquote[style*="text-align:left"]::before, .editor-styles-wrapper blockquote[style*="text-align: left"]::before, .alignright .editor-styles-wrapper blockquote::before { float: left; margin-left: 0; margin-right: .25em; }
+
+.editor-styles-wrapper blockquote[style*="text-align:right"]::before, .editor-styles-wrapper blockquote[style*="text-align: right"]::before, .alignleft .editor-styles-wrapper blockquote::before { float: right; margin-right: 0; margin-left: .25em; }
+
+.editor-styles-wrapper blockquote[style*="text-align:center"]::before, .editor-styles-wrapper blockquote[style*="text-align: center"]::before { display: block; float: none; margin-left: 0; margin-right: 0; margin-bottom: 0.382em; }
+
+.editor-styles-wrapper pre code { font-size: 1em; }
+
+.editor-styles-wrapper pre code::before { display: none; }
+
+.editor-styles-wrapper hr { height: 1px; border-bottom-width: 1px; border-bottom-style: solid; }
+
+.editor-styles-wrapper hr, .editor-styles-wrapper .wp-block-separator { margin-top: 2.63951em; margin-bottom: 2.63951em; }
+
+@media (min-width: 672px) { .editor-styles-wrapper hr, .editor-styles-wrapper .wp-block-separator { margin-top: 3.64781em; margin-bottom: 3.64781em; } }
+
+.editor-styles-wrapper hr:first-child, .editor-styles-wrapper .wp-block-separator:first-child { margin-top: 0; }
+
+.editor-styles-wrapper hr:last-child, .editor-styles-wrapper .wp-block-separator:last-child { margin-bottom: 0; }
+
+.editor-styles-wrapper ins { text-decoration: none; }
+
+.editor-styles-wrapper mark, .editor-styles-wrapper ins, .editor-styles-wrapper .highlight { padding: 0; }
+
+.editor-styles-wrapper table { border-collapse: collapse; }
+
+.editor-styles-wrapper table, .editor-styles-wrapper th, .editor-styles-wrapper td, .editor-styles-wrapper thead th, .editor-styles-wrapper thead td, .editor-styles-wrapper tfoot th, .editor-styles-wrapper tfoot td { border-left-width: 0; border-right-width: 0; }
+
+.editor-styles-wrapper thead { border-bottom-width: 2px; border-bottom-style: solid; }
+
+.editor-styles-wrapper th, .editor-styles-wrapper tfoot td { border-top-width: 1px; border-bottom-width: 1px; }
+
+.editor-styles-wrapper tfoot { border-top-width: 2px; border-top-style: solid; }
+
+.editor-styles-wrapper h1:last-child, .editor-styles-wrapper h2:last-child, .editor-styles-wrapper h3:last-child, .editor-styles-wrapper .h1:last-child, .editor-styles-wrapper .h2:last-child, .editor-styles-wrapper .h3:last-child, .editor-styles-wrapper p:last-child, .editor-styles-wrapper ol:last-child, .editor-styles-wrapper ul:last-child, .editor-styles-wrapper blockquote:last-child, .editor-styles-wrapper figure:last-child, .editor-styles-wrapper .gallery:last-child, .editor-styles-wrapper .tiled-gallery:last-child { margin-bottom: 0; }
+
+.editor-styles-wrapper blockquote::before, .editor-styles-wrapper .wp-block-file a:first-child::before, .wp-block-file .editor-styles-wrapper a:first-child::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
+
+.editor-styles-wrapper .svgicon { display: inline-block; position: relative; width: 1em; height: 1em; top: -0.0625em; fill: currentColor; vertical-align: middle; }
+
+.editor-styles-wrapper .svg-fallback { display: none; }
+
+.editor-styles-wrapper h1.h2, .editor-styles-wrapper h1.h3, .editor-styles-wrapper h1.display-1, .editor-styles-wrapper h1.display-2, .editor-styles-wrapper h1.display-3, .editor-styles-wrapper h1.display-4 { font-style: inherit; }
+
+.editor-styles-wrapper h1.weight-100, .editor-styles-wrapper h1.has-100-font-weight, .editor-styles-wrapper .h1.weight-100, .editor-styles-wrapper .h1.has-100-font-weight, .editor-styles-wrapper h2.weight-100, .editor-styles-wrapper h2.has-100-font-weight, .editor-styles-wrapper .h2.weight-100, .editor-styles-wrapper .h2.has-100-font-weight, .editor-styles-wrapper h3.weight-100, .editor-styles-wrapper h3.has-100-font-weight, .editor-styles-wrapper .h3.weight-100, .editor-styles-wrapper .h3.has-100-font-weight, .editor-styles-wrapper h4.weight-100, .editor-styles-wrapper h4.has-100-font-weight, .editor-styles-wrapper .h4.weight-100, .editor-styles-wrapper .h4.has-100-font-weight, .editor-styles-wrapper h5.weight-100, .editor-styles-wrapper h5.has-100-font-weight, .editor-styles-wrapper .h5.weight-100, .editor-styles-wrapper .h5.has-100-font-weight, .editor-styles-wrapper h6.weight-100, .editor-styles-wrapper h6.has-100-font-weight, .editor-styles-wrapper .h6.weight-100, .editor-styles-wrapper .h6.has-100-font-weight { font-weight: 100; }
+
+.editor-styles-wrapper h1.weight-200, .editor-styles-wrapper h1.has-200-font-weight, .editor-styles-wrapper .h1.weight-200, .editor-styles-wrapper .h1.has-200-font-weight, .editor-styles-wrapper h2.weight-200, .editor-styles-wrapper h2.has-200-font-weight, .editor-styles-wrapper .h2.weight-200, .editor-styles-wrapper .h2.has-200-font-weight, .editor-styles-wrapper h3.weight-200, .editor-styles-wrapper h3.has-200-font-weight, .editor-styles-wrapper .h3.weight-200, .editor-styles-wrapper .h3.has-200-font-weight, .editor-styles-wrapper h4.weight-200, .editor-styles-wrapper h4.has-200-font-weight, .editor-styles-wrapper .h4.weight-200, .editor-styles-wrapper .h4.has-200-font-weight, .editor-styles-wrapper h5.weight-200, .editor-styles-wrapper h5.has-200-font-weight, .editor-styles-wrapper .h5.weight-200, .editor-styles-wrapper .h5.has-200-font-weight, .editor-styles-wrapper h6.weight-200, .editor-styles-wrapper h6.has-200-font-weight, .editor-styles-wrapper .h6.weight-200, .editor-styles-wrapper .h6.has-200-font-weight { font-weight: 200; }
+
+.editor-styles-wrapper h1.weight-300, .editor-styles-wrapper h1.has-300-font-weight, .editor-styles-wrapper .h1.weight-300, .editor-styles-wrapper .h1.has-300-font-weight, .editor-styles-wrapper h2.weight-300, .editor-styles-wrapper h2.has-300-font-weight, .editor-styles-wrapper .h2.weight-300, .editor-styles-wrapper .h2.has-300-font-weight, .editor-styles-wrapper h3.weight-300, .editor-styles-wrapper h3.has-300-font-weight, .editor-styles-wrapper .h3.weight-300, .editor-styles-wrapper .h3.has-300-font-weight, .editor-styles-wrapper h4.weight-300, .editor-styles-wrapper h4.has-300-font-weight, .editor-styles-wrapper .h4.weight-300, .editor-styles-wrapper .h4.has-300-font-weight, .editor-styles-wrapper h5.weight-300, .editor-styles-wrapper h5.has-300-font-weight, .editor-styles-wrapper .h5.weight-300, .editor-styles-wrapper .h5.has-300-font-weight, .editor-styles-wrapper h6.weight-300, .editor-styles-wrapper h6.has-300-font-weight, .editor-styles-wrapper .h6.weight-300, .editor-styles-wrapper .h6.has-300-font-weight { font-weight: 300; }
+
+.editor-styles-wrapper h1.weight-400, .editor-styles-wrapper h1.has-400-font-weight, .editor-styles-wrapper .h1.weight-400, .editor-styles-wrapper .h1.has-400-font-weight, .editor-styles-wrapper h2.weight-400, .editor-styles-wrapper h2.has-400-font-weight, .editor-styles-wrapper .h2.weight-400, .editor-styles-wrapper .h2.has-400-font-weight, .editor-styles-wrapper h3.weight-400, .editor-styles-wrapper h3.has-400-font-weight, .editor-styles-wrapper .h3.weight-400, .editor-styles-wrapper .h3.has-400-font-weight, .editor-styles-wrapper h4.weight-400, .editor-styles-wrapper h4.has-400-font-weight, .editor-styles-wrapper .h4.weight-400, .editor-styles-wrapper .h4.has-400-font-weight, .editor-styles-wrapper h5.weight-400, .editor-styles-wrapper h5.has-400-font-weight, .editor-styles-wrapper .h5.weight-400, .editor-styles-wrapper .h5.has-400-font-weight, .editor-styles-wrapper h6.weight-400, .editor-styles-wrapper h6.has-400-font-weight, .editor-styles-wrapper .h6.weight-400, .editor-styles-wrapper .h6.has-400-font-weight { font-weight: 400; }
+
+.editor-styles-wrapper h1.weight-500, .editor-styles-wrapper h1.has-500-font-weight, .editor-styles-wrapper .h1.weight-500, .editor-styles-wrapper .h1.has-500-font-weight, .editor-styles-wrapper h2.weight-500, .editor-styles-wrapper h2.has-500-font-weight, .editor-styles-wrapper .h2.weight-500, .editor-styles-wrapper .h2.has-500-font-weight, .editor-styles-wrapper h3.weight-500, .editor-styles-wrapper h3.has-500-font-weight, .editor-styles-wrapper .h3.weight-500, .editor-styles-wrapper .h3.has-500-font-weight, .editor-styles-wrapper h4.weight-500, .editor-styles-wrapper h4.has-500-font-weight, .editor-styles-wrapper .h4.weight-500, .editor-styles-wrapper .h4.has-500-font-weight, .editor-styles-wrapper h5.weight-500, .editor-styles-wrapper h5.has-500-font-weight, .editor-styles-wrapper .h5.weight-500, .editor-styles-wrapper .h5.has-500-font-weight, .editor-styles-wrapper h6.weight-500, .editor-styles-wrapper h6.has-500-font-weight, .editor-styles-wrapper .h6.weight-500, .editor-styles-wrapper .h6.has-500-font-weight { font-weight: 500; }
+
+.editor-styles-wrapper h1.weight-600, .editor-styles-wrapper h1.has-600-font-weight, .editor-styles-wrapper .h1.weight-600, .editor-styles-wrapper .h1.has-600-font-weight, .editor-styles-wrapper h2.weight-600, .editor-styles-wrapper h2.has-600-font-weight, .editor-styles-wrapper .h2.weight-600, .editor-styles-wrapper .h2.has-600-font-weight, .editor-styles-wrapper h3.weight-600, .editor-styles-wrapper h3.has-600-font-weight, .editor-styles-wrapper .h3.weight-600, .editor-styles-wrapper .h3.has-600-font-weight, .editor-styles-wrapper h4.weight-600, .editor-styles-wrapper h4.has-600-font-weight, .editor-styles-wrapper .h4.weight-600, .editor-styles-wrapper .h4.has-600-font-weight, .editor-styles-wrapper h5.weight-600, .editor-styles-wrapper h5.has-600-font-weight, .editor-styles-wrapper .h5.weight-600, .editor-styles-wrapper .h5.has-600-font-weight, .editor-styles-wrapper h6.weight-600, .editor-styles-wrapper h6.has-600-font-weight, .editor-styles-wrapper .h6.weight-600, .editor-styles-wrapper .h6.has-600-font-weight { font-weight: 600; }
+
+.editor-styles-wrapper h1.weight-700, .editor-styles-wrapper h1.has-700-font-weight, .editor-styles-wrapper .h1.weight-700, .editor-styles-wrapper .h1.has-700-font-weight, .editor-styles-wrapper h2.weight-700, .editor-styles-wrapper h2.has-700-font-weight, .editor-styles-wrapper .h2.weight-700, .editor-styles-wrapper .h2.has-700-font-weight, .editor-styles-wrapper h3.weight-700, .editor-styles-wrapper h3.has-700-font-weight, .editor-styles-wrapper .h3.weight-700, .editor-styles-wrapper .h3.has-700-font-weight, .editor-styles-wrapper h4.weight-700, .editor-styles-wrapper h4.has-700-font-weight, .editor-styles-wrapper .h4.weight-700, .editor-styles-wrapper .h4.has-700-font-weight, .editor-styles-wrapper h5.weight-700, .editor-styles-wrapper h5.has-700-font-weight, .editor-styles-wrapper .h5.weight-700, .editor-styles-wrapper .h5.has-700-font-weight, .editor-styles-wrapper h6.weight-700, .editor-styles-wrapper h6.has-700-font-weight, .editor-styles-wrapper .h6.weight-700, .editor-styles-wrapper .h6.has-700-font-weight { font-weight: 700; }
+
+.editor-styles-wrapper h1.weight-800, .editor-styles-wrapper h1.has-800-font-weight, .editor-styles-wrapper .h1.weight-800, .editor-styles-wrapper .h1.has-800-font-weight, .editor-styles-wrapper h2.weight-800, .editor-styles-wrapper h2.has-800-font-weight, .editor-styles-wrapper .h2.weight-800, .editor-styles-wrapper .h2.has-800-font-weight, .editor-styles-wrapper h3.weight-800, .editor-styles-wrapper h3.has-800-font-weight, .editor-styles-wrapper .h3.weight-800, .editor-styles-wrapper .h3.has-800-font-weight, .editor-styles-wrapper h4.weight-800, .editor-styles-wrapper h4.has-800-font-weight, .editor-styles-wrapper .h4.weight-800, .editor-styles-wrapper .h4.has-800-font-weight, .editor-styles-wrapper h5.weight-800, .editor-styles-wrapper h5.has-800-font-weight, .editor-styles-wrapper .h5.weight-800, .editor-styles-wrapper .h5.has-800-font-weight, .editor-styles-wrapper h6.weight-800, .editor-styles-wrapper h6.has-800-font-weight, .editor-styles-wrapper .h6.weight-800, .editor-styles-wrapper .h6.has-800-font-weight { font-weight: 800; }
+
+.editor-styles-wrapper h1.weight-900, .editor-styles-wrapper h1.has-900-font-weight, .editor-styles-wrapper .h1.weight-900, .editor-styles-wrapper .h1.has-900-font-weight, .editor-styles-wrapper h2.weight-900, .editor-styles-wrapper h2.has-900-font-weight, .editor-styles-wrapper .h2.weight-900, .editor-styles-wrapper .h2.has-900-font-weight, .editor-styles-wrapper h3.weight-900, .editor-styles-wrapper h3.has-900-font-weight, .editor-styles-wrapper .h3.weight-900, .editor-styles-wrapper .h3.has-900-font-weight, .editor-styles-wrapper h4.weight-900, .editor-styles-wrapper h4.has-900-font-weight, .editor-styles-wrapper .h4.weight-900, .editor-styles-wrapper .h4.has-900-font-weight, .editor-styles-wrapper h5.weight-900, .editor-styles-wrapper h5.has-900-font-weight, .editor-styles-wrapper .h5.weight-900, .editor-styles-wrapper .h5.has-900-font-weight, .editor-styles-wrapper h6.weight-900, .editor-styles-wrapper h6.has-900-font-weight, .editor-styles-wrapper .h6.weight-900, .editor-styles-wrapper .h6.has-900-font-weight { font-weight: 900; }
+
+.editor-styles-wrapper h1, .editor-styles-wrapper .h1 { font-size: 2.11796em; line-height: 1.191; margin-top: 0.66309em; margin-bottom: 0.51892em; }
+
+.editor-styles-wrapper h2, .editor-styles-wrapper .h2 { font-size: 1.66492em; line-height: 1.191; margin-top: 1.1676em; margin-bottom: 0.66012em; }
+
+.editor-styles-wrapper h3, .editor-styles-wrapper .h3 { font-size: 1.30896em; line-height: 1.382; margin-top: 0.618em; margin-bottom: 0.72359em; }
+
+.editor-styles-wrapper h4, .editor-styles-wrapper .h4 { font-size: 1.02905em; line-height: 1.382; margin-top: 1.16203em; margin-bottom: 0.92041em; }
+
+.editor-styles-wrapper h5, .editor-styles-wrapper .h5 { font-size: 1em; line-height: 1.618; margin-top: 0.618em; margin-bottom: 0.618em; }
+
+.editor-styles-wrapper h6, .editor-styles-wrapper .h6 { font-size: 1em; line-height: 1.618; margin-top: 0.618em; margin-bottom: 0.618em; }
+
+.editor-styles-wrapper h1, .editor-styles-wrapper .h1, .editor-styles-wrapper h2, .editor-styles-wrapper .h2, .editor-styles-wrapper h3, .editor-styles-wrapper .h3, .editor-styles-wrapper h4, .editor-styles-wrapper .h4, .editor-styles-wrapper h5, .editor-styles-wrapper .h5, .editor-styles-wrapper h6, .editor-styles-wrapper .h6 { padding: 0; text-rendering: optimizeLegibility; }
+
+.editor-styles-wrapper h1:first-child, .screen-reader-text + .editor-styles-wrapper h1, .editor-styles-wrapper .h1:first-child, .screen-reader-text + .editor-styles-wrapper .h1, .editor-styles-wrapper h2:first-child, .screen-reader-text + .editor-styles-wrapper h2, .editor-styles-wrapper .h2:first-child, .screen-reader-text + .editor-styles-wrapper .h2, .editor-styles-wrapper h3:first-child, .screen-reader-text + .editor-styles-wrapper h3, .editor-styles-wrapper .h3:first-child, .screen-reader-text + .editor-styles-wrapper .h3, .editor-styles-wrapper h4:first-child, .screen-reader-text + .editor-styles-wrapper h4, .editor-styles-wrapper .h4:first-child, .screen-reader-text + .editor-styles-wrapper .h4, .editor-styles-wrapper h5:first-child, .screen-reader-text + .editor-styles-wrapper h5, .editor-styles-wrapper .h5:first-child, .screen-reader-text + .editor-styles-wrapper .h5, .editor-styles-wrapper h6:first-child, .screen-reader-text + .editor-styles-wrapper h6, .editor-styles-wrapper .h6:first-child, .screen-reader-text + .editor-styles-wrapper .h6 { margin-top: 0; }
+
+.editor-styles-wrapper h1 a, .editor-styles-wrapper .h1 a, .editor-styles-wrapper h2 a, .editor-styles-wrapper .h2 a, .editor-styles-wrapper h3 a, .editor-styles-wrapper .h3 a, .editor-styles-wrapper h4 a, .editor-styles-wrapper .h4 a, .editor-styles-wrapper h5 a, .editor-styles-wrapper .h5 a, .editor-styles-wrapper h6 a, .editor-styles-wrapper .h6 a { text-decoration: none; color: inherit; }
+
+@media (min-width: 672px) { .editor-styles-wrapper h1, .editor-styles-wrapper .h1 { font-size: 2.618em; line-height: 1.191; margin-top: 0.66309em; margin-bottom: 0.51892em; }
+  .editor-styles-wrapper h2, .editor-styles-wrapper .h2 { font-size: 2.058em; line-height: 1.191; margin-top: 1.1676em; margin-bottom: 0.66012em; }
+  .editor-styles-wrapper h3, .editor-styles-wrapper .h3 { font-size: 1.618em; line-height: 1.382; margin-top: 0.618em; margin-bottom: 0.72359em; }
+  .editor-styles-wrapper h4, .editor-styles-wrapper .h4 { font-size: 1.272em; line-height: 1.382; margin-top: 1.16203em; margin-bottom: 0.92041em; }
+  .editor-styles-wrapper h5, .editor-styles-wrapper .h5 { font-size: 1em; line-height: 1.618; margin-top: 0.618em; margin-bottom: 0.618em; }
+  .editor-styles-wrapper h6, .editor-styles-wrapper .h6 { font-size: 1em; line-height: 1.618; margin-top: 0.618em; margin-bottom: 0.618em; } }
+
+.editor-styles-wrapper h1.screen-reader-text, .editor-styles-wrapper h2.screen-reader-text, .editor-styles-wrapper h3.screen-reader-text, .editor-styles-wrapper h4.screen-reader-text { color: inherit; }
+
+/* FILE: main/wp/__caption.scss */
+.wp-caption, figcaption { text-transform: uppercase; }
+
+/* FILE: main/wp/__file.scss */
+.wp-block-file { padding: 1em 2em; text-align: center; border-style: solid; border-width: 1px; -webkit-box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.1); box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.1); }
+
+.wp-block-file.alignleft, .wp-block-file.alignright { max-width: 55.8%; text-align: center; }
+
+.wp-block-file a { text-decoration: none; font-size: .9em; font-style: italic; color: inherit; }
+
+.wp-block-file a:hover, .wp-block-file a:active, .wp-block-file a:focus { text-decoration: underline; }
+
+.wp-block-file a:first-child::before { content: '\f50b'; margin-right: .25rem; font-size: 1.618em; line-height: 1; vertical-align: middle; }
+
+.wp-block-file a.wp-block-file__button { display: inline-block; margin-left: 1.618em; text-transform: uppercase; font-weight: 700; font-style: normal; letter-spacing: .05em; background: transparent; border: 2px solid; vertical-align: middle; }
+
+.wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:visited { color: inherit; }
+
+/* FILE: main/wp/__gallery.scss */
+.gallery img { width: 100%; }
+
+.gallery-columns-1 .gallery-item { margin-top: 2em; }
+
+.gallery-caption { padding: 1em; margin-top: -1px; }
+
+/* FILE: main/wp/__player.scss */
+.mejs-container { margin-bottom: 1.618em; }
+
+.mejs-container:last-child { margin-bottom: 0; }
+
+.site .mejs-container .mejs-controls .mejs-button button { background-color: transparent; color: inherit; }
+
+.wp-playlist { text-align: left; }
+
+.site .wp-playlist { padding: 0; background: none; border-width: 1px; border-style: solid; }
+
+.site .wp-playlist-current-item, .site .wp-playlist-tracks { height: auto; padding: 1.618rem; margin: 0; }
+
+.site .wp-playlist-current-item { padding-bottom: 0.618rem; }
+
+/* FILE: main/wp/__pullquote.scss */
+blockquote.alignleft, blockquote.alignright { padding: 0; margin-top: 0; }
+
+@media (min-width: 448px) { blockquote.alignleft, blockquote.alignright { width: 35%; } }
+
+blockquote.alignleft { margin-left: 0; }
+
+blockquote.alignleft::before { float: right; margin-right: 0; margin-left: .25em; }
+
+blockquote.alignright { margin-right: 0; }
+
+/* FILE: main/wp/__quote.scss */
+.wp-block-quote.is-style-large { padding: 0; margin: 0; }
+
+.wp-block-quote.is-style-large:not(:last-child) { margin-bottom: 1.618rem; }
+
+/* FILE: main/wp/__separator.scss */
+.wp-block-separator.is-style-dots::before { opacity: .2; }
+
+/* FILE: main/wp/__verse.scss */
+.wp-block-verse { padding: 0; }
+
+.wp-block-verse::before { display: none; }
