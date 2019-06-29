@@ -449,6 +449,13 @@ class Reykjavik_Assets {
 				}
 
 				wp_enqueue_style(
+					'genericons-neue',
+					get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ),
+					array(),
+					REYKJAVIK_THEME_VERSION
+				);
+
+				wp_enqueue_style(
 					'reykjavik-editor-blocks',
 					get_theme_file_uri( 'assets/css/editor-style-blocks.css' ),
 					array(),

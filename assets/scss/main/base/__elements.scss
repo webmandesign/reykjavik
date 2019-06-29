@@ -73,8 +73,7 @@ blockquote {
 	}
 
 	&[style*="text-align:left"],
-	&[style*="text-align: left"],
-	.alignright & {
+	&[style*="text-align: left"] {
 
 		&::before {
 			float: left;
@@ -85,8 +84,7 @@ blockquote {
 	}
 
 	&[style*="text-align:right"],
-	&[style*="text-align: right"],
-	.alignleft & {
+	&[style*="text-align: right"] {
 
 		&::before {
 			float: right;

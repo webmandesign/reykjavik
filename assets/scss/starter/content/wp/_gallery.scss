@@ -1,6 +1,9 @@
 /* FILE: starter/wp/_gallery.scss */
 
 .gallery {
+	$columns: 2; // Default layout on small devices.
+	$gutter: 2;  // %
+
 	@extend .clearfix;
 	clear: both;
 	display: flex;
@@ -15,9 +18,6 @@
 
 	// Item
 
-		$columns: 2; // Default layout on small devices.
-		$gutter: 2;  // %
-
 		&-item {
 			flex: 1 1 auto;
 			float: $left; // {{RTL}}
@@ -27,7 +27,25 @@
 			margin: percentage( $gutter / 2 / 100 );
 			overflow: hidden;
 
-			.gallery-columns-1 & {
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				$columns: 3; // Default layout on medium devices.
+				width: percentage( ( 100 / $columns - $gutter ) / 100 );
+			}
+
+		}
+
+	// Icon (image wrapper inside the .gallery-item)
+
+		&-icon {
+			display: block;
+			overflow: hidden;
+		}
+
+	// Columns
+
+		&-columns-1 {
+
+			.gallery-item {
 				float: none;
 				width: 100%;
 				margin: ( $golden +em ) 0 0;
@@ -38,22 +56,27 @@
 
 			}
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
-				$columns: 3; // Default layout on medium devices.
-				width: percentage( ( 100 / $columns - $gutter ) / 100 );
+		}
 
-				.gallery-columns-2 & {
+		&-columns-2 {
+
+			.gallery-item {
+
+				@include media( map_get( $breakpoint, 'm' ) ) {
 					$columns: 2;
 					width: percentage( ( 100 / $columns - $gutter ) / 100 );
 				}
 
 			}
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
+		}
 
-				@for $i from 3 through 9 {
+		@for $i from 3 through 9 {
+			&-columns-#{$i} {
 
-					.gallery-columns-#{$i} & {
+				.gallery-item {
+
+					@include media( map_get( $breakpoint, 'l' ) ) {
 						$columns: $i; // On large devices do not force any default gallery layout, use actual gallery columns setup.
 						width: percentage( ( 100 / $columns - $gutter ) / 100 );
 					}
@@ -61,14 +84,6 @@
 				}
 
 			}
-
-		}
-
-	// Icon (image wrapper inside the .gallery-item)
-
-		&-icon {
-			display: block;
-			overflow: hidden;
 		}
 
 }

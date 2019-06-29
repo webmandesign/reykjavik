@@ -49,16 +49,26 @@ dfn {
 blockquote {
 	clear: both;
 
-	p {
-		margin-bottom: 1em;
+	:last-child {
+		margin: 0;
 	}
+
+	cite {
+		@extend %font_size_small;
+		@extend %font_weight_400;
+	}
+
+		> cite {
+			display: block;
+			margin-top: $golden_major +em;
+		}
 
 	blockquote {
 		@extend %font_size_1em;
 	}
 
-	:last-child {
-		margin: 0;
+	p {
+		margin-bottom: 1em;
 	}
 
 }
@@ -69,16 +79,6 @@ cite {
 
 	&::before {
 		content: '\2014\2002'; // em dash + en space
-	}
-
-	blockquote & {
-		@extend %font_size_small;
-		@extend %font_weight_400;
-	}
-
-	blockquote > & {
-		display: block;
-		margin-top: $golden_major +em;
 	}
 
 }
@@ -154,20 +154,24 @@ code {
 	display: inline-block;
 	padding: 0 ( $golden_major +em );
 	margin: 0 ( $golden_minor / 2 +em );
-
-	mark &,
-	ins &,
-	.highlight &,
-	.form-allowed-tags &,
-	.taxonomy-description &,
-	.archive-description & {
-		display: inline;
-		padding: 0 ( $golden_minor +em );
-		background: none;
-		color: inherit;
-	}
-
 }
+
+	// Not using nesting for additional wrapper in block editor.
+	mark,
+	ins,
+	.highlight,
+	.form-allowed-tags,
+	.taxonomy-description,
+	.archive-description {
+
+		code {
+			display: inline;
+			padding: 0 ( $golden_minor +em );
+			background: none;
+			color: inherit;
+		}
+
+	}
 
 pre {
 	@extend %font_size_small;
@@ -194,8 +198,13 @@ ol {
 	ol {
 		margin-#{$left}: $golden_minor + 1em; // {{RTL}}
 		margin-bottom: 1em;
+	}
 
-		li > & {
+	// Not using nesting for additional wrapper in block editor.
+	li > {
+
+		ul,
+		ol {
 			margin-bottom: 0;
 		}
 

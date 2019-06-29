@@ -47,34 +47,33 @@
 			max-width: 24rem;
 			padding: 0;
 			text-align: inherit;
-
-			.has-alignwide-content & {
-				max-width: 36rem;
-			}
-
-			.has-alignfull-content & {
-				max-width: none;
-			}
-
-			.has-alignleft-content & {
-				margin-right: auto;
-			}
-
-			.has-alignright-content & {
-				margin-left: auto;
-			}
-
-			.has-aligncenter-content & {
-				margin-left: auto;
-				margin-right: auto;
-			}
-
 		}
 
 		a:not(.button) {
 			color: inherit;
 		}
 
+	}
+
+	.has-alignwide-content .wp-block-cover__inner-container {
+		max-width: 36rem;
+	}
+
+	.has-alignfull-content .wp-block-cover__inner-container {
+		max-width: none;
+	}
+
+	.has-alignleft-content .wp-block-cover__inner-container {
+		margin-right: auto;
+	}
+
+	.has-alignright-content .wp-block-cover__inner-container {
+		margin-left: auto;
+	}
+
+	.has-aligncenter-content .wp-block-cover__inner-container {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 }

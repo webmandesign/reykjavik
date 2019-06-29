@@ -4,10 +4,11 @@
 // @since    1.0.0
 // @version  5.0.0
 //
-// @param  num  $multiplier    Alter heading maps values
-// @param  bool $global_styles Whether to output the heading tags global styles (these don't according the $multiplier)
+// @param  num  $multiplier     Alter heading maps values.
+// @param  bool $global_styles  Whether to output the heading tags global styles (these don't according the $multiplier).
+// @param  bool $last_child     Force bottom margin on last child items.
 //
-@mixin h_tags( $multiplier: 1, $global_styles: false ) {
+@mixin h_tags( $multiplier: 1, $global_styles: false, $last_child: false ) {
 
 	@each $selector, $settings in $setup_headings {
 
@@ -22,20 +23,28 @@
 			$size: 1;
 		}
 
-		#{$selector} {
+		#{ $selector } {
 			font-size: $size +em;
 			line-height: $line_height;
 
 			@if 1 < $size {
-
 				margin-top: $margin_top +em;
 				margin-bottom: $margin_bottom +em;
 
+				@if $last_child {
+					&:last-child {
+						margin-bottom: $margin_bottom +em;
+					}
+				}
 			} @else {
-
 				margin-top: $golden_major +em;
 				margin-bottom: $golden_major +em;
 
+				@if $last_child {
+					&:last-child {
+						margin-bottom: $margin_bottom +em;
+					}
+				}
 			}
 
 		}
@@ -44,7 +53,7 @@
 
 	@if $global_styles {
 
-		#{$elements_headings} {
+		#{ $elements_headings } {
 			@extend %break_words;
 			@extend %line_height_golden_minor;
 			padding: 0;

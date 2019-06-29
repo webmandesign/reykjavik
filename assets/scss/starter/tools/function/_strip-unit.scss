@@ -1,0 +1,25 @@
+//
+// Strip unit from value.
+//
+// @link  https://css-tricks.com/snippets/sass/strip-unit-function/
+//
+// @since    5.0.0
+// @version  5.0.0
+//
+// @param  mixed $number
+//
+@function strip_unit( $number ) {
+
+	// Processing
+
+		@if 'number' == type-of( $number ) and not unitless( $number ) {
+			@return $number / ( $number * 0 + 1 );
+			// Yes, weird, but `$number * 0` can not be removed...
+		}
+
+
+	// Output
+
+		@return $number;
+
+} // /strip_unit

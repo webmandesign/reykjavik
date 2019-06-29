@@ -3,16 +3,24 @@
 .wp-block {
 	// Post content width when no sidebar is displayed.
 	max-width: 36em;
-	max-width: calc( 36em + 14px + 14px ); // Compensate for block editor interface margins.
-	margin-bottom: $golden +em;
+	max-width: calc( 36em + #{ $ui_margin * 2 } );
 
-	&:last-child {
-		margin-bottom: 0;
+	&[data-align="left"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+			margin-right: $alignment_margin;
+			margin-bottom: 1em;
+		}
+
 	}
 
-	&[data-align="wide"] {
-		max-width: map_get( $customize_options, 'layout_width_content' );
-		max-width: var(--layout_width_content);
+	&[data-align="right"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+			margin-left: $alignment_margin;
+			margin-bottom: 1em;
+		}
+
 	}
 
 	&[data-align="wide"],
@@ -24,6 +32,11 @@
 			margin-top: -$golden +em;
 		}
 
+	}
+
+	&[data-align="wide"] {
+		max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
+		max-width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
 	}
 
 }

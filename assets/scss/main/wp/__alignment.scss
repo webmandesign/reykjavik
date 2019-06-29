@@ -77,6 +77,7 @@ $content_indent: 100 - $page_content_width;
 	/* $content_width */
 	max-width: map_get( $customize_options, 'layout_width_content' );
 	max-width: var(--layout_width_content);
+	// max-width: calc( 50% + var(--layout_width_content) / 2 ); // @see WPRig. But it's not usable in our case.
 	margin: 0 auto;
 
 	// Sidebar is displayed:

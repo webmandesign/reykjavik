@@ -1,0 +1,27 @@
+/* FILE: editor-block/_helper.scss */
+
+.compensate-content-padding-top {
+	margin-top: -$golden_major * strip_unit( $padding_vertical ) +em !important;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-top: -1 * strip_unit( $padding_vertical ) +em !important;
+	}
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-top: -$golden * strip_unit( $padding_vertical ) +em !important;
+	}
+
+}
+
+.compensate-content-padding-bottom {
+	margin-bottom: -$golden_major * strip_unit( $padding_vertical ) +em !important;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-bottom: -1 * strip_unit( $padding_vertical ) +em !important;
+	}
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-bottom: -$golden * strip_unit( $padding_vertical ) +em !important;
+	}
+
+}

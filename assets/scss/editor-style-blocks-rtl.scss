@@ -17,10 +17,4 @@ $language_direction: rtl;
 @import 'setup';
 @import 'css-vars';
 
-.editor-styles-wrapper {
-
-	@import 'starter/__index';
-
-	@import 'main/main';
-
-}
+@import 'editor-block/__index';

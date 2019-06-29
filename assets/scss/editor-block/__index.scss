@@ -1,11 +1,34 @@
 /* FILE: editor-block/__index.scss */
 
+// Starter CSS
 @import 'starter';
 
-@import 'typography';
+// Block editor UI
+@import 'ui';
 @import 'post-title';
-@import 'base';
-@import 'dropcap';
-@import 'block';
 
+// Main styles
 @import 'main'; // Styles from main stylesheet.
+
+// Block editor styles
+@import 'typography';
+@import 'base';
+
+// Block styles
+@import 'block';
+@import 'block-audio';
+@import 'block-cover';
+@import 'block-embed';
+@import 'block-file';
+@import 'block-gallery';
+@import 'block-image';
+@import 'block-pullquote';
+@import 'block-quote';
+@import 'block-table';
+@import 'block-video';
+
+// Other styles
+@import 'dropcap';
+@import 'helper';
+
+// @todo a co custom-styles-editor???

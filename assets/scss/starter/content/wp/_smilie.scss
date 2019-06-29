@@ -1,15 +1,18 @@
 /* FILE: starter/wp/_smilie.scss */
 
-img.wp-smiley {
+img.wp-smiley {}
 
-	.page-content &,
-	.entry-content &,
-	.comment-content & {
-		display: inline;
-		width: auto;
-		max-height: 1em;
-		margin: 0;
-		border-width: 0;
+	// Not using nesting for additional wrapper in block editor.
+	.page-content,
+	.entry-content,
+	.comment-content {
+
+		img.wp-smiley {
+			display: inline;
+			width: auto;
+			max-height: 1em;
+			margin: 0;
+			border-width: 0;
+		}
+
 	}
-
-}

@@ -17,32 +17,29 @@
 @import 'main/wp/_separator';
 @import 'main/wp/_verse';
 
-///// FUCK!
-///// Hentaky wrapper produkuje zle selctory ako napr.
-///// `blockquote > .editor-styles-wrapper cite`
-///// Skus to opravit!
-///// (Aj v _starter.scss)
-
 // GENERIC TODOS:
-// @todo link colors
-// @todo (nested) lists
-// @todo blockquotes
-// @todo floats spacing
-// @todo floats widths
-// @todo full/wide alignments vertical spacing when stacked
+// [x] post title so it looks the same as on frontend?
+// [x] link colors
+// [x] full/wide alignments vertical spacing when stacked
+// [x] floats spacing
+// [x] vertical spacing: removing bottom margin from blocks, implement bottom margin for elements
+// [x] (nested) lists
+// [x] blockquotes
 //
 // BLOCK TODOS:
-// @todo button block
-// @todo cover block (content width, helper classes)
-// @todo file block
-// @todo columns block (spacing, full alignment content edges)
-// @todo widget blocks
-// @todo separator block
-// @todo code block
-// @todo preformatted block
-// @todo table block
-// @todo verse block
-// @todo pullquote block
-// @todo media & text block
-				// Log a bug with WP. It seems the M&T block has wide alignment by default,
-				// however it does not propagate to `render_block` filter as an attribute.
+// [x] left/right aligned blocks width using $alignment_width
+// [ ] button block
+// [ ] cover block (content width, helper classes)
+// [ ] file block
+// [ ] columns block (spacing, full alignment content edges)
+// [ ] widget blocks
+// [ ] separator block
+// [ ] code block
+// [ ] preformatted block
+// [ ] table block
+// [ ] verse block
+// [ ] quote block
+// [ ] pullquote block
+// [ ] media & text block
+			 // Log a bug with WP. It seems the M&T block has wide alignment by default,
+			 // however it does not propagate to `render_block` filter as an attribute.
