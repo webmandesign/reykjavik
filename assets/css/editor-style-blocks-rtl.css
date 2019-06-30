@@ -647,6 +647,8 @@ body .editor-styles-wrapper { background-color: #fefeff; color: #535354; border-
 
 .editor-styles-wrapper .wp-block ul, .editor-styles-wrapper .wp-block ul ul { list-style: square; }
 
+.editor-block-list__layout { padding-bottom: 4em; }
+
 .wp-block-code .block-editor-plain-text, .wp-block-code .block-editor-plain-text:focus { font-family: 'Lucida Console', Monaco, 'Courier New', monospace; font-size: 1em; font-style: normal; font-weight: 400; text-transform: none; text-decoration: none; white-space: pre-wrap; line-height: 1.5; color: inherit; }
 
 /* FILE: editor-block/blocks/__index.scss */

@@ -21,6 +21,8 @@
 
 }
 
+// Do not style `.compensate-content-padding-bottom` because it covers
+// the block appender at the bottom of the content!
 .compensate-content-padding-top {
 	margin-top: -$golden_major * strip_unit( $padding_vertical ) +em !important;
 
@@ -33,19 +35,3 @@
 	}
 
 }
-
-// Do not apply `.compensate-content-padding-bottom` for it covers
-// the block appender at the bottom of the content!
-
-	// .compensate-content-padding-bottom {
-	// 	margin-bottom: -$golden_major * strip_unit( $padding_vertical ) +em !important;
-	//
-	// 	@include media( map_get( $breakpoint, 'l' ) ) {
-	// 		margin-bottom: -1 * strip_unit( $padding_vertical ) +em !important;
-	// 	}
-	//
-	// 	@include media( map_get( $breakpoint, 'xl' ) ) {
-	// 		margin-bottom: -$golden * strip_unit( $padding_vertical ) +em !important;
-	// 	}
-	//
-	// }

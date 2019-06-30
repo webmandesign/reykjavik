@@ -2,6 +2,7 @@
 
 .editor-styles-wrapper {
 	padding-top: 0; // This is being taken care of in `.editor-post-title` of _post-title.scss.
+	// For bottom padding see `.editor-block-list__layout` below.
 	overflow-x: hidden;
 
 	// Colors
@@ -84,20 +85,11 @@
 
 }
 
-// No need to match bottom padding to front-end content.
-// @see  _helper.scss > .compensate-content-padding-bottom
-
-	// .editor-block-list__layout {
-	//
-	// 	@include media( map_get( $breakpoint, 'l' ) ) {
-	// 		padding-bottom: strip_unit( $padding_vertical ) +em;
-	// 	}
-	//
-	// 	@include media( map_get( $breakpoint, 'xl' ) ) {
-	// 		padding-bottom: $golden * strip_unit( $padding_vertical ) +em;
-	// 	}
-	//
-	// }
+.editor-block-list__layout {
+	padding-bottom: 4em;
+	// No need to match bottom padding to front-end content.
+	// @see  _helper.scss > .compensate-content-padding-bottom
+}
 
 %pre {
 	@extend %break_words_disable;
