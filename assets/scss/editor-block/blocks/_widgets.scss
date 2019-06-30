@@ -1,0 +1,29 @@
+/* FILE: editor-block/blocks/_widgets.scss */
+
+@if ( index( $support__block, 'latest-comments' ) ) {
+
+	.wp-block-latest-comments {
+
+		.editor-styles-wrapper .wp-block & {
+			margin-#{$left}: 0;
+		}
+
+		&__comment-excerpt p:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+@if ( index( $support__block, 'latest-posts' ) ) {
+
+	.wp-block-latest-posts {
+
+		.editor-styles-wrapper .wp-block & {
+			list-style: none;
+		}
+
+	}
+
+}

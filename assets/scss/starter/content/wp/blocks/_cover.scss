@@ -42,7 +42,8 @@
 			min-height: 100vh;
 		}
 
-		&__inner-container {
+		&__inner-container,
+		& .wp-block-cover__inner-container {
 			width: 100%;
 			max-width: 24rem;
 			padding: 0;
@@ -51,6 +52,22 @@
 
 		a:not(.button) {
 			color: inherit;
+		}
+
+		h2 {
+			$setup_h2: map_get( $setup_headings, 'h2, .h2' );
+			max-width: none;
+			padding: 0;
+			margin-bottom: nth( $setup_h2, 4 ) +em;
+			font-size: nth( $setup_h2, 1 ) +em;
+			line-height: nth( $setup_h2, 2 );
+			text-align: inherit;
+			color: inherit;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
 		}
 
 	}

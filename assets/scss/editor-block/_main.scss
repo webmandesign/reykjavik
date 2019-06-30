@@ -6,6 +6,9 @@
 	@import 'main/base/_elements';
 	@import 'main/icons/icons';
 	@import 'main/headings/_base';
+
+	$elements_button: '.wp-block-button__link';
+	@import 'main/forms/_buttons';
 }
 
 @import 'main/wp/_caption';
@@ -16,30 +19,3 @@
 @import 'main/wp/_quote';
 @import 'main/wp/_separator';
 @import 'main/wp/_verse';
-
-// GENERIC TODOS:
-// [x] post title so it looks the same as on frontend?
-// [x] link colors
-// [x] full/wide alignments vertical spacing when stacked
-// [x] floats spacing
-// [x] vertical spacing: removing bottom margin from blocks, implement bottom margin for elements
-// [x] (nested) lists
-// [x] blockquotes
-//
-// BLOCK TODOS:
-// [x] left/right aligned blocks width using $alignment_width
-// [ ] button block
-// [ ] cover block (content width, helper classes)
-// [ ] file block
-// [ ] columns block (spacing, full alignment content edges)
-// [ ] widget blocks
-// [ ] separator block
-// [ ] code block
-// [ ] preformatted block
-// [ ] table block
-// [ ] verse block
-// [ ] quote block
-// [ ] pullquote block
-// [ ] media & text block
-			 // Log a bug with WP. It seems the M&T block has wide alignment by default,
-			 // however it does not propagate to `render_block` filter as an attribute.

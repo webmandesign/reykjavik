@@ -13,22 +13,11 @@
 // Block editor styles
 @import 'typography';
 @import 'base';
-
-// Block styles
-@import 'block';
-@import 'block-audio';
-@import 'block-cover';
-@import 'block-embed';
-@import 'block-file';
-@import 'block-gallery';
-@import 'block-image';
-@import 'block-pullquote';
-@import 'block-quote';
-@import 'block-table';
-@import 'block-video';
+@import 'blocks/_index';
 
 // Other styles
 @import 'dropcap';
 @import 'helper';
 
 // @todo a co custom-styles-editor???
+// @todo Helper classes v Starter CSS daj out of block styles

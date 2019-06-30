@@ -1,4 +1,4 @@
-/* FILE: editor-block/_block-pullquote.scss */
+/* FILE: editor-block/blocks/_pullquote.scss */
 
 @if ( index( $support__block, 'pullquote' ) ) {
 
@@ -55,11 +55,11 @@
 		&[data-align="right"] {
 
 			.block-editor-block-list__block-edit {
-				width: 47%;
+				width: calc( 47% + #{ $ui_margin * 2 } );
 				max-width: none;
 
 				@include media( map_get( $breakpoint, 's' ) ) {
-					width: percentage( $golden_minor );
+					width: calc( #{ percentage( $golden_minor ) } + #{ $ui_margin * 2 } );
 				}
 
 			}

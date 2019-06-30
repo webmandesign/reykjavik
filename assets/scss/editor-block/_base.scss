@@ -1,15 +1,8 @@
 /* FILE: editor-block/_base.scss */
 
 .editor-styles-wrapper {
-	padding-top: 0; // This is being taken care of in _post-title.scss.
-
-	@include media( map_get( $breakpoint, 'l' ) ) {
-		padding-bottom: strip_unit( $padding_vertical ) +em;
-	}
-
-	@include media( map_get( $breakpoint, 'xl' ) ) {
-		padding-bottom: $golden * strip_unit( $padding_vertical ) +em;
-	}
+	padding-top: 0; // This is being taken care of in `.editor-post-title` of _post-title.scss.
+	overflow-x: hidden;
 
 	// Colors
 
@@ -89,4 +82,32 @@
 
 		}
 
+}
+
+// No need to match bottom padding to front-end content.
+// @see  _helper.scss > .compensate-content-padding-bottom
+
+	// .editor-block-list__layout {
+	//
+	// 	@include media( map_get( $breakpoint, 'l' ) ) {
+	// 		padding-bottom: strip_unit( $padding_vertical ) +em;
+	// 	}
+	//
+	// 	@include media( map_get( $breakpoint, 'xl' ) ) {
+	// 		padding-bottom: $golden * strip_unit( $padding_vertical ) +em;
+	// 	}
+	//
+	// }
+
+%pre {
+	@extend %break_words_disable;
+	font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: none;
+	text-decoration: none;
+	white-space: pre-wrap; // https://css-tricks.com/almanac/properties/w/whitespace
+	line-height: 1.5;
+	color: inherit;
 }

@@ -2,6 +2,10 @@
 
 @if ( index( $support__block, 'button' ) ) {
 
+	.is-style-outline {
+		color: inherit;
+	}
+
 	.is-style-outline .wp-block-button__link {
 		background: transparent;
 		color: inherit;

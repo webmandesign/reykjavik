@@ -312,6 +312,30 @@ class Reykjavik_Content {
 		 */
 		public static function render_block( $block_content, $block ) {
 
+			// Variables
+
+				/**
+				 * Set the default alignment value for Media & Text block.
+				 * @link  https://github.com/WordPress/gutenberg/issues/16365
+				 */
+				if (
+					'core/media-text' === $block['blockName']
+					&& ! isset( $block['attrs']['align'] )
+				) {
+					$block['attrs']['align'] = 'wide';
+				}
+
+				// Make sure the alignment attribute is set.
+				if ( ! isset( $block['attrs']['align'] ) ) {
+					$block['attrs']['align'] = null;
+				}
+
+				// Make sure the CSS class attribute is set.
+				if ( ! isset( $block['attrs']['className'] ) ) {
+					$block['attrs']['className'] = null;
+				}
+
+
 			// Processing
 
 				// Button block class.
@@ -322,12 +346,6 @@ class Reykjavik_Content {
 				);
 
 				// Wide/full align wrapper (for simplified styles).
-				if ( ! isset( $block['attrs']['align'] ) ) {
-					$block['attrs']['align'] = '';
-				}
-				if ( ! isset( $block['attrs']['className'] ) ) {
-					$block['attrs']['className'] = '';
-				}
 				if (
 					in_array( $block['attrs']['align'], array( 'wide', 'full' ) )
 					|| false !== strpos( $block['attrs']['className'], 'alignwide' )

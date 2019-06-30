@@ -1,4 +1,4 @@
-/* FILE: editor-block/_block.scss */
+/* FILE: editor-block/blocks/_block.scss */
 
 .wp-block {
 	// Post content width when no sidebar is displayed.
@@ -19,6 +19,39 @@
 		.editor-styles-wrapper & .block-editor-block-list__block-edit {
 			margin-left: $alignment_margin;
 			margin-bottom: 1em;
+
+			.block-editor-block-list__block-edit {
+				float: none;
+				width: auto;
+				max-width: none;
+				margin-left: 0;
+				margin-bottom: 0;
+			}
+
+		}
+
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+
+			.block-editor-block-list__block {
+				padding-left: 0;
+				padding-right: 0;
+
+				&-edit {
+					float: none;
+					width: auto;
+					max-width: none;
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+
+			}
+
 		}
 
 	}

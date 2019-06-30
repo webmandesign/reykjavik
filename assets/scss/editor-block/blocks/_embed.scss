@@ -1,10 +1,10 @@
-/* FILE: editor-block/_block-video.scss */
+/* FILE: editor-block/blocks/_embed.scss */
 
-@if ( index( $support__block, 'video' ) ) {
+@if ( index( $support__block, 'embed' ) ) {
 
-	.wp-block-video {}
+	.wp-block-embed {}
 
-	[data-type="core/video"] {
+	[data-type="core/embed"] {
 
 		&[data-align="left"],
 		&[data-align="right"] {

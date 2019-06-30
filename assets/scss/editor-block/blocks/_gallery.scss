@@ -1,4 +1,4 @@
-/* FILE: editor-block/_block-gallery.scss */
+/* FILE: editor-block/blocks/_gallery.scss */
 
 @if ( index( $support__block, 'gallery' ) ) {
 
@@ -13,6 +13,12 @@
 			float: none;
 			max-width: none;
 			margin: 0;
+		}
+
+		.wp-block &.aligncenter {
+			max-width: $alignment_width;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 	}

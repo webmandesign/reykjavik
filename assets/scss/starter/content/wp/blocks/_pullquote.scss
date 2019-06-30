@@ -59,6 +59,12 @@
 			blockquote {
 				max-width: none;
 				text-align: inherit;
+
+				p {
+					margin-bottom: 1em;
+					font-size: 1em;
+				}
+
 			}
 
 		}
