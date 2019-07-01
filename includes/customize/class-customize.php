@@ -980,7 +980,18 @@ class Reykjavik_Customize {
 									'type'        => 'checkbox',
 									'id'          => 'layout_page_outdent',
 									'label'       => esc_html__( 'Outdent page content', 'reykjavik' ),
-									'description' => esc_html__( 'Page content will be displayed in 2 columns: H2 headings in first, all the other page content in second column.', 'reykjavik' ) . ' ' . esc_html__( 'This does not affect pages using "With sidebar" page template.', 'reykjavik' ),
+									'description' => '<br>'
+									                 . '<strong>' . esc_html__( 'Block editor:', 'reykjavik' ) . '</strong>'
+									                 . ' '
+									                 . esc_html__( 'Does not apply for pages built with block editor.', 'reykjavik' )
+									                 . ' '
+									                 . esc_html__( 'The layout can be replicated using Columns block.', 'reykjavik' )
+									                 . '<br><br>'
+									                 . '<a href="https://wordpress.org/plugins/classic-editor/"><strong>' . esc_html__( 'Classic Editor:', 'reykjavik' ) . '</strong></a>'
+									                 . ' '
+									                 . esc_html__( 'Page content will be displayed in 2 columns: H2 headings in first, all the other content in second column.', 'reykjavik' )
+									                 . ' '
+									                 . esc_html__( 'Does not apply on "With sidebar" page template.', 'reykjavik' ),
 									'default'     => true,
 									'preview_js'  => array(
 										'custom' => "$( 'body.page:not(.page-template-sidebar)' ).toggleClass( 'page-layout-outdented' );",

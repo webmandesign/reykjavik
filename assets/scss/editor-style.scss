@@ -15,7 +15,7 @@
 @import 'setup';
 @import 'css-vars';
 
-@import 'starter/__index';
+@import 'starter/_index';
 
 // Selection from main styles:
 
@@ -33,3 +33,5 @@
 		@import 'main/wp/_quote';
 		@import 'main/wp/_separator';
 		@import 'main/wp/_verse';
+
+@import 'main/custom-styles/editor-style';

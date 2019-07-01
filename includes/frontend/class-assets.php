@@ -624,12 +624,6 @@ class Reykjavik_Assets {
 						get_theme_file_uri( 'assets/css/editor-style' . $stylesheet_suffix . '.css' )
 					) );
 
-					$visual_editor_stylesheets[20] = esc_url_raw( add_query_arg(
-						'ver',
-						REYKJAVIK_THEME_VERSION,
-						get_theme_file_uri( 'assets/css/custom-styles-editor.css' )
-					) );
-
 				// Icons stylesheet
 				if ( class_exists( 'WM_Icons' ) && $icons_font_stylesheet = get_option( 'wmamp-icon-font' ) ) {
 					$visual_editor_stylesheets[100] = esc_url_raw( $icons_font_stylesheet );

@@ -1,0 +1,7 @@
+/* FILE: woocommerce/blocks/_featured-product.scss */
+
+.wc-block-featured-product {
+	// Compensate for bottom padding of child elements,
+	// so they are vertically centered correctly.
+	padding-top: 8px;
+}

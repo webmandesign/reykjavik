@@ -1,40 +1,40 @@
 /* FILE: starter/content/wp/blocks/_pullquote.scss */
 
-@if ( index( $support__block, 'pullquote' ) ) {
+%pullquote {
+	padding: ( pow( $golden, 2 ) +em ) 6%;
+	text-align: inherit;
+	border-top-width: $golden_minor +em;
+	border-top-style: solid;
+	border-bottom-width: $golden_minor +em;
+	border-bottom-style: solid;
 
-	%pullquote {
-		padding: ( pow( $golden, 2 ) +em ) 6%;
-		text-align: inherit;
-		border-top-width: $golden_minor +em;
-		border-top-style: solid;
-		border-bottom-width: $golden_minor +em;
-		border-bottom-style: solid;
+	&.alignleft,
+	&.alignright {
+		clear: none;
+		width: 47%;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 6%;
+		margin-right: 6%;
 
-		&.alignleft,
-		&.alignright {
-			clear: none;
-			width: 47%;
-			max-width: none;
-			padding-left: 0;
-			padding-right: 0;
-			margin-left: 6%;
-			margin-right: 6%;
-
-			@include media( map_get( $breakpoint, 's' ) ) {
-				width: percentage( $golden_minor );
-			}
-
-		}
-
-		&.alignleft {
-			margin-left: 0;
-		}
-
-		&.alignright {
-			margin-right: 0;
+		@include media( map_get( $breakpoint, 's' ) ) {
+			width: percentage( $golden_minor );
 		}
 
 	}
+
+	&.alignleft {
+		margin-left: 0;
+	}
+
+	&.alignright {
+		margin-right: 0;
+	}
+
+}
+
+@if ( index( $support__block, 'pullquote' ) ) {
 
 	.wp-block-pullquote,
 	blockquote.alignleft,

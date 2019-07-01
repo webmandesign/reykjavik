@@ -862,7 +862,7 @@ class Reykjavik_Setup {
 
 					array(
 						'name' => _x( 'Normal', 'Font size.', 'reykjavik' ),
-						'size' => round( $base_font_size ),
+						'size' => $base_font_size,
 						'slug' => 'normal', // Can not use empty value here as that would cause inline styles being applied.
 					),
 

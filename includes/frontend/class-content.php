@@ -346,7 +346,10 @@ class Reykjavik_Content {
 				// Make sure the alignment attribute is set.
 				$attr_align = ( isset( $attrs[ $attr_name['align'] ] ) ) ? ( $attrs[ $attr_name['align'] ] ) : ( null );
 
-					// Compatibility with 3rd party block plugins.
+					/**
+					 * Compatibility with 3rd party block plugins.
+					 * @link  https://wordpress.org/support/topic/align-attribute-name
+					 */
 					if ( null === $attr_align && isset( $attrs['blockAlignment'] ) ) {
 						$attr_align = $attrs['blockAlignment'];
 					}

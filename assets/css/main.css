@@ -1579,15 +1579,7 @@ h1.screen-reader-text, .comments-title h1.add-comment-link, h2.screen-reader-tex
 .site .wp-playlist-current-item { padding-bottom: 0.618rem; }
 
 /* FILE: main/wp/__pullquote.scss */
-blockquote.alignleft, blockquote.alignright { padding: 0; margin-top: 0; }
-
-@media (min-width: 448px) { blockquote.alignleft, blockquote.alignright { width: 35%; } }
-
-blockquote.alignleft { margin-left: 0; }
-
-blockquote.alignleft::before { float: right; margin-right: 0; margin-left: .25em; }
-
-blockquote.alignright { margin-right: 0; }
+blockquote.alignleft, blockquote.alignright { margin-top: 0; }
 
 /* FILE: main/wp/__quote.scss */
 .wp-block-quote.is-style-large { padding: 0; margin: 0; }

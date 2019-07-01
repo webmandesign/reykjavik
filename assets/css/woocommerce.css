@@ -1302,3 +1302,7 @@ body .woocommerce-cart-tab-container .widget_shopping_cart .buttons .button { fl
 body .woocommerce-cart-tab-container .widget_shopping_cart .buttons .button + .button { margin-top: 0.382em; }
 
 body .woocommerce-cart-tab-container .widget_shopping_cart ul.product_list_widget { margin-top: 1.618em; }
+
+/* FILE: woocommerce/blocks/__index.scss */
+/* FILE: woocommerce/blocks/_featured-product.scss */
+.wc-block-featured-product { padding-top: 8px; }
