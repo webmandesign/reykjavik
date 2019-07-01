@@ -1,4 +1,4 @@
-/* FILE: starter/wp/blocks/_block.scss */
+/* FILE: starter/content/wp/blocks/_block.scss */
 
 [class^="wp-block-"] {
 	margin-bottom: $golden +em;
@@ -15,9 +15,9 @@
 }
 
 p.has-background {
-	// Need to use rem here due to possible
+	// Need to use absolute units here due to possible
 	// custom font sizes on paragraph blocks.
-	padding: $golden +rem;
+	padding: 28px;
 }
 
 %block_list_no_style {

@@ -89,6 +89,11 @@
 	padding-bottom: 4em;
 	// No need to match bottom padding to front-end content.
 	// @see  _helper.scss > .compensate-content-padding-bottom
+
+	.wp-block & {
+		padding-bottom: 0;
+	}
+
 }
 
 %pre {

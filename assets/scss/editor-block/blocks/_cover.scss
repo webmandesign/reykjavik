@@ -10,7 +10,7 @@
 		}
 
 		&.has-alignwide-content .wp-block-cover__inner-container {
-			max-width: calc( 36rem + #{ $ui_margin * 2 } );
+			max-width: calc( 36em + #{ $ui_margin * 2 } );
 		}
 
 		&.has-alignfull-content .wp-block-cover__inner-container {

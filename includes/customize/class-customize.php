@@ -891,7 +891,13 @@ class Reykjavik_Customize {
 									'type'              => 'range',
 									'id'                => 'layout_width_content',
 									'label'             => esc_html__( 'Content width', 'reykjavik' ),
-									'description'       => sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1200 ) ),
+									'description'       => sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1200 ) )
+									                       . '<br>'
+									                       . esc_html__( 'This width is applied on archive pages, intro section, or wide blocks&hellip;', 'reykjavik' )
+									                       . ' '
+									                       . esc_html__( 'But, most of content elements are narrower for better readability.', 'reykjavik' )
+									                       . ' '
+									                       . esc_html__( 'Use the content editor to adapt their width if needed.', 'reykjavik' ),
 									'default'           => 1200,
 									'min'               => 880,
 									'max'               => 1620, // cca ( 1920 x 96% ) x 88%

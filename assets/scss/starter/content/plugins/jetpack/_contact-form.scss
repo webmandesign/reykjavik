@@ -1,0 +1,17 @@
+/* FILE: starter/content/plugins/jetpack/_contact-form.scss */
+
+@if ( index( $support__jetpack, 'contact-form' ) ) {
+
+	.contact-form {
+
+		.site & {
+
+			textarea {
+				width: 100%;
+			}
+
+		}
+
+	}
+
+}

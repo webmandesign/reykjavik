@@ -1,4 +1,4 @@
-/* FILE: starter/wp/blocks/_cover.scss */
+/* FILE: starter/content/wp/blocks/_cover.scss */
 
 //
 // Custom CSS class:
@@ -45,7 +45,7 @@
 		&__inner-container,
 		& .wp-block-cover__inner-container {
 			width: 100%;
-			max-width: 24rem;
+			max-width: 24em;
 			padding: 0;
 			text-align: inherit;
 		}
@@ -73,7 +73,7 @@
 	}
 
 	.has-alignwide-content .wp-block-cover__inner-container {
-		max-width: 36rem;
+		max-width: 36em;
 	}
 
 	.has-alignfull-content .wp-block-cover__inner-container {

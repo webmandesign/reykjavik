@@ -1,9 +1,9 @@
-/* FILE: starter/wp/blocks/_pullquote.scss */
+/* FILE: starter/content/wp/blocks/_pullquote.scss */
 
 @if ( index( $support__block, 'pullquote' ) ) {
 
 	%pullquote {
-		padding: ( pow( $golden, 2 ) +rem ) 6%;
+		padding: ( pow( $golden, 2 ) +em ) 6%;
 		text-align: inherit;
 		border-top-width: $golden_minor +em;
 		border-top-style: solid;

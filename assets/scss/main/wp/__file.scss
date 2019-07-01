@@ -35,7 +35,7 @@
 		&:first-child::before {
 			@extend %genericon;
 			content: '\f50b';
-			margin-#{$right}: .25rem; // {{RTL}}
+			margin-#{$right}: .25em; // {{RTL}}
 			font-size: $golden +em;
 			line-height: 1;
 			vertical-align: middle;

@@ -1,0 +1,9 @@
+/* FILE: starter/content/plugins/jetpack/_tiled-gallery.scss */
+
+@if ( index( $support__jetpack, 'tiled-gallery' ) ) {
+
+	.tiled-gallery-item {
+		overflow: hidden;
+	}
+
+}

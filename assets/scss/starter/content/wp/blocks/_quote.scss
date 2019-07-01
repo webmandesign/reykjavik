@@ -1,4 +1,4 @@
-/* FILE: starter/wp/blocks/_quote.scss */
+/* FILE: starter/content/wp/blocks/_quote.scss */
 
 @if ( index( $support__block, 'quote' ) ) {
 
@@ -8,7 +8,7 @@
 
 			p {
 				line-height: inherit;
-				font-size: $golden +rem;
+				font-size: 1.272em;
 				font-style: inherit;
 			}
 

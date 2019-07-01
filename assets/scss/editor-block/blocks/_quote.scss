@@ -13,11 +13,6 @@
 				margin: ( $golden +em ) 0;
 			}
 
-			&.is-style-large p {
-				// Compensating for `rem` unit used in front-end.
-				font-size: $golden / ( 1 + $golden_minor ) +em;
-			}
-
 		}
 
 		&__citation {

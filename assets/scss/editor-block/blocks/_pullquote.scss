@@ -5,11 +5,6 @@
 	.wp-block-pullquote {
 		color: inherit;
 
-		.wp-block & {
-			// Compensating for `rem` unit used in front-end.
-			padding: ( pow( $golden, 2 ) +em ) 6%;
-		}
-
 		&__citation {
 			@extend %font_size_small;
 			text-transform: none;

@@ -6,6 +6,7 @@
 	margin-bottom: $golden_major * strip_unit( $padding_vertical ) +em;
 	background-color: map_get( $customize_options, 'color_intro_background' );
 	background-color: var(--color_intro_background);
+	border-bottom: 1px solid;
 	border-color: rgba( map_get( $customize_options, 'color_intro_text' ), 20 / 100 );
 	border-color: var(--color_intro_text--a20);
 
