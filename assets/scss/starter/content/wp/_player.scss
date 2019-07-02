@@ -20,7 +20,7 @@
 }
 
 .posts .mejs-container {
-	min-width: 0 !important; // Overriding inline element styles.
+	min-width: 0 $important; // Overriding inline element styles.
 }
 
 .entry-media .mejs-container a {

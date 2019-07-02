@@ -10,43 +10,6 @@
 
 // Generic utility
 
-	.no-wrap,
-	.has-nowrap-white-space {
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			white-space: nowrap;
-		}
-	}
-
-	.text-#{$left},
-	.has-#{$left}-text-align,
-	.has-#{$left}-content {
-		text-align: $left !important; // {{RTL}}
-	}
-
-	.text-center,
-	.has-center-text-align,
-	.has-center-content {
-		text-align: center !important;
-	}
-
-	.text-#{$right},
-	.has-#{$right}-text-align,
-	.has-#{$right}-content {
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			text-align: $right !important; // {{RTL}}
-		}
-	}
-
-	.mt0,
-	.has-no-margin-top {
-		margin-top: 0 !important;
-	}
-
-	.mb0,
-	.has-no-margin-bottom {
-		margin-bottom: 0 !important;
-	}
-
 	.zindex-10,
 	.z-index-10,
 	.has-rised-z-index {
@@ -79,20 +42,6 @@
 		&-item {
 			list-style: inherit;
 			white-space: nowrap;
-		}
-
-	}
-
-
-
-// Dropcaps
-
-	.dropcap-text,
-	.has-dropcap-text,
-	p.has-drop-cap:not(:focus) {
-
-		&::first-letter {
-			@extend %drop-cap;
 		}
 
 	}

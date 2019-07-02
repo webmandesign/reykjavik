@@ -34,6 +34,28 @@
 		$golden_major: 0.618 !default;
 		$golden_minor: 0.382 !default;
 
+	// Specificity
+
+		// Wrappers
+
+			// Global wrapper.
+			$wrapper: '.site' !default;
+
+			// Section related wrappers:
+			$wrapper_modifiers: $wrapper !default;
+
+		// Forced important
+
+			// Global important. Should be kept unchanged.
+			$important: !important !default;
+
+			// Section related importants:
+			$important_base_accessibility: $important !default;
+			$important_base_modifiers: null !default;
+			$important_plugins_jetpack_infinite_scroll: $important !default;
+			$important_plugins_jetpack_sharing: $important !default;
+			$important_wp_embed: $important !default;
+
 
 
 //

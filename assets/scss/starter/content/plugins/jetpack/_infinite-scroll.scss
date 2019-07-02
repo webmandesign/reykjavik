@@ -68,14 +68,14 @@
 		}
 
 		.spinner {
-			left: auto !important;
-			right: auto !important;
+			left: auto $important_plugins_jetpack_infinite_scroll;
+			right: auto $important_plugins_jetpack_infinite_scroll;
 			margin: 0 auto;
 
 			> div {
 
 				> div {
-					width: $golden +em !important;
+					width: $golden +em $important_plugins_jetpack_infinite_scroll;
 				}
 
 			}

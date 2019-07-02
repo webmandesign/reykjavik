@@ -50,7 +50,7 @@
 
 		&::before {
 			@extend %font_weight_700;
-			@extend %font_size_higher;
+			@extend %font_size_larger;
 			content: counter( table-of-contents-counter );
 			counter-increment: table-of-contents-counter;
 			float: $left; // {{RTL}}

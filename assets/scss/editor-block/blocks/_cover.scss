@@ -25,9 +25,12 @@
 		&[data-align="full"] {
 
 			.wp-block-cover {
-				min-height: $golden_major * 100vh;
 				padding-left: 10%;
 				padding-right: 10%;
+			}
+
+			.wp-block-cover:not([class*="-min-height"]) {
+				min-height: $golden_major * 100vh;
 			}
 
 		}

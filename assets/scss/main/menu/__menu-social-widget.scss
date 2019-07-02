@@ -17,7 +17,7 @@
 
 			.sidebar &,
 			.fl-widget & {
-				@extend %font_size_higher;
+				@extend %font_size_larger;
 				padding: 0 ( $golden_minor / 2 +em );
 			}
 

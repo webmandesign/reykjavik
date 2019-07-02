@@ -1,10 +1,5 @@
 /* FILE: starter/content/typography/_base.scss */
 
-//
-// Custom CSS class:
-// - has-uppercase-text-transform
-//
-
 html {
 	@extend %line_height_golden;
 	font-size: 100%;
@@ -36,12 +31,6 @@ address {
 	@extend %break_words;
 	padding: 0;
 	margin: 0 0 ( $golden +em );
-}
-
-.uppercase,
-.is-uppercase,
-.has-uppercase-text-transform {
-	text-transform: uppercase;
 }
 
 %font_smoothing {

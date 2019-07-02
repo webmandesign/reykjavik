@@ -2,6 +2,12 @@
 
 @import 'elements';
 @import 'helpers';
-@import 'classes';
 @import 'clearing';
 @import 'breakpoints';
+
+@import 'accessibility';
+
+#{ $wrapper_modifiers } {
+	@import 'modifiers';
+	@import 'modifiers-backcompat';
+}

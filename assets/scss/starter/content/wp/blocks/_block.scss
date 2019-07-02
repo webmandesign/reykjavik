@@ -1,10 +1,5 @@
 /* FILE: starter/content/wp/blocks/_block.scss */
 
-//
-// Custom CSS class:
-// - has-background
-//
-
 [class^="wp-block-"] {
 	margin-bottom: $golden +em;
 
@@ -17,12 +12,6 @@
 		padding: $golden_major +em;
 	}
 
-}
-
-p.has-background {
-	// Need to use absolute units here due to possible
-	// custom font sizes on paragraph blocks.
-	padding: 28px;
 }
 
 %block_list_no_style {

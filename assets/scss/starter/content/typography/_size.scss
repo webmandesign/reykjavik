@@ -1,16 +1,5 @@
 /* FILE: starter/content/typography/_size.scss */
 
-//
-// Custom CSS class:
-// - has-extra-large-font-size
-// - has-extra-small-font-size
-// - has-large-font-size
-// - has-larger-font-size
-// - has-regular-font-size
-// - has-small-font-size
-// - has-smaller-font-size
-//
-
 // rem
 
 	%font_size_1rem {
@@ -29,7 +18,7 @@
 		font-size: 1rem - $golden_minor / 4;
 	}
 
-	%font_size_higher_rem {
+	%font_size_larger_rem {
 		font-size: 1rem + $golden_minor / 2;
 	}
 
@@ -47,45 +36,19 @@
 		font-size: 1em;
 	}
 
-		// Block editor font size class:
-		.has-regular-font-size {
-			@extend %font_size_1em;
-		}
-
 	%font_size_tiny {
 		font-size: 1em * $golden_major;
 	}
-
-		.font-size-xs,
-		.has-xs-font-size,
-		// Block editor font size class:
-		.has-extra-small-font-size {
-			@extend %font_size_tiny;
-		}
 
 	%font_size_small {
 		font-size: 1em - $golden_minor / 2;
 	}
 
-		.font-size-s,
-		.has-s-font-size,
-		// Block editor font size class:
-		.has-small-font-size {
-			@extend %font_size_small;
-		}
-
 	%font_size_smaller {
 		font-size: 1em - $golden_minor / 4;
 	}
 
-		.font-size-sm,
-		.has-sm-font-size,
-		// Block editor font size class:
-		.has-smaller-font-size {
-			@extend %font_size_smaller;
-		}
-
-	%font_size_higher {
+	%font_size_larger {
 		font-size: 1em + $golden_minor / 2;
 	}
 
@@ -93,21 +56,6 @@
 		font-size: 1em + $golden_minor;
 	}
 
-		.font-size-l,
-		.has-l-font-size,
-		// Block editor font size class:
-		.has-large-font-size {
-			@extend %font_size_golden_minor;
-		}
-
 	%font_size_golden {
 		font-size: 1em * $golden;
 	}
-
-		.font-size-xl,
-		.has-xl-font-size,
-		// Block editor font size class:
-		.has-extra-large-font-size,
-		.has-larger-font-size {
-			@extend %font_size_golden;
-		}
