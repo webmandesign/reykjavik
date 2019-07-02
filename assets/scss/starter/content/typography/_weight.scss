@@ -1,0 +1,15 @@
+/* FILE: starter/content/typography/_weight.scss */
+
+@for $i from 1 through 9 {
+	// 400 = normal
+	// 700 = bold
+	//
+	// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+
+	$weight: $i * 100;
+
+	%font_weight_#{$weight} {
+		font-weight: $weight;
+	}
+
+}

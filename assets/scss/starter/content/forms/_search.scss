@@ -1,0 +1,20 @@
+/* FILE: starter/content/form/_search.scss */
+
+form[role="search"],
+.form-search,
+.search-form {
+	display: block;
+	position: relative;
+	max-width: 100%;
+	margin: 0;
+	text-align: $left; // {{RTL}}
+
+	[type="search"],
+	.search-field {
+		position: relative;
+		width: 100%;
+		text-align: inherit;
+		z-index: 0;
+	}
+
+}

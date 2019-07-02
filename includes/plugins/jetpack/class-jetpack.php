@@ -6,16 +6,15 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.3.0
+ * @version  2.0.0
  *
  * Contents:
  *
  *  0) Init
- * 10) Assets
- * 20) Sharing
- * 30) Infinite scroll
- * 40) Content options
- * 50) Custom Post Types
+ * 10) Sharing
+ * 20) Infinite scroll
+ * 30) Content options
+ * 40) Custom Post Types
  */
 class Reykjavik_Jetpack {
 
@@ -35,7 +34,7 @@ class Reykjavik_Jetpack {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -93,7 +92,6 @@ class Reykjavik_Jetpack {
 
 					// Actions
 
-						add_action( 'wp_enqueue_scripts', __CLASS__ . '::assets', 100 );
 						add_action( 'wp_enqueue_scripts', 'jetpack_post_details_enqueue_scripts', 120 ); // Load this after `reykjavik-stylesheet` is enqueued.
 
 						add_action( 'tha_entry_bottom', __CLASS__ . '::author_bio' );
@@ -147,33 +145,7 @@ class Reykjavik_Jetpack {
 
 
 	/**
-	 * 10) Assets
-	 */
-
-		/**
-		 * Assets
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function assets() {
-
-			// Processing
-
-				// Styles
-
-					// Deregister Genericons as we've got them in the theme
-
-						wp_deregister_style( 'genericons' );
-
-		} // /assets
-
-
-
-
-
-	/**
-	 * 20) Sharing
+	 * 10) Sharing
 	 */
 
 		/**
@@ -209,7 +181,7 @@ class Reykjavik_Jetpack {
 
 
 	/**
-	 * 30) Infinite scroll
+	 * 20) Infinite scroll
 	 */
 
 		/**
@@ -269,7 +241,7 @@ class Reykjavik_Jetpack {
 
 
 	/**
-	 * 40) Content options
+	 * 30) Content options
 	 */
 
 		/**
@@ -365,7 +337,7 @@ class Reykjavik_Jetpack {
 
 
 	/**
-	 * 50) Custom Post Types
+	 * 40) Custom Post Types
 	 */
 
 		/**

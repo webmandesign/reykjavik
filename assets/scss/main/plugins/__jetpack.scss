@@ -27,7 +27,7 @@
 // Sharing
 
 	div.sharedaddy {
-		margin-top: power( $golden, 2 ) +rem;
+		margin-top: pow( $golden, 2 ) +rem;
 		border-color: inherit;
 
 		.sd-title {
@@ -98,13 +98,13 @@
 
 		.entry-author {
 			@extend %background_overlay_from_text_color;
-			margin-top: power( 1 + $golden_minor, 4 ) +em;
+			margin-top: pow( 1 + $golden_minor, 4 ) +em;
 			padding: 8%;
 			border-width: 1px;
 			border-style: solid;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				padding: power( 1 + $golden_minor, 4 ) +em;
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				padding: pow( 1 + $golden_minor, 4 ) +em;
 			}
 
 			&::before {
@@ -114,10 +114,10 @@
 			.author {
 
 				&-avatar {
-					width: 60 *$px;
+					width: 60px;
 					margin-bottom: 1em;
 
-					@include responsive( map_get( $breakpoint, 'm' ) ) {
+					@include media( map_get( $breakpoint, 'm' ) ) {
 						float: $left; // {{RTL}}
 						width: 80px;
 						margin-#{$right}: $golden +em;
@@ -142,7 +142,7 @@
 
 				&-bio {
 
-					@include responsive( map_get( $breakpoint, 'm' ) ) {
+					@include media( map_get( $breakpoint, 'm' ) ) {
 						clear: both;
 					}
 
@@ -182,7 +182,7 @@
 				border-bottom-width: 2px;
 				border-bottom-color: inherit;
 
-				@include responsive( map_get( $breakpoint, 'm' ) ) {
+				@include media( map_get( $breakpoint, 'm' ) ) {
 					padding: 2em;
 				}
 
@@ -191,7 +191,7 @@
 					margin: calc( #{ $golden * -1em } - 1px ); // Cover border around post entry.
 					margin-bottom: $golden +em;
 
-					@include responsive( map_get( $breakpoint, 'm' ) ) {
+					@include media( map_get( $breakpoint, 'm' ) ) {
 						margin: calc( -2em - 1px ); // Cover border around post entry.
 						margin-bottom: 2em;
 					}
@@ -223,7 +223,7 @@
 				width: calc( #{ percentage( 1 / $columns ) } - 2em );
 			}
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include media( map_get( $breakpoint, 'm' ) ) {
 
 				.portfolio-entry {
 					$columns: 2; // Default layout on medium devices.
@@ -237,7 +237,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 
 				@for $columns from 3 through 6 {
 
@@ -267,7 +267,7 @@
 
 	// Testimonials
 
-		$gutter: 3.62em;
+		$gutter: 3.618em;
 
 		.testimonial-entry {
 
@@ -311,7 +311,7 @@
 				width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
 			}
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
+			@include media( map_get( $breakpoint, 'm' ) ) {
 
 				.testimonial-entry {
 					$columns: 2; // Default layout on medium devices.
@@ -325,7 +325,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 
 				@for $columns from 3 through 6 {
 

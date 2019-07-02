@@ -19,7 +19,7 @@
 
 		.sidebar & {
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				max-height: 50vh;
 				overflow-y: auto;
 			}

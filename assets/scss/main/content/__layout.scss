@@ -3,6 +3,10 @@
 //
 // Site content layout
 //
+// Custom CSS class:
+// - compensate-content-padding-top
+// - compensate-content-padding-bottom
+//
 
 
 
@@ -11,23 +15,50 @@
 // Site content width holder
 
 	.site-content {
+		@extend .clearfix;
 
 		&-inner {
 			@extend %content_width;
 			@extend .clearfix;
 			padding: ( $golden_major * $padding_vertical ) 0;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				padding-top: $padding_vertical;
 				padding-bottom: $padding_vertical;
 			}
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-top: $golden * $padding_vertical;
 				padding-bottom: $golden * $padding_vertical;
 			}
 
 		}
+
+			.compensate-content-padding-top {
+				margin-top: -$golden_major * $padding_vertical;
+
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					margin-top: -$padding_vertical;
+				}
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					margin-top: -$golden * $padding_vertical;
+				}
+
+			}
+
+			.compensate-content-padding-bottom {
+				margin-bottom: -$golden_major * $padding_vertical;
+
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					margin-bottom: -$padding_vertical;
+				}
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					margin-bottom: -$golden * $padding_vertical;
+				}
+
+			}
 
 
 
@@ -45,7 +76,7 @@
 
 	.content-area {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			width: percentage( $page_content_width / 100 );
 
 			.has-widgets-sidebar & {
@@ -58,11 +89,11 @@
 				margin-right: auto;
 			}
 
+			.has-blocks &,
 			.posts-layout-list.no-widgets-sidebar &,
 			.single.no-widgets-sidebar &,
 			.attachment.no-widgets-sidebar & {
-				max-width: 38em;
-				max-width: 70ch;
+				max-width: 36em;
 			}
 
 		}
@@ -89,14 +120,9 @@
 		.content-area {
 			float: none;
 			width: 100%;
+			max-width: none;
 			padding: 0;
 			margin: 0;
-
-			html & {
-				// Unfortunately, we need to rise specificity for `max-width` due to possible IE shame styles overrides later.
-				max-width: none;
-			}
-
 		}
 
 	}

@@ -1,0 +1,31 @@
+/* FILE: editor-block/blocks/_quote.scss */
+
+@if ( index( $support__block, 'quote' ) ) {
+
+	.wp-block-quote {
+
+		.wp-block & {
+			padding: 0;
+			border: 0;
+
+			&,
+			&:last-child {
+				margin: ( $golden +em ) 0;
+			}
+
+		}
+
+		&__citation {
+			@extend %font_size_small;
+			@extend %font_weight_400;
+			color: inherit;
+
+			&::before {
+				content: '\2014\2002';
+			}
+
+		}
+
+	}
+
+}

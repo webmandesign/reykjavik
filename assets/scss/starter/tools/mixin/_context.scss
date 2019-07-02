@@ -1,0 +1,22 @@
+//
+// Context.
+//
+// @link  https://www.youtube.com/watch?v=o4ok4gsiQSw
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  string $replace
+// @param  string $withs
+//
+@mixin context( $replace, $withs... ) {
+
+	@each $with in $withs {
+
+		@at-root #{ selector_replace( #{&}, $replace, $with ) } {
+			@content;
+		}
+
+	}
+
+} // /context

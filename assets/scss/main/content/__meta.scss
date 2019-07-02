@@ -67,7 +67,7 @@
 	// Single post meta
 
 		.single & {
-			margin-bottom: power( $golden, 2 ) +em;
+			margin-bottom: pow( $golden, 2 ) +em;
 
 			&-element {
 				@extend %font_size_small;
@@ -75,64 +75,64 @@
 
 		}
 
+			.single .site-main > .entry > & {
+				display: flex;
+				flex-wrap: wrap;
+				margin-left: -.5rem;
+				margin-right: -.5rem;
 
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					margin-left: -25%;
+					margin-right: -25%;
+				}
 
-		// Outdented single post meta
+				.entry-meta-element {
+					flex: 1;
+					padding: ( $golden_major +em ) 1em;
+					margin: .5rem;
+					border-width: 1px;
+					border-style: solid;
 
-			.entry-meta-outdented .site-main > .entry > & {
-
-				@include responsive( map_get( $breakpoint, 'xl' ) ) {
-					display: inline-block;
-					float: $left; // {{RTL}}
-					max-width: 10em;
-					margin-#{$right}: -100%; // {{RTL}}
-					margin-#{$left}: -1.62rem; // {{RTL}}
-					@include rtl_property( transform, translateX( -100% ), translateX( 100% ) ); // {{RTL}}
-
-					.entry-meta-element {
-						display: block;
-						margin-bottom: 1rem;
-					}
-
-					.entry-meta-description {
-						display: block;
-						font-size: .81em;
-
-						@include in( '^.comments-link' ) {
-							display: inline;
-						}
-
-					}
-
-					.label-updated {
-						display: none;
+					@include media( map_get( $breakpoint, 'm' ) ) {
+						min-width: calc( 33.33% - 1rem );
 					}
 
 				}
 
+				.entry-meta-description {
+					display: block;
+					font-size: .809em;
+
+					@include in( '^.comments-link' ) {
+						display: inline;
+					}
+
+				}
+
+				.label-updated {
+					display: none;
+				}
+
+			}
+
+			.single.has-widgets-sidebar .site-main > .entry > & {
+				margin-left: -.5rem;
+				margin-right: -.5rem;
 			}
 
 
 
 	// When page builder used
 
-		.single.fl-builder &,
-		.single.content-layout-no-paddings & {
-			padding: 1em 0;
+		.single.fl-builder .site-main > .entry > &,
+		.single.content-layout-no-paddings .site-main > .entry > & {
+			padding: .5rem;
 			margin: 0;
-			text-align: center;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
 
-			&-element {
-				display: inline;
+			.entry-meta-element {
+				min-width: auto;
 			}
 
-		}
-
-		.no-intro.fl-builder &,
-		.no-intro.content-layout-no-paddings & {
-			margin-top: -1px;
 		}
 
 

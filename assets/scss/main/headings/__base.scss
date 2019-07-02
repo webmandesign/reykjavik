@@ -1,0 +1,54 @@
+/* FILE: main/headings/__base.scss */
+
+//
+// Basic headings styles
+//
+
+
+
+
+
+#{$elements_headings} {
+	@extend %font_headings;
+}
+
+	h1.h2,
+	h1.h3,
+	h1.display-1,
+	h1.display-2,
+	h1.display-3,
+	h1.display-4 {
+		font-style: inherit;
+	}
+
+	@for $i from 1 through 9 {
+
+		$weight: $i * 100;
+
+		#{$elements_headings} {
+
+			&.weight-#{$weight},
+			&.has-#{$weight}-font-weight {
+				font-weight: $weight;
+			}
+
+		}
+
+	}
+
+@include h_tags( $golden_major + $golden_minor / 2, true ); // Heading styles on small devices
+
+@include media( map_get( $breakpoint, 'm' ) ) {
+	@include h_tags(); // Heading styles on large devices
+}
+
+
+
+// Screen reader hidden headings
+
+	h1.screen-reader-text,
+	h2.screen-reader-text,
+	h3.screen-reader-text,
+	h4.screen-reader-text {
+		color: inherit; // Fixing some accessibility testing tools errors.
+	}

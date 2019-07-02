@@ -24,11 +24,37 @@
 
 
 
+// Block editor color classes
+
+	.site {
+	// Need to use higher priority to override button hover colors.
+
+		@each $option, $value in $customize_options {
+			@if str-index( #{$option}, 'color_' ) {
+				// Making the slug create `.has-{$theme-mod-slug}-mod-(background)-color` CSS classes.
+				// @see  Reykjavik_Setup::get_color_palette()
+				$selector: str_replace( '_', '-', $option ) + '-mod';
+
+				.has-#{$selector}-color {
+					color: var(--#{$option});
+				}
+
+				.has-#{$selector}-background-color {
+					background-color: var(--#{$option});
+				}
+			}
+		}
+
+	}
+
+
+
 // Headings
 
-	#{$h_tags},
+	#{$elements_headings},
 	.post-navigation,
-	.dropcap-text::first-letter {
+	.dropcap-text::first-letter ,
+	.has-dropcap-text::first-letter {
 		@extend %site_content_headings_color;
 	}
 
@@ -102,7 +128,8 @@
 		a,
 		h1, h2, h3, h4,
 		.h1, .h2, .h3, .h4,
-		.dropcap-text::first-letter {
+		.dropcap-text::first-letter,
+		.has-dropcap-text::first-letter {
 			color: inherit; //*
 		}
 

@@ -1,0 +1,12 @@
+/* FILE: starter/content/wp/blocks/_verse.scss */
+
+@if ( index( $support__block, 'verse' ) ) {
+
+	.wp-block-verse {
+		font-family: inherit;
+		font-size: inherit;
+		background: transparent;
+		color: inherit;
+	}
+
+}

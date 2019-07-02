@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.0.0
  */
 
 
@@ -37,7 +37,7 @@
 				(<a href="https://www.webmandesign.eu" target="_blank"><?php esc_html_e( 'Go to WebMan Design website &raquo;', 'reykjavik' ); ?></a>)
 				<?php esc_html_e( 'Or perhaps you are considering a small donation?', 'reykjavik' ); ?>
 				&rarr;
-				<a href="http://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank"><em><?php esc_html_e( '"Hey Oliver, have a gallon of coffee on me :)"', 'reykjavik' ); ?></em></a>
+				<a href="https://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank"><em><?php esc_html_e( '"Hey Oliver, have a gallon of coffee on me :)"', 'reykjavik' ); ?></em></a>
 			</p>
 
 			<p>
@@ -48,7 +48,7 @@
 			</p>
 
 			<p>
-				<a href="http://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'reykjavik' ); ?></a>
+				<a href="https://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'reykjavik' ); ?></a>
 			</p>
 
 			<p class="welcome-upgrade-thanks">

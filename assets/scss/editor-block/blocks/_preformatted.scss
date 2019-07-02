@@ -1,0 +1,10 @@
+/* FILE: editor-block/blocks/_preformatted.scss */
+
+// No need for conditional check.
+.wp-block-preformatted {
+
+	pre {
+		color: inherit;
+	}
+
+}

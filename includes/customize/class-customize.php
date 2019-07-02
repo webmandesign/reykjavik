@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -28,13 +28,18 @@ class Reykjavik_Customize {
 
 		private static $instance;
 
+		/**
+		 * Theme colors cache transient name.
+		 */
+		public static $cache_colors = 'reykjavik_cache_theme_colors';
+
 
 
 		/**
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -50,6 +55,8 @@ class Reykjavik_Customize {
 					// Actions
 
 						add_action( 'customize_register', __CLASS__ . '::setup' );
+
+						add_action( 'customize_save_after', __CLASS__ . '::theme_colors_cache_flush', 100 );
 
 					// Filters
 
@@ -175,7 +182,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.2
+		 * @version  2.0.0
 		 *
 		 * @param  array $options
 		 */
@@ -338,6 +345,7 @@ class Reykjavik_Customize {
 									'type'        => 'color',
 									'id'          => 'color_header_background',
 									'label'       => esc_html__( 'Background color', 'reykjavik' ),
+									'palette'     => array( 'name' => __( 'Header background color', 'reykjavik' ) ),
 									'description' => esc_html__( 'This color is also used to style a mobile device browser address bar.', 'reykjavik' ) . ' <a href="https://wordpress.org/plugins/chrome-theme-color-changer/">' . esc_html__( 'You can further customize it with a dedicated plugin.', 'reykjavik' ) . '</a>',
 									'default'     => '#fefeff',
 									'css_var'     => 'maybe_hash_hex_color',
@@ -353,6 +361,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_header_text',
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Header text color', 'reykjavik' ) ),
 									'default'    => '#535354',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -406,6 +415,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_intro_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Intro background color', 'reykjavik' ) ),
 									'default'    => '#fafafb',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -420,6 +430,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_intro_text',
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Intro text color', 'reykjavik' ) ),
 									'default'    => '#535354',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -434,6 +445,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_intro_headings',
 									'label'      => esc_html__( 'Headings color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Intro headings color', 'reykjavik' ) ),
 									'default'    => '#232324',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -461,7 +473,8 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_intro_overlay_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
-									'default'    => '#000000',
+									'palette'    => array( 'name' => __( 'Intro overlay background color', 'reykjavik' ) ),
+									'default'    => '#0f1732',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(
@@ -475,8 +488,9 @@ class Reykjavik_Customize {
 								100 . 'colors' . 25 . 220 => array(
 									'type'       => 'color',
 									'id'         => 'color_intro_overlay_text',
+									'palette'    => array( 'name' => __( 'Intro overlay text color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
-									'default'    => '#ffffff',
+									'default'    => '#fefeff',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(
@@ -525,6 +539,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_intro_widgets_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Intro widgets background color', 'reykjavik' ) ),
 									'default'    => '#0f1732',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -538,6 +553,7 @@ class Reykjavik_Customize {
 								100 . 'colors' . 25 . 520 => array(
 									'type'       => 'color',
 									'id'         => 'color_intro_widgets_text',
+									'palette'    => array( 'name' => __( 'Intro widgets text color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
 									'default'    => '#d3d3d4',
 									'css_var'    => 'maybe_hash_hex_color',
@@ -552,6 +568,7 @@ class Reykjavik_Customize {
 								100 . 'colors' . 25 . 530 => array(
 									'type'       => 'color',
 									'id'         => 'color_intro_widgets_headings',
+									'palette'    => array( 'name' => __( 'Intro widgets headings color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Headings color', 'reykjavik' ),
 									'default'    => '#fefeff',
 									'css_var'    => 'maybe_hash_hex_color',
@@ -590,6 +607,7 @@ class Reykjavik_Customize {
 								100 . 'colors' . 30 . 110 => array(
 									'type'       => 'color',
 									'id'         => 'color_content_background',
+									'palette'    => array( 'name' => __( 'Content background color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
 									'default'    => '#fefeff',
 									'css_var'    => 'maybe_hash_hex_color',
@@ -604,6 +622,7 @@ class Reykjavik_Customize {
 								100 . 'colors' . 30 . 120 => array(
 									'type'       => 'color',
 									'id'         => 'color_content_text',
+									'palette'    => array( 'name' => __( 'Content text color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
 									'default'    => '#535354',
 									'css_var'    => 'maybe_hash_hex_color',
@@ -618,6 +637,7 @@ class Reykjavik_Customize {
 								100 . 'colors' . 30 . 130 => array(
 									'type'       => 'color',
 									'id'         => 'color_content_headings',
+									'palette'    => array( 'name' => __( 'Content headings color', 'reykjavik' ) ),
 									'label'      => esc_html__( 'Headings color', 'reykjavik' ),
 									'default'    => '#232324',
 									'css_var'    => 'maybe_hash_hex_color',
@@ -658,6 +678,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_footer_background',
 									'label'      => esc_html__( 'Background color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Footer background color', 'reykjavik' ) ),
 									'default'    => '#0f1732',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -672,6 +693,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_footer_text',
 									'label'      => esc_html__( 'Text color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Footer text color', 'reykjavik' ) ),
 									'default'    => '#d3d3d4',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -686,6 +708,7 @@ class Reykjavik_Customize {
 									'type'       => 'color',
 									'id'         => 'color_footer_headings',
 									'label'      => esc_html__( 'Headings color', 'reykjavik' ),
+									'palette'    => array( 'name' => __( 'Footer headings color', 'reykjavik' ) ),
 									'default'    => '#fefeff',
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
@@ -868,7 +891,13 @@ class Reykjavik_Customize {
 									'type'              => 'range',
 									'id'                => 'layout_width_content',
 									'label'             => esc_html__( 'Content width', 'reykjavik' ),
-									'description'       => sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1200 ) ),
+									'description'       => sprintf( esc_html__( 'Default value: %s', 'reykjavik' ), number_format_i18n( 1200 ) )
+									                       . '<br>'
+									                       . esc_html__( 'This width is applied on archive pages, intro section, or wide blocks&hellip;', 'reykjavik' )
+									                       . ' '
+									                       . esc_html__( 'But, most of content elements are narrower for better readability.', 'reykjavik' )
+									                       . ' '
+									                       . esc_html__( 'Use the content editor to adapt their width if needed.', 'reykjavik' ),
 									'default'           => 1200,
 									'min'               => 880,
 									'max'               => 1620, // cca ( 1920 x 96% ) x 88%
@@ -951,7 +980,18 @@ class Reykjavik_Customize {
 									'type'        => 'checkbox',
 									'id'          => 'layout_page_outdent',
 									'label'       => esc_html__( 'Outdent page content', 'reykjavik' ),
-									'description' => esc_html__( 'Page content will be displayed in 2 columns: H2 headings in first, all the other page content in second column.', 'reykjavik' ) . ' ' . esc_html__( 'This does not affect pages using "With sidebar" page template.', 'reykjavik' ),
+									'description' => '<br>'
+									                 . '<strong>' . esc_html__( 'Block editor:', 'reykjavik' ) . '</strong>'
+									                 . ' '
+									                 . esc_html__( 'Does not apply for pages built with block editor.', 'reykjavik' )
+									                 . ' '
+									                 . esc_html__( 'The layout can be replicated using Columns block.', 'reykjavik' )
+									                 . '<br><br>'
+									                 . '<a href="https://wordpress.org/plugins/classic-editor/"><strong>' . esc_html__( 'Classic Editor:', 'reykjavik' ) . '</strong></a>'
+									                 . ' '
+									                 . esc_html__( 'Page content will be displayed in 2 columns: H2 headings in first, all the other content in second column.', 'reykjavik' )
+									                 . ' '
+									                 . esc_html__( 'Does not apply on "With sidebar" page template.', 'reykjavik' ),
 									'default'     => true,
 									'preview_js'  => array(
 										'custom' => "$( 'body.page:not(.page-template-sidebar)' ).toggleClass( 'page-layout-outdented' );",
@@ -1305,49 +1345,70 @@ class Reykjavik_Customize {
 	 */
 
 		/**
-		 * Get special color class selectors
+		 * Get all theme colors in array and cache them.
 		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
-		 * @param  string $context
+		 * @subpackage  Customize Options
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
 		 */
-		public static function color_selectors( $context = '' ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_reykjavik_customize_color_selectors_pre', false );
-
-				if ( false !== $pre ) {
-					return $pre;
-				}
-
-
-			// Helper variables
-
-				$output  = array();
-				$context = sanitize_html_class( trim( (string) $context ) );
-
+		public static function get_theme_colors() {
 
 			// Requirements check
 
-				if ( empty( $context ) ) {
-					return;
+				$colors = get_transient( self::$cache_colors );
+
+				if ( ! empty( $colors ) ) {
+					return (array) $colors;
 				}
+
+
+			// Variables
+
+				$mods          = (array) get_theme_mods();
+				$theme_options = (array) apply_filters( 'wmhook_reykjavik_theme_options', array() );
 
 
 			// Processing
 
-				$output[] = '.set-colors-' . $context;
-				$output[] = '.set-colors-' . $context . ' > .fl-row-content-wrap';
-				$output[] = '.set-colors-' . $context . ' > .fl-col-content';
+				foreach ( $theme_options as $option ) {
+					if ( 'color' === $option['type'] && isset( $option['default'] ) ) {
+						$color = ( isset( $mods[ $option['id'] ] ) ) ? ( $mods[ $option['id'] ] ) : ( $option['default'] );
+						$colors[ $option['id'] ] = array(
+							'id'    => $option['id'],
+							'color' => sanitize_hex_color_no_hash( $color ),
+							'name'  => ( isset( $option['palette']['name'] ) ) ? ( $option['palette']['name'] ) : ( $option['label'] ),
+							'slug'  => ( isset( $option['palette']['slug'] ) ) ? ( $option['palette']['slug'] ) : ( $option['id'] ),
+						);
+					}
+				}
+
+				set_transient( self::$cache_colors, $colors );
 
 
 			// Output
 
-				return implode( ', ', $output );
+				return $colors;
 
-		} // /color_selectors
+		} // /get_theme_colors
+
+
+
+			/**
+			 * Flush theme colors array cache.
+			 *
+			 * @since    2.0.0
+			 * @version  2.0.0
+			 */
+			public static function theme_colors_cache_flush() {
+
+				// Processing
+
+					delete_transient( self::$cache_colors );
+
+			} // /theme_colors_cache_flush
 
 
 

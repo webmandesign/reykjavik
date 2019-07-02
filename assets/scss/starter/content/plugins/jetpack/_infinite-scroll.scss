@@ -1,0 +1,91 @@
+/* FILE: starter/content/plugins/jetpack/_infinite-scroll.scss */
+
+@if ( index( $support__jetpack, 'infinite-scroll' ) ) {
+
+	.neverending {
+
+		&.infinite-scroll {
+
+			.site-footer {
+				display: none;
+			}
+
+		}
+
+		&.infinity-end {
+
+			.site-footer {
+				display: block;
+			}
+
+		}
+
+	}
+
+	.infinite-scroll {
+
+		.posts {
+
+			&.masonry {
+				margin-bottom: pow( $golden, 3 ) +em;
+			}
+
+		}
+
+	}
+
+	#infinite-handle {
+		clear: both;
+		text-align: center;
+
+		.masonry & {
+			position: absolute;
+			width: 100%;
+			bottom: pow( $golden, 3 ) * -1em;
+		}
+
+		.site & {
+
+			span {
+				display: inline-block;
+				padding: 1em;
+				font-size: 1em;
+				border-radius: 0;
+			}
+
+		}
+
+	}
+
+	.infinite-loader {
+		clear: both;
+		text-align: center;
+
+		.masonry & {
+			position: absolute;
+			width: 100%;
+			bottom: pow( $golden, 3 ) * -1em; // -4.235
+		}
+
+		.spinner {
+			left: auto $important_plugins_jetpack_infinite_scroll;
+			right: auto $important_plugins_jetpack_infinite_scroll;
+			margin: 0 auto;
+
+			> div {
+
+				> div {
+					width: $golden +em $important_plugins_jetpack_infinite_scroll;
+				}
+
+			}
+
+		}
+
+	}
+
+	.infinite-wrap {
+		clear: both;
+	}
+
+}

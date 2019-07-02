@@ -1,0 +1,19 @@
+/* FILE: starter/content/plugins/jetpack/_responsive-videos.scss */
+
+@if ( index( $support__jetpack, 'responsive-videos' ) ) {
+
+	.jetpack-video-wrapper {
+		margin: 0 0 ( $golden +em );
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.entry-media &,
+		.fl-video & {
+			margin: 0;
+		}
+
+	}
+
+}

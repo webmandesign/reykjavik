@@ -1,0 +1,23 @@
+/* FILE: starter/content/sidebar/_widget-list.scss */
+
+ul {
+
+	li {
+
+		.widget_recent_comments &,
+		.widget_recent_entries & {
+			position: relative;
+			padding-#{$left}: $golden +em; // {{RTL}}
+		}
+
+	}
+
+}
+
+.widget_recent_entries {
+
+	.post-date {
+		display: block;
+	}
+
+}

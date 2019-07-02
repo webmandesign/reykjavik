@@ -1,0 +1,46 @@
+/* FILE: starter/content/comments/_pagination.scss */
+
+.comment-navigation {
+	display: block;
+	position: relative;
+	clear: both;
+	padding: ( $golden +em ) 0;
+	overflow: hidden;
+
+	div {
+		padding: 1em 0 0;
+		text-align: center;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			width: auto;
+			padding: 0;
+			margin: 0;
+		}
+
+	}
+
+	a {
+		display: block;
+		padding: ( $golden_major +em ) 1em;
+		line-height: normal;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+	}
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+
+		.nav-previous {
+			float: $left; // {{RTL}}
+		}
+
+		.nav-next {
+			float: $right; // {{RTL}}
+		}
+
+	}
+
+}

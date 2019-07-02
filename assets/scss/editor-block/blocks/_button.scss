@@ -1,0 +1,20 @@
+/* FILE: editor-block/blocks/_button.scss */
+
+@if ( index( $support__block, 'button' ) ) {
+
+	.wp-block-button {
+
+		&__link {
+			background-color: map_get( $customize_options, 'color_accent' );
+			color: map_get( $customize_options, 'color_accent_text' );
+			background-color: var(--color_accent);
+			color: var(--color_accent_text);
+		}
+
+	}
+
+	.wp-block .is-style-outline {
+		color: var(--color_accent_text);
+	}
+
+}

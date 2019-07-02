@@ -1,0 +1,14 @@
+/* FILE: starter/content/wp/blocks/_spacer.scss */
+
+@if ( index( $support__block, 'spacer' ) ) {
+
+	.wp-block-spacer {
+		margin: 0;
+
+		&:not(:first-child) {
+			margin-top: -$golden +em;
+		}
+
+	}
+
+}

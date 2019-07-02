@@ -1,0 +1,69 @@
+/* FILE: starter/content/forms/_base.scss */
+
+label {
+	display: inline-block;
+	padding-bottom: $golden_minor / 2 +em;
+
+	&[for] {
+		cursor: pointer;
+	}
+
+	+ [type="checkbox"] {
+		margin-#{$left}: $golden_minor +em; // {{RTL}}
+	}
+
+}
+
+textarea {
+	@extend %break_words;
+	vertical-align: top;
+	overflow-y: auto;
+	resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	bottom: $golden_minor / 2 * -1em;
+	margin-#{$right}: $golden_minor +em; // {{RTL}}
+	vertical-align: baseline;
+}
+
+// @link  https://www.filamentgroup.com/lab/select-css.html
+select {
+	$selector_svg_size: 15px;
+	$selector_svg: '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="66"><path stroke="#{ rgba( #fff, .66 ) }" fill="#{ rgba( #000, .66 ) }" stroke-width="10" d="m10.23893,4.84475l39.69582,52.85933l39.69582,-52.85933l-79.39163,0z" /></svg>';
+
+	@extend %break_words_disable;
+	display: inline-block;
+	max-width: 100%;
+	padding: .5em 1em;
+	padding-#{$right}: calc( 1em + #{$selector_svg_size} );
+	appearance: none;
+	background: none;
+	background-image: url('data:image/svg+xml;utf8,#{ encode_url( $selector_svg ) }');
+	background-size: $selector_svg_size auto;
+	background-position: $right 1em top 50%;
+	background-repeat: no-repeat;
+	color: inherit;
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	option {
+		background: #fff;
+		color: #000;
+	}
+
+}
+
+:disabled,
+[disabled],
+[aria-disabled="true"] {
+	cursor: default;
+	pointer-events: none;
+	opacity: .5;
+}

@@ -1,0 +1,69 @@
+/* FILE: starter/content/base/_accessibility.scss */
+
+%screen_reader_hiding {
+	position: absolute $important_base_accessibility;
+	width: 1px;
+	height: 1px;
+	line-height: 1px;
+	word-wrap: normal $important_base_accessibility;
+	clip: rect( 1px, 1px, 1px, 1px );
+	clip-path: inset( 50% );
+	overflow: hidden;
+}
+
+	.screen-reader-text {
+		@extend %screen_reader_hiding;
+		padding: 0;
+		margin: -1px;
+		// border: 0;
+
+		&.skip-link {
+
+			@include haf() {
+				height: auto;
+				width: auto;
+				line-height: inherit;
+				word-wrap: break-word $important_base_accessibility;
+				clip-path: none;
+				clip: auto;
+
+				#{$left}: $golden_major +em; // {{RTL}}
+				top: $golden_major +em;
+				padding: $golden_minor + 1em;
+				text-decoration: none;
+				font-size: .809em;
+				font-weight: 700;
+				background-color: #47c;
+				color: #fff;
+				z-index: 100000; /* Above WP toolbar. */
+			}
+
+		}
+
+	}
+
+%screen_reader_hiding_disable {
+	position: static $important_base_accessibility;
+	height: auto;
+	width: auto;
+	line-height: inherit;
+	word-wrap: break-word $important_base_accessibility;
+	clip-path: none;
+	clip: auto;
+	overflow: visible;
+}
+
+.focus-position-static {
+
+	@include haf() {
+		position: static $important_base_accessibility;
+		margin: 1px; // For focus outline
+		text-align: center;
+	}
+
+}
+
+// Do not show the outline on the skip link target.
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}

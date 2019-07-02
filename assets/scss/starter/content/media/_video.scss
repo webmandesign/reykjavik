@@ -1,0 +1,16 @@
+/* FILE: starter/content/media/_video.scss */
+
+%video_container {
+	position: relative;
+	max-width: 100%;
+	height: 0 $important;
+	padding: 0 0 56.25%; /* 16:9 ratio only */
+}
+
+%video_object {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}

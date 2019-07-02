@@ -1,0 +1,15 @@
+/* FILE: starter/content/wp/blocks/_video.scss */
+
+@if ( index( $support__block, 'video' ) ) {
+
+	.wp-block-video {
+
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			max-width: $alignment_width;
+		}
+
+	}
+
+}

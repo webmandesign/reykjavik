@@ -9,18 +9,18 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
- *  0) Init
- * 10) Installation
- * 20) Setup
- * 30) Globals
- * 40) Images
- * 50) Typography
- * 60) Visual editor
- * 70) Others
+ *   0) Init
+ *  10) Installation
+ *  20) Setup
+ *  30) Globals
+ *  40) Images
+ *  50) Typography
+ *  60) Visual editor
+ * 100) Others
  */
 class Reykjavik_Setup {
 
@@ -40,7 +40,7 @@ class Reykjavik_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -167,7 +167,7 @@ class Reykjavik_Setup {
 		 * as indicating support for post thumbnails.
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.0
 		 */
 		public static function setup() {
 
@@ -186,64 +186,64 @@ class Reykjavik_Setup {
 					 */
 
 					// wp-content/languages/themes/reykjavik/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', trailingslashit( WP_LANG_DIR ) . 'themes/' . get_template() );
+					load_theme_textdomain( 'reykjavik', trailingslashit( WP_LANG_DIR ) . 'themes/' . get_template() );
 
 					// wp-content/themes/child-theme/languages/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', get_stylesheet_directory() . '/languages' );
+					load_theme_textdomain( 'reykjavik', get_stylesheet_directory() . '/languages' );
 
 					// wp-content/themes/reykjavik/languages/en_GB.mo
-
-						load_theme_textdomain( 'reykjavik', get_template_directory() . '/languages' );
+					load_theme_textdomain( 'reykjavik', get_template_directory() . '/languages' );
 
 				// Declare support for child theme stylesheet automatic enqueuing
+				add_theme_support( 'child-theme-stylesheet' );
 
-					add_theme_support( 'child-theme-stylesheet' );
+				// Add support for editor styles.
+				add_editor_style( $editor_styles );
+				/**
+				 * add_theme_support( 'editor-styles' );
+				 *
+				 * This is not OK for this theme! Do not ever use it here!
+				 * As the theme applies more advanced styles for TinyMCE,
+				 * the stylesheet would be enqueued into block editor too,
+				 * which would mess block editor styles greatly...
+				 *
+				 * @see  Reykjavik_Assets::enqueue_styles_editor()
+				 */
 
-				// Add editor stylesheets
+				// Block color palettes.
+				add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
-					add_editor_style( $editor_styles );
+				// Block font sizes.
+				add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
 
-				// Custom menus
+				// Wide alignment.
+				add_theme_support( 'align-wide' );
 
-					/**
-					 * @see  includes/frontend/class-menu.php
-					 */
+				// Responsive embedded content.
+				add_theme_support( 'responsive-embeds' );
 
 				// Title tag
-
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
-					 */
-					add_theme_support( 'title-tag' );
+				add_theme_support( 'title-tag' );
 
 				// Site logo
-
-					/**
-					 * @link  https://codex.wordpress.org/Theme_Logo
-					 */
-					add_theme_support( 'custom-logo' );
+				add_theme_support( 'custom-logo' );
 
 				// Feed links
-
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Feed_Links
-					 */
-					add_theme_support( 'automatic-feed-links' );
+				add_theme_support( 'automatic-feed-links' );
 
 				// Enable HTML5 markup
+				add_theme_support( 'html5', array(
+					'caption',
+					'comment-form',
+					'comment-list',
+					'gallery',
+					'search-form',
+				) );
 
-					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
-					 */
-					add_theme_support( 'html5', array(
-						'caption',
-						'comment-form',
-						'comment-list',
-						'gallery',
-						'search-form',
-					) );
+				// Custom background
+				add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
+					'default-color' => 'e3e3e4',
+				) ) );
 
 				// Custom header
 
@@ -251,14 +251,11 @@ class Reykjavik_Setup {
 					 * @see  includes/custom-header/class-intro.php
 					 */
 
-				// Custom background
+				// Custom menus
 
 					/**
-					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
+					 * @see  includes/frontend/class-menu.php
 					 */
-					add_theme_support( 'custom-background', apply_filters( 'wmhook_reykjavik_setup_custom_background_args', array(
-						'default-color' => 'e3e3e4',
-					) ) );
 
 				// Post formats
 
@@ -587,7 +584,7 @@ class Reykjavik_Setup {
 		 * TinyMCE "Formats" dropdown alteration
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.0.0
 		 *
 		 * @param  array $formats
 		 */
@@ -608,67 +605,65 @@ class Reykjavik_Setup {
 
 					$font_weights = array(
 
-							// Font weight names from https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+						// Font weight names from https://developer.mozilla.org/en/docs/Web/CSS/font-weight
 
-							100 => esc_html__( 'Thin (hairline) text', 'reykjavik' ),
-							200 => esc_html__( 'Extra light text', 'reykjavik' ),
-							300 => esc_html__( 'Light text', 'reykjavik' ),
-							400 => esc_html__( 'Normal weight text', 'reykjavik' ),
-							500 => esc_html__( 'Medium text', 'reykjavik' ),
-							600 => esc_html__( 'Semi bold text', 'reykjavik' ),
-							700 => esc_html__( 'Bold text', 'reykjavik' ),
-							800 => esc_html__( 'Extra bold text', 'reykjavik' ),
-							900 => esc_html__( 'Heavy text', 'reykjavik' ),
+						100 => esc_html__( 'Thin (hairline) text', 'reykjavik' ),
+						200 => esc_html__( 'Extra light text', 'reykjavik' ),
+						300 => esc_html__( 'Light text', 'reykjavik' ),
+						400 => esc_html__( 'Normal weight text', 'reykjavik' ),
+						500 => esc_html__( 'Medium text', 'reykjavik' ),
+						600 => esc_html__( 'Semi bold text', 'reykjavik' ),
+						700 => esc_html__( 'Bold text', 'reykjavik' ),
+						800 => esc_html__( 'Extra bold text', 'reykjavik' ),
+						900 => esc_html__( 'Heavy text', 'reykjavik' ),
 
-						);
+					);
 
 					$formats[ 250 . 'text_weights' ] = array(
-							'title' => esc_html__( 'Text weights', 'reykjavik' ),
-							'items' => array(),
-						);
+						'title' => esc_html__( 'Text weights', 'reykjavik' ),
+						'items' => array(),
+					);
 
 					foreach ( $font_weights as $weight => $name ) {
-
 						$formats[ 250 . 'text_weights' ]['items'][ 250 . 'text_weights' . $weight ] = array(
-								'title'    => $name . ' (' . $weight . ')',
-								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
-								'classes'  => 'weight-' . $weight,
-							);
-
+							'title'    => $name . ' (' . $weight . ')',
+							'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
+							'classes'  => 'has-' . $weight . '-font-weight',
+						);
 					} // /foreach
 
 				// Font classes
 
 					$formats[ 260 . 'font' ] = array(
-							'title' => esc_html__( 'Fonts', 'reykjavik' ),
-							'items' => array(
+						'title' => esc_html__( 'Fonts', 'reykjavik' ),
+						'items' => array(
 
-								100 . 'font' . 100 => array(
-									'title'    => esc_html__( 'General font', 'reykjavik' ),
-									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
-									'classes'  => 'font-body',
-								),
-
-								100 . 'font' . 110 => array(
-									'title'    => esc_html__( 'Headings font', 'reykjavik' ),
-									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
-									'classes'  => 'font-headings',
-								),
-
-								100 . 'font' . 120 => array(
-									'title'    => esc_html__( 'Logo font', 'reykjavik' ),
-									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
-									'classes'  => 'font-logo',
-								),
-
-								100 . 'font' . 130 => array(
-									'title'    => esc_html__( 'Inherit font', 'reykjavik' ),
-									'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
-									'classes'  => 'font-inherit',
-								),
-
+							100 . 'font' . 100 => array(
+								'title'    => esc_html__( 'General font', 'reykjavik' ),
+								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
+								'classes'  => 'has-root-font-family',
 							),
-						);
+
+							100 . 'font' . 110 => array(
+								'title'    => esc_html__( 'Headings font', 'reykjavik' ),
+								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
+								'classes'  => 'has-headings-font-family',
+							),
+
+							100 . 'font' . 120 => array(
+								'title'    => esc_html__( 'Logo font', 'reykjavik' ),
+								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
+								'classes'  => 'has-site-title-font-family',
+							),
+
+							100 . 'font' . 130 => array(
+								'title'    => esc_html__( 'Inherit font', 'reykjavik' ),
+								'selector' => 'p, h1, h2, h3, h4, h5, h6, address, blockquote',
+								'classes'  => 'has-inherited-font-family',
+							),
+
+						),
+					);
 
 				// Columns styles
 
@@ -678,58 +673,52 @@ class Reykjavik_Setup {
 						);
 
 					for ( $i = 2; $i <= 3; $i++ ) {
-
 						$formats[ 400 . 'columns' ]['items'][ 400 . 'columns' . ( 100 + 10 * $i ) ] = array(
-								'title'   => sprintf( esc_html( _nx( 'Text in %d column', 'Text in %d columns', $i, '%d: Number of columns.', 'reykjavik' ) ), $i ),
-								'classes' => 'text-columns-' . $i,
-								'block'   => 'div',
-								'wrapper' => true,
-							);
-
+							'title'   => sprintf( esc_html( _nx( 'Text in %d column', 'Text in %d columns', $i, '%d: Number of columns.', 'reykjavik' ) ), $i ),
+							'classes' => 'has-' . $i . '-text-columns',
+							'block'   => 'div',
+							'wrapper' => true,
+						);
 					}
 
 				// Buttons
 
 					$formats[ 500 . 'buttons' ] = array(
-							'title' => esc_html__( 'Buttons', 'reykjavik' ),
-							'items' => array(
+						'title' => esc_html__( 'Buttons', 'reykjavik' ),
+						'items' => array(
 
-								500 . 'buttons' . 100 => array(
-									'title'    => esc_html__( 'Button from link', 'reykjavik' ),
-									'selector' => 'a',
-									'classes'  => 'button',
-								),
-
+							500 . 'buttons' . 100 => array(
+								'title'    => esc_html__( 'Button from link', 'reykjavik' ),
+								'selector' => 'a',
+								'classes'  => 'button',
 							),
-						);
+
+						),
+					);
 
 				// Outdent styles
 
 					$formats[ 600 . 'media' ] = array(
-							'title' => esc_html__( 'Outdent', 'reykjavik' ),
-							'items' => array(
+						'title' => esc_html__( 'Outdent', 'reykjavik' ),
+						'items' => array(
 
-								600 . 'media' . 100 => array(
-									'title'   => esc_html__( 'Outdent selected content', 'reykjavik' ),
-									'classes' => 'outdent-content',
-									'block'   => 'div',
-									'wrapper' => true,
-								),
-
+							600 . 'media' . 100 => array(
+								'title'   => esc_html__( 'Outdent selected content', 'reykjavik' ),
+								'classes' => 'outdent-content',
+								'block'   => 'div',
+								'wrapper' => true,
 							),
-						);
+
+						),
+					);
 
 					if ( 'page' === get_post_type( $post ) ) {
-
 						$formats[ 600 . 'media' ]['items'][ 600 . 'media' . 110 ] = array(
-								'title'    => esc_html__( 'Outdented heading style', 'reykjavik' ),
-								'selector' => 'p, h1, h2, h3, h4, h5, h6',
-								'classes'  => 'outdent-heading',
-							);
-
+							'title'    => esc_html__( 'Outdented heading style', 'reykjavik' ),
+							'selector' => 'p, h1, h2, h3, h4, h5, h6',
+							'classes'  => 'outdent-heading',
+						);
 					}
-
-
 
 
 			// Output
@@ -743,7 +732,7 @@ class Reykjavik_Setup {
 
 
 	/**
-	 * 70) Others
+	 * 100) Others
 	 */
 
 		/**
@@ -793,6 +782,124 @@ class Reykjavik_Setup {
 				return $classes;
 
 		} // /widget_css_classes
+
+
+
+		/**
+		 * Get color palette setup array.
+		 *
+		 * Theme mod color classes are constructed with "-mod" suffix:
+		 * - .has-{$theme-mod-slug}-mod-color
+		 * - .has-{$theme-mod-slug}-mod-background-color
+		 *
+		 * These should be styled in the theme stylesheet already,
+		 * so no need to output any inline CSS code on front-end.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function get_color_palette() {
+
+			// Variables
+
+				$palette = array();
+				$colors  = $colors_unique = (array) Reykjavik_Customize::get_theme_colors();
+
+
+			// Processing
+
+				$colors_unique = array_column( $colors_unique, 'color', 'id' );
+				$colors_unique = array_unique( $colors_unique );
+				asort( $colors_unique );
+
+				foreach ( $colors_unique as $slug => $color ) {
+					$palette[] = array(
+						'name'  => $colors[ $slug ]['name'],
+						// Making the slug create `.has-{$theme-mod-slug}-mod-(background)-color` CSS classes.
+						// (Though block editor automatically changes "_" to "-", we play safe here.)
+						'slug'  => str_replace( '_', '-', $slug ) . '-mod',
+						'color' => maybe_hash_hex_color( $color ),
+					);
+				}
+
+
+			// Output
+
+				return (array) apply_filters( 'wmhook_reykjavik_setup_get_color_palette', $palette );
+
+		} // /get_color_palette
+
+
+
+		/**
+		 * Get font sizes setup array.
+		 *
+		 * These are set in `em` units within the theme stylesheet,
+		 * so no need to output any inline CSS code on front-end.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function get_font_sizes() {
+
+			// Variables
+
+				$base_font_size = Reykjavik_Library_Customize::get_theme_mod( 'typography_size_html' );
+
+				$sizes = array(
+
+					array(
+						'name' => _x( 'Extra Small', 'Font size.', 'reykjavik' ),
+						'size' => round( $base_font_size * .618 ),
+						'slug' => 'extra-small',
+					),
+
+					array(
+						'name' => _x( 'Small', 'Font size.', 'reykjavik' ),
+						'size' => round( $base_font_size * .809 ),
+						'slug' => 'small',
+					),
+
+					array(
+						'name' => _x( 'Normal', 'Font size.', 'reykjavik' ),
+						'size' => $base_font_size,
+						'slug' => 'normal', // Can not use empty value here as that would cause inline styles being applied.
+					),
+
+					array(
+						'name' => _x( 'Large', 'Font size.', 'reykjavik' ),
+						'size' => round( $base_font_size * 1.382 ),
+						'slug' => 'large',
+					),
+
+					array(
+						'name' => _x( 'Extra Large', 'Font size.', 'reykjavik' ),
+						'size' => round( $base_font_size * 1.618 ),
+						'slug' => 'extra-large',
+					),
+
+				);
+
+				$display_sizes = array(
+					1 => 2.618,
+					2 => 3.329,
+					3 => 4.236,
+					4 => 5.387,
+				);
+				foreach ( $display_sizes as $key => $value ) {
+					$sizes[] = array(
+						'name' => sprintf( _x( 'Display %d', 'Font size.', 'reykjavik' ), $key ),
+						'size' => round( $base_font_size * $value ),
+						'slug' => 'display-' . $key,
+					);
+				}
+
+
+			// Output
+
+				return (array) apply_filters( 'wmhook_reykjavik_setup_get_font_sizes', $sizes );
+
+		} // /get_font_sizes
 
 
 

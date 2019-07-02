@@ -1,0 +1,61 @@
+/* FILE: starter/content/typography/_size.scss */
+
+// rem
+
+	%font_size_1rem {
+		font-size: 1rem;
+	}
+
+	%font_size_tiny_rem {
+		font-size: 1rem * $golden_major;
+	}
+
+	%font_size_small_rem {
+		font-size: 1rem - $golden_minor / 2;
+	}
+
+	%font_size_smaller_rem {
+		font-size: 1rem - $golden_minor / 4;
+	}
+
+	%font_size_larger_rem {
+		font-size: 1rem + $golden_minor / 2;
+	}
+
+	%font_size_golden_minor_rem {
+		font-size: 1rem + $golden_minor;
+	}
+
+	%font_size_golden_rem {
+		font-size: 1rem * $golden;
+	}
+
+// em
+
+	%font_size_1em {
+		font-size: 1em;
+	}
+
+	%font_size_tiny {
+		font-size: 1em * $golden_major;
+	}
+
+	%font_size_small {
+		font-size: 1em - $golden_minor / 2;
+	}
+
+	%font_size_smaller {
+		font-size: 1em - $golden_minor / 4;
+	}
+
+	%font_size_larger {
+		font-size: 1em + $golden_minor / 2;
+	}
+
+	%font_size_golden_minor {
+		font-size: 1em + $golden_minor;
+	}
+
+	%font_size_golden {
+		font-size: 1em * $golden;
+	}

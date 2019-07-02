@@ -46,17 +46,17 @@
 
 	mark,
 	.highlight {
-		box-shadow:  .38em 0 0 map_get( $customize_options, 'color_accent' ),
-		            -.38em 0 0 map_get( $customize_options, 'color_accent' );
-		box-shadow:  .38em 0 0 var(--color_accent),
-		            -.38em 0 0 var(--color_accent);
+		box-shadow: (  $golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' ),
+		            ( -$golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' );
+		box-shadow: (  $golden_minor +em ) 0 0 var(--color_accent),
+		            ( -$golden_minor +em ) 0 0 var(--color_accent);
 	}
 
 	.pagination {
 
 		a {
 
-			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 				background-color: map_get( $customize_options, 'color_accent' );
 				color: map_get( $customize_options, 'color_accent_text' );
 				background-color: var(--color_accent);
@@ -71,8 +71,8 @@
 
 // Buttons
 
-	#{$button_elements},
-	#{$button_elements_beaver_builder},
+	#{$elements_button},
+	#{$elements_button_beaver_builder},
 	.main-navigation-container .button > a {
 		@extend %button_default_colors;
 	}

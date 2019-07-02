@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -82,19 +82,6 @@
 					} );
 
 			}
-
-
-
-		/**
-		 * Responsive videos
-		 */
-
-			if ( $().fitVids ) {
-
-				$( document.getElementById( 'page' ) )
-					.fitVids();
-
-			} // /fitVids
 
 
 

@@ -1,0 +1,17 @@
+/* FILE: starter/content/wp/blocks/_columns.scss */
+
+@if ( index( $support__block, 'columns' ) ) {
+
+	.wp-block-column {
+
+		&s {
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			margin-bottom: $golden +em;
+		}
+
+	}
+
+}

@@ -1,0 +1,18 @@
+/* FILE: main/wp/__verse.scss */
+
+//
+// Verse
+//
+
+
+
+
+
+.wp-block-verse {
+	padding: 0;
+
+	&::before {
+		display: none;
+	}
+
+}

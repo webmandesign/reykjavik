@@ -1,0 +1,269 @@
+/* FILE: starter/content/base/_elements.scss */
+
+body {
+	overflow-x: hidden;
+}
+
+a {
+	@extend %break_words;
+}
+
+	[href^="tel"] {
+		white-space: nowrap;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			pointer-events: none;
+			text-decoration: none;
+			color: inherit;
+		}
+
+	}
+
+:focus {
+	outline: thin dashed;
+}
+
+	body:focus {
+		outline: none;
+	}
+
+hr {
+	clear: both;
+	height: 2px;
+	border-width: 0;
+}
+
+	hr,
+	.wp-block-separator {
+		margin-top: pow( 1 + $golden_minor, 2 ) +em;
+		margin-bottom: pow( 1 + $golden_minor, 2 ) +em;
+	}
+
+abbr[title],
+acronym[title],
+dfn {
+	cursor: help;
+	text-decoration: none;
+}
+
+blockquote {
+	clear: both;
+
+	:last-child {
+		margin: 0;
+	}
+
+	cite {
+		@extend %font_size_small;
+		@extend %font_weight_400;
+	}
+
+		> cite {
+			display: block;
+			margin-top: $golden_major +em;
+		}
+
+	blockquote {
+		@extend %font_size_1em;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+
+}
+
+cite {
+	@extend %font_style_normal;
+	border-width: 0;
+
+	&::before {
+		content: '\2014\2002'; // em dash + en space
+	}
+
+}
+
+q {
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+
+	&::before,
+	&::after {
+		display: inline-block; // Required for correct RTL display. // {{RTL}}
+	}
+
+}
+
+mark,
+ins,
+.highlight {
+	padding: ( $golden_minor / 2 +em ) 0;
+	margin: 0 ( $golden_minor +em );
+	box-decoration-break: clone;
+}
+
+s,
+del {
+	text-decoration: line-through;
+	color: inherit;
+}
+
+figure {
+	margin: 0 0 ( $golden +em );
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+audio,
+embed,
+iframe,
+img,
+object,
+video {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+img {
+	@extend %font_style_italic;
+	height: auto;
+}
+
+iframe {
+	border-width: 0;
+	outline: 0;
+
+	&:focus {
+		outline: thin dashed;
+	}
+
+}
+
+code {
+	@extend %font_size_small;
+	position: relative;
+	display: inline-block;
+	padding: 0 ( $golden_major +em );
+	margin: 0 ( $golden_minor / 2 +em );
+}
+
+	// Not using nesting for additional wrapper in block editor.
+	mark,
+	ins,
+	.highlight,
+	.form-allowed-tags,
+	.taxonomy-description,
+	.archive-description {
+
+		code {
+			display: inline;
+			padding: 0 ( $golden_minor +em );
+			background: none;
+			color: inherit;
+		}
+
+	}
+
+pre {
+	@extend %font_size_small;
+	position: relative;
+	max-width: 100%;
+	padding: 1em;
+	margin: 0 0 ( $golden +em );
+	overflow: auto;
+	tab-size: 2;
+}
+
+small {
+	@extend %font_size_small;
+}
+
+menu,
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+	ul,
+	ol {
+		margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+		margin-bottom: 1em;
+	}
+
+	// Not using nesting for additional wrapper in block editor.
+	li > {
+
+		ul,
+		ol {
+			margin-bottom: 0;
+		}
+
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+dl {
+	margin-top: 0;
+	margin-bottom: $golden +em;
+}
+
+dt {
+	@extend %font_weight_700;
+	margin-top: $golden_major +em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+}
+
+dd {
+	margin-#{$left}: $golden +em; // {{RTL}}
+}
+
+table {
+	@extend %line_height_golden_minor;
+	width: 100%;
+	margin: 0 0 ( $golden +em );
+	border-width: 2px;
+	border-style: solid;
+}
+
+	caption {
+		@extend %font_style_italic;
+		padding: 1em 0;
+		text-align: $left; // {{RTL}}
+		caption-side: bottom;
+	}
+
+	th,
+	td {
+		padding: ( $golden_major +em ) 1em;
+		border-width: 1px;
+		border-style: solid;
+		vertical-align: top;
+	}
+
+	th,
+	tfoot td {
+		@extend %font_weight_700;
+		text-align: $left; // {{RTL}}
+		border-width: 2px;
+	}
+
+svg {
+	fill: currentColor;
+}
+

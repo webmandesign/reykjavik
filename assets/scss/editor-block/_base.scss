@@ -1,0 +1,110 @@
+/* FILE: editor-block/_base.scss */
+
+.editor-styles-wrapper {
+	padding-top: 0; // This is being taken care of in `.editor-post-title` of _post-title.scss.
+	// For bottom padding see `.editor-block-list__layout` below.
+	overflow-x: hidden;
+
+	// Colors
+
+		body & {
+			background-color: map_get( $customize_options, 'color_content_background' );
+			color: map_get( $customize_options, 'color_content_text' );
+			border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
+
+			background-color: var(--color_content_background);
+			color: var(--color_content_text);
+			border-color: var(--color_content_text--a20);
+		}
+
+		*,
+		*::after,
+		*::before {
+			border-color: inherit;
+		}
+
+	// Elements
+
+		a {
+			color: map_get( $customize_options, 'color_accent' );
+			color: var(--color_accent);
+		}
+
+		#{ $elements_margin_bottom } {
+
+			&:last-child {
+				margin-bottom: $golden +em;
+			}
+
+		}
+
+		blockquote p {
+
+			&,
+			&:last-child {
+				margin-bottom: 1em;
+			}
+
+		}
+
+	// Headings
+
+		// Heading styles on small devices
+		@include h_tags( $golden_major + $golden_minor / 2, false, true );
+		// Heading styles on large devices
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			@include h_tags( 1, false, true );
+		}
+
+		#{ $elements_headings } {
+			color: map_get( $customize_options, 'color_content_headings' );
+			color: var(--color_content_headings);
+		}
+
+	// Lists
+
+		.wp-block ul,
+		.wp-block ol {
+			padding: 0;
+			margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+		}
+
+		.wp-block li > ul,
+		.wp-block li > ol {
+			margin-bottom: 0;
+		}
+
+		.wp-block ul {
+
+			&,
+			ul {
+				list-style: square;
+			}
+
+		}
+
+}
+
+.editor-block-list__layout {
+	padding-bottom: 4em;
+	// No need to match bottom padding to front-end content.
+	// @see  _helper.scss > .compensate-content-padding-bottom
+
+	.wp-block & {
+		padding-bottom: 0;
+	}
+
+}
+
+%pre {
+	@extend %break_words_disable;
+	font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: none;
+	text-decoration: none;
+	white-space: pre-wrap; // https://css-tricks.com/almanac/properties/w/whitespace
+	line-height: 1.5;
+	color: inherit;
+}

@@ -1,0 +1,48 @@
+/* FILE: starter/content/wp/blocks/_block.scss */
+
+[class^="wp-block-"] {
+	margin-bottom: $golden +em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	figcaption {
+		margin: 0;
+		padding: $golden_major +em;
+	}
+
+}
+
+%block_list_no_style {
+	margin-#{$left}: 0; // {{RTL}}
+	list-style: none;
+}
+
+%block_list_items {
+	margin-left: 0;
+	margin-right: 0;
+	list-style: none;
+	border-top-width: $golden_minor +em;
+	border-top-style: solid;
+	border-bottom-width: $golden_minor +em;
+	border-bottom-style: solid;
+
+	[class^="wp-block-"] {
+		margin-bottom: 0;
+	}
+
+}
+
+%block_list_items_child {
+	padding: 1em;
+	margin: 0;
+	font-size: inherit;
+	line-height: inherit;
+
+	&:not(:first-child) {
+		border-top-width: 1px;
+		border-top-style: solid;
+	}
+
+}

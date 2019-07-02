@@ -1,0 +1,19 @@
+/* FILE: editor-block/__index.scss */
+
+// Starter CSS
+@import 'starter';
+
+// Block editor UI
+@import 'ui';
+@import 'post-title';
+
+// Main styles
+@import 'main'; // Styles from main stylesheet.
+
+// Block editor styles
+@import 'typography';
+@import 'base';
+@import 'blocks/_index';
+
+// Other styles
+@import 'helper';

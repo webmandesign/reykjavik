@@ -1,0 +1,21 @@
+/* FILE: editor-block/blocks/_embed.scss */
+
+@if ( index( $support__block, 'embed' ) ) {
+
+	.wp-block-embed {}
+
+	[data-type="core/embed"] {
+
+		&[data-align="left"],
+		&[data-align="right"] {
+
+			.block-editor-block-list__block-edit {
+				width: $alignment_width;
+				max-width: $alignment_width;
+			}
+
+		}
+
+	}
+
+}

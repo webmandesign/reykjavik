@@ -1,0 +1,75 @@
+/* FILE: starter/content/plugins/jetpack/_blocks.scss */
+
+@if ( index( $support__jetpack, 'blocks' ) ) {
+
+	.wp-block-jetpack {
+
+		&-contact-info {
+
+			> div {
+				margin-bottom: $golden_major +em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+		}
+
+			&-address,
+			&-email,
+			&-phone {
+				overflow: hidden;
+
+				&::before {
+					@extend %genericon;
+					float: $left; // {{RTL}}
+					margin-#{$right}: $golden_minor +em;
+					font-size: 1em + $golden_minor;
+					line-height: 1;
+				}
+
+			}
+
+			&-address::before {
+				content: '\f417'; // Icon: Location
+				float: none;
+				display: block;
+				margin-bottom: $golden_minor / 2 +em;
+			}
+
+			&-email::before {
+				content: '\f410'; // Icon: Mail
+			}
+
+			&-phone::before {
+				content: '\f437'; // Icon: Phone
+			}
+
+	}
+
+	.jetpack-business-hours {
+		display: inline-grid;
+		grid-template-columns: auto auto;
+		grid-column-gap: $golden +em;
+
+		&.jetpack-business-hours::before {
+			// Rising specificity to override the plugin styles.
+			@extend %genericon;
+			content: '\f303'; // Icon: Time
+			display: block;
+			grid-column: 1 / -1;
+			font-size: 1em + $golden_minor;
+			line-height: 1;
+			margin-bottom: $golden_minor / 2 +em;
+		}
+
+		dt,
+		dd {
+			margin: 0;
+		}
+
+	}
+
+}

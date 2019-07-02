@@ -11,10 +11,10 @@
 // Entry header
 
 	.entry-header {
-		margin-bottom: power( $golden, 2 ) +rem;
+		margin-bottom: pow( $golden, 2 ) +rem;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
 		}
 
 		.posts & {
@@ -36,7 +36,7 @@
 	.page-title {
 		@extend %break_words;
 		padding: 0;
-		margin: 0 0 ( power( $golden, 2 ) +rem );
+		margin: 0 0 ( pow( $golden, 2 ) +rem );
 
 		// Paginated title suffix
 
@@ -45,7 +45,7 @@
 				display: block;
 				margin-top: $golden_minor +rem;
 
-				@include responsive( map_get( $breakpoint, 'm' ) ) {
+				@include media( map_get( $breakpoint, 'm' ) ) {
 					$pagination_suffix_font_size: .5; // In em.
 					display: inline-block;
 					margin-top: ( 1 - $pagination_suffix_font_size ) / $pagination_suffix_font_size +em;

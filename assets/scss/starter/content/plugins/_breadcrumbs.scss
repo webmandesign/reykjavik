@@ -1,0 +1,22 @@
+/* FILE: starter/content/plugins/_breadcrumbs.scss */
+
+.breadcrumbs {
+
+	&-title {
+		margin-#{$right}: $golden_major +em; // {{RTL}}
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			margin-#{$right}: $golden +em; // {{RTL}}
+		}
+
+	}
+
+	.sep {
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			margin: 0 ( $golden_major +em );
+		}
+
+	}
+
+}

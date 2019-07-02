@@ -3,7 +3,7 @@ Contributors: webmandesign
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7.0
 Tested up to: 5.2
-Stable tag: 1.5.3
+Stable tag: 2.0.0
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,10 +12,13 @@ Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready Wo
 
 == Description ==
 
-Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Elementor Pro Theme Builder, Visual Composer or other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free theme!
+Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with native WordPress block editor, and also with Beaver Builder, Beaver Themer, Elementor, Elementor Pro Theme Builder, Visual Composer or any other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free inclusive theme!
 
 
 == Frequently Asked Questions ==
+
+= Does this theme supports WordPress block editor (Gutenberg)? =
+Yes :) Fully and extensively.
 
 = Where can I find more information about the theme? =
 For more information about the theme please visit https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
@@ -37,15 +40,14 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 1.5.3 =
-Implementing WordPress 5.2 code updates, adding WhatsApp and Google social icon, preventing PHP error after theme activation.
+= 2.0.0 =
+Adding full and advanced support for block editor (Gutenberg). Updating helper class names, updating styles, updating theme options description, removing FitVids in favor of native block editor responsive embeds (or Jetpack plugin's responsive videos), fixing post excerpt wrapper application.
 
 
 == Resources ==
 
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Normalize.css © Nicolas Gallagher and Jonathan Neal, MIT
-* FitVids.js © 2013 Chris Coyier, WTFPL license
 * Genericons Neue © Automattic, GPL v2 or later
 * social-icons.svg © Based on Font Awesome icons font by Dave Gandy, SIL Open Font License 1.1
 * reykjavik-logo.svg © WebMan Design, GPL v3

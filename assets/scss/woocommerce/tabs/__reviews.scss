@@ -11,7 +11,7 @@
 .woocommerce-Reviews {
 
 	> div + div {
-		margin-top: power( $golden, 2 ) +em;
+		margin-top: pow( $golden, 2 ) +em;
 	}
 
 		.clear {
@@ -35,7 +35,7 @@
 	li {
 		padding: $golden +em;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding: 2em;
 		}
 
@@ -46,16 +46,16 @@
 	}
 
 	.avatar {
-		width: power( $golden, 2 ) +em;
+		width: pow( $golden, 2 ) +em;
 		margin-bottom: 1em;
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			float: $left; // {{RTL}}
 			margin-bottom: 0;
 		}
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
-			width: power( 1 + $golden_minor, 4 ) +em;
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			width: pow( 1 + $golden_minor, 4 ) +em;
 		}
 
 	}
@@ -82,7 +82,7 @@
 			border-style: solid;
 			overflow-y: auto;
 
-			@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
+			@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
 				max-height: 75vh;
 			}
 
@@ -90,12 +90,12 @@
 
 		&-text {
 
-			@include responsive( map_get( $breakpoint, 'm' ) ) {
-				margin-#{$left}: power( $golden, 2 ) + 1em; // {{RTL}}
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				margin-#{$left}: pow( $golden, 2 ) + 1em; // {{RTL}}
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				margin-#{$left}: power( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				margin-#{$left}: pow( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
 			}
 
 		}
@@ -124,7 +124,7 @@
 			}
 
 			textarea {
-				height: power( 1 + $golden_minor, 5 ) +em;
+				height: pow( 1 + $golden_minor, 5 ) +em;
 			}
 
 			.form-submit {

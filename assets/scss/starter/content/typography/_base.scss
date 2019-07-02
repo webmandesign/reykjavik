@@ -1,0 +1,39 @@
+/* FILE: starter/content/typography/_base.scss */
+
+html {
+	@extend %line_height_golden;
+	font-size: 100%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+	font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: none;
+	text-decoration: none;
+}
+
+pre,
+pre code {
+	@extend %break_words_disable;
+	white-space: pre-wrap; // https://css-tricks.com/almanac/properties/w/whitespace
+	line-height: 1.5;
+}
+
+p,
+address {
+	@extend %break_words;
+	padding: 0;
+	margin: 0 0 ( $golden +em );
+}
+
+%font_smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	 -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,56 @@
+/* FILE: editor-block/blocks/_file.scss */
+
+// Not conditional as this is theme specific.
+.wp-block-file {
+
+	&__content-wrapper,
+	&__textlink,
+	&__button {
+
+		.wp-block & {
+			margin: 0;
+		}
+
+	}
+
+	&__textlink {
+		font-size: .9em;
+		font-style: italic;
+
+		.block-editor-rich-text__editable::before {
+			@extend %genericon;
+			content: '\f50b';
+			margin-#{$right}: .25em; // {{RTL}}
+			font-size: $golden +em;
+			line-height: 1;
+			vertical-align: middle;
+		}
+
+	}
+
+	&__button {
+		margin-#{$left}: $golden +em; // {{RTL}}
+		text-transform: uppercase;
+		font-weight: 700;
+		font-style: normal;
+		letter-spacing: .05em;
+		background: transparent;
+		border: 2px solid;
+		vertical-align: middle;
+	}
+
+}
+
+[data-type="core/file"] {
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		.block-editor-block-list__block-edit {
+			width: $alignment_width;
+			max-width: $alignment_width;
+		}
+
+	}
+
+}

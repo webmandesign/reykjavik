@@ -1,0 +1,17 @@
+/* FILE: main/wp/__separator.scss */
+
+//
+// Separator
+//
+
+
+
+
+
+.wp-block-separator {
+
+	&.is-style-dots::before {
+		opacity: .2;
+	}
+
+}

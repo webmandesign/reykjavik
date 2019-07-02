@@ -1,0 +1,13 @@
+/* FILE: editor-block/blocks/_image.scss */
+
+@if ( index( $support__block, 'image' ) ) {
+
+	.wp-block-image {
+
+		.components-resizable-box__container {
+			vertical-align: top;
+		}
+
+	}
+
+}

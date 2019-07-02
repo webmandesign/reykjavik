@@ -1,0 +1,43 @@
+/* FILE: starter/content/sidebar/_widget.scss */
+
+.widget {
+
+	.sidebar & {
+		margin: 0 0 ( pow( $golden, 2 ) +em );
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		li {
+			padding: ( $golden_minor +em ) 0;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+
+			+ li {
+				margin-top: -1px;
+			}
+
+			ul {
+				position: relative;
+				bottom: $golden_minor * -1em;
+				margin: 0 0 -1px;
+			}
+
+			li {
+				padding-#{$left}: 1em; // {{RTL}}
+			}
+
+		}
+
+	}
+
+}

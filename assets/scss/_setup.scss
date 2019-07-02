@@ -7,7 +7,7 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  1.4.0
+// @version  2.0.0
 //
 
 // Theme options
@@ -32,8 +32,8 @@
 			'color_intro_background': #fafafb,
 			'color_intro_text': #535354,
 			'color_intro_headings': #232324,
-			'color_intro_overlay_background': #000000,
-			'color_intro_overlay_text': #ffffff,
+			'color_intro_overlay_background': #0f1732,
+			'color_intro_overlay_text': #fefeff,
 
 			'color_intro_overlay_opacity': 0.6,
 
@@ -74,9 +74,6 @@
 
 // Typography
 
-	// Starter CSS backwards compatibility.
-	$font_size: map_get( $customize_options, 'typography_size_html' ) / 1px; // "/ 1px" makes the value unitless.
-
 	// Spacing
 
 		$typography_line_height: 1.618;
@@ -84,7 +81,7 @@
 
 	// Headings
 
-		$h_tags_setup: (
+		$setup_headings: (
 
 			// $selector : (
 			//   $size
@@ -105,44 +102,44 @@
 
 			'h1, .h1' : (
 				2.618,
-				1.19,
-				( 4 * $typography_line_height - 2.618 * 1.19 - $typography_margin_bottom ) / 2.618,
-				$typography_margin_bottom / 2.618 / 1.19
+				1.191,
+				( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
+				$typography_margin_bottom / 2.618 / 1.191
 			),
 
 			'h2, .h2' : (
 				2.058,
-				1.19,
-				( 4 * $typography_line_height - 2.058 * 1.19 - $typography_margin_bottom ) / 2.058,
-				$typography_margin_bottom / 2.058 / 1.19
+				1.191,
+				( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
+				$typography_margin_bottom / 2.058 / 1.191
 			),
 
 			'h3, .h3' : (
 				1.618,
-				1.38,
-				( 3 * $typography_line_height - 1.618 * 1.38 - $typography_margin_bottom ) / 1.618,
-				$typography_margin_bottom / 1.618 / 1.38
+				1.382,
+				( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
+				$typography_margin_bottom / 1.618 / 1.382
 			),
 
 			'h4, .h4' : (
 				1.272,
-				1.38,
-				( 3 * $typography_line_height - 1.272 * 1.38 - $typography_margin_bottom ) / 1.272,
-				$typography_margin_bottom / 1.272 / 1.38
+				1.382,
+				( 3 * $typography_line_height - 1.272 * 1.382 - $typography_margin_bottom ) / 1.272,
+				$typography_margin_bottom / 1.272 / 1.382
 			),
 
 			'h5, .h5' : (
 				1.000,
-				1.62,
-				( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
-				$typography_margin_bottom / 1.000 / 1.62
+				1.618,
+				( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+				$typography_margin_bottom / 1.000 / 1.618
 			),
 
 			'h6, .h6' : (
 				1.000,
-				1.62,
-				( 3 * $typography_line_height - 1.000 * 1.62 - $typography_margin_bottom ) / 1.000,
-				$typography_margin_bottom / 1.000 / 1.62
+				1.618,
+				( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+				$typography_margin_bottom / 1.000 / 1.618
 			),
 
 		);
@@ -193,7 +190,7 @@
 
 	// Dimensions
 
-		$page_content_width: 62; // In %
+		$page_content_width: 61.8; // In %
 		$page_content_gutter: 8; // In %
 
 			$page_content_width: $page_content_width - ( $page_content_gutter * .382 );
@@ -221,7 +218,7 @@
 				'small':  1rem,
 				'medium': 2rem,
 				'large':  3rem,
-			) !default;
+			);
 
 			$column_box_shadows_opacity: .2;
 
@@ -242,7 +239,7 @@
 		$special_color_class_prefix: 'set-colors-';
 
 		// Margin bottom
-		$tags_margin_bottom: (
+		$elements_margin_bottom: (
 			'h1',
 			'h2',
 			'h3',
@@ -253,21 +250,25 @@
 			'ol',
 			'ul',
 			'blockquote',
+			'figure',
 			'.gallery',
-			'.tiled-gallery'
+			'.tiled-gallery',
 		);
 
 		// Buttons
-		$button_elements: (
+		$elements_button: (
 			'.button',
 			'button',
 			'[type="button"]',
 			'[type="reset"]',
 			'[type="submit"]',
-			'.child-page .more-link'
 		);
-		$button_elements_beaver_builder: ();
+		$elements_button_beaver_builder: ();
 		$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
-		@each $button_element in $button_elements {
-			$button_elements_beaver_builder: append( $button_elements_beaver_builder, '#{$beaver_builder_button_prepend} #{$button_element}', comma );
+		@each $button in $elements_button {
+			$elements_button_beaver_builder: append( $elements_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
 		}
+		$elements_button: append( $elements_button, (
+			'.child-page .more-link',
+			'.main-navigation-container .button > a',
+		) );

@@ -20,7 +20,7 @@
 
 		.woocommerce-page.page-layout-outdented .entry-content-inner {
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 
 				> .woocommerce,
 				> .woocommerce-message {
@@ -62,10 +62,10 @@
 		}
 
 		.col-1 {
-			margin-bottom: power( $golden, 2 ) +em;
+			margin-bottom: pow( $golden, 2 ) +em;
 		}
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			display: flex;
 			justify-content: space-between;
 

@@ -1,0 +1,13 @@
+/* FILE: starter/content/typography/_spacing.scss */
+
+%line_height_1 {
+	line-height: 1;
+}
+
+%line_height_golden_minor {
+	line-height: 1 + $golden_minor;
+}
+
+%line_height_golden {
+	line-height: $golden;
+}

@@ -1,0 +1,18 @@
+/* FILE: editor-style-blocks.scss */
+
+//
+// Blocks editor styles.
+//
+// @see  Reykjavik_Assets::enqueue_styles_editor()
+//
+// @package    Reykjavik
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.0.0
+// @version  2.0.0
+//
+
+@import 'setup';
+@import 'css-vars';
+
+@import 'editor-block/__index';

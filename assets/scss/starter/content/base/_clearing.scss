@@ -1,0 +1,19 @@
+/* FILE: starter/content/base/_clearing.scss */
+
+// @link  https://blog.teamtreehouse.com/a-better-clearfix-with-sass
+
+.clearfix {
+
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+		table-layout: fixed;
+	}
+
+}
+
+.clear {
+	@extend .clearfix;
+	clear: both;
+}

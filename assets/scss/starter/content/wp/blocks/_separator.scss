@@ -1,0 +1,25 @@
+/* FILE: starter/content/wp/blocks/_separator.scss */
+
+@if ( index( $support__block, 'separator' ) ) {
+
+	.wp-block-separator {
+		max-width: 16em;
+		margin-left: auto;
+		margin-right: auto;
+
+		&.is-style-wide {
+			max-width: none;
+		}
+
+		&.is-style-dots::before {
+			content: ' \2022 \2022 \2022'; // &bull;
+			speak: none;
+			padding-#{$left}: $golden_major +em; // {{RTL}}
+			font-size: $golden +em;
+			letter-spacing: $golden_major +em;
+			color: inherit;
+		}
+
+	}
+
+}

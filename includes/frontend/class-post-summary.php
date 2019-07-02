@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -126,11 +126,18 @@ class Reykjavik_Post_Summary {
 		 * Line breaks are required for proper functionality of `wpautop()` later on.
 		 *
 		 * @since    1.5.0
-		 * @version  1.5.0
+		 * @version  2.0.0
 		 *
 		 * @param  string $post_excerpt
 		 */
 		public static function wrap_excerpt( $post_excerpt = '' ) {
+
+			// Requirements check
+
+				if ( empty( $post_excerpt ) ) {
+					return $post_excerpt;
+				}
+
 
 			// Output
 

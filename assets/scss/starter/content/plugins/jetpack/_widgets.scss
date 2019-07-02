@@ -1,0 +1,59 @@
+/* FILE: starter/content/plugins/jetpack/_widgets.scss */
+
+@if ( index( $support__jetpack, 'widgets' ) ) {
+
+	// Blog Subscriptions
+
+		.jetpack_subscription_widget {
+
+			form {
+				@extend .clearfix;
+				margin-bottom: 0;
+			}
+
+			#subscribe-email {
+				float: $left; // {{RTL}}
+				width: percentage( $golden_major );
+				padding-#{$right}: $golden_major +em; // {{RTL}}
+				margin-bottom: 0;
+
+				input {
+					width: 100%;
+					padding: $golden_major +em;
+				}
+
+			}
+
+			#subscribe-submit {
+				float: $right; // {{RTL}}
+				width: percentage( $golden_minor );
+				margin-bottom: 0;
+			}
+
+		}
+
+	// Top Posts & Pages
+
+		.widgets-list-layout {
+
+			.widget & {
+
+				li {
+					margin-bottom: 0;
+				}
+
+				.widgets-list-layout-blavatar {
+					width: pow( $golden, 2 ) +em;
+					margin-#{$right}: 1em; // {{RTL}}
+				}
+
+				&-links {
+					float: none;
+					width: auto;
+				}
+
+			}
+
+		}
+
+}

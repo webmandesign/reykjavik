@@ -1,0 +1,17 @@
+/* FILE: starter/content/wp/blocks/_gallery.scss */
+
+@if ( index( $support__block, 'gallery' ) ) {
+
+	.wp-block-gallery {
+		margin-left: 0;
+		margin-right: 0;
+
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			max-width: $alignment_width;
+		}
+
+	}
+
+}

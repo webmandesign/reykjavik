@@ -1,0 +1,21 @@
+/* FILE: editor-block/blocks/_video.scss */
+
+@if ( index( $support__block, 'video' ) ) {
+
+	.wp-block-video {}
+
+	[data-type="core/video"] {
+
+		&[data-align="left"],
+		&[data-align="right"] {
+
+			.block-editor-block-list__block-edit {
+				width: $alignment_width;
+				max-width: $alignment_width;
+			}
+
+		}
+
+	}
+
+}

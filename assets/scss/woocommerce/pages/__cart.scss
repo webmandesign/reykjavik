@@ -15,12 +15,12 @@
 
 		> form {
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				float: $left; // {{RTL}}
 				width: percentage( .54 );
 			}
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 				width: percentage( $golden_major );
 			}
 
@@ -36,7 +36,7 @@
 
 		td {
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				padding-top: $golden +rem;
 				padding-bottom: $golden +rem;
 			}
@@ -47,7 +47,7 @@
 				background-color: transparent;
 				opacity: 1;
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					border-top-width: 1px;
 					border-top-style: solid;
 				}
@@ -59,10 +59,10 @@
 
 
 		.actions {
-			padding: ( power( 1 + $golden_minor, 4 ) +em ) 0 0;
+			padding: ( pow( 1 + $golden_minor, 4 ) +em ) 0 0;
 			border-bottom-width: 0;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				border-top-width: 2px;
 				border-top-style: solid;
 				text-align: $right;
@@ -73,7 +73,7 @@
 				margin-top: $golden +em;
 				box-sizing: border-box; // Reset required for when displayed in shop table
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					width: auto;
 					margin-top: 0;
 				}
@@ -96,7 +96,7 @@
 	.coupon {
 		@extend %coupon_box;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $left; // {{RTL}}
 			min-width: 50%;
 			max-width: 24em;
@@ -116,18 +116,18 @@
 
 	.cart-collaterals {
 		padding: 8%;
-		margin-top: power( $golden, 2 ) +em;
+		margin-top: pow( $golden, 2 ) +em;
 		border-width: 2px;
 		border-style: dashed;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $right; // {{RTL}}
 			width: percentage( .46 - .04 );
 			padding: 4%;
 			margin-top: 0;
 		}
 
-		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+		@include media( map_get( $breakpoint, 'xl' ) ) {
 			width: percentage( $golden_minor - .04 ); // Same as sidebar plus 4% due to padding with border around.
 		}
 
@@ -199,7 +199,7 @@
 			&:last-child {
 				text-align: $left; // {{RTL}}
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					max-width: 12em;
 				}
 
@@ -303,12 +303,12 @@
 		font-weight: 700;
 
 		&-container {
-			padding: power( $golden, 2 ) +em;
+			padding: pow( $golden, 2 ) +em;
 			text-align: center;
 			border-width: 2px;
 			border-style: dashed;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				width: percentage( $golden_major );
 				margin: 0 auto;
 			}

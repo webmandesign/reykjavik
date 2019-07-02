@@ -1,0 +1,17 @@
+/* FILE: starter/content/wp/blocks/_image.scss */
+
+@if ( index( $support__block, 'image' ) ) {
+
+	.wp-block-image {
+
+		.alignleft {
+			margin-right: $alignment_margin;
+		}
+
+		.alignright {
+			margin-left: $alignment_margin;
+		}
+
+	}
+
+}

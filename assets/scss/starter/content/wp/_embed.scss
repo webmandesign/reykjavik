@@ -1,0 +1,29 @@
+/* FILE: starter/content/wp/_embed.scss */
+
+// Tweets
+
+	.twitter-tweet-rendered {
+		width: 100% $important_wp_embed;
+		margin: ( $golden +em ) 0 $important_wp_embed;
+	}
+
+// Videos
+
+	.wp-video {
+		width: 100% $important_wp_embed;
+		height: auto $important_wp_embed;
+		margin-bottom: $golden +em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+// Video in Custom Header
+
+	// Fixing screen reader hidden div creating 1px gap at the bottom of HTML body
+	.wp-a11y-speak-region {
+		left: 0;
+		top: 0;
+	}

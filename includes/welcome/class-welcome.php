@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -209,7 +209,7 @@ class Reykjavik_Welcome {
 		 * Info text: Rate the theme.
 		 *
 		 * @since    1.5.2
-		 * @version  1.5.2
+		 * @version  2.0.0
 		 */
 		public static function get_info_like() {
 
@@ -217,11 +217,11 @@ class Reykjavik_Welcome {
 
 				return sprintf(
 					esc_html_x( 'If you %1$s like this theme, please rate it %2$s', '%1$s: heart icon, %2$s: star icons', 'reykjavik' ),
-					'<span class="dashicons dashicons-heart" style="color: red; vertical-align: middle;"></span>',
+					'<span class="dashicons dashicons-heart" style="color: red; vertical-align: -.181em;"></span>',
 					'<a href="https://wordpress.org/support/theme/reykjavik/reviews/#new-post" style="display: inline-block; color: goldenrod; text-decoration-style: wavy; vertical-align: middle;"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span></a>'
 				)
 				. '<br>'
-				. '<a href="http://webmandesign.eu/contact/?utm_source=reykjavik">'
+				. '<a href="https://www.webmandesign.eu/contact/?utm_source=reykjavik">'
 				. esc_html__( 'And/or please consider a donation, thank you 🙏😊', 'reykjavik' )
 				. '</a>';
 

@@ -1,0 +1,81 @@
+/* FILE: starter/content/plugins/jetpack/_sharing.scss */
+
+@if ( index( $support__jetpack, 'sharing' ) ) {
+
+	div.sharedaddy {
+		padding: ( $golden +em ) 0 0;
+		margin: ( $golden +em ) 0 0;
+		font-size: 1em;
+		border-top-width: 2px;
+		border-top-style: solid;
+		border-color: inherit;
+
+		.sd-social {
+
+			.sd-button {
+
+				.share-count {
+					background: inherit;
+					color: inherit;
+					border-width: 1px;
+					border-style: solid;
+				}
+
+			}
+
+		}
+
+		.site & {
+
+			.sd-title {
+
+				&::before {
+					display: none;
+				}
+
+			}
+
+			.sd-content {
+
+				ul {
+
+					li {
+
+						a.sd-button {
+							margin: ( $golden_major / 2 +em ) ( $golden_major +em );
+							margin-#{$left}: 0; // {{RTL}}
+
+							&:not(.no-text) {
+								padding: ( $golden_major +em ) 1em;
+								line-height: normal;
+								border-width: 0;
+								border-radius: 0;
+								cursor: pointer;
+								box-shadow: none;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.entry-content {
+
+		.sd-content {
+
+			ul {
+				margin: 0 $important_plugins_jetpack_sharing;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,66 @@
+/* FILE: editor-block/blocks/_pullquote.scss */
+
+@if ( index( $support__block, 'pullquote' ) ) {
+
+	.wp-block-pullquote {
+		color: inherit;
+
+		&__citation {
+			@extend %font_size_small;
+			text-transform: none;
+
+			&::before {
+				content: '\2014\2002';
+			}
+
+		}
+
+		blockquote {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			p {
+				font-size: inherit !important;
+			}
+
+		}
+
+		&.is-style-solid-color {
+			border: 0;
+		}
+
+		[data-align="left"] &,
+		[data-align="right"] & {
+			padding-left: 0;
+			padding-right: 0;
+
+			p {
+				font-size: inherit;
+			}
+
+		}
+
+	}
+
+	[data-type="core/pullquote"] {
+
+		&[data-align="left"],
+		&[data-align="right"] {
+
+			.block-editor-block-list__block-edit {
+				width: calc( 47% + #{ $ui_margin * 2 } );
+				max-width: none;
+
+				@include media( map_get( $breakpoint, 's' ) ) {
+					width: calc( #{ percentage( $golden_minor ) } + #{ $ui_margin * 2 } );
+				}
+
+			}
+
+		}
+
+	}
+
+}

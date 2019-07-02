@@ -1,0 +1,76 @@
+//
+// Output heading tags styles.
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  num  $multiplier     Alter heading maps values.
+// @param  bool $global_styles  Whether to output the heading tags global styles (these don't according the $multiplier).
+// @param  bool $last_child     Force bottom margin on last child items.
+//
+@mixin h_tags( $multiplier: 1, $global_styles: false, $last_child: false ) {
+
+	@each $selector, $settings in $setup_headings {
+
+		$size          : nth( $settings, 1 );
+		$line_height   : nth( $settings, 2 );
+		$margin_top    : nth( $settings, 3 );
+		$margin_bottom : nth( $settings, 4 );
+
+		$size: $size * $multiplier;
+
+		@if 1 > $size {
+			$size: 1;
+		}
+
+		#{ $selector } {
+			font-size: $size +em;
+			line-height: $line_height;
+
+			@if 1 < $size {
+				margin-top: $margin_top +em;
+				margin-bottom: $margin_bottom +em;
+
+				@if $last_child {
+					&:last-child {
+						margin-bottom: $margin_bottom +em;
+					}
+				}
+			} @else {
+				margin-top: $golden_major +em;
+				margin-bottom: $golden_major +em;
+
+				@if $last_child {
+					&:last-child {
+						margin-bottom: $margin_bottom +em;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	@if $global_styles {
+
+		#{ $elements_headings } {
+			@extend %break_words;
+			@extend %line_height_golden_minor;
+			padding: 0;
+			text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/CSS/text-rendering
+
+			&:first-child,
+			.screen-reader-text + & {
+				margin-top: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+		}
+
+	}
+
+} // /h_tags

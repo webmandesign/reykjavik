@@ -17,7 +17,7 @@
 		box-sizing: content-box;
 		border-style: dashed;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding: 1rem;
 		}
 
@@ -55,7 +55,7 @@
 		position: relative;
 		text-align: center;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding-left: $golden_minor +em;
 			padding-right: $golden_minor +em;
 		}
@@ -68,7 +68,7 @@
 			text-decoration: none;
 			font-size: 1em + $golden_minor / 4;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				width: 1em;
 				height: 1em;
 				line-height: 1;
@@ -88,17 +88,20 @@
 	.product-thumbnail {
 		text-align: center;
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding-left: 0;
 			padding-right: 0;
 
 			img {
-				max-width: power( 1 + $golden_minor, 4 ) +em;
+				max-width: pow( 1 + $golden_minor, 4 ) +em;
 			}
 
 		}
 
-		@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+		@include media(
+			( map_get( $breakpoint, 'l' ), 'min-width' ),
+			( map_get( $breakpoint, 'xl' ), 'max-width' )
+		) {
 			display: none;
 		}
 
@@ -132,7 +135,7 @@
 
 	.product-quantity {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			text-align: center;
 		}
 
@@ -234,7 +237,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 
 				td,
 				th {
@@ -248,7 +251,7 @@
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 
 				thead {
 					display: table-header-group;

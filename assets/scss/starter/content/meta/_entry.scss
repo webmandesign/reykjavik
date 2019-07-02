@@ -1,0 +1,53 @@
+/* FILE: starter/content/meta/_entry.scss */
+
+.entry-meta {
+	padding: 1em 0 0;
+	margin: ( $golden +em ) 0 0;
+	border-top-width: 2px;
+	border-top-style: solid;
+
+	a {
+		color: inherit;
+	}
+
+	.single & {
+		margin-bottom: $golden +em;
+	}
+
+	&-top {
+		padding: 1em 0;
+		margin-top: 0;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+	&-element {
+		margin-#{$right}: $golden_minor +em; // {{RTL}}
+
+		.single & {
+			margin-#{$right}: 1em; // {{RTL}}
+		}
+
+	}
+
+	.tags-links {
+
+		a {
+			margin: 0 ( $golden_minor / 2 +em );
+		}
+
+	}
+
+}
+
+.entry-date {
+	cursor: help;
+}
+
+.comments-link {
+
+	.comments-title {
+		@extend %screen_reader_hiding;
+	}
+
+}

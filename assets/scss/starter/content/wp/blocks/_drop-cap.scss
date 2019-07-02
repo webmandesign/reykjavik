@@ -1,0 +1,11 @@
+/* FILE: starter/content/wp/blocks/_drop-cap.scss */
+
+%drop-cap {
+	float: $left; // {{RTL}}
+	padding: 0 ( $golden_minor / 2 +em );
+	padding-#{$left}: 0; // {{RTL}}
+	margin: 0;
+	font-size: $golden * 2em; // 2 lines of text.
+	font-weight: inherit;
+	line-height: 1;
+}

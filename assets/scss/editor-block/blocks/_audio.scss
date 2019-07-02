@@ -1,0 +1,31 @@
+/* FILE: editor-block/blocks/_audio.scss */
+
+@if ( index( $support__block, 'audio' ) ) {
+
+	.wp-block-audio {}
+
+	[data-type="core/audio"] {
+
+		&[data-align="center"],
+		&[data-align="left"],
+		&[data-align="right"] {
+
+			.block-editor-block-list__block-edit {
+				width: $alignment_width;
+				max-width: $alignment_width;
+			}
+
+		}
+
+		&[data-align="center"] {
+
+			.block-editor-block-list__block-edit {
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+
+	}
+
+}

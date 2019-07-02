@@ -33,7 +33,7 @@
 	html {
 		@extend %font_body;
 
-		@include responsive( map_get( $breakpoint, 's' ) ) {
+		@include media( map_get( $breakpoint, 's' ) ) {
 			font-size: map_get( $customize_options, 'typography_size_html' );
 			font-size: var(--typography_size_html);
 		}
@@ -44,28 +44,28 @@
 
 	// Font forcing classes
 
-		.font {
+		.site {
 
-			.site & {
+			.font-body,
+			.has-root-font-family {
+				@extend %font_body;
+			}
 
-				&-body {
-					@extend %font_body;
-				}
+			.font-headings,
+			.font-headings-primary,
+			.has-headings-font-family {
+				@extend %font_headings;
+			}
 
-				&-headings,
-				&-headings-primary {
-					@extend %font_headings;
-				}
+			.font-logo,
+			.font-headings-secondary,
+			.has-site-title-font-family {
+				@extend %font_logo;
+			}
 
-				&-logo,
-				&-headings-secondary {
-					@extend %font_logo;
-				}
-
-				&-inherit {
-					@extend %font_inherit;
-				}
-
+			.font-inherit,
+			.has-inherited-font-family {
+				@extend %font_inherit;
 			}
 
 		}

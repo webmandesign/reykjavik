@@ -11,8 +11,8 @@
 .woocommerce-tabs {
 	clear: both;
 
-	@include responsive( map_get( $breakpoint, 'l' ) ) {
-		margin-top: power( $golden, 2 ) * -1em;
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-top: pow( $golden, 2 ) * -1em;
 	}
 
 	[tabindex="-1"]:focus {
@@ -32,7 +32,7 @@
 			border-width: 1px;
 			border-style: solid;
 
-			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 				display: none;
 			}
 
@@ -96,7 +96,7 @@
 				outline: 0;
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 				display: block !important;
 				width: 100%;
 				padding-left: 6%;
@@ -105,17 +105,16 @@
 				border-top-style: solid;
 			}
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
 
 				.site & {
-					max-width: 38em;
-					max-width: 70ch;
+					max-width: 36em;
 				}
 
 			}
 
-			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-top: $padding_vertical;
 				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
 			}
@@ -139,7 +138,7 @@
 
 			.panel {
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					padding-top: 0;
 				}
 
@@ -155,7 +154,7 @@
 
 	%wc_panel_title {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			clip: rect( 1px, 1px, 1px, 1px );
 			clip-path: inset( 50% );
 			position: absolute !important;

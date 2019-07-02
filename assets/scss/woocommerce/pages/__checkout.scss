@@ -54,10 +54,10 @@
 		.login,
 		.checkout_coupon {
 			max-width: 36em;
-			padding: ( power( $golden, 2 ) +em ) 6%;
+			padding: ( pow( $golden, 2 ) +em ) 6%;
 			margin-left: auto;
 			margin-right: auto;
-			margin-bottom: power( $golden, 2 ) +em;
+			margin-bottom: pow( $golden, 2 ) +em;
 			border-width: 2px;
 			border-style: dashed;
 		}
@@ -96,9 +96,9 @@
 				// Overriding the 2 cols layout here to move the
 				// order details to the right.
 				//
-				margin-bottom: power( $golden, 2 ) +em;
+				margin-bottom: pow( $golden, 2 ) +em;
 
-				@include responsive( map_get( $breakpoint, 'l' ) ) {
+				@include media( map_get( $breakpoint, 'l' ) ) {
 					float: $left; // {{RTL}}
 					display: block;
 					width: 46%;
@@ -107,7 +107,7 @@
 					.col-1,
 					.col-2 {
 						width: 100%;
-						margin-bottom: power( $golden, 2 ) +em;
+						margin-bottom: pow( $golden, 2 ) +em;
 					}
 
 					+ h3 {
@@ -137,7 +137,7 @@
 		}
 
 		.woocommerce-additional-fields {
-			margin-top: power( $golden, 2 ) +em;
+			margin-top: pow( $golden, 2 ) +em;
 		}
 
 
@@ -149,14 +149,14 @@
 			border-width: 2px;
 			border-style: dashed;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				float: $right; // {{RTL}}
 				width: 50%;
 				padding: 4%;
 			}
 
 			&-table {
-				margin-bottom: power( 1 + $golden_minor, 4 ) +em;
+				margin-bottom: pow( 1 + $golden_minor, 4 ) +em;
 			}
 
 		}

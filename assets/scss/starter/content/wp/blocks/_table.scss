@@ -1,0 +1,29 @@
+/* FILE: starter/content/wp/blocks/_table.scss */
+
+@if ( index( $support__block, 'table' ) ) {
+
+	.wp-block-table {
+
+		&.alignleft,
+		&.alignright {
+			max-width: $alignment_width;
+		}
+
+		&.is-style-stripes {
+			border-top: 2px solid;
+			border-bottom: 2px solid;
+			border-color: inherit;
+
+			tr:nth-child(odd) {
+				background-color: rgba( #000, .1 );
+			}
+
+			tr:nth-child(even) {
+				background-color: rgba( #fff, .05 );
+			}
+
+		}
+
+	}
+
+}

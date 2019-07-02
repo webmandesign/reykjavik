@@ -1,0 +1,15 @@
+/* FILE: starter/content/wp/blocks/_audio.scss */
+
+@if ( index( $support__block, 'audio' ) ) {
+
+	.wp-block-audio {
+
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment_width;
+		}
+
+	}
+
+}

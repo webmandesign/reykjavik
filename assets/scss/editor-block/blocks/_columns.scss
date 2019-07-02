@@ -1,0 +1,10 @@
+/* FILE: editor-block/blocks/_columns.scss */
+
+@if ( index( $support__block, 'columns' ) ) {
+
+	.wp-block[data-align=full] .wp-block-columns > .block-editor-inner-blocks {
+		padding-left: $ui_margin;
+		padding-right: $ui_margin;
+	}
+
+}

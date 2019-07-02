@@ -1,0 +1,20 @@
+/* FILE: starter/content/base/_helpers.scss */
+
+%break_words {
+	// From @link  https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+
+	// These are technically the same, but use both
+
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+
+	// Adds a hyphen where the word breaks, if supported (No Blink)
+
+		// hyphens: auto;
+}
+
+	%break_words_disable {
+		overflow-wrap: normal;
+		word-wrap: normal;
+		hyphens: manual;
+	}

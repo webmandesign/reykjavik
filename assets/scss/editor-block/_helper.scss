@@ -1,0 +1,37 @@
+/* FILE: editor-block/_helper.scss */
+
+.editor-styles-wrapper {
+
+	.has-#{$left}-text-align,
+	.has-#{$left}-content {
+		text-align: $left !important; // {{RTL}}
+	}
+
+	.has-center-text-align,
+	.has-center-content {
+		text-align: center !important;
+	}
+
+	.has-#{$right}-text-align,
+	.has-#{$right}-content {
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			text-align: $right !important; // {{RTL}}
+		}
+	}
+
+}
+
+// Do not style `.compensate-content-padding-bottom` because it covers
+// the block appender at the bottom of the content!
+.compensate-content-padding-top {
+	margin-top: -$golden_major * strip_unit( $padding_vertical ) +em !important;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-top: -1 * strip_unit( $padding_vertical ) +em !important;
+	}
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-top: -$golden * strip_unit( $padding_vertical ) +em !important;
+	}
+
+}

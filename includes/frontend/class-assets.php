@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_Assets {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.0.0
 		 */
 		private function __construct() {
 
@@ -57,6 +57,9 @@ class Reykjavik_Assets {
 
 						add_action( 'comment_form_before', __CLASS__ . '::enqueue_comments_reply' );
 
+						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_styles_editor' );
+						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_edit_post_scripts' );
+
 					// Filters
 
 						add_filter( 'wp_resource_hints', __CLASS__ . '::resource_hints', 10, 2 );
@@ -64,11 +67,6 @@ class Reykjavik_Assets {
 						add_filter( 'wmhook_reykjavik_setup_editor_stylesheets', __CLASS__ . '::editor_stylesheets' );
 
 						add_filter( 'editor_stylesheets', __CLASS__ . '::editor_frontend_stylesheets' );
-
-						if ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) {
-							add_filter( 'embed_handler_html', __CLASS__ . '::enqueue_fitvids' );
-							add_filter( 'embed_oembed_html',  __CLASS__ . '::enqueue_fitvids' );
-						}
 
 		} // /__construct
 
@@ -148,18 +146,15 @@ class Reykjavik_Assets {
 		 * Registering theme scripts
 		 *
 		 * @since    1.0.0
-		 * @version  1.2.0
+		 * @version  2.0.0
 		 */
 		public static function register_scripts() {
 
 			// Helper variables
 
-				$script_global_deps = ( ! ( current_theme_supports( 'jetpack-responsive-videos' ) && function_exists( 'jetpack_responsive_videos_init' ) ) ) ? ( array( 'jquery-fitvids' ) ) : ( array( 'jquery' ) );
-
 				$register_assets = array(
-					'jquery-fitvids'                => array( get_theme_file_uri( 'assets/js/vendors/fitvids/jquery.fitvids.js' ) ),
 					'reykjavik-skip-link-focus-fix' => array( 'src' => get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), 'deps' => array() ),
-					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => $script_global_deps ),
+					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery' ) ),
 					'reykjavik-scripts-masonry'     => array( 'src' => get_theme_file_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry' ) ),
 					'reykjavik-scripts-nav-a11y'    => array( get_theme_file_uri( 'assets/js/scripts-navigation-accessibility.js' ) ),
 					'reykjavik-scripts-nav-mobile'  => array( get_theme_file_uri( 'assets/js/scripts-navigation-mobile.js' ) ),
@@ -435,36 +430,75 @@ class Reykjavik_Assets {
 
 
 		/**
-		 * Enqueues FitVids only when needed
+		 * Enqueues block editor stylesheets.
 		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $html The generated HTML of the shortcodes
+		 * @since    2.0.0
+		 * @version  2.0.0
 		 */
-		public static function enqueue_fitvids( $html ) {
-
-			// Requirements check
-
-				if (
-						is_admin()
-						|| empty( $html )
-						|| ! is_string( $html )
-					) {
-					return $html;
-				}
-
+		public static function enqueue_styles_editor() {
 
 			// Processing
 
-				wp_enqueue_script( 'jquery-fitvids' );
+				if ( $url_google_fonts = self::google_fonts_url() ) {
+					wp_enqueue_style(
+						'reykjavik-google-fonts',
+						$url_google_fonts,
+						array(),
+						REYKJAVIK_THEME_VERSION
+					);
+				}
+
+				wp_enqueue_style(
+					'genericons-neue',
+					get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ),
+					array(),
+					REYKJAVIK_THEME_VERSION
+				);
+
+				wp_enqueue_style(
+					'reykjavik-editor-blocks',
+					get_theme_file_uri( 'assets/css/editor-style-blocks.css' ),
+					array(),
+					REYKJAVIK_THEME_VERSION
+				);
+				wp_style_add_data( 'reykjavik-editor-blocks', 'rtl', 'replace' );
+
+				wp_add_inline_style(
+					'reykjavik-editor-blocks',
+					Reykjavik_Customize_Styles::esc_css( Reykjavik_Customize_Styles::get_css_variables(), 'customize-styles-editor' )
+				);
+
+		} // /enqueue_styles_editor
 
 
-			// Output
 
-				return $html;
+		/**
+		 * Enqueues post editor scripts.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 */
+		public static function enqueue_edit_post_scripts() {
 
-		} // /enqueue_fitvids
+			// Processing
+
+				wp_enqueue_script(
+					'reykjavik-edit-post',
+					get_theme_file_uri( 'assets/js/scripts-edit-post.js' ),
+					array( 'wp-edit-post' ),
+					REYKJAVIK_THEME_VERSION,
+					true
+				);
+
+				wp_localize_script(
+					'reykjavik-edit-post',
+					'reykjavikPost',
+					array(
+						'page_template' => basename( get_page_template_slug(), '.php' ),
+					)
+				);
+
+		} // /enqueue_edit_post_scripts
 
 
 
@@ -560,7 +594,7 @@ class Reykjavik_Assets {
 		 * Editor stylesheets array
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.0
 		 */
 		public static function editor_stylesheets() {
 
@@ -587,19 +621,7 @@ class Reykjavik_Assets {
 					$visual_editor_stylesheets[10] = esc_url_raw( add_query_arg(
 						'ver',
 						REYKJAVIK_THEME_VERSION,
-						get_theme_file_uri( 'assets/css/main' . $stylesheet_suffix . '.css' )
-					) );
-
-					$visual_editor_stylesheets[15] = esc_url_raw( add_query_arg(
-						'ver',
-						REYKJAVIK_THEME_VERSION,
 						get_theme_file_uri( 'assets/css/editor-style' . $stylesheet_suffix . '.css' )
-					) );
-
-					$visual_editor_stylesheets[20] = esc_url_raw( add_query_arg(
-						'ver',
-						REYKJAVIK_THEME_VERSION,
-						get_theme_file_uri( 'assets/css/custom-styles-editor.css' )
 					) );
 
 				// Icons stylesheet

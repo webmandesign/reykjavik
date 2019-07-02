@@ -1,0 +1,47 @@
+/* FILE: starter/content/sidebar/_widget-calendar.scss */
+
+.widget_calendar {
+
+	caption {
+		@extend %font_style_normal;
+		@extend %font_weight_700;
+		text-align: center;
+		caption-side: top;
+	}
+
+	table {
+		margin: 0;
+	}
+
+	tr {
+
+		th,
+		td {
+			width: auto;
+			height: pow( $golden, 2 ) +em;
+			padding: 0;
+			text-align: center;
+		}
+
+	}
+
+	tbody {
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			line-height: pow( $golden, 2 );
+		}
+
+	}
+
+	tfoot {
+
+		a {
+			color: inherit;
+		}
+
+	}
+
+}

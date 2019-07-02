@@ -9,5 +9,29 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  1.3.0
+// @version  2.0.0
 //
+
+@import 'setup';
+@import 'css-vars';
+
+@import 'starter/_index';
+
+// Selection from main styles:
+
+	@import 'main/icons/icons';
+	@import 'main/base/base';
+	@import 'main/typography/typography';
+	@import 'main/forms/forms';
+	@import 'main/headings/headings';
+	// main/wp/
+		@import 'main/wp/_caption';
+		@import 'main/wp/_file';
+		@import 'main/wp/_gallery';
+		@import 'main/wp/_player';
+		@import 'main/wp/_pullquote';
+		@import 'main/wp/_quote';
+		@import 'main/wp/_separator';
+		@import 'main/wp/_verse';
+
+@import 'main/custom-styles/editor-style';

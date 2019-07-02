@@ -39,8 +39,7 @@
 
 		body {
 			width: 100%;
-			max-width: 38em;
-			max-width: 70ch;
+			max-width: 36em;
 			font-size: 16px; // Default, will get overridden
 
 			&.post-type-page {
@@ -48,7 +47,7 @@
 			}
 
 			&.page-template-sidebar {
-				padding-#{$right}: 38% !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
+				padding-#{$right}: percentage( $golden_minor ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
 			}
 
 			*,
@@ -81,7 +80,7 @@
 		}
 
 		.wpview-content {
-			margin: 0 0 1.62em;
+			margin: 0 0 ( $golden +em );
 		}
 
 

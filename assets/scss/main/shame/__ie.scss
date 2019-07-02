@@ -36,35 +36,22 @@
 // IE 11 specific styles
 //
 
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	@media
+		( -ms-high-contrast: none ),
+		( -ms-high-contrast: active )
+	{
 
 		//
 		// In IE11 when an element is a child of `flex-direction: column;` parent,
 		// the browser can't calculate the height of the element properly.
 		// Applying this strange fix to take care of correct height calculation.
 		//
-
-			.site-header > *,
-			.child-page > *,
-			.fl-module,
-			.fl-col .fl-col-group {
-				min-height: 1px;
-			}
-
-
-
-		//
-		// IE calculates `ch` units a bit differently, a bit too narrow.
-		//
-
-			.post-password-form,
-			.search-results.no-widgets-sidebar .site-main form[role="search"],
-			.search-results.no-widgets-sidebar .site-main .search-form,
-			.page-summary,
-			.intro-special .intro,
-			.no-widgets-sidebar .pagination {
-				max-width: 94ch;
-			}
+		.site-header > *,
+		.child-page > *,
+		.fl-module,
+		.fl-col .fl-col-group {
+			min-height: 1px;
+		}
 
 	}
 
@@ -74,13 +61,10 @@
 // IE 11 specific styles with additional media queries
 //
 
-	@media all and (min-width: #{ map_get( $breakpoint, 'l' ) / 16 +em }) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-		.posts-layout-list.no-widgets-sidebar .content-area,
-		.single.no-widgets-sidebar .content-area,
-		.attachment.no-widgets-sidebar .content-area {
-			max-width: 94ch;
-		}
+	@media
+		( min-width: #{ map_get( $breakpoint, 'l' ) +px } ) and ( -ms-high-contrast: none ),
+		( -ms-high-contrast: active )
+	{
 
 		.main-navigation-container .megamenu > ul > li {
 			min-width: 14em;

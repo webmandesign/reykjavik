@@ -1,0 +1,88 @@
+/* FILE: starter/content/plugins/jetpack/_related-posts.scss */
+
+@if ( index( $support__jetpack, 'related-posts' ) ) {
+
+	div#jp-relatedposts {
+		font-size: 1em;
+
+		.site & {
+			padding-top: $golden +em;
+			margin: ( $golden +em ) 0 0;
+			border-top-width: 2px;
+			border-top-style: solid;
+			border-color: inherit;
+
+			a {
+
+				&::before {
+					display: none;
+				}
+
+			}
+
+			.jp-relatedposts-headline,
+			h3.jp-relatedposts-headline {
+				float: none;
+				display: block;
+				font-size: 1em;
+
+				em {
+
+					&::before {
+						display: none;
+					}
+
+				}
+
+			}
+
+			div.jp-relatedposts-items-visual {
+				margin: 0;
+
+				.jp-relatedposts-post-title,
+				h4.jp-relatedposts-post-title {
+					margin: ( $golden_major +em ) 0 ( $golden_minor +em );
+					font-size: 1em;
+				}
+
+			}
+
+			div.jp-relatedposts-items {
+
+				.jp-relatedposts-post {
+					width: 100%;
+					padding: 0;
+					margin: ( $golden +em ) 0 0;
+					opacity: 1;
+
+					&:first-child {
+						margin: 0;
+					}
+
+					img {
+						display: none;
+						width: 100%;
+
+						@include media( map_get( $breakpoint, 'm' ) ) {
+							display: block;
+						}
+
+					}
+
+					@include media( map_get( $breakpoint, 'm' ) ) {
+						$columns: 3;
+						$gutter: 2; // %
+						width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
+						margin: 0;
+						margin-#{$left}: percentage( $gutter / 100 ); // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

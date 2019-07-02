@@ -1,0 +1,23 @@
+/* FILE: editor-block/__starter.scss */
+
+//
+// Selection from Starter CSS styles:
+//
+
+@import 'starter/tools/functions';
+@import 'starter/setup/variables';
+@import 'starter/tools/mixins';
+
+.editor-styles-wrapper {
+	// base/
+		@import 'starter/content/base/elements';
+		@import 'starter/content/base/helpers';
+		@import 'starter/content/base/clearing';
+		@import 'starter/content/base/accessibility';
+		@import 'starter/content/base/modifiers';
+		@import 'starter/content/base/modifiers-backcompat';
+	@import 'starter/content/typography/_index';
+	@import 'starter/content/wp/_index';
+}
+
+@import 'starter/content/media/_index';

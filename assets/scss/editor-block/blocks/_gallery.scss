@@ -1,0 +1,40 @@
+/* FILE: editor-block/blocks/_gallery.scss */
+
+@if ( index( $support__block, 'gallery' ) ) {
+
+	.wp-block-gallery {
+
+		.editor-styles-wrapper .wp-block & {
+			margin-#{$left}: 0;
+		}
+
+		.wp-block &.alignleft,
+		.wp-block &.alignright {
+			float: none;
+			max-width: none;
+			margin: 0;
+		}
+
+		.wp-block &.aligncenter {
+			max-width: $alignment_width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
+	[data-type="core/gallery"] {
+
+		&[data-align="left"],
+		&[data-align="right"] {
+
+			.block-editor-block-list__block-edit {
+				width: $alignment_width;
+				max-width: $alignment_width;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+/* FILE: starter/content/wp/blocks/_latest-posts.scss */
+
+@if ( index( $support__block, 'latest-posts' ) ) {
+
+	.wp-block-latest-posts {
+
+		&:not(.alignleft):not(.aligncenter):not(.alignright):not(.alignwide):not(.alignfull) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&:not(.is-grid) {
+			@extend %block_list_items;
+
+			li {
+				@extend %block_list_items_child;
+			}
+
+		}
+
+	}
+
+}

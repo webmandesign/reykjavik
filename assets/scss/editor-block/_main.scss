@@ -1,0 +1,21 @@
+/* FILE: editor-block/_main.scss */
+// Styles from main stylesheet.
+
+.editor-styles-wrapper {
+	@import 'main/base/_extender';
+	@import 'main/base/_elements';
+	@import 'main/icons/icons';
+	@import 'main/headings/_base';
+
+	$elements_button: '.wp-block-button__link';
+	@import 'main/forms/_buttons';
+}
+
+@import 'main/wp/_caption';
+@import 'main/wp/_file';
+@import 'main/wp/_gallery';
+@import 'main/wp/_player';
+@import 'main/wp/_pullquote';
+@import 'main/wp/_quote';
+@import 'main/wp/_separator';
+@import 'main/wp/_verse';

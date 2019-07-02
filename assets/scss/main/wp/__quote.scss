@@ -1,0 +1,23 @@
+/* FILE: main/wp/__quote.scss */
+
+//
+// Quote
+//
+
+
+
+
+
+.wp-block-quote {
+
+	&.is-style-large {
+		padding: 0;
+		margin: 0;
+
+		&:not(:last-child) {
+			margin-bottom: $golden +rem;
+		}
+
+	}
+
+}

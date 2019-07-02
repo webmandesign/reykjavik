@@ -1,0 +1,19 @@
+//
+// LTR/RTL property value.
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  string $property
+// @param  string $value_ltr
+// @param  string $value_rtl
+//
+@mixin rtl_property( $property, $value_ltr, $value_rtl ) { // {{RTL}}
+
+	@if rtl == $language_direction {
+		#{ $property }: $value_rtl;
+	} @else {
+		#{ $property }: $value_ltr;
+	}
+
+} // /rtl_property

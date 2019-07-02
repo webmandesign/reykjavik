@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.0.0
  *
  * Contents:
  *
@@ -67,6 +67,7 @@ class Reykjavik_Header {
 						add_filter( 'body_class', __CLASS__ . '::body_class', 98 );
 
 						add_filter( 'tiny_mce_before_init', __CLASS__ . '::editor_body_class' );
+						add_filter( 'admin_body_class', __CLASS__ . '::block_editor_body_class' );
 
 						add_filter( 'wmhook_reykjavik_library_link_skip_to_pre', __CLASS__ . '::skip_links_no_header', 10, 2 );
 
@@ -336,7 +337,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.3
+		 * @version  2.0.0
 		 *
 		 * @param  array $classes
 		 */
@@ -413,6 +414,24 @@ class Reykjavik_Header {
 								$classes[] = 'content-layout-no-paddings';
 							}
 
+						// Page.
+
+							if (
+								is_page()
+								&& ! is_attachment() // This is required for attachments added to a page.
+								&& ! is_page_template( 'templates/sidebar.php' )
+							) {
+
+								if ( has_blocks() ) {
+									// Required for making the page content area narrow when using block editor.
+									$classes[] = 'has-blocks';
+								} else if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
+									// Enable outdented page layout (only when not built with block editor).
+									$classes[] = 'page-layout-outdented';
+								}
+
+							}
+
 					} else {
 
 						// Add a class of hfeed to non-singular pages
@@ -448,38 +467,17 @@ class Reykjavik_Header {
 				// Posts layout
 
 					if (
-							is_home()
-							|| is_category()
-							|| is_tag()
-							|| is_date()
-							|| is_author() // Display author archive as posts, not as custom post type archive.
-						) {
+						is_home()
+						|| is_category()
+						|| is_tag()
+						|| is_date()
+						|| is_author() // Display author archive as posts, not as custom post type archive.
+					) {
 						$classes[] = 'posts-layout-list';
 					}
 
 					if ( (bool) apply_filters( 'wmhook_reykjavik_is_masonry_layout', false ) ) {
 						$classes[] = 'posts-layout-masonry';
-					}
-
-				// Enable outdented page layout
-
-					if (
-							is_page()
-							&& ! is_attachment() // This is required for attachments added to a page.
-							&& ! is_page_template( 'templates/sidebar.php' )
-							&& Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' )
-						) {
-						$classes[] = 'page-layout-outdented';
-					}
-
-				// Enable outdented single post meta
-
-					if ( (bool) apply_filters( 'wmhook_reykjavik_header_body_classes_enable_entry_meta_outdented',
-						is_single( get_the_ID() )
-						&& ! is_active_sidebar( 'sidebar' )
-						&& ! Reykjavik_Post::is_page_builder_ready()
-					) ) {
-						$classes[] = 'entry-meta-outdented';
 					}
 
 
@@ -545,6 +543,59 @@ class Reykjavik_Header {
 				return $init;
 
 		} // /editor_body_class
+
+
+
+		/**
+		 * HTML Body classes in block editor.
+		 *
+		 * @since    2.0.0
+		 * @version  2.0.0
+		 *
+		 * @param  string $classes
+		 */
+		public static function block_editor_body_class( $classes = '' ) {
+
+			// Requirements check
+
+				global $post;
+
+				if (
+					! is_admin()
+					|| ! $post instanceof WP_Post
+				) {
+					return $classes;
+				}
+
+
+			// Processing
+
+				// Block editor dark theme.
+
+					$content_color = sanitize_hex_color_no_hash( Reykjavik_Library_Customize::get_theme_mod( 'color_content_background' ) );
+
+					/**
+					 * Color darkness code inspiration:
+					 * @link  https://github.com/mexitek/phpColors
+					 */
+					if ( 6 === strlen( $content_color ) ) {
+						$r = hexdec( $content_color[0] . $content_color[1] );
+						$g = hexdec( $content_color[2] . $content_color[3] );
+						$b = hexdec( $content_color[4] . $content_color[5] );
+
+						$content_color_darkness = ( $r * 299 + $g * 587 + $b * 114 ) / 1000;
+
+						if ( 130 >= $content_color_darkness ) {
+							$classes .= ' is-dark-theme';
+						}
+					}
+
+
+			// Output
+
+				return $classes . ' ';
+
+		} // /block_editor_body_class
 
 
 

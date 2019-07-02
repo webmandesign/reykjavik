@@ -12,7 +12,7 @@
 
 	.has-navigation-mobile .main-navigation-container {
 
-		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 			visibility: hidden;
 			position: fixed;
 			width: 100%;
@@ -44,8 +44,8 @@
 				height: 100%;
 
 				> ul {
-					max-width: map_get( $breakpoint, 's' ) * $px; // No need to stretch the menu, keep it narrow and centered
-					padding: ( power( $golden, 3 ) +rem ) ( $golden +rem ) ( power( $golden, 3 ) + $golden +rem );
+					max-width: map_get( $breakpoint, 's' ) +px; // No need to stretch the menu, keep it narrow and centered
+					padding: ( pow( $golden, 3 ) +rem ) ( $golden +rem ) ( pow( $golden, 3 ) + $golden +rem );
 					margin-left: auto;
 					margin-right: auto;
 
@@ -66,7 +66,7 @@
 
 		}
 
-		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 			transform-origin: 50% 100%;
 
 			.menu > ul {
@@ -86,7 +86,7 @@
 
 	body:not(.has-navigation-mobile) {
 
-		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 
 			.main-navigation-container {
 
@@ -123,11 +123,11 @@
 		.mobile-search-form {
 			@extend %font_size_1rem;
 			@extend %line_height_golden;
-			max-width: map_get( $breakpoint, 's' ) * $px; // Match the mobile menu width
+			max-width: map_get( $breakpoint, 's' ) +px; // Match the mobile menu width
 			padding: 0 ( $golden +rem );
-			margin: ( power( $golden, 3 ) +em ) auto 0;
+			margin: ( pow( $golden, 3 ) +em ) auto 0;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				display: none;
 			}
 
@@ -137,9 +137,13 @@
 
 // Mobile menu toggle button
 
-	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
+	.has-navigation-mobile .site-footer > div:last-child {
+	// Make space in site container for the menu toggle button not to cover anything.
 
-		.has-navigation-mobile .site-footer > div:last-child {
+		@include media(
+			( map_get( $breakpoint, 'm' ), 'max-width' ),
+			( map_get( $breakpoint, 's' ), 'min-height' )
+		) {
 			margin-bottom: $mobile_menu_toggle_height +rem;
 		}
 
@@ -167,7 +171,10 @@
 				}
 			}
 
-			@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
+			@include media(
+				( map_get( $breakpoint, 'm' ), 'max-width' ),
+				( map_get( $breakpoint, 's' ), 'min-height' )
+			) {
 				position: fixed;
 				width: 100%;
 				height: $mobile_menu_toggle_height + 1rem;
@@ -194,8 +201,10 @@
 
 		// Medium screens
 
-			@media only screen and (min-width: #{ map_get( $breakpoint, 'm' ) / 16 +em } ) and (max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) / 16 +em } ),
-			       only screen and (max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) / 16 +em } ) {
+			@media
+				( min-width: #{ map_get( $breakpoint, 'm' ) +px } ) and ( max-width: #{ ( map_get( $breakpoint, 'l' ) - 1 ) +px } ),
+				( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
+			{
 				margin-#{$right}: $golden +rem; // {{RTL}}
 
 				.is-active & {
@@ -233,7 +242,7 @@
 
 		// Large screens
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				display: none;
 			}
 
@@ -261,7 +270,7 @@
 		.menu-toggle-skip-link-container {
 			@extend %screen_reader_hiding;
 
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
+			@include media( map_get( $breakpoint, 'l' ) ) {
 				display: none;
 			}
 

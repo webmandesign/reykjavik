@@ -12,7 +12,7 @@
 
 	.main-navigation-container li ul {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			background-color: map_get( $customize_options, 'color_header_background' );
 			color: map_get( $customize_options, 'color_header_text' );
 			background-color: var(--color_header_background);
@@ -28,7 +28,7 @@
 	.main-navigation:not(.is-active) .menu-toggle:not(:hover):not(:focus):not(:active),
 	.main-navigation-container {
 
-		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 			background-color: map_get( $customize_options, 'color_header_background' );
 			color: map_get( $customize_options, 'color_header_text' );
 			border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );

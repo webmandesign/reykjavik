@@ -1,0 +1,75 @@
+/* FILE: editor-block/blocks/_block.scss */
+
+.wp-block {
+	// Post content width when no sidebar is displayed.
+	max-width: 36em;
+	max-width: calc( 36em + #{ $ui_margin * 2 } );
+
+	&[data-align="left"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+			margin-right: $alignment_margin;
+			margin-bottom: 1em;
+		}
+
+	}
+
+	&[data-align="right"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+			margin-left: $alignment_margin;
+			margin-bottom: 1em;
+
+			.block-editor-block-list__block-edit {
+				float: none;
+				width: auto;
+				max-width: none;
+				margin-left: 0;
+				margin-bottom: 0;
+			}
+
+		}
+
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+
+			.block-editor-block-list__block {
+				padding-left: 0;
+				padding-right: 0;
+
+				&-edit {
+					float: none;
+					width: auto;
+					max-width: none;
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	&[data-align="wide"],
+	&[data-align="full"] {
+
+		& + & {
+			// Removing vertical margin here in favor of Spacer block
+			// used to space out the wide/full aligned blocks.
+			margin-top: -$golden +em;
+		}
+
+	}
+
+	&[data-align="wide"] {
+		max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
+		max-width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
+	}
+
+}

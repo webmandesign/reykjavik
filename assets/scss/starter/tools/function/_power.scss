@@ -1,0 +1,32 @@
+//
+// Power math function.
+//
+// @since    1.0.0
+// @version  5.0.0
+//
+// @param  num $base
+// @param  int $exp
+//
+// @return  num  Base raised to the power of exponent.
+//
+@function pow( $base, $exp: 1 ) {
+
+	// Variables
+
+		$output: 1;
+
+
+	// Processing
+
+		@if 0 < $exp {
+			@for $i from 1 through $exp {
+				$output: $output * $base;
+			}
+		}
+
+
+	// Output
+
+		@return $output;
+
+} // /pow

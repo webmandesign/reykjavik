@@ -1,0 +1,120 @@
+/* FILE: starter/content/base/_modifiers-backcompat.scss */
+
+// Alignment
+
+	// Text
+
+		.text-#{ $left } {
+			@extend .has-#{ $left }-text-align;
+		}
+
+		.text-center {
+			@extend .has-center-text-align;
+		}
+
+		.text-#{ $right } {
+			@extend .has-#{ $right }-text-align;
+		}
+
+	// Vertical
+
+		.vertical-align-top {
+			@extend .has-top-vertical-align;
+		}
+
+		.vertical-align-middle {
+			@extend .has-middle-vertical-align;
+		}
+
+		.vertical-align-baseline {
+			@extend .has-baseline-vertical-align;
+		}
+
+		.vertical-align-bottom {
+			@extend .has-bottom-vertical-align;
+		}
+
+// Others
+
+	.dropcap-text {
+		@extend .has-dropcap-text;
+	}
+
+	.no-wrap {
+		@extend .has-nowrap-white-space;
+	}
+
+	.overflow-hidden {
+		@extend .has-hidden-overflow;
+	}
+
+// Typography
+
+	// Font size
+
+		.font-size-xs,
+		.has-xs-font-size {
+			@extend .has-extra-small-font-size;
+		}
+
+		.font-size-s,
+		.has-s-font-size {
+			@extend .has-small-font-size;
+		}
+
+		.font-size-sm,
+		.has-sm-font-size  {
+			@extend .has-smaller-font-size;
+		}
+
+		.font-size-l,
+		.has-l-font-size {
+			@extend .has-large-font-size;
+		}
+
+		.font-size-xl,
+		.has-xl-font-size {
+			@extend .has-extra-large-font-size;
+		}
+
+	// Font style
+
+		.font-style-italic {
+			@extend .has-italic-font-style;
+		}
+
+		.font-style-normal {
+			@extend .has-normal-font-style;
+		}
+
+	// Font weight
+
+		@for $i from 1 through 9 {
+			.weight-#{ $i * 100 } {
+				@extend .has-#{ $i * 100 }-font-weight;
+			}
+		}
+
+	// Line height
+
+		.line-height-xs,
+		.has-xs-line-height {
+			@extend .has-extra-small-line-height;
+		}
+
+		.line-height-s,
+		.has-s-line-height {
+			@extend .has-small-line-height;
+		}
+
+		.line-height-m,
+		.has-m-line-height {
+			@extend .has-regular-line-height;
+		}
+
+	// Text transform
+
+		.uppercase,
+		.is-uppercase {
+			@extend .has-uppercase-text-transform;
+		}

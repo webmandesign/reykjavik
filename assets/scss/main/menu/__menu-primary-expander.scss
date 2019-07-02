@@ -15,7 +15,7 @@
 		display: none;
 	}
 
-	@include responsive( map_get( $breakpoint, 'l' ) ) {
+	@include media( map_get( $breakpoint, 'l' ) ) {
 
 		.main-navigation-container & {
 			display: inline-block;
@@ -79,7 +79,7 @@
 	.main-navigation-container .menu-item-has-children > a,
 	.main-navigation-container .menu > ul > .menu-item-has-children > a {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding-#{$right}: calc( 16px + #{ $golden_minor * 2em } ); // {{RTL}}
 		}
 
