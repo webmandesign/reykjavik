@@ -12,10 +12,13 @@ Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready Wo
 
 == Description ==
 
-Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with Beaver Builder, Beaver Themer, Elementor, Elementor Pro Theme Builder, Visual Composer or other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free theme!
+Reykjavik is fresh, lightweight, speed and SEO optimized, accessibility ready WordPress theme perfect for your next business, portfolio, blog or WooCommerce e-shop website. You can customize all elements of the theme to your needs. The theme works perfectly with native WordPress block editor, and also with Beaver Builder, Beaver Themer, Elementor, Elementor Pro Theme Builder, Visual Composer or any other page builder to create fantastic layouts. It features mobile-optimized codebase and design with unique, easy-to-access mobile navigation. Build your website in no time with integrated one-click demo import functionality. Impress your website visitors with this beautiful free inclusive theme!
 
 
 == Frequently Asked Questions ==
+
+= Does this theme supports WordPress block editor (Gutenberg)? =
+Yes :) Fully and extensively.
 
 = Where can I find more information about the theme? =
 For more information about the theme please visit https://www.webmandesign.eu/portfolio/reykjavik-wordpress-theme/
@@ -38,7 +41,7 @@ Please see `changelog.md` file.
 == Upgrade Notice ==
 
 = 2.0.0 =
-@todo
+Adding full and advanced support for block editor (Gutenberg). Updating helper class names, updating styles, updating theme options description, removing FitVids in favor of native block editor responsive embeds (or Jetpack plugin's responsive videos), fixing post excerpt wrapper application.
 
 
 == Resources ==

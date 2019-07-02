@@ -2,11 +2,54 @@
 
 ## 2.0.0
 
-* **Add**: 
-* **Update**: 
-* **Fix**: 
+* **Add**: Block editor (Gutenberg) full, advanced support
+* **Update**: Improving and updating styles
+* **Update**: Helper class names
+* **Update**: Improving more tag functionality
+* **Update**: Code formatting
+* **Update**: Removing FitVids in favor of block editor responsive embeds and Jetpack's Responsive Videos
+* **Update**: Theme colors for consistency
+* **Update**: Theme options description
+* **Update**: Updating post meta styles for better blocks support
+* **Update**: Removing outdented page layout when page built using block editor
+* **Update**: Localization
+* **Update**: Theme info
+* **Fix**: Post excerpt wrapper div application
 
 ### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-edit-post.js
+	assets/js/scripts-global.js
+	assets/scss/_setup.scss
+	assets/scss/custom-styles-woocommerce.scss
+	assets/scss/custom-styles.scss
+	assets/scss/editor-style-blocks.scss
+	assets/scss/editor-style.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	assets/scss/starter/*.*
+	includes/customize/class-customize.php
+	includes/frontend/class-assets.php
+	includes/frontend/class-content.php
+	includes/frontend/class-header.php
+	includes/frontend/class-post-summary.php
+	includes/plugins/beaver-builder/class-beaver-builder-form.php
+	includes/plugins/beaver-builder/class-beaver-builder-setup.php
+	includes/plugins/jetpack/class-jetpack.php
+	includes/setup/class-setup.php
+	includes/welcome/class-welcome.php
+	includes/widgets/class-wp-widget-text.php
+	languages/reykjavik.pot
+	library/includes/classes/class-core.php
+	library/includes/classes/class-visual-editor.php
+	templates/parts/admin/media-image-sizes.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/admin/welcome-wordpress.php
+	templates/parts/component/link-more.php
+	templates/parts/footer/site-info.php
 
 
 ## 1.5.3
