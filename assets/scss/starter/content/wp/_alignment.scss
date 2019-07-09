@@ -1,15 +1,23 @@
 /* FILE: starter/content/wp/_alignment.scss */
 
+.alignleft,
+.alignright {
+
+	&,
+	&:last-child {
+		margin-bottom: 1em;
+	}
+
+}
+
 .alignleft {
 	float: left;
 	margin-right: $alignment_margin;
-	margin-bottom: 1em;
 }
 
 .alignright {
 	float: right;
 	margin-left: $alignment_margin;
-	margin-bottom: 1em;
 }
 
 .aligncenter {

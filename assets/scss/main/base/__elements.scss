@@ -29,12 +29,22 @@ ul {
 		&.icon,
 		&.icon-bullet {
 			position: relative;
+			display: list-item;
 			list-style: none;
+			font-family: inherit;
+			line-height: inherit;
+			vertical-align: baseline;
+			speak: normal;
 
 			&::before {
 				position: absolute;
 				#{$left}: -$golden_minor - 1em;
 				line-height: inherit;
+				speak: none;
+			}
+
+			&.genericons-neue::before {
+				font-family: 'Genericons-Neue';
 			}
 
 		}

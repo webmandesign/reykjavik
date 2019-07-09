@@ -59,17 +59,23 @@
 	&[data-align="wide"],
 	&[data-align="full"] {
 
-		& + & {
-			// Removing vertical margin here in favor of Spacer block
-			// used to space out the wide/full aligned blocks.
-			margin-top: -$golden +em;
+		// .wp-block-columns,
+		.has-no-margin,
+		.has-no-margin-vertical,
+		.has-no-margin-bottom {
+			// Simulate no margin between wide/full aligned blocks
+			// with specific margin removal modifier classes applied.
+			//
+			// @see  main/wp/__alignment.scss
+			margin-bottom: -$golden +em;
 		}
 
 	}
 
 	&[data-align="wide"] {
-		max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
-		max-width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
+		width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
+		width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
+		max-width: 88%;
 	}
 
 }

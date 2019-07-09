@@ -50,6 +50,8 @@ ul.order_details::after { background-position: 0 0; top: auto; bottom: -0.5em; }
 
 /* FILE: woocommerce/main/_main.scss */
 /* FILE: woocommerce/main/__global.scss */
+.woocommerce-page.has-blocks .content-area { max-width: none; }
+
 .woocommerce ins { text-decoration: none; }
 
 .woocommerce mark, #page .woocommerce mark { margin: 0; font-weight: 700; background: none; color: inherit; -webkit-box-shadow: none; box-shadow: none; -webkit-box-decoration-break: slice; box-decoration-break: slice; }
@@ -1062,6 +1064,8 @@ ul.order_details strong { display: block; text-transform: none; font-size: 1.382
 .customer-login p:first-child { margin-top: 0; }
 
 .customer-login .inline { margin-right: 1em; }
+
+.customer-login .woocommerce-form-login__rememberme { margin-bottom: 1.618em; }
 
 .customer-login .lost_password { font-size: 0.809em; }
 

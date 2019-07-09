@@ -93,6 +93,10 @@
 			margin-#{$left}: 1em; // {{RTL}}
 		}
 
+		.woocommerce-form-login__rememberme {
+			margin-bottom: $golden +em;
+		}
+
 		.lost_password {
 			font-size: 1em - $golden_minor / 2;
 		}

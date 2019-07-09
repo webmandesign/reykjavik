@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.0.1
  *
  * Contents:
  *
@@ -305,7 +305,7 @@ class Reykjavik_Content {
 		 * Block editor output modifications.
 		 *
 		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @version  2.0.1
 		 *
      * @param  string $block_content  The pre-rendered content. Default null.
      * @param  array  $block          The block being rendered.
@@ -368,7 +368,7 @@ class Reykjavik_Content {
 				) {
 					$atts = array(
 						'class="align-wrap"',
-						'data-block="' . sanitize_html_class( str_replace( 'core/', '', $block['blockName'] ) ) . '"',
+						'data-block="' . sanitize_title( str_replace( 'core/', '', $block['blockName'] ) ) . '"',
 						'data-block-class="' . esc_attr( $attr_class ) . '"',
 					);
 					$block_content = '<div ' . implode( ' ', $atts ) . '>' . $block_content . '</div>';

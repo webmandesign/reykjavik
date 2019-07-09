@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-07-01 16:28+0200\n"
+"POT-Creation-Date: 2019-07-09 19:03+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -1551,217 +1551,185 @@ msgctxt "Font size."
 msgid "Display %d"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:106
+#: includes/starter-content/class-starter-content.php:83
 msgctxt "Theme starter content"
 msgid "How to hide sidebar?"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:107
+#: includes/starter-content/class-starter-content.php:84
 msgctxt "Theme starter content"
 msgid "Remove all widgets from sidebar to hide it."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:107
+#: includes/starter-content/class-starter-content.php:84
 msgctxt "Theme starter content"
 msgid ""
 "Or use a sidebar management plugin to manage all widget areas on your "
 "website and create your own ones."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:118
+#: includes/starter-content/class-starter-content.php:95
 msgctxt "Theme starter content"
 msgid "Intro Widgets"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:119
+#: includes/starter-content/class-starter-content.php:96
 msgctxt "Theme starter content"
 msgid "This is an Intro Widgets area displayed on a special page template."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:183
+#: includes/starter-content/class-starter-content.php:160
 msgctxt "Theme starter content"
 msgid "Hello from Reykjavik"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:184
-#: includes/starter-content/class-starter-content.php:208
+#: includes/starter-content/class-starter-content.php:164
 #: includes/starter-content/class-starter-content.php:240
-#: includes/starter-content/class-starter-content.php:260
-#: includes/starter-content/class-starter-content.php:266
+#: includes/starter-content/class-starter-content.php:342
+#: includes/starter-content/class-starter-content.php:421
+#: includes/starter-content/class-starter-content.php:435
 msgctxt "Theme starter content"
-msgid ""
-"This is a page/post excerpt text. You might need to enable the excerpt field "
-"in screen options first when editing the page/post."
+msgid "This is a page/post excerpt text."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:184
+#: includes/starter-content/class-starter-content.php:167
+#: includes/starter-content/class-starter-content.php:243
+#: includes/starter-content/class-starter-content.php:345
+#: includes/starter-content/class-starter-content.php:424
+#: includes/starter-content/class-starter-content.php:438
+msgctxt "Theme starter content"
+msgid "How to edit excerpt field content?"
+msgstr ""
+
+#: includes/starter-content/class-starter-content.php:172
 msgctxt "Theme starter content"
 msgid "Go shopping"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:186
+#: includes/starter-content/class-starter-content.php:178
 msgctxt "Theme starter content"
 msgid "Welcome to our website!"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:188
+#: includes/starter-content/class-starter-content.php:182
 msgctxt "Theme starter content"
 msgid ""
 "This is your homepage, which is what most visitors will see when they come "
 "to your site for the first time."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:192
-msgctxt "Theme starter content"
-msgid "In default page layout&hellip;"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:194
-msgctxt "Theme starter content"
-msgid ""
-"By default the theme displays page content in 2 columns. You can change this "
-"to more traditional layout in theme options."
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:198
-msgctxt "Theme starter content"
-msgid "&hellip;H2 headings are outdented"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:207
+#: includes/starter-content/class-starter-content.php:236
 msgctxt "Theme starter content"
 msgid "WooCommerce shop homepage"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:210
+#: includes/starter-content/class-starter-content.php:251
 msgctxt "Theme starter content"
 msgid "Featured products"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:215
+#: includes/starter-content/class-starter-content.php:285
 msgctxt "Theme starter content"
-msgid ""
-"You need to have WooCommerce plugin installed and activated for this "
-"shortcode to display your products."
+msgid "Newest products"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:220
-msgctxt "Theme starter content"
-msgid "Shop categories"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:225
-msgctxt "Theme starter content"
-msgid ""
-"You need to have WooCommerce plugin installed and activated for this "
-"shortcode to display your product categories."
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:230
-msgctxt "Theme starter content"
-msgid "Shortly about us"
-msgstr ""
-
-#: includes/starter-content/class-starter-content.php:242
+#: includes/starter-content/class-starter-content.php:351
 msgctxt "Theme starter content"
 msgid "Introduce yourself"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:245
+#: includes/starter-content/class-starter-content.php:355
 msgctxt "Theme starter content"
 msgid ""
 "You might be an artist who would like to introduce yourself and your work "
 "here or maybe you&rsquo;re a business with a mission to describe."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:268
+#: includes/starter-content/class-starter-content.php:446
 msgctxt "Theme starter content"
 msgid "Get in touch"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:270
+#: includes/starter-content/class-starter-content.php:452
 msgctxt "Theme starter content"
 msgid ""
 "This is a page with some basic contact information, such as an address and "
 "phone number. You might also try a plugin to add a contact form."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:272
-#: includes/starter-content/class-starter-content.php:274
+#: includes/starter-content/class-starter-content.php:457
 msgctxt "Theme starter content"
 msgid "Your name"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:276
-#: includes/starter-content/class-starter-content.php:278
+#: includes/starter-content/class-starter-content.php:458
 msgctxt "Theme starter content"
 msgid "Your email"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:280
-#: includes/starter-content/class-starter-content.php:282
+#: includes/starter-content/class-starter-content.php:459
 msgctxt "Theme starter content"
 msgid "Your message"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:284
-msgctxt "Theme starter content"
+#: includes/starter-content/class-starter-content.php:460
+msgctxt "reykjavik"
 msgid ""
-"This is only a dummy form placeholder. Use a plugin to create forms, such as "
-"Caldera Forms or Contact Form 7."
+"This is only a dummy form placeholder. It does not work. Use a plugin to "
+"create forms for your website."
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:286
+#: includes/starter-content/class-starter-content.php:461
 msgctxt "Theme starter content"
 msgid "This form does not work"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:309
+#: includes/starter-content/class-starter-content.php:487
 msgctxt "Theme starter content"
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:313
+#: includes/starter-content/class-starter-content.php:491
 msgctxt "Theme starter content"
 msgid "Home"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:317
+#: includes/starter-content/class-starter-content.php:495
 msgctxt "Theme starter content"
 msgid "Shop"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:328
+#: includes/starter-content/class-starter-content.php:506
 msgctxt "Short for \"documentation\". Theme starter content."
 msgid "Docs"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:336
+#: includes/starter-content/class-starter-content.php:514
 msgctxt "Theme starter content"
 msgid "Secondary Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:340
+#: includes/starter-content/class-starter-content.php:518
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Secondary"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:345
+#: includes/starter-content/class-starter-content.php:523
 msgctxt "As in \"Secondary simple navigational menu\". Theme starter content."
 msgid "Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:353
+#: includes/starter-content/class-starter-content.php:531
 msgctxt "Theme starter content"
 msgid "Social Links Menu"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:357
+#: includes/starter-content/class-starter-content.php:535
 msgctxt "Theme starter content"
 msgid "Facebook"
 msgstr ""
 
-#: includes/starter-content/class-starter-content.php:362
+#: includes/starter-content/class-starter-content.php:540
 msgctxt "Theme starter content"
 msgid "Twitter"
 msgstr ""

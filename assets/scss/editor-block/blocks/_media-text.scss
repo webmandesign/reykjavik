@@ -1,10 +1,13 @@
 /* FILE: editor-block/blocks/_media-text.scss */
 
-// No need for conditional check.
-.wp-block-media-text {
+@if ( index( $support__block, 'media-text' ) ) {
 
-	figure {
-		margin-bottom: 0;
+	.wp-block-media-text {
+
+		figure {
+			margin-bottom: 0;
+		}
+
 	}
 
 }

@@ -2,6 +2,10 @@
 
 @if ( index( $support__block, 'separator' ) ) {
 
+	[data-type="core/separator"] {
+		clear: both;
+	}
+
 	.wp-block-separator {
 
 		.wp-block & {

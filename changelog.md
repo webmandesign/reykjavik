@@ -1,5 +1,29 @@
 # Reykjavik Changelog
 
+## 2.0.1
+
+* **Update**: Demo content
+* **Update**: Starter CSS 5.0.1
+* **Update**: Localization
+* **Fix**: Blocks styles
+* **Fix**: Wide and full alignment styles
+* **Fix**: WooCommerce page width
+* **Fix**: Styles fixes
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/editor-style-blocks.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	includes/frontend/class-content.php
+	includes/plugins/one-click-demo-import/demo-content-reykjavik.xml
+	includes/plugins/one-click-demo-import/demo-widgets-reykjavik.wie
+	includes/starter-content/class-starter-content.php
+
+
 ## 2.0.0
 
 * **Add**: Block editor (Gutenberg) full, advanced support

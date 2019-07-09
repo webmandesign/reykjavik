@@ -87,6 +87,11 @@
 
 			}
 
+			.outdent-content {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
 			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-#{$left}: percentage( 1 - $page_content_width / 100 ); // {{RTL}}
 

@@ -19,7 +19,7 @@
 		}
 
 		&__inner-container,
-		& .wp-block-cover__inner-container {
+		.wp-block-cover__inner-container {
 			width: 100%;
 			max-width: 24em;
 			padding: 0;
@@ -37,7 +37,6 @@
 			margin-bottom: nth( $setup_h2, 4 ) +em;
 			font-size: nth( $setup_h2, 1 ) +em;
 			line-height: nth( $setup_h2, 2 );
-			text-align: inherit;
 			color: inherit;
 
 			&:last-child {

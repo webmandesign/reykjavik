@@ -8,6 +8,14 @@
 
 
 
+// Page width modification
+
+	.woocommerce-page.has-blocks .content-area {
+		max-width: none;
+	}
+
+
+
 // Basic elements
 
 	.woocommerce {

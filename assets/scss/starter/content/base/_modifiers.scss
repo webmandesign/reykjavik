@@ -1,6 +1,34 @@
 /* FILE: starter/content/base/_modifiers.scss */
 
-
+//
+// Custom CSS class:
+//
+// Alignment:
+// - has-[left/center/right]-content
+// - has-[left/center/right]-text-align
+// - has-[top/middle/baseline/bottom]-vertical-align
+//
+// Box model:
+// - has-background
+// - has-no-margin
+// - has-no-margin-[top/right/bottom/left/vertical/horizontal]
+// - has-[phi/golden/no]-padding
+// - has-no-padding-[top/right/bottom/left]
+// - has-[half/phi/full]-screen-min-height
+//
+// Others:
+// - has-drop-cap
+// - has-dropcap-text
+// - has-hidden-overflow
+// - has-nowrap-white-space
+//
+// Typography:
+// - has-[extra-small/small/smaller/regular/normal/larger/large/extra-large]-font-size
+// - has-[italic/normal]-font-style
+// - has-[100/200/300/400/500/600/700/800/900]-font-weight
+// - has-[extra-small/small/regular/medium]-line-height
+// - has-uppercase-text-transform
+//
 
 // Alignment
 
@@ -44,7 +72,7 @@
 // Box model
 
 	.has-background {
-		@extend .has-golden-padding;
+		@extend .has-phi-padding;
 	}
 
 	p.has-background {
@@ -53,8 +81,9 @@
 		padding: 28px $important_base_modifiers;
 	}
 
+	p.has-phi-padding,
 	p.has-golden-padding {
-		@extend .has-golden-padding;
+		@extend .has-phi-padding;
 	}
 
 	p.has-no-padding {
@@ -89,6 +118,7 @@
 
 	// Padding
 
+		.has-phi-padding,
 		.has-golden-padding {
 			padding: ( $golden +em ) $important_base_modifiers;
 		}
@@ -133,6 +163,16 @@
 
 		.has-no-margin-left {
 			margin-left: 0 $important_base_modifiers;
+		}
+
+		.has-no-margin-horizontal {
+			margin-left: 0 $important_base_modifiers;
+			margin-right: 0 $important_base_modifiers;
+		}
+
+		.has-no-margin-vertical {
+			margin-top: 0 $important_base_modifiers;
+			margin-bottom: 0 $important_base_modifiers;
 		}
 
 // Others

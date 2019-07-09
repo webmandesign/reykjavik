@@ -13,3 +13,8 @@ $alignment_width: $alignment_width + $alignment_margin;
 	margin-top: $golden +em;
 	margin-bottom: $golden +em;
 }
+
+[data-type="core/more"],
+[data-type="core/nextpage"] {
+	clear: both;
+}

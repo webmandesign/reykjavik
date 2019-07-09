@@ -22,19 +22,7 @@ $content_indent: 100 - $page_content_width;
 	clear: both;
 	width: 100vw;
 	margin-#{$left}: calc( 50% - 50vw ); // {{RTL}}
-	margin-bottom: $golden +em;
 	pointer-events: none;
-
-	&:last-child,
-	&[data-block="columns"] {
-		margin-bottom: 0;
-	}
-
-	& + & {
-		// Removing vertical margin here in favor of Spacer block
-		// used to space out the wide/full aligned blocks.
-		margin-top: -$golden +em;
-	}
 
 	// Sidebar is displayed:
 	.has-widgets-sidebar & {
@@ -71,23 +59,49 @@ $content_indent: 100 - $page_content_width;
 .alignwide,
 .alignfull {
 	pointer-events: auto;
+
+	&,
+	&:last-child {
+		margin-bottom: $golden +em;
+	}
+
+	&.wp-block-columns,
+	&.has-no-margin,
+	&.has-no-margin-vertical,
+	&.has-no-margin-bottom {
+		margin-bottom: 0;
+	}
+
+	&,
+	&.has-no-margin {
+		// Horizontal margin has to be applied.
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
 
 .alignwide {
+	$content_padding: 6%;
 	/* $content_width */
-	max-width: map_get( $customize_options, 'layout_width_content' );
-	max-width: var(--layout_width_content);
-	// max-width: calc( 50% + var(--layout_width_content) / 2 ); // @see WPRig. But it's not usable in our case.
-	margin: 0 auto;
+	width: map_get( $customize_options, 'layout_width_content' );
+	width: var(--layout_width_content);
+	max-width: 100% - 2 * $content_padding;
 
 	// Sidebar is displayed:
 	.has-widgets-sidebar & {
 		$alignwide_overlap: 10; // in %
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			max-width: #{ round( map_get( $customize_options, 'layout_width_site' ) * ( $page_content_width + $alignwide_overlap ) / 100 ) };
-			max-width: calc( var(--layout_width_content) * #{ ( $page_content_width + $alignwide_overlap ) / 100 } );
-			margin-#{$right}: 0;
+			width: #{ round( map_get( $customize_options, 'layout_width_site' ) * ( $page_content_width + $alignwide_overlap ) / 100 ) };
+			width: calc( var(--layout_width_content) * #{ ( $page_content_width + $alignwide_overlap ) / 100 } );
+			max-width: 100% - $content_padding;
+
+			&,
+			&.has-no-margin {
+				margin-#{$right}: 0;
+			}
+
 		}
 
 	}
@@ -97,13 +111,11 @@ $content_indent: 100 - $page_content_width;
 .alignfull {
 	width: 100%;
 	max-width: 100%;
-	margin: 0;
 
 	// Boxed site layout:
 	.site-layout-boxed & {
 		width: map_get( $customize_options, 'layout_width_site' );
 		width: var(--layout_width_site);
-		margin: 0 auto;
 	}
 
 	// Boxed site layout + sidebar:
@@ -114,7 +126,12 @@ $content_indent: 100 - $page_content_width;
 			/* $content_width */
 			max-width: calc( #{ map_get( $customize_options, 'layout_width_site' ) } / 2 + #{ map_get( $customize_options, 'layout_width_content' ) } * #{ $page_content_width / 100 } - #{ map_get( $customize_options, 'layout_width_content' ) } / 2 );
 			max-width: calc( var(--layout_width_site) / 2 + var(--layout_width_content) * #{ $page_content_width / 100 } - var(--layout_width_content) / 2 );
-			margin-#{$right}: 0;
+
+			&,
+			&.has-no-margin {
+				margin-#{$right}: 0;
+			}
+
 		}
 
 	}
