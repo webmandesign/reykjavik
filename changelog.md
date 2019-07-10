@@ -3,7 +3,7 @@
 ## 2.0.2
 
 * **Update**: Demo content
-* **Update**: Starter CSS 5.0.2
+* **Update**: Starter CSS 5.0.3
 * **Update**: Blocks styles
 * **Update**: Removing obsolete code
 * **Update**: Elementor plugin compatibility

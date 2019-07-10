@@ -340,7 +340,7 @@
 
 .editor-styles-wrapper .wp-block-latest-posts:not(.alignleft):not(.aligncenter):not(.alignright):not(.alignwide):not(.alignfull) { margin-left: 0; margin-right: 0; }
 
-.editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content { padding-top: 1.618em; padding-bottom: 1.618em; }
+.editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content { padding: 1.618em 6%; }
 
 .editor-styles-wrapper .wp-block-pullquote, .editor-styles-wrapper blockquote.alignleft, .editor-styles-wrapper blockquote.alignright { padding: 2.61792em 6%; text-align: inherit; border-top-width: 0.382em; border-top-style: solid; border-bottom-width: 0.382em; border-bottom-style: solid; }
 
@@ -850,11 +850,15 @@ body .editor-styles-wrapper { background-color: #fefeff; color: #535354; border-
 .editor-styles-wrapper .wp-block .wp-block-latest-posts { list-style: none; }
 
 /* FILE: editor-block/blocks/_jetpack.scss */
-.wp-block { /* FILE: starter/content/plugins/jetpack/_blocks.scss */ }
+.wp-block { /* FILE: starter/content/plugins/jetpack/_blocks.scss */ /* FILE: main/plugins/__jetpack-blocks.scss */ }
 
 .wp-block .wp-block-jetpack-contact-info > div { margin-bottom: 0.618em; }
 
 .wp-block .wp-block-jetpack-contact-info > div:last-child { margin-bottom: 0; }
+
+.wp-block .jetpack-business-hours { display: -ms-inline-grid; display: inline-grid; -ms-grid-columns: auto auto; grid-template-columns: auto auto; grid-column-gap: 1.618em; }
+
+.wp-block .jetpack-business-hours dt, .wp-block .jetpack-business-hours dd { margin: 0; }
 
 .wp-block .wp-block-jetpack-address, .wp-block .wp-block-jetpack-email, .wp-block .wp-block-jetpack-phone { overflow: hidden; }
 
@@ -866,11 +870,7 @@ body .editor-styles-wrapper { background-color: #fefeff; color: #535354; border-
 
 .wp-block .wp-block-jetpack-phone::before { content: '\f437'; }
 
-.wp-block .jetpack-business-hours { display: -ms-inline-grid; display: inline-grid; -ms-grid-columns: auto auto; grid-template-columns: auto auto; grid-column-gap: 1.618em; }
-
 .wp-block .jetpack-business-hours.jetpack-business-hours::before { content: '\f303'; display: block; grid-column: 1 / -1; font-size: 1.382em; line-height: 1; margin-bottom: 0.191em; }
-
-.wp-block .jetpack-business-hours dt, .wp-block .jetpack-business-hours dd { margin: 0; }
 
 /* FILE: editor-block/_helper.scss */
 .editor-styles-wrapper .has-left-text-align, .editor-styles-wrapper .text-left, .editor-styles-wrapper .has-left-content { text-align: left !important; }

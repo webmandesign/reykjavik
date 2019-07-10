@@ -826,19 +826,7 @@ form[role="search"] [type="search"], form[role="search"] .search-field, .form-se
 
 .wp-block-jetpack-contact-info > div:last-child { margin-bottom: 0; }
 
-.wp-block-jetpack-address, .wp-block-jetpack-email, .wp-block-jetpack-phone { overflow: hidden; }
-
-.wp-block-jetpack-address::before, .wp-block-jetpack-email::before, .wp-block-jetpack-phone::before { float: right; margin-left: 0.382em; font-size: 1.382em; line-height: 1; }
-
-.wp-block-jetpack-address::before { content: '\f417'; float: none; display: block; margin-bottom: 0.191em; }
-
-.wp-block-jetpack-email::before { content: '\f410'; }
-
-.wp-block-jetpack-phone::before { content: '\f437'; }
-
 .jetpack-business-hours { display: -ms-inline-grid; display: inline-grid; -ms-grid-columns: auto auto; grid-template-columns: auto auto; grid-column-gap: 1.618em; }
-
-.jetpack-business-hours.jetpack-business-hours::before { content: '\f303'; display: block; grid-column: 1 / -1; font-size: 1.382em; line-height: 1; margin-bottom: 0.191em; }
 
 .jetpack-business-hours dt, .jetpack-business-hours dd { margin: 0; }
 
@@ -933,7 +921,7 @@ div.sharedaddy .sd-social .sd-button .share-count { background: inherit; color: 
 
 /* FILE: main/_main.scss */
 /* FILE: main/icons/_icons.scss */
-.wp-block-jetpack-address::before, .wp-block-jetpack-email::before, .wp-block-jetpack-phone::before, .jetpack-business-hours::before, .wp-custom-header .wp-custom-header-video-button::before, blockquote::before, .site form[role="search"]::before, .site .search-form::before, .post-password-form::before, .menu-toggle::before, .social-links a.back-to-top::before, .wp-block-file a:first-child::before, .bypostauthor > .comment-body .comment-author::before, .comment-edit-link::before, .comment-reply-link::before, .pingback .comment-body::before, .trackback .comment-body::before, .widget_archive li::before, .widget_categories li::before, .widget_pages li::before, .widget_recent_comments li::before, .widget_recent_entries li::before, .breadcrumbs .home::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
+.wp-custom-header .wp-custom-header-video-button::before, blockquote::before, .site form[role="search"]::before, .site .search-form::before, .post-password-form::before, .menu-toggle::before, .social-links a.back-to-top::before, .wp-block-file a:first-child::before, .bypostauthor > .comment-body .comment-author::before, .comment-edit-link::before, .comment-reply-link::before, .pingback .comment-body::before, .trackback .comment-body::before, .widget_archive li::before, .widget_categories li::before, .widget_pages li::before, .widget_recent_comments li::before, .widget_recent_entries li::before, .breadcrumbs .home::before, .wp-block-jetpack-address::before, .wp-block-jetpack-email::before, .wp-block-jetpack-phone::before, .jetpack-business-hours::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
 
 .svgicon { display: inline-block; position: relative; width: 1em; height: 1em; top: -0.0625em; fill: currentColor; vertical-align: middle; }
 
@@ -2431,6 +2419,19 @@ div.sharedaddy { margin-top: 2.61792rem; border-color: inherit; }
   .jetpack-testimonial-shortcode .testimonial-entry-column-4 { width: calc( 25% - 3.618em); }
   .jetpack-testimonial-shortcode .testimonial-entry-column-5 { width: calc( 20% - 3.618em); }
   .jetpack-testimonial-shortcode .testimonial-entry-column-6 { width: calc( 16.66667% - 3.618em); } }
+
+/* FILE: main/plugins/__jetpack-blocks.scss */
+.wp-block-jetpack-address, .wp-block-jetpack-email, .wp-block-jetpack-phone { overflow: hidden; }
+
+.wp-block-jetpack-address::before, .wp-block-jetpack-email::before, .wp-block-jetpack-phone::before { float: right; margin-left: 0.382em; font-size: 1.382em; line-height: 1; }
+
+.wp-block-jetpack-address::before { content: '\f417'; float: none; display: block; margin-bottom: 0.191em; }
+
+.wp-block-jetpack-email::before { content: '\f410'; }
+
+.wp-block-jetpack-phone::before { content: '\f437'; }
+
+.jetpack-business-hours.jetpack-business-hours::before { content: '\f303'; display: block; grid-column: 1 / -1; font-size: 1.382em; line-height: 1; margin-bottom: 0.191em; }
 
 /* FILE: main/plugins/__subtitles.scss */
 .entry-subtitle { display: block; margin-top: 0.382em; opacity: .8; }
