@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.0.2
+
+* **Update**: Demo content
+* **Update**: Starter CSS 5.0.2
+* **Update**: Blocks styles
+* **Update**: Removing obsolete code
+* **Update**: Elementor plugin compatibility
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/editor-style-blocks.scss
+	assets/scss/main.scss
+	assets/scss/starter/__index.scss
+	includes/frontend/class-content.php
+	includes/plugins/elementor/class-elementor.php
+	includes/plugins/one-click-demo-import/demo-content-reykjavik.xml
+
+
 ## 2.0.1
 
 * **Update**: Demo content

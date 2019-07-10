@@ -4,6 +4,10 @@
 
 	.wp-block-cover {
 
+		h2, h3, h4 {
+			color: inherit;
+		}
+
 		.wp-block &__inner-container,
 		.wp-block & .wp-block-cover__inner-container {
 			max-width: calc( 24em + #{ $ui_margin * 2 } );

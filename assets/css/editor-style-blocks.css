@@ -310,7 +310,7 @@
 
 .editor-styles-wrapper .wp-block-cover a:not(.button) { color: inherit; }
 
-.editor-styles-wrapper .wp-block-cover h2 { max-width: none; padding: 0; margin-bottom: 0.66012em; font-size: 2.058em; line-height: 1.191; color: inherit; }
+.editor-styles-wrapper .wp-block-cover h2 { max-width: none; padding: 0; margin-bottom: 0.66012em; font-size: 2.058em; line-height: 1.191; }
 
 .editor-styles-wrapper .wp-block-cover h2:last-child { margin-bottom: 0; }
 
@@ -384,9 +384,11 @@
 
 .editor-styles-wrapper .wp-block-video.alignleft, .editor-styles-wrapper .wp-block-video.aligncenter, .editor-styles-wrapper .wp-block-video.alignright { max-width: 55.8%; }
 
-.editor-styles-wrapper .alignleft { float: left; margin-right: 6%; margin-bottom: 1em; }
+.editor-styles-wrapper .alignleft, .editor-styles-wrapper .alignleft:last-child, .editor-styles-wrapper .alignright, .editor-styles-wrapper .alignright:last-child { margin-bottom: 1em; }
 
-.editor-styles-wrapper .alignright { float: right; margin-left: 6%; margin-bottom: 1em; }
+.editor-styles-wrapper .alignleft { float: left; margin-right: 6%; }
+
+.editor-styles-wrapper .alignright { float: right; margin-left: 6%; }
 
 .editor-styles-wrapper .aligncenter { margin-left: auto; margin-right: auto; }
 
@@ -431,9 +433,11 @@
 
 .editor-styles-wrapper ul { list-style: square; }
 
-.editor-styles-wrapper ul li.icon, .editor-styles-wrapper ul li.icon-bullet { position: relative; list-style: none; }
+.editor-styles-wrapper ul li.icon, .editor-styles-wrapper ul li.icon-bullet { position: relative; display: list-item; list-style: none; font-family: inherit; line-height: inherit; vertical-align: baseline; speak: normal; }
 
-.editor-styles-wrapper ul li.icon::before, .editor-styles-wrapper ul li.icon-bullet::before { position: absolute; left: -1.382em; line-height: inherit; }
+.editor-styles-wrapper ul li.icon::before, .editor-styles-wrapper ul li.icon-bullet::before { position: absolute; left: -1.382em; line-height: inherit; speak: none; }
+
+.editor-styles-wrapper ul li.icon.genericons-neue::before, .editor-styles-wrapper ul li.icon-bullet.genericons-neue::before { font-family: 'Genericons-Neue'; }
 
 .editor-styles-wrapper blockquote { clear: none; margin: 1.618em 0; }
 
@@ -483,7 +487,7 @@
 
 .editor-styles-wrapper .svg-fallback { display: none; }
 
-.editor-styles-wrapper h1.h2, .editor-styles-wrapper h1.h3, .editor-styles-wrapper h1.display-1, .editor-styles-wrapper h1.display-2, .editor-styles-wrapper h1.display-3, .editor-styles-wrapper h1.display-4 { font-style: inherit; }
+.editor-styles-wrapper h1.h2, .editor-styles-wrapper h1.h3, .editor-styles-wrapper h1.display-1, .editor-styles-wrapper h1.display-2, .editor-styles-wrapper h1.display-3, .editor-styles-wrapper h1.display-4, .editor-styles-wrapper h1.has-display-1-font-size, .editor-styles-wrapper h1.has-display-2-font-size, .editor-styles-wrapper h1.has-display-3-font-size, .editor-styles-wrapper h1.has-display-4-font-size { font-style: inherit; }
 
 .editor-styles-wrapper h1.weight-100, .editor-styles-wrapper h1.has-100-font-weight, .editor-styles-wrapper h1.weight-100, .editor-styles-wrapper .h1.weight-100, .editor-styles-wrapper .h1.has-100-font-weight, .editor-styles-wrapper .h1.weight-100, .editor-styles-wrapper h2.weight-100, .editor-styles-wrapper h2.has-100-font-weight, .editor-styles-wrapper h2.weight-100, .editor-styles-wrapper .h2.weight-100, .editor-styles-wrapper .h2.has-100-font-weight, .editor-styles-wrapper .h2.weight-100, .editor-styles-wrapper h3.weight-100, .editor-styles-wrapper h3.has-100-font-weight, .editor-styles-wrapper h3.weight-100, .editor-styles-wrapper .h3.weight-100, .editor-styles-wrapper .h3.has-100-font-weight, .editor-styles-wrapper .h3.weight-100, .editor-styles-wrapper h4.weight-100, .editor-styles-wrapper h4.has-100-font-weight, .editor-styles-wrapper h4.weight-100, .editor-styles-wrapper .h4.weight-100, .editor-styles-wrapper .h4.has-100-font-weight, .editor-styles-wrapper .h4.weight-100, .editor-styles-wrapper h5.weight-100, .editor-styles-wrapper h5.has-100-font-weight, .editor-styles-wrapper h5.weight-100, .editor-styles-wrapper .h5.weight-100, .editor-styles-wrapper .h5.has-100-font-weight, .editor-styles-wrapper .h5.weight-100, .editor-styles-wrapper h6.weight-100, .editor-styles-wrapper h6.has-100-font-weight, .editor-styles-wrapper h6.weight-100, .editor-styles-wrapper .h6.weight-100, .editor-styles-wrapper .h6.has-100-font-weight, .editor-styles-wrapper .h6.weight-100 { font-weight: 100; }
 
@@ -615,6 +619,24 @@ body .editor-styles-wrapper { line-height: 1.618; }
 
 @media (min-width: 448px) { body .editor-styles-wrapper { font-size: 18px; font-size: var(--typography_size_html); } }
 
+.editor-styles-wrapper .has-display-1-font-size, .editor-styles-wrapper .has-display-2-font-size, .editor-styles-wrapper .has-display-3-font-size, .editor-styles-wrapper .has-display-4-font-size { margin-bottom: calc( 1.618 * 18px); margin-bottom: calc( 1.618 * var(--typography_size_html)); }
+
+.editor-styles-wrapper .has-display-1-font-size { font-size: 2.11796em; line-height: 1.33425; }
+
+@media (min-width: 880px) { .editor-styles-wrapper .has-display-1-font-size { font-size: 2.618em; } }
+
+.editor-styles-wrapper .has-display-2-font-size { font-size: 2.37524em; line-height: 1.23875; }
+
+@media (min-width: 880px) { .editor-styles-wrapper .has-display-2-font-size { font-size: 3.329em; } }
+
+.editor-styles-wrapper .has-display-3-font-size { font-size: 2.88754em; line-height: 1.20692; }
+
+@media (min-width: 880px) { .editor-styles-wrapper .has-display-3-font-size { font-size: 4.236em; } }
+
+.editor-styles-wrapper .has-display-4-font-size { font-size: 3.5864em; line-height: 1.191; }
+
+@media (min-width: 880px) { .editor-styles-wrapper .has-display-4-font-size { font-size: 5.387em; } }
+
 /* FILE: editor-block/_base.scss */
 .editor-styles-wrapper { padding-top: 0; overflow-x: hidden; }
 
@@ -716,6 +738,8 @@ body .editor-styles-wrapper { background-color: #fefeff; color: #535354; border-
 .wp-block[data-align=full] .wp-block-columns > .block-editor-inner-blocks { padding-left: 14px; padding-right: 14px; }
 
 /* FILE: editor-block/blocks/_cover.scss */
+.wp-block-cover h2, .wp-block-cover h3, .wp-block-cover h4 { color: inherit; }
+
 .wp-block .wp-block-cover__inner-container, .wp-block .wp-block-cover .wp-block-cover__inner-container { max-width: calc( 24em + 28px); }
 
 .wp-block-cover.has-alignwide-content .wp-block-cover__inner-container { max-width: calc( 36em + 28px); }

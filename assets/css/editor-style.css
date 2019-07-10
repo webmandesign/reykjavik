@@ -478,7 +478,7 @@ table, .site .has-small-line-height, .site .line-height-s, .site .has-s-line-hei
 
 .wp-block-cover a:not(.button) { color: inherit; }
 
-.wp-block-cover h2 { max-width: none; padding: 0; margin-bottom: 0.66012em; font-size: 2.058em; line-height: 1.191; color: inherit; }
+.wp-block-cover h2 { max-width: none; padding: 0; margin-bottom: 0.66012em; font-size: 2.058em; line-height: 1.191; }
 
 .wp-block-cover h2:last-child { margin-bottom: 0; }
 
@@ -515,7 +515,7 @@ table, .site .has-small-line-height, .site .line-height-s, .site .has-s-line-hei
 .wp-block-latest-posts:not(.alignleft):not(.aligncenter):not(.alignright):not(.alignwide):not(.alignfull) { margin-left: 0; margin-right: 0; }
 
 /* FILE: starter/content/wp/blocks/_media-text.scss */
-.wp-block-media-text .wp-block-media-text__content { padding-top: 1.618em; padding-bottom: 1.618em; }
+.wp-block-media-text .wp-block-media-text__content { padding: 1.618em 6%; }
 
 /* FILE: starter/content/wp/blocks/_pullquote.scss */
 .wp-block-pullquote, blockquote.alignleft, blockquote.alignright { padding: 2.61792em 6%; text-align: inherit; border-top-width: 0.382em; border-top-style: solid; border-bottom-width: 0.382em; border-bottom-style: solid; }
@@ -1134,7 +1134,7 @@ form[role="search"] input[type="search"], form[role="search"] .search-field, .se
 
 /* FILE: main/headings/_headings.scss */
 /* FILE: main/headings/__base.scss */
-h1.h2, h1.h3, h1.display-1, h1.display-2, h1.display-3, h1.display-4 { font-style: inherit; }
+h1.h2, h1.h3, h1.display-1, h1.display-2, h1.display-3, h1.display-4, h1.has-display-1-font-size, h1.has-display-2-font-size, h1.has-display-3-font-size, h1.has-display-4-font-size { font-style: inherit; }
 
 h1.weight-100, h1.has-100-font-weight, .site h1.weight-100, .h1.weight-100, .h1.has-100-font-weight, .site .h1.weight-100, h2.weight-100, h2.has-100-font-weight, .site h2.weight-100, .h2.weight-100, .h2.has-100-font-weight, .site .h2.weight-100, h3.weight-100, h3.has-100-font-weight, .site h3.weight-100, .h3.weight-100, .h3.has-100-font-weight, .site .h3.weight-100, h4.weight-100, h4.has-100-font-weight, .site h4.weight-100, .h4.weight-100, .h4.has-100-font-weight, .site .h4.weight-100, h5.weight-100, h5.has-100-font-weight, .site h5.weight-100, .h5.weight-100, .h5.has-100-font-weight, .site .h5.weight-100, h6.weight-100, h6.has-100-font-weight, .site h6.weight-100, .h6.weight-100, .h6.has-100-font-weight, .site .h6.weight-100 { font-weight: 100; }
 
@@ -1429,13 +1429,13 @@ mark, .highlight { -webkit-box-shadow: 0.382em 0 0 #273a7d, -0.382em 0 0 #273a7d
 
 .mce-content-body h6, .mce-content-body .h6 { line-height: 1.618; }
 
-.mce-content-body .display-1 { line-height: 1.33425; }
+.mce-content-body .display-1, .mce-content-body .has-display-1-font-size { line-height: 1.33425; }
 
-.mce-content-body .display-2 { line-height: 1.23875; }
+.mce-content-body .display-2, .mce-content-body .has-display-2-font-size { line-height: 1.23875; }
 
-.mce-content-body .display-3 { line-height: 1.20692; }
+.mce-content-body .display-3, .mce-content-body .has-display-3-font-size { line-height: 1.20692; }
 
-.mce-content-body .display-4 { line-height: 1.191; }
+.mce-content-body .display-4, .mce-content-body .has-display-4-font-size { line-height: 1.191; }
 
 html { font-size: 100%; }
 

@@ -50,3 +50,22 @@ body .editor-styles-wrapper {
 .editor-default-block-appender textarea.editor-default-block-appender__content {
 	@extend %font_inherit;
 }
+
+%display_text_size {
+	margin-bottom: calc( #{ $golden } * #{ map_get( $customize_options, 'typography_size_html' ) } );
+	margin-bottom: calc( #{ $golden } * var(--typography_size_html) );
+}
+
+	.editor-styles-wrapper {
+		@each $i, $size in $display_text_size {
+			.has-display-#{$i}-font-size {
+				@extend %display_text_size;
+				font-size: $size * ( $golden_major + $golden_minor / 2 / $i );
+				line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
+
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					font-size: $size;
+				}
+			}
+		}
+	}

@@ -30,7 +30,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  1.5.2
+ * @version  2.0.2
  *
  * Contents:
  *
@@ -108,7 +108,7 @@ class Reykjavik_Elementor {
 		 * UPDATE 20180507: They will not fix it, basically, this is intended...
 		 *
 		 * @since    1.1.0
-		 * @version  1.5.2
+		 * @version  2.0.2
 		 *
 		 * @param  array $url_args  The array populated with variables.
 		 */

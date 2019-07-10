@@ -1,0 +1,26 @@
+/* FILE: main/wp/__media-text.scss */
+
+//
+// Media & Text
+//
+
+
+
+
+
+.wp-block-media-text {
+
+	&:not(.alignfull):not([class*="background-color"]):not([style*="background-color"]) {
+
+		.wp-block-media-text__content {
+
+			@include media( ( map_get( $breakpoint, 's' ), 'max-width' ) ) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+		}
+
+	}
+
+}

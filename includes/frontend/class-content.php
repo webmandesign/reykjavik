@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.1
+ * @version  2.0.2
  *
  * Contents:
  *
@@ -26,23 +26,17 @@ class Reykjavik_Content {
 
 		private static $instance;
 
-		private static $site_layout;
-
 
 
 		/**
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.0.2
 		 */
 		private function __construct() {
 
 			// Processing
-
-				// Setup
-
-					self::$site_layout = Reykjavik_Library_Customize::get_theme_mod( 'layout_site' );
 
 				// Hooks
 

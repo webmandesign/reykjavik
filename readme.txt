@@ -3,7 +3,7 @@ Contributors: webmandesign
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7.0
 Tested up to: 5.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,8 +40,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.0.1 =
-Updated demo content, fixed blocks, WooCommerce and other styles.
+= 2.0.2 =
+Updating blocks styles and demo content.
 
 
 == Resources ==

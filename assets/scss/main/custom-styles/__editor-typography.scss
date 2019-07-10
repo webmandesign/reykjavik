@@ -31,7 +31,8 @@
 
 			@each $i, $size in $display_text_size {
 
-				.display-#{$i} {
+				.display-#{$i},
+				.has-display-#{$i}-font-size {
 					line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
 				}
 
