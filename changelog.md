@@ -6,7 +6,6 @@
 * **Update**: Starter CSS 5.0.3
 * **Update**: Blocks styles
 * **Update**: Removing obsolete code
-* **Update**: Elementor plugin compatibility
 
 ### Files changed:
 
@@ -17,7 +16,6 @@
 	assets/scss/main.scss
 	assets/scss/starter/__index.scss
 	includes/frontend/class-content.php
-	includes/plugins/elementor/class-elementor.php
 	includes/plugins/one-click-demo-import/demo-content-reykjavik.xml
 
 
