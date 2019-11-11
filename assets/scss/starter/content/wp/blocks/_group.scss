@@ -1,0 +1,15 @@
+/* FILE: starter/content/wp/blocks/_group.scss */
+
+@if ( index( $support__block, 'group' ) ) {
+
+	.wp-block-group {
+
+		&__inner-container {
+			max-width: 36em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
+}

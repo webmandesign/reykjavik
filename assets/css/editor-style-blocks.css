@@ -6,7 +6,7 @@
 /* FILE: editor-block/__index.scss */
 /* FILE: editor-block/__starter.scss */
 /* inStyle (v1.6.3) https://github.com/salsita/inStyle 2016 | MIT @mixin ============================= */
-.editor-styles-wrapper { /* FILE: starter/content/base/_elements.scss */ /* FILE: starter/content/base/_helpers.scss */ /* FILE: starter/content/base/_clearing.scss */ /* FILE: starter/content/base/_accessibility.scss */ /* FILE: starter/content/base/_modifiers.scss */ /* FILE: starter/content/base/_modifiers-backcompat.scss */ /* FILE: starter/content/typography/__index.scss */ /* FILE: starter/content/typography/_base.scss */ /* FILE: starter/content/typography/_size.scss */ /* FILE: starter/content/typography/_weight.scss */ /* FILE: starter/content/typography/_style.scss */ /* FILE: starter/content/typography/_spacing.scss */ /* FILE: starter/content/wp/__index.scss */ /* FILE: starter/content/wp/_sticky.scss */ /* FILE: starter/content/wp/_caption.scss */ /* FILE: starter/content/wp/_gallery.scss */ /* FILE: starter/content/wp/_smilie.scss */ /* FILE: starter/content/wp/_player.scss */ /* FILE: starter/content/wp/_embed.scss */ /* FILE: starter/content/wp/blocks/__index.scss */ /* FILE: starter/content/wp/blocks/_block.scss */ /* FILE: starter/content/wp/blocks/_audio.scss */ /* FILE: starter/content/wp/blocks/_button.scss */ /* FILE: starter/content/wp/blocks/_code.scss */ /* FILE: starter/content/wp/blocks/_columns.scss */ /* FILE: starter/content/wp/blocks/_cover.scss */ /* FILE: starter/content/wp/blocks/_drop-cap.scss */ /* FILE: starter/content/wp/blocks/_embed.scss */ /* FILE: starter/content/wp/blocks/_gallery.scss */ /* FILE: starter/content/wp/blocks/_image.scss */ /* FILE: starter/content/wp/blocks/_latest-comments.scss */ /* FILE: starter/content/wp/blocks/_latest-posts.scss */ /* FILE: starter/content/wp/blocks/_media-text.scss */ /* FILE: starter/content/wp/blocks/_pullquote.scss */ /* FILE: starter/content/wp/blocks/_quote.scss */ /* FILE: starter/content/wp/blocks/_separator.scss */ /* FILE: starter/content/wp/blocks/_spacer.scss */ /* FILE: starter/content/wp/blocks/_table.scss */ /* FILE: starter/content/wp/blocks/_verse.scss */ /* FILE: starter/content/wp/blocks/_video.scss */ /* FILE: starter/content/wp/_alignment.scss */ }
+.editor-styles-wrapper { /* FILE: starter/content/base/_elements.scss */ /* FILE: starter/content/base/_helpers.scss */ /* FILE: starter/content/base/_clearing.scss */ /* FILE: starter/content/base/_accessibility.scss */ /* FILE: starter/content/base/_modifiers.scss */ /* FILE: starter/content/base/_modifiers-backcompat.scss */ /* FILE: starter/content/typography/__index.scss */ /* FILE: starter/content/typography/_base.scss */ /* FILE: starter/content/typography/_size.scss */ /* FILE: starter/content/typography/_weight.scss */ /* FILE: starter/content/typography/_style.scss */ /* FILE: starter/content/typography/_spacing.scss */ /* FILE: starter/content/wp/__index.scss */ /* FILE: starter/content/wp/_sticky.scss */ /* FILE: starter/content/wp/_caption.scss */ /* FILE: starter/content/wp/_gallery.scss */ /* FILE: starter/content/wp/_smilie.scss */ /* FILE: starter/content/wp/_player.scss */ /* FILE: starter/content/wp/_embed.scss */ /* FILE: starter/content/wp/blocks/__index.scss */ /* FILE: starter/content/wp/blocks/_block.scss */ /* FILE: starter/content/wp/blocks/_audio.scss */ /* FILE: starter/content/wp/blocks/_button.scss */ /* FILE: starter/content/wp/blocks/_code.scss */ /* FILE: starter/content/wp/blocks/_columns.scss */ /* FILE: starter/content/wp/blocks/_cover.scss */ /* FILE: starter/content/wp/blocks/_drop-cap.scss */ /* FILE: starter/content/wp/blocks/_embed.scss */ /* FILE: starter/content/wp/blocks/_gallery.scss */ /* FILE: starter/content/wp/blocks/_group.scss */ /* FILE: starter/content/wp/blocks/_image.scss */ /* FILE: starter/content/wp/blocks/_latest-comments.scss */ /* FILE: starter/content/wp/blocks/_latest-posts.scss */ /* FILE: starter/content/wp/blocks/_media-text.scss */ /* FILE: starter/content/wp/blocks/_pullquote.scss */ /* FILE: starter/content/wp/blocks/_quote.scss */ /* FILE: starter/content/wp/blocks/_separator.scss */ /* FILE: starter/content/wp/blocks/_spacer.scss */ /* FILE: starter/content/wp/blocks/_table.scss */ /* FILE: starter/content/wp/blocks/_verse.scss */ /* FILE: starter/content/wp/blocks/_video.scss */ /* FILE: starter/content/wp/_alignment.scss */ }
 
 .editor-styles-wrapper body { overflow-x: hidden; }
 
@@ -332,6 +332,8 @@
 
 .editor-styles-wrapper .wp-block-gallery.alignleft, .editor-styles-wrapper .wp-block-gallery.aligncenter, .editor-styles-wrapper .wp-block-gallery.alignright { max-width: 55.8%; }
 
+.editor-styles-wrapper .wp-block-group__inner-container { max-width: 36em; margin-left: auto; margin-right: auto; }
+
 .editor-styles-wrapper .wp-block-image .alignleft { margin-right: 6%; }
 
 .editor-styles-wrapper .wp-block-image .alignright { margin-left: 6%; }
@@ -367,6 +369,8 @@
 .editor-styles-wrapper .wp-block-separator.is-style-wide { max-width: none; }
 
 .editor-styles-wrapper .wp-block-separator.is-style-dots::before { content: ' \2022 \2022 \2022'; speak: none; padding-left: 0.618em; font-size: 1.618em; letter-spacing: 0.618em; color: inherit; }
+
+.editor-styles-wrapper .wp-block-separator.has-background { padding: 0; }
 
 .editor-styles-wrapper .wp-block-spacer { margin: 0; }
 
@@ -826,6 +830,8 @@ body .editor-styles-wrapper { background-color: #fefeff; color: #535354; border-
 @media (min-width: 672px) { .wp-block .wp-block-separator, .wp-block .wp-block-separator:last-child, .wp-block .wp-block-separator:first-child { margin-top: 3.64781em; margin-bottom: 3.64781em; } }
 
 .wp-block-separator.wp-block-separator:not(.is-style-wide):not(.is-style-dots) { max-width: 16em; }
+
+.wp-block-separator.has-background { padding: 0; }
 
 /* FILE: editor-block/blocks/_table.scss */
 .wp-block-table th, .wp-block-table td { padding: 0; border-color: inherit; }
