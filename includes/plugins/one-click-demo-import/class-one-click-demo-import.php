@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.0.3
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.1
+		 * @version  2.0.3
 		 */
 		private function __construct() {
 
@@ -53,8 +53,6 @@ class Reykjavik_One_Click_Demo_Import {
 						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
 					// Filters
-
-						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
 						add_action( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::jetpack_custom_posts' );
@@ -98,7 +96,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Import files setup
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.1
+		 * @version  2.0.3
 		 */
 		public static function files() {
 
@@ -107,10 +105,8 @@ class Reykjavik_One_Click_Demo_Import {
 				return array(
 
 						array(
-							'import_file_name'       => esc_html__( 'Theme demo content', 'reykjavik' ),
-							'import_file_url'        => esc_url( get_theme_file_uri( 'includes/plugins/one-click-demo-import/demo-content-reykjavik.xml' ) ),
-							'import_widget_file_url' => esc_url( get_theme_file_uri( 'includes/plugins/one-click-demo-import/demo-widgets-reykjavik.wie' ) ),
-							'preview_url'            => 'https://themedemos.webmandesign.eu/reykjavik/',
+							'import_file_name' => esc_html__( 'Theme demo content', 'reykjavik' ),
+							'preview_url'      => 'https://themedemos.webmandesign.eu/reykjavik/',
 						),
 
 					);
@@ -129,13 +125,31 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Info texts
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.2
+		 * @version  2.0.3
 		 *
 		 * @param  string $text  Default intro text.
 		 */
 		public static function info( $text = '' ) {
 
 			// Processing
+
+				$text .= '<div class="manual-import-info">';
+
+					$text .= '<h2>';
+					$text .= esc_html__( 'Manual import procedure', 'reykjavik' );
+					$text .= '</h2>';
+
+					$text .= '<p>';
+					$text .= esc_html__( 'By importing this demo content you get the exact copy of the theme demo website.', 'reykjavik' );
+					$text .= ' (<a href="https://themedemos.webmandesign.eu/reykjavik/">' . esc_html__( 'Preview the theme demo website &raquo;', 'reykjavik' ) . '</a>)';
+
+					$text .= '<br>';
+
+					$text .= esc_html__( 'For instructions on importing theme demo content please visit GitHub repository.', 'reykjavik' );
+					$text .= ' (<a href="https://github.com/webmandesign/demo-content/blob/master/reykjavik/readme.md#what-is-this">' . esc_html__( 'GitHub repository instructions &raquo;', 'reykjavik' ) . '</a>)';
+					$text .= '</p>';
+
+				$text .= '</div>';
 
 				$text .= '<div class="media-files-quality-info">';
 
@@ -154,7 +168,7 @@ class Reykjavik_One_Click_Demo_Import {
 				$text .= '<div class="ocdi__demo-import-notice">';
 
 					$text .= '<h3>';
-					$text .= esc_html__( 'Install demo required plugins!', 'reykjavik' );
+					$text .= esc_html__( 'Install demo required plugins first!', 'reykjavik' );
 					$text .= '</h3>';
 
 					$text .= '<p>';

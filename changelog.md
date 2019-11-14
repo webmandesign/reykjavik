@@ -1,5 +1,22 @@
 # Reykjavik Changelog
 
+## 2.0.3
+
+* **Update**: WordPress 5.3 compatibility
+* **Update**: Removing demo content XML and setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements
+* **Update**: Localization
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/main.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/welcome/class-welcome.php
+	library/changelog.md
+
+
 ## 2.0.2
 
 * **Update**: Demo content

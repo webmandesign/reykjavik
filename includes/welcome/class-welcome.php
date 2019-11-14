@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.0.3
  *
  * Contents:
  *
@@ -85,7 +85,7 @@ class Reykjavik_Welcome {
 		 * Render the screen content
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.0.3
 		 */
 		public static function render() {
 
@@ -95,8 +95,7 @@ class Reykjavik_Welcome {
 					0   => 'header',
 					10  => 'promo',
 					20  => 'quickstart',
-					30  => 'demo',
-					40  => 'wordpress',
+					30  => 'wordpress',
 					100 => 'footer',
 				) );
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-07-09 19:03+0200\n"
+"POT-Creation-Date: 2019-11-14 16:31+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -1207,91 +1207,115 @@ msgstr ""
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:110
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:108
 msgid "Theme demo content"
 msgstr ""
 
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
+msgid "Manual import procedure"
+msgstr ""
+
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+msgid ""
+"By importing this demo content you get the exact copy of the theme demo "
+"website."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
+msgid "Preview the theme demo website &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+msgid ""
+"For instructions on importing theme demo content please visit GitHub "
+"repository."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
+msgid "GitHub repository instructions &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
-msgid "Install demo required plugins!"
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:171
+msgid "Install demo required plugins first!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:175
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:176
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:177
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:164
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:178
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:170
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:184
 msgid ""
 "(Note that this set of plugins may differ from plugins recommended under "
 "Appearance &rarr; Install Plugins!)"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:521
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:535
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:525
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:539
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:526
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:540
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:530
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:544
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:532
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:546
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:535
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:549
 msgid "Reload this page &raquo;"
 msgstr ""
 
@@ -1790,27 +1814,27 @@ msgid ""
 "to install WooCommerce plugin suggested below."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:150
-#: includes/welcome/class-welcome.php:152
+#: includes/welcome/class-welcome.php:149
+#: includes/welcome/class-welcome.php:151
 msgid "Welcome"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:219
+#: includes/welcome/class-welcome.php:218
 #, php-format
 msgctxt "%1$s: heart icon, %2$s: star icons"
 msgid "If you %1$s like this theme, please rate it %2$s"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:225
+#: includes/welcome/class-welcome.php:224
 msgid "And/or please consider a donation, thank you 🙏😊"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:243
+#: includes/welcome/class-welcome.php:242
 msgid ""
 "Have a suggestion for improvement or something is not working as it should?"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:245
+#: includes/welcome/class-welcome.php:244
 msgid "Contact support center &rarr;"
 msgstr ""
 
@@ -2524,41 +2548,6 @@ msgstr ""
 
 #: templates/parts/admin/notice-welcome.php:42
 msgid "Visit \"Welcome\" page for information on how to set up your website."
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:29
-msgid "Installing the theme demo content"
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:32
-msgid ""
-"You can install the theme demo content including pages, posts, custom post "
-"types, layouts, menus and widgets directly from your WordPress dashboard by "
-"clicking the button bellow."
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:36
-msgid ""
-"Alternatively (such as when the automated installation fails) you can follow "
-"theme documentation instructions for manual demo content installation."
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:37
-msgid "Read the instructions &raquo;"
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:42
-msgid "Install and run \"One Click Demo Import\" plugin"
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:46
-msgid "Install theme demo content"
-msgstr ""
-
-#: templates/parts/admin/welcome-demo.php:50
-msgid ""
-"Or head over to Appearance &raquo; Import Demo Data to start the import "
-"process."
 msgstr ""
 
 #: templates/parts/admin/welcome-footer.php:35
