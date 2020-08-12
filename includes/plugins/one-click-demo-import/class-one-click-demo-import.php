@@ -11,9 +11,8 @@
  * Contents:
  *
  *   0) Init
- *  10) Files
- *  20) Texts
- *  30) Setup
+ *  10) Texts
+ *  20) Setup
  * 100) Helpers
  */
 class Reykjavik_One_Click_Demo_Import {
@@ -89,36 +88,7 @@ class Reykjavik_One_Click_Demo_Import {
 
 
 	/**
-	 * 10) Files
-	 */
-
-		/**
-		 * Import files setup
-		 *
-		 * @since    1.0.0
-		 * @version  2.0.3
-		 */
-		public static function files() {
-
-			// Output
-
-				return array(
-
-						array(
-							'import_file_name' => esc_html__( 'Theme demo content', 'reykjavik' ),
-							'preview_url'      => 'https://themedemos.webmandesign.eu/reykjavik/',
-						),
-
-					);
-
-		} // /files
-
-
-
-
-
-	/**
-	 * 20) Texts
+	 * 10) Texts
 	 */
 
 		/**
@@ -174,7 +144,7 @@ class Reykjavik_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please read the information about the theme demo required plugins first.', 'reykjavik' );
 					$text .= ' ' . esc_html__( 'If you do not install and activate demo required plugins, some of the content will not be imported.', 'reykjavik' );
-					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/reykjavik/content#before-you-begin" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'reykjavik' ) . '"><strong>';
+					$text .= ' <a href="https://github.com/webmandesign/demo-content/blob/master/reykjavik/readme.md#required-plugins" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'reykjavik' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'reykjavik' );
 					$text .= '</strong></a>';
 					$text .= '</p>';
@@ -199,7 +169,7 @@ class Reykjavik_One_Click_Demo_Import {
 
 
 	/**
-	 * 30) Setup
+	 * 20) Setup
 	 */
 
 		/**
