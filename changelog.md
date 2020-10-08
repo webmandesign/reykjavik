@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.0.4
+
+* **Fix**: Mobile submenu double click
+* **Fix**: Safari browser CSS gradients rendering
+* **Fix**: Alt attribute of intro image when featured image is displayed
+* **Fix**: iPhone mobile menu not visible
+* **Fix**: WordPress 5.5 block editor fixes
+
+### Files changed:
+
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-navigation-accessibility.js
+	assets/scss/custom-styles.scss
+	assets/scss/editor-style-blocks.scss
+	assets/scss/starter/__index.scss
+	includes/plugins/elementor/class-elementor.php
+	templates/parts/intro/intro-media.php
+
+
 ## 2.0.3
 
 * **Update**: WordPress 5.3 compatibility

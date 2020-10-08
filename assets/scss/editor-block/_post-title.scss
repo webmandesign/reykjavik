@@ -1,6 +1,8 @@
 /* FILE: editor-block/_post-title.scss */
 
-.editor-post-title {
+#{ $selector_editor_title },
+.wp-block#{ $selector_editor_title } {
+	max-width: none;
 	padding-top: $golden_major * strip_unit( $padding_vertical ) +em;
 	padding-bottom: $golden_major * strip_unit( $padding_vertical ) +em;
 	margin-bottom: $golden_major * strip_unit( $padding_vertical ) +em;
@@ -11,7 +13,6 @@
 	border-color: var(--color_intro_text--a20);
 
 	@include media( map_get( $breakpoint, 's' ) ) {
-		font-size: map_get( $customize_options, 'typography_size_html' );
 		font-size: var(--typography_size_html);
 	}
 
@@ -25,21 +26,31 @@
 		margin-bottom: $golden * strip_unit( $padding_vertical ) +em;
 	}
 
-	.editor-post-title__block {
-		max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
-		max-width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
+}
+
+#{ $selector_editor_title } {
+
+	& &__block {
+		max-width:  $max_width_content;
 		padding: 0;
 		margin-bottom: 0;
 		font-size: inherit;
 	}
 
-	.editor-post-title__input {
-		@extend %font_headings;
+	& &__input {
+		max-width: $max_width_content;
 		padding-top: 0;
 		padding-bottom: 0;
+		margin: auto;
+		font-family: var(--typography_fonts_headings);
 		font-size: nth( map_get( $setup_headings, 'h1, .h1' ), 1 ) +em;
-		color: map_get( $customize_options, 'color_intro_headings' );
-		color: var(--color_intro_headings);
+		line-height: 1.25;
+
+		&,
+		&:focus {
+			color: var(--color_intro_headings);
+		}
+
 	}
 
 }

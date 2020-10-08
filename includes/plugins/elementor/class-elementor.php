@@ -30,15 +30,14 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  1.5.2
+ * @version  2.0.4
  *
  * Contents:
  *
  *   0) Init
- *  10) Upgrade
- *  20) Setup
- *  30) Display
- *  40) Getters
+ *  10) Setup
+ *  20) Display
+ *  30) Getters
  * 100) Others
  */
 class Reykjavik_Elementor {
@@ -57,7 +56,7 @@ class Reykjavik_Elementor {
 		 * @subpackage  Theme Builder
 		 *
 		 * @since    1.1.0
-		 * @version  1.5.2
+		 * @version  2.0.4
 		 */
 		public static function init() {
 
@@ -84,10 +83,6 @@ class Reykjavik_Elementor {
 							add_action( 'get_header', __CLASS__ . '::display_setup', -10 );
 						}
 
-					// Filters
-
-						add_filter( 'wp_parse_str', __CLASS__ . '::upgrade_link' );
-
 		} // /init
 
 
@@ -95,86 +90,7 @@ class Reykjavik_Elementor {
 
 
 	/**
-	 * 10) Upgrade
-	 */
-
-		/**
-		 * Upgrade link
-		 *
-		 * By defining the `ELEMENTOR_PARTNER_ID` constant, Elementor's `Utils::get_pro_link()`
-		 * method produces URL with incorrect `partner_id` argument. Should be `ref` instead.
-		 *
-		 * Waiting for Elementor to fix the `partner_id` URL argument.
-		 * UPDATE 20180507: They will not fix it, basically, this is intended...
-		 *
-		 * @since    1.1.0
-		 * @version  1.5.2
-		 *
-		 * @param  array $url_args  The array populated with variables.
-		 */
-		public static function upgrade_link( $url_args = array() ) {
-
-			// Variables
-
-				$ref_id = 2179;
-
-				/**
-				 * @see Elementor\Utils::get_pro_link
-				 */
-				$theme  = wp_get_theme( get_stylesheet() )->get( 'Name' );
-				$theme  = sanitize_key( $theme );
-
-
-			// Processing
-
-				/**
-				 * We need to define this so Elementor runs `add_query_arg()`
-				 * second time, after `utm_term` is added.
-				 * We can use any value here.
-				 */
-				if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-					define( 'ELEMENTOR_PARTNER_ID', $ref_id );
-				}
-
-				/**
-				 * Setting our referral ID,
-				 * Unsetting UTMs.
-				 */
-				if (
-					isset( $url_args['utm_campaign'] )
-					&& 'gopro' === $url_args['utm_campaign']
-					&& ! isset( $url_args['ref'] )
-				) {
-					$url_args['ref']        = $ref_id;
-					$url_args['utm_source'] = 'wm-theme';
-					unset( $url_args['utm_campaign'] );
-					unset( $url_args['utm_medium'] );
-					unset( $url_args['utm_source'] );
-				}
-
-				/**
-				 * Unsetting theme name UTM.
-				 */
-				if (
-					isset( $url_args['utm_term'] )
-					&& $theme === $url_args['utm_term']
-				) {
-					unset( $url_args['utm_term'] );
-				}
-
-
-			// Output
-
-				return $url_args;
-
-		} // /upgrade_link
-
-
-
-
-
-	/**
-	 * 20) Setup
+	 * 10) Setup
 	 */
 
 		/**
@@ -295,7 +211,7 @@ class Reykjavik_Elementor {
 
 
 	/**
-	 * 30) Display
+	 * 20) Display
 	 */
 
 		/**
@@ -337,7 +253,7 @@ class Reykjavik_Elementor {
 
 
 	/**
-	 * 40) Getters
+	 * 30) Getters
 	 */
 
 		/**

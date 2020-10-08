@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  2.0.4
  */
 
 
@@ -28,7 +28,8 @@
 	 */
 
 		var
-			$siteNavigation = $( document.getElementById( 'site-navigation' ) );
+			$siteNavigation = $( document.getElementById( 'site-navigation' ) ),
+			$breakpoints    = ( 'undefined' !== typeof $reykjavikBreakpoints ) ? ( $reykjavikBreakpoints ) : ( { 'l' : 880 } );
 
 
 
@@ -74,6 +75,13 @@
 
 		$siteNavigation
 			.on( 'touchstart', '.menu-item-has-children > a', function( e ) {
+
+				// Requirements check
+
+					if ( parseInt( $breakpoints['l'] ) >= window.innerWidth ) {
+						return;
+					}
+
 
 				// Helper variables
 

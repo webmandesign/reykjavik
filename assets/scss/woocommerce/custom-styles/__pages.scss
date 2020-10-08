@@ -21,16 +21,16 @@
 				linear-gradient(
 					45deg,
 					map_get( $customize_options, 'color_content_text' ) 25%,
-					transparent 25%,
-					transparent 75%,
+					rgba( #000, 0 ) 25%,
+					rgba( #000, 0 ) 75%,
 					map_get( $customize_options, 'color_content_text' ) 75%,
 					map_get( $customize_options, 'color_content_text' )
 				),
 				linear-gradient(
 					-45deg,
 					map_get( $customize_options, 'color_content_text' ) 25%,
-					transparent 25%,
-					transparent 75%,
+					rgba( #000, 0 ) 25%,
+					rgba( #000, 0 ) 75%,
 					map_get( $customize_options, 'color_content_text' ) 75%,
 					map_get( $customize_options, 'color_content_text' )
 				);
@@ -38,16 +38,16 @@
 				linear-gradient(
 					45deg,
 					var(--color_content_text) 25%,
-					transparent 25%,
-					transparent 75%,
+					rgba( #000, 0 ) 25%,
+					rgba( #000, 0 ) 75%,
 					var(--color_content_text) 75%,
 					var(--color_content_text)
 				),
 				linear-gradient(
 					-45deg,
 					var(--color_content_text) 25%,
-					transparent 25%,
-					transparent 75%,
+					rgba( #000, 0 ) 25%,
+					rgba( #000, 0 ) 75%,
 					var(--color_content_text) 75%,
 					var(--color_content_text)
 				);

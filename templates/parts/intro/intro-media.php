@@ -11,7 +11,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.0.4
  */
 
 
@@ -21,11 +21,11 @@
 // Requirements check
 
 	if (
-			Reykjavik_Post::is_paged()
-			|| ! function_exists( 'the_custom_header_markup' )
-			|| ! get_custom_header_markup()
-			|| ( Reykjavik_Post::is_singular() && get_post_meta( get_the_ID(), 'no_intro_media', true ) )
-		) {
+		Reykjavik_Post::is_paged()
+		|| ! function_exists( 'the_custom_header_markup' )
+		|| ! get_custom_header_markup()
+		|| ( Reykjavik_Post::is_singular() && get_post_meta( get_the_ID(), 'no_intro_media', true ) )
+	) {
 		return;
 	}
 
@@ -33,5 +33,15 @@
 ?>
 
 <div id="intro-media" class="intro-media">
-	<?php the_custom_header_markup(); ?>
+	<?php
+
+	if ( is_singular() && has_post_thumbnail( get_the_ID() ) ) {
+		echo '<div id="wp-custom-header" class="wp-custom-header">';
+		the_post_thumbnail( 'reykjavik-intro' );
+		echo '</div>';
+	} else {
+		the_custom_header_markup();
+	}
+
+	?>
 </div>

@@ -1,5 +1,13 @@
 /* FILE: editor-block/__index.scss */
 
+$selector_editor_wrapper: 'div.editor-styles-wrapper';
+$selector_editor_title: '.editor-post-title';
+
+$selectors_button: (
+	'.button',
+	'.wp-block-button__link',
+);
+
 // Starter CSS
 @import 'starter';
 

@@ -1,48 +1,90 @@
 /* FILE: editor-block/_base.scss */
 
 .editor-styles-wrapper {
+	// Not using `$selector_editor_wrapper` here because
+	// specificity should be as low as possible!
+
+	*,
+	*::after,
+	*::before {
+		border-color: inherit;
+	}
+
+}
+
+#{ $selector_editor_wrapper } {
 	padding-top: 0; // This is being taken care of in `.editor-post-title` of _post-title.scss.
 	// For bottom padding see `.editor-block-list__layout` below.
-	overflow-x: hidden;
 
 	// Colors
 
 		body & {
-			background-color: map_get( $customize_options, 'color_content_background' );
-			color: map_get( $customize_options, 'color_content_text' );
-			border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
-
 			background-color: var(--color_content_background);
 			color: var(--color_content_text);
 			border-color: var(--color_content_text--a20);
 		}
 
-		*,
-		*::after,
-		*::before {
-			border-color: inherit;
-		}
-
 	// Elements
 
 		a {
-			color: map_get( $customize_options, 'color_accent' );
 			color: var(--color_accent);
+		}
+
+		li {
+
+			ul,
+			ol {
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+		}
+
+		ul,
+		ol {
+			padding: 0;
+
+			ul {
+				list-style: disc;
+			}
+
+		}
+
+		ul[class^="wp-block-"],
+		ol[class^="wp-block-"] {
+			padding-#{$left}: 0;
+		}
+
+		[data-type*="gallery"] ul {
+			margin: 0;
+			list-style: none;
 		}
 
 		#{ $elements_margin_bottom } {
 
 			&:last-child {
-				margin-bottom: $golden +em;
+				margin-bottom: calc( var(--typography_size_html) * #{ $golden } ); // Simulating rem unit for block editor.
 			}
 
 		}
 
-		blockquote p {
+		blockquote,
+		.wp-block-quote {
+			border: 0;
+		}
 
-			&,
-			&:last-child {
-				margin-bottom: 1em;
+		blockquote {
+
+			p {
+
+				&,
+				&:last-child {
+					margin-bottom: 1em;
+				}
+
 			}
 
 		}
@@ -61,35 +103,30 @@
 			color: var(--color_content_headings);
 		}
 
-	// Lists
+		[style*="font-size:"] {
 
-		.wp-block ul,
-		.wp-block ol {
-			padding: 0;
-			margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+			h1, h2, h3, h4, h5, h6 {
+				font-size: inherit;
+			}
+
 		}
 
-		.wp-block li > ul,
-		.wp-block li > ol {
-			margin-bottom: 0;
-		}
+		[style*="font-weight:"] {
 
-		.wp-block ul {
-
-			&,
-			ul {
-				list-style: square;
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: inherit;
 			}
 
 		}
 
 }
 
-.editor-block-list__layout {
+.block-editor-block-list__layout {
 	padding-bottom: 4em;
 	// No need to match bottom padding to front-end content.
 	// @see  _helper.scss > .compensate-content-padding-bottom
 
+	&.wp-block,
 	.wp-block & {
 		padding-bottom: 0;
 	}

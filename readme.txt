@@ -2,8 +2,8 @@
 Contributors: webmandesign
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7.0
-Tested up to: 5.2
-Stable tag: 2.0.3
+Tested up to: 5.5
+Stable tag: 2.0.4
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,8 +40,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.0.3 =
-WordPress 5.3 compatibility, removing demo content XML and setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization.
+= 2.0.4 =
+Fixing bugs and improving accessibility.
 
 
 == Resources ==

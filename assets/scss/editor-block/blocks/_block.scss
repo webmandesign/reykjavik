@@ -1,13 +1,17 @@
 /* FILE: editor-block/blocks/_block.scss */
 
 .wp-block {
-	// Post content width when no sidebar is displayed.
-	max-width: 36em;
-	max-width: calc( 36em + #{ $ui_margin * 2 } );
+	max-width: $max_width_entry_content;
+	z-index: 1; // In case of negative margin overlay.
+
+	&.is-reusable {
+		max-width: calc( 100% - 120px ) !important;
+	}
 
 	&[data-align="left"] {
 
-		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+		.block-editor-block-list__layout & > .is-block-content,
+		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
 			margin-right: $alignment_margin;
 			margin-bottom: 1em;
 		}
@@ -16,18 +20,10 @@
 
 	&[data-align="right"] {
 
-		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+		.block-editor-block-list__layout & > .is-block-content,
+		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
 			margin-left: $alignment_margin;
 			margin-bottom: 1em;
-
-			.block-editor-block-list__block-edit {
-				float: none;
-				width: auto;
-				max-width: none;
-				margin-left: 0;
-				margin-bottom: 0;
-			}
-
 		}
 
 	}
@@ -35,7 +31,8 @@
 	&[data-align="left"],
 	&[data-align="right"] {
 
-		.editor-styles-wrapper & .block-editor-block-list__block-edit {
+		.block-editor-block-list__layout & > .is-block-content,
+		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
 
 			.block-editor-block-list__block {
 				padding-left: 0;
@@ -59,22 +56,18 @@
 	&[data-align="wide"],
 	&[data-align="full"] {
 
-		// .wp-block-columns,
 		.has-no-margin,
 		.has-no-margin-vertical,
 		.has-no-margin-bottom {
 			// Simulate no margin between wide/full aligned blocks
 			// with specific margin removal modifier classes applied.
-			//
-			// @see  main/wp/__alignment.scss
-			margin-bottom: -$golden +em;
+			margin-bottom: calc( -1.618 * var(--typography_size_html) );
 		}
 
 	}
 
 	&[data-align="wide"] {
-		width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + #{ $ui_margin * 2 } );
-		width: calc( var(--layout_width_content) + #{ $ui_margin * 2 } );
+		width: $max_width_content;
 		max-width: 88%;
 	}
 

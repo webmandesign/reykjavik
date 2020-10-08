@@ -10,11 +10,11 @@
 
 		.wp-block &__inner-container,
 		.wp-block & .wp-block-cover__inner-container {
-			max-width: calc( 24em + #{ $ui_margin * 2 } );
+			max-width: calc( 24em + var(--block_ui_margin) + var(--block_ui_margin) );
 		}
 
 		&.has-alignwide-content .wp-block-cover__inner-container {
-			max-width: calc( 36em + #{ $ui_margin * 2 } );
+			max-width: calc( 36em + var(--block_ui_margin) + var(--block_ui_margin) );
 		}
 
 		&.has-alignfull-content .wp-block-cover__inner-container {

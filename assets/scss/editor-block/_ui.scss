@@ -1,17 +1,30 @@
 /* FILE: editor-block/_ui.scss */
 
-// Block editor UI margin applied on blocks.
-// We use this to compensate block widths.
-$ui_margin: 14px;
-
 // Very approx compensation for UI width...
 $alignment_width: $alignment_width + $alignment_margin;
 
+// Block editor UI margin applied on blocks.
+// Used to compensate the block widths.
+
+	:root {
+		--block_ui_margin: var(--zero);
+		--block_ui_border: var(--zero);
+	}
+
+	// Backwards compatibility (WP5.3-):
+	.editor-block-list__layout {
+		--block_ui_margin: 14px;
+		--block_ui_border: 2px;
+	}
+
+	// These can not be CSS vars, we need to use SASS vars.
+	$max_width_content: calc( var(--layout_width_content) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
+	$max_width_entry_content: calc( 36 * var(--typography_size_html) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
+
 .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
-.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
-.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
-	margin-top: $golden +em;
-	margin-bottom: $golden +em;
+.block-editor-block-list__layout > .block-editor-block-list__block {
+	margin-top: calc( 1.618 * var(--typography_size_html) );
+	margin-bottom: calc( 1.618 * var(--typography_size_html) );
 }
 
 [data-type="core/more"],
