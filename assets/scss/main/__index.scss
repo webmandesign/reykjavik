@@ -1,0 +1,23 @@
+/* FILE: main/__index.scss */
+
+@import 'generic/_index';
+@import 'base/_index';
+@import 'typography/_index';
+@import 'wp/_index';
+@import 'forms/_index';
+@import 'headings/_index';
+
+@import 'header/_index';
+@import 'menu/__index';
+@import 'content/_index';
+@import 'footer/_index';
+
+@import 'sidebar/_index';
+@import 'plugins/_index';
+
+@import 'icons/_index';
+@import 'modifiers/_index';
+
+@import 'shame/_index';
+
+@import '../_extend';

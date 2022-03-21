@@ -1,0 +1,35 @@
+/* FILE: editor-block/_accessibility.scss */
+
+#{ $selector_editor_wrapper } .wp-block.screen-reader-text,
+#{ $selector_editor_wrapper } .wp-block > .screen-reader-text {
+	position: relative;
+	clip: auto;
+	clip-path: none;
+	width: auto;
+	height: auto;
+	opacity: .5;
+
+	&::before {
+		content: '\f530'; // https://developer.wordpress.org/resource/dashicons/#hidden
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		#{$right}: 0;
+		top: 0;
+		font-family: dashicons;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 40px;
+		text-align: center;
+		background: #000;
+		color: #fff;
+		border-radius: 40px;
+		vertical-align: top;
+	}
+
+}
+
+#{ $selector_editor_wrapper } .wp-block:hover > .screen-reader-text,
+#{ $selector_editor_wrapper } .is-selected > .screen-reader-text {
+	opacity: 1;
+}

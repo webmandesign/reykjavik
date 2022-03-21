@@ -1,0 +1,12 @@
+/* FILE: main/base/_clearing.scss */
+
+// @link  https://blog.teamtreehouse.com/a-better-clearfix-with-sass
+
+.clearfix {
+	@extend %clearfix;
+}
+
+.clear {
+	@extend %clearfix;
+	clear: both;
+}

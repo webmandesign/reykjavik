@@ -1,0 +1,434 @@
+/* FILE: main/base/_elements.scss */
+
+:focus {
+	outline: thin dashed;
+}
+
+body {
+	overflow-x: hidden;
+
+	&:focus {
+		outline: none;
+	}
+
+}
+
+a {
+	@extend %break_words;
+	text-decoration: underline;
+
+	@include haf() {
+		text-decoration: none;
+	}
+
+}
+
+	[href^="tel"] {
+		white-space: nowrap;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			pointer-events: none;
+			text-decoration: none;
+			color: inherit;
+		}
+
+	}
+
+hr {
+	clear: both;
+	height: 1px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+	hr,
+	.wp-block-separator {
+		margin-top: pow( 1 + $golden_minor, 2 ) +em;
+		margin-bottom: pow( 1 + $golden_minor, 2 ) +em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+abbr[title],
+acronym[title],
+dfn {
+	cursor: help;
+	text-decoration: none;
+}
+
+abbr {
+	@extend %font_weight_600;
+}
+
+
+
+
+blockquote {
+	@extend %font_size_golden_minor;
+	@extend %font_weight_300;
+	@extend %line_height_golden;
+	clear: both;
+	margin: ( $golden +em ) 0;
+
+	&:last-child {
+		margin: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&::before {
+		@extend %genericon;
+		content: '\f106';
+		float: $left; // {{RTL}}
+		margin-#{$right}: .25em; // {{RTL}}
+		line-height: .9;
+		font-size: $golden +em;
+		opacity: .5;
+	}
+
+	&[style*="text-align:left"],
+	&[style*="text-align: left"] {
+
+		&::before {
+			float: left;
+			margin-left: 0;
+			margin-right: .25em;
+		}
+
+	}
+
+	&[style*="text-align:right"],
+	&[style*="text-align: right"] {
+
+		&::before {
+			float: right;
+			margin-right: 0;
+			margin-left: .25em;
+		}
+
+	}
+
+	&[style*="text-align:center"],
+	&[style*="text-align: center"] {
+
+		&::before {
+			display: block;
+			float: none;
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: $golden_minor +em;
+		}
+
+	}
+
+	cite {
+		@extend %font_size_small;
+		@extend %font_weight_400;
+	}
+
+		> cite {
+			display: block;
+			margin-top: $golden_major +em;
+		}
+
+	blockquote {
+		@extend %font_size_1em;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+
+}
+
+cite {
+	@extend %font_style_normal;
+	border-width: 0;
+
+	&::before {
+		content: '\2014\2002'; // em dash + en space
+	}
+
+}
+
+q {
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+
+	&::before,
+	&::after {
+		display: inline-block; // Required for correct RTL display. // {{RTL}}
+	}
+
+}
+
+mark,
+ins,
+.highlight {
+	padding: ( $golden_minor / 2 +em ) 0;
+	margin: 0 ( $golden_minor +em );
+	box-decoration-break: clone;
+}
+
+s,
+del {
+	text-decoration: line-through;
+	color: inherit;
+}
+
+figure {
+	margin: 0 0 ( $golden +em );
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+audio,
+embed,
+iframe,
+img,
+object,
+video {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+img {
+	@extend %font_style_italic;
+	height: auto;
+}
+
+iframe {
+	border-width: 0;
+	outline: 0;
+
+	&:focus {
+		outline: thin dashed;
+	}
+
+}
+
+code {
+	@extend %font_size_small;
+	position: relative;
+	display: inline-block;
+	padding: 0 ( $golden_major +em );
+	margin: 0 ( $golden_minor / 2 +em );
+}
+
+	// Not using nesting for additional wrapper in block editor.
+	mark,
+	ins,
+	.highlight,
+	.form-allowed-tags,
+	.taxonomy-description,
+	.archive-description {
+
+		code {
+			display: inline;
+			padding: 0 ( $golden_minor +em );
+			background: none;
+			color: inherit;
+		}
+
+	}
+
+pre {
+	@extend %font_size_small;
+	position: relative;
+	padding: 1em;
+	margin: 0 0 ( $golden +em );
+	overflow: auto;
+	tab-size: 2;
+
+	code {
+		font-size: 1em;
+
+		&::before {
+			display: none;
+		}
+
+	}
+
+}
+
+code,
+pre {
+	@extend %background_overlay_from_text_color;
+}
+
+small {
+	@extend %font_size_small;
+}
+
+menu,
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+	margin-bottom: $golden +em;
+}
+
+	// Not using nesting for additional wrapper in block editor.
+	li > {
+
+		ul,
+		ol {
+			margin-bottom: 0;
+		}
+
+	}
+
+ul {
+	list-style: square;
+
+	li {
+
+		&.icon,
+		&.icon-bullet {
+			position: relative;
+			display: list-item;
+			list-style: none;
+			font-family: inherit;
+			line-height: inherit;
+			vertical-align: baseline;
+			speak: normal;
+
+			&::before {
+				position: absolute;
+				#{$left}: -$golden_minor - 1em;
+				line-height: inherit;
+				speak: none;
+			}
+
+			&.genericons-neue::before {
+				font-family: 'Genericons-Neue';
+			}
+
+		}
+
+	}
+
+}
+
+dl {
+	margin-top: 0;
+	margin-bottom: $golden +em;
+}
+
+dt {
+	@extend %font_weight_700;
+	margin-top: $golden_major +em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+}
+
+dd {
+	margin-#{$left}: $golden +em; // {{RTL}}
+}
+
+address {
+	@extend %font_style_normal;
+}
+
+ins {
+	text-decoration: none;
+}
+
+mark,
+ins,
+.highlight {
+	padding: 0;
+}
+
+strong {
+	@extend %font_weight_700;
+}
+
+table {
+	@extend %line_height_golden_minor;
+	width: 100%;
+	margin: 0 0 ( $golden +em );
+	border-width: 2px;
+	border-style: solid;
+	border-collapse: collapse;
+}
+
+	caption {
+		@extend %font_style_italic;
+		padding: 1em 0;
+		text-align: $left; // {{RTL}}
+		caption-side: bottom;
+	}
+
+	th,
+	td {
+		padding: ( $golden_major +em ) 1em;
+		border-width: 1px;
+		border-style: solid;
+		vertical-align: top;
+	}
+
+	table,
+	th, td,
+	thead th, thead td,
+	tfoot th, tfoot td {
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+
+	thead {
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+	tbody tr:hover td,
+	tbody tr:hover th {
+		// @extend %background_overlay_from_text_color_after;
+	}
+
+	th,
+	tfoot td {
+		@extend %font_weight_700;
+		text-align: $left; // {{RTL}}
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+	}
+
+	tfoot {
+		border-top-width: 2px;
+		border-top-style: solid;
+	}
+
+svg {
+	fill: currentColor;
+}
+
+#{$elements_margin_bottom} {
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+}

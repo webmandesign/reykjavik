@@ -1,20 +1,11 @@
 /* FILE: editor-block/blocks/_button.scss */
 
-@if ( index( $support__block, 'button' ) ) {
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border: 1px solid;
+}
 
-	.wp-block-button {
-
-		&__link {
-			background-color: map_get( $customize_options, 'color_accent' );
-			color: map_get( $customize_options, 'color_accent_text' );
-			background-color: var(--color_accent);
-			color: var(--color_accent_text);
-		}
-
-	}
-
-	.wp-block .is-style-outline {
-		color: var(--color_accent_text);
-	}
-
+#{ $selector_editor_wrapper } .wp-block-buttons .wp-block.block-editor-block-list__block[data-type="core/button"]:not([data-align=wide]):not([data-align=full]) {
+	width: auto;
+	margin-#{$right}: 1em;
 }

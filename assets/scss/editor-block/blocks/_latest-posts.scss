@@ -1,0 +1,22 @@
+/* FILE: editor-block/blocks/_letest-posts.scss */
+
+#{ $selector_editor_wrapper } .wp-block-latest-posts {
+
+	&:not(.alignwide):not(.alignfull) {
+		margin-#{$left}: auto;
+	}
+
+	.wp-block-latest-posts__post-author,
+	.wp-block-latest-posts__post-date {
+		margin-top: -1em;
+	}
+
+	&__post-excerpt {
+
+		a:last-child {
+			display: none;
+		}
+
+	}
+
+}

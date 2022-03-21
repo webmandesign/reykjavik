@@ -1,0 +1,36 @@
+/* FILE: blocks/_columns.scss */
+
+.wp-block-column {
+
+	&s {
+		margin-bottom: 0;
+
+		&.alignfull {
+			padding-left: $golden +em;
+			padding-right: $golden +em;
+		}
+
+		&.has-background {
+			padding-bottom: 0;
+		}
+
+	}
+
+	&:last-child {
+		margin-bottom: $golden +em;
+	}
+
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+		table-layout: fixed;
+	}
+
+}
+
+.has-widgets-in-sidebar .wp-block-columns.alignfull {
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		padding-#{$right}: 0;
+	}
+}

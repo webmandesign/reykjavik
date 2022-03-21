@@ -1,0 +1,32 @@
+/* FILE: blocks/_cover.scss */
+
+.wp-block-cover {
+	height: auto;
+	padding: 0;
+	color: #fff;
+
+	.wp-block-cover__inner-container {
+		width: 88%;
+		max-width: var(--layout_width_entry_content);
+
+		&::after {
+			content: '';
+			clear: both;
+			display: table;
+			table-layout: fixed;
+		}
+
+	}
+
+	&__gradient-background {
+		margin-bottom: 0;
+	}
+
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+		table-layout: fixed;
+	}
+
+}

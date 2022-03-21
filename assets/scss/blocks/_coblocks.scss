@@ -1,0 +1,22 @@
+/* FILE: blocks/_coblocks.scss */
+
+// Layout.
+.has-columns {
+	align-items: flex-start;
+
+	.alignfull & {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}
+
+// Row block.
+.wp-block-coblocks-row[data-columns="1"] .wp-block-coblocks-column__inner > [class*="wp-block-"] {
+	max-width: var(--layout_width_entry_content);
+}
+
+// Shape Devider block.
+.wp-block-coblocks-shape-divider__svg-wrapper {
+	margin: 0;
+}

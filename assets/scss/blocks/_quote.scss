@@ -1,0 +1,42 @@
+/* FILE: blocks/_quote.scss */
+
+.wp-block-quote {
+
+	&.is-style-large {
+		padding: 1em 0;
+		font-style: normal;
+		font-size: 1.5em;
+		line-height: 1.25;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			padding: 1.5em 0;
+		}
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			font-size: 2em;
+		}
+
+		p {
+			font-size: 1em;
+			font-style: inherit;
+			line-height: inherit;
+		}
+
+		cite {
+			font-size: .8em;
+			text-align: inherit;
+		}
+
+	}
+
+}
+
+.wp-block-quote.has-text-align-center cite {
+	text-align: center;
+}
+
+.wp-block-quote__citation,
+.wp-block-quote cite,
+.wp-block-quote footer {
+	color: inherit;
+}

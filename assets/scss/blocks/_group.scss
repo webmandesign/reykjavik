@@ -1,0 +1,23 @@
+/* FILE: blocks/_group.scss */
+
+.wp-block-group {
+
+	&__inner-container {
+		max-width: var(--layout_width_entry_content);
+		margin-left: auto;
+		margin-right: auto;
+
+		&::after {
+			content: '';
+			clear: both;
+			display: table;
+			table-layout: fixed;
+		}
+
+	}
+
+}
+
+.has-widgets-in-sidebar .wp-block-group:not(.alignwide) .wp-block-group__inner-container {
+	max-width: none;
+}

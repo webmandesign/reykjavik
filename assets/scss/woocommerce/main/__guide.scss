@@ -115,11 +115,6 @@
 					@extend %wc_genericon;
 				}
 
-				$direction_multiplier: 1;
-				@if rtl == $language_direction {
-					$direction_multiplier: -1;
-				}
-
 				@include media( map_get( $breakpoint, 'l' ) ) {
 
 					&::after {
@@ -128,7 +123,7 @@
 						#{$right}: 0; // {{RTL}}
 						top: 50%;
 						font-size: 2em;
-						transform: translateX( $direction_multiplier * 50% )
+						transform: translateX( $rtl_multiplier * 50% )
 						           translateY( -50% );
 					}
 

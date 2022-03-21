@@ -1,0 +1,30 @@
+/* FILE: blocks/_tag-cloud.scss */
+
+.wp-block-tag-cloud {
+
+	a {
+		display: inline-block;
+		padding: .15em .5em;
+		margin: .15em 0;
+		font-size: .8em !important;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: var(--letter_spacing);
+		background: var(--color_button_background);
+		color: var(--color_button_text);
+		white-space: nowrap;
+
+		&::before {
+			content: '#';
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: none;
+			color: inherit;
+		}
+
+	}
+
+}

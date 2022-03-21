@@ -1,0 +1,22 @@
+/* FILE: main/menu/_menu-primary-top-level.scss */
+
+.menu-primary {
+
+	// Top level menu items.
+	> li {
+
+		@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+			padding-top: $golden_minor +rem;
+			padding-bottom: $golden_minor +rem;
+			margin-#{$left}: $golden_major +rem; // {{RTL}}
+
+			> a {
+				border-#{$left}-width: 0; // {{RTL}}
+				border-top-width: 2px;
+			}
+
+		}
+
+	}
+
+}

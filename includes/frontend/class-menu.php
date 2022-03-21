@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_Menu {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.1
+		 * @version  2.1.0
 		 */
 		private function __construct() {
 
@@ -48,10 +48,9 @@ class Reykjavik_Menu {
 					// Actions
 
 						add_action( 'tha_header_top', __CLASS__ . '::primary', 20 );
-
 						add_action( 'tha_header_top', __CLASS__ . '::secondary', 30 );
-
 						add_action( 'tha_header_top', __CLASS__ . '::social', 40 );
+
 						add_action( 'wmhook_reykjavik_site_info_after', __CLASS__ . '::social' );
 
 						add_action( 'wp_update_nav_menu',   __CLASS__ . '::social_cache_flush' );
@@ -64,7 +63,7 @@ class Reykjavik_Menu {
 
 						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_social_icon', 10, 4 );
 						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_description', 20, 4 );
-						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_expander', 30, 4 );
+						add_filter( 'walker_nav_menu_start_el', __CLASS__ . '::nav_menu_item_label', 30, 4 );
 
 						add_filter( 'nav_menu_css_class', __CLASS__ . '::nav_menu_item_classes', 10, 4 );
 
@@ -151,50 +150,41 @@ class Reykjavik_Menu {
 			 * Get menu args: Primary.
 			 *
 			 * @since    1.0.0
-			 * @version  1.4.0
+			 * @version  2.1.0
 			 *
 			 * @param  boolean $mobile_nav  Is mobile navigation enabled?
 			 * @param  boolean $fallback    Return arguments to set a `wp_page_menu()` fallback?
 			 */
-			public static function get_menu_args_primary( $mobile_nav = true, $fallback = false ) {
+			public static function primary_menu_args( $mobile_nav = true, $fallback = false ) {
 
 				// Helper variables
 
 					$args = array(
-						'container'    => 'div',
-						'menu_class'   => 'menu',
-						'item_spacing' => 'preserve', // Required for `wp_page_menu()` is different than `wp_nav_menu()` one.
+						'container'       => 'div',
+						'container_class' => 'menu',
+						'menu_id'         => 'menu-primary',
+						'menu_class'      => 'menu-primary toggle-sub-menus',
+						'item_spacing'    => 'preserve', // Required for `wp_page_menu()` as it differs from the `wp_nav_menu()` one.
 					);
+					// -> produces `<div class="menu"><ul id="menu-primary" class="menu-primary toggle-sub-menus">...</ul></div>`
+
+					// Accessibility helper: last accessible focusable element.
+					$a11y_link = '<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li>';
 
 
 				// Processing
 
 					if ( ! $fallback ) {
-
 						// For `wp_nav_menu()`
-
-							$args['theme_location']  = 'primary';
-							$args['container_class'] = 'menu';
-							$args['depth']           = 4;
-							$args['fallback_cb']     = 'Reykjavik_Menu::primary_fallback';
-							$args['items_wrap']      = '<ul id="menu-primary" class="menu-primary">%3$s<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
-
-							if ( ! $mobile_nav ) {
-								$args['items_wrap'] = '<ul id="menu-primary" class="menu-primary">%3$s</ul>';
-							}
-
+						$args['theme_location']  = 'primary';
+						$args['container_class'] = 'menu';
+						$args['depth']           = 4;
+						$args['fallback_cb']     = __CLASS__ . '::wp_page_menu';
+						$args['items_wrap']      = '<ul id="%1$s" class="%2$s">%3$s' . $a11y_link . '</ul>';
 					} else {
-
 						// For `wp_page_menu()`
-
-							$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback">';
-							$args['after']  = '<li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">' . esc_html__( 'Skip to menu toggle button', 'reykjavik' ) . '</a></li></ul>';
-
-							if ( ! $mobile_nav ) {
-								$args['before'] = '<ul id="menu-primary" class="menu-primary menu-fallback">';
-								$args['after']  = '</ul>';
-							}
-
+						$args['before'] = '<ul id="menu-primary" class="menu menu-primary toggle-sub-menus menu-fallback">';
+						$args['after']  = $a11y_link . '</ul>';
 					}
 
 
@@ -202,7 +192,7 @@ class Reykjavik_Menu {
 
 					return $args;
 
-			} // /get_menu_args_primary
+			} // /primary_menu_args
 
 
 
@@ -210,13 +200,13 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  1.3.1
+			 * @version  2.1.0
 			 */
 			public static function primary_fallback() {
 
 				// Helper variables
 
-					$output = wp_page_menu( array( 'echo' => false ) + (array) self::get_menu_args_primary( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ), 'fallback' ) );
+					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( get_theme_mod( 'navigation_mobile', true ), 'fallback' ) );
 
 
 				// Output
@@ -306,30 +296,39 @@ class Reykjavik_Menu {
 		 *
 		 * Primary menu only.
 		 *
-		 * @since    1.0.0
-		 * @version  1.5.0
+		 * @since  2.1.0
 		 *
 		 * @param  string $item_output Menu item output HTML (without closing `</li>`).
 		 * @param  object $item        The current menu item.
 		 * @param  int    $depth       Depth of menu item. Used for padding. Since WordPress 4.1.
 		 * @param  array  $args        An array of wp_nav_menu() arguments.
 		 */
-		public static function nav_menu_item_expander( $item_output, $item, $depth, $args ) {
+		public static function nav_menu_item_label( $item_output, $item, $depth, $args ) {
+
+			// Requirements check
+
+				if ( ! $item instanceof WP_Post ) {
+					return $item_output;
+				}
+
 
 			// Processing
 
 				if (
-					'primary' === $args->theme_location
+					'primary' == $args->theme_location
 					&& in_array( 'menu-item-has-children', (array) $item->classes )
 				) {
+					// From https://developer.wordpress.org/reference/classes/walker_nav_menu/start_el/.
+					$title = apply_filters( 'the_title', $item->title, $item->ID );
+					$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-					// `</a>` is required here as `$args->link_after` could also be an empty string.
-					$item_output = str_replace(
-						$args->link_after . '</a>',
-						$args->link_after . ' <span class="expander" aria-label="' . esc_attr__( '(Focus the link to toggle submenu.)', 'reykjavik' ) . '"></span></a>',
+					// Unfortunately, there is no way of filtering menu item `<li>` tag, so we have to use
+					// the actual menu item `<a>` tag for this.
+					return str_replace(
+						'<a ',
+						'<a data-submenu-label="' . esc_attr( wp_strip_all_tags( $title ) ) . '" ',
 						$item_output
 					);
-
 				}
 
 
@@ -337,7 +336,7 @@ class Reykjavik_Menu {
 
 				return $item_output;
 
-		} // /nav_menu_item_expander
+		} // /nav_menu_item_label
 
 
 
@@ -349,7 +348,7 @@ class Reykjavik_Menu {
 		 * @link  http://a11yproject.com/patterns/
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 *
 		 * @param  array  $classes The CSS classes that are applied to the menu item's `<li>` element.
 		 * @param  object $item    The current menu item.
@@ -366,7 +365,7 @@ class Reykjavik_Menu {
 
 						// Has menu item description?
 
-							if ( trim( $item->post_content ) && $item->menu_item_parent ) {
+							if ( trim( $item->post_content ) ) {
 								$classes[] = 'has-description';
 							}
 
@@ -438,7 +437,7 @@ class Reykjavik_Menu {
 			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
-			 * @version  1.5.3
+			 * @version  2.1.0
 			 */
 			public static function social_links_icons() {
 
@@ -479,6 +478,7 @@ class Reykjavik_Menu {
 						'spotify.com'       => 'spotify',
 						'stackoverflow.com' => 'stack-overflow',
 						'stumbleupon.com'   => 'stumbleupon',
+						'tiktok.'           => 'tiktok',
 						'trello.com'        => 'trello',
 						'tripadvisor.'      => 'tripadvisor',
 						'tumblr.com'        => 'tumblr',

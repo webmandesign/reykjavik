@@ -5,12 +5,8 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  */
-
-
-
-
 
 ( function( $ ) {
 
@@ -62,7 +58,7 @@
 			/**
 			 * Trigger immediate preview: vertical alignment
 			 */
-			.delegate( '#fl-field-' + 'vertical_alignment' + ' select', 'change', function() {
+			.on( 'change', '#fl-field-' + 'vertical_alignment' + ' select', function() {
 				BBPreviewSelectClass( $( this ) );
 			} );
 

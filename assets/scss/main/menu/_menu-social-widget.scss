@@ -1,0 +1,24 @@
+/* FILE: main/menu/_menu-social-widget.scss */
+
+.social-links {
+
+	a {
+
+		.widget_nav_menu & {
+			text-align: center;
+
+			.sidebar &,
+			.fl-widget & {
+				@extend %font_size_larger;
+				padding: 0 ( $golden_minor / 2 +em );
+			}
+
+			&::after {
+				display: none;
+			}
+
+		}
+
+	}
+
+}

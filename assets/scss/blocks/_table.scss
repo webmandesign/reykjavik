@@ -1,0 +1,11 @@
+/* FILE: blocks/_table.scss */
+
+.is-style-stripes table,
+table.is-style-stripes,
+.wp-block-table.is-style-stripes {
+	border-width: 0;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background: rgba( #000, .05 );
+}

@@ -1,0 +1,38 @@
+/* FILE: main/plugins/_any-page-builder.scss */
+
+.content-layout {
+
+	// Remove paddings
+
+		&-no-paddings {
+
+			.site-content-inner {
+				padding: 0;
+			}
+
+			&.is-singular .content-area {
+				width: 100%;
+				max-width: none;
+			}
+
+			.site-main > .entry > .entry-header {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	// Fullwidth sections
+
+		&-stretched {
+
+			.site-main > .entry > .entry-header {
+				@extend %screen_reader_hiding;
+			}
+
+			&.is-singular:not(.page-template-sidebar) {
+				@extend %fullwidth_sections_layout;
+			}
+
+		}
+
+}

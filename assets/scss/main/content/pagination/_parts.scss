@@ -1,0 +1,116 @@
+/* FILE: main/content/pagination/_parts.scss */
+
+.post-table-of-contents {
+	padding: ( $golden +em ) 0 0;
+	margin: ( $golden +em ) 0;
+	margin-top: pow( $golden, 2 ) +rem;
+	border-top-width: 2px;
+	border-top-style: solid;
+
+	&.top {
+		display: none;
+	}
+
+	&.bottom {
+		clear: both;
+	}
+
+	ol {
+		counter-reset: table-of-contents-counter;
+		margin: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: 0;
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		&:first-child {
+			border-width: 0;
+		}
+
+		&::before {
+			display: none;
+		}
+
+	}
+
+	a {
+		@extend %font_weight_600;
+		display: block;
+		padding: ( $golden_major +em ) 1em;
+		padding-#{$left}: pow( $golden, 2 ) +em; // {{RTL}}
+		line-height: 1 + $golden_minor;
+		text-decoration: none;
+
+		.entry-content & {
+			border-width: 0;
+		}
+
+		&::before {
+			@extend %font_weight_700;
+			@extend %font_size_larger;
+			content: counter( table-of-contents-counter );
+			counter-increment: table-of-contents-counter;
+			float: $left; // {{RTL}}
+			margin-top: $golden_minor / -2 +em;
+			margin-#{$left}: -1em - $golden_minor; // {{RTL}}
+			text-decoration: inherit;
+			font-weight: inherit;
+			font-style: inherit;
+		}
+
+		&::after {
+			content: '\00bb';
+			margin-#{$left}: $golden_major +em; // {{RTL}}
+		}
+
+		@include haf() {
+			text-decoration: underline;
+		}
+
+	}
+
+	.is-current,
+	.is-passed {
+
+		a {
+			color: inherit;
+		}
+
+	}
+
+	.is-current a {
+		@extend %font_weight_400;
+		@extend %font_style_italic;
+	}
+
+	.is-passed a {
+		@extend %font_weight_300;
+		text-decoration: line-through;
+	}
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+
+		&.top {
+			float: $left; // {{RTL}}
+			display: block;
+			max-width: percentage( $golden_minor );
+			padding: 0 1em 1em;
+			padding-#{$left}: 0; // {{RTL}}
+			margin: 0 ( $golden +em ) 1em;
+			margin-#{$left}: 0; // {{RTL}}
+			border-width: 0;
+			border-style: solid;
+			border-#{$right}-width: 2px; // {{RTL}}
+			border-bottom-width: 2px;
+		}
+
+	}
+
+	&.top {
+		display: none;
+	}
+
+}

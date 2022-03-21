@@ -1,0 +1,61 @@
+/* FILE: main/content/comments/_content.scss */
+
+.comment-content {
+	@extend %clearfix;
+
+	a {
+		@extend %break_words;
+	}
+
+	p,
+	blockquote,
+	table {
+		margin-bottom: 1em;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+}
+
+.comment {
+
+	.reply {
+		@extend %font_size_small;
+	}
+
+}
+
+.pingback,
+.trackback {
+
+	.comment-list > & {
+		min-height: 0;
+		padding: 0;
+	}
+
+	.comment-body {
+		padding: 1em;
+		margin: ( $golden +em ) 0;
+		border-width: 1px;
+		border-style: dashed;
+		overflow: hidden;
+
+		&::before {
+			@extend %genericon;
+			content: '\f107';
+			margin-#{$right}: $golden_major +em;
+		}
+
+	}
+
+	a:not(.comment-edit-link) {
+		@extend %font_weight_600;
+	}
+
+	.comment-edit-link {
+		float: $right;
+	}
+
+}

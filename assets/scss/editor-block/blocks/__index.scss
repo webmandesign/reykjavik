@@ -2,23 +2,21 @@
 
 @import 'block';
 
-@import 'audio';
+@import 'archives';
 @import 'button';
-@import 'code';
+@import 'categories';
 @import 'columns';
 @import 'cover';
-@import 'embed';
-@import 'file';
 @import 'gallery';
-@import 'image';
+@import 'group';
+@import 'latest-posts';
 @import 'media-text';
+@import 'paragraph';
 @import 'preformatted';
 @import 'pullquote';
 @import 'quote';
 @import 'separator';
-@import 'table';
+@import 'spacer';
 @import 'verse';
-@import 'video';
-@import 'widgets';
 
-@import 'jetpack';
+@import 'coblocks';

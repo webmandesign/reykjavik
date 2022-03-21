@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -81,7 +81,6 @@ class Reykjavik_Post {
 						add_filter( 'post_class', __CLASS__ . '::post_class', 98 );
 
 						add_filter( 'wmhook_reykjavik_post_media_pre', __CLASS__ . '::page_media', 100 );
-
 						add_filter( 'wmhook_reykjavik_post_media_pre', __CLASS__ . '::is_page_builder_ready_maybe_return_empty_string', 100 );
 
 						add_filter( 'wmhook_reykjavik_header_is_disabled', __CLASS__ . '::is_page_template_blank' );
@@ -362,26 +361,32 @@ class Reykjavik_Post {
 		 * Skip links: Entry bottom
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 */
 		public static function skip_links() {
 
 			// Requirements check
 
 				if (
-						! self::is_singular()
-						|| (
-							is_page_template( 'templates/child-pages.php' )
-							&& ! get_the_content()
-						)
-					) {
+					! self::is_singular()
+					|| (
+						is_page_template( 'templates/child-pages.php' )
+						&& ! get_the_content()
+					)
+				) {
 					return;
 				}
 
 
 			// Output
 
-				echo Reykjavik_Library::link_skip_to( 'site-navigation', esc_html__( 'Skip back to main navigation', 'reykjavik' ), 'focus-position-static' );
+				echo
+					'<div class="entry-skip-links">'
+					. Reykjavik_Library::link_skip_to(
+						'site-navigation',
+						esc_html__( 'Skip back to main navigation', 'reykjavik' )
+					)
+					. '</div>';
 
 		} // /skip_links
 
@@ -715,13 +720,16 @@ class Reykjavik_Post {
 		 * Using some page builder?
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 */
 		public static function is_page_builder_ready() {
 
 			// Requirements check
 
-				if ( ! self::is_singular() ) {
+				if (
+					! self::is_singular()
+					|| is_page_template( 'templates/sidebar.php' )
+				) {
 					return false;
 				}
 

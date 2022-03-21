@@ -3,25 +3,52 @@
 $selector_editor_wrapper: 'div.editor-styles-wrapper';
 $selector_editor_title: '.editor-post-title';
 
+$selectors_margin_bottom: (
+	'p',
+	'ol', 'ul', 'dl',
+	'hr',
+	'form',
+	'blockquote',
+	'table',
+	'figure',
+	'iframe',
+	'address',
+	'pre',
+);
+
 $selectors_button: (
 	'.button',
 	'.wp-block-button__link',
 );
 
-// Starter CSS
-@import 'starter';
+$important_contexts: append( $important_contexts, 'modifier_font_size' );
+$important_contexts: append( $important_contexts, 'modifier_line_height' );
 
-// Block editor UI
 @import 'ui';
 @import 'post-title';
 
-// Main styles
-@import 'main'; // Styles from main stylesheet.
-
-// Block editor styles
 @import 'typography';
 @import 'base';
-@import 'blocks/_index';
+@import 'accessibility';
 
-// Other styles
+#{ $selector_editor_wrapper } {
+	@import '../main/typography/_index';
+	@import '../main/headings/base';
+	@import '../main/headings/display-size';
+	@import '../main/headings/widget-title';
+	@import '../main/base/elements';
+	@import '../main/forms/buttons';
+	@import '../main/icons/genericons';
+	@import '../main/icons/indent';
+	@import '../main/modifiers/_index';
+
+	// Blocks styles.
+	@import '../blocks/_index';
+}
+
+@import 'woocommerce';
+
+// Editor blocks styles.
+@import 'blocks/_index'; // Already contains extenders.
+
 @import 'helper';

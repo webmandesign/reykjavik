@@ -1,0 +1,28 @@
+/* FILE: main/plugins/_beaver-themer.scss */
+
+.fl-theme-builder {
+
+	&-singular,
+	&-404,
+	&-archive {
+		@extend %fullwidth_sections_layout;
+
+		&.single {
+
+			.site-main > .entry > .entry-header {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	}
+
+	&-singular.single {
+
+		.content-area {
+			max-width: none;
+		}
+
+	}
+
+}

@@ -1,13 +1,6 @@
 /* FILE: editor-block/blocks/_media-text.scss */
 
-@if ( index( $support__block, 'media-text' ) ) {
-
-	.wp-block-media-text {
-
-		figure {
-			margin-bottom: 0;
-		}
-
-	}
-
+.wp-block-media-text .block-editor-inner-blocks .block-editor-inner-blocks {
+	padding-left: 0;
+	padding-right: 0;
 }

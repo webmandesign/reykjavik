@@ -1,0 +1,15 @@
+/* FILE: main/plugins/jetpack/_responsive-videos.scss */
+
+.jetpack-video-wrapper {
+	margin: 0 0 ( $golden +em );
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry-media &,
+	.fl-video & {
+		margin: 0;
+	}
+
+}

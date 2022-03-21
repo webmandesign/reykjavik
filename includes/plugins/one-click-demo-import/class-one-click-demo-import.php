@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.3
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.3
+		 * @version  2.1.0
 		 */
 		private function __construct() {
 
@@ -52,6 +52,8 @@ class Reykjavik_One_Click_Demo_Import {
 						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
 					// Filters
+
+						add_filter( 'ocdi/register_plugins', __CLASS__ . '::plugins' );
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
 						add_action( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::jetpack_custom_posts' );
@@ -552,20 +554,66 @@ class Reykjavik_One_Click_Demo_Import {
 		 * OCDI plugin admin page styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 */
 		public static function styles() {
 
 			// Processing
 
-				// OCDI 2.0 styling fix
-
-					wp_add_inline_style(
-							'ocdi-main-css',
-							'.ocdi.about-wrap { max-width: 66em; }'
-						);
+				wp_add_inline_style(
+					'ocdi-main-css',
+					'.ocdi__content-container { max-width: 1024px; }'
+				);
 
 		} // /styles
+
+
+
+		/**
+		 * Recommend plugins.
+		 *
+		 * @since  2.1.0
+		 *
+		 * @return  array
+		 */
+		public static function plugins() {
+
+			// Output
+
+				return array(
+					array(
+						'name'        => esc_html_x( 'Beaver Builder', 'Plugin name.', 'reykjavik' ),
+						'slug'        => 'beaver-builder-lite-version',
+						'required'    => false,
+						'preselected' => true,
+					),
+					array(
+						'name'        => esc_html_x( 'WooCommerce', 'Plugin name.', 'reykjavik' ),
+						'slug'        => 'woocommerce',
+						'required'    => false,
+						'preselected' => true,
+					),
+					array(
+						'name'        => esc_html_x( 'Jetpack', 'Plugin name.', 'reykjavik' ),
+						'slug'        => 'jetpack',
+						'required'    => false,
+						'preselected' => true,
+					),
+					array(
+						'name'        => esc_html_x( 'WooSidebars', 'Plugin name.', 'reykjavik' ),
+						'slug'        => 'woosidebars',
+						'required'    => false,
+						'preselected' => true,
+					),
+					array(
+						'name'        => esc_html_x( 'Classic Widgets', 'Plugin name.', 'reykjavik' ),
+						'slug'        => 'classic-widgets',
+						'required'    => false,
+						'preselected' => true,
+					),
+				);
+
+		} // /plugins
 
 
 

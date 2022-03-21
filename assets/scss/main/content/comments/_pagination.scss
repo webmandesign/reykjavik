@@ -1,0 +1,80 @@
+/* FILE: main/content/comments/_pagination.scss */
+
+.comment-navigation {
+	display: block;
+	position: relative;
+	clear: both;
+	padding: ( $golden +em ) 0;
+	overflow: hidden;
+
+	.comments-title + & {
+		display: none;
+
+		// @include media( map_get( $breakpoint, 'm' ) ) {
+		// 	margin: ( -$golden +em ) 0 ( $golden +em );
+		// }
+
+	}
+
+	div {
+		padding: 1em 0 0;
+		text-align: center;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			width: auto;
+			padding: 0;
+			margin: 0;
+		}
+
+	}
+
+	a {
+		display: block;
+		padding: ( $golden_major +em ) 1em;
+		line-height: normal;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+	}
+
+	a,
+	span {
+		display: none;
+	}
+
+	.nav-links {
+		display: block;
+		padding: 0;
+		margin: 0;
+
+		a,
+		span {
+			padding: ( $golden_major +em ) 0;
+			margin: $golden_minor / 2 +em;
+			margin-#{$left}: 0;
+			line-height: inherit;
+
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				display: inline-block;
+			}
+
+		}
+
+	}
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+
+		.nav-previous {
+			float: $left; // {{RTL}}
+		}
+
+		.nav-next {
+			float: $right; // {{RTL}}
+		}
+
+	}
+
+}

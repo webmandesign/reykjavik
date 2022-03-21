@@ -1,0 +1,25 @@
+/* FILE: blocks/_gallery.scss */
+
+.wp-block-gallery:not(.alignfull),
+.blocks-gallery-grid {
+	max-width: 100%;
+}
+
+.blocks-gallery {
+
+	&-grid {
+		width: 100%;
+	}
+
+	&-caption {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+.wp-block-gallery.wp-block-gallery.has-no-item-margin .blocks-gallery-item,
+.wp-block-gallery.wp-block-gallery.has-no-gap .blocks-gallery-item,
+.wp-block-gallery.wp-block-gallery.has-no-gaps .blocks-gallery-item {
+	margin: 0;
+}

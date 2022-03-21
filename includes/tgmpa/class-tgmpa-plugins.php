@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -93,7 +93,7 @@ class Reykjavik_TGMPA_Plugins {
 		 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.1.0
 		 */
 		public static function recommend() {
 
@@ -146,6 +146,13 @@ class Reykjavik_TGMPA_Plugins {
 						'name'        => 'One Click Demo Import',
 						'description' => esc_html__( 'For installing theme demo content easily.', 'reykjavik' ),
 						'slug'        => 'one-click-demo-import',
+						'required'    => false,
+					),
+
+					'classic-widgets' => array(
+						'name'        => esc_html_x( 'Classic Widgets', 'Plugin name.', 'reykjavik' ),
+						'description' => esc_html__( 'Improves widgets management screen.', 'reykjavik' ) . ' ' . esc_html__( 'Restores the previous WordPress widgets settings screens.', 'reykjavik' ) . ' ' . esc_html__( 'Sidebars and widgets are not going to be used in fully block themes in the future, so if your website still uses sidebars, it is better to use this plugin to enable classic user interface.', 'reykjavik' ),
+						'slug'        => 'classic-widgets',
 						'required'    => false,
 					),
 

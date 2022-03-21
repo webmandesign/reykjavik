@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  */
 
 
@@ -26,7 +26,7 @@
 	$cache_group = 'reykjavik_' . get_bloginfo( 'language' );
 
 	$back_to_top  = '<li class="back-to-top-link">';
-	$back_to_top .= '<a href="#" class="back-to-top" title="' . esc_attr__( 'Back to top', 'reykjavik' ) . '">';
+	$back_to_top .= '<a href="#top" class="back-to-top" title="' . esc_attr__( 'Back to top', 'reykjavik' ) . '">';
 	$back_to_top .= '<span class="screen-reader-text">' . esc_html__( 'Back to top &uarr;', 'reykjavik' ) . '</span>';
 	$back_to_top .= '</a>';
 	$back_to_top .= '</li>';

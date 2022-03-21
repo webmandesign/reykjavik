@@ -1,0 +1,72 @@
+/* FILE: main/header/_branding.scss */
+
+%site_title {
+	text-decoration: none;
+	color: inherit;
+}
+
+.site-branding {
+	float: $left; // {{RTL}}
+	margin-#{$right}: $golden +em; // {{RTL}}
+	line-height: inherit;
+	color: inherit;
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-#{$right}: pow( $golden, 2 ) +em; // {{RTL}}
+	}
+
+	a {
+
+		@include haf( ( '&', 'h', 'f', 'a' ) ) {
+			@extend %site_title;
+		}
+
+	}
+
+	&-text {
+		@extend %line_height_golden_minor;
+		display: inline-block;
+		vertical-align: middle;
+
+		.site-title-hidden & {
+			@extend %screen_reader_hiding;
+		}
+
+	}
+
+}
+
+.site-title {
+	@extend %site_title;
+	@extend %font_logo;
+	@extend %font_size_golden;
+	@extend %font_weight_700;
+	@extend %font_style_normal;
+	margin: 0;
+	line-height: inherit;
+
+	// Fixing image logo vertical alignment
+
+		&.type-img {
+			font-family: sans-serif; // Yes, this fixes it, don't ask why (even debugging was a nightmare)...
+		}
+
+}
+
+.site-description {
+	@extend %font_size_small;
+	text-transform: uppercase;
+	opacity: .8;
+}
+
+.custom-logo {
+	display: inline-block;
+	width: auto;
+	margin-#{$right}: 1em; // {{RTL}}
+	vertical-align: middle;
+
+	.site-title-hidden & {
+		margin-#{$right}: 0;
+	}
+
+}

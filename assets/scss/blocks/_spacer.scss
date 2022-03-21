@@ -1,0 +1,18 @@
+/* FILE: blocks/_spacer.scss */
+
+.wp-block-spacer {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	&:not(:first-child) {
+		margin-top: -$golden +em;
+	}
+
+	+ h1,
+	+ h2,
+	+ h3,
+	+ h4 {
+		margin-top: 0;
+	}
+
+}

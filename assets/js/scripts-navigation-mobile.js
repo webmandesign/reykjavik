@@ -1,186 +1,103 @@
 /**
- * Mobile navigation
+ * Mobile navigation toggling.
+ *
+ * This script requires `.menu-toggle-skip-link` to be added into menu as last
+ * focusable child (can be hidden visibly, not for screen readers). This is to
+ * prevent focus going out of the menu container when last focusable selector is
+ * hidden with or in a container with `display: none;` which effectively renders
+ * the selector un-focusable.
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  */
 
-
-
-
-
-( function( $ ) {
-
+( function() {
 	'use strict';
 
+	const container = document.getElementById( 'site-navigation' );
+	if ( ! container ) {
+		return;
+	}
 
+	const button = document.getElementById( 'menu-toggle' );
+	if ( ! button ) {
+		return;
+	}
 
+	const menu = document.getElementById( 'menu-primary' );
+	// Hide menu toggle button if menu is empty and return early.
+	if ( ! menu ) {
+		button.style.display = 'none';
+		return;
+	}
 
+	function reykjavikToggleMenu() {
+		container.classList.toggle( 'toggled' );
+		document.body.classList.toggle( 'has-navigation-toggled' );
+		document.documentElement.classList.toggle( 'lock-scroll' );
 
-	/**
-	 * Helper variables
-	 */
+		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+			button.setAttribute( 'aria-expanded', 'true' );
+		} else {
+			button.setAttribute( 'aria-expanded', 'false' );
+		}
+	}
 
-		var
-			$siteNavigation   = $( document.getElementById( 'site-navigation' ) ),
-			$siteMenuPrimary  = $( document.getElementById( 'menu-primary' ) ),
-			$menuToggleButton = $( '#menu-toggle, #menu-toggle-bar' ),
-			$breakpoints      = ( 'undefined' !== typeof $reykjavikBreakpoints ) ? ( $reykjavikBreakpoints ) : ( { 'l' : 880 } );
-
-
-
-	/**
-	 * Mobile menu actions
-	 */
-	function mobileMenuActions() {
-
-		// Processing
-
-			if ( ! $siteNavigation.hasClass( 'is-active' ) ) {
-
-				$siteMenuPrimary
-					.attr( 'aria-expanded', 'false' );
-
-				$menuToggleButton
-					.attr( 'aria-expanded', 'false' );
-
-			}
-
-			$siteNavigation
-				.on( 'keydown', function( e ) {
-
-					// Processing
-
-						if ( e.which === 27 ) {
-
-							// ESC key
-
-								e.preventDefault();
-
-								$siteNavigation
-									.removeClass( 'is-active' );
-
-								$siteMenuPrimary
-									.attr( 'aria-expanded', 'false' );
-
-								$menuToggleButton
-									.attr( 'aria-expanded', 'false' );
-
-								$menuToggleButton
-									.focus();
-
-						}
-
-				} );
-
-	} // /mobileMenuActions
-
-
+	button.onclick = function() {
+		reykjavikToggleMenu();
+	};
 
 	/**
-	 * Default mobile menu setup
+	 * Trap focus inside mobile menu modal.
+	 * Code adapted from Twenty Twenty-One theme.
 	 */
-
-		if ( parseInt( $breakpoints['l'] ) >= window.innerWidth ) {
-
-			$siteNavigation
-				.removeClass( 'is-active' );
-
-			mobileMenuActions();
-
+	document.addEventListener( 'keydown', function( event ) {
+		if ( ! container.classList.contains( 'toggled' ) ) {
+			return;
 		}
 
+		const
+			selectors = 'a, button, input:not([type=hidden]), select',
+			elements  = container.querySelectorAll( selectors ),
+			firstEl   = elements[0],
+			lastEl    = elements[ elements.length - 1 ],
+			activeEl  = document.activeElement,
+			tabKey    = ( 9 === event.keyCode ),
+			escKey    = ( 27 === event.keyCode ),
+			shiftKey  = event.shiftKey;
 
+		if ( escKey ) {
+			event.preventDefault();
+			reykjavikToggleMenu();
+			button.focus();
+		}
 
-	/**
-	 * Clicking the menu toggle button
-	 */
+		if (
+			! shiftKey
+			&& tabKey
+			&& lastEl === activeEl
+		) {
+			event.preventDefault();
+			firstEl.focus();
+		}
 
-		$menuToggleButton
-			.on( 'click', function( e ) {
+		if (
+			shiftKey
+			&& tabKey
+			&& firstEl === activeEl
+		) {
+			event.preventDefault();
+			lastEl.focus();
+		}
 
-				// Processing
-
-					e.preventDefault();
-
-					$siteNavigation
-						.toggleClass( 'is-active' );
-
-					if ( $siteNavigation.hasClass( 'is-active' ) ) {
-
-						$siteMenuPrimary
-							.attr( 'aria-expanded', 'true' );
-
-						$menuToggleButton
-							.attr( 'aria-expanded', 'true' );
-
-					} else {
-
-						$siteMenuPrimary
-							.attr( 'aria-expanded', 'false' );
-
-						$menuToggleButton
-							.attr( 'aria-expanded', 'false' );
-
-					}
-
-			} );
-
-
-
-	/**
-	 * Refocus to menu toggle button once the end of the menu is reached
-	 */
-
-		$siteNavigation
-			.on( 'focus.aria', '.menu-toggle-skip-link', function( e ) {
-
-				// Processing
-
-					$menuToggleButton
-						.focus();
-
-			} );
-
-
-
-	/**
-	 * Disable mobile navigation on wider screens
-	 */
-
-		$( window )
-			.on( 'resize orientationchange', function( e ) {
-
-				// Processing
-
-					if ( parseInt( $breakpoints['l'] ) < window.innerWidth ) {
-
-						// On desktops
-
-						$siteNavigation
-							.removeClass( 'is-active' );
-
-						$siteMenuPrimary
-							.attr( 'aria-expanded', 'true' );
-
-						$menuToggleButton
-							.attr( 'aria-expanded', 'true' );
-
-					} else {
-
-						// On mobiles
-
-						mobileMenuActions();
-
-					}
-
-			} );
-
-
-
-
-
-} )( jQuery );
+		if (
+			tabKey
+			&& firstEl === lastEl
+		) {
+			event.preventDefault();
+		}
+	} );
+} )();

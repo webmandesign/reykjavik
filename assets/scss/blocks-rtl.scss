@@ -1,0 +1,17 @@
+/* FILE: blocks-rtl.scss */
+
+//
+// Content styles, RTL.
+//
+// @package    Reykjavik
+// @copyright  WebMan Design, Oliver Juhas
+//
+
+$left: right;
+$right: left;
+$rtl_multiplier: -1; // For `translateX` transform, for example.
+
+@import 'tools/_index';
+@import 'setup';
+
+@import 'blocks/_index';

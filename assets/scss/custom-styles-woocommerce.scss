@@ -21,12 +21,8 @@
 
 	@import 'setup';
 
-	@import 'starter/tools/functions';
+@import 'tools/_index';
 
-	@import 'starter/setup/variables';
-
-	@import 'starter/tools/mixins';
-
-	@import 'main/custom-styles/_extenders';
+	@import 'custom-styles/_extenders';
 
 	@import 'woocommerce/custom-styles/woocommerce';

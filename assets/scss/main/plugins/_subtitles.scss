@@ -1,0 +1,45 @@
+/* FILE: main/plugins/_subtitles.scss */
+
+.entry-subtitle {
+	@extend %font_size_tiny;
+	@extend %font_weight_400;
+	@extend %font_style_normal;
+	@extend %line_height_golden_minor;
+	display: block;
+	margin-top: $golden_minor +em;
+	opacity: .8;
+
+	// In intro section
+
+		.intro & {
+			@extend %font_style_normal;
+			@extend %font_weight_300;
+			line-height: inherit;
+		}
+
+	// In posts loop
+
+		.posts & {
+			@extend %font_size_1rem;
+		}
+
+	// In parted post
+
+		.is-singular[class*="paged-"] & {
+			margin-bottom: $golden_major +em;
+		}
+
+		.post-table-of-contents &,
+		.comments-title &,
+		.comment-reply-title & {
+			display: none;
+		}
+
+	// In widget
+
+		.widget & {
+			@extend %font_size_small;
+			@extend %font_weight_400;
+		}
+
+}

@@ -1,9 +1,8 @@
 === Reykjavik ===
 Contributors: webmandesign
-Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Requires at least: 4.7.0
-Tested up to: 5.5
-Stable tag: 2.0.4
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.6
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,13 +37,7 @@ Please visit support forum at https://support.webmandesign.eu/
 Please see `changelog.md` file.
 
 
-== Upgrade Notice ==
-
-= 2.0.4 =
-Fixing bugs and improving accessibility.
-
-
-== Resources ==
+== Copyright ==
 
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Normalize.css © Nicolas Gallagher and Jonathan Neal, MIT

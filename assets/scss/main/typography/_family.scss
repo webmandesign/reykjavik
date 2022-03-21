@@ -1,0 +1,31 @@
+/* FILE: main/typography/_family.scss */
+
+%font_body {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_text' ) };
+	font-family: var(--typography_fonts_text);
+}
+
+%font_headings {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_headings' ) };
+	font-family: var(--typography_fonts_headings);
+}
+
+%font_logo {
+	font-family: #{ map_get( $customize_options, 'typography_fonts_logo' ) };
+	font-family: var(--typography_fonts_logo);
+	text-rendering: auto;
+}
+
+%font_inherit {
+	font-family: inherit;
+}
+
+html {
+	@extend %font_body;
+
+	@include media( map_get( $breakpoint, 's' ) ) {
+		font-size: map_get( $customize_options, 'typography_size_html' );
+		font-size: var(--typography_size_html);
+	}
+
+}

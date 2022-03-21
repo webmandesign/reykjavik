@@ -1,0 +1,32 @@
+/* FILE: blocks/_separator.scss */
+
+.wp-block-separator {
+
+	&.is-style-wide {
+		width: 100%;
+		max-width: none;
+	}
+
+	&.is-style-dots::before {
+		content: ' \2022 \2022 \2022'; // &bull;
+		speak: none;
+		padding-#{$left}: $golden_major +em;
+		font-size: 2em;
+		letter-spacing: $golden_major +em;
+		color: var(--color_accent);
+	}
+
+	&.has-background {
+		padding: 0;
+	}
+
+	&.has-text-color {
+		background: currentColor;
+
+		&.is-style-dots::before {
+			color: currentColor;
+		}
+
+	}
+
+}

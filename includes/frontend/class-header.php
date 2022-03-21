@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -35,7 +35,7 @@ class Reykjavik_Header {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.2
+		 * @version  2.1.0
 		 */
 		private function __construct() {
 
@@ -47,9 +47,12 @@ class Reykjavik_Header {
 
 						add_action( 'tha_html_before', __CLASS__ . '::doctype' );
 
+						add_action( 'wp_head', __CLASS__ . '::charset', 0 );
 						add_action( 'wp_head', __CLASS__ . '::head', 1 );
 						add_action( 'wp_head', __CLASS__ . '::head_pingback', 1 );
 						add_action( 'wp_head', __CLASS__ . '::head_chrome_color', 1 );
+
+						add_action( 'tha_body_top', __CLASS__ . '::anchor_top_of_page', -10 );
 
 						add_action( 'tha_body_top', __CLASS__ . '::oldie', 5 );
 						add_action( 'tha_body_top', __CLASS__ . '::site_open' );
@@ -121,6 +124,23 @@ class Reykjavik_Header {
 
 
 		/**
+		 * Meta charset.
+		 *
+		 * @since  2.1.0
+		 *
+		 * @return  void
+		 */
+		public static function charset() {
+
+			// Output
+
+				echo '<meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '">' . PHP_EOL;
+
+		} // /charset
+
+
+
+		/**
 		 * HTML HEAD
 		 *
 		 * @since    1.0.0
@@ -179,6 +199,25 @@ class Reykjavik_Header {
 	/**
 	 * 20) Body start
 	 */
+
+		/**
+		 * Anchor for top of the page.
+		 *
+		 * Should be the first element on the page, before the skip links.
+		 *
+		 * @since  2.1.0
+		 *
+		 * @return  void
+		 */
+		public static function anchor_top_of_page() {
+
+			// Output
+
+				echo '<a name="top"></a>' . PHP_EOL.PHP_EOL;
+
+		} // /anchor_top_of_page
+
+
 
 		/**
 		 * IE upgrade message
@@ -337,7 +376,7 @@ class Reykjavik_Header {
 		 * HTML Body classes
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.1.0
 		 *
 		 * @param  array $classes
 		 */
@@ -425,7 +464,7 @@ class Reykjavik_Header {
 								if ( has_blocks() ) {
 									// Required for making the page content area narrow when using block editor.
 									$classes[] = 'has-blocks';
-								} else if ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
+								} elseif ( Reykjavik_Library_Customize::get_theme_mod( 'layout_page_outdent' ) ) {
 									// Enable outdented page layout (only when not built with block editor).
 									$classes[] = 'page-layout-outdented';
 								}

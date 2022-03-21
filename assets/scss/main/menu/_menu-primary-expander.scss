@@ -1,0 +1,111 @@
+/* FILE: main/menu/_menu-primary-expander.scss */
+
+:root {
+	--button_toggle_sub_menu_size: 10px;
+	// Touch enabled devices.
+	@media (hover: none) {
+		--button_toggle_sub_menu_size: 24px;
+	}
+}
+
+.has-navigation-mobile {
+	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
+		--button_toggle_sub_menu_size: 32px;
+	}
+}
+
+// A11yMenu JS accessible menu.
+.toggle-sub-menus {
+
+	.menu-item-has-children {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> a {
+			padding-#{$right}: $golden_minor +em;
+		}
+
+		&.menu-item-has-description > a {
+			padding-#{$right}: $golden_major +em;
+		}
+
+	}
+
+	.button-toggle-sub-menu {
+		position: relative;
+		width: var(--button_toggle_sub_menu_size);
+		height: var(--button_toggle_sub_menu_size);
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		box-shadow: none;
+		opacity: .33;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: none;
+			box-shadow: none;
+			opacity: 1;
+			animation: none;
+		}
+
+		// Touch enabled devices.
+		@media (hover: none) {
+			border: 1px solid;
+			border-color: inherit;
+			opacity: 1;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			display: block; // Required for mobile screen button overrides!
+			position: absolute;
+			width: 10px;
+			height: 2px;
+			left: 50%; // No RTL needed here.
+			top: 50%;
+			background: currentColor;
+			opacity: 1;
+			transform: translateX(-50%) translateY(-50%); // No RTL needed here.
+		}
+
+		&::after {
+			transform: translateX(-50%) translateY(-50%) rotate(90deg); // No RTL needed here.
+			transition: transform .2s;
+		}
+
+		.menu-item-is-depth-3 & {
+			display: none;
+		}
+
+	}
+
+	.has-expanded-sub-menu > .sub-menu {
+		display: block;
+
+		@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+			animation: showSubMenu ( $large_animation_speed +s );
+		}
+
+	}
+
+	.has-expanded-sub-menu > .button-toggle-sub-menu::after {
+		transform: translateX(-50%) translateY(-50%) rotate(0); // No RTL needed here.
+	}
+
+	.menu-item-has-children:hover > .button-toggle-sub-menu {
+		opacity: 1;
+
+		&::after {
+			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+				transform: translateX(-50%) translateY(-50%) rotate(0); // No RTL needed here.
+			}
+		}
+
+	}
+
+}

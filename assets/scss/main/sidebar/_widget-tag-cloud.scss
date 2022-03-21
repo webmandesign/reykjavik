@@ -1,0 +1,15 @@
+/* FILE: main/sidebar/_widget-tag-cloud.scss */
+
+.tagcloud {
+
+	.widget & {
+		font-size: 1em - $golden_minor * 2 / 3;
+
+		a {
+			padding: ( $golden_major +em ) 1em;
+			text-transform: uppercase;
+		}
+
+	}
+
+}

@@ -1,0 +1,107 @@
+/* FILE: main/content/comments/_base.scss */
+
+.comments-area {
+	clear: both;
+	position: relative;
+	padding: ( $golden +rem ) 0 0;
+	margin: ( pow( $golden, 2 ) +rem ) 0 0;
+	border-top-width: 2px;
+	border-top-style: solid;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-top: $padding_vertical;
+	}
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-top: $golden * $padding_vertical;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	.reply {
+		margin-top: 1em;
+	}
+
+	// On pages
+
+		.page.no-widgets-sidebar &-inner {
+
+			@include media( map_get( $breakpoint, 'xl' ) ) {
+				width: percentage( $golden_major );
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+
+	// On page builder pages/posts
+
+		.content-layout-no-paddings & {
+			width: 100%;
+		}
+
+		.fl-builder &,
+		.content-layout-no-paddings &,
+		.content-layout-stretched & {
+			// No sidebar here
+			@extend %content_width;
+			padding: ( pow( 1 + $golden_minor, 5 ) +rem ) 0;
+			border-width: 0;
+
+			&-inner {
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					width: percentage( $golden_major );
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+			}
+
+		}
+
+}
+
+.comments-title {
+	@extend %font_size_golden_minor;
+	@extend %font_weight_700;
+	margin-bottom: $golden +rem;
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+		margin-bottom: pow( $golden, 2 ) +rem;
+	}
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-bottom: pow( $golden, 3 ) +rem;
+	}
+
+	.add-comment-link {
+		@extend %font_size_small;
+		@extend %font_weight_400;
+		@extend .screen-reader-text;
+		@extend .focus-position-static;
+		display: block;
+		margin: 1em 0;
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			float: $right; // {{RTL}}
+			margin: 0;
+		}
+
+	}
+
+	span {
+		@extend %font_weight_300;
+	}
+
+}
+
+.recentcomments {
+
+	a {
+		@extend %font_style_italic;
+	}
+
+}

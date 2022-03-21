@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.4.0
- * @version  1.5.1
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -259,7 +259,7 @@ class Reykjavik_Library_CSS_Variables {
 		 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 		 *
 		 * @since    1.4.0
-		 * @version  1.5.1
+		 * @version  2.1.0
 		 */
 		public static function compatibility() {
 
@@ -269,7 +269,7 @@ class Reykjavik_Library_CSS_Variables {
 					'css-vars-ponyfill',
 					get_theme_file_uri( REYKJAVIK_LIBRARY_DIR . 'js/vendors/css-vars-ponyfill/css-vars-ponyfill.min.js' ),
 					array(),
-					'1.16.1'
+					'v2.4.2'
 				);
 
 				wp_add_inline_script(

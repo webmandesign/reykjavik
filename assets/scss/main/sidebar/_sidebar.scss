@@ -1,37 +1,21 @@
 /* FILE: main/sidebar/_sidebar.scss */
 
-//
-// Sidebar
-//
+.sidebar {
+	@extend %font_size_smaller;
+	@extend %line_height_golden;
+	position: relative;
+	padding: ( $golden +em ) 0 0;
+	margin: ( pow( $golden, 2 ) +rem ) 0 0;
 
-
-
-
-
-// Theme sidebar styles
-
-	.sidebar {
-		@extend %font_size_smaller;
-		position: relative;
-		margin-top: pow( $golden, 2 ) +rem;
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: percentage( ( 100 - $page_content_width - $page_content_gutter ) / 100 );
-			margin-top: 0;
-		}
-
-		.widget {
-			margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
-		}
-
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		float: $right; // {{RTL}}
+		width: percentage( ( 100 - $page_content_width - $page_content_gutter ) / 100 );
+		padding-top: 0;
+		margin-top: 0;
 	}
 
+	.widget {
+		margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
+	}
 
-
-// Imports
-
-	@import '_widgets';
-
-	@import '_intro';
-
-	@import '_footer';
+}

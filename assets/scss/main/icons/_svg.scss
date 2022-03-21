@@ -1,0 +1,15 @@
+/* FILE: main/icons/_svg.scss */
+
+.svgicon {
+	display: inline-block;
+	position: relative;
+	width: 1em;
+	height: 1em;
+	top: -0.0625em;
+	fill: currentColor;
+	vertical-align: middle;
+}
+
+.svg-fallback {
+	display: none;
+}

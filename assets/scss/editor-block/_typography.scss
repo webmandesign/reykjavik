@@ -32,12 +32,27 @@ body #{ $selector_editor_wrapper } {
 
 }
 
+// Headings.
+#{ $selector_editor_wrapper } {
+	// Heading styles on small devices
+	@include h_tags( $golden_major + $golden_minor / 2, false, true );
+	// Heading styles on large devices
+	@include media( map_get( $breakpoint, 'm' ) ) {
+		@include h_tags( 1, false, true );
+	}
+
+	#{ $elements_headings } {
+		color: map_get( $customize_options, 'color_content_headings' );
+		color: var(--color_content_headings);
+	}
+}
+
 %display_text_size {
 	margin-bottom: calc( #{ $golden } * #{ map_get( $customize_options, 'typography_size_html' ) } );
 	margin-bottom: calc( #{ $golden } * var(--typography_size_html) );
 }
 
-	.editor-styles-wrapper {
+	#{ $selector_editor_wrapper } {
 		@each $i, $size in $display_text_size {
 			.has-display-#{$i}-font-size {
 				@extend %display_text_size;

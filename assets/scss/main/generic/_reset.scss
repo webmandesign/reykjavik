@@ -1,0 +1,41 @@
+/* FILE: main/generic/_reset.scss */
+
+html {
+		overflow-y: scroll;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+
+		@media (prefers-reduced-motion: reduce) {
+			scroll-behavior: auto;
+		}
+
+}
+
+@if right == $left {
+	body {
+		direction: rtl;
+		unicode-bidi: embed;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+::placeholder {
+	line-height: normal;
+}
+
+// Accessibility improvement, adapted from CSS-Tricks article code.
+// @link  https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/
+@media (prefers-reduced-motion: reduce), (update: slow) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0s $important;
+		animation-iteration-count: 1 $important;
+		transition-duration: 0s $important;
+	}
+}

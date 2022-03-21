@@ -1,0 +1,19 @@
+/* FILE: editor-block/blocks/_coblocks.scss */
+
+// Gallery.
+#{ $selector_editor_wrapper } .wp-block-coblocks-gallery-collage__figure img {
+	height: 100%;
+}
+
+// Row block.
+.wp-block[data-type="coblocks/row"][data-columns="1"] .wp-block-coblocks-row .wp-block-coblocks-row__inner .wp-block-coblocks-column__inner .block-editor-block-list__layout {
+
+	> .wp-block[data-coblocks-align-support="1"] {
+		max-width: $max_width_entry_content !important;
+	}
+
+	> .wp-block[data-align="wide"] {
+		max-width: $max_width_content !important;
+	}
+
+}

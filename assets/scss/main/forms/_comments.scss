@@ -1,0 +1,100 @@
+/* FILE: main/forms/_comments.scss */
+
+.comment-respond {
+
+	.comment-list & {
+		padding: 0 ( $golden +em );
+		margin: ( $golden +em ) 0;
+	}
+
+	&,
+	.comment-list & {
+		margin-top: $padding_vertical;
+	}
+
+}
+
+.comment-reply-title {
+	margin-bottom: $golden_major +em;
+	font-size: inherit;
+	text-transform: uppercase;
+}
+
+.logged-in-as a {
+	text-decoration: none;
+
+	@include haf() {
+		text-decoration: underline;
+	}
+
+}
+
+#cancel-comment-reply-link {
+	@extend %font_size_small;
+	@extend %font_weight_400;
+	float: $right; // {{RTL}}
+}
+
+.comment-form {
+
+	p {
+		margin-bottom: $golden +em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	label {
+		@extend %font_size_small;
+		@extend %font_weight_700;
+		display: block;
+	}
+
+	[type="checkbox"] + label,
+	[type="radio"] + label {
+		display: inline-block;
+	}
+
+	.form-submit {
+		margin-top: pow( $golden, 2 ) +em;
+	}
+
+	::placeholder {
+		text-transform: uppercase;
+		font-size: .809em;
+		opacity: 1;
+	}
+
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment textarea {
+	width: 100%;
+}
+
+.comment-form-url {
+	clear: both;
+}
+
+.form-allowed-tags {
+	@extend %line_height_golden;
+}
+
+@include media( map_get( $breakpoint, 's' ) ) {
+
+	.comment-form-author,
+	.comment-form-email {
+		float: $left; // {{RTL}}
+		width: 48%;
+		margin-#{$left}: 4%; // {{RTL}}
+	}
+
+	.comment-form-author {
+		margin-#{$left}: 0; // {{RTL}}
+	}
+
+}

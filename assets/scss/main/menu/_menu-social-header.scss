@@ -1,0 +1,24 @@
+/* FILE: main/menu/_menu-social-header.scss */
+
+.social-links {
+
+	.site-header-content & {
+		float: $right; // {{RTL}}
+		white-space: nowrap;
+
+		@include media( map_get( $breakpoint, 'xl' ) ) {
+			padding-#{$left}: $golden +em; // {{RTL}}
+			margin-#{$left}: auto; // {{RTL}}
+		}
+
+		.back-to-top-link {
+			display: none;
+		}
+
+	}
+
+	.site-header-content .secondary-navigation + & {
+		margin-#{$left}: 0;
+	}
+
+}

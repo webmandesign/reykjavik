@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -148,7 +148,7 @@ class Reykjavik_Footer {
 			 * Site info: Replacing `[year]` with dynamically generated year
 			 *
 			 * @since    1.0.0
-			 * @version  1.0.0
+			 * @version  2.1.0
 			 *
 			 * @param  string $value
 			 */
@@ -157,9 +157,10 @@ class Reykjavik_Footer {
 				// Requirements check
 
 					if (
-							empty( $value )
-							|| ! is_string( $value )
-						) {
+						empty( $value )
+						|| ! is_string( $value )
+						|| ! doing_action( 'tha_footer_bottom' )
+					) {
 						return $value;
 					}
 

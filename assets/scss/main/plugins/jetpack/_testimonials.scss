@@ -1,0 +1,73 @@
+/* FILE: main/plugins/jetpack/_testimonials.scss */
+
+$gutter: 3.618em;
+
+.testimonial-entry {
+
+	.entry-content & {
+		margin: $gutter / 2;
+
+		.testimonial-featured-image {
+			display: inline-block;
+			max-width: 6em;
+			margin-top: 1em;
+		}
+
+	}
+
+	&-title {
+
+		a {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.entry-subtitle {
+			margin: 0;
+			font-size: inherit;
+		}
+
+	}
+
+}
+
+.jetpack-testimonial-shortcode {
+	display: flex;
+	flex-wrap: wrap;
+
+	.entry-content & {
+		margin: -$gutter / 2;
+	}
+
+	.testimonial-entry {
+		$columns: 1; // Default layout on small devices.
+		width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
+	}
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+
+		.testimonial-entry {
+			$columns: 2; // Default layout on medium devices.
+			width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
+		}
+
+		.testimonial-entry-column-1 {
+			$columns: 1;
+			width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
+		}
+
+	}
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+
+		@for $columns from 3 through 6 {
+
+			.testimonial-entry-column-#{ $columns } {
+				width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter } );
+			}
+
+		}
+
+	}
+
+}

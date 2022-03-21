@@ -1,0 +1,44 @@
+/* FILE: main/headings/_widget-title.scss */
+
+%widget_title {
+	@extend %font_weight_700;
+	@extend %line_height_golden_minor;
+	margin: 0 0 ( pow( $golden, 2 ) +rem );
+	font-size: nth( map_get( $setup_headings, 'h4, .h4' ), 1 ) +rem;
+
+	a {
+		font-weight: inherit;
+		text-decoration: none;
+	}
+
+}
+
+.widget-title {
+	@extend %widget_title;
+}
+
+.widget-title-style {
+
+	.widgettitle {
+		@extend %widget_title;
+	}
+
+}
+
+.hide-widget-title {
+
+	.widget-title,
+	.widgettitle {
+		display: none;
+	}
+
+	&-accessibly {
+
+		.widget-title,
+		.widgettitle {
+			@extend %screen_reader_hiding;
+		}
+
+	}
+
+}

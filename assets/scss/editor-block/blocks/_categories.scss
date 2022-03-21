@@ -1,0 +1,11 @@
+/* FILE: editor-block/blocks/_categories.scss */
+
+#{ $selector_editor_wrapper } .wp-block-categories ul {
+	padding: 0;
+
+	&:last-child {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}

@@ -1,5 +1,31 @@
 # Reykjavik Changelog
 
+## 2.1.0, 20220323
+
+### Updated
+- Simplifying Staff post template
+- Updating 3rd party JavaScript
+- Improving PHP code to follow WordPress PHP coding standards (fixing "else if" to "elseif" where needed)
+
+### Fixed
+- Flex grow modifier class specificity
+- Range theme option field not working with WordPress 5.6
+- jQuery code for WordPress 5.6 compatibility
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-beaver-builder-editor.js
+	assets/scss/main.scss
+	includes/frontend/class-post-media.php
+	library/includes/classes/class-css-variables.php
+	library/js/customize-control-multicheckbox.js
+	library/js/customize-control-radio-matrix.js
+	library/js/customize-controls.js
+	templates/parts/content/content-staff.php
+
+
 ## 2.0.4
 
 * **Fix**: Mobile submenu double click

@@ -1,0 +1,160 @@
+/* FILE: main/menu/_menu-primary.scss */
+
+.menu {
+
+	a {
+		text-decoration: none;
+	}
+
+	&-item .hide-on-mobile {
+		@include media( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			clip: rect( 1px, 1px, 1px, 1px );
+			clip-path: inset( 50% );
+			position: absolute !important;
+			width: 1px;
+			height: 1px;
+			line-height: 1px;
+			overflow: hidden;
+		}
+	}
+
+}
+
+.main-navigation {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	@include media(
+		( map_get( $breakpoint, 'm' ), 'min-width' ),
+		( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' )
+	) {
+		float: $right; // {{RTL}}
+	}
+
+	@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+		float: $left; // {{RTL}}
+		margin-#{$right}: $golden +em;
+	}
+
+	@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
+		float: $right; // {{RTL}}
+	}
+
+	&-container {
+
+		// Menu wrapper.
+		.menu {
+			margin-top: $golden +rem;
+
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				margin-top: 0;
+			}
+
+		}
+
+		ul {
+			margin: 0;
+			list-style: none;
+		}
+
+		li {
+			position: relative;
+			padding: 0;
+			margin: 0;
+
+			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+				float: $left; // {{RTL}}
+				white-space: nowrap;
+			}
+
+		}
+
+		a {
+			display: block;
+			max-width: 100%; // Fix for FF and IE.
+			padding: ( $golden_major +rem ) ( $golden_minor +rem );
+			border: 0 solid transparent;
+			border-#{$left}-width: 2px; // {{RTL}}
+			transition: border-color ( $small_animation_speed +s );
+
+			@include haf() {
+				border-color: currentColor;
+			}
+
+		}
+
+		.hide,
+		.hide-link {
+
+			> a {
+				@extend %screen_reader_hiding;
+
+				&:focus {
+					@extend %screen_reader_hiding_disable;
+					position: static !important;
+				}
+
+			}
+
+		}
+
+		// Current menu item.
+
+			.menu {
+
+				@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+
+					&:hover .current-menu-item > a,
+					&:hover .current-menu-ancestor > a {
+						border-color: inherit;
+					}
+
+				}
+
+				.current-menu-item > a,
+				.current-menu-item > a:hover {
+					border-color: currentColor;
+				}
+
+				@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+
+					.current-menu-ancestor > a,
+					.current-menu-ancestor > a:hover {
+						border-color: currentColor;
+					}
+
+				}
+
+			}
+
+			.current-menu-item > a {
+				position: relative;
+				border-color: currentColor;
+				z-index: 10;
+			}
+
+			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+
+				.has-expanded-sub-menu,
+				.current-menu-ancestor {
+
+					> a {
+						position: relative;
+						border-color: currentColor;
+						z-index: 10;
+					}
+
+				}
+
+			}
+
+		// Icon in menu item (has to be included with HTML)
+		.icon,
+		[class^="icon-"] {
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+		}
+
+	}
+
+}

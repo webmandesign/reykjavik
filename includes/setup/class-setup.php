@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -167,7 +167,7 @@ class Reykjavik_Setup {
 		 * as indicating support for post thumbnails.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.1.0
 		 */
 		public static function setup() {
 
@@ -226,7 +226,9 @@ class Reykjavik_Setup {
 				add_theme_support( 'title-tag' );
 
 				// Site logo
-				add_theme_support( 'custom-logo' );
+				add_theme_support( 'custom-logo', array(
+					'unlink-homepage-logo' => true,
+				) );
 
 				// Feed links
 				add_theme_support( 'automatic-feed-links' );
@@ -237,7 +239,10 @@ class Reykjavik_Setup {
 					'comment-form',
 					'comment-list',
 					'gallery',
+					'navigation-widgets',
 					'search-form',
+					'script',
+					'style',
 				) );
 
 				// Custom background

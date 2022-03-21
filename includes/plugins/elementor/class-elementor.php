@@ -30,7 +30,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1.0
- * @version  2.0.4
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -383,13 +383,13 @@ class Reykjavik_Elementor {
 		 * @subpackage  Theme Builder
 		 *
 		 * @since    1.1.0
-		 * @version  1.1.0
+		 * @version  2.1.0
 		 */
 		public static function dequeue_header_scripts() {
 
 			// Processing
 
-				wp_dequeue_script( 'reykjavik-scripts-nav-a11y' );
+				wp_dequeue_script( 'a11y-menu' );
 				wp_dequeue_script( 'reykjavik-scripts-nav-mobile' );
 
 		} // /dequeue_header_scripts

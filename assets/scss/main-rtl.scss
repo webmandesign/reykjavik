@@ -7,22 +7,12 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 
+$left: right;
+$right: left;
+$rtl_multiplier: -1; // For `translateX` transform, for example.
 
+@import 'tools/_index';
+@import 'setup';
+@import 'css-vars';
 
-
-
-// Setup language direction
-
-	$language_direction: rtl;
-
-
-
-// Imports
-
-	@import 'setup';
-
-	@import 'css-vars';
-
-	@import 'starter/__index';
-
-	@import 'main/main';
+@import 'main/_index';

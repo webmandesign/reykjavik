@@ -1,0 +1,10 @@
+/* FILE: main/wp/_pullquote.scss */
+
+blockquote {
+
+	&.alignleft,
+	&.alignright {
+		margin-top: 0;
+	}
+
+}

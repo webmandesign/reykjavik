@@ -26,6 +26,11 @@
 
 	// Elements
 
+		#{ $selectors_margin_bottom } {
+			margin-top: 0;
+			margin-bottom: calc( 1.618 * var(--typography_size_html) );
+		}
+
 		a {
 			color: var(--color_accent);
 		}
@@ -63,14 +68,6 @@
 			list-style: none;
 		}
 
-		#{ $elements_margin_bottom } {
-
-			&:last-child {
-				margin-bottom: calc( var(--typography_size_html) * #{ $golden } ); // Simulating rem unit for block editor.
-			}
-
-		}
-
 		blockquote,
 		.wp-block-quote {
 			border: 0;
@@ -87,20 +84,6 @@
 
 			}
 
-		}
-
-	// Headings
-
-		// Heading styles on small devices
-		@include h_tags( $golden_major + $golden_minor / 2, false, true );
-		// Heading styles on large devices
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			@include h_tags( 1, false, true );
-		}
-
-		#{ $elements_headings } {
-			color: map_get( $customize_options, 'color_content_headings' );
-			color: var(--color_content_headings);
 		}
 
 		[style*="font-size:"] {

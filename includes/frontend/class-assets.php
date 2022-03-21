@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -105,7 +105,7 @@ class Reykjavik_Assets {
 		 * Registering theme styles
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.1.0
 		 */
 		public static function register_styles() {
 
@@ -115,6 +115,7 @@ class Reykjavik_Assets {
 					'genericons-neue'             => array( 'src' => get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
 					'reykjavik-google-fonts'      => array( 'src' => self::google_fonts_url() ),
 					'reykjavik-stylesheet-custom' => array( 'src' => get_theme_file_uri( 'assets/css/custom-styles.css' ) ),
+					'reykjavik-stylesheet-blocks' => array( 'src' => get_theme_file_uri( 'assets/css/blocks.css' ), 'rtl' => 'replace' ),
 					'reykjavik-stylesheet-global' => array( 'src' => get_theme_file_uri( 'assets/css/main.css' ), 'rtl' => 'replace' ),
 				);
 
@@ -146,18 +147,18 @@ class Reykjavik_Assets {
 		 * Registering theme scripts
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.1.0
 		 */
 		public static function register_scripts() {
 
 			// Helper variables
 
 				$register_assets = array(
+					'a11y-menu'                     => array( 'src' => get_theme_file_uri( 'assets/js/vendors/a11y-menu/a11y-menu.dist.min.js' ), 'in_footer' => false ),
 					'reykjavik-skip-link-focus-fix' => array( 'src' => get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), 'deps' => array() ),
 					'reykjavik-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery' ) ),
 					'reykjavik-scripts-masonry'     => array( 'src' => get_theme_file_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry' ) ),
-					'reykjavik-scripts-nav-a11y'    => array( get_theme_file_uri( 'assets/js/scripts-navigation-accessibility.js' ) ),
-					'reykjavik-scripts-nav-mobile'  => array( get_theme_file_uri( 'assets/js/scripts-navigation-mobile.js' ) ),
+					'reykjavik-scripts-nav-mobile'  => array( 'src' => get_theme_file_uri( 'assets/js/scripts-navigation-mobile.min.js' ), 'deps' => array() ),
 				);
 
 				$register_assets = (array) apply_filters( 'wmhook_reykjavik_assets_register_scripts', $register_assets );
@@ -190,7 +191,7 @@ class Reykjavik_Assets {
 		 * Frontend styles enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.1.0
 		 */
 		public static function enqueue_styles() {
 
@@ -211,6 +212,7 @@ class Reykjavik_Assets {
 
 				// Main
 				$enqueue_assets[10] = 'reykjavik-stylesheet-global';
+				$enqueue_assets[15] = 'reykjavik-stylesheet-blocks';
 
 				// Custom
 				$enqueue_assets[20] = 'reykjavik-stylesheet-custom';
@@ -234,7 +236,7 @@ class Reykjavik_Assets {
 		 * Frontend scripts enqueue
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.2
+		 * @version  2.1.0
 		 */
 		public static function enqueue_scripts() {
 
@@ -262,7 +264,24 @@ class Reykjavik_Assets {
 				// Navigation scripts
 
 					if ( Reykjavik_Header::is_enabled() ) {
-						$enqueue_assets[20] = 'reykjavik-scripts-nav-a11y';
+						$enqueue_assets[20] = 'a11y-menu';
+						wp_localize_script(
+							'a11y-menu',
+							'a11yMenuConfig',
+							array(
+								'mode'              => array( 'esc', 'button' ),
+								'menu_selector'     => '.toggle-sub-menus',
+								'button_attributes' => array(
+									'class'      => 'button-toggle-sub-menu',
+									'aria-label' => array(
+										/* translators: %s: menu item label. */
+										'collapse' => esc_html__( 'Collapse menu: %s', 'reykjavik' ),
+										/* translators: %s: menu item label. */
+										'expand'   => esc_html__( 'Expand menu: %s', 'reykjavik' ),
+									),
+								),
+							)
+						);
 
 						if ( Reykjavik_Library_Customize::get_theme_mod( 'navigation_mobile' ) ) {
 							$enqueue_assets[25] = 'reykjavik-scripts-nav-mobile';

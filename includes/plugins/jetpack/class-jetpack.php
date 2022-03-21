@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -34,13 +34,15 @@ class Reykjavik_Jetpack {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.1.0
 		 */
 		private function __construct() {
 
 			// Requirements check
 
-				if ( ! Jetpack::is_active() && ! Jetpack::is_development_mode() ) {
+				$status = new Automattic\Jetpack\Status();
+
+				if ( ! Jetpack::is_active() && ! $status->is_offline_mode() ) {
 					return;
 				}
 
@@ -59,7 +61,7 @@ class Reykjavik_Jetpack {
 							'container'      => 'posts',
 							'footer'         => false,
 							'posts_per_page' => 6,
-							'render'         => 'Reykjavik_Jetpack::infinite_scroll_render',
+							'render'         => __CLASS__ . '::infinite_scroll_render',
 							'type'           => 'scroll',
 							'wrapper'        => false,
 						) ) );
@@ -69,17 +71,19 @@ class Reykjavik_Jetpack {
 						/**
 						 * @link  https://jetpack.com/support/content-options/
 						 */
-						add_theme_support( 'jetpack-content-options', array(
+						$content_options = array(
 							'author-bio'   => true,
 							'post-details' => array(
 								'stylesheet' => 'reykjavik',
-								'date'       => '.posted-on',
-								// 'categories' => '.cat-links',
-								// 'tags'       => '.tags-links',
 								'author'     => '.byline',
+								'categories' => '.cat-links',
 								'comment'    => '.comments-link',
+								'date'       => '.posted-on',
+								'tags'       => '.tags-links',
 							),
-						) );
+						);
+
+						add_theme_support( 'jetpack-content-options', apply_filters( 'wmhook_reykjavik_jetpack_setup_content_options', $content_options ) );
 
 					// Add theme support for custom post types
 

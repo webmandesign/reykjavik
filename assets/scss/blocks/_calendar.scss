@@ -1,0 +1,5 @@
+/* FILE: blocks/_calendar.scss */
+
+.wp-block-calendar {
+	@extend %widget_calendar;
+}

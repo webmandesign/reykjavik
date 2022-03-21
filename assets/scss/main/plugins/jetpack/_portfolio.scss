@@ -1,0 +1,92 @@
+/* FILE: main/plugins/jetpack/_portfolio.scss */
+
+.portfolio-entry {
+
+	.entry-content & {
+		padding: $golden +em;
+		margin: 1em;
+		border-width: 1px;
+		border-style: solid;
+		border-bottom-width: 2px;
+		border-bottom-color: inherit;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			padding: 2em;
+		}
+
+		.portfolio-featured-image {
+			display: block;
+			margin: calc( #{ $golden * -1em } - 1px ); // Cover border around post entry.
+			margin-bottom: $golden +em;
+
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				margin: calc( -2em - 1px ); // Cover border around post entry.
+				margin-bottom: 2em;
+			}
+
+			img {
+				width: 100%;
+			}
+
+		}
+
+		&-title a {
+			text-decoration: none;
+		}
+
+	}
+
+}
+
+.jetpack-portfolio-shortcode {
+	display: flex;
+	flex-wrap: wrap;
+
+	.entry-content & {
+		margin: -1em;
+	}
+
+	.portfolio-entry {
+		$columns: 1; // Default layout on small devices.
+		width: calc( #{ percentage( 1 / $columns ) } - 2em );
+	}
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+
+		.portfolio-entry {
+			$columns: 2; // Default layout on medium devices.
+			width: calc( #{ percentage( 1 / $columns ) } - 2em );
+		}
+
+		.portfolio-entry-column-1 {
+			$columns: 1;
+			width: calc( #{ percentage( 1 / $columns ) } - 2em );
+		}
+
+	}
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+
+		@for $columns from 3 through 6 {
+
+			.portfolio-entry-column-#{ $columns } {
+				width: calc( #{ percentage( 1 / $columns ) } - 2em );
+			}
+
+		}
+
+	}
+
+}
+
+.posts .type-jetpack-portfolio .entry {
+
+	&-header {
+		margin-bottom: 0;
+	}
+
+	&-content {
+		display: none;
+	}
+
+}

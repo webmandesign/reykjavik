@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -189,13 +189,13 @@ class Reykjavik_Beaver_Themer {
 		 * Dequeue theme header scripts
 		 *
 		 * @since    1.5.2
-		 * @version  1.5.2
+		 * @version  2.1.0
 		 */
 		public static function dequeue_header_scripts() {
 
 			// Processing
 
-				wp_dequeue_script( 'reykjavik-scripts-nav-a11y' );
+				wp_dequeue_script( 'a11y-menu' );
 				wp_dequeue_script( 'reykjavik-scripts-nav-mobile' );
 
 		} // /dequeue_header_scripts

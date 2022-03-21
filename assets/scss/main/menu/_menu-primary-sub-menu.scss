@@ -1,0 +1,121 @@
+/* FILE: main/menu/_menu-primary-sub-menu.scss */
+
+@keyframes showSubMenu {
+	from {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	to {
+		opacity: 1;
+		transform: scaleY(1);
+	}
+}
+
+.main-navigation-container {
+
+	.sub-menu {
+		display: none;
+		position: absolute;
+		min-width: 100%;
+		min-width: calc( 100% + #{ $golden * 4rem } );
+		#{$left}: 0; // {{RTL}}
+		top: 100%;
+		padding: $golden +rem;
+		margin: 0 ( -$golden - $golden_minor +rem );
+		border-top-width: 1px;
+		border-top-style: solid;
+		box-shadow: 0 ( $golden_minor +em ) 1em rgba( #000, .25 );
+		z-index: 9;
+		transform-origin: 50% 0;
+
+		a {
+			@extend %line_height_golden_minor;
+			padding-#{$left}: 1rem;
+		}
+
+	}
+
+	.reverse-expand ul {
+
+		@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+			#{$left}: auto; // {{RTL}}
+			#{$right}: 0; // {{RTL}}
+		}
+
+	}
+
+	li li {
+
+		@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+			float: none;
+			display: block;
+
+			> a {
+				display: block;
+				min-width: 10em;
+			}
+
+		}
+
+	}
+
+	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
+
+		li li a::before {
+			content: '';
+			display: inline-block;
+			width: .5em;
+			height: .5em;
+			margin-#{$right}: .5em;
+			margin-top: .25em;
+			border-#{$left}: 1px solid;
+			border-bottom: 1px solid;
+			vertical-align: top;
+			speak: none;
+			opacity: .5;
+		}
+
+	}
+
+	.menu-item-has-children {
+
+		// Inaccessible menu fallback indicating submenu.
+		.no-js &:not([aria-haspopup]):not(.menu-item-is-depth-3) {
+			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+
+				> a {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					&::after {
+						content: '\25bc';
+						padding-#{$left}: 1em;
+						margin-#{$left}: auto;
+						font-size: .5em;
+					}
+
+				}
+
+				.menu-item-has-children:not(.menu-item-is-depth-3) > a::after {
+					@if 'left' == $left {
+						content: '\25b6';
+					} @else {
+						content: '\25C0';
+					}
+				}
+
+			}
+		}
+
+		&:hover > .sub-menu,
+		.no-js &:focus-within > .sub-menu {
+			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+				display: block;
+				animation: showSubMenu ( $large_animation_speed +s );
+			}
+		}
+
+	}
+
+}

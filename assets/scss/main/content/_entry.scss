@@ -1,0 +1,14 @@
+/* FILE: main/content/_entry.scss */
+
+.entry-content {
+	@extend %clearfix;
+}
+
+.entry-summary {
+	margin: 0 0 ( $golden +em );
+
+	&.has-more-tag {
+		text-transform: uppercase;
+	}
+
+}

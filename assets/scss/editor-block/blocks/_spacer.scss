@@ -1,0 +1,25 @@
+/* FILE: editor-block/blocks/_spacer.scss */
+
+[data-type="core/spacer"] {
+	margin: 0;
+
+	&:not(:first-child) {
+		margin-top: calc( 1.618 * var(--typography_size_html) * -1 );
+	}
+
+	+ h1,
+	+ h2,
+	+ h3,
+	+ h4 {
+		margin-top: 0 !important;
+	}
+
+	+ .block-list-appender.block-list-appender.block-list-appender.block-list-appender.block-list-appender.block-list-appender.block-list-appender {
+		margin-top: 0;
+	}
+
+}
+
+[data-align="wide"] + [data-type="core/spacer"] {
+	margin-top: 0;
+}

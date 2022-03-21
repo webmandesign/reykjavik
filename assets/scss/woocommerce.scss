@@ -7,21 +7,14 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  2.0.1
+// @version  2.1.0
 //
 
+$left: left;
+$right: right;
+$rtl_multiplier: 1; // For `translateX` transform, for example.
 
+@import 'tools/_index';
+@import 'setup';
 
-
-
-// Imports
-
-	@import 'setup';
-
-	@import 'starter/tools/functions';
-
-	@import 'starter/setup/variables';
-
-	@import 'starter/tools/mixins';
-
-	@import 'woocommerce/woocommerce';
+@import 'woocommerce/_index';

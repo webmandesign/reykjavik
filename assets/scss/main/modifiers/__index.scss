@@ -1,0 +1,6 @@
+/* FILE: main/modifiers/__index.scss */
+
+#{ $wrapper_modifiers } {
+	@import 'modifiers';
+	@import 'backcompat';
+}

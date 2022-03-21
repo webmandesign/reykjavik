@@ -1,0 +1,32 @@
+/* FILE: main/menu/_menu-primary-description.scss */
+
+.menu-item-description {
+	@extend %font_size_small;
+	@extend %font_style_italic;
+	display: block;
+	max-width: 20em;
+	margin-top: $golden_minor +em;
+	white-space: normal;
+	opacity: .8;
+
+	// In top level menu items
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+
+			.main-navigation-container .menu > ul > li > a & {
+				display: none;
+			}
+
+		}
+
+	// In megamenu label
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+
+			.main-navigation-container .megamenu > ul > li > a & {
+				margin-bottom: $golden_major +em;
+			}
+
+		}
+
+}

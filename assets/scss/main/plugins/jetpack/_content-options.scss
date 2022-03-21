@@ -1,0 +1,73 @@
+/* FILE: main/plugins/jetpack/_content-options.scss */
+
+// Author bio
+
+	.entry-author {
+		@extend %background_overlay_from_text_color;
+		margin-top: pow( 1 + $golden_minor, 4 ) +em;
+		padding: 8%;
+		border-width: 1px;
+		border-style: solid;
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			padding: pow( 1 + $golden_minor, 4 ) +em;
+		}
+
+		&::before {
+			opacity: .03;
+		}
+
+		.author {
+
+			&-avatar {
+				width: 60px;
+				margin-bottom: 1em;
+
+				@include media( map_get( $breakpoint, 'm' ) ) {
+					float: $left; // {{RTL}}
+					width: 80px;
+					margin-#{$right}: $golden +em;
+				}
+
+			}
+
+			&-title {
+				@extend %font_size_small;
+				@extend %font_weight_400;
+				margin-bottom: $golden +em;
+				text-transform: uppercase;
+			}
+
+			&-name {
+				@extend %font_size_golden_rem;
+				@extend %font_weight_700;
+				display: block;
+				margin-top: $golden_minor / 2 +em;
+				text-transform: none;
+			}
+
+			&-bio {
+
+				@include media( map_get( $breakpoint, 'm' ) ) {
+					clear: both;
+				}
+
+			}
+
+			&-link {
+				display: block;
+				margin-top: 1em;
+			}
+
+		}
+
+		.fl-builder &,
+		.content-layout-no-paddings & {
+			/* $content_width */
+			max-width: calc( #{ $golden_major } * #{ map_get( $customize_options, 'layout_width_content' ) } );
+			max-width: calc( #{ $golden_major } * var(--layout_width_content) );
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
