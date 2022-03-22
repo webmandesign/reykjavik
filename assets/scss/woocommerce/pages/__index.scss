@@ -2,5 +2,14 @@
 
 @import 'shop';
 @import 'cart';
+
 @import 'checkout';
+@import 'checkout-order-pay';
+@import 'checkout-order-received';
+
 @import 'my-account';
+@import 'my-account-lost-password';
+@import 'my-account-view-order';
+@import 'my-account-edit-address';
+@import 'my-account-add-payment-method';
+@import 'my-account-orders';

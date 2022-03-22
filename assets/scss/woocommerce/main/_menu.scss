@@ -18,6 +18,7 @@
 
 	.button {
 		@extend %indent_text_for_icon_only;
+		position: relative;
 		width: $mobile_menu_toggle_height +rem;
 		height: $mobile_menu_toggle_height + 1rem;
 		padding: 0;

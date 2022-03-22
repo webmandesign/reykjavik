@@ -23,14 +23,14 @@
 		html & {
 			background-color: var(--color_content_background);
 			color: var(--color_content_text);
-			border-color: var(--color_content_border);
+			border-color: var(--color_content_text--a20);
 		}
 
 	// Elements.
 
 		#{ $selectors_margin_bottom } {
 			margin-top: 0;
-			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
+			margin-bottom: var(--golden_rem);
 		}
 
 		a {

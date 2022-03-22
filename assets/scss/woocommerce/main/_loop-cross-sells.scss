@@ -1,19 +1,7 @@
 /* FILE: woocommerce/main/_loop-cross-sells.scss */
 
-//
-// Cross sells products loop styles
-//
-// This loop is displayed on Cart page.
-//
-
-
-
-
-
 .cross-sells {
 	margin-bottom: _pow( $golden, 2 ) +em;
-
-
 
 	.thumbnail {
 		float: $left; // {{RTL}}
@@ -21,16 +9,12 @@
 		margin-#{$right}: 1em;
 	}
 
-
-
 	ul.products {
 		margin: 0;
 
 		a {
 			text-decoration: none;
 		}
-
-
 
 		.product {
 			width: 100%;
@@ -51,8 +35,6 @@
 				display: none;
 			}
 
-
-
 			.description {
 				padding: 0 0 1em ( _pow( 1 + $golden_minor, 4 ) + 1em );
 				text-align: $left; // {{RTL}}
@@ -68,8 +50,6 @@
 					box-shadow: none;
 				}
 
-
-
 			.button {
 				margin-top: $golden_major +rem;
 				padding: $golden_minor +rem;
@@ -78,8 +58,6 @@
 		}
 
 	}
-
-
 
 	.onsale {
 		display: none;

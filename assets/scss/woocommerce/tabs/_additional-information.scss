@@ -1,11 +1,5 @@
 /* FILE: woocommerce/tabs/_additional-information.scss */
 
-//
-// Tab: Additional Information
-//
-
-
-
 .shop_attributes {
 	margin: 0;
 	border-width: 0;
@@ -25,7 +19,7 @@
 
 	th {
 		width: auto;
-		line-height: 1.618rem;
+		line-height: $golden +rem;
 		text-align: $right; // {{RTL}}
 		text-transform: uppercase;
 		letter-spacing: 1px;

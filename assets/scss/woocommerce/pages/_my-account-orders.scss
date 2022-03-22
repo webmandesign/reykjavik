@@ -1,34 +1,24 @@
 /* FILE: woocommerce/pages/_my-account-orders.scss */
 
-//
-// Page: My Account -> Orders
-//
+.my_account_orders {
 
-
-
-
-
-// Orders table
-
-	.my_account_orders {
-
-		th,
-		td {
-			vertical-align: middle;
-		}
-
+	th,
+	td {
+		vertical-align: middle;
 	}
 
-	.order-number {
-		font-weight: 700;
+}
+
+.order-number {
+	font-weight: 700;
+}
+
+.order-actions,
+.download-actions {
+
+	.button {
+		padding: ( $golden_minor +em ) 1em;
+		margin: $golden_minor / 2 + em;
 	}
 
-	.order-actions,
-	.download-actions {
-
-		.button {
-			padding: ( $golden_minor +em ) 1em;
-			margin: $golden_minor / 2 + em;
-		}
-
-	}
+}

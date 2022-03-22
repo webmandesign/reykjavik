@@ -2,7 +2,7 @@ $selectors_margin_bottom: (
 	'h1', 'h2', 'h3', '.h1', '.h2', '.h3',
 	'p',
 	'ol', 'ul', 'dl',
-	'hr',
+	// 'hr',
 	'form',
 	'blockquote',
 	'table',
@@ -28,15 +28,8 @@ $beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
 	$selectors_button_beaver_builder: append( $selectors_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
 }
 $selectors_button: append( $selectors_button, (
-	'.wp-block-button__link',
 	'.wp-block-search .wp-block-search__button',
-	'.child-page .more-link',
 	'.main-navigation-container .button > a',
-	// '.page-numbers:not(.current):not(.dots)',
-	// '.post-page-numbers:not(.current):not(.dots)',
-
-	// // WooCommerce
-	// '.cart_totals .checkout-button',
 ) );
 
 $selectors_accent_color: (
@@ -55,11 +48,3 @@ $selectors_accent_color: (
 	'.widget .tagcloud a:focus',
 	'.widget .tagcloud a:active'
 );
-
-// Wrappers
-
-	// Global wrapper.
-	$wrapper: '.site';
-
-	// Section related wrappers:
-	$wrapper_modifiers: $wrapper;

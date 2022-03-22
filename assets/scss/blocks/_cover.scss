@@ -68,10 +68,15 @@
 				max-width: $max_width_content;
 			} @else {
 			// Front-end styles:
-				max-width: var(--layout_width_content);
+				max-width: var(--layout_width_entry_content);
 			}
 		}
 
+	}
+
+	&.alignfull,
+	&.alignwide {
+		min-height: $golden_major * 100vh;
 	}
 
 }

@@ -1,155 +1,117 @@
 /* FILE: woocommerce/main/_gallery.scss */
 
-//
-// Single product page image gallery
-//
+.single-product-images {
+	@extend %clearfix;
+	position: relative;
+	margin-bottom: _pow( $golden, 2 ) +em;
 
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		float: $left; // {{RTL}}
+		width: 48%;
+		margin-bottom: 0;
+	}
 
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		width: percentage( $golden_major - .04 );
+	}
 
+	.gallery-item {
+		float: none;
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
 
+	> .gallery-item,
+	img {
+		width: 100%;
+	}
 
-// Backwards compatibility
-
-	.single-product-images {
-		@extend %clearfix;
+	a {
 		position: relative;
-		margin-bottom: _pow( $golden, 2 ) +em;
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			float: $left; // {{RTL}}
-			width: 48%;
-			margin-bottom: 0;
-		}
-
-		@include media( map_get( $breakpoint, 'xl' ) ) {
-			width: percentage( $golden_major - .04 );
-		}
+	.thumbnails {
+		padding: ( $golden +em ) 0 1em;
+		white-space: nowrap;
+		overflow-x: auto;
 
 		.gallery-item {
-			float: none;
-			display: block;
-			width: 100%;
-			margin: 0;
+			display: inline-block;
+			width: 33.33%;
+			max-width: 8em;
+			padding-#{$right}: 1em; // {{RTL}}
+			vertical-align: top;
 		}
-
-		> .gallery-item,
-		img {
-			width: 100%;
-		}
-
-		a {
-			position: relative;
-			display: block;
-			text-decoration: none;
-			color: inherit;
-		}
-
-
-
-		// Thumbnails list
-
-			.thumbnails {
-				padding: ( $golden +em ) 0 1em;
-				white-space: nowrap;
-				overflow-x: auto;
-
-				.gallery-item {
-					display: inline-block;
-					width: 33.33%;
-					max-width: 8em;
-					padding-#{$right}: 1em; // {{RTL}}
-					vertical-align: top;
-				}
-
-			}
 
 	}
 
+}
 
+.woocommerce-product-gallery {
+	$columns: 5; // From PHP Reykjavik_WooCommerce_Helpers::return_number( 'thumbnails_columns' ).
+	$gutter: 4; // In %
 
-// WC 3.0+
+	position: relative;
+	opacity: 1 !important; // Yes, unfortunately, we have to force this to override inline styles.
 
-	.woocommerce-product-gallery {
-		$columns: 5; // From PHP Reykjavik_WooCommerce_Helpers::return_number( 'thumbnails_columns' ).
-		$gutter: 4; // In %
+	&__trigger {
 
-		position: relative;
-		opacity: 1 !important; // Yes, unfortunately, we have to force this to override inline styles.
+		.single-product-images & {
+			@extend %colors_accent;
+			@extend %indent_text_for_icon_only;
+			position: absolute;
+			height: 2em;
+			#{$right}: 0; // {{RTL}}
+			top: 0;
+			line-height: 2em;
+			font-size: 1em + $golden_minor;
+			z-index: 19;
 
-		&__trigger {
-
-			.single-product-images & {
-				@extend %colors_accent;
-				@extend %indent_text_for_icon_only;
-				position: absolute;
+			.site & {
 				width: 2em;
-				height: 2em;
-				#{$right}: 0; // {{RTL}}
-				top: 0;
-				line-height: 2em;
-				font-size: 1em + $golden_minor;
-				z-index: 19;
+			}
 
-				&::before {
-					content: '\f402';
-				}
+			&::before {
+				content: '\f402';
+			}
 
-				@include haf() {
-					text-decoration: none;
-				}
-
+			@include haf() {
+				text-decoration: none;
 			}
 
 		}
 
-		.flex-viewport &__wrapper {
-			overflow: hidden;
-			white-space: nowrap;
+	}
+
+	.flex-viewport &__wrapper {
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	&__image {
+		max-width: map_get( $breakpoint, 'l' ) +px;
+		min-height: 0 !important; // Have to force this to keep Flex slider items responsive.
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			/* $content_width */
+			max-width: calc( #{ $golden_major - .04 } * #{ map_get( $customize_options, 'layout_width_content' ) } );
+			max-width: calc( #{ $golden_major - .04 } * var(--layout_width_content) );
 		}
 
-		&__image {
-			max-width: map_get( $breakpoint, 'l' ) +px;
-			min-height: 0 !important; // Have to force this to keep Flex slider items responsive.
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				/* $content_width */
-				max-width: calc( #{ $golden_major - .04 } * #{ map_get( $customize_options, 'layout_width_content' ) } );
-				max-width: calc( #{ $golden_major - .04 } * var(--layout_width_content) );
-			}
-
-			.flex-viewport & {
-				float: left; // Required to prevent large images below each other.
-			}
-
-			.woocommerce-product-gallery > .woocommerce-product-gallery__wrapper > & {
-				// This will make sure we wait for Flex slider to initiate.
-				// Don't use `.no-js` as there is a slight delay until Flex slider kicks in.
-
-				+ .woocommerce-product-gallery__image {
-					// These are gallery thumbnails when Flex slider hasn't kicked in yet.
-					float: $left; // {{RTL}}
-					width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
-					margin-top: $golden +em;
-					margin-#{$right}: percentage( $gutter / 100 ); // {{RTL}}
-					cursor: pointer;
-
-					&:nth-child( #{ $columns }n ) {
-						margin-#{$right}: 0; // {{RTL}}
-					}
-
-				}
-
-			}
-
+		.flex-viewport & {
+			float: left; // Required to prevent large images below each other.
 		}
 
-		.flex-control-thumbs {
-			@extend %clearfix;
-			padding: 0;
-			margin: 0;
-			list-style: none;
+		.woocommerce-product-gallery > .woocommerce-product-gallery__wrapper > & {
+			// This will make sure we wait for Flex slider to initiate.
+			// Don't use `.no-js` as there is a slight delay until Flex slider kicks in.
 
-			li {
+			+ .woocommerce-product-gallery__image {
+				// These are gallery thumbnails when Flex slider hasn't kicked in yet.
 				float: $left; // {{RTL}}
 				width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
 				margin-top: $golden +em;
@@ -160,22 +122,43 @@
 					margin-#{$right}: 0; // {{RTL}}
 				}
 
-				img {
-					opacity: .5;
-					transition: opacity ( $small_animation_speed +s );
+			}
 
-					&.flex-active {
-						opacity: 1;
-					}
+		}
 
+	}
+
+	.flex-control-thumbs {
+		@extend %clearfix;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			float: $left; // {{RTL}}
+			width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
+			margin-top: $golden +em;
+			margin-#{$right}: percentage( $gutter / 100 ); // {{RTL}}
+			cursor: pointer;
+
+			&:nth-child( #{ $columns }n ) {
+				margin-#{$right}: 0; // {{RTL}}
+			}
+
+			img {
+				opacity: .5;
+				transition: opacity ( $small_animation_speed +s );
+
+				&.flex-active {
+					opacity: 1;
 				}
 
-				&:hover {
+			}
 
-					img {
-						opacity: 1;
-					}
+			&:hover {
 
+				img {
+					opacity: 1;
 				}
 
 			}
@@ -183,3 +166,5 @@
 		}
 
 	}
+
+}

@@ -56,7 +56,7 @@
 	&.wp-block-column {
 
 		&.wp-block-column:last-child {
-			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
+			margin-bottom: var(--golden_rem);
 		}
 
 		&.is-style-no-margin-vertical:last-child {

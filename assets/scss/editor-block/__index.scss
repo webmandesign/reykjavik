@@ -24,7 +24,6 @@ $selectors_button: (
 $important_contexts: append( $important_contexts, 'modifier_font_size' );
 $important_contexts: append( $important_contexts, 'modifier_line_height' );
 
-
 @import 'custom-properties';
 @import 'ui';
 

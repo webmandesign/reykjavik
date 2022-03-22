@@ -1,6 +1,7 @@
 /* FILE: blocks/_separator.scss */
 
 .wp-block-separator {
+	max-width: var(--layout_width_entry_content);
 	border-width: 0;
 
 	@if variable-exists( 'selector_editor_wrapper' ) {
@@ -15,20 +16,40 @@
 
 	&.is-style-dots {
 		--hr_width: calc( #{ $golden } * 4em );
-		--hr_height: #{ $golden +em };
-		text-align: inherit;
+		--hr_height: 1em;
+		text-align: center;
 		overflow: visible;
 
 		&::before {
 			content: '●●●';
 			padding: 0;
-			font-size: $golden +em;
-			letter-spacing: $golden_major +em;
+			font-size: var(--hr_height);
+			letter-spacing: 1em;
 			white-space: nowrap;
 			background: none;
+			border-width: 0;
+			opacity: .2; // Customizer RGBA colors alpha value. @see $customize_options_rgba.
 			speak: none;
 		}
 
 	}
 
+	&:not(.has-background),
+	&:not(.has-text-color) {
+		border-color: inherit;
+	}
+
+	&.has-background::before,
+	&.has-text-color::before {
+		opacity: 1;
+	}
+
+}
+
+.wp-block-spacer + .wp-block-separator {
+	margin-top: 0;
+}
+
+.wp-block-separator + .wp-block-spacer.wp-block-spacer {
+	margin-top: _pow( 1 + $golden_minor, 4 ) * -1em;
 }

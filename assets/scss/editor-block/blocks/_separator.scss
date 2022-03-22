@@ -27,10 +27,12 @@
 	}
 
 	[data-align="wide"] > .wp-block-separator {
+		--hr_width: 100%;
 		max-width: $max_width_wide !important;
 	}
 
 	[data-align="full"] > .wp-block-separator {
+		--hr_width: 100%;
 		max-width: none !important;
 	}
 

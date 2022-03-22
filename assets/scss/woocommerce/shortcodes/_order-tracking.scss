@@ -1,16 +1,5 @@
 /* FILE: woocommerce/shortcodes/_order-tracking.scss */
 
-//
-// Shortcode: [woocommerce_order_tracking]
-//
-// Displays order tracking form.
-// Redirect to "Order Details" page then.
-//
-
-
-
-
-
 .track_order {
 	padding: _pow( $golden, 2 ) +em;
 	margin-left: auto;
@@ -28,11 +17,10 @@
 
 }
 
-
-
 .woocommerce .notes {
 	margin-bottom: _pow( $golden, 2 ) +em;
 	max-width: 36em;
+	max-width: var(--layout_width_entry_content);
 
 	.note {
 		padding: $golden +em;

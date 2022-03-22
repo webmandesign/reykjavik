@@ -6,16 +6,15 @@
 	&.is-large,
 	&.is-style-large {
 		padding: 0;
-		font-size: var(--typography_font_size_XL_em);
 
 		p {
-			font-size: 1em;
+			font-size: 1.272em;
 			font-style: inherit;
 			line-height: inherit;
 		}
 
 		cite {
-			font-size: var(--typography_font_size_base);
+			@extend %font_size_small;
 			text-align: inherit;
 		}
 

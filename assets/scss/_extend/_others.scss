@@ -33,16 +33,12 @@
 		&:first-letter {
 			@extend %colors_site_content_headings;
 			float: $left;
-			padding: .5em;
-			margin-#{$right}: .25em;
-			font-size: $golden +em;
-			line-height: .8;
-			border: 1px solid;
-
-			@include media( map_get( $breakpoint, 'm' ) ) {
-				font-size: 2.33em;
-			}
-
+			padding: 0 ( $golden_minor / 2 +em );
+			padding-#{$left}: 0; // {{RTL}}
+			margin: 0;
+			font-size: $golden * 2em; // 2 lines of text.
+			font-weight: inherit;
+			line-height: 1;
 		}
 
 		&::after {
@@ -76,7 +72,7 @@
 }
 
 %indent_text_for_icon_only {
-	position: relative;
+	// position: relative; // Provide each time!
 	display: inline-block;
 	width: 1em;
 	text-align: $left; // {{RTL}}

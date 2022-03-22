@@ -1,6 +1,11 @@
 /* FILE: main/modifiers/__index.scss */
 
-#{ $wrapper_modifiers } {
-	@import 'modifiers';
+@import 'colors'; // Must be first so others can override padding.
+@import 'alignment';
+@import 'box-model';
+@import 'others';
+@import 'typography';
+
+.site {
 	@import 'backcompat';
 }

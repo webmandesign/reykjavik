@@ -1,85 +1,67 @@
 /* FILE: woocommerce/main/_count-and-sorting.scss */
 
-//
-// Products count and sorting
-//
+.products-sorting {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 0 ( $golden +rem );
+	font-weight: 700;
 
+	&:empty {
+		display: none;
+	}
 
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-bottom: _pow( $golden, 2 ) +rem;
+	}
 
-
-
-// Container
-
-	.products-sorting {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		margin: 0 0 ( $golden +rem );
-		font-weight: 700;
-
-		&:empty {
-			display: none;
-		}
+	.products:not(.products-categories) + & {
+		margin-top: $golden +em;
+		margin-bottom: 0;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: _pow( $golden, 2 ) +rem;
-		}
-
-		.products:not(.products-categories) + & {
-			margin-top: $golden +em;
-			margin-bottom: 0;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-top: _pow( $golden, 2 ) +em;
-			}
-
+			margin-top: _pow( $golden, 2 ) +em;
 		}
 
 	}
 
+}
 
+.woocommerce-result-count {
+	flex: 0 1 auto;
+	margin: ( $golden_major +em );
 
-// Results count
-
-	.woocommerce-result-count {
-		flex: 0 1 auto;
-		margin: ( $golden_major +em );
-
-		&::before {
-			@extend %genericon;
-			@extend %icon_vertical_align_middle;
-			content: '\f403';
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
-			font-size: 1rem;
-		}
-
+	&::before {
+		@extend %genericon;
+		@extend %icon_vertical_align_middle;
+		content: '\f403';
+		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		font-size: 1rem;
 	}
 
+}
 
+.woocommerce-ordering {
+	flex: 0 1 auto;
+	margin: ( $golden_major +em );
 
-// Ordering dropdown
-
-	.woocommerce-ordering {
-		flex: 0 1 auto;
-		margin: ( $golden_major +em );
-
-		&::before {
-			@extend %genericon;
-			@extend %icon_vertical_align_middle;
-			content: '\f514';
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
-			font-size: 1rem;
-		}
-
-		select {
-			width: auto;
-			padding-#{$right}: $golden +em; // {{RTL}}
-			padding-top: 0;
-			padding-bottom: 0;
-			background-color: transparent;
-			background-origin: padding-box;
-			border-color: transparent;
-			cursor: pointer;
-		}
-
+	&::before {
+		@extend %genericon;
+		@extend %icon_vertical_align_middle;
+		content: '\f514';
+		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		font-size: 1rem;
 	}
+
+	select {
+		width: auto;
+		padding-#{$right}: $golden +em; // {{RTL}}
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: transparent;
+		background-origin: padding-box;
+		border-color: transparent;
+		cursor: pointer;
+	}
+
+}

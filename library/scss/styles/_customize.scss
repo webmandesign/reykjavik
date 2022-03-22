@@ -49,13 +49,13 @@
 
 	// Text field with size attribute set
 
-		.customize-control input[type=tel][size],
-		.customize-control input[type=url][size],
-		.customize-control input[type=text][size],
-		.customize-control input[type=password][size],
-		.customize-control input[type=email][size],
-		.customize-control input[type=number][size],
-		.customize-control input[type=search][size] {
+		.customize-control input[type="tel"][size],
+		.customize-control input[type="url"][size],
+		.customize-control input[type="text"][size],
+		.customize-control input[type="password"][size],
+		.customize-control input[type="email"][size],
+		.customize-control input[type="number"][size],
+		.customize-control input[type="search"][size] {
 			width: auto;
 		}
 
@@ -289,7 +289,7 @@
 						background: $range_thumb_color_hover;
 					}
 
-				input[type=range] {
+				input[type="range"] {
 					appearance: none;
 					width: 100%;
 					margin: 1.62em 0;
@@ -319,9 +319,9 @@
 						align-items: center;
 						cursor: default;
 
-						&:hover input[type=range]::-webkit-slider-thumb { @include range_thumb_hover; }
-						&:hover input[type=range]::-moz-range-thumb     { @include range_thumb_hover; }
-						&:hover input[type=range]::-ms-thumb            { @include range_thumb_hover; }
+						&:hover input[type="range"]::-webkit-slider-thumb { @include range_thumb_hover; }
+						&:hover input[type="range"]::-moz-range-thumb     { @include range_thumb_hover; }
+						&:hover input[type="range"]::-ms-thumb            { @include range_thumb_hover; }
 
 					}
 
@@ -354,7 +354,7 @@
 				}
 
 				.range-container:hover .range-value,
-				input[type=range]:focus + .range-value {
+				input[type="range"]:focus + .range-value {
 					background: $range_value_background_hover;
 				}
 

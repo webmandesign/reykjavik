@@ -10,16 +10,23 @@
 	&__link {
 
 		&.has-background {
-			padding: ( ( $form_field_padding_vertical / $button_font_size ) + ( $golden - 1.25 * $button_font_size ) / $button_font_size / 2 ) 0;
+			padding: 1em 2em;
+		}
+
+		&:not(.has-background) {
+			background-color: map_get( $customize_options, 'color_accent' );
+			background-color: var(--color_accent);
 		}
 
 		&:not(.has-text-color) {
+			color: map_get( $customize_options, 'color_accent_text' );
+			color: var(--color_accent_text);
 
 			&:hover,
 			&:focus,
 			&:active,
 			&:visited {
-				color: var(--color_button_text);
+				color: var(--color_accent_text);
 			}
 
 		}
@@ -31,9 +38,7 @@
 .is-style-outline {
 
 	.wp-block-button__link {
-		padding-left: 1.5em;
-		padding-right: 1.5em;
-		border: 1px solid;
+		border: 2px solid;
 
 		&:not(.has-text-color) {
 			color: currentColor;
@@ -49,8 +54,7 @@
 
 }
 
-	.is-style-outline > .wp-block-button__link,
-	.wp-block-button__link.is-style-outline {
-		padding: ( ( $form_field_padding_vertical / $button_font_size ) + ( $golden - 1.25 * $button_font_size ) / $button_font_size / 2 ) 1.5em;
+	.is-style-outline > :not(.has-text-color),
+	.is-style-outline:not(.has-text-color) {
 		color: inherit;
 	}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-11-14 16:31+0100\n"
+"POT-Creation-Date: 2022-03-22 12:30+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -11,13 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:27
@@ -588,12 +588,12 @@ msgid "General text font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1125
-#: includes/setup/class-setup.php:648
+#: includes/setup/class-setup.php:653
 msgid "Headings font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1142
-#: includes/setup/class-setup.php:654
+#: includes/setup/class-setup.php:659
 msgid "Logo font"
 msgstr ""
 
@@ -649,6 +649,23 @@ msgid ""
 "displayed."
 msgstr ""
 
+#. translators: %s: menu item label.
+#: includes/frontend/class-assets.php:277
+#, php-format
+msgid "Collapse menu: %s"
+msgstr ""
+
+#. translators: %s: menu item label.
+#: includes/frontend/class-assets.php:279
+#, php-format
+msgid "Expand menu: %s"
+msgstr ""
+
+#: includes/frontend/class-content.php:65
+msgctxt "Block style label."
+msgid "No vertical gap"
+msgstr ""
+
 #: includes/frontend/class-loop.php:114 includes/frontend/class-loop.php:187
 #: includes/plugins/woocommerce/class-woocommerce-loop.php:390
 #: includes/plugins/woocommerce/class-woocommerce-single.php:274
@@ -681,27 +698,23 @@ msgstr ""
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/frontend/class-menu.php:119
+#: includes/frontend/class-menu.php:118
 msgctxt "Navigational menu location"
 msgid "Primary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:120
+#: includes/frontend/class-menu.php:119
 msgctxt "Navigational menu location"
 msgid "Secondary"
 msgstr ""
 
-#: includes/frontend/class-menu.php:121
+#: includes/frontend/class-menu.php:120
 msgctxt "Navigational menu location"
 msgid "Social Links"
 msgstr ""
 
-#: includes/frontend/class-menu.php:180 includes/frontend/class-menu.php:191
+#: includes/frontend/class-menu.php:172
 msgid "Skip to menu toggle button"
-msgstr ""
-
-#: includes/frontend/class-menu.php:329
-msgid "(Focus the link to toggle submenu.)"
 msgstr ""
 
 #: includes/frontend/class-post-summary.php:84
@@ -712,21 +725,21 @@ msgstr ""
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/frontend/class-post.php:384
+#: includes/frontend/class-post.php:387
 msgid "Skip back to main navigation"
-msgstr ""
-
-#: includes/frontend/class-post.php:420
-msgctxt "$s: Custom post type singular label"
-msgid "Previous $s"
 msgstr ""
 
 #: includes/frontend/class-post.php:425
 msgctxt "$s: Custom post type singular label"
+msgid "Previous $s"
+msgstr ""
+
+#: includes/frontend/class-post.php:430
+msgctxt "$s: Custom post type singular label"
 msgid "Next $s"
 msgstr ""
 
-#: includes/frontend/class-post.php:431
+#: includes/frontend/class-post.php:436
 msgid "Published in"
 msgstr ""
 
@@ -1203,120 +1216,142 @@ msgstr ""
 msgid "After content only"
 msgstr ""
 
-#: includes/plugins/jetpack/class-jetpack.php:199
+#: includes/plugins/jetpack/class-jetpack.php:203
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:108
-msgid "Theme demo content"
-msgstr ""
-
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:111
 msgid "Manual import procedure"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:115
 msgid ""
 "By importing this demo content you get the exact copy of the theme demo "
 "website."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:116
 msgid "Preview the theme demo website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:120
 msgid ""
 "For instructions on importing theme demo content please visit GitHub "
 "repository."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:121
 msgid "GitHub repository instructions &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:129
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:133
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:134
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:163
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:135
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:171
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid "Install demo required plugins first!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:175
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:176
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:148
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:177
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:149
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:178
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:150
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:184
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
 msgid ""
 "(Note that this set of plugins may differ from plugins recommended under "
 "Appearance &rarr; Install Plugins!)"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:535
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:507
 msgid "Jetpack Custom content types"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:539
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:511
 msgid ""
 "Please make sure your Jetpack plugin is connected and you have activated "
 "Testimonials and Portfolios \"Custom content types\" in Jetpack settings "
 "(navigate to Jetpack &rarr; Settings &rarr; Writing)."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:540
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:512
 msgid ""
 "If you do not activate these, the related demo content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:544
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:516
 msgid ""
 "If your Jetpack plugin is connected, you may just try to reload this page "
 "and we will attempt to activate those custom content types for you "
 "automatically."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:546
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:518
 msgid ""
 "If the operation is successful, this message will disappear and you should "
 "see 2 new items in your WordPress dashboard menu: \"Portfolio\" and "
 "\"Testimonials\"."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:549
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:521
 msgid "Reload this page &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:585
+msgctxt "Plugin name."
+msgid "Beaver Builder"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:591
+msgctxt "Plugin name."
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:597
+msgctxt "Plugin name."
+msgid "Jetpack"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:603
+msgctxt "Plugin name."
+msgid "WooSidebars"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:609
+#: includes/tgmpa/class-tgmpa-plugins.php:153
+msgctxt "Plugin name."
+msgid "Classic Widgets"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-customize.php:75
@@ -1416,27 +1451,27 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:392
+#: includes/setup/class-setup.php:397
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:399
+#: includes/setup/class-setup.php:404
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:400
+#: includes/setup/class-setup.php:405
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:407 includes/setup/class-setup.php:418
+#: includes/setup/class-setup.php:412 includes/setup/class-setup.php:423
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:417
+#: includes/setup/class-setup.php:422
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:425
+#: includes/setup/class-setup.php:430
 msgid "In page intro section."
 msgstr ""
 
@@ -1445,7 +1480,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:531
+#: includes/setup/class-setup.php:536
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1455,68 +1490,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:541
+#: includes/setup/class-setup.php:546
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:610
+#: includes/setup/class-setup.php:615
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:611
+#: includes/setup/class-setup.php:616
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:612
+#: includes/setup/class-setup.php:617
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:613
+#: includes/setup/class-setup.php:618
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:614
+#: includes/setup/class-setup.php:619
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:615
+#: includes/setup/class-setup.php:620
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:616
+#: includes/setup/class-setup.php:621
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:617
+#: includes/setup/class-setup.php:622
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:618
+#: includes/setup/class-setup.php:623
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:623
+#: includes/setup/class-setup.php:628
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:638
+#: includes/setup/class-setup.php:643
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:642
+#: includes/setup/class-setup.php:647
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:660
+#: includes/setup/class-setup.php:665
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:671
+#: includes/setup/class-setup.php:676
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:677
+#: includes/setup/class-setup.php:682
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1524,52 +1559,52 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:687
+#: includes/setup/class-setup.php:692
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:691
+#: includes/setup/class-setup.php:696
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:702
+#: includes/setup/class-setup.php:707
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:706
+#: includes/setup/class-setup.php:711
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:717
+#: includes/setup/class-setup.php:722
 msgid "Outdented heading style"
 msgstr ""
 
-#: includes/setup/class-setup.php:852
+#: includes/setup/class-setup.php:857
 msgctxt "Font size."
 msgid "Extra Small"
 msgstr ""
 
-#: includes/setup/class-setup.php:858
+#: includes/setup/class-setup.php:863
 msgctxt "Font size."
 msgid "Small"
 msgstr ""
 
-#: includes/setup/class-setup.php:864
+#: includes/setup/class-setup.php:869
 msgctxt "Font size."
 msgid "Normal"
 msgstr ""
 
-#: includes/setup/class-setup.php:870
+#: includes/setup/class-setup.php:875
 msgctxt "Font size."
 msgid "Large"
 msgstr ""
 
-#: includes/setup/class-setup.php:876
+#: includes/setup/class-setup.php:881
 msgctxt "Font size."
 msgid "Extra Large"
 msgstr ""
 
-#: includes/setup/class-setup.php:891
+#: includes/setup/class-setup.php:896
 #, php-format
 msgctxt "Font size."
 msgid "Display %d"
@@ -1782,33 +1817,48 @@ msgstr ""
 msgid "For installing theme demo content easily."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:182
+#: includes/tgmpa/class-tgmpa-plugins.php:154
+msgid "Improves widgets management screen."
+msgstr ""
+
+#: includes/tgmpa/class-tgmpa-plugins.php:154
+msgid "Restores the previous WordPress widgets settings screens."
+msgstr ""
+
+#: includes/tgmpa/class-tgmpa-plugins.php:154
+msgid ""
+"Sidebars and widgets are not going to be used in fully block themes in the "
+"future, so if your website still uses sidebars, it is better to use this "
+"plugin to enable classic user interface."
+msgstr ""
+
+#: includes/tgmpa/class-tgmpa-plugins.php:189
 msgid "Other useful plugins &raquo;"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:207
+#: includes/tgmpa/class-tgmpa-plugins.php:214
 msgid "Description"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:276
+#: includes/tgmpa/class-tgmpa-plugins.php:283
 msgctxt "Plugins."
 msgid "Recommended, not required"
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:279
+#: includes/tgmpa/class-tgmpa-plugins.php:286
 msgid "Please note that these are just recommended plugins, not required ones."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:280
+#: includes/tgmpa/class-tgmpa-plugins.php:287
 msgid "Install only those plugins you will use."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:281
+#: includes/tgmpa/class-tgmpa-plugins.php:288
 msgctxt "Plugins."
 msgid "Or install the ones you prefer."
 msgstr ""
 
-#: includes/tgmpa/class-tgmpa-plugins.php:282
+#: includes/tgmpa/class-tgmpa-plugins.php:289
 msgid ""
 "For example, if you are not building an eCommerce website, there is no need "
 "to install WooCommerce plugin suggested below."
@@ -1911,7 +1961,7 @@ msgid "(page %s)"
 msgstr ""
 
 #: library/includes/classes/class-core.php:472
-#: templates/parts/header/links-skip.php:23
+#: templates/parts/header/links-skip.php:20
 msgid "Skip to main content"
 msgstr ""
 
@@ -2830,11 +2880,15 @@ msgstr ""
 msgid "Back to top &uarr;"
 msgstr ""
 
-#: templates/parts/header/links-skip.php:22
+#: templates/parts/header/links-skip.php:14
+msgid "Skip links"
+msgstr ""
+
+#: templates/parts/header/links-skip.php:19
 msgid "Skip to main navigation"
 msgstr ""
 
-#: templates/parts/header/links-skip.php:24
+#: templates/parts/header/links-skip.php:21
 msgid "Skip to footer"
 msgstr ""
 
@@ -2842,11 +2896,11 @@ msgstr ""
 msgid "List of categories"
 msgstr ""
 
-#: templates/parts/menu/menu-primary.php:27
+#: templates/parts/menu/menu-primary.php:20
 msgid "Primary Menu"
 msgstr ""
 
-#: templates/parts/menu/menu-primary.php:30
+#: templates/parts/menu/menu-primary.php:33
 msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr ""

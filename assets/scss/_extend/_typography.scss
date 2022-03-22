@@ -1,0 +1,127 @@
+/* FILE: _extend/_typography.scss */
+
+// Font family.
+
+	%font_body {
+		font-family: #{ map_get( $customize_options, 'typography_fonts_text' ) };
+		font-family: var(--typography_fonts_text);
+	}
+
+	%font_headings {
+		font-family: #{ map_get( $customize_options, 'typography_fonts_headings' ) };
+		font-family: var(--typography_fonts_headings);
+	}
+
+	%font_logo {
+		font-family: #{ map_get( $customize_options, 'typography_fonts_logo' ) };
+		font-family: var(--typography_fonts_logo);
+		text-rendering: auto;
+	}
+
+	%font_inherit {
+		font-family: inherit;
+	}
+
+// Font size: rem.
+
+	%font_size_1rem {
+		font-size: 1rem;
+	}
+
+	%font_size_tiny_rem {
+		font-size: 1rem * $golden_major;
+	}
+
+	%font_size_small_rem {
+		font-size: 1rem - $golden_minor / 2;
+	}
+
+	%font_size_smaller_rem {
+		font-size: 1rem - $golden_minor / 4;
+	}
+
+	%font_size_larger_rem {
+		font-size: 1rem + $golden_minor / 2;
+	}
+
+	%font_size_golden_minor_rem {
+		font-size: 1rem + $golden_minor;
+	}
+
+	%font_size_golden_rem {
+		font-size: 1rem * $golden;
+	}
+
+// Font size: em.
+
+	%font_size_1em {
+		font-size: 1em;
+	}
+
+	%font_size_tiny {
+		font-size: 1em * $golden_major;
+	}
+
+	%font_size_small {
+		font-size: 1em - $golden_minor / 2;
+	}
+
+	%font_size_smaller {
+		font-size: 1em - $golden_minor / 4;
+	}
+
+	%font_size_larger {
+		font-size: 1em + $golden_minor / 2;
+	}
+
+	%font_size_golden_minor {
+		font-size: 1em + $golden_minor;
+	}
+
+	%font_size_golden {
+		font-size: 1em * $golden;
+	}
+
+// Font weight.
+
+	@for $i from 1 through 9 {
+		// 400 = normal
+		// 700 = bold
+		//
+		// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+
+		$weight: $i * 100;
+
+		%font_weight_#{$weight} {
+			font-weight: $weight;
+		}
+
+	}
+
+// Font style.
+
+	%font_style_italic {
+		font-style: italic;
+	}
+
+	%font_style_normal {
+		font-style: normal;
+	}
+
+// Line height.
+
+	%line_height_1 {
+		line-height: 1;
+	}
+
+	%line_height_small {
+		line-height: 1 + $golden_minor / 2;
+	}
+
+	%line_height_golden_minor {
+		line-height: 1 + $golden_minor;
+	}
+
+	%line_height_golden {
+		line-height: $golden;
+	}

@@ -1,8 +1,8 @@
 /* FILE: editor-block/_ui.scss */
 
 // These can not be CSS vars, we need to use SASS vars.
-$max_width_content: calc( var(--layout_width_content) + var(--editor_width_addon) );
-$max_width_wide:    calc( var(--layout_width_wide)    + var(--editor_width_addon) );
+$max_width_content: calc( var(--layout_width_entry_content) + var(--editor_width_addon) );
+$max_width_wide:    calc( var(--layout_width_content)       + var(--editor_width_addon) );
 
 .block-list-appender.block-list-appender.block-list-appender,
 .block-editor-block-list__block,

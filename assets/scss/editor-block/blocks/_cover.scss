@@ -10,8 +10,13 @@
 
 // Overriding default WP styles:
 @media (min-width: 600px) {
-	[data-align=full] .wp-block-group > .wp-block-group__inner-container > .wp-block-cover {
+	[data-align="full"] .wp-block-group > .wp-block-group__inner-container > .wp-block-cover {
 		padding-left: var(--block_padding);
 		padding-right: var(--block_padding);
 	}
+}
+
+[data-align="full"] > .wp-block-cover,
+[data-align="wide"] > .wp-block-cover {
+	min-height: $golden_major * 100vh;
 }

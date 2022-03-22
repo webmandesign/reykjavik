@@ -92,6 +92,7 @@
 			.single.no-widgets-sidebar &,
 			.attachment.no-widgets-sidebar & {
 				max-width: 36em;
+				max-width: var(--layout_width_entry_content);
 			}
 
 		}

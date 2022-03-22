@@ -1,13 +1,5 @@
 /* FILE: woocommerce/sidebar/_widget-cart.scss */
 
-//
-// Widget: Cart
-//
-
-
-
-
-
 .widget_shopping_cart {
 
 	&_content {
@@ -34,6 +26,7 @@
 
 	.remove {
 		@extend %indent_text_for_icon_only;
+		position: relative;
 		float: $right; // {{RTL}}
 		margin-#{$left}: $golden_minor +em; // {{RTL}}
 		line-height: 1;

@@ -1,7 +1,7 @@
 /* FILE: editor-block/_typography.scss */
 
 html #{ $selector_editor_wrapper } {
-	font-family: var(--typography_font_primary);
+	font-family: var(--typography_fonts_text);
 	font-size: var(--typography_font_size_base);
 	line-height: $golden;
 }

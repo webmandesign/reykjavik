@@ -37,20 +37,18 @@ p.no-comments {
 
 }
 
-// Error message
+.woocommerce-error {
+	list-style: none;
+	border-color: map_get( $colors, 'error_background' );
 
-	.woocommerce-error {
-		list-style: none;
-		border-color: map_get( $colors, 'error_background' );
+	li {
+		clear: both;
+		margin: ( $golden_major +em ) 0 0;
 
-		li {
-			clear: both;
-			margin: ( $golden_major +em ) 0 0;
-
-			&:first-child {
-				margin-top: 0;
-			}
-
+		&:first-child {
+			margin-top: 0;
 		}
 
 	}
+
+}

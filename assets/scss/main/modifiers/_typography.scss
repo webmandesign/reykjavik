@@ -1,0 +1,153 @@
+/* FILE: global/modifiers/_typography.scss */
+
+// Font family
+
+	$important_modifiers: _important( 'modifier_font_family' );
+
+	.font-body,
+	.has-root-font-family,
+	.has-global-font-family {
+		font-family: var(--typography_fonts_text);
+	}
+
+	.font-headings,
+	.font-headings-primary,
+	.has-headings-font-family {
+		font-family: var(--typography_fonts_headings);
+	}
+
+	.font-logo,
+	.font-headings-secondary,
+	.has-site-title-font-family {
+		font-family: var(--typography_fonts_logo);
+	}
+
+	.font-inherit,
+	.has-inherit-font-family {
+		font-family: inherit;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Font size
+
+	$important_modifiers: _important( 'modifier_font_size' );
+
+	.has-xs-font-size,
+	.has-extra-small-font-size {
+		font-size: 1em * $golden_major $important_modifiers;
+	}
+
+	.has-s-font-size,
+	.has-small-font-size {
+		font-size: 1em - $golden_minor / 2 $important_modifiers;
+	}
+
+	.has-smaller-font-size {
+		font-size: 1em - $golden_minor / 4 $important_modifiers;
+	}
+
+	.has-m-font-size,
+	.has-medium-font-size,
+	.has-regular-font-size,
+	.has-normal-font-size {
+		font-size: 1em $important_modifiers;
+		line-height: inherit;
+	}
+
+	.has-larger-font-size {
+		font-size: 1em + $golden_minor / 2 $important_modifiers;
+	}
+
+	.has-l-font-size,
+	.has-large-font-size {
+		font-size: 1em + $golden_minor $important_modifiers;
+	}
+
+	.has-xl-font-size,
+	.has-extra-large-font-size {
+		font-size: 1em * $golden $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Font style
+
+	$important_modifiers: _important( 'modifier_font_style' );
+
+	.has-italic-font-style {
+		font-style: italic $important_modifiers;
+	}
+
+	.has-normal-font-style {
+		font-style: normal $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Font weight
+
+	$important_modifiers: _important( 'modifier_font_weight' );
+
+	// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+	@for $i from 1 through 9 {
+		.has-#{ $i * 100 }-font-weight {
+			font-weight: $i * 100 $important_modifiers;
+		}
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Line height
+
+	$important_modifiers: _important( 'modifier_line_height' );
+
+	.has-1-line-height {
+		line-height: 1 $important_modifiers;
+	}
+
+	.has-xs-line-height,
+	.has-extra-small-line-height {
+		line-height: ( 1 + $golden_minor / 2 ) $important_modifiers;
+	}
+
+	.has-s-line-height,
+	.has-small-line-height {
+		line-height: ( 1 + $golden_minor ) $important_modifiers;
+	}
+
+	.has-m-line-height,
+	.has-regular-line-height,
+	.has-medium-line-height,
+	.has-normal-line-height {
+		line-height: var(--typography_line_height) $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Text transform
+
+	$important_modifiers: _important( 'modifier_text_transform' );
+
+	.has-uppercase-text-transform,
+	.is-style-uppercase {
+		text-transform: uppercase $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Text shadow
+
+	$important_modifiers: _important( 'modifier_text_shadow' );
+
+	.has-dark-text-shadow,
+	.is-style-text-shadow-dark {
+		text-shadow: 0 1px 2px #000 $important_modifiers;
+	}
+
+	.has-light-text-shadow,
+	.is-style-text-shadow-light {
+		text-shadow: 0 1px 2px #fff $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.

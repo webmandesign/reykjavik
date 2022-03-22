@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.2
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -32,11 +32,40 @@ class Reykjavik_Content {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.2
+		 * @version  2.1.0
 		 */
 		private function __construct() {
 
 			// Processing
+
+				// Registering block styles.
+				if ( function_exists( 'register_block_style' ) ) {
+					$blocks = array(
+						'core/column',
+						'core/columns',
+						'core/cover',
+						'core/gallery',
+						'core/group',
+						'core/heading',
+						'core/image',
+						'core/media-text',
+						'core/paragraph',
+						'core/post-content',
+						'core/post-date',
+						'core/post-excerpt',
+						'core/post-featured-image',
+						'core/post-terms',
+						'core/post-title',
+						'core/query',
+					);
+
+					foreach (	$blocks as $block ) {
+						register_block_style( $block, array(
+							'name'  => 'no-margin-vertical',
+							'label' => esc_html_x( 'No vertical gap', 'Block style label.', 'reykjavik' ),
+						) );
+					}
+				}
 
 				// Hooks
 
@@ -299,7 +328,7 @@ class Reykjavik_Content {
 		 * Block editor output modifications.
 		 *
 		 * @since    2.0.0
-		 * @version  2.0.1
+		 * @version  2.1.0
 		 *
      * @param  string $block_content  The pre-rendered content. Default null.
      * @param  array  $block          The block being rendered.
@@ -310,70 +339,65 @@ class Reykjavik_Content {
 
 				$attrs = $block['attrs'];
 
-				// Block attribute names (WP defaults).
-				// Filterable for 3rd party plugins with different attribute names.
-				$attr_name = apply_filters( 'wmhook_reykjavik_content_render_block_attr_name', array(
-					'align' => 'align',
-					'class' => 'className',
+				// Forced default block attribute values.
+				$defaults = apply_filters( 'wmhook_reykjavik_content_render_block_defaults', array(
+					// Blocks with `wide` default alignment.
+					'align:wide' => array(
+						'core/media-text',
+					),
 				), $block_content, $block );
 
-				/**
-				 * Default block attribute values does not seem to be passed to `render_block` filter.
-				 * @link  https://github.com/WordPress/gutenberg/issues/16365
-				 */
-
-					// Forced default block attribute values.
-					$defaults = apply_filters( 'wmhook_reykjavik_content_render_block_defaults', array(
-						// Blocks with `wide` default alignment.
-						'align:wide' => array(
-							'core/media-text',
-						),
-					), $block_content, $block );
-
-					if (
-						in_array( $block['blockName'], $defaults['align:wide'] )
-						&& ! isset( $attrs[ $attr_name['align'] ] )
-					) {
-						$attrs[ $attr_name['align'] ] = 'wide';
-					}
+				if (
+					in_array( $block['blockName'], $defaults['align:wide'] )
+					&& ! isset( $attrs['align'] )
+				) {
+					$attrs['align'] = 'wide';
+				}
 
 				// Make sure the alignment attribute is set.
-				$attr_align = ( isset( $attrs[ $attr_name['align'] ] ) ) ? ( $attrs[ $attr_name['align'] ] ) : ( null );
+				if ( ! isset( $attrs['align'] ) ) {
+					$attrs['align'] = null;
+				}
 
-					/**
-					 * Compatibility with 3rd party block plugins.
-					 * @link  https://wordpress.org/support/topic/align-attribute-name
-					 */
-					if ( null === $attr_align && isset( $attrs['blockAlignment'] ) ) {
-						$attr_align = $attrs['blockAlignment'];
-					}
+				/**
+				 * Compatibility with 3rd party block plugins.
+				 * @link  https://wordpress.org/support/topic/align-attribute-name
+				 */
+				if ( null === $attrs['align'] && isset( $attrs['blockAlignment'] ) ) {
+					$attrs['align'] = $attrs['blockAlignment'];
+				}
 
-				// Make sure the CSS class attribute is set.
-				$attr_class = ( isset( $attrs[ $attr_name['class'] ] ) ) ? ( $attrs[ $attr_name['class'] ] ) : ( null );
+				// Make sure the className attribute is set.
+				if ( ! isset( $attrs['className'] ) ) {
+					$attrs['className'] = '';
+				}
 
 
 			// Processing
 
-				// Wide/full align wrapper.
+				// Wide align wrapper.
 				if (
-					in_array( $attr_align, array( 'wide', 'full' ) )
-					|| false !== strpos( $attr_class, 'alignwide' )
-					|| false !== strpos( $attr_class, 'alignfull' )
+					'wide' == $attrs['align']
+					|| false !== stripos( $attrs['className'], 'alignwide' )
 				) {
 					$atts = array(
-						'class="align-wrap"',
+						'class="alignwide-wrap"',
 						'data-block="' . sanitize_title( str_replace( 'core/', '', $block['blockName'] ) ) . '"',
-						'data-block-class="' . esc_attr( $attr_class ) . '"',
 					);
 					$block_content = '<div ' . implode( ' ', $atts ) . '>' . $block_content . '</div>';
 				}
 
-				// Button block additional class.
-				$block_content = str_replace(
-					'wp-block-button__link',
-					'wp-block-button__link button',
-					$block_content
-				);
+				// Image block left/right alignment.
+				if (
+					'core/image' === $block['blockName']
+					&& in_array( $attrs['align'], array( 'left', 'right' ) )
+				) {
+					$block_content = str_replace(
+						'wp-block-image',
+						'wp-block-image align-horizontal-wrap',
+						$block_content
+					);
+				}
 
 
 			// Output

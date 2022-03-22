@@ -1,13 +1,5 @@
 /* FILE: woocommerce/main/_guide.scss */
 
-//
-// Checkout guide styles
-//
-
-
-
-
-
 .checkout-guide {
 	display: block;
 	margin-bottom: $padding_vertical;
@@ -25,164 +17,136 @@
 		text-decoration: none;
 	}
 
+	&-steps {
+		display: block;
+		margin: 0;
+		list-style: none;
+		counter-reset: orderedList;
 
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
 
-	// List container
+	}
 
-		&-steps {
-			display: block;
+	&-step {
+		display: block;
+		position: relative;
+		padding: 0;
+		margin: 0;
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			flex: 0 1 16em;
+		}
+
+		&::before {
+			display: none;
+		}
+
+		&.is-current {
+			font-weight: 700;
+		}
+
+	}
+
+	&-title {
+		display: block;
+		margin: $golden_minor +em;
+		text-transform: uppercase;
+		transition: opacity ( $small_animation_speed +s );
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
 			margin: 0;
-			list-style: none;
-			counter-reset: orderedList;
+			font-size: 1em - $golden_minor / 2;
+		}
+
+		&::before {
+			counter-increment: orderedList;
+			content: counters( orderedList, '' );
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			margin-#{$right}: 1em;
+			line-height: 2;
+			text-align: center;
+			border-radius: 2em;
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				display: flex;
-				justify-content: center;
-				text-align: center;
+				display: block;
+				margin: .5em auto 1em;
+				font-size: $golden_minor / 2 + 1rem;
+				font-weight: 300;
+				box-shadow: 0 0 0 2px;
 			}
 
 		}
 
+		&::after {
+			@extend %genericon;
+		}
 
+		@include media( map_get( $breakpoint, 'l' ) ) {
 
-	// List item
-
-		&-step {
-			display: block;
-			position: relative;
-			padding: 0;
-			margin: 0;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				flex: 0 1 16em;
+			&::after {
+				@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
+				position: absolute;
+				#{$right}: 0; // {{RTL}}
+				top: 50%;
+				font-size: 2em;
+				transform: translateX( $rtl_multiplier * 50% )
+				           translateY( -50% );
 			}
 
-			&::before {
+			.is-active:not(.is-current) &::after {
+				@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
+			}
+
+			.checkout-guide-step:last-child &::after {
 				display: none;
 			}
 
-			&.is-current {
-				font-weight: 700;
-			}
-
 		}
 
+		.is-active & {
+			opacity: .33;
+			text-decoration: line-through;
 
-
-	// List title
-
-		&-title {
-			display: block;
-			margin: $golden_minor +em;
-			text-transform: uppercase;
-			transition: opacity ( $small_animation_speed +s );
+			&::before {
+				box-shadow: 0 0 0 2px;
+			}
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin: 0;
-				font-size: 1em - $golden_minor / 2;
+				text-decoration: none;
 			}
 
+		}
 
+		.is-current & {
+			text-decoration: none;
 
-			// Step number
+			@include media( map_get( $breakpoint, 'l' ) ) {
 
 				&::before {
-					counter-increment: orderedList;
-					content: counters( orderedList, '' );
-					display: inline-block;
-					width: 2em;
-					height: 2em;
-					margin-#{$right}: 1em;
-					line-height: 2;
-					text-align: center;
-					border-radius: 2em;
-
-					@include media( map_get( $breakpoint, 'l' ) ) {
-						display: block;
-						margin: .5em auto 1em;
-						font-size: $golden_minor / 2 + 1rem;
-						font-weight: 300;
-						box-shadow: 0 0 0 2px;
-					}
-
+					margin: 0 auto .5em;
+					font-size: $golden +rem;
+					font-weight: inherit;
+					box-shadow: 0 0 0 4px;
 				}
 
-
-
-			// Step arrow
-
-				&::after {
-					@extend %genericon;
-				}
-
-				@include media( map_get( $breakpoint, 'l' ) ) {
-
-					&::after {
-						@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
-						position: absolute;
-						#{$right}: 0; // {{RTL}}
-						top: 50%;
-						font-size: 2em;
-						transform: translateX( $rtl_multiplier * 50% )
-						           translateY( -50% );
-					}
-
-					.is-active:not(.is-current) &::after {
-						@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
-					}
-
-					.checkout-guide-step:last-child &::after {
-						display: none;
-					}
-
-				}
-
-
-
-			// Passed & current step
-
-				.is-active & {
-					opacity: .33;
-					text-decoration: line-through;
-
-					&::before {
-						box-shadow: 0 0 0 2px;
-					}
-
-					@include media( map_get( $breakpoint, 'l' ) ) {
-						text-decoration: none;
-					}
-
-				}
-
-
-
-			// Current step
-
-				.is-current & {
-					text-decoration: none;
-
-					@include media( map_get( $breakpoint, 'l' ) ) {
-
-						&::before {
-							margin: 0 auto .5em;
-							font-size: $golden +rem;
-							font-weight: inherit;
-							box-shadow: 0 0 0 4px;
-						}
-
-					}
-
-				}
-
-				@include haf() {
-					opacity: 1;
-				}
-
-				.is-current & {
-					opacity: 1;
-				}
+			}
 
 		}
+
+		@include haf() {
+			opacity: 1;
+		}
+
+		.is-current & {
+			opacity: 1;
+		}
+
+	}
 
 }

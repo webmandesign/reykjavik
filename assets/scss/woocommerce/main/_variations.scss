@@ -1,13 +1,5 @@
 /* FILE: woocommerce/main/_variations.scss */
 
-//
-// Variations list styles
-//
-
-
-
-
-
 .variation {
 	@extend %colors_site_content_headings;
 	margin: 0 0 ( $golden_minor +em );
@@ -32,82 +24,72 @@
 
 }
 
+.single-product .summary {
 
+	.variations {
 
-// On single product page
-
-	.single-product .summary {
-
-		.variations {
-
-			.label {
-				font-weight: 700;
-				white-space: nowrap;
-			}
-
-			select {
-				float: $right; // {{RTL}}
-				width: auto;
-				padding-#{$right}: $golden +em; // {{RTL}}
-				padding-top: 0;
-				padding-bottom: 0;
-				background-color: transparent;
-				background-origin: padding-box;
-				border-width: 0;
-				border-bottom-width: 2px;
-				border-bottom-style: solid;
-				border-color: currentColor;
-				cursor: pointer;
-			}
-
-			&_button {
-				@extend %clearfix;
-				margin-top: $golden +em;
-
-				.button:first-child {
-					width: 100%;
-				}
-
-			}
-
+		.label {
+			font-weight: 700;
+			white-space: nowrap;
 		}
 
-
-
-		.single_variation {
-
-			.price {
-				display: block;
-			}
-
-		}
-
-
-
-		.reset_variations {
+		select {
 			float: $right; // {{RTL}}
-			margin-top: $golden_minor +em;
-			margin-#{$right}: $golden_major +em; // {{RTL}}
-			text-decoration: none;
-			font-size: 1em - $golden_minor / 2;
-
-			@include haf() {
-				text-decoration: underline;
-			}
-
-			&::before {
-				@extend %genericon;
-				@extend %icon_vertical_align_middle;
-				content: '\f420';
-				margin-#{$right}: $golden_minor +em; // {{RTL}}
-			}
-
+			width: auto;
+			padding-#{$right}: $golden +em; // {{RTL}}
+			padding-top: 0;
+			padding-bottom: 0;
+			background-color: transparent;
+			background-origin: padding-box;
+			border-width: 0;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-color: currentColor;
+			cursor: pointer;
 		}
 
+		&_button {
+			@extend %clearfix;
+			margin-top: $golden +em;
 
+			.button:first-child {
+				width: 100%;
+			}
 
-		.woocommerce-variation-description {
-			margin-bottom: 1em;
 		}
 
 	}
+
+	.single_variation {
+
+		.price {
+			display: block;
+		}
+
+	}
+
+	.reset_variations {
+		float: $right; // {{RTL}}
+		margin-top: $golden_minor +em;
+		margin-#{$right}: $golden_major +em; // {{RTL}}
+		text-decoration: none;
+		font-size: 1em - $golden_minor / 2;
+
+		@include haf() {
+			text-decoration: underline;
+		}
+
+		&::before {
+			@extend %genericon;
+			@extend %icon_vertical_align_middle;
+			content: '\f420';
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+		}
+
+	}
+
+	.woocommerce-variation-description {
+		margin-bottom: 1em;
+	}
+
+}

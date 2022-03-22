@@ -55,7 +55,6 @@
 
 		#{ $selectors_headings } {
 			@extend %break_words;
-			@extend %line_height_golden_minor;
 			padding: 0;
 			text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/CSS/text-rendering
 

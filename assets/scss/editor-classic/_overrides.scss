@@ -16,6 +16,7 @@
 	body {
 		width: 100%;
 		max-width: 36em;
+		max-width: var(--layout_width_entry_content);
 		font-size: 16px; // Default, will get overridden
 
 		&.post-type-page {

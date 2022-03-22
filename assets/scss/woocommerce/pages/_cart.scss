@@ -94,218 +94,210 @@
 	font-weight: 400;
 }
 
-// Collaterals
+.cart-collaterals {
+	padding: 8%;
+	margin-top: _pow( $golden, 2 ) +em;
+	border-width: 2px;
+	border-style: dashed;
 
-	.cart-collaterals {
-		padding: 8%;
-		margin-top: _pow( $golden, 2 ) +em;
-		border-width: 2px;
-		border-style: dashed;
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		float: $right; // {{RTL}}
+		width: percentage( .46 - .04 );
+		padding: 4%;
+		margin-top: 0;
+	}
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			float: $right; // {{RTL}}
-			width: percentage( .46 - .04 );
-			padding: 4%;
-			margin-top: 0;
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		width: percentage( $golden_minor - .04 ); // Same as sidebar plus 4% due to padding with border around.
+	}
+
+}
+
+.cart_totals {
+
+	.shop_table {
+		margin-bottom: 2em;
+	}
+
+	.checkout-button {
+		width: 100%;
+		padding: ( $golden_minor + 1em ) ( $golden_minor +em );
+		font-weight: 700;
+	}
+
+	.button-continue-shopping {
+		width: 100%;
+		margin-top: 1em;
+
+		&:not(:hover):not(:focus):not(:active) {
+			background-color: transparent;
+			color: inherit;
 		}
 
-		@include media( map_get( $breakpoint, 'xl' ) ) {
-			width: percentage( $golden_minor - .04 ); // Same as sidebar plus 4% due to padding with border around.
+		&::before {
+			@extend %icon_vertical_align_middle;
+			@include rtl_property( content, '\21A9', '\21AA' ); // {{RTL}}
+			display: inline-block;
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			line-height: $golden_major;
+			font-size: 1em + $golden_minor;
 		}
 
 	}
 
-// Totals and shipping calculator
+}
 
-	.cart_totals {
+.order-total {
 
-		.shop_table {
-			margin-bottom: 2em;
-		}
-
-		.checkout-button {
-			width: 100%;
-			padding: ( $golden_minor + 1em ) ( $golden_minor +em );
-			font-weight: 700;
-		}
-
-		.button-continue-shopping {
-			width: 100%;
-			margin-top: 1em;
-
-			&:not(:hover):not(:focus):not(:active) {
-				background-color: transparent;
-				color: inherit;
-			}
-
-			&::before {
-				@extend %icon_vertical_align_middle;
-				@include rtl_property( content, '\21A9', '\21AA' ); // {{RTL}}
-				display: inline-block;
-				margin-#{$right}: $golden_minor +em; // {{RTL}}
-				line-height: $golden_major;
-				font-size: 1em + $golden_minor;
-			}
-
-		}
-
+	td {
+		line-height: 1;
+		font-size: $golden_minor / 2 + 1em;
 	}
 
-	.order-total {
-
-		td {
-			line-height: 1;
-			font-size: $golden_minor / 2 + 1em;
-		}
-
-		small {
-			display: block;
-			margin-top: $golden_major +em;
-			font-size: 1rem - $golden_minor / 2;
-			font-weight: 400;
-		}
-
+	small {
+		display: block;
+		margin-top: $golden_major +em;
+		font-size: 1rem - $golden_minor / 2;
+		font-weight: 400;
 	}
 
-	.shipping {
+}
 
-		td {
-			font-size: 1em - $golden_minor / 4;
+.shipping {
 
-			&:last-child {
-				text-align: $left; // {{RTL}}
+	td {
+		font-size: 1em - $golden_minor / 4;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					max-width: 12em;
-				}
+		&:last-child {
+			text-align: $left; // {{RTL}}
 
-			}
-
-			> p {
-				clear: both;
-			}
-
-		}
-
-		.shipping-calculator {
-			padding: 0;
-
-			&::after {
-				display:none;
-			}
-
-			&-button {
-				display: block;
-				padding: ( $golden_major +em ) ( $golden +em );
-				text-align: center;
-				text-decoration: none;
-			}
-
-		}
-
-		ul {
-			clear: both;
-			margin: 0;
-			list-style: none;
-		}
-
-		li {
-			position: relative;
-
-			label {
-				display: block;
-				padding: ( $golden_minor +em ) 0;
-			}
-
-		}
-
-	}
-
-	.woocommerce-shipping-calculator {
-		box-sizing: border-box;
-		margin: 0;
-
-		p {
-			margin-bottom: 1em;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			.button {
-				width: 100%;
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				max-width: 12em;
 			}
 
 		}
 
 		> p {
-			margin: 0;
-		}
-
-		select,
-		input[type="text"] {
-			width: 100%;
-			background-color: transparent;
-			background-origin: padding-box;
+			clear: both;
 		}
 
 	}
 
 	.shipping-calculator {
+		padding: 0;
+
+		&::after {
+			display:none;
+		}
 
 		&-button {
-			font-weight: 700;
-			text-transform: uppercase;
-			border: 2px solid;
-			color: inherit;
-		}
-
-		&-form {
-			padding: 1em;
-		}
-
-	}
-
-// Empty cart
-
-	.cart-empty {
-		margin-bottom: 1em;
-		font-weight: 700;
-
-		&-container {
-			padding: _pow( $golden, 2 ) +em;
+			display: block;
+			padding: ( $golden_major +em ) ( $golden +em );
 			text-align: center;
-			border-width: 2px;
-			border-style: dashed;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				width: percentage( $golden_major );
-				margin: 0 auto;
-			}
-
+			text-decoration: none;
 		}
 
 	}
 
-	.return-to-shop .button {
+	ul {
+		clear: both;
+		margin: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+
+		label {
+			display: block;
+			padding: ( $golden_minor +em ) 0;
+		}
+
+	}
+
+}
+
+.woocommerce-shipping-calculator {
+	box-sizing: border-box;
+	margin: 0;
+
+	p {
+		margin-bottom: 1em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.button {
+			width: 100%;
+		}
+
+	}
+
+	> p {
+		margin: 0;
+	}
+
+	select,
+	input[type="text"] {
+		width: 100%;
+		background-color: transparent;
+		background-origin: padding-box;
+	}
+
+}
+
+.shipping-calculator {
+
+	&-button {
 		font-weight: 700;
+		text-transform: uppercase;
+		border: 2px solid;
+		color: inherit;
+	}
 
-		&::before {
-			@extend %genericon;
-			@extend %icon_vertical_align_middle;
-			content: '\f447';
+	&-form {
+		padding: 1em;
+	}
+
+}
+
+.cart-empty {
+	margin-bottom: 1em;
+	font-weight: 700;
+
+	&-container {
+		padding: _pow( $golden, 2 ) +em;
+		text-align: center;
+		border-width: 2px;
+		border-style: dashed;
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			width: percentage( $golden_major );
+			margin: 0 auto;
 		}
 
 	}
 
-// Checkout button
+}
 
-	.checkout-button,
-	.checkout.button {
+.return-to-shop .button {
+	font-weight: 700;
 
-		&,
-		.site .fl-builder-content .fl-module & {
-			@extend %colors_accent;
-		}
-
+	&::before {
+		@extend %genericon;
+		@extend %icon_vertical_align_middle;
+		content: '\f447';
 	}
+
+}
+
+.checkout-button,
+.checkout.button {
+
+	&,
+	.site .fl-builder-content .fl-module & {
+		@extend %colors_accent;
+	}
+
+}

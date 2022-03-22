@@ -33,6 +33,8 @@
 
 		--letter_spacing: .05em;
 
+		--golden_rem: calc( var(--typography_font_size_base) * #{ $golden } );
+
 		// WP:
 		--wp-admin--admin-bar--height: 32px;
 		@media screen and (max-width: 782px) {
@@ -41,10 +43,8 @@
 
 	// Widths & heights.
 
-		--layout_width_entry_content: 36em;
-
-		--layout_width_content: @todo;
-		--layout_width_wide: @todo;
+		--hr_width: 100%;
+		--hr_height: 1px;
 
 		--button_toggle_sub_menu_size: 10px;
 		// Touch enabled devices.

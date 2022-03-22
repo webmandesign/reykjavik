@@ -1,3 +1,12 @@
 /* FILE: woocommerce/sidebar/__index.scss */
 
 @import 'widgets';
+
+@import 'widget-cart';
+@import 'widget-layered-nav';
+@import 'widget-layered-nav-filters';
+@import 'widget-price-filter';
+@import 'widget-product-categories';
+@import 'widget-product-tags';
+@import 'widget-recent-reviews';
+@import 'widget-average-rating-filter';

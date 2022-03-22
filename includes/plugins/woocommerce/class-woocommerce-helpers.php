@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -102,7 +102,7 @@ class Reykjavik_WooCommerce_Helpers {
 		 * Get product gallery image IDs
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 */
 		public static function get_product_gallery_image_ids( $product ) {
 
@@ -115,11 +115,7 @@ class Reykjavik_WooCommerce_Helpers {
 
 			// Output
 
-				if ( is_callable( 'WC_Product::get_gallery_image_ids' ) ) {
-					return $product->get_gallery_image_ids();
-				} else {
-					return $product->get_gallery_attachment_ids();
-				}
+				return $product->get_gallery_image_ids();
 
 		} // /get_product_gallery_image_ids
 

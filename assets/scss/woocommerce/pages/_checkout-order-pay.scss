@@ -1,19 +1,10 @@
 /* FILE: woocommerce/pages/_checkout-order-pay.scss */
 
-//
-// Page: Checkout -> Order pay
-//
-// Failed order pay page.
-//
-
-
-
-
-
 .woocommerce-order-pay {
 
 	#payment {
 		max-width: 36em;
+		max-width: var(--layout_width_entry_content);
 	}
 
 }

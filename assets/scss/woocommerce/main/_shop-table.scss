@@ -1,13 +1,5 @@
 /* FILE: woocommerce/main/_shop-table.scss */
 
-//
-// Shop table styles
-//
-
-
-
-
-
 .shop_table {
 
 	th,
@@ -40,8 +32,6 @@
 
 	}
 
-
-
 	.actions {
 
 		&:hover {
@@ -49,8 +39,6 @@
 		}
 
 	}
-
-
 
 	.product-remove {
 		position: relative;
@@ -63,6 +51,7 @@
 
 		a {
 			@extend %indent_text_for_icon_only;
+			position: relative;
 			width: 2em;
 			height: 2em;
 			line-height: 2;
@@ -91,8 +80,6 @@
 
 	}
 
-
-
 	.product-thumbnail {
 		text-align: center;
 
@@ -115,8 +102,6 @@
 
 	}
 
-
-
 	.product-name {
 		font-size: 1em - $golden_minor / 4;
 		overflow: hidden;
@@ -132,14 +117,10 @@
 
 	}
 
-
-
 	.product-price {
 		text-align: $right; // {{RTL}}
 		font-size: 1em - $golden_minor / 2;
 	}
-
-
 
 	.product-quantity {
 
@@ -172,8 +153,6 @@
 			border-bottom-color: currentColor;
 		}
 
-
-
 	.product-subtotal {
 
 		.amount {
@@ -182,48 +161,90 @@
 
 	}
 
+	&_responsive {
 
+		thead,
+		th {
+			display: none;
+		}
 
-	// Responsive table
-	//
-	// Where is it used:
-	// * Cart table
-	// * Cart totals table
-	// * Orders
-	// * My Account > Downloads (WC2.6+)
-	// * My Account > Payment Methods (WC2.6+)
+		tr {
+			display: block;
+			padding: ( $golden +em ) 0;
+		}
 
-		&_responsive {
+		td {
+			clear: both;
+			display: block;
+			text-align: $right; // {{RTL}}
 
-			thead,
-			th {
+			&::before {
+				content: attr( data-title );
+				float: $left; // {{RTL}}
+				margin-bottom: $golden_major +em;
+				margin-#{$right}: 1em; // {{RTL}}
+				text-transform: uppercase;
+				font-size: 1rem - $golden_minor / 2;
+				font-weight: 700;
+			}
+
+		}
+
+		.product-remove,
+		.product-thumbnail {
+
+			&::before {
 				display: none;
 			}
 
+		}
+
+		.variation {
+			float: $right; // {{RTL}}
+		}
+
+		.actions,
+		.order-actions,
+		.download-actions {
+
+			&::before {
+				display: none;
+			}
+
+		}
+
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
+
+			td,
+			th {
+				border-width: 0;
+			}
+
+			tr:not(:first-child) {
+				border-top-width: 2px;
+				border-top-style: solid;
+			}
+
+		}
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+
+			thead {
+				display: table-header-group;
+			}
+
 			tr {
-				display: block;
-				padding: ( $golden +em ) 0;
+				display: table-row;
+				padding: 0;
+			}
+
+			th,
+			td {
+				display: table-cell;
 			}
 
 			td {
-				clear: both;
-				display: block;
-				text-align: $right; // {{RTL}}
-
-				&::before {
-					content: attr( data-title );
-					float: $left; // {{RTL}}
-					margin-bottom: $golden_major +em;
-					margin-#{$right}: 1em; // {{RTL}}
-					text-transform: uppercase;
-					font-size: 1rem - $golden_minor / 2;
-					font-weight: 700;
-				}
-
-			}
-
-			.product-remove,
-			.product-thumbnail {
+				text-align: inherit;
 
 				&::before {
 					display: none;
@@ -232,77 +253,20 @@
 			}
 
 			.variation {
-				float: $right; // {{RTL}}
+				float: none;
 			}
 
-			.actions,
-			.order-actions,
-			.download-actions {
-
-				&::before {
-					display: none;
-				}
-
-			}
-
-			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-
-				td,
-				th {
-					border-width: 0;
-				}
-
-				tr:not(:first-child) {
-					border-top-width: 2px;
-					border-top-style: solid;
-				}
-
-			}
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-
-				thead {
-					display: table-header-group;
-				}
-
-				tr {
-					display: table-row;
-					padding: 0;
-				}
-
-				th,
-				td {
-					display: table-cell;
-				}
-
-				td {
-					text-align: inherit;
-
-					&::before {
-						display: none;
-					}
-
-				}
-
-				.variation {
-					float: none;
-				}
-
-			}
-
-		}
-
-}
-
-
-
-// Cart table
-
-	.cart_item {
-
-		th,
-		td {
-			vertical-align: middle;
 		}
 
 	}
+
+}
+
+.cart_item {
+
+	th,
+	td {
+		vertical-align: middle;
+	}
+
+}

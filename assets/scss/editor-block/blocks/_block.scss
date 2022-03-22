@@ -2,12 +2,12 @@
 
 .wp-block {
 	max-width: $max_width_content;
-	margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
+	margin-bottom: var(--golden_rem);
 	z-index: 1; // In case of negative margin overlay.
 
 	&:not([style*="margin-bottom"]):not(.has-no-margin):not(.has-no-margin-bottom):not(.has-no-margin-vertical):not(.margin-none):not(.margin-bottom-none):not(.margin-vertical-none):not(.m0):not(.mb0):not(.m-0):not(.mb-0) {
 		+ .block-list-appender {
-			margin-top: calc( var(--typography_font_size_base) * #{ $golden } * -1 );
+			margin-top: calc( var(--golden_rem) * -1 );
 		}
 	}
 
@@ -66,7 +66,7 @@
 		margin: 0;
 
 		&:not(:last-child) > * {
-			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } ); // Simulating rem unit for block editor.
+			margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
 		}
 
 		&:last-child > * {
@@ -117,7 +117,7 @@
 }
 
 #{ $selector_editor_wrapper } figure.wp-block {
-	margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
+	margin-bottom: var(--golden_rem);
 }
 
 .has-background:not([style*="padding-bottom"]):not(.has-no-padding):not(.has-no-padding-bottom):not(.has-no-padding-vertical):not(.p-0):not(.pb-0) {

@@ -11,145 +11,140 @@
 		outline: 0;
 	}
 
-	// Tabs list
+	.tabs {
+		@extend %layout_content_width;
+		padding: .5em;
+		line-height: $golden_minor / 2 + 1;
+		list-style: none;
+		text-align: center;
+		border-width: 1px;
+		border-style: solid;
+
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
+			display: none;
+		}
+
+		li {
+			display: inline-block;
+			padding: .5em;
+			margin: 0;
+			border-width: 0;
+		}
+
+		a {
+			display: inline-block;
+			padding: 1rem 2rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1em - $golden_minor / 2;
+			font-weight: 700;
+			color: inherit;
+			transition: background ( $small_animation_speed +s ),
+			            color ( $small_animation_speed +s );
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&::before {
+				@extend %genericon;
+				content: '\f455'; // Default "info" icon
+				display: inline-block;
+				margin-#{$right}: $golden_major +em; // {{RTL}}
+				line-height: $golden_major;
+				font-size: $golden +em;
+				vertical-align: middle;
+			}
+
+			&[href="#tab-description"]::before {
+				content: '\f100';
+			}
+
+			&[href="#tab-reviews"]::before {
+				content: '\f408';
+			}
+
+			&[href="#tab-upsells"]::before {
+				content: '\f461';
+			}
+
+		}
+
+		a:hover,
+		.active a,
+		.is-active a {
+			@extend %colors_accent;
+			border-color: transparent;
+		}
+
+	}
+
+	.panel {
+		@extend %layout_content_width;
+		padding: ( $padding_vertical * $golden_major ) 0 $padding_vertical;
+
+		&:focus {
+			outline: 0;
+		}
+
+		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
+			display: block !important;
+			width: 100%;
+			padding-left: 6%;
+			padding-right: 6%;
+			border-top-width: 1px;
+			border-top-style: solid;
+		}
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+
+			.site & {
+				max-width: 36em;
+				max-width: var(--layout_width_entry_content);
+			}
+
+		}
+
+		@include media( map_get( $breakpoint, 'xl' ) ) {
+			padding-top: $padding_vertical;
+			padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+		}
+
+		> h2:first-child {
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				clip: rect( 1px, 1px, 1px, 1px );
+				clip-path: inset( 50% );
+				position: absolute !important;
+				width: 1px;
+				height: 1px;
+				line-height: 1px;
+				overflow: hidden;
+
+				& + * {
+					margin-top: 0;
+				}
+
+			}
+		}
+
+	}
+
+	&.tabs-count-1 {
+		margin-top: 0;
 
 		.tabs {
-			@extend %layout_content_width;
-			padding: .5em;
-			line-height: $golden_minor / 2 + 1;
-			list-style: none;
-			text-align: center;
-			border-width: 1px;
-			border-style: solid;
-
-			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-				display: none;
-			}
-
-			li {
-				display: inline-block;
-				padding: .5em;
-				margin: 0;
-				border-width: 0;
-			}
-
-			a {
-				display: inline-block;
-				padding: 1rem 2rem;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-size: 1em - $golden_minor / 2;
-				font-weight: 700;
-				color: inherit;
-				transition: background ( $small_animation_speed +s ),
-				            color ( $small_animation_speed +s );
-
-				&:hover {
-					text-decoration: none;
-				}
-
-				&::before {
-					@extend %genericon;
-					content: '\f455'; // Default "info" icon
-					display: inline-block;
-					margin-#{$right}: $golden_major +em; // {{RTL}}
-					line-height: $golden_major;
-					font-size: $golden +em;
-					vertical-align: middle;
-				}
-
-				&[href="#tab-description"]::before {
-					content: '\f100';
-				}
-
-				&[href="#tab-reviews"]::before {
-					content: '\f408';
-				}
-
-				&[href="#tab-upsells"]::before {
-					content: '\f461';
-				}
-
-			}
-
-			a:hover,
-			.active a,
-			.is-active a {
-				@extend %colors_accent;
-				border-color: transparent;
-			}
-
+			display: none;
 		}
-
-	// Panels
 
 		.panel {
-			@extend %layout_content_width;
-			padding: ( $padding_vertical * $golden_major ) 0 $padding_vertical;
-
-			&:focus {
-				outline: 0;
-			}
-
-			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-				display: block !important;
-				width: 100%;
-				padding-left: 6%;
-				padding-right: 6%;
-				border-top-width: 1px;
-				border-top-style: solid;
-			}
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
-
-				.site & {
-					max-width: 36em;
-				}
-
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: $padding_vertical;
-				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
-			}
-
-			> h2:first-child {
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					clip: rect( 1px, 1px, 1px, 1px );
-					clip-path: inset( 50% );
-					position: absolute !important;
-					width: 1px;
-					height: 1px;
-					line-height: 1px;
-					overflow: hidden;
-
-					& + * {
-						margin-top: 0;
-					}
-
-				}
+				padding-top: 0;
 			}
 
 		}
 
-	// Only 1 tab to select
-
-		&.tabs-count-1 {
-			margin-top: 0;
-
-			.tabs {
-				display: none;
-			}
-
-			.panel {
-
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					padding-top: 0;
-				}
-
-			}
-
-		}
+	}
 
 }

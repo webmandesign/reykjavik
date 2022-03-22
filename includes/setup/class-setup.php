@@ -210,14 +210,14 @@ class Reykjavik_Setup {
 				 * @see  Reykjavik_Assets::enqueue_styles_editor()
 				 */
 
-				// Block color palettes.
+				// Block editor:
 				add_theme_support( 'editor-color-palette', self::get_color_palette() );
-
-				// Block font sizes.
 				add_theme_support( 'editor-font-sizes', self::get_font_sizes() );
-
-				// Wide alignment.
+				add_theme_support( 'custom-line-height' );
 				add_theme_support( 'align-wide' );
+				add_theme_support( 'custom-units' );
+				add_theme_support( 'custom-spacing' );
+				add_theme_support( 'experimental-link-color' );
 
 				// Responsive embedded content.
 				add_theme_support( 'responsive-embeds' );

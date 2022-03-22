@@ -60,6 +60,9 @@ class Reykjavik_Assets {
 						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_styles_editor' );
 						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_edit_post_scripts' );
 
+						// WP 5.9 fix:
+						add_action( 'init', __CLASS__ . '::wp_global_styles' );
+
 					// Filters
 
 						add_filter( 'wp_resource_hints', __CLASS__ . '::resource_hints', 10, 2 );
@@ -724,6 +727,83 @@ class Reykjavik_Assets {
 				return $urls;
 
 		} // /resource_hints
+
+
+
+		/**
+		 * WP 5.9 fix for global styles CSS code overrides.
+		 *
+		 * @since  2.1.0
+		 *
+		 * @return  void
+		 */
+		public static function wp_global_styles() {
+
+			// Requirements check
+
+				if ( ! function_exists( 'wp_get_global_stylesheet' ) ) {
+					return;
+				}
+
+
+			// Processing
+
+				// Dequeue original WP global styles.
+				remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+
+				// Enqueue WP global styles early.
+				add_action( 'wp_enqueue_scripts', function() {
+
+					$replacements = (array) apply_filters( 'wmhook_reykjavik_wp_global_styles_replacements', array(
+						'from' => array(
+							'body',
+							'-color{',
+							'!important',
+							' ;',
+						),
+						'to' => array(
+							':root',
+							'-color[class]{',
+							'',
+							';',
+						),
+					) );
+
+					// Lower CSS code specificity.
+					$stylesheet = str_replace(
+						$replacements['from'],
+						$replacements['to'],
+						wp_get_global_stylesheet()
+					);
+
+					if ( empty( $stylesheet ) ) {
+						return;
+					}
+
+					wp_register_style( 'wp-global-styles', false );
+					wp_add_inline_style( 'wp-global-styles', $stylesheet );
+					wp_enqueue_style( 'wp-global-styles' );
+				} );
+
+				// Treat also editor styles.
+				add_filter( 'block_editor_settings_all', function( $editor_settings ) {
+
+					// Lower CSS code specificity.
+					$editor_settings['styles'] = array_map( function( $style ) {
+						if ( ! empty( $style['css'] ) ) {
+							$style['css'] = str_replace(
+								[ 'body', '!important', ' ;' ],
+								[ ':root', '', ';' ],
+								$style['css']
+							);
+						}
+						return $style;
+					}, $editor_settings['styles'] );
+
+					return $editor_settings;
+				} );
+
+		} // /wp_global_styles
 
 
 

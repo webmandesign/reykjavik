@@ -1,28 +1,10 @@
 /* FILE: woocommerce/__index.scss */
 
-//
-// Frontend WooCommerce styles
-//
-// This produces a minified stylesheet of 52KB in oppose to combined and
-// minified WooCommerce stylesheets of 65KB.
-//
-// List of main WooCommerce classes applied on BODY tag:
-//
-// * woocommerce-page
-//   On every WooCommerce related page.
-//
-// * woocommerce
-//   On is_woocommerce() condition, which is shop page, product taxonomy
-//   archive page and single product page.
-//   The class is also applied on WooCommerce shortcodes and widgets.
-//
-
 @import 'main/_index';
 @import 'tabs/_index';
 @import 'pages/_index';
 @import 'shortcodes/_index';
 @import 'sidebar/_index';
 @import 'extensions/_index';
-@import 'blocks/_index';
 
 @import '../extend';

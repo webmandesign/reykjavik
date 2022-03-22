@@ -44,24 +44,82 @@ a {
 
 hr {
 	clear: both;
-	height: 1px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
+	box-sizing: inherit; // This is required due to Normalize.
+	width: 100%;
+	height: var(--hr_height);
+	line-height: var(--hr_height);
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background: none !important;
+	border-width: 0;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		width: var(--hr_width);
+		height: 100%;
+		border-top-width: 1px;
+		border-top-style: solid;
+		vertical-align: top;
+		speak: none;
+	}
+
+	&.alignleft,
+	&.alignright {
+		float: none;
+		margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
+	}
+
+		&.alignleft.alignleft {
+			margin-right: 0;
+			text-align: left;
+		}
+
+		&.alignright.alignright {
+			margin-left: 0;
+			text-align: right;
+		}
+
+	&.aligncenter.aligncenter {
+		text-align: center;
+	}
+
+	&.alignwide.alignwide {
+		--hr_width: 100%;
+		width: 100%;
+		max-width: var(--layout_width_content);
+	}
+
+	&.alignfull.alignfull {
+		--hr_width: 100%;
+		width: calc( 100vw - var(--scrollbar_width) );
+		max-width: none;
+	}
+
 }
 
 	hr,
 	.wp-block-separator {
-		margin-top: _pow( 1 + $golden_minor, 2 ) +em;
-		margin-bottom: _pow( 1 + $golden_minor, 2 ) +em;
 
-		&:first-child {
-			margin-top: 0;
+		&:not(:first-child) {
+			margin-top: _pow( 1 + $golden_minor, 4 ) +em;
 		}
 
-		&:last-child {
-			margin-bottom: 0;
+		&:not(:last-child) {
+			margin-bottom: _pow( 1 + $golden_minor, 4 ) +em;
 		}
 
+		&.is-style-wide.is-style-wide {
+			--hr_width: 100%;
+			border-width: 0;
+		}
+
+	}
+
+	.has-text-color hr.is-style-wide,
+	hr.is-style-wide.has-text-color {
+		border-color: currentColor;
 	}
 
 abbr[title],
@@ -163,7 +221,7 @@ cite {
 	border-width: 0;
 
 	&::before {
-		content: '\2014\2002'; // em dash + en space
+		content: '\2014\2002'; // &mdash; &ensp;
 	}
 
 }
@@ -436,10 +494,14 @@ svg {
 	fill: currentColor;
 }
 
-#{$selectors_margin_bottom} {
+@if not variable-exists( 'selector_editor_wrapper' ) {
+	#{ $selectors_margin_bottom } {
+		margin-top: 0;
+		margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
 
-	&:last-child {
-		margin-bottom: 0;
+		&:last-child {
+			margin-bottom: 0;
+		}
+
 	}
-
 }

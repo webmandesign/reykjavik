@@ -1,26 +1,24 @@
 /* FILE: main/forms/_buttons.scss */
 
-$button_font_size: 1 - $golden_minor / 2; // In em
-$button_font_size_compensation: 1 / $button_font_size;
-
 %button_base {
-	@extend %line_height_1;
+	@extend %line_height_small;
 	@extend %font_weight_700;
 	display: inline-block;
-	padding: ( ( $golden_major * 1em ) * $button_font_size_compensation ) 2em;
+	padding: 1em 2em;
 	margin-top: 2px; // Allow some breathing when stacked
 	margin-bottom: 2px; // Allow some breathing when stacked
-	line-height: $golden;
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size: $button_font_size +em;
 	letter-spacing: $golden_minor / 6 +em;
 	border: 2px solid currentColor;
+	border-radius: 0;
 	cursor: pointer;
-	transition: background ( $small_animation_speed +s ),
-	            color ( $small_animation_speed +s ),
-	            border-color ( $small_animation_speed +s );
+	transition:
+		background ( $small_animation_speed +s ),
+		color ( $small_animation_speed +s ),
+		border-color ( $small_animation_speed +s );
 
 	form & {
 		// No need for stacked breathing in forms...
@@ -61,7 +59,8 @@ $button_font_size_compensation: 1 / $button_font_size;
 
 }
 
-#{$selectors_button} {
+#{$selectors_button},
+.wp-block-button__link {
 	@extend %button_base;
 }
 

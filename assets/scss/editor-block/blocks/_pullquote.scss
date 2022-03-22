@@ -13,5 +13,5 @@
 }
 
 [data-type="core/pullquote"]:not(:last-child) {
-	margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
+	margin-bottom: var(--golden_rem);
 }

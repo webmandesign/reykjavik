@@ -1,18 +1,11 @@
 /* FILE: woocommerce/pages/_my-account-add-payment-method.scss */
 
-//
-// Page: My Account -> Add payment method
-//
-
-
-
-
-
 #add_payment_method {
 
 	> div > p:first-child:last-child {
 		padding: 6%;
 		max-width: 36em;
+		max-width: var(--layout_width_entry_content);
 		margin: 0 auto;
 		border-width: 2px;
 		border-style: dashed;

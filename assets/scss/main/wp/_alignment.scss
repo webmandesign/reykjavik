@@ -65,6 +65,7 @@
 	margin-right: 0;
 }
 
+.align-wrap, // Backwards compatibility (pre-2.1.0) for possible custom HTML wrappers around "Shortcode" blocks.
 .alignfull,
 .alignwide-wrap {
 	clear: both;
@@ -73,10 +74,18 @@
 	max-width: calc( 100vw - var(--scrollbar_width) );
 	margin-#{$left}: calc( 50% - 50vw + ( var(--scrollbar_width) / 2 ) );
 	// z-index: 1; // This is for when using negative top margin to stack up over the Cover block overlay.
+
+	.has-widgets-sidebar .content-area & {
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			width: auto;
+			margin-#{$left}: calc( ( 50% / #{ 1 - ( 100 - $page_content_width - $page_content_gutter ) / 100 } ) - 50vw + ( var(--scrollbar_width) / 2 ) );
+		}
+	}
+
 }
 
 .alignwide {
-	width: var(--layout_width_wide);
+	width: var(--layout_width_content);
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -86,9 +95,21 @@
 		padding-right: var(--body_padding);
 
 		&:not(:last-child) > .alignwide {
-			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } ); // Simulating rem unit for block editor.
+			margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
 		}
 
+		.has-widgets-sidebar .content-area & {
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				padding-#{$right}: 0;
+			}
+		}
+
+	}
+
+	.has-widgets-sidebar .content-area & {
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			margin-#{$right}: 0;
+		}
 	}
 
 }
