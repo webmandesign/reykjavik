@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -125,4 +125,6 @@ class Reykjavik_WooCommerce_Customize {
 
 } // /Reykjavik_WooCommerce_Customize
 
-add_action( 'after_setup_theme', 'Reykjavik_WooCommerce_Customize::init' );
+// Hooking early enough for Reykjavik_Library_Customize::get_theme_mod() to work.
+// This is required only with conditional theme option extenders.
+add_action( 'after_setup_theme', 'Reykjavik_WooCommerce_Customize::init', 9 );

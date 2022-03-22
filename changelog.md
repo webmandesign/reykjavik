@@ -2,28 +2,77 @@
 
 ## 2.1.0, 20220322
 
+This is a major theme update which may cause issues on certain websites. Double checking a website appearance after theme update is recommended. Found an issue? Report it at https://support.webmandesign.eu.
+
+### Added
+- New accessible menu functionality using A11yMenu script
+- TikTok social icon
+- Block styles support in block editor
+
 ### Updated
-- Simplifying Staff post template
-- Updating 3rd party JavaScript
-- Improving PHP code to follow WordPress PHP coding standards (fixing "else if" to "elseif" where needed)
+- Improving styles
+- Improving accessibility
+- Headings structure
+- Recommended plugins list
+- Welcome page info
+- Improving code and removing obsolete one
+- Updating 3rd party scripts
+- Block editor improvements
+- Improving HTML head code for better compatibility with SEO plugins
+- Localization
 
 ### Fixed
-- Flex grow modifier class specificity
-- Range theme option field not working with WordPress 5.6
-- jQuery code for WordPress 5.6 compatibility
+- WordPress 5.9 compatibility
+- Accessibility issues
+- PHP errors due to outdated WooCommerce and Jetpack code
+- JavaScript code
+- "Back to top" link functionality
+- "[year]" shortcode functionality
 
 ### File updates
 	changelog.md
 	readme.txt
 	style.css
+	assets/images/svg/social-icons.svg
 	assets/js/scripts-beaver-builder-editor.js
-	assets/scss/main.scss
-	includes/frontend/class-post-media.php
+	assets/js/scripts-global.js
+	assets/js/scripts-navigation-mobile.js
+	assets/js/scripts-woocommerce.js
+	assets/js/vendors/a11y-menu/*.*
+	assets/scss/*.*
+	includes/frontend/class-assets.php
+	includes/frontend/class-content.php
+	includes/frontend/class-footer.php
+	includes/frontend/class-header.php
+	includes/frontend/class-menu.php
+	includes/frontend/class-post.php
+	includes/plugins/bb-header-footer/class-bb-header-footer.php
+	includes/plugins/beaver-themer/class-beaver-themer.php
+	includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php
+	includes/plugins/elementor/class-elementor.php
+	includes/plugins/jetpack/class-jetpack.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/plugins/woocommerce/class-woocommerce-assets.php
+	includes/plugins/woocommerce/class-woocommerce-customize.php
+	includes/plugins/woocommerce/class-woocommerce-helpers.php
+	includes/setup/class-setup.php
+	includes/tgmpa/class-tgmpa-plugins.php
+	languages/reykjavik.pot
 	library/includes/classes/class-css-variables.php
+	library/includes/vendor/tgmpa/class-tgm-plugin-activation.php
 	library/js/customize-control-multicheckbox.js
 	library/js/customize-control-radio-matrix.js
 	library/js/customize-controls.js
-	templates/parts/content/content-staff.php
+	library/js/vendors/css-vars-ponyfill/css-vars-ponyfill.min.js
+	templates/parts/admin/welcome-footer.php
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+	templates/parts/header/head.php
+	templates/parts/header/links-skip.php
+	templates/parts/header/site-branding.php
+	templates/parts/intro/intro-media.php
+	templates/parts/menu/menu-primary.php
+	templates/parts/menu/menu-social.php
 
 
 ## 2.0.4

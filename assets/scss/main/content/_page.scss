@@ -70,7 +70,7 @@
 					padding: var(--content_padding) 0 0;
 
 						&-inner:not(:empty) {
-							padding-bottom: var(--content_padding);
+							padding-bottom: _pow( $golden_minor + 1, 4 ) +em;
 						}
 
 				}

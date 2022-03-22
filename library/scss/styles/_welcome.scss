@@ -10,11 +10,8 @@
 //
 // @since    1.5.0
 // @version  2.7.0
+// @version  2.1.0
 //
-
-
-
-
 
 .mt0 {
 	margin-top: 0 !important;
@@ -82,8 +79,6 @@
 		color: #fff;
 	}
 
-
-
 	// Header
 
 		.welcome-text {
@@ -101,13 +96,11 @@
 			margin-#{$left}: 3px;
 		}
 
-
-
 	// Important notes
 
 		.wm-notes {
 			padding: 2.62em;
-			margin: 40px 0 1.62em;
+			margin: 60px 0;
 			line-height: 1.4em;
 			font-size: .8em;
 			font-style: italic;
@@ -139,8 +132,6 @@
 			}
 
 		}
-
-
 
 	// Footer
 

@@ -2,7 +2,7 @@
 
 .checkout-guide {
 	display: block;
-	margin-bottom: var(--content_padding);
+	margin-bottom: _pow( $golden_minor + 1, 4 ) +em;
 
 	a {
 		color: inherit;

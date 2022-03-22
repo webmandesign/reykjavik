@@ -3,7 +3,7 @@
 .pagination {
 	clear: both;
 	padding: 1px; // To display accessibility outline.
-	margin-top: var(--content_padding);
+	margin-top: _pow( $golden_minor + 1, 4 ) +em;
 	text-align: center;
 	overflow: hidden;
 

@@ -8,23 +8,19 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.1.0
  */
 
-
-
-
-
-// Requirements check
-
-	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
-		return;
-	}
-
+if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+	return;
+}
 
 ?>
 
 </div> <!-- /.welcome-content -->
+
+<br>
+<hr>
 
 <p>
 	<?php echo Reykjavik_Welcome::get_info_support(); ?>

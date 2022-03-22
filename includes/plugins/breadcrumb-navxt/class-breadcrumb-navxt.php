@@ -142,7 +142,6 @@ class Reykjavik_Breadcrumb_NavXT {
 			// Helper variables
 
 				$display = Reykjavik_Library_Customize::get_theme_mod( 'breadcrumbs_display' );
-				$display = get_theme_mod( 'breadcrumbs_display', 'after' );
 
 
 			// Processing
@@ -227,4 +226,6 @@ class Reykjavik_Breadcrumb_NavXT {
 
 } // /Reykjavik_Breadcrumb_NavXT
 
-add_action( 'after_setup_theme', 'Reykjavik_Breadcrumb_NavXT::init' );
+// Hooking early enough for Reykjavik_Library_Customize::get_theme_mod() to work.
+// This is required only with conditional theme option extenders.
+add_action( 'after_setup_theme', 'Reykjavik_Breadcrumb_NavXT::init', 9 );

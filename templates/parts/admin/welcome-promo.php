@@ -8,19 +8,12 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  */
 
-
-
-
-
-// Requirements check
-
-	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
-		return;
-	}
-
+if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+	return;
+}
 
 ?>
 
@@ -30,25 +23,18 @@
 
 		<div class="col column">
 
-			<h2><strong><?php esc_html_e( 'Do you like this theme?', 'reykjavik' ); ?></strong></h2>
+			<h2><?php esc_html_e( 'Enjoying the theme?', 'reykjavik' ); ?></h2>
 
 			<p>
-				<?php esc_html_e( 'If you like this free WordPress theme, please, consider supporting its development by purchasing one of my premium products.', 'reykjavik' ); ?>
-				(<a href="https://www.webmandesign.eu" target="_blank"><?php esc_html_e( 'Go to WebMan Design website &raquo;', 'reykjavik' ); ?></a>)
-				<?php esc_html_e( 'Or perhaps you are considering a small donation?', 'reykjavik' ); ?>
-				&rarr;
-				<a href="https://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank"><em><?php esc_html_e( '"Hey Oliver, have a gallon of coffee on me :)"', 'reykjavik' ); ?></em></a>
+				<?php esc_html_e( 'If you like this free WordPress theme, please, consider supporting its development with a donation.', 'reykjavik' ); ?>
+				<a href="https://www.webmandesign.eu/contact/#donation"><?php esc_html_e( 'Donate to WebMan Design &raquo;', 'reykjavik' ); ?></a>
 			</p>
 
 			<p>
-				<?php esc_html_e( 'You can also rate it at its WordPress repository page.', 'reykjavik' ); ?>
+				<?php esc_html_e( 'You can also rate the theme at WordPress repository page.', 'reykjavik' ); ?>
 				<a href="https://wordpress.org/support/theme/reykjavik/reviews/#new-post">
-					<?php esc_html_e( "Let's go and rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)", 'reykjavik' ); ?>
+					<?php esc_html_e( "Rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)", 'reykjavik' ); ?>
 				</a>
-			</p>
-
-			<p>
-				<a href="https://webmandesign.eu/contact/?utm_source=reykjavik" target="_blank" class="welcome-upgrade-button"><?php esc_html_e( 'Support theme development', 'reykjavik' ); ?></a>
 			</p>
 
 			<p class="welcome-upgrade-thanks">
@@ -59,38 +45,16 @@
 
 		<div class="col column">
 
-			<h2><strong><?php esc_html_e( 'Feel like stepping up?', 'reykjavik' ); ?></strong></h2>
+			<h2><?php esc_html_e( 'Feel like stepping up?', 'reykjavik' ); ?></h2>
 
 			<p>
-				<?php
-
-				printf(
-					esc_html_x( 'If you need more for your growing website, consider upgrading to %s theme with this additional functionality:', '%s = linked theme name.', 'reykjavik' ),
-					'<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/"><strong>Icelander</strong></a>'
-				);
-
-				?>
+				<?php esc_html_e( 'I invite you to check out my faster, better, modern themes too!', 'reykjavik' ); ?>
+				<?php esc_html_e( 'There is a whole new generation of WordPress themes I offer nowadays.', 'reykjavik' ); ?>
+				<?php esc_html_e( 'They all are fully block editor (Gutenberg) ready to ensure the best performance and ease of use.', 'reykjavik' ); ?>
 			</p>
-			<ul>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Portfolios, Staff, Testimonials management', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Additional layouts and widget areas', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Custom page builder elements', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Sticky header functionality', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Custom icons uploader', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Additional blog styles', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li class="dashicons-before dashicons-star-filled"><?php echo esc_html_x( 'Child theme generator', 'Theme feature.', 'reykjavik' ); ?>,</li>
-				<li><?php echo esc_html_x( 'And more&hellip;', 'Theme feature.', 'reykjavik' ); ?></li>
-			</ul>
 			<p>
-				<a href="https://www.webmandesign.eu/portfolio/icelander-wordpress-theme/" class="welcome-upgrade-button">
-					<?php
-
-					printf(
-						esc_html_x( 'Upgrade to %s theme', '%s = theme name.', 'reykjavik' ),
-						'<strong>Icelander</strong>'
-					);
-
-					?>
+				<a href="https://www.webmandesign.eu/project-tag/modern-themes/" class="welcome-upgrade-button">
+					<?php esc_html_e( 'Modern themes &rarr;', 'reykjavik' ); ?>
 				</a>
 			</p>
 
@@ -102,13 +66,19 @@
 
 <style>
 
+	.welcome-wrap .wm-notes.special {
+		padding-bottom: 120px;
+		margin-bottom: 0;
+		border: 0;
+		border-radius: 40px;
+	}
+
 	.welcome-upgrade {
 		position: relative;
-		padding: 2.62em;
-		background-color: #0f1732;
-		background-image: url('<?php echo esc_url_raw( trailingslashit( get_template_directory_uri() ) ); ?>assets/images/footer/pixabay-colorado-1436681.png');
-		background-size: cover;
-		color: #fefeff;
+		padding: 6%;
+		margin: -100px -20px 100px;
+		font-weight: 500;
+		color: #000;
 	}
 
 		.welcome-upgrade::before {
@@ -118,8 +88,10 @@
 			right: 0;
 			top: 0;
 			bottom: 0;
-			background-color: inherit;
-			opacity: .85;
+			background-color: #fbce2f;
+			border-radius: 40px;
+			box-shadow: 0 .15em .5em rgba(0,0,0,.25);
+			transform: skewY(-4deg);
 		}
 
 	.welcome-upgrade .two-col {
@@ -143,9 +115,8 @@
 
 		.welcome-upgrade .welcome-upgrade-thanks {
 			margin: 1.62rem 0 0;
-			font-family: Georgia, serif;
 			font-size: 2.058em;
-			font-style: italic;
+			font-weight: 300;
 		}
 
 	.welcome-upgrade a {

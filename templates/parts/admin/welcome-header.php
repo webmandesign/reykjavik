@@ -8,19 +8,12 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.3
+ * @version  2.1.0
  */
 
-
-
-
-
-// Requirements check
-
-	if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
-		return;
-	}
-
+if ( ! class_exists( 'Reykjavik_Welcome' ) ) {
+	return;
+}
 
 ?>
 
@@ -56,9 +49,9 @@
 
 	<p class="wm-actions">
 
-		<a href="https://webmandesign.github.io/docs/reykjavik/" class="button button-primary button-hero"><?php esc_html_e( 'Theme Documentation', 'reykjavik' ); ?></a>
-
-		<a href="https://support.webmandesign.eu" class="button button-hero"><?php esc_html_e( 'Support Center', 'reykjavik' ); ?></a>
+		<a href="https://webmandesign.github.io/docs/reykjavik/"><?php esc_html_e( 'Theme Documentation', 'reykjavik' ); ?></a>
+		&bull;
+		<a href="https://support.webmandesign.eu"><?php esc_html_e( 'Support Center', 'reykjavik' ); ?></a>
 
 	</p>
 
