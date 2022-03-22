@@ -3,13 +3,9 @@
 .pagination {
 	clear: both;
 	padding: 1px; // To display accessibility outline.
-	margin-top: _pow( $golden, 2 ) +rem;
+	margin-top: var(--content_padding);
 	text-align: center;
 	overflow: hidden;
-
-	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-top: $padding_vertical;
-	}
 
 	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 		position: relative;

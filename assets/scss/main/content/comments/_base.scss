@@ -4,17 +4,9 @@
 	clear: both;
 	position: relative;
 	padding: ( $golden +rem ) 0 0;
-	margin: ( _pow( $golden, 2 ) +rem ) 0 0;
+	margin: var(--content_padding) 0 0;
 	border-top-width: 2px;
 	border-top-style: solid;
-
-	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-top: $padding_vertical;
-	}
-
-	@include media( map_get( $breakpoint, 'xl' ) ) {
-		margin-top: $golden * $padding_vertical;
-	}
 
 	&:focus {
 		outline: 0;

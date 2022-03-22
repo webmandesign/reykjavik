@@ -38,34 +38,7 @@ class Reykjavik_Content {
 
 			// Processing
 
-				// Registering block styles.
-				if ( function_exists( 'register_block_style' ) ) {
-					$blocks = array(
-						'core/column',
-						'core/columns',
-						'core/cover',
-						'core/gallery',
-						'core/group',
-						'core/heading',
-						'core/image',
-						'core/media-text',
-						'core/paragraph',
-						'core/post-content',
-						'core/post-date',
-						'core/post-excerpt',
-						'core/post-featured-image',
-						'core/post-terms',
-						'core/post-title',
-						'core/query',
-					);
-
-					foreach (	$blocks as $block ) {
-						register_block_style( $block, array(
-							'name'  => 'no-margin-vertical',
-							'label' => esc_html_x( 'No vertical gap', 'Block style label.', 'reykjavik' ),
-						) );
-					}
-				}
+				self::register_block_styles();
 
 				// Hooks
 
@@ -405,6 +378,73 @@ class Reykjavik_Content {
 				return $block_content;
 
 		} // /render_block
+
+
+
+		/**
+		 * Registering block styles.
+		 *
+		 * @since  2.1.0
+		 */
+		public static function register_block_styles() {
+
+			// Requirements check
+
+				if ( ! function_exists( 'register_block_style' ) ) {
+					return;
+				}
+
+
+			// Output
+
+				// Accessibly hidden heading.
+
+					register_block_style( 'core/heading', array(
+						'name'  => 'screen-reader-text',
+						'label' => esc_html_x( 'Accessibly hidden', 'Block style label.', 'reykjavik' ),
+					) );
+
+				// Single column alignment.
+
+					register_block_style( 'core/column', array(
+						'name'  => 'alignleft',
+						'label' => esc_html_x( 'Single column: align left', 'Block style label.', 'reykjavik' ),
+					) );
+
+					register_block_style( 'core/column', array(
+						'name'  => 'alignright',
+						'label' => esc_html_x( 'Single column: align right', 'Block style label.', 'reykjavik' ),
+					) );
+
+				// No vertical gap.
+
+					$blocks = array(
+						'core/column',
+						'core/columns',
+						'core/cover',
+						'core/gallery',
+						'core/group',
+						'core/heading',
+						'core/image',
+						'core/media-text',
+						'core/paragraph',
+						'core/post-content',
+						'core/post-date',
+						'core/post-excerpt',
+						'core/post-featured-image',
+						'core/post-terms',
+						'core/post-title',
+						'core/query',
+					);
+
+					foreach (	$blocks as $block ) {
+						register_block_style( $block, array(
+							'name'  => 'no-margin-vertical',
+							'label' => esc_html_x( 'No vertical gap', 'Block style label.', 'reykjavik' ),
+						) );
+					}
+
+		} // /register_block_styles
 
 
 

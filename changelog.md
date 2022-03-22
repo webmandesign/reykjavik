@@ -1,6 +1,6 @@
 # Reykjavik Changelog
 
-## 2.1.0, 20220323
+## 2.1.0, 20220322
 
 ### Updated
 - Simplifying Staff post template

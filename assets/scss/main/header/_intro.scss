@@ -77,13 +77,7 @@
 		&-inner {
 			@extend %clearfix;
 			@extend %layout_content_width;
-			padding: ( $golden_major * $padding_vertical ) 0;
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: $padding_vertical;
-				padding-bottom: $padding_vertical;
-			}
-
+			padding: var(--content_padding) 0;
 		}
 
 	// Entry title in intro section

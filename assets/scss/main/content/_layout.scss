@@ -22,44 +22,15 @@
 		&-inner {
 			@extend %layout_content_width;
 			@extend %clearfix;
-			padding: ( $golden_major * $padding_vertical ) 0;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $padding_vertical;
-				padding-bottom: $padding_vertical;
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: $golden * $padding_vertical;
-				padding-bottom: $golden * $padding_vertical;
-			}
-
+			padding: var(--content_padding) 0;
 		}
 
 			.compensate-content-padding-top {
-				margin-top: -$golden_major * $padding_vertical;
-
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					margin-top: -$padding_vertical;
-				}
-
-				@include media( map_get( $breakpoint, 'xl' ) ) {
-					margin-top: -$golden * $padding_vertical;
-				}
-
+				margin-top: var(--content_padding_negative);
 			}
 
 			.compensate-content-padding-bottom {
-				margin-bottom: -$golden_major * $padding_vertical;
-
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					margin-bottom: -$padding_vertical;
-				}
-
-				@include media( map_get( $breakpoint, 'xl' ) ) {
-					margin-bottom: -$golden * $padding_vertical;
-				}
-
+				margin-bottom: var(--content_padding_negative);
 			}
 
 		// Do not show the outline on the skip link target
@@ -67,6 +38,19 @@
 			&[tabindex="-1"]:focus {
 				outline: 0;
 			}
+
+	}
+
+	// Automatic compensation.
+	.is-singular:not(.content-layout-no-paddings):not(.has-widgets-sidebar) .entry-content-inner > .alignfull {
+
+		&:first-child {
+			margin-top: var(--content_padding_negative);
+		}
+
+		&:not(.mb0):not(.is-style-no-margin-vertical):last-child {
+			margin-bottom: var(--content_padding_negative);
+		}
 
 	}
 

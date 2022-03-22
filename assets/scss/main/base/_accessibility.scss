@@ -1,6 +1,7 @@
 /* FILE: main/base/_accessibility.scss */
 
-.screen-reader-text {
+.screen-reader-text,
+.is-style-screen-reader-text {
 	@extend %screen_reader_hiding;
 	padding: 0;
 	margin: -1px;

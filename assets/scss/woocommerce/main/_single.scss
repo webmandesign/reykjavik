@@ -12,18 +12,7 @@
 		&-inner {
 			@extend %clearfix;
 			@extend %layout_content_width;
-			padding: $padding_vertical 0;
-
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
-				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: $golden * $padding_vertical;
-				padding-bottom: $golden * $padding_vertical;
-			}
-
+			padding: var(--content_padding) 0;
 		}
 
 	}

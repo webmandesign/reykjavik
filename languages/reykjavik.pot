@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2022-03-22 12:30+0100\n"
+"POT-Creation-Date: 2022-03-22 20:52+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -661,7 +661,22 @@ msgstr ""
 msgid "Expand menu: %s"
 msgstr ""
 
-#: includes/frontend/class-content.php:65
+#: includes/frontend/class-content.php:404
+msgctxt "Block style label."
+msgid "Accessibly hidden"
+msgstr ""
+
+#: includes/frontend/class-content.php:411
+msgctxt "Block style label."
+msgid "Single column: align left"
+msgstr ""
+
+#: includes/frontend/class-content.php:416
+msgctxt "Block style label."
+msgid "Single column: align right"
+msgstr ""
+
+#: includes/frontend/class-content.php:443
 msgctxt "Block style label."
 msgid "No vertical gap"
 msgstr ""
@@ -1196,23 +1211,23 @@ msgctxt "Website hook name."
 msgid "After Site Info"
 msgstr ""
 
-#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:201
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:202
 msgid "Breadcrumbs"
 msgstr ""
 
-#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:207
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:208
 msgid "Breadcrumbs display"
 msgstr ""
 
-#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:209
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:210
 msgid "Before content only"
 msgstr ""
 
-#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:210
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:211
 msgid "Both before and after content"
 msgstr ""
 
-#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:211
+#: includes/plugins/breadcrumb-navxt/class-breadcrumb-navxt.php:212
 msgid "After content only"
 msgstr ""
 

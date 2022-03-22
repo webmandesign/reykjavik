@@ -26,6 +26,9 @@
 			--block_padding: 40px;
 		}
 
+		--content_padding: var(--white_space);
+		--content_padding_negative: calc( -1 * var(--content_padding) );
+
 		--posts_list_gap: 1em;
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			--posts_list_gap: 2em;

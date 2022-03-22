@@ -67,27 +67,11 @@
 
 				&:not(.fl-builder) .site-main .entry-content {
 					@extend %layout_content_width;
-					padding: $padding_vertical 0 0;
+					padding: var(--content_padding) 0 0;
 
 						&-inner:not(:empty) {
-							padding-bottom: _pow( $golden, 2 ) +rem;
+							padding-bottom: var(--content_padding);
 						}
-
-					@include media( map_get( $breakpoint, 'l' ) ) {
-
-						&-inner:not(:empty) {
-							padding-bottom: $padding_vertical;
-						}
-
-					}
-
-					@include media( map_get( $breakpoint, 'xl' ) ) {
-
-						&:first-child {
-							padding-top: $golden * $padding_vertical;
-						}
-
-					}
 
 				}
 
@@ -95,12 +79,7 @@
 					display: none;
 
 					+ .list-child-pages-section {
-						padding-top: $padding_vertical;
-
-						@include media( map_get( $breakpoint, 'xl' ) ) {
-							padding-top: $golden * $padding_vertical;
-						}
-
+						padding-top: var(--content_padding);
 					}
 
 				}
@@ -117,25 +96,12 @@
 
 				&-section {
 					clear: both;
-					padding-bottom: $padding_vertical;
-
-					@include media( map_get( $breakpoint, 'xl' ) ) {
-						padding-bottom: $golden * $padding_vertical;
-					}
+					padding-bottom: var(--content_padding);
 
 					&:first-child {
 						// What if child pages are above page content?
 						padding-bottom: 0;
-						padding-top: _pow( $golden, 2 ) +em;
-
-						@include media( map_get( $breakpoint, 'l' ) ) {
-							padding-top: $padding_vertical;
-						}
-
-						@include media( map_get( $breakpoint, 'xl' ) ) {
-							padding-top: $golden * $padding_vertical;
-						}
-
+						padding-top: var(--content_padding);
 					}
 
 				}
