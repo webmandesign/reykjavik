@@ -1,0 +1,21 @@
+/* FILE: _extend/_accessibility.scss */
+
+%screen_reader_hiding {
+	clip: rect( 1px, 1px, 1px, 1px );
+	clip-path: inset( 50% );
+	position: absolute $important_base_accessibility;
+	width: 1px;
+	height: 1px;
+	line-height: 1px;
+	overflow: hidden;
+	word-wrap: normal $important_base_accessibility; // Many screen reader and browser combinations announce broken words as they would appear visually.
+}
+
+%screen_reader_hiding_disable {
+	clip: auto !important;
+	clip-path: none;
+	// Position can not be predicted here.
+	height: auto;
+	width: auto;
+	line-height: normal;
+}

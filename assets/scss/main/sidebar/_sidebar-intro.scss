@@ -1,5 +1,26 @@
 /* FILE: main/sidebar/_sidebar-intro.scss */
 
+.intro-widgets-container,
+.#{$special_color_class_prefix}intro-widgets,
+.#{$special_color_class_prefix}intro-widgets > .fl-row-content-wrap,
+.#{$special_color_class_prefix}intro-widgets > .fl-col-content {
+	background-color: map_get( $customize_options, 'color_intro_widgets_background' );
+	color: map_get( $customize_options, 'color_intro_widgets_text' );
+	border-color: rgba( map_get( $customize_options, 'color_intro_widgets_text' ), 20 / 100 );
+	background-color: var(--color_intro_widgets_background);
+	color: var(--color_intro_widgets_text);
+	border-color: var(--color_intro_widgets_text--a20);
+
+	h2, h3, h4,
+	.h1, .h2, .h3, .h4,
+	a,
+	.accent-color {
+		color: map_get( $customize_options, 'color_intro_widgets_headings' );
+		color: var(--color_intro_widgets_headings);
+	}
+
+}
+
 .intro-widgets {
 	@extend %horizontal_widget_area;
 
@@ -25,8 +46,8 @@
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			padding-top: pow( $golden, 2 ) +rem;
-			padding-bottom: pow( $golden, 2 ) +rem;
+			padding-top: _pow( $golden, 2 ) +rem;
+			padding-bottom: _pow( $golden, 2 ) +rem;
 		}
 
 	}

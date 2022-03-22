@@ -3,7 +3,7 @@
 .wp-block-quote__citation,
 .wp-block-pullquote__citation {
 	margin-top: $golden_major +em;
-	font-size: .8em;
+	font-size: var(--typography_font_size_S_em);
 	font-weight: 400;
 	text-transform: none;
 

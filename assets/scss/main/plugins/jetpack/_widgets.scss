@@ -49,7 +49,7 @@
 			}
 
 			.widgets-list-layout-blavatar {
-				width: pow( $golden, 2 ) +em;
+				width: _pow( $golden, 2 ) +em;
 				margin-#{$right}: 1em; // {{RTL}}
 			}
 

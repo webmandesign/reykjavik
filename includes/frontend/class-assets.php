@@ -114,7 +114,6 @@ class Reykjavik_Assets {
 				$register_assets = array(
 					'genericons-neue'             => array( 'src' => get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
 					'reykjavik-google-fonts'      => array( 'src' => self::google_fonts_url() ),
-					'reykjavik-stylesheet-custom' => array( 'src' => get_theme_file_uri( 'assets/css/custom-styles.css' ) ),
 					'reykjavik-stylesheet-blocks' => array( 'src' => get_theme_file_uri( 'assets/css/blocks.css' ), 'rtl' => 'replace' ),
 					'reykjavik-stylesheet-global' => array( 'src' => get_theme_file_uri( 'assets/css/main.css' ), 'rtl' => 'replace' ),
 				);
@@ -213,9 +212,6 @@ class Reykjavik_Assets {
 				// Main
 				$enqueue_assets[10] = 'reykjavik-stylesheet-global';
 				$enqueue_assets[15] = 'reykjavik-stylesheet-blocks';
-
-				// Custom
-				$enqueue_assets[20] = 'reykjavik-stylesheet-custom';
 
 				// Filter enqueue array
 				$enqueue_assets = (array) apply_filters( 'wmhook_reykjavik_assets_enqueue_styles', $enqueue_assets );

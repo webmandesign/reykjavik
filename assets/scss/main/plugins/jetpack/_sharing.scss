@@ -2,7 +2,7 @@
 
 div.sharedaddy {
 	padding: ( $golden +em ) 0 0;
-	margin: ( pow( $golden, 2 ) +rem ) 0 0;
+	margin: ( _pow( $golden, 2 ) +rem ) 0 0;
 	font-size: 1em;
 	border-top-width: 2px;
 	border-top-style: solid;
@@ -54,6 +54,10 @@ div.sharedaddy {
 							border-width: 0;
 							border-radius: 0;
 							cursor: pointer;
+							background-color: map_get( $customize_options, 'color_accent' );
+							color: map_get( $customize_options, 'color_accent_text' ) !important;
+							background-color: var(--color_accent);
+							color: var(--color_accent_text) !important;
 							box-shadow: none;
 						}
 

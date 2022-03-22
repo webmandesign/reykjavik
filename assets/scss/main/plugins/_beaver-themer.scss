@@ -5,7 +5,7 @@
 	&-singular,
 	&-404,
 	&-archive {
-		@extend %fullwidth_sections_layout;
+		@extend %layout_fullwidth_sections_layout;
 
 		&.single {
 

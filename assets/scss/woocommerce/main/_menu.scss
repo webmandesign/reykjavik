@@ -1,0 +1,65 @@
+/* FILE: woocommerce/main/_menu.scss */
+
+.shop-mobile-menu-links {
+	@extend %clearfix;
+	position: fixed;
+	display: inline-block;
+	#{$right}: 0; // {{RTL}}
+	bottom: -1rem;
+	line-height: 1 + $golden_minor;
+	background-color: map_get( $customize_options, 'color_header_background' );
+	color: map_get( $customize_options, 'color_header_text' );
+	border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+	background-color: var(--color_header_background);
+	color: var(--color_header_text);
+	border-color: var(--color_header_text--a20);
+	z-index: 1000; // Above the `.menu-toggle` button and the actual primary menu
+	animation: comeInFromBottom ( $large_animation_speed * 3s );
+
+	.button {
+		@extend %indent_text_for_icon_only;
+		width: $mobile_menu_toggle_height +rem;
+		height: $mobile_menu_toggle_height + 1rem;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-size: $golden +em;
+		font-weight: 700;
+		border-width: 0;
+		border-#{$left}-width: 1px;
+		border-color: inherit;
+
+		&::before {
+			line-height: $mobile_menu_toggle_height +rem;
+		}
+
+		&:not(:hover):not(:focus):not(:active) {
+			background: transparent;
+			color: inherit;
+		}
+
+	}
+
+	.link-cart::before,
+	.link-checkout::before,
+	.link-shop::before {
+		content: '\f447';
+	}
+
+	.link-myaccount::before {
+		content: '\f304';
+	}
+
+	@media
+		( min-width: #{ map_get( $breakpoint, 'm' ) +px } ),
+		( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
+	{
+		display: none;
+	}
+
+	// Change default mobile menu toggle button styling.
+	& + .main-navigation .menu-toggle {
+		text-align: inherit;
+	}
+
+}

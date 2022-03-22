@@ -1,11 +1,12 @@
 /* FILE: main/content/pagination/_the-posts-navigation.scss */
 
 .post-navigation {
+	@extend %colors_site_content_headings;
 	border-top-width: 1px;
 	border-top-style: solid;
 
 	.nav-links {
-		@extend %content_width;
+		@extend %layout_content_width;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
 			display: flex;

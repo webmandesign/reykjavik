@@ -1,0 +1,19 @@
+//
+// Math round function.
+//
+// @since  2.1.0
+//
+// @param  float $number
+// @param  int   $decimals
+//
+@function _round( $number, $decimals ) {
+
+	// Variables
+
+		$decimals: _pow( 10, $decimals );
+
+
+	// Output
+
+		@return round( $number * $decimals ) / $decimals;
+}

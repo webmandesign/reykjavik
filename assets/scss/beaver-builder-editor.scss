@@ -9,12 +9,8 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    1.0.0
-// @version  1.0.0
+// @version  2.1.0
 //
-
-
-
-
 
 // Interface
 
@@ -25,8 +21,6 @@
 		#fl-field-equal_height {
 			display: none;
 		}
-
-
 
 	// Fixing custom dropdown styles
 
@@ -39,8 +33,6 @@
 			}
 
 		}
-
-
 
 	// Wider module edit form
 
@@ -56,15 +48,11 @@
 
 		}
 
-
-
 	// Visual editor fixes
 
 		.wp-editor-wrap button {
 			box-shadow: none;
 		}
-
-
 
 	// Transparent module edit form lightbox when dragging
 
@@ -81,8 +69,6 @@
 			}
 
 		}
-
-
 
 	// Custom templates
 
@@ -105,8 +91,6 @@
 
 		}
 
-
-
 	// Responsive preview
 
 		.fl-responsive-preview {
@@ -123,8 +107,6 @@
 
 		}
 
-
-
 	// Editing content z-index
 
 		.fl-row:not(:hover) {
@@ -135,10 +117,6 @@
 			position: relative;
 			z-index: 999;
 		}
-
-
-
-
 
 // Theme overrides
 
@@ -154,18 +132,12 @@
 
 		}
 
-
-
 	// Fixing content area width when switching through responsive previews
 
 		#primary {
 			// Yes, unfortunately, we have to use ID selector here to override any other styles.
 			max-width: none;
 		}
-
-
-
-
 
 // Modules
 
@@ -197,8 +169,6 @@
 			}
 
 		}
-
-
 
 	// Fixing responsive element hiding
 

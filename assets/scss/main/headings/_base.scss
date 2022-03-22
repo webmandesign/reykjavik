@@ -1,7 +1,8 @@
 /* FILE: main/headings/_base.scss */
 
-#{$elements_headings} {
+#{$selectors_headings} {
 	@extend %font_headings;
+	@extend %colors_site_content_headings;
 }
 
 	h1.h2,
@@ -21,7 +22,7 @@
 
 		$weight: $i * 100;
 
-		#{$elements_headings} {
+		#{$selectors_headings} {
 
 			&.weight-#{$weight},
 			&.has-#{$weight}-font-weight {

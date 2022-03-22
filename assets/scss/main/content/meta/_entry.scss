@@ -25,7 +25,7 @@
 	}
 
 	.single & {
-		margin-bottom: pow( $golden, 2 ) +em;
+		margin-bottom: _pow( $golden, 2 ) +em;
 
 		&-element {
 			@extend %font_size_small;

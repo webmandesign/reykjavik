@@ -28,6 +28,13 @@
 		z-index: 9;
 		transform-origin: 50% 0;
 
+		@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
+			background-color: map_get( $customize_options, 'color_header_background' );
+			color: map_get( $customize_options, 'color_header_text' );
+			background-color: var(--color_header_background);
+			color: var(--color_header_text);
+		}
+
 		a {
 			@extend %line_height_golden_minor;
 			padding-#{$left}: 1rem;

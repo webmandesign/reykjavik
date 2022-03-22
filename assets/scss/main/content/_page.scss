@@ -63,14 +63,14 @@
 		// Page layout
 
 			.page-template-child-pages {
-				@extend %fullwidth_sections_layout;
+				@extend %layout_fullwidth_sections_layout;
 
 				&:not(.fl-builder) .site-main .entry-content {
-					@extend %content_width;
+					@extend %layout_content_width;
 					padding: $padding_vertical 0 0;
 
 						&-inner:not(:empty) {
-							padding-bottom: pow( $golden, 2 ) +rem;
+							padding-bottom: _pow( $golden, 2 ) +rem;
 						}
 
 					@include media( map_get( $breakpoint, 'l' ) ) {
@@ -126,7 +126,7 @@
 					&:first-child {
 						// What if child pages are above page content?
 						padding-bottom: 0;
-						padding-top: pow( $golden, 2 ) +em;
+						padding-top: _pow( $golden, 2 ) +em;
 
 						@include media( map_get( $breakpoint, 'l' ) ) {
 							padding-top: $padding_vertical;
@@ -141,7 +141,7 @@
 				}
 
 				&-container {
-					@extend %content_width;
+					@extend %layout_content_width;
 				}
 
 			}
@@ -186,7 +186,7 @@
 				// Child page thumbnail
 
 					&-image {
-						margin-bottom: pow( $golden, 2 ) +rem;
+						margin-bottom: _pow( $golden, 2 ) +rem;
 					}
 
 				// Child page title

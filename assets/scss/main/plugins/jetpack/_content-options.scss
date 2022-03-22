@@ -3,14 +3,14 @@
 // Author bio
 
 	.entry-author {
-		@extend %background_overlay_from_text_color;
-		margin-top: pow( 1 + $golden_minor, 4 ) +em;
+		@extend %shaded_background;
+		margin-top: _pow( 1 + $golden_minor, 4 ) +em;
 		padding: 8%;
 		border-width: 1px;
 		border-style: solid;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: pow( 1 + $golden_minor, 4 ) +em;
+			padding: _pow( 1 + $golden_minor, 4 ) +em;
 		}
 
 		&::before {

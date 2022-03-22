@@ -1,0 +1,25 @@
+/* FILE: _extend/_sidebars.scss */
+
+%horizontal_widget_area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: $golden +em;
+	padding-bottom: $golden +em;
+	margin-left: -$golden +rem;
+	margin-right: -$golden +rem;
+
+	.widget {
+		flex: 1 1 10em;
+		position: relative;
+		padding: ( $golden +em ) 0;
+		margin: 0 ( $golden +rem );
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			flex-basis: 0%;
+			padding: ( _pow( $golden, 2 ) +em ) 0;
+		}
+
+	}
+
+}

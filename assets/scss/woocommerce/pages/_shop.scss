@@ -1,0 +1,25 @@
+/* FILE: woocommerce/pages/_shop.scss */
+
+//
+// Page: Shop
+//
+// Also contains styles for product archive pages.
+//
+
+
+
+
+
+.page-description,
+.term-description {
+	margin-bottom: $padding_vertical * $golden_major;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-bottom: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+	}
+
+	@include media( map_get( $breakpoint, 'xl' ) ) {
+		margin-bottom: $padding_vertical;
+	}
+
+}

@@ -5,6 +5,20 @@
 	padding-right: var(--block_ui_margin);
 }
 
+[data-align=full] > .wp-block-columns {
+	padding-left: var(--block_padding);
+	padding-right: var(--block_padding);
+}
+
 .block-editor-block-list__block.wp-block-column.wp-block-column {
-	margin-bottom: calc( 1.618 * var(--typography_size_html) );
+	margin-bottom: $golden +em;
+}
+
+.wp-block-column {
+	max-width: none;
+
+	> .wp-block {
+		max-width: none !important;
+	}
+
 }

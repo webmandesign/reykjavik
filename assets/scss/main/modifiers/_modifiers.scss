@@ -288,3 +288,26 @@
 		.has-uppercase-text-transform {
 			text-transform: uppercase $important_base_modifiers;
 		}
+
+// Colors
+
+	.site {
+	// Need to use higher priority to override button hover colors.
+
+		@each $option, $value in $customize_options {
+			@if str-index( #{$option}, 'color_' ) {
+				// Making the slug create `.has-{$theme-mod-slug}-mod-(background)-color` CSS classes.
+				// @see  Reykjavik_Setup::get_color_palette()
+				$selector: _str_replace( '_', '-', $option ) + '-mod';
+
+				.has-#{$selector}-color {
+					color: var(--#{$option});
+				}
+
+				.has-#{$selector}-background-color {
+					background-color: var(--#{$option});
+				}
+			}
+		}
+
+	}

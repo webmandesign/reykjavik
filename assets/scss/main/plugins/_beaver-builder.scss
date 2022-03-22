@@ -3,7 +3,7 @@
 // Prepare the page layout for Beaver Builder - make it fullwidth if possible
 
 	.fl-builder.is-singular:not(.page-template-sidebar) {
-		@extend %fullwidth_sections_layout;
+		@extend %layout_fullwidth_sections_layout;
 
 		&.single {
 
@@ -24,7 +24,7 @@
 		}
 
 		&-content {
-			@extend %max_width_1920;
+			@extend %layout_max_width_1920;
 
 			// Fixing full-height row responsive layout compatibility with theme styles
 
@@ -46,7 +46,7 @@
 			&-fixed-width {
 
 				.site & {
-					@extend %content_width;
+					@extend %layout_content_width;
 
 					& .fl-row-fixed-width {
 						width: 100%;
@@ -205,7 +205,7 @@
 // "Templates" custom post type
 
 	.single-fl-builder-template {
-		@extend %fullwidth_sections_layout;
+		@extend %layout_fullwidth_sections_layout;
 	}
 
 // Fixing layout issues (on Safari browsers)

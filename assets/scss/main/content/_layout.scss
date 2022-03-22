@@ -6,13 +6,21 @@
 // - compensate-content-padding-bottom
 //
 
+.site,
+.site-content,
+.#{$special_color_class_prefix}content,
+.#{$special_color_class_prefix}content > .fl-row-content-wrap,
+.#{$special_color_class_prefix}content > .fl-col-content {
+	@extend %colors_site_content;
+}
+
 // Site content width holder
 
 	.site-content {
 		@extend %clearfix;
 
 		&-inner {
-			@extend %content_width;
+			@extend %layout_content_width;
 			@extend %clearfix;
 			padding: ( $golden_major * $padding_vertical ) 0;
 
@@ -91,26 +99,6 @@
 		.error404 &,
 		.no-widgets-sidebar & {
 			width: 100%;
-		}
-
-	}
-
-// Extenders
-
-	%fullwidth_sections_layout {
-
-		.site-content-inner {
-			width: 100%;
-			max-width: none;
-			padding: 0;
-		}
-
-		.content-area {
-			float: none;
-			width: 100%;
-			max-width: none;
-			padding: 0;
-			margin: 0;
 		}
 
 	}

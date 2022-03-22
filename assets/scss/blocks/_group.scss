@@ -3,21 +3,13 @@
 .wp-block-group {
 
 	&__inner-container {
-		max-width: var(--layout_width_entry_content);
-		margin-left: auto;
-		margin-right: auto;
-
-		&::after {
-			content: '';
-			clear: both;
-			display: table;
-			table-layout: fixed;
-		}
-
+		@extend %block_inner_container;
+		@extend %clearfix;
 	}
 
-}
+	&.has-background > .wp-block-group__inner-container > .alignwide-wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-.has-widgets-in-sidebar .wp-block-group:not(.alignwide) .wp-block-group__inner-container {
-	max-width: none;
 }

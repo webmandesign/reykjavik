@@ -5,6 +5,9 @@
 }
 
 body {
+	// Default body background.
+	// @see  add_theme_support( 'custom-background', $args );
+	background-color: #e3e3e4;
 	overflow-x: hidden;
 
 	&:focus {
@@ -23,11 +26,16 @@ a {
 
 }
 
+	a,
+	.accent-color {
+		color: map_get( $customize_options, 'color_accent' );
+		color: var(--color_accent);
+	}
+
 	[href^="tel"] {
 		white-space: nowrap;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			pointer-events: none;
 			text-decoration: none;
 			color: inherit;
 		}
@@ -43,8 +51,8 @@ hr {
 
 	hr,
 	.wp-block-separator {
-		margin-top: pow( 1 + $golden_minor, 2 ) +em;
-		margin-bottom: pow( 1 + $golden_minor, 2 ) +em;
+		margin-top: _pow( 1 + $golden_minor, 2 ) +em;
+		margin-bottom: _pow( 1 + $golden_minor, 2 ) +em;
 
 		&:first-child {
 			margin-top: 0;
@@ -185,6 +193,14 @@ ins,
 	box-decoration-break: clone;
 }
 
+	mark,
+	.highlight {
+		box-shadow: (  $golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' ),
+		            ( -$golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' );
+		box-shadow: (  $golden_minor +em ) 0 0 var(--color_accent),
+		            ( -$golden_minor +em ) 0 0 var(--color_accent);
+	}
+
 s,
 del {
 	text-decoration: line-through;
@@ -271,7 +287,7 @@ pre {
 
 code,
 pre {
-	@extend %background_overlay_from_text_color;
+	@extend %shaded_background;
 }
 
 small {
@@ -403,11 +419,6 @@ table {
 		border-bottom-style: solid;
 	}
 
-	tbody tr:hover td,
-	tbody tr:hover th {
-		// @extend %background_overlay_from_text_color_after;
-	}
-
 	th,
 	tfoot td {
 		@extend %font_weight_700;
@@ -425,7 +436,7 @@ svg {
 	fill: currentColor;
 }
 
-#{$elements_margin_bottom} {
+#{$selectors_margin_bottom} {
 
 	&:last-child {
 		margin-bottom: 0;

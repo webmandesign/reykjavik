@@ -1,28 +1,63 @@
 /* FILE: main/wp/_alignment.scss */
 
+.site-content {
+	// Needed to prevent horizontal scrolling due to incorrect
+	// `100vw` calculation in browsers on Windows operating system.
+	overflow-x: hidden;
+}
+
+.align-horizontal-wrap {
+	margin-bottom: 0;
+}
+
 .alignleft,
 .alignright {
 
 	&,
 	&:last-child {
-		margin-bottom: 1em;
+		margin-bottom: var(--typography_font_size_base); // Simulating rem unit for block editor.
 	}
 
 }
 
 .alignleft {
 	float: left;
-	margin-right: $alignment_margin;
+
+	&,
+	[class*="wp-block-"] & {
+		margin-right: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			margin-right: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+		}
+
+	}
+
 }
 
 .alignright {
 	float: right;
-	margin-left: $alignment_margin;
+
+	&,
+	[class*="wp-block-"] & {
+		margin-left: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			margin-left: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+		}
+
+	}
+
 }
 
 .aligncenter {
+	float: none;
+	clear: both;
+	display: block;
+	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
 .alignnone {
@@ -30,98 +65,28 @@
 	margin-right: 0;
 }
 
-.site-content {
-	// Needed to prevent horizontal scrolling due to incorrect
-	// `100vw` calculation in browsers on Windows operating system.
-	overflow-x: hidden;
-}
-
-$content_indent: 100 - $page_content_width;
-
-.align-wrap {
+.alignfull,
+.alignwide-wrap {
 	clear: both;
-	width: 100vw;
-	margin-#{$left}: calc( 50% - 50vw ); // {{RTL}}
-	pointer-events: none;
-
-	// Sidebar is displayed:
-	.has-widgets-sidebar & {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: auto;
-			margin-#{$left}: calc( 50% / #{ $page_content_width / 100 } - 50vw );
-		}
-
-	}
-
-	// Boxed site layout:
-	.site-layout-boxed & {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-	}
-
-	// Boxed site layout + sidebar:
-	.site-layout-boxed.has-widgets-sidebar & {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-#{$right}: 0;
-			margin-#{$left}: calc( 50% / #{ $page_content_width / 100 } - 50vw );
-		}
-
-	}
-
-}
-
-.alignwide,
-.alignfull {
-	pointer-events: auto;
-
-	&,
-	&:last-child {
-		margin-bottom: $golden +em;
-	}
-
-	&.wp-block-columns,
-	&.has-no-margin,
-	&.has-no-margin-vertical,
-	&.has-no-margin-bottom {
-		margin-bottom: 0;
-	}
-
-	&,
-	&.has-no-margin {
-		// Horizontal margin has to be applied.
-		margin-left: auto;
-		margin-right: auto;
-	}
-
+	// position: relative;
+	width: calc( 100vw - var(--scrollbar_width) );
+	max-width: calc( 100vw - var(--scrollbar_width) );
+	margin-#{$left}: calc( 50% - 50vw + ( var(--scrollbar_width) / 2 ) );
+	// z-index: 1; // This is for when using negative top margin to stack up over the Cover block overlay.
 }
 
 .alignwide {
-	$content_padding: 6%;
-	/* $content_width */
-	width: map_get( $customize_options, 'layout_width_content' );
-	width: var(--layout_width_content);
-	max-width: 100% - 2 * $content_padding;
+	width: var(--layout_width_wide);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 
-	// Sidebar is displayed:
-	.has-widgets-sidebar & {
-		$alignwide_overlap: 10; // in %
+	&-wrap {
+		padding-left: var(--body_padding);
+		padding-right: var(--body_padding);
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: #{ round( map_get( $customize_options, 'layout_width_site' ) * ( $page_content_width + $alignwide_overlap ) / 100 ) };
-			width: calc( var(--layout_width_content) * #{ ( $page_content_width + $alignwide_overlap ) / 100 } );
-			max-width: 100% - $content_padding;
-
-			&,
-			&.has-no-margin {
-				margin-#{$right}: 0;
-			}
-
+		&:not(:last-child) > .alignwide {
+			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } ); // Simulating rem unit for block editor.
 		}
 
 	}
@@ -129,31 +94,17 @@ $content_indent: 100 - $page_content_width;
 }
 
 .alignfull {
-	width: 100%;
-	max-width: 100%;
 
-	// Boxed site layout:
-	.site-layout-boxed & {
-		width: map_get( $customize_options, 'layout_width_site' );
-		width: var(--layout_width_site);
+	.alignwide & {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
-	// Boxed site layout + sidebar:
-	.site-layout-boxed.has-widgets-sidebar & {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: auto;
-			/* $content_width */
-			max-width: calc( #{ map_get( $customize_options, 'layout_width_site' ) } / 2 + #{ map_get( $customize_options, 'layout_width_content' ) } * #{ $page_content_width / 100 } - #{ map_get( $customize_options, 'layout_width_content' ) } / 2 );
-			max-width: calc( var(--layout_width_site) / 2 + var(--layout_width_content) * #{ $page_content_width / 100 } - var(--layout_width_content) / 2 );
-
-			&,
-			&.has-no-margin {
-				margin-#{$right}: 0;
-			}
-
-		}
-
+	.has-background.has-background & {
+		width: auto;
+		margin-left: calc( -1 * var(--block_padding) );
+		margin-right: calc( -1 * var(--block_padding) );
 	}
 
 }

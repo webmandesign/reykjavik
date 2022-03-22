@@ -3,32 +3,34 @@
 .editor-styles-wrapper {
 	// Not using `$selector_editor_wrapper` here because
 	// specificity should be as low as possible!
+	box-sizing: border-box; // WP 5.9 fix for block pattern preview.
 
 	*,
 	*::after,
 	*::before {
+		box-sizing: inherit; // WP 5.9 fix for block pattern preview.
 		border-color: inherit;
 	}
 
 }
 
 #{ $selector_editor_wrapper } {
-	padding-top: 0; // This is being taken care of in `.editor-post-title` of _post-title.scss.
-	// For bottom padding see `.editor-block-list__layout` below.
+	padding-top: 0; // This is being taken care of in of _post-title.scss.
+	// For bottom padding see below.
 
-	// Colors
+	// Colors.
 
-		body & {
+		html & {
 			background-color: var(--color_content_background);
 			color: var(--color_content_text);
-			border-color: var(--color_content_text--a20);
+			border-color: var(--color_content_border);
 		}
 
-	// Elements
+	// Elements.
 
 		#{ $selectors_margin_bottom } {
 			margin-top: 0;
-			margin-bottom: calc( 1.618 * var(--typography_size_html) );
+			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
 		}
 
 		a {
@@ -58,8 +60,8 @@
 
 		}
 
-		ul[class^="wp-block-"],
-		ol[class^="wp-block-"] {
+		ul[class*="wp-block-"],
+		ol[class*="wp-block-"] {
 			padding-#{$left}: 0;
 		}
 
@@ -105,9 +107,7 @@
 }
 
 .block-editor-block-list__layout {
-	padding-bottom: 4em;
 	// No need to match bottom padding to front-end content.
-	// @see  _helper.scss > .compensate-content-padding-bottom
 
 	&.wp-block,
 	.wp-block & {
@@ -116,15 +116,12 @@
 
 }
 
-%pre {
-	@extend %break_words_disable;
-	font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
-	font-size: 1em;
-	font-style: normal;
-	font-weight: 400;
-	text-transform: none;
-	text-decoration: none;
-	white-space: pre-wrap; // https://css-tricks.com/almanac/properties/w/whitespace
-	line-height: 1.5;
-	color: inherit;
+h1, h2, h3, h4, h5, h6 {
+
+	#{ $selector_editor_wrapper } &:focus,
+	.wp-block.is-selected > & {
+		text-transform: none;
+		letter-spacing: 0;
+	}
+
 }

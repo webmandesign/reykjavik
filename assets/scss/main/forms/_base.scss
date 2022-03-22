@@ -67,7 +67,7 @@ select {
 	padding-#{$right}: calc( 1em + #{$selector_svg_size} );
 	appearance: none;
 	background: none;
-	background-image: url('data:image/svg+xml;utf8,#{ encode_url( $selector_svg ) }');
+	background-image: url('data:image/svg+xml;utf8,#{ _url_encode( $selector_svg ) }');
 	background-size: $selector_svg_size auto;
 	background-position: $right 1em top 50%;
 	background-repeat: no-repeat;

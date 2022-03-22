@@ -1,28 +1,37 @@
 /* FILE: editor-block/_accessibility.scss */
 
 #{ $selector_editor_wrapper } .wp-block.screen-reader-text,
-#{ $selector_editor_wrapper } .wp-block > .screen-reader-text {
-	position: relative;
-	clip: auto;
-	clip-path: none;
-	width: auto;
-	height: auto;
-	opacity: .5;
+#{ $selector_editor_wrapper } .wp-block > .screen-reader-text,
+#{ $selector_editor_wrapper } .wp-block.is-style-screen-reader-text,
+#{ $selector_editor_wrapper } .wp-block > .is-style-screen-reader-text {
+	position: relative !important;
+	clip: auto !important;
+	clip-path: none !important;
+	width: auto !important;
+	height: auto !important;
+	min-height: 40px !important;
+	padding: .25em 0 !important;
+	padding-#{$right}: 50px; // Making space for the icon.
+	margin-top: 0 !important;
+	font-size: 1em !important;
+	font-weight: 700 !important;
+	text-transform: none !important;
+	letter-spacing: 0 !important;
+	background: none !important;
+	opacity: .5 !important;
 
 	&::before {
-		content: '\f530'; // https://developer.wordpress.org/resource/dashicons/#hidden
+		content: '♿';
 		position: absolute;
 		width: 40px;
 		height: 40px;
 		#{$right}: 0;
 		top: 0;
-		font-family: dashicons;
 		font-size: 20px;
 		font-weight: 400;
 		line-height: 40px;
 		text-align: center;
-		background: #000;
-		color: #fff;
+		border: 2px solid;
 		border-radius: 40px;
 		vertical-align: top;
 	}
@@ -30,6 +39,14 @@
 }
 
 #{ $selector_editor_wrapper } .wp-block:hover > .screen-reader-text,
-#{ $selector_editor_wrapper } .is-selected > .screen-reader-text {
-	opacity: 1;
+#{ $selector_editor_wrapper } .is-selected > .screen-reader-text,
+#{ $selector_editor_wrapper } .screen-reader-text:hover,
+#{ $selector_editor_wrapper } .screen-reader-text:focus,
+#{ $selector_editor_wrapper } .screen-reader-text:focus-within,
+#{ $selector_editor_wrapper } .wp-block:hover > .is-style-screen-reader-text,
+#{ $selector_editor_wrapper } .is-selected > .is-style-screen-reader-text,
+#{ $selector_editor_wrapper } .is-style-screen-reader-text:hover,
+#{ $selector_editor_wrapper } .is-style-screen-reader-text:focus,
+#{ $selector_editor_wrapper } .is-style-screen-reader-text:focus-within {
+	opacity: 1 !important;
 }

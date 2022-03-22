@@ -1,0 +1,100 @@
+/* FILE: _extend/_others.scss */
+
+%clearfix {
+
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+		table-layout: fixed;
+	}
+
+}
+
+%video_container {
+	position: relative;
+	max-width: 100%;
+	height: 0 $important;
+	padding: 0 0 56.25%; /* 16:9 ratio only */
+}
+
+%video_object {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+%drop_cap {
+
+	&:not(:focus) {
+
+		&:first-letter {
+			@extend %colors_site_content_headings;
+			float: $left;
+			padding: .5em;
+			margin-#{$right}: .25em;
+			font-size: $golden +em;
+			line-height: .8;
+			border: 1px solid;
+
+			@include media( map_get( $breakpoint, 'm' ) ) {
+				font-size: 2.33em;
+			}
+
+		}
+
+		&::after {
+			padding: 0;
+		}
+
+	}
+
+}
+
+%break_words {
+	// From @link  https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+	// These are technically the same, but use both.
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+%break_words_disable {
+	overflow-wrap: normal;
+	word-wrap: normal;
+}
+
+%genericon {
+	font-family: 'Genericons-Neue';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: inherit;
+	text-transform: none;
+	speak: none;
+}
+
+%indent_text_for_icon_only {
+	position: relative;
+	display: inline-block;
+	width: 1em;
+	text-align: $left; // {{RTL}}
+	text-indent: -999em;
+
+	&::before {
+		@extend %genericon;
+		position: absolute;
+		width: 100%;
+		#{$left}: 0; // {{RTL}}
+		top: 0;
+		text-align: center;
+		text-indent: 0;
+	}
+
+}
+
+%icon_vertical_align_middle {
+	vertical-align: middle;
+	transform: translateY(-6%);
+}

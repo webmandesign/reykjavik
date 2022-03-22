@@ -16,7 +16,7 @@
 	.widget {
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: ( pow( $golden, 2 ) + 1em ) 0;
+			padding: ( _pow( $golden, 2 ) + 1em ) 0;
 		}
 
 	}

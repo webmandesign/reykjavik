@@ -1,0 +1,33 @@
+/* FILE: woocommerce/shortcodes/_add-to-cart.scss */
+
+.add_to_cart_inline {
+	display: inline-block;
+	text-align: center;
+	margin: ( $golden +em ) auto;
+
+	.amount {
+		font-size: _pow( $golden, 2 ) +em;
+	}
+
+	.woocommerce-Price-currencySymbol {
+		font-size: $golden_major +em;
+	}
+
+	del {
+		margin-#{$right}: $golden_minor +rem;
+		font-weight: 300;
+	}
+
+	.button,
+	.added_to_cart {
+		display: block;
+		margin-top: 1em;
+	}
+
+	.button,
+	.site .fl-builder-content & .button,
+	.added_to_cart {
+		@extend %colors_accent;
+	}
+
+}

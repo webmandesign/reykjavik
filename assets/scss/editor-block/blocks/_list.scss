@@ -1,0 +1,11 @@
+/* FILE: editor-block/blocks/_list.scss */
+
+[data-align="center"] [data-type="core/list"] {
+	margin-#{$left}: 0;
+	list-style: none;
+
+	li:not(:first-child) {
+		margin-top: .5em;
+	}
+
+}

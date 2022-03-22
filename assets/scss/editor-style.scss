@@ -16,21 +16,9 @@ $left: left;
 $right: right;
 $rtl_multiplier: 1; // For `translateX` transform, for example.
 
-@import 'tools/_index';
-@import 'setup';
-@import 'css-vars';
+@import '_tools/_index';
+@import '_setup/_index';
 
-@import 'main/typography/_index';
-@import 'main/headings/base';
-@import 'main/headings/display-size';
-@import 'main/headings/widget-title';
-@import 'main/base/elements';
-@import 'main/forms/buttons';
-@import 'main/wp/_index';
-@import 'main/icons/genericons';
-@import 'main/icons/indent';
-@import 'main/modifiers/_index';
+@import 'custom-properties';
 
-@import 'extend';
-
-@import 'custom-styles/editor-style';
+@import 'editor-classic/_index';

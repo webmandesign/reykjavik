@@ -1,10 +1,10 @@
 /* FILE: main/content/media/_entry.scss */
 
 .entry-media {
-	margin-bottom: pow( $golden, 2 ) +rem;
+	margin-bottom: _pow( $golden, 2 ) +rem;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
+		margin-bottom: _pow( 1 + $golden_minor, 4 ) +rem;
 	}
 
 	a {

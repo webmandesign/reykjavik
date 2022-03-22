@@ -7,7 +7,7 @@
 		margin: ( $golden +em ) 0;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin: ( pow( $golden, 2 ) +em ) 0;
+			margin: ( _pow( $golden, 2 ) +em ) 0;
 		}
 
 		&:first-child {
@@ -52,7 +52,7 @@
 	// IMPORTANT!
 	//
 	// If you make change here, make sure to do the same for editor
-	// stylesheet in `main/custom-styles/_editor-style.scss`.
+	// stylesheet in `editor-classic/_layout-outdented.scss`.
 	//
 
 	.page-layout-outdented:not(.content-layout-no-paddings) {
@@ -67,7 +67,7 @@
 			> .outdent-heading {
 
 				&:not(:first-child) {
-					margin-top: pow( 1 + $golden_minor, 4 ) +rem;
+					margin-top: _pow( 1 + $golden_minor, 4 ) +rem;
 
 					@include media( map_get( $breakpoint, 'xl' ) ) {
 						margin-top: 12%;

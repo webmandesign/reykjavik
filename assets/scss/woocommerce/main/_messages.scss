@@ -1,0 +1,56 @@
+/* FILE: woocommerce/main/_messages.scss */
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews,
+p.no-comments {
+	@extend %clearfix;
+	@extend %shaded_background;
+	clear: both;
+	padding: 2em;
+	margin: 0;
+	border-top-width: $golden_major +em;
+	border-top-style: solid;
+
+	&,
+	&:last-child {
+		margin-bottom: _pow( $golden, 2 ) +em;
+	}
+
+	a {
+		font-weight: 700;
+	}
+
+	.button {
+		display: block;
+		margin: 0 0 1em;
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+			display: inline-block;
+			float: $right; // {{RTL}}
+			margin: ( -$golden_minor / 2 +em ) 0;
+			margin-#{$left}: $golden +em; // {{RTL}}
+		}
+
+	}
+
+}
+
+// Error message
+
+	.woocommerce-error {
+		list-style: none;
+		border-color: map_get( $colors, 'error_background' );
+
+		li {
+			clear: both;
+			margin: ( $golden_major +em ) 0 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+		}
+
+	}

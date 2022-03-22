@@ -1,25 +1,8 @@
 /* FILE: editor-block/_ui.scss */
 
-// Very approx compensation for UI width...
-$alignment_width: $alignment_width + $alignment_margin;
-
-// Block editor UI margin applied on blocks.
-// Used to compensate the block widths.
-
-	:root {
-		--block_ui_margin: var(--zero);
-		--block_ui_border: var(--zero);
-	}
-
-	// Backwards compatibility (WP5.3-):
-	.editor-block-list__layout {
-		--block_ui_margin: 14px;
-		--block_ui_border: 2px;
-	}
-
-	// These can not be CSS vars, we need to use SASS vars.
-	$max_width_content: calc( var(--layout_width_content) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
-	$max_width_entry_content: calc( 36 * var(--typography_size_html) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
+// These can not be CSS vars, we need to use SASS vars.
+$max_width_content: calc( var(--layout_width_content) + var(--editor_width_addon) );
+$max_width_wide:    calc( var(--layout_width_wide)    + var(--editor_width_addon) );
 
 .block-list-appender.block-list-appender.block-list-appender,
 .block-editor-block-list__block,
@@ -31,4 +14,20 @@ $alignment_width: $alignment_width + $alignment_margin;
 [data-type="core/more"],
 [data-type="core/nextpage"] {
 	clear: both;
+}
+
+.components-font-size-picker__select {
+
+	[role="listbox"] {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	[role="option"] {
+		padding: 0 1em;
+		margin: 0;
+		font-size: 1em !important;
+		white-space: nowrap;
+	}
+
 }

@@ -12,7 +12,7 @@
 	color: inherit;
 
 	@include media( map_get( $breakpoint, 'xl' ) ) {
-		margin-#{$right}: pow( $golden, 2 ) +em; // {{RTL}}
+		margin-#{$right}: _pow( $golden, 2 ) +em; // {{RTL}}
 	}
 
 	a {
@@ -69,4 +69,16 @@
 		margin-#{$right}: 0;
 	}
 
+	&,
+	.fl-builder-edit & {
+		max-height: map_get( $customize_options, 'custom_logo_height' );
+		max-height: var(--custom_logo_height);
+	}
+
+}
+
+.site-title,
+.custom-logo {
+	color: map_get( $customize_options, 'color_header_headings' );
+	color: var(--color_header_headings);
 }

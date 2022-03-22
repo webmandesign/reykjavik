@@ -14,7 +14,7 @@ $left: left;
 $right: right;
 $rtl_multiplier: 1; // For `translateX` transform, for example.
 
-@import 'tools/_index';
-@import 'setup';
+@import '_tools/_index';
+@import '_setup/_index';
 
 @import 'blocks/_index';

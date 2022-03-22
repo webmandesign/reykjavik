@@ -1,0 +1,18 @@
+$important_contexts: (
+	'modifier_flex_grow',
+	'modifier_margin',
+	'modifier_padding',
+	'modifier_responsive',
+);
+
+// Forced important
+
+	// Global important. Should be kept unchanged.
+	$important: !important;
+
+	// Section related importants:
+	$important_base_accessibility: $important;
+	$important_base_modifiers: null;
+	$important_plugins_jetpack_infinite_scroll: $important;
+	$important_plugins_jetpack_sharing: $important;
+	$important_wp_embed: $important;

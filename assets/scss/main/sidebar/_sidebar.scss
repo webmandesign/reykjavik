@@ -5,7 +5,7 @@
 	@extend %line_height_golden;
 	position: relative;
 	padding: ( $golden +em ) 0 0;
-	margin: ( pow( $golden, 2 ) +rem ) 0 0;
+	margin: ( _pow( $golden, 2 ) +rem ) 0 0;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
 		float: $right; // {{RTL}}
@@ -15,7 +15,7 @@
 	}
 
 	.widget {
-		margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
+		margin-bottom: _pow( 1 + $golden_minor, 4 ) +rem;
 	}
 
 }

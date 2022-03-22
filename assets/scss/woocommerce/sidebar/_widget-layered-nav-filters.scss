@@ -1,0 +1,46 @@
+/* FILE: woocommerce/sidebar/_widget-layered-nav-filters.scss */
+
+.widget_layered_nav_filters {
+	margin-bottom: _pow( $golden, 2 ) +em;
+
+	ul {
+
+		li {
+			display: inline-block;
+			padding: $golden_minor +em;
+			font-size: 1rem - $golden_minor / 2;
+			border-width: 0;
+		}
+
+	}
+
+	a {
+		@extend %colors_accent;
+		display: block;
+		padding: ( $golden_minor +em ) 1em;
+
+		&:hover,
+		&:focus {
+			text-decoration: line-through;
+		}
+
+		&::after {
+			@extend %genericon;
+			content: '\f406';
+			display: inline-block; // Required to override the :hover text-decoration
+			margin-#{$left}: $golden_major +em; // {{RTL}}
+			text-decoration: none;
+			vertical-align: middle;
+		}
+
+	}
+
+	.amount {
+		font-weight: 700;
+	}
+
+	.products + & {
+		margin-top: _pow( $golden, 2 ) +em;
+	}
+
+}

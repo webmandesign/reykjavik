@@ -1,0 +1,252 @@
+/* FILE: woocommerce/main/_forms.scss */
+
+//
+// Form styles
+//
+
+
+
+
+
+// General form styles
+
+	.woocommerce {
+
+		fieldset {
+			padding: ( $golden +em ) 6% ( _pow( $golden, 2 ) +em );
+			margin-top: 2em;
+			margin-bottom: 2em;
+			border-width: 2px;
+			border-style: dashed;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+		}
+
+		label {
+			display: block;
+			text-transform: uppercase;
+			font-size: 1em - $golden_minor / 2;
+
+			&.inline {
+				display: inline-block;
+			}
+
+		}
+
+		legend {
+			padding: 0 1em;
+			text-transform: uppercase;
+			font-size: 1em - $golden_minor / 4;
+			font-weight: 700;
+		}
+
+		form .hidden {
+			display: none;
+		}
+
+	}
+
+
+
+	.form-row {
+
+		input,
+		textarea,
+		select {
+			width: 100%;
+		}
+
+		input[type=checkbox],
+		input[type=radio],
+		.button {
+			width: auto;
+		}
+
+		@include media( map_get( $breakpoint, 'm' ) ) {
+
+			&-first,
+			&-last {
+				float: $left; // {{RTL}}
+				width: 48%;
+				margin-#{$right}: 4%; // {{RTL}}
+			}
+
+			&-last {
+				margin-#{$right}: 0; // {{RTL}}
+			}
+
+		}
+
+		&.create-account {
+
+			label {
+				display: inline-block;
+			}
+
+		}
+
+		.woocommerce-invalid {
+
+			select,
+			.input-text,
+			.select2-container .select2-choice {
+				box-shadow: 0 ( $golden_minor +em ) 0 map_get( $colors, 'error_background' );
+			}
+
+		}
+
+	}
+
+
+
+// Styled radio buttons and checkboxes
+
+	%layout_styled_checkbox_label {
+		text-transform: none;
+		letter-spacing: 0;
+		font-size: 1rem;
+		cursor: pointer;
+
+		&::before {
+			@extend %icon_vertical_align_middle;
+			content: '';
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			line-height: 1;
+			font-size: $golden_minor + 1rem;
+			border-width: 0;
+			border-radius: 1em;
+			vertical-align: middle;
+			cursor: pointer;
+			transition: background ( $small_animation_speed +s );
+		}
+
+	}
+
+	.woocommerce {
+
+		input[type="checkbox"]:first-child,
+		input[type="radio"]:first-child {
+			@extend %screen_reader_hiding;
+			// Workaround for setting the parent element relative position:
+			position: relative !important;
+			float: $left; // {{RTL}}
+			#{$left}: -999em; // {{RTL}}
+			margin: 0;
+
+			+ label,
+			+ span {
+				@extend %layout_styled_checkbox_label;
+
+				&::before {
+					background-color: rgba( #000, .05 );
+					box-shadow: inset 0 0 0 2px;
+				}
+
+			}
+
+			&:checked {
+
+				+ label,
+				+ span {
+
+					&::before {
+						@extend %colors_accent;
+						box-shadow: none;
+					}
+
+				}
+
+			}
+
+		}
+
+		label[for="rememberme"] input[type="checkbox"]:first-child {
+			@extend %screen_reader_hiding_disable;
+		}
+
+	}
+
+
+
+// Quantity input field
+
+	.quantity {
+		@extend %colors_site_content_headings;
+		display: inline-block;
+		margin-#{$right}: 1em; // {{RTL}}
+		vertical-align: top;
+
+		.qty {
+			max-width: $golden +em;
+			padding: 0;
+			line-height: 1;
+			font-size: 2 * $golden_major + 1em;
+			font-size: calc( #{ 2 * $golden_major + 1em } - 2px );
+			font-weight: 300;
+			background: none;
+			border-width: 0;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-color: currentColor;
+		}
+
+	}
+
+
+
+// Select2 dropdown
+
+	// We need very specific CSS selector for WC3.0- backwards compatibility.
+	// With WC3.0+ we can use `body .select2` only.
+	body .select2-container .select2 {
+
+		&-choice,
+		&-selection {
+			@extend %break_words_disable;
+			position: relative;
+			max-width: 100%;
+			height: auto;
+			padding: #{ $golden_major +em };
+			color: inherit;
+			vertical-align: baseline;
+			background-color: transparent;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAHklEQVQYV2NkYGCoZ8ADGP///49fAT7dIDnGoWAFAEGRC/pgHyp1AAAAAElFTkSuQmCC');
+			background-size: 8px 8px;
+			background-position: $right center; // {{RTL}}
+			background-origin: content-box;
+			background-repeat: no-repeat;
+			border: 2px solid transparent;
+			border-bottom-color: currentColor;
+			border-radius: 0;
+			transition: border-color ( $small_animation_speed +s );
+
+			&[aria-expanded="true"] {
+				border-color: currentColor;
+			}
+
+		}
+
+		&-choice .select2-arrow,
+		&-selection__arrow {
+			display: none;
+		}
+
+		&-search {
+
+			input {
+				width: 100%;
+			}
+
+		}
+
+	}

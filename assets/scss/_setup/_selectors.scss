@@ -1,0 +1,65 @@
+$selectors_margin_bottom: (
+	'h1', 'h2', 'h3', '.h1', '.h2', '.h3',
+	'p',
+	'ol', 'ul', 'dl',
+	'hr',
+	'form',
+	'blockquote',
+	'table',
+	'figure',
+	'iframe',
+	'address',
+	'pre',
+	'[class*="wp-block-"]',
+	'.gallery',
+	'.tiled-gallery',
+);
+
+$selectors_button: (
+	'.button',
+	'button',
+	'[type="button"]',
+	'[type="reset"]',
+	'[type="submit"]',
+);
+$selectors_button_beaver_builder: ();
+$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
+@each $button in $selectors_button {
+	$selectors_button_beaver_builder: append( $selectors_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
+}
+$selectors_button: append( $selectors_button, (
+	'.wp-block-button__link',
+	'.wp-block-search .wp-block-search__button',
+	'.child-page .more-link',
+	'.main-navigation-container .button > a',
+	// '.page-numbers:not(.current):not(.dots)',
+	// '.post-page-numbers:not(.current):not(.dots)',
+
+	// // WooCommerce
+	// '.cart_totals .checkout-button',
+) );
+
+$selectors_accent_color: (
+	// Marker (have to use ID overrides for page builder, and default selector for editor stylesheet)
+	'mark',
+	'#page mark',
+	'.highlight',
+	'#page .highlight',
+	// Pagination
+	'.pagination .current',
+	// Comments
+	'.bypostauthor > .comment-body .comment-author::before',
+	// Widgets
+	'.widget_calendar tbody a',
+	'.widget .tagcloud a:hover',
+	'.widget .tagcloud a:focus',
+	'.widget .tagcloud a:active'
+);
+
+// Wrappers
+
+	// Global wrapper.
+	$wrapper: '.site';
+
+	// Section related wrappers:
+	$wrapper_modifiers: $wrapper;

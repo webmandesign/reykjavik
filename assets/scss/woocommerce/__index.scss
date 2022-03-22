@@ -1,4 +1,4 @@
-/* FILE: woocommerce/_woocommerce.scss */
+/* FILE: woocommerce/__index.scss */
 
 //
 // Frontend WooCommerce styles
@@ -17,24 +17,12 @@
 //   The class is also applied on WooCommerce shortcodes and widgets.
 //
 
+@import 'main/_index';
+@import 'tabs/_index';
+@import 'pages/_index';
+@import 'shortcodes/_index';
+@import 'sidebar/_index';
+@import 'extensions/_index';
+@import 'blocks/_index';
 
-
-
-
-// Imports
-
-	@import '_helpers';
-
-	@import 'main/main';
-
-	@import 'tabs/tabs';
-
-	@import 'pages/pages';
-
-	@import 'shortcodes/shortcodes';
-
-	@import 'sidebar/sidebar';
-
-	@import 'extensions/extensions';
-
-	@import 'blocks/_index';
+@import '../extend';

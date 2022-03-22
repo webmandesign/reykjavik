@@ -1,5 +1,24 @@
 /* FILE: main/header/_header.scss */
 
+.site-header-content,
+.#{$special_color_class_prefix}header,
+.#{$special_color_class_prefix}header > .fl-row-content-wrap,
+.#{$special_color_class_prefix}header > .fl-col-content {
+	background-color: map_get( $customize_options, 'color_header_background' );
+	color: map_get( $customize_options, 'color_header_text' );
+	border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+	background-color: var(--color_header_background);
+	color: var(--color_header_text);
+	border-color: var(--color_header_text--a20);
+
+	h2, h3, h4,
+	.h1, .h2, .h3, .h4 {
+		color: map_get( $customize_options, 'color_header_headings' );
+		color: var(--color_header_headings);
+	}
+
+}
+
 .site-header {
 	@extend %clearfix;
 	display: flex;
@@ -18,14 +37,14 @@
 
 	&-inner {
 		@extend %clearfix;
-		@extend %content_width;
+		@extend %layout_content_width;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		position: relative;
 
 		.header-layout-fullwidth & {
-			@extend %full_width;
+			@extend %layout_full_width;
 		}
 
 		> div,

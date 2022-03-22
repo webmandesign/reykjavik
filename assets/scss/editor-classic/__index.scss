@@ -1,0 +1,18 @@
+/* FILE: editor-classic/__index.scss */
+
+@import '../main/typography/_index';
+@import '../main/headings/base';
+@import '../main/headings/display-size';
+@import '../main/headings/widget-title';
+@import '../main/base/elements';
+@import '../main/base/colors';
+@import '../main/forms/buttons';
+@import '../main/wp/_index';
+@import '../main/icons/_index';
+@import '../main/modifiers/_index';
+
+@import 'typography';
+@import 'overrides';
+@import 'layout-outdented';
+
+@import '../extend';

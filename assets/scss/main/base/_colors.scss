@@ -1,0 +1,54 @@
+/* FILE: main/base/_colors.scss */
+
+#{$selectors_accent_color},
+.#{$special_color_class_prefix}accent,
+.#{$special_color_class_prefix}accent > .fl-row-content-wrap,
+.#{$special_color_class_prefix}accent > .fl-col-content,
+.hover-color-accent.fl-col:hover .fl-col-content {
+	@extend %colors_accent;
+}
+
+@each $color in ( 'error', 'info', 'success', 'warning' ) {
+
+	.color-#{$color} {
+		background-color: map_get( $colors, '#{$color}_background' );
+		color: map_get( $colors, '#{$color}_text' );
+
+		.fl-builder-content &,
+		.site .fl-builder-content &.button,
+		.site .fl-builder-content &.button:hover {
+			@extend .color-#{$color};
+		}
+
+	}
+
+	.hover-color-#{$color}.fl-col:hover .fl-col-content {
+		@extend .color-#{$color};
+	}
+
+	.#{$special_color_class_prefix}#{$color},
+	.#{$special_color_class_prefix}#{$color} > .fl-row-content-wrap,
+	.#{$special_color_class_prefix}#{$color} > .fl-col-content {
+		background-color: map_get( $colors, '#{$color}_background' );
+		color: map_get( $colors, '#{$color}_text' );
+	}
+
+}
+
+div[class*="#{$special_color_class_prefix}"] {
+
+	a,
+	h1, h2, h3, h4,
+	.h1, .h2, .h3, .h4,
+	.dropcap-text::first-letter,
+	.has-dropcap-text::first-letter {
+		color: inherit;
+	}
+
+}
+
+.site .fl-row[class*="#{$special_color_class_prefix}"],
+.site .fl-col[class*="#{$special_color_class_prefix}"] {
+	background: none;
+}
+

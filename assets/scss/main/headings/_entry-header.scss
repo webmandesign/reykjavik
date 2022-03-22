@@ -1,10 +1,10 @@
 /* FILE: main/headings/_entry-header.scss */
 
 .entry-header {
-	margin-bottom: pow( $golden, 2 ) +rem;
+	margin-bottom: _pow( $golden, 2 ) +rem;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
+		margin-bottom: _pow( 1 + $golden_minor, 4 ) +rem;
 	}
 
 	.posts & {
@@ -22,7 +22,7 @@
 .page-title {
 	@extend %break_words;
 	padding: 0;
-	margin: 0 0 ( pow( $golden, 2 ) +rem );
+	margin: 0 0 ( _pow( $golden, 2 ) +rem );
 
 	// Paginated title suffix
 

@@ -1,0 +1,46 @@
+/* FILE: _extend/_layout.scss */
+
+%layout_basic_width {
+	width: 88%;
+	margin: 0 auto;
+}
+
+%layout_max_width_1920 {
+	max-width: 1920px;
+}
+
+/* $content_width */
+%layout_content_width {
+	@extend %layout_basic_width;
+	max-width: map_get( $customize_options, 'layout_width_content' );
+	max-width: var(--layout_width_content);
+}
+
+%layout_full_width {
+	@extend %layout_basic_width;
+	@extend %layout_max_width_1920;
+}
+
+%layout_fullwidth_sections_layout {
+
+	.site-content-inner {
+		width: 100%;
+		max-width: none;
+		padding: 0;
+	}
+
+	.content-area {
+		float: none;
+		width: 100%;
+		max-width: none;
+		padding: 0;
+		margin: 0;
+
+		html & {
+			// Unfortunately, we need to rise specificity for `max-width` due to possible IE shame styles overrides later.
+			max-width: none;
+		}
+
+	}
+
+}

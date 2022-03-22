@@ -3,7 +3,7 @@
 .pagination {
 	clear: both;
 	padding: 1px; // To display accessibility outline.
-	margin-top: pow( $golden, 2 ) +rem;
+	margin-top: _pow( $golden, 2 ) +rem;
 	text-align: center;
 	overflow: hidden;
 
@@ -28,7 +28,7 @@
 	a,
 	span {
 		display: none;
-		width: pow( $golden, 2 ) +em;
+		width: _pow( $golden, 2 ) +em;
 		padding: ( $golden_major +em ) 0;
 		margin: $golden_minor / 2 +em;
 		margin-#{$left}: 0; // {{RTL}}
@@ -44,7 +44,7 @@
 	a {
 
 		@include haf() {
-			@extend %background_overlay_from_text_color;
+			@extend %shaded_background;
 
 			// Unfortunate iOS devices fix for double tap...
 			@include media( ( '1112px', 'max-width' ) ) {
@@ -54,11 +54,18 @@
 			}
 		}
 
+		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+			background-color: map_get( $customize_options, 'color_accent' );
+			color: map_get( $customize_options, 'color_accent_text' );
+			background-color: var(--color_accent);
+			color: var(--color_accent_text);
+		}
+
 	}
 
 	.prev,
 	.next {
-		@extend %background_overlay_from_text_color;
+		@extend %shaded_background;
 		display: inline-block;
 
 		// Unfortunate iOS devices fix for double tap...

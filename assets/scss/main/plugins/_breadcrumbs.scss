@@ -1,7 +1,7 @@
 /* FILE: main/plugins/_breadcrumbs.scss */
 
 .breadcrumbs {
-	@extend %content_width;
+	@extend %layout_content_width;
 	@extend %font_size_small_rem;
 	position: relative;
 	padding: 1rem ( $golden +rem );
@@ -31,7 +31,7 @@
 		padding: 1rem 0;
 
 		.footer-layout-fullwidth & {
-			@extend %full_width;
+			@extend %layout_full_width;
 		}
 
 	}
@@ -77,13 +77,13 @@
 			margin-bottom: $golden * -1em;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-bottom: pow( $golden, 2 ) * -1em;
+				margin-bottom: _pow( $golden, 2 ) * -1em;
 			}
 
 		}
 
 		.site-footer & {
-			@extend %background_overlay_from_text_color;
+			@extend %shaded_background;
 			padding-top: 1em;
 			padding-bottom: 1em;
 
@@ -93,8 +93,8 @@
 			}
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: pow( $golden, 2 ) +em;
-				padding-bottom: pow( $golden, 2 ) +em;
+				padding-top: _pow( $golden, 2 ) +em;
+				padding-bottom: _pow( $golden, 2 ) +em;
 			}
 
 			.footer-layout-fullwidth & {

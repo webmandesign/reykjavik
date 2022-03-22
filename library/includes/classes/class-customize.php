@@ -180,7 +180,7 @@ final class Reykjavik_Library_Customize {
 		 *           'property'         => 'text-shadow',
 		 *           'prefix'           => '0 1px 1px rgba(',
 		 *           'suffix'           => ', .5)',
-		 *           'process_callback' => 'themeSlug.Customize.hexToRgb',
+		 *           'process_callback' => 'reykjavik.Customize.hexToRgb',
 		 *           'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
 		 *         ),...
 		 *       ),

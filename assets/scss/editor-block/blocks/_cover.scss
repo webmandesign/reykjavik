@@ -1,36 +1,17 @@
 /* FILE: editor-block/blocks/_cover.scss */
 
-#{ $selector_editor_wrapper } .wp-block-cover {
+.wp-block-cover {
 
-	.wp-block-cover__inner-container {
-		max-width: none;
-	}
-
-	.wp-block:not(hr):not([data-align="wide"]):not([data-align="full"]):not([data-type*="column"]) {
-		width: 100%;
-		max-width: $max_width_entry_content;
-	}
-
-	.wp-block[data-align="wide"] {
-		max-width: $max_width_content;
+	&__inner-container > .wp-block:last-child {
+		margin-bottom: 0;
 	}
 
 }
 
-.wp-block[data-align="wide"],
-.wp-block[data-align="full"] {
-
-	> .wp-block-cover {
-
-		&.has-background {
-			padding-left: 0;
-			padding-right: 0;
-		}
-
-		&:not([class*="is-position-"]) > .wp-block-cover__inner-container {
-			width: 100%;
-		}
-
+// Overriding default WP styles:
+@media (min-width: 600px) {
+	[data-align=full] .wp-block-group > .wp-block-group__inner-container > .wp-block-cover {
+		padding-left: var(--block_padding);
+		padding-right: var(--block_padding);
 	}
-
 }

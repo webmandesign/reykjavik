@@ -1,5 +1,26 @@
 /* FILE: main/footer/_footer.scss */
 
+.site-footer,
+.#{$special_color_class_prefix}footer,
+.#{$special_color_class_prefix}footer > .fl-row-content-wrap,
+.#{$special_color_class_prefix}footer > .fl-col-content {
+	background-color: map_get( $customize_options, 'color_footer_background' );
+	color: map_get( $customize_options, 'color_footer_text' );
+	border-color: rgba( map_get( $customize_options, 'color_footer_text' ), 20 / 100 );
+	background-color: var(--color_footer_background);
+	color: var(--color_footer_text);
+	border-color: var(--color_footer_text--a20);
+
+	h2, h3, h4,
+	.h1, .h2, .h3, .h4,
+	a,
+	.accent-color {
+		color: map_get( $customize_options, 'color_footer_headings' );
+		color: var(--color_footer_headings);
+	}
+
+}
+
 .site-footer {
 	@extend %font_size_smaller;
 	@extend %clearfix;
@@ -8,15 +29,44 @@
 	&-area {
 
 		&-inner {
-			@extend %content_width;
+			@extend %layout_content_width;
 			position: relative; // Above footer image;
 
 			.footer-layout-fullwidth & {
-				@extend %full_width;
+				@extend %layout_full_width;
 			}
 
 		}
 
+	}
+
+	#{$selectors_accent_color} {
+		text-shadow: none;
+		background-color: map_get( $customize_options, 'color_footer_headings' );
+		color: map_get( $customize_options, 'color_footer_background' );
+		background-color: var(--color_footer_headings);
+		color: var(--color_footer_background);
+	}
+
+	.button,
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
+		text-shadow: none;
+
+		@include haf() {
+			background-color: map_get( $customize_options, 'color_footer_headings' );
+			color: map_get( $customize_options, 'color_footer_background' );
+			background-color: var(--color_footer_headings);
+			color: var(--color_footer_background);
+		}
+
+	}
+
+	mark,
+	.highlight {
+		box-shadow: none;
 	}
 
 	// Footer background image
@@ -26,6 +76,28 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
+			background-image: map_get( $customize_options, 'footer_image' );
+			background-position: map_get( $customize_options, 'footer_image_position' );
+			background-size: map_get( $customize_options, 'footer_image_size' );
+			background-repeat: map_get( $customize_options, 'footer_image_repeat' );
+			background-attachment: map_get( $customize_options, 'footer_image_attachment' );
+			opacity: map_get( $customize_options, 'footer_image_opacity' );
+
+			background-image: var(--footer_image);
+			background-position: var(--footer_image_position);
+			background-size: var(--footer_image_size);
+			background-repeat: var(--footer_image_repeat);
+			background-attachment: var(--footer_image_attachment);
+			opacity: var(--footer_image_opacity);
+		}
+
+		&:not(.is-customize-preview)::before {
+			// @see  Reykjavik_Customize_Styles::get_css()
+		}
+
+		&.is-customize-preview::before {
+			background-repeat: inherit;
+			background-attachment: inherit;
 		}
 
 }

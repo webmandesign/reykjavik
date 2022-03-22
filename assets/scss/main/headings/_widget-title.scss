@@ -3,7 +3,7 @@
 %widget_title {
 	@extend %font_weight_700;
 	@extend %line_height_golden_minor;
-	margin: 0 0 ( pow( $golden, 2 ) +rem );
+	margin: 0 0 ( _pow( $golden, 2 ) +rem );
 	font-size: nth( map_get( $setup_headings, 'h4, .h4' ), 1 ) +rem;
 
 	a {

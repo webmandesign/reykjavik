@@ -1,7 +1,6 @@
 /* FILE: editor-block/__index.scss */
 
-$selector_editor_wrapper: 'div.editor-styles-wrapper';
-$selector_editor_title: '.editor-post-title';
+$selector_editor_wrapper: '.editor-styles-wrapper'; // Was `div.editor-styles-wrapper` - if any issue arises, specificity may be adapted.
 
 $selectors_margin_bottom: (
 	'p',
@@ -19,13 +18,15 @@ $selectors_margin_bottom: (
 $selectors_button: (
 	'.button',
 	'.wp-block-button__link',
+	'.wp-block-search__button',
 );
 
 $important_contexts: append( $important_contexts, 'modifier_font_size' );
 $important_contexts: append( $important_contexts, 'modifier_line_height' );
 
+
+@import 'custom-properties';
 @import 'ui';
-@import 'post-title';
 
 @import 'typography';
 @import 'base';
@@ -34,21 +35,12 @@ $important_contexts: append( $important_contexts, 'modifier_line_height' );
 #{ $selector_editor_wrapper } {
 	@import '../main/typography/_index';
 	@import '../main/headings/base';
-	@import '../main/headings/display-size';
-	@import '../main/headings/widget-title';
 	@import '../main/base/elements';
 	@import '../main/forms/buttons';
-	@import '../main/icons/genericons';
-	@import '../main/icons/indent';
+	@import '../main/wp/_index';
 	@import '../main/modifiers/_index';
 
-	// Blocks styles.
-	@import '../blocks/_index';
+	@import '../blocks/_index'; // Already contains extenders.
 }
 
-@import 'woocommerce';
-
-// Editor blocks styles.
-@import 'blocks/_index'; // Already contains extenders.
-
-@import 'helper';
+@import 'blocks/_index';

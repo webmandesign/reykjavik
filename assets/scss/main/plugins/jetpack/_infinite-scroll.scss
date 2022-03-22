@@ -25,7 +25,7 @@
 	.posts {
 
 		&.masonry {
-			margin-bottom: pow( $golden, 3 ) +em;
+			margin-bottom: _pow( $golden, 3 ) +em;
 		}
 
 	}
@@ -39,12 +39,13 @@
 	.masonry & {
 		position: absolute;
 		width: 100%;
-		bottom: pow( $golden, 3 ) * -1em;
+		bottom: _pow( $golden, 3 ) * -1em;
 	}
 
 	.site & {
 
 		span {
+			@extend %colors_accent;
 			display: inline-block;
 			padding: 1em;
 			font-size: 1em;
@@ -62,7 +63,7 @@
 	.masonry & {
 		position: absolute;
 		width: 100%;
-		bottom: pow( $golden, 3 ) * -1em; // -4.235
+		bottom: _pow( $golden, 3 ) * -1em; // -4.235
 	}
 
 	.spinner {
@@ -74,6 +75,8 @@
 
 			> div {
 				width: $golden +em $important_plugins_jetpack_infinite_scroll;
+				background-color: map_get( $customize_options, 'color_accent' ) !important;
+				background-color: var(--color_accent) !important;
 			}
 
 		}

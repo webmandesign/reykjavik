@@ -36,7 +36,7 @@
 			.entry-date {
 				@extend %font_size_golden;
 				float: $left; // {{RTL}}
-				width: pow( $golden, 2 ) +em;
+				width: _pow( $golden, 2 ) +em;
 				padding: $golden_minor +em;
 				text-align: center;
 				border: 1px solid;

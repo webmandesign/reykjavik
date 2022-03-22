@@ -4,7 +4,7 @@
 	clear: both;
 	position: relative;
 	padding: ( $golden +rem ) 0 0;
-	margin: ( pow( $golden, 2 ) +rem ) 0 0;
+	margin: ( _pow( $golden, 2 ) +rem ) 0 0;
 	border-top-width: 2px;
 	border-top-style: solid;
 
@@ -46,8 +46,8 @@
 		.content-layout-no-paddings &,
 		.content-layout-stretched & {
 			// No sidebar here
-			@extend %content_width;
-			padding: ( pow( 1 + $golden_minor, 5 ) +rem ) 0;
+			@extend %layout_content_width;
+			padding: ( _pow( 1 + $golden_minor, 5 ) +rem ) 0;
 			border-width: 0;
 
 			&-inner {
@@ -70,11 +70,11 @@
 	margin-bottom: $golden +rem;
 
 	@include media( map_get( $breakpoint, 'm' ) ) {
-		margin-bottom: pow( $golden, 2 ) +rem;
+		margin-bottom: _pow( $golden, 2 ) +rem;
 	}
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: pow( $golden, 3 ) +rem;
+		margin-bottom: _pow( $golden, 3 ) +rem;
 	}
 
 	.add-comment-link {

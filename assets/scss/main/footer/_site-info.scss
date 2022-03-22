@@ -9,11 +9,11 @@
 
 
 .footer-area-site-info {
-	@extend %background_overlay_from_text_color;
+	@extend %shaded_background;
 	padding: ( $golden +rem ) 0;
 
 	@include media( map_get( $breakpoint, 'm' ) ) {
-		padding: ( pow( $golden, 2 ) +rem ) 0;
+		padding: ( _pow( $golden, 2 ) +rem ) 0;
 	}
 
 }

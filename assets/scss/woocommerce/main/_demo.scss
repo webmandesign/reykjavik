@@ -1,0 +1,48 @@
+/* FILE: woocommerce/main/_demo.scss */
+
+// Demo notice
+
+	%demo_store_notice {
+		margin: 0;
+		padding: 1em ( $golden +em );
+		text-align: center;
+		font-size: 1em - $golden_minor / 2;
+		font-style: italic;
+
+		&::before {
+			@extend %genericon;
+			@extend %icon_vertical_align_middle;
+			content: '\f455';
+			font-size: 1rem;
+			margin-#{$right}: $golden_minor +em;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+	}
+
+	.demo_store,
+	.woocommerce-store-notice {
+		@extend %colors_accent;
+		@extend %demo_store_notice;
+	}
+
+	.woocommerce-store-notice {
+
+		&__dismiss-link {
+			margin-#{$left}: $golden +em; // {{RTL}}
+
+			&::before {
+				@extend %genericon;
+				@extend %icon_vertical_align_middle;
+				content: '\f406';
+				font-size: 1rem;
+				margin-#{$right}: $golden_minor +em;
+			}
+
+		}
+
+	}

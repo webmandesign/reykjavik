@@ -3,7 +3,7 @@
 .widget {
 
 	.sidebar & {
-		margin: 0 0 ( pow( $golden, 2 ) +em );
+		margin: 0 0 ( _pow( $golden, 2 ) +em );
 
 		&:last-child {
 			margin-bottom: 0;
@@ -68,6 +68,16 @@
 				padding-#{$left}: 1em; // {{RTL}}
 			}
 
+		}
+
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a {
+
+		.sidebar &,
+		.fl-widget & {
+			@extend %colors_accent;
 		}
 
 	}

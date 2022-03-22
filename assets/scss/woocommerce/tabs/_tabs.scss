@@ -1,30 +1,20 @@
 /* FILE: woocommerce/tabs/_tabs.scss */
 
-//
-// Single product page tabs
-//
-
-
-
-
-
 .woocommerce-tabs {
 	clear: both;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-top: pow( $golden, 2 ) * -1em;
+		margin-top: _pow( $golden, 2 ) * -1em;
 	}
 
 	[tabindex="-1"]:focus {
 		outline: 0;
 	}
 
-
-
 	// Tabs list
 
 		.tabs {
-			@extend %wc_content_width;
+			@extend %layout_content_width;
 			padding: .5em;
 			line-height: $golden_minor / 2 + 1;
 			list-style: none;
@@ -59,7 +49,7 @@
 				}
 
 				&::before {
-					@extend %wc_genericon;
+					@extend %genericon;
 					content: '\f455'; // Default "info" icon
 					display: inline-block;
 					margin-#{$right}: $golden_major +em; // {{RTL}}
@@ -82,14 +72,19 @@
 
 			}
 
+			a:hover,
+			.active a,
+			.is-active a {
+				@extend %colors_accent;
+				border-color: transparent;
+			}
+
 		}
-
-
 
 	// Panels
 
 		.panel {
-			@extend %wc_content_width;
+			@extend %layout_content_width;
 			padding: ( $padding_vertical * $golden_major ) 0 $padding_vertical;
 
 			&:focus {
@@ -120,12 +115,23 @@
 			}
 
 			> h2:first-child {
-				@extend %wc_panel_title;
+				@include media( map_get( $breakpoint, 'l' ) ) {
+					clip: rect( 1px, 1px, 1px, 1px );
+					clip-path: inset( 50% );
+					position: absolute !important;
+					width: 1px;
+					height: 1px;
+					line-height: 1px;
+					overflow: hidden;
+
+					& + * {
+						margin-top: 0;
+					}
+
+				}
 			}
 
 		}
-
-
 
 	// Only 1 tab to select
 
@@ -147,36 +153,3 @@
 		}
 
 }
-
-
-
-// Extenders
-
-	%wc_panel_title {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			clip: rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width: 1px;
-			height: 1px;
-			line-height: 1px;
-			overflow: hidden;
-
-			& + * {
-				margin-top: 0;
-			}
-
-		}
-
-	}
-
-
-
-// Imports
-
-	@import '_description';
-
-	@import '_additional-information';
-
-	@import '_reviews';

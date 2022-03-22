@@ -2,4 +2,19 @@
 
 .wp-block-calendar {
 	@extend %widget_calendar;
+
+	table {
+
+		tbody,
+		caption {
+			color: inherit;
+		}
+
+		th,
+		tbody td {
+			border-color: inherit;
+		}
+
+	}
+
 }

@@ -1,19 +1,5 @@
 /* FILE: main/menu/_menu-primary-expander.scss */
 
-:root {
-	--button_toggle_sub_menu_size: 10px;
-	// Touch enabled devices.
-	@media (hover: none) {
-		--button_toggle_sub_menu_size: 24px;
-	}
-}
-
-.has-navigation-mobile {
-	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
-		--button_toggle_sub_menu_size: 32px;
-	}
-}
-
 // A11yMenu JS accessible menu.
 .toggle-sub-menus {
 

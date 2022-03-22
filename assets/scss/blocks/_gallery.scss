@@ -1,25 +1,27 @@
 /* FILE: blocks/_gallery.scss */
 
-.wp-block-gallery:not(.alignfull),
+.wp-block-gallery:not(.alignfull):not(.alignwide),
 .blocks-gallery-grid {
-	max-width: 100%;
+	// Do not apply max-width in block editor!
+	@if not variable-exists( 'selector_editor_wrapper' ) {
+		max-width: 100%;
+	}
 }
 
-.blocks-gallery {
+.blocks-gallery-grid {
+	width: 100%;
+}
 
-	&-grid {
-		width: 100%;
-	}
+.wp-block-gallery {
 
-	&-caption {
+	img,
+	figcaption {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 }
 
-.wp-block-gallery.wp-block-gallery.has-no-item-margin .blocks-gallery-item,
-.wp-block-gallery.wp-block-gallery.has-no-gap .blocks-gallery-item,
-.wp-block-gallery.wp-block-gallery.has-no-gaps .blocks-gallery-item {
-	margin: 0;
+.wp-block-gallery.wp-block-gallery figure.wp-block-image figcaption {
+	@include gallery_caption();
 }

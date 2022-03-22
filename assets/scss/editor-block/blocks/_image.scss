@@ -1,0 +1,31 @@
+/* FILE: editor-block/blocks/_image.scss */
+
+.wp-block[data-align="left"] > .wp-block-image,
+.wp-block[data-align="right"] > .wp-block-image {
+	margin-top: 0;
+	margin-bottom: var(--typography_font_size_base); // Simulating rem unit for block editor.
+}
+
+.wp-block[data-align="left"] > .wp-block-image {
+	margin-right: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-right: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+	}
+
+}
+
+.wp-block[data-align="right"] > .wp-block-image {
+	margin-left: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		margin-left: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+	}
+
+}
+
+.wp-block-image > .components-resizable-box__container {
+	max-width: 100% !important;
+	height: auto !important;
+	vertical-align: middle;
+}

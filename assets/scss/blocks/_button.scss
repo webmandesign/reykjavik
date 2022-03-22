@@ -1,19 +1,27 @@
 /* FILE: blocks/_button.scss */
 
-.wp-block-button__link {
+.wp-block-button {
 
-	&.has-background {
-		$button_font_size_compensation: 1 / $button_font_size;
-		padding: ( ( $golden_major * 1em ) * $button_font_size_compensation ) 2em;
+	&s {
+		align-items: center;
+		gap: .5em;
 	}
 
-	&:not(.has-text-color) {
+	&__link {
 
-		&:hover,
-		&:focus,
-		&:active,
-		&:visited {
-			color: var(--color_accent_text);
+		&.has-background {
+			padding: ( ( $form_field_padding_vertical / $button_font_size ) + ( $golden - 1.25 * $button_font_size ) / $button_font_size / 2 ) 0;
+		}
+
+		&:not(.has-text-color) {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited {
+				color: var(--color_button_text);
+			}
+
 		}
 
 	}
@@ -23,10 +31,12 @@
 .is-style-outline {
 
 	.wp-block-button__link {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
 		border: 1px solid;
 
 		&:not(.has-text-color) {
-			color: var(--color_accent);
+			color: currentColor;
 		}
 
 		&:hover,
@@ -39,21 +49,8 @@
 
 }
 
-	.is-style-outline .wp-block-button__link,
+	.is-style-outline > .wp-block-button__link,
 	.wp-block-button__link.is-style-outline {
+		padding: ( ( $form_field_padding_vertical / $button_font_size ) + ( $golden - 1.25 * $button_font_size ) / $button_font_size / 2 ) 1.5em;
 		color: inherit;
 	}
-
-.wp-block-buttons .wp-block-button {
-	margin: .5em;
-	margin-#{$left}: 0;
-
-	&:last-child {
-		margin-#{$right}: 0;
-	}
-
-	&:first-child:last-child {
-		margin: 0;
-	}
-
-}

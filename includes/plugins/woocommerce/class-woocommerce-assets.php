@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -80,7 +80,7 @@ class Reykjavik_WooCommerce_Assets {
 		 * Enqueue assets
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.1.0
 		 */
 		public static function enqueue() {
 
@@ -96,14 +96,6 @@ class Reykjavik_WooCommerce_Assets {
 						'screen'
 					);
 					wp_style_add_data( 'reykjavik-stylesheet-woocommerce', 'rtl', 'replace' );
-
-					wp_enqueue_style(
-						'reykjavik-stylesheet-custom-woocommerce',
-						get_theme_file_uri( 'assets/css/custom-styles-woocommerce.css' ),
-						array( 'reykjavik-stylesheet-woocommerce' ),
-						esc_attr( trim( REYKJAVIK_THEME_VERSION ) ),
-						'screen'
-					);
 
 				// Scripts
 

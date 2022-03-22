@@ -1,5 +1,19 @@
 /* FILE: main/menu/_menu-primary-mobile.scss */
 
+.main-navigation:not(.toggled) .menu-toggle:not(:hover):not(:focus):not(:active),
+.main-navigation-container {
+
+	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
+		background-color: map_get( $customize_options, 'color_header_background' );
+		color: map_get( $customize_options, 'color_header_text' );
+		border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
+		background-color: var(--color_header_background);
+		color: var(--color_header_text);
+		border-color: var(--color_header_text--a20);
+	}
+
+}
+
 .has-navigation-mobile .main-navigation-container {
 
 	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
@@ -36,7 +50,7 @@
 
 			> ul {
 				max-width: map_get( $breakpoint, 's' ) +px; // No need to stretch the menu, keep it narrow and centered
-				padding: ( pow( $golden, 3 ) +rem ) ( $golden +rem ) ( pow( $golden, 3 ) + $golden +rem );
+				padding: ( _pow( $golden, 3 ) +rem ) ( $golden +rem ) ( _pow( $golden, 3 ) + $golden +rem );
 				margin-left: auto;
 				margin-right: auto;
 
@@ -107,7 +121,7 @@
 		}
 
 		.mobile-search-form + .menu > ul {
-			padding-top: ( pow( $golden, 3 ) +em );
+			padding-top: ( _pow( $golden, 3 ) +em );
 		}
 
 	}
@@ -172,6 +186,7 @@ body:not(.has-navigation-mobile) {
 	}
 
 	.menu-toggle {
+		@extend %colors_button_default;
 
 		// Small screens
 

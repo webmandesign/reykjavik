@@ -1,0 +1,90 @@
+// Base font size and spacing.
+
+	$typography_line_height: $golden !default;
+	$typography_margin_bottom: $golden !default;
+
+// Headings font size, line height and vertical margins.
+
+	$selectors_heading_1: 'h1, .h1' !default;
+	$selectors_heading_2: 'h2, .h2' !default;
+	$selectors_heading_3: 'h3, .h3' !default;
+	$selectors_heading_4: 'h4, .h4' !default;
+	$selectors_heading_5: 'h5, .h5' !default;
+	$selectors_heading_6: 'h6, .h6' !default;
+
+	$selectors_headings: $selectors_heading_1, $selectors_heading_2, $selectors_heading_3, $selectors_heading_4, $selectors_heading_5, $selectors_heading_6;
+
+// Headings
+
+	$setup_headings: (
+
+		// $selector : (
+		//   $size
+		//   $line_height
+		//   $margin_top    [ ( span_4_or_3_lines - $size * $line_height - $margin_bottom ) / $size ]
+		//   $margin_bottom [ $margin_bottom / $size / $line_height ]
+		// )
+
+		// @link http://www.zell-weekeat.com/responsive-typography/
+		//
+		// Em vs Rem section regarding vertical rhythm
+		//
+		// "First, we’re not 100% precise and accurate with our math. We could get more precise (like 10 decimal places), but that would make our code ugly as hell…"
+		// "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
+		// "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
+
+		// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
+
+		$selectors_heading_1 : (
+			2.618,
+			1.191,
+			( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
+			$typography_margin_bottom / 2.618 / 1.191
+		),
+
+		$selectors_heading_2 : (
+			2.058,
+			1.191,
+			( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
+			$typography_margin_bottom / 2.058 / 1.191
+		),
+
+		$selectors_heading_3 : (
+			1.618,
+			1.382,
+			( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
+			$typography_margin_bottom / 1.618 / 1.382
+		),
+
+		$selectors_heading_4 : (
+			1.272,
+			1.382,
+			( 3 * $typography_line_height - 1.272 * 1.382 - $typography_margin_bottom ) / 1.272,
+			$typography_margin_bottom / 1.272 / 1.382
+		),
+
+		$selectors_heading_5 : (
+			1.000,
+			1.618,
+			( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+			$typography_margin_bottom / 1.000 / 1.618
+		),
+
+		$selectors_heading_6 : (
+			1.000,
+			1.618,
+			( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
+			$typography_margin_bottom / 1.000 / 1.618
+		),
+
+	);
+
+// Display font size
+
+	// @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
+	$display_text_size: (
+		1 : 2.618em,
+		2 : 3.329em,
+		3 : 4.236em,
+		4 : 5.387em,
+	);

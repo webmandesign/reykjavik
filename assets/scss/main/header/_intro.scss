@@ -1,5 +1,26 @@
 /* FILE: main/header/_intro.scss */
 
+.intro-container,
+.#{$special_color_class_prefix}intro,
+.#{$special_color_class_prefix}intro > .fl-row-content-wrap,
+.#{$special_color_class_prefix}intro > .fl-col-content {
+	background-color: map_get( $customize_options, 'color_intro_background' );
+	color: map_get( $customize_options, 'color_intro_text' );
+	border-color: rgba( map_get( $customize_options, 'color_intro_text' ), 20 / 100 );
+	background-color: var(--color_intro_background);
+	color: var(--color_intro_text);
+	border-color: var(--color_intro_text--a20);
+
+	h1, h2, h3, h4,
+	.h1, .h2, .h3, .h4,
+	a:not(.button),
+	.accent-color {
+		color: map_get( $customize_options, 'color_intro_headings' );
+		color: var(--color_intro_headings);
+	}
+
+}
+
 .intro {
 
 	// Intro title and widgets container
@@ -55,7 +76,7 @@
 
 		&-inner {
 			@extend %clearfix;
-			@extend %content_width;
+			@extend %layout_content_width;
 			padding: ( $golden_major * $padding_vertical ) 0;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
@@ -212,6 +233,13 @@
 		background-position: 50% 50%;
 		overflow: hidden;
 
+		.wp-custom-header::before {
+			background-color: map_get( $customize_options, 'color_intro_overlay_background' );
+			opacity: map_get( $customize_options, 'color_intro_overlay_opacity' );
+			background-color: var(--color_intro_overlay_background);
+			opacity: var(--color_intro_overlay_opacity);
+		}
+
 		.wp-custom-header::before,
 		.intro-media {
 			position: absolute;
@@ -219,6 +247,10 @@
 			height: 100%;
 			left: 0; // No need for RTL here
 			top: 0;
+		}
+
+		.has-header-video {
+			background-color: #222223;
 		}
 
 		.wp-custom-header {
@@ -232,7 +264,7 @@
 		}
 
 		.intro {
-			@extend %content_width;
+			@extend %layout_content_width;
 			position: relative;
 			z-index: 10;
 
@@ -262,10 +294,10 @@
 			}
 
 			&-title {
-				font-size: pow( 1 + $golden_minor, 3 ) +em;
+				font-size: _pow( 1 + $golden_minor, 3 ) +em;
 
 				@include media( map_get( $breakpoint, 'xl' ) ) {
-					font-size: pow( 1 + $golden_minor, 4 ) +em;
+					font-size: _pow( 1 + $golden_minor, 4 ) +em;
 				}
 
 			}
@@ -276,7 +308,20 @@
 				}
 
 			.page-summary {
-				margin-top: pow( $golden, 2 ) +em;
+				margin-top: _pow( $golden, 2 ) +em;
+			}
+
+		}
+
+		&-has-media .intro {
+			color: map_get( $customize_options, 'color_intro_overlay_text' );
+			color: var(--color_intro_overlay_text);
+
+			h2, h3, h4,
+			.h1, .h2, .h3, .h4,
+			a:not(.button),
+			.accent-color {
+				color: inherit;
 			}
 
 		}

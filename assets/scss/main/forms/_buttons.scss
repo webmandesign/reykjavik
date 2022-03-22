@@ -61,6 +61,12 @@ $button_font_size_compensation: 1 / $button_font_size;
 
 }
 
-#{$elements_button} {
+#{$selectors_button} {
 	@extend %button_base;
+}
+
+#{$selectors_button},
+#{$selectors_button_beaver_builder},
+.main-navigation-container .button > a {
+	@extend %colors_button_default;
 }

@@ -30,7 +30,7 @@
 			}
 
 			&.is-singular:not(.page-template-sidebar) {
-				@extend %fullwidth_sections_layout;
+				@extend %layout_fullwidth_sections_layout;
 			}
 
 		}

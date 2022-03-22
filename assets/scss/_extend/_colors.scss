@@ -1,0 +1,69 @@
+/* FILE: _extend/_colors.scss */
+
+%shaded_background_container {
+	position: relative;
+	z-index: 1; // Trick to keep pseudo element below child elements
+}
+
+%shaded_background_pseudo_element {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: currentColor;
+	border-radius: inherit;
+	opacity: $overlay_from_text_color_opacity;
+	opacity: var(--pseudo_background_opacity);
+	z-index: -1; // Trick to keep pseudo element below child elements.
+}
+
+%shaded_background {
+	@extend %shaded_background_container;
+
+	&::before {
+		@extend %shaded_background_pseudo_element;
+	}
+
+}
+
+%shaded_background_after {
+	@extend %shaded_background_container;
+
+	&::after {
+		@extend %shaded_background_pseudo_element;
+	}
+
+}
+
+%colors_accent {
+	background-color: map_get( $customize_options, 'color_accent' );
+	color: map_get( $customize_options, 'color_accent_text' );
+	background-color: var(--color_accent);
+	color: var(--color_accent_text);
+}
+
+%colors_button_default {
+	@extend %colors_accent;
+
+	&:focus {
+		outline: thin dashed map_get( $customize_options, 'color_accent' );
+		outline: thin dashed var(--color_accent);
+	}
+
+}
+
+%colors_site_content {
+	background-color: map_get( $customize_options, 'color_content_background' );
+	color: map_get( $customize_options, 'color_content_text' );
+	border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
+	background-color: var(--color_content_background);
+	color: var(--color_content_text);
+	border-color: var(--color_content_text--a20);
+}
+
+%colors_site_content_headings {
+	color: map_get( $customize_options, 'color_content_headings' );
+	color: var(--color_content_headings);
+}

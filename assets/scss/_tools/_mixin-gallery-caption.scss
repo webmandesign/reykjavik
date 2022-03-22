@@ -1,0 +1,11 @@
+//
+// Gallery caption styles.
+//
+// @since  2.1.0
+//
+@mixin gallery_caption() {
+	padding: 1em;
+	font-style: italic;
+	background-color: rgba( #000, .8 );
+	color: #fdfcfc;
+}

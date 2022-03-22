@@ -1,0 +1,61 @@
+/* FILE: _custom-properties/_box-model.scss */
+
+:root {
+
+	// White spaces.
+
+		--white_space: #{ $golden_major * $padding_vertical };
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			--white_space: #{ $padding_vertical };
+		}
+		@include media( map_get( $breakpoint, 'xl' ) ) {
+			--white_space: #{ $golden * $padding_vertical };
+		}
+
+		--body_padding:  1rem; // Horizontal padding of HTML body.
+		--block_padding: 1rem; // Horizontal padding of block content (for Cover/Group block, block with background,...).
+		@include media( 500 ) {
+			--body_padding:  30px;
+			--block_padding: 30px;
+		}
+		@include media( 666 ) {
+			--body_padding: 40px;
+		}
+		@include media( map_get( $breakpoint, 'xxl' ) ) {
+			--body_padding:  60px;
+			--block_padding: 40px;
+		}
+
+		--posts_list_gap: 1em;
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			--posts_list_gap: 2em;
+		}
+
+		--letter_spacing: .05em;
+
+		// WP:
+		--wp-admin--admin-bar--height: 32px;
+		@media screen and (max-width: 782px) {
+			--wp-admin--admin-bar--height: 46px;
+		}
+
+	// Widths & heights.
+
+		--layout_width_entry_content: 36em;
+
+		--layout_width_content: @todo;
+		--layout_width_wide: @todo;
+
+		--button_toggle_sub_menu_size: 10px;
+		// Touch enabled devices.
+		@media (hover: none) {
+			--button_toggle_sub_menu_size: 24px;
+		}
+
+}
+
+.has-navigation-mobile {
+	@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
+		--button_toggle_sub_menu_size: 32px;
+	}
+}

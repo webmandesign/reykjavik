@@ -1,0 +1,227 @@
+/* FILE: _extend/_widgets.scss */
+
+%widget_calendar {
+	text-align: inherit;
+
+	caption {
+		font-size: .8em;
+		font-weight: 700;
+		font-style: normal;
+		text-transform: uppercase;
+		letter-spacing: var(--letter_spacing);
+		caption-side: top;
+	}
+
+	table {
+		margin: 0;
+		font-family: inherit;
+		text-align: center;
+		border-collapse: separate;
+		border-width: 0;
+
+		caption {
+			color: inherit;
+		}
+
+	}
+
+	tr {
+
+		th,
+		td {
+			width: auto;
+			height: 2em;
+			padding: 0;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+	}
+
+	thead {
+
+		th {
+			font-size: .8em;
+			font-weight: 700;
+			background: var(--color_content_headings);
+			color: var(--color_content_background);
+			border-width: 0;
+		}
+
+	}
+
+	tbody {
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			line-height: 2;
+			transition: background .3s;
+
+			&:focus {
+				outline-color: var(--color_accent);
+			}
+
+		}
+
+	}
+
+	tfoot {
+
+		a {
+			color: inherit;
+		}
+
+	}
+
+	.pad {
+		visibility: hidden;
+	}
+
+	.wp-calendar-nav {
+		margin-top: .5em;
+		font-size: .8em;
+		font-weight: 700;
+		text-align: inherit;
+		text-transform: uppercase;
+		letter-spacing: var(--letter_spacing);
+
+		a {
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+
+		}
+
+	}
+
+}
+
+%widget_list_items {
+	margin: 0;
+	list-style: none;
+
+	ul {
+		margin-#{$left}: .5em;
+		margin-top: .25em;
+		margin-bottom: -.25em;
+		list-style: inherit; // This is required in case the parent was set with a class (such as categories block).
+	}
+
+	li {
+		padding: .25em 0;
+
+		&::before {
+			content: '\2014'; // &mdash;
+			margin-#{$right}: .25em;
+			speak: none;
+		}
+
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+
+	}
+
+	// For WooCommerce:
+	.chosen {
+		font-weight: 700;
+	}
+
+}
+
+%widget_list_items_menu {
+	font-size: .8rem;
+	overflow-x: hidden;
+
+	li {
+		position: relative;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+
+		&::before {
+			display: none;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 200%;
+			#{$right}: 0;
+			top: 0;
+			border-bottom: 1px solid;
+			border-color: inherit;
+		}
+
+	}
+
+	ul {
+		margin-top: .5rem;
+		margin-bottom: -.5rem;
+		overflow-x: visible;
+	}
+
+	a {
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: var(--letter_spacing);
+	}
+
+}
+
+// For WooCommerce:
+%widget_list_products {
+	margin: 0;
+	list-style: none;
+
+	li {
+		overflow: hidden;
+
+		&:not(:last-child) {
+			padding-bottom: .5em;
+			margin-bottom: .5em;
+			border-bottom-width: 1px;
+			border-bottom-style: dotted;
+		}
+
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+
+	}
+
+	img {
+		float: $right;
+		width: 3em;
+		margin-#{$left}: 1em;
+	}
+
+	.product-title {
+		display: block;
+		font-weight: 700;
+	}
+
+	ins {
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+	}
+
+}

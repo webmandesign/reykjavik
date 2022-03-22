@@ -1,0 +1,15 @@
+$mobile_menu_breakpoint: 'l';
+
+$overlay_from_text_color_opacity: .07;
+
+$small_animation_speed: .3; // Seconds
+$large_animation_speed: .5; // Seconds
+
+$column_box_shadows: (
+	'small':  1rem,
+	'medium': 2rem,
+	'large':  3rem,
+);
+$column_box_shadows_opacity: .2;
+
+$special_color_class_prefix: 'set-colors-';

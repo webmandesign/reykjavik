@@ -21,12 +21,18 @@ html {
 *,
 *::before,
 *::after {
+	border-color: inherit;
 	box-sizing: inherit;
 }
 
 ::placeholder {
 	line-height: normal;
 }
+
+	::placeholder,
+	:disabled::placeholder {
+		color: inherit !important;
+	}
 
 // Accessibility improvement, adapted from CSS-Tricks article code.
 // @link  https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/

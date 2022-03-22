@@ -1,30 +1,32 @@
 /* FILE: blocks/_separator.scss */
 
 .wp-block-separator {
+	border-width: 0;
 
-	&.is-style-wide {
-		width: 100%;
-		max-width: none;
-	}
-
-	&.is-style-dots::before {
-		content: ' \2022 \2022 \2022'; // &bull;
-		speak: none;
-		padding-#{$left}: $golden_major +em;
-		font-size: 2em;
-		letter-spacing: $golden_major +em;
-		color: var(--color_accent);
+	@if variable-exists( 'selector_editor_wrapper' ) {
+		&:not(.is-style-wide):not(.is-style-dots) {
+			width: 100%;
+		}
 	}
 
 	&.has-background {
 		padding: 0;
 	}
 
-	&.has-text-color {
-		background: currentColor;
+	&.is-style-dots {
+		--hr_width: calc( #{ $golden } * 4em );
+		--hr_height: #{ $golden +em };
+		text-align: inherit;
+		overflow: visible;
 
-		&.is-style-dots::before {
-			color: currentColor;
+		&::before {
+			content: '●●●';
+			padding: 0;
+			font-size: $golden +em;
+			letter-spacing: $golden_major +em;
+			white-space: nowrap;
+			background: none;
+			speak: none;
 		}
 
 	}

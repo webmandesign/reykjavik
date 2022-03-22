@@ -1,0 +1,39 @@
+/* FILE: woocommerce/sidebar/_widget-layered-nav.scss */
+
+.widget_layered_nav {
+
+	li {
+
+		&::before {
+			// Slightly modified styles of "Styled radio buttons and checkboxes"
+			@extend %genericon;
+			@extend %icon_vertical_align_middle;
+			content: '';
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			margin-#{$right}: $golden_major +em; // {{RTL}}
+			line-height: 1;
+			font-size: 1rem;
+			background-color: rgba( #000, .05 );
+			box-shadow: inset 0 0 0 2px;
+			border-width: 0;
+			border-radius: 1em;
+			vertical-align: middle;
+			transition: transform ( $small_animation_speed +s ),
+			            background ( $small_animation_speed +s );
+		}
+
+	}
+
+	.chosen {
+
+		&::before {
+			@extend %colors_accent;
+			content: '\f418';
+			box-shadow: none;
+		}
+
+	}
+
+}

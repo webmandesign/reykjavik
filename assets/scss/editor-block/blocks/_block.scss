@@ -1,13 +1,13 @@
 /* FILE: editor-block/blocks/_block.scss */
 
 .wp-block {
-	max-width: $max_width_entry_content;
-	margin-bottom: calc( 1.618 * var(--typography_size_html) );
+	max-width: $max_width_content;
+	margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
 	z-index: 1; // In case of negative margin overlay.
 
-	&:not([style*="margin-bottom"]):not(.has-no-margin):not(.has-no-margin-bottom):not(.has-no-margin-vertical):not(.m-0):not(.mb-0) {
+	&:not([style*="margin-bottom"]):not(.has-no-margin):not(.has-no-margin-bottom):not(.has-no-margin-vertical):not(.margin-none):not(.margin-bottom-none):not(.margin-vertical-none):not(.m0):not(.mb0):not(.m-0):not(.mb-0) {
 		+ .block-list-appender {
-			margin-top: calc( 1.618 * var(--typography_size_html) * -1 );
+			margin-top: calc( var(--typography_font_size_base) * #{ $golden } * -1 );
 		}
 	}
 
@@ -15,6 +15,11 @@
 		&.has-no-margin,
 		&.has-no-margin-bottom,
 		&.has-no-margin-vertical,
+		&.margin-none,
+		&.margin-bottom-none,
+		&.margin-vertical-none,
+		&.m0,
+		&.mb0,
 		&.m-0,
 		&.mb-0 {
 			> .block-list-appender.block-list-appender.block-list-appender.block-list-appender.block-list-appender:last-child {
@@ -34,69 +39,85 @@
 
 		.block-editor-block-list__layout & > .is-block-content,
 		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
-			margin-right: $alignment_margin;
+			margin-right: 1em;
 			margin-bottom: 1em;
 		}
 
+	}
+
+	&[data-align="center"] {
+		clear: both;
+		text-align: center;
 	}
 
 	&[data-align="right"] {
 
 		.block-editor-block-list__layout & > .is-block-content,
 		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
-			margin-left: $alignment_margin;
+			margin-left: 1em;
 			margin-bottom: 1em;
 		}
 
 	}
 
-	&[data-align="left"],
-	&[data-align="right"] {
+	&[data-align="wide"],
+	&[data-align="full"] {
+		max-width: none;
+		margin: 0;
 
-		.block-editor-block-list__layout & > .is-block-content,
-		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
+		&:not(:last-child) > * {
+			margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } ); // Simulating rem unit for block editor.
+		}
 
-			.block-editor-block-list__block {
-				padding-left: 0;
-				padding-right: 0;
+		&:last-child > * {
+			margin-bottom: 0;
+		}
 
-				&-edit {
-					float: none;
-					width: auto;
-					max-width: none;
-					margin-left: 0;
-					margin-right: 0;
-					margin-bottom: 0;
-				}
-
-			}
-
+		[data-align="wide"] {
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 	}
 
 	&[data-align="wide"] {
-		max-width: $max_width_content;
-	}
+		// Matching .alignwide-wrap styles, basically.
+		padding-left: var(--body_padding);
+		padding-right: var(--body_padding);
+		margin-left: -10px;
+		margin-right: -10px;
 
-	// @see global/modifiers/_box-model.scss
-	&[data-align="wide"],
-	&[data-align="full"] {
+		.wp-block-widget-area & {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-		> .has-no-margin,
-		> .has-no-margin-vertical,
-		> .has-no-margin-bottom {
-			// Simulate no margin between wide/full aligned blocks
-			// with specific margin removal modifier classes applied.
-			margin-bottom: calc( -1.618 * var(--typography_size_html) ) important( 'modifier_margin' );
+		> * {
+			max-width: $max_width_wide;
+			// Unfortunately, it's easier to use !important here to override WP styles for image block, for example.
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		[data-align="wide"] {
+			padding-left: 0;
+			padding-right: 0;
 		}
 
 	}
 
 }
 
+#{ $selector_editor_wrapper } .has-background.has-background .wp-block[data-align="full"] {
+	width: auto;
+	margin-left: calc( -1 * var(--block_padding) );
+	margin-right: calc( -1 * var(--block_padding) );
+}
+
 #{ $selector_editor_wrapper } figure.wp-block {
-	margin-bottom: calc( 1.618 * var(--typography_size_html) );
+	margin-bottom: calc( var(--typography_font_size_base) * #{ $golden } );
 }
 
 .has-background:not([style*="padding-bottom"]):not(.has-no-padding):not(.has-no-padding-bottom):not(.has-no-padding-vertical):not(.p-0):not(.pb-0) {
@@ -107,3 +128,31 @@
 		}
 	}
 }
+
+// Block previews in patterns and styles.
+
+	.block-editor-block-preview__container .editor-styles-wrapper,
+	body.editor-styles-wrapper {
+		background-image: none;
+	}
+
+	.block-editor-block-preview__content .has-parallax {
+		background-attachment: scroll;
+	}
+
+	.block-editor-block-styles__item-preview [class*="-min-height"] {
+		min-height: 100px !important;
+	}
+
+	// WP 5.9 fix for continual height change in block pattern preview.
+	body.editor-styles-wrapper {
+
+		[style*="min-height: 100vh"] {
+			min-height: calc( 100 * var(--min-height-multiplier-vh, 9px) ) !important;
+		}
+
+		[style*="min-height: 62vh"] {
+			min-height: calc( 62 * var(--min-height-multiplier-vh, 9px) ) !important;
+		}
+
+	}
