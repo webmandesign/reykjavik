@@ -28,6 +28,7 @@ This is a major theme update which may cause issues on certain websites. Double 
 - JavaScript code
 - "Back to top" link functionality
 - "[year]" shortcode functionality
+- Intro image display on blog page
 
 ### File updates
 	changelog.md
@@ -40,6 +41,8 @@ This is a major theme update which may cause issues on certain websites. Double 
 	assets/js/scripts-woocommerce.js
 	assets/js/vendors/a11y-menu/*.*
 	assets/scss/*.*
+	includes/custom-header/class-intro.php
+	includes/customize/class-customize.php
 	includes/frontend/class-assets.php
 	includes/frontend/class-content.php
 	includes/frontend/class-footer.php
@@ -56,6 +59,7 @@ This is a major theme update which may cause issues on certain websites. Double 
 	includes/plugins/woocommerce/class-woocommerce-customize.php
 	includes/plugins/woocommerce/class-woocommerce-helpers.php
 	includes/setup/class-setup.php
+	includes/starter-content/class-starter-content.php
 	includes/tgmpa/class-tgmpa-plugins.php
 	languages/reykjavik.pot
 	library/includes/classes/class-css-variables.php

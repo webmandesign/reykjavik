@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2022-03-23 00:23+0100\n"
+"POT-Creation-Date: 2022-03-23 01:11+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: includes/custom-header/class-intro.php:153
 msgctxt "Header image description."
-msgid "Mountains drawing"
+msgid "Sailing yacht"
 msgstr ""
 
 #: includes/customize/class-customize.php:203
@@ -1747,7 +1747,6 @@ msgid "Your message"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:460
-msgctxt "reykjavik"
 msgid ""
 "This is only a dummy form placeholder. It does not work. Use a plugin to "
 "create forms for your website."

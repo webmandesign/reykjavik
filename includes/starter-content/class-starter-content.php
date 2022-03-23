@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.1
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -146,7 +146,7 @@ class Reykjavik_Starter_Content {
 		 * Pages.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.1
+		 * @version  2.1.0
 		 */
 		public static function pages() {
 
@@ -457,7 +457,7 @@ class Reykjavik_Starter_Content {
 							<p style="width: 48%; float: left;"><input id="field1" class="fullwidth" style="width: 100%;" type="text" placeholder="' . esc_attr_x( 'Your name', 'Theme starter content', 'reykjavik' ) . '"/></p>
 							<p style="width: 48%; float: right;"><input id="field2" class="fullwidth" style="width: 100%;" type="email" placeholder="' . esc_attr_x( 'Your email', 'Theme starter content', 'reykjavik' ) . '"/></p>
 							<p style="clear: both;"><textarea id="field3" class="fullwidth" style="width: 100%;" rows="2" placeholder="' . esc_attr_x( 'Your message', 'Theme starter content', 'reykjavik' ) . '"></textarea></p>
-							<p><small>' . esc_html_x( 'This is only a dummy form placeholder. It does not work. Use a plugin to create forms for your website.', 'reykjavik' ) . '</small></p>
+							<p><small>' . esc_html__( 'This is only a dummy form placeholder. It does not work. Use a plugin to create forms for your website.', 'reykjavik' ) . '</small></p>
 							<p><input type="submit" value="' . esc_attr_x( 'This form does not work', 'Theme starter content', 'reykjavik' ) . '"/></p>
 							</form>
 							<!-- /wp:html --></div>
@@ -579,7 +579,7 @@ class Reykjavik_Starter_Content {
 		 * Attachments.
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.1
+		 * @version  2.1.0
 		 */
 		public static function attachments() {
 
@@ -588,7 +588,7 @@ class Reykjavik_Starter_Content {
 				self::$content['attachments'] = array(
 
 					'image-header' => array(
-						'file' => 'assets/images/header/pixabay-colorado-1436681.png',
+						'file' => 'assets/images/header/rawpixel-id-3282586.jpg',
 					),
 
 				);

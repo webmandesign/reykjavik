@@ -11,7 +11,7 @@
 
 ?>
 
-<nav class="menu-skip-links" aria-label="<?php esc_attr_e( 'Skip links', 'icelander' ); ?>">
+<nav class="menu-skip-links" aria-label="<?php esc_attr_e( 'Skip links', 'reykjavik' ); ?>">
 	<ul>
 		<?php
 

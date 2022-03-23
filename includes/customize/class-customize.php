@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -182,7 +182,7 @@ class Reykjavik_Customize {
 		 * Set theme options array
 		 *
 		 * @since    1.0.0
-		 * @version  2.0.0
+		 * @version  2.1.0
 		 *
 		 * @param  array $options
 		 */
@@ -724,7 +724,7 @@ class Reykjavik_Customize {
 									'type'       => 'image',
 									'id'         => 'footer_image',
 									'label'      => esc_html__( 'Background image', 'reykjavik' ),
-									'default'    => trailingslashit( get_template_directory_uri() ) . 'assets/images/footer/pixabay-colorado-1436681.png',
+									'default'    => trailingslashit( get_template_directory_uri() ) . 'assets/images/footer/rawpixel-id-3282586.jpg',
 									'css_var'    => 'Reykjavik_Library_Sanitize::css_image_url',
 									'preview_js' => array(
 										'custom' => "$( '.site-footer' ).addClass( 'is-customize-preview' );",
@@ -811,7 +811,7 @@ class Reykjavik_Customize {
 										'type'              => 'range',
 										'id'                => 'footer_image_opacity',
 										'label'             => esc_html__( 'Background image opacity', 'reykjavik' ),
-										'default'           => .15,
+										'default'           => .1,
 										'min'               => .05,
 										'max'               => 1,
 										'step'              => .05,

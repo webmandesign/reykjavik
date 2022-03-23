@@ -44,6 +44,6 @@ Please see `changelog.md` file.
 * Genericons Neue © Automattic, GPL v2 or later
 * social-icons.svg © Based on Font Awesome icons font by Dave Gandy, SIL Open Font License 1.1
 * reykjavik-logo.svg © WebMan Design, GPL v3
-* Header and footer image © https://www.pixabay.com, CC0
+* Header and footer image © https://www.rawpixel.com/image/3282586/free-photo-image-adventure-vessel-sailing, CC0
 * Starter content images © WebMan Design, GPL v3, based on https://openclipart.org images, CC0
 * screenshot.jpg images © https://openclipart.org, CC0

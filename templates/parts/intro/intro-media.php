@@ -28,10 +28,16 @@ if (
 <div id="intro-media" class="intro-media">
 	<?php
 
-	if ( is_singular() && has_post_thumbnail( get_the_ID() ) && empty( get_post_meta( get_the_ID(), 'intro_image', true ) ) ) {
+	if (
+		is_singular()
+		&& has_post_thumbnail( get_the_ID() )
+		&& empty( get_post_meta( get_the_ID(), 'intro_image', true ) )
+	) {
+
 		echo '<div id="wp-custom-header" class="wp-custom-header">';
 		the_post_thumbnail( 'reykjavik-intro' );
 		echo '</div>';
+
 	} else {
 		the_custom_header_markup();
 	}

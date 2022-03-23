@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.1.0
  *
  * Contents:
  *
@@ -115,7 +115,7 @@ class Reykjavik_Intro {
 		 * @link  https://make.wordpress.org/core/2016/11/26/video-headers-in-4-7/
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.1.0
 		 */
 		public static function setup() {
 
@@ -139,7 +139,7 @@ class Reykjavik_Intro {
 					 * We can not use `random-default` as in that case there is no "Hide image" button displayed in customizer.
 					 * We simply have to set up a `default-image`, unfortunately...
 					 */
-					'default-image'  => '%s/assets/images/header/pixabay-colorado-1436681.png',
+					'default-image'  => '%s/assets/images/header/rawpixel-id-3282586.jpg',
 					'random-default' => false,
 				) ) );
 
@@ -147,10 +147,10 @@ class Reykjavik_Intro {
 
 					register_default_headers( array(
 
-						'pixabay-colorado-1436681' => array(
-							'url'           => '%s/assets/images/header/pixabay-colorado-1436681.png',
-							'thumbnail_url' => '%s/assets/images/header/thumbnail/pixabay-colorado-1436681.png',
-							'description'   => esc_html_x( 'Mountains drawing', 'Header image description.', 'reykjavik' ),
+						'rawpixel-id-3282586' => array(
+							'url'           => '%s/assets/images/header/rawpixel-id-3282586.jpg',
+							'thumbnail_url' => '%s/assets/images/header/thumbnail/rawpixel-id-3282586.jpg',
+							'description'   => esc_html_x( 'Sailing yacht', 'Header image description.', 'reykjavik' ),
 						),
 
 					) );
@@ -303,7 +303,7 @@ class Reykjavik_Intro {
 		 * Header image URL
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.1.0
 		 *
 		 * @param  string $url  Image URL or other custom header value.
 		 */
@@ -339,12 +339,12 @@ class Reykjavik_Intro {
 						$url = (string) $intro_image;
 					}
 
-				} elseif ( has_post_thumbnail( $post_id ) && ! ( is_home() && is_front_page() ) ) {
+				} elseif ( has_post_thumbnail( $post_id ) ) {
 
 					$url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
 					$url = $url[0];
 
-				} elseif ( ! is_front_page() ) {
+				} elseif ( ! is_front_page() && ! is_home() ) {
 
 					/**
 					 * Remove custom header on single post/page if:
