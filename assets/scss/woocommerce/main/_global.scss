@@ -29,11 +29,11 @@
 .woocommerce-products-header {
 
 	.page-title {
-		margin-bottom: _pow( $golden, 2 ) +rem;
+		margin-bottom: _pow( $ratio, 2 ) +rem;
 	}
 
 	.has-intro & .page-title {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 	}
 
 }
@@ -41,9 +41,9 @@
 .title .edit {
 	@extend %colors_button_default;
 	display: inline-block;
-	padding: ( $golden_minor +em ) 1em;
+	padding: ( $ratio_min +em ) 1em;
 	margin-bottom: 1em;
-	font-size: 1rem - $golden_minor / 2;
+	font-size: 1rem - $ratio_min / 2;
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -59,7 +59,7 @@
 		@extend %genericon;
 		@extend %icon_vertical_align_middle;
 		content: '\f411';
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 	}
 
 }
@@ -76,7 +76,7 @@
 
 		&::after {
 			@include rtl_property( content, '\00bb', '\00ab' ); // {{RTL}}
-			margin-#{$left}: $golden_major +em; // {{RTL}}
+			margin-#{$left}: $ratio_maj +em; // {{RTL}}
 		}
 
 	}
@@ -85,7 +85,7 @@
 
 		&::before {
 			@include rtl_property( content, '\00ab', '\00bb' ); // {{RTL}}
-			margin-#{$right}: $golden_major +em; // {{RTL}}
+			margin-#{$right}: $ratio_maj +em; // {{RTL}}
 		}
 
 	}

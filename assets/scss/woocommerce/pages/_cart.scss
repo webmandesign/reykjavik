@@ -13,7 +13,7 @@
 			}
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				width: percentage( $golden_major );
+				width: percentage( $ratio_maj );
 			}
 
 		}
@@ -27,8 +27,8 @@
 		td {
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $golden +rem;
-				padding-bottom: $golden +rem;
+				padding-top: $ratio +rem;
+				padding-bottom: $ratio +rem;
 			}
 
 			&::after {
@@ -47,7 +47,7 @@
 		}
 
 		.actions {
-			padding: ( _pow( 1 + $golden_minor, 4 ) +em ) 0 0;
+			padding: ( _pow( 1 + $ratio_min, 4 ) +em ) 0 0;
 			border-bottom-width: 0;
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
@@ -58,7 +58,7 @@
 
 			.button {
 				width: 100%;
-				margin-top: $golden +em;
+				margin-top: $ratio +em;
 				box-sizing: border-box; // Reset required for when displayed in shop table
 
 				@include media( map_get( $breakpoint, 'l' ) ) {
@@ -96,7 +96,7 @@
 
 .cart-collaterals {
 	padding: 8%;
-	margin-top: _pow( $golden, 2 ) +em;
+	margin-top: _pow( $ratio, 2 ) +em;
 	border-width: 2px;
 	border-style: dashed;
 
@@ -108,7 +108,7 @@
 	}
 
 	@include media( map_get( $breakpoint, 'xl' ) ) {
-		width: percentage( $golden_minor - .04 ); // Same as sidebar plus 4% due to padding with border around.
+		width: percentage( $ratio_min - .04 ); // Same as sidebar plus 4% due to padding with border around.
 	}
 
 }
@@ -121,7 +121,7 @@
 
 	.checkout-button {
 		width: 100%;
-		padding: ( $golden_minor + 1em ) ( $golden_minor +em );
+		padding: ( $ratio_min + 1em ) ( $ratio_min +em );
 		font-weight: 700;
 	}
 
@@ -138,9 +138,9 @@
 			@extend %icon_vertical_align_middle;
 			@include rtl_property( content, '\21A9', '\21AA' ); // {{RTL}}
 			display: inline-block;
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
-			line-height: $golden_major;
-			font-size: 1em + $golden_minor;
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
+			line-height: $ratio_maj;
+			font-size: 1em + $ratio_min;
 		}
 
 	}
@@ -151,13 +151,13 @@
 
 	td {
 		line-height: 1;
-		font-size: $golden_minor / 2 + 1em;
+		font-size: $ratio_min / 2 + 1em;
 	}
 
 	small {
 		display: block;
-		margin-top: $golden_major +em;
-		font-size: 1rem - $golden_minor / 2;
+		margin-top: $ratio_maj +em;
+		font-size: 1rem - $ratio_min / 2;
 		font-weight: 400;
 	}
 
@@ -166,7 +166,7 @@
 .shipping {
 
 	td {
-		font-size: 1em - $golden_minor / 4;
+		font-size: 1em - $ratio_min / 4;
 
 		&:last-child {
 			text-align: $left; // {{RTL}}
@@ -192,7 +192,7 @@
 
 		&-button {
 			display: block;
-			padding: ( $golden_major +em ) ( $golden +em );
+			padding: ( $ratio_maj +em ) ( $ratio +em );
 			text-align: center;
 			text-decoration: none;
 		}
@@ -210,7 +210,7 @@
 
 		label {
 			display: block;
-			padding: ( $golden_minor +em ) 0;
+			padding: ( $ratio_min +em ) 0;
 		}
 
 	}
@@ -267,13 +267,13 @@
 	font-weight: 700;
 
 	&-container {
-		padding: _pow( $golden, 2 ) +em;
+		padding: _pow( $ratio, 2 ) +em;
 		text-align: center;
 		border-width: 2px;
 		border-style: dashed;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: percentage( $golden_major );
+			width: percentage( $ratio_maj );
 			margin: 0 auto;
 		}
 

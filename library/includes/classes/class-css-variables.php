@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.4.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -66,7 +66,7 @@ class Reykjavik_Library_CSS_Variables {
 		 * @uses  `wmhook_reykjavik_theme_options` global hook
 		 *
 		 * @since    1.4.0
-		 * @version  1.4.1
+		 * @version  2.2.0
 		 */
 		public static function get_variables_array() {
 
@@ -86,7 +86,8 @@ class Reykjavik_Library_CSS_Variables {
 					! empty( $css_vars )
 					&& ! $is_customize_preview
 				) {
-					return (array) $css_vars;
+					// The filter is documented below.
+					return (array) apply_filters( 'wmhook_reykjavik_library_css_variables_get_variables_array', $css_vars );
 				}
 
 
@@ -116,11 +117,12 @@ class Reykjavik_Library_CSS_Variables {
 						isset( $option['sanitize_callback'] )
 						&& is_callable( $option['sanitize_callback'] )
 					) {
-						$mod = call_user_func( $option['sanitize_callback'], $mod );
+						$mod = call_user_func( $option['sanitize_callback'], $mod, $option );
 					}
 					if (
 						! empty( $mod )
 						|| 'checkbox' === $option['type']
+						|| ( 'color' === $option['type'] && '' === $mod )
 					) {
 						if ( 'color' === $option['type'] ) {
 							$value_check = maybe_hash_hex_color( $value );
@@ -136,6 +138,15 @@ class Reykjavik_Library_CSS_Variables {
 					} else {
 						// No need to output CSS var if it was not changed in customizer.
 						continue;
+					}
+
+					// Empty color value fix.
+					if (
+						'color' === $option['type']
+						&& '' === $value
+					) {
+						$value             = 'transparent';
+						$option['css_var'] = '[[value]]';
 					}
 
 					// Array value to string. Just in case.
@@ -171,7 +182,7 @@ class Reykjavik_Library_CSS_Variables {
 					$css_vars = apply_filters( 'wmhook_reykjavik_library_css_variables_get_variables_array_per_option', $css_vars, $option, $value );
 				}
 
-				// Cache the results.
+				// Cache the results in transient.
 				if ( ! $is_customize_preview ) {
 					set_transient( self::$cache_key, (array) $css_vars );
 				}

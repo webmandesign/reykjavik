@@ -7,12 +7,12 @@
 
 .site-branding {
 	float: $left; // {{RTL}}
-	margin-#{$right}: $golden +em; // {{RTL}}
+	margin-#{$right}: $ratio +em; // {{RTL}}
 	line-height: inherit;
 	color: inherit;
 
 	@include media( map_get( $breakpoint, 'xl' ) ) {
-		margin-#{$right}: _pow( $golden, 2 ) +em; // {{RTL}}
+		margin-#{$right}: _pow( $ratio, 2 ) +em; // {{RTL}}
 	}
 
 	a {
@@ -29,7 +29,7 @@
 		vertical-align: middle;
 
 		.site-title-hidden & {
-			@extend %screen_reader_hiding;
+			@extend %screen_reader--hide;
 		}
 
 	}

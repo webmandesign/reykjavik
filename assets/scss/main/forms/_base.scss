@@ -7,14 +7,14 @@
 
 label {
 	display: inline-block;
-	padding-bottom: $golden_minor / 2 +em;
+	padding-bottom: $ratio_min / 2 +em;
 
 	&[for] {
 		cursor: pointer;
 	}
 
 	+ [type="checkbox"] {
-		margin-#{$left}: $golden_minor +em; // {{RTL}}
+		margin-#{$left}: $ratio_min +em; // {{RTL}}
 	}
 
 }
@@ -39,7 +39,7 @@ textarea {
 	resize: vertical;
 
 	&:invalid {
-		max-height: $golden + 2 * $golden_major + em;
+		max-height: $ratio + 2 * $ratio_maj + em;
 		overflow-y: hidden;
 	}
 
@@ -50,8 +50,8 @@ textarea {
 	position: relative;
 	width: 1em;
 	height: 1em;
-	bottom: $golden_minor / 2 * -1em;
-	margin-#{$right}: $golden_minor +em; // {{RTL}}
+	bottom: $ratio_min / 2 * -1em;
+	margin-#{$right}: $ratio_min +em; // {{RTL}}
 	vertical-align: baseline;
 }
 
@@ -63,7 +63,7 @@ select {
 	@extend %break_words_disable;
 	display: inline-block;
 	max-width: 100%;
-	padding: calc( #{ $golden_major +em } - 2px ); // Compensating for border width
+	padding: calc( #{ $ratio_maj +em } - 2px ); // Compensating for border width
 	padding-#{$right}: calc( 1em + #{$selector_svg_size} );
 	appearance: none;
 	background: none;

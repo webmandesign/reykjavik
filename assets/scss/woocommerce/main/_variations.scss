@@ -2,9 +2,9 @@
 
 .variation {
 	@extend %colors_site_content_headings;
-	margin: 0 0 ( $golden_minor +em );
+	margin: 0 0 ( $ratio_min +em );
 	text-transform: uppercase;
-	font-size: 1em - $golden_minor / 2;
+	font-size: 1em - $ratio_min / 2;
 	overflow: hidden;
 
 	dt,
@@ -19,7 +19,7 @@
 
 	dd {
 		float: $left; // {{RTL}}
-		margin-#{$left}: $golden_minor +em; // {{RTL}}
+		margin-#{$left}: $ratio_min +em; // {{RTL}}
 	}
 
 }
@@ -36,7 +36,7 @@
 		select {
 			float: $right; // {{RTL}}
 			width: auto;
-			padding-#{$right}: $golden +em; // {{RTL}}
+			padding-#{$right}: $ratio +em; // {{RTL}}
 			padding-top: 0;
 			padding-bottom: 0;
 			background-color: transparent;
@@ -50,7 +50,7 @@
 
 		&_button {
 			@extend %clearfix;
-			margin-top: $golden +em;
+			margin-top: $ratio +em;
 
 			.button:first-child {
 				width: 100%;
@@ -70,10 +70,10 @@
 
 	.reset_variations {
 		float: $right; // {{RTL}}
-		margin-top: $golden_minor +em;
-		margin-#{$right}: $golden_major +em; // {{RTL}}
+		margin-top: $ratio_min +em;
+		margin-#{$right}: $ratio_maj +em; // {{RTL}}
 		text-decoration: none;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 
 		@include haf() {
 			text-decoration: underline;
@@ -83,7 +83,7 @@
 			@extend %genericon;
 			@extend %icon_vertical_align_middle;
 			content: '\f420';
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 		}
 
 	}

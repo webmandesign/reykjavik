@@ -4,13 +4,13 @@
 
 	.entry-author {
 		@extend %shaded_background;
-		margin-top: _pow( 1 + $golden_minor, 4 ) +em;
+		margin-top: _pow( 1 + $ratio_min, 4 ) +em;
 		padding: 8%;
 		border-width: 1px;
 		border-style: solid;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: _pow( 1 + $golden_minor, 4 ) +em;
+			padding: _pow( 1 + $ratio_min, 4 ) +em;
 		}
 
 		&::before {
@@ -26,7 +26,7 @@
 				@include media( map_get( $breakpoint, 'm' ) ) {
 					float: $left; // {{RTL}}
 					width: 80px;
-					margin-#{$right}: $golden +em;
+					margin-#{$right}: $ratio +em;
 				}
 
 			}
@@ -34,7 +34,7 @@
 			&-title {
 				@extend %font_size_small;
 				@extend %font_weight_400;
-				margin-bottom: $golden +em;
+				margin-bottom: $ratio +em;
 				text-transform: uppercase;
 			}
 
@@ -42,7 +42,7 @@
 				@extend %font_size_golden_rem;
 				@extend %font_weight_700;
 				display: block;
-				margin-top: $golden_minor / 2 +em;
+				margin-top: $ratio_min / 2 +em;
 				text-transform: none;
 			}
 

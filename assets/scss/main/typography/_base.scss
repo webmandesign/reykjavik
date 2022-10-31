@@ -11,7 +11,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+	font-family: var(--typography_font_monospace);
 	font-size: 1em;
 	font-style: normal;
 	font-weight: 400;
@@ -30,7 +30,7 @@ p,
 address {
 	@extend %break_words;
 	padding: 0;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 }
 
 %font_smoothing {

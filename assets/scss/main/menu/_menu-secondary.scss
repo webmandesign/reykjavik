@@ -1,7 +1,7 @@
 /* FILE: main/menu/_menu-secondary.scss */
 
 .secondary-navigation {
-	margin-#{$right}: $golden +em; // {{RTL}}
+	margin-#{$right}: $ratio +em; // {{RTL}}
 	margin-top: 1em;
 	margin-bottom: 1em;
 
@@ -26,7 +26,7 @@
 			margin: 0;
 
 			&:not(:first-child) {
-				margin-#{$left}: $golden_major +rem; // {{RTL}}
+				margin-#{$left}: $ratio_maj +rem; // {{RTL}}
 			}
 
 		}
@@ -37,7 +37,7 @@
 			display: block;
 			position: relative;
 			max-width: 100%; // Fix for FF and IE
-			padding: $golden_minor +rem;
+			padding: $ratio_min +rem;
 			text-decoration: none;
 			border: 0 solid transparent;
 			border-top-width: 2px;
@@ -72,7 +72,7 @@
 	// Icon in menu item (has to be included with HTML)
 
 		.icon {
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 		}
 
 }

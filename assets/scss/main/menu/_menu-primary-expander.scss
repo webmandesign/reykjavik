@@ -9,11 +9,11 @@
 		justify-content: space-between;
 
 		> a {
-			padding-#{$right}: $golden_minor +em;
+			padding-#{$right}: $ratio_min +em;
 		}
 
 		&.menu-item-has-description > a {
-			padding-#{$right}: $golden_major +em;
+			padding-#{$right}: $ratio_maj +em;
 		}
 
 	}

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -32,7 +32,7 @@ class Reykjavik_Content {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  2.1.0
+		 * @version  2.2.0
 		 */
 		private function __construct() {
 
@@ -43,6 +43,8 @@ class Reykjavik_Content {
 				// Hooks
 
 					// Actions
+
+						add_action( 'enqueue_block_editor_assets', __CLASS__ . '::enqueue_editor_mods' );
 
 						add_action( 'tha_content_top', __CLASS__ . '::open_container', 10 );
 
@@ -61,6 +63,11 @@ class Reykjavik_Content {
 						add_action( 'tha_content_bottom', __CLASS__ . '::close_container', 100 );
 
 					// Filters
+
+						// WP6.0+ fix:
+						remove_filter( 'render_block', 'wp_render_layout_support_flag' );
+
+						add_filter( 'register_post_type_args', __CLASS__ . '::register_reusable_blocks_args', 10, 2 );
 
 						add_filter( 'render_block', __CLASS__ . '::render_block', 5, 2 );
 
@@ -301,10 +308,12 @@ class Reykjavik_Content {
 		 * Block editor output modifications.
 		 *
 		 * @since    2.0.0
-		 * @version  2.1.0
+		 * @version  2.2.0
 		 *
      * @param  string $block_content  The pre-rendered content. Default null.
      * @param  array  $block          The block being rendered.
+		 *
+		 * @return  void
 		 */
 		public static function render_block( $block_content, $block ) {
 
@@ -317,6 +326,7 @@ class Reykjavik_Content {
 					// Blocks with `wide` default alignment.
 					'align:wide' => array(
 						'core/media-text',
+						'coblocks/media-card',
 					),
 				), $block_content, $block );
 
@@ -348,6 +358,16 @@ class Reykjavik_Content {
 
 			// Processing
 
+				// WP6.0+ fix:
+				// This must be first.
+				if ( ! in_array( $block['blockName'], array(
+					// See also `assets/js/editor-blocks.js`.
+					'core/column',
+					'core/columns',
+				) ) ) {
+					$block_content = wp_render_layout_support_flag( $block_content, $block );
+				}
+
 				// Wide align wrapper.
 				if (
 					'wide' == $attrs['align']
@@ -372,12 +392,79 @@ class Reykjavik_Content {
 					);
 				}
 
+				// Cover block.
+				if (
+					'core/cover' === $block['blockName']
+					&& ! empty( $attrs['gradient'] )
+				) {
+					/**
+					 * Modifying gradient CSS class applied onto the block container.
+					 *
+					 * This should not happen by default, but as we enable text color setup
+					 * for Cover block, we get this weird erroneous behavior we need to fix.
+					 * We invalidate the gradient CSS class applied on container only by
+					 * appending `-overlay` to it.
+					 */
+					$re = '/wp-block-cover ([a-z0-9\-_\s]*?)-gradient-background/i';
+					$block_content = preg_replace( $re, '$0-overlay', $block_content, 1 );
+				}
+
 
 			// Output
 
 				return $block_content;
 
 		} // /render_block
+
+
+
+		/**
+		 * Enqueues block editor assets for block modifications.
+		 *
+		 * @since  2.2.0
+		 *
+		 * @return  void
+		 */
+		public static function enqueue_editor_mods() {
+
+			// Processing
+
+				wp_enqueue_script(
+					'reykjavik-editor-blocks',
+					get_theme_file_uri( 'assets/js/editor-blocks.min.js' ),
+					array( 'wp-blocks', 'wp-hooks' ),
+					'v' . REYKJAVIK_THEME_VERSION
+				);
+
+		} // /enqueue_editor_mods
+
+
+
+		/**
+		 * Enable "Reusable blocks" in admin menu.
+		 *
+		 * @since  2.2.0
+		 *
+		 * @param  array  $args       Array of arguments for registering a post type.
+		 * @param  string $post_type  Post type key.
+		 *
+		 * @return  array
+		 */
+		public static function register_reusable_blocks_args( $args, $post_type ) {
+
+			// Processing
+
+				if ( 'wp_block' === $post_type ) {
+					// Show under "Tools" menu item.
+					$args['show_in_menu'] = 'tools.php';
+				}
+
+
+			// Output
+
+				return $args;
+
+		} // /register_reusable_blocks_args
 
 
 

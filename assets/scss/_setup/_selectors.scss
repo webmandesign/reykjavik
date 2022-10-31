@@ -28,8 +28,12 @@ $beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
 	$selectors_button_beaver_builder: append( $selectors_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma );
 }
 $selectors_button: append( $selectors_button, (
+	'.wp-block-button__link',
 	'.wp-block-search .wp-block-search__button',
+	'.page-numbers:not(.current):not(.dots)',
+	'.post-page-numbers:not(.current):not(.dots)',
 	'.main-navigation-container .button > a',
+	'.cart_totals .checkout-button',
 ) );
 
 $selectors_accent_color: (

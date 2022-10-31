@@ -6,30 +6,25 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.2.0
  */
 
+$image_sizes = array_filter( apply_filters( 'wmhook_reykjavik_setup_image_sizes', array() ) );
 
+if ( empty( $image_sizes ) ) {
+	return;
+}
 
+$resize_url = 'https://wordpress.org/plugins/regenerate-thumbnails/';
+if ( class_exists( 'RegenerateThumbnails' ) ) {
+	$resize_url = admin_url( 'tools.php?page=regenerate-thumbnails' );
+}
 
-
-// Helper variables
-
-	$default_image_size_names = array(
-			'thumbnail' => esc_html_x( 'Thumbnail size', 'WordPress predefined image size name.', 'reykjavik' ),
-			'medium'    => esc_html_x( 'Medium size', 'WordPress predefined image size name.', 'reykjavik' ),
-			'large'     => esc_html_x( 'Large size', 'WordPress predefined image size name.', 'reykjavik' ),
-		);
-
-	$image_sizes = array_filter( apply_filters( 'wmhook_reykjavik_setup_image_sizes', array() ) );
-
-
-// Requirements check
-
-	if ( empty( $image_sizes ) ) {
-		return;
-	}
-
+$default_image_size_names = array(
+	'thumbnail' => esc_html_x( 'Thumbnail size', 'WordPress predefined image size name.', 'reykjavik' ),
+	'medium'    => esc_html_x( 'Medium size', 'WordPress predefined image size name.', 'reykjavik' ),
+	'large'     => esc_html_x( 'Large size', 'WordPress predefined image size name.', 'reykjavik' ),
+);
 
 ?>
 
@@ -39,59 +34,69 @@
 
 	<h3><?php esc_html_e( 'Recommended image sizes', 'reykjavik' ); ?></h3>
 
-	<p><?php esc_html_e( 'For the optimal theme display, please, set image sizes recommended in table below.', 'reykjavik' ); ?></p>
-
 	<p>
-		<?php esc_html_e( 'Do you already have images uploaded to your website and want to resize them?', 'reykjavik' ); ?>
-		<a href="https://wordpress.org/plugins/search/regenerate+thumbnails/"><?php esc_html_e( 'Use a plugin &raquo;', 'reykjavik' ); ?></a>
+		<?php esc_html_e( 'For the optimal theme display, please, set image sizes recommended below.', 'reykjavik' ); ?>
+		<?php esc_html_e( 'If you already have images uploaded to your website you need to resize them after changing the sizes here.', 'reykjavik' ); ?>
+		<a href="<?php echo esc_url( $resize_url ); ?>"><?php esc_html_e( 'Resize images using plugin &rarr;', 'reykjavik' ); ?></a>
 	</p>
 
 	<table>
 
 		<thead>
 			<tr>
-			<th><?php esc_html_e( 'Size name', 'reykjavik' ); ?></th>
-			<th><?php esc_html_e( 'Size parameters', 'reykjavik' ); ?></th>
-			<th><?php esc_html_e( 'Theme usage', 'reykjavik' ); ?></th>
+				<th><?php esc_html_e( 'Size name', 'reykjavik' ); ?></th>
+				<th><?php esc_html_e( 'Size ID', 'reykjavik' ); ?></th>
+				<th><?php esc_html_e( 'Size parameters', 'reykjavik' ); ?></th>
+				<th><?php esc_html_e( 'Theme usage', 'reykjavik' ); ?></th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<?php
 
-			foreach ( $image_sizes as $size => $setup ) {
+			foreach ( $image_sizes as $size => $args ) :
 
 				if ( 'medium_large' === $size ) {
 					continue;
 				}
 
-				$crop = ( $setup[2] ) ? ( esc_html__( 'cropped', 'reykjavik' ) ) : ( esc_html__( 'scaled', 'reykjavik' ) );
+				$crop = ( $args['crop'] ) ? ( esc_html__( 'cropped', 'reykjavik' ) ) : ( esc_html__( 'scaled', 'reykjavik' ) );
+
+				$row_title = '';
+				if ( ! isset( $default_image_size_names[ $size ] ) ) {
+					$row_title = __( 'Additional image size added by the theme. Can not be changed on this page.', 'reykjavik' );
+				}
 
 				?>
 
-				<?php if ( isset( $default_image_size_names[ $size ] ) ) : ?>
+				<tr title="<?php echo esc_attr( trim( $row_title ) ); ?>">
 
-				<tr>
+					<th>
+						<?php
 
-					<th><?php echo esc_html( $default_image_size_names[ $size ] ); ?>:</th>
+						if ( isset( $args['name'] ) ) {
+							echo esc_html( $args['name'] );
+						} else {
+							echo '&mdash;';
+						}
 
-				<?php else : ?>
+						?>
+					</th>
 
-				<tr title="<?php esc_attr_e( 'Additional image size added by the theme. Can not be changed on this page.', 'reykjavik' ); ?>">
-
-					<th><code><?php echo esc_html( $size ); ?></code>:</th>
-
-				<?php endif; ?>
+					<td>
+						<code><?php echo esc_html( $size ); ?></code>
+					</td>
 
 					<td>
 						<?php
 
 						printf(
-								esc_html_x( '%1$d &times; %2$d, %3$s', '1: image width, 2: image height, 3: cropped or scaled?', 'reykjavik' ),
-								absint( $setup[0] ),
-								absint( $setup[1] ),
-								$crop
-							);
+							/* translators: 1: image width, 2: image height, 3: cropped or scaled? */
+							esc_html__( '%1$d &times; %2$d, %3$s', 'reykjavik' ),
+							absint( $args['width'] ),
+							absint( $args['height'] ),
+							esc_html( $crop )
+						);
 
 						?>
 					</td>
@@ -99,8 +104,8 @@
 					<td class="small">
 						<?php
 
-						if ( isset( $setup[3] ) ) {
-							echo $setup[3];
+						if ( isset( $args['description'] ) ) {
+							echo wp_kses_post( $args['description'] );
 						} else {
 							echo '&mdash;';
 						}
@@ -112,7 +117,7 @@
 
 				<?php
 
-			} // /foreach
+			endforeach;
 
 			?>
 		</tbody>
@@ -125,8 +130,7 @@
 
 		.recommended-image-sizes {
 			display: inline-block;
-			padding: 1.618em;
-			border: 2px solid #dadcde;
+			max-width: 800px;
 		}
 
 		.recommended-image-sizes h3:first-child {
@@ -134,7 +138,14 @@
 		}
 
 		.recommended-image-sizes table {
+			width: 100%;
 			margin-top: 1.618em;
+		}
+
+		.recommended-image-sizes th,
+		.recommended-image-sizes td:nth-child(3),
+		.recommended-image-sizes code {
+			white-space: nowrap;
 		}
 
 		.recommended-image-sizes th,
@@ -152,7 +163,7 @@
 			border-bottom-style: solid;
 		}
 
-		.recommended-image-sizes tr[title] {
+		.recommended-image-sizes tr:not([title=""]) {
 			cursor: help;
 		}
 

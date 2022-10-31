@@ -1,249 +1,205 @@
 <?php
 /**
- * Welcome Page Class
+ * Welcome Page Class.
  *
  * @package    Reykjavik
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
- *
- * Contents:
- *
- *   0) Init
- *  10) Renderer
- *  20) Admin menu
- *  30) Assets
- * 100) Others
+ * @version  2.2.0
  */
 class Reykjavik_Welcome {
 
-
-
-
+	private static $instance;
 
 	/**
-	 * 0) Init
+	 * Constructor
+	 *
+	 * @since    1.0.0
+	 * @version  1.0.0
 	 */
+	private function __construct() {
 
-		private static $instance;
+		// Processing
 
+			// Hooks
 
+				// Actions
 
-		/**
-		 * Constructor
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		private function __construct() {
+					add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles' );
 
-			// Processing
+					add_action( 'admin_menu', __CLASS__ . '::admin_menu' );
 
-				// Hooks
-
-					// Actions
-
-						add_action( 'admin_menu', __CLASS__ . '::admin_menu' );
-
-						add_action( 'admin_enqueue_scripts', __CLASS__ . '::assets', 1000 );
-
-		} // /__construct
-
-
-
-		/**
-		 * Initialization (get instance)
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function init() {
-
-			// Processing
-
-				if ( null === self::$instance ) {
-					self::$instance = new self;
-				}
-
-
-			// Output
-
-				return self::$instance;
-
-		} // /init
-
-
-
-
+	} // /__construct
 
 	/**
-	 * 10) Renderer
+	 * Initialization (get instance)
+	 *
+	 * @since    1.0.0
+	 * @version  1.0.0
 	 */
+	public static function init() {
 
-		/**
-		 * Render the screen content
-		 *
-		 * @since    1.0.0
-		 * @version  2.1.0
-		 */
-		public static function render() {
+		// Processing
 
-			// Helper variables
-
-				$sections = (array) apply_filters( 'wmhook_reykjavik_welcome_render_sections', array(
-					0   => 'header',
-					10  => 'promo',
-					20  => 'quickstart',
-					100 => 'footer',
-				) );
-
-				ksort( $sections );
+			if ( null === self::$instance ) {
+				self::$instance = new self;
+			}
 
 
-			// Output
+		// Output
 
-				?>
+			return self::$instance;
 
-				<div class="wrap welcome-wrap about-wrap">
+	} // /init
 
-					<?php
+	/**
+	 * Render the screen content
+	 *
+	 * @since    1.0.0
+	 * @version  2.2.0
+	 */
+	public static function render() {
 
-					do_action( 'wmhook_reykjavik_welcome_render_top' );
+		// Variables
 
-					foreach ( $sections as $section ) {
-						get_template_part( 'templates/parts/admin/welcome', $section );
-					}
+			$sections = (array) apply_filters( 'wmhook_reykjavik_welcome_render_sections', array(
+				0   => 'header',
+				10  => 'a11y',
+				20  => 'guide',
+				30  => 'demo',
+				40  => 'promo',
+				100 => 'footer',
+			) );
 
-					do_action( 'wmhook_reykjavik_welcome_render_bottom' );
+			ksort( $sections );
 
-					?>
 
-				</div>
+		// Output
+
+			?>
+
+			<div class="wrap welcome__container">
 
 				<?php
 
-		} // /render
+				do_action( 'wmhook_reykjavik_welcome_render_top' );
 
-
-
-
-
-	/**
-	 * 20) Admin menu
-	 */
-
-		/**
-		 * Add screen to WordPress admin menu
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 */
-		public static function admin_menu() {
-
-			// Processing
-
-				add_theme_page(
-					// $page_title
-					esc_html__( 'Welcome', 'reykjavik' ),
-					// $menu_title
-					esc_html__( 'Welcome', 'reykjavik' ),
-					// $capability
-					'edit_theme_options',
-					// $menu_slug
-					'reykjavik-welcome',
-					// $function
-					__CLASS__ . '::render'
-				);
-
-		} // /admin_menu
-
-
-
-
-
-	/**
-	 * 30) Assets
-	 */
-
-		/**
-		 * Styles and scripts
-		 *
-		 * Use large priority (over 998) when hooking this method
-		 * to make sure the `reykjavik-welcome` stylesheet
-		 * has been registered already.
-		 *
-		 * @since    1.0.0
-		 * @version  1.0.0
-		 *
-		 * @param  string $hook_suffix
-		 */
-		public static function assets( $hook_suffix = '' ) {
-
-			// Requirements check
-
-				if ( $hook_suffix !== get_plugin_page_hookname( 'reykjavik-welcome', 'themes.php' ) ) {
-					return;
+				foreach ( $sections as $section ) {
+					get_template_part( 'templates/parts/admin/welcome', $section );
 				}
 
+				do_action( 'wmhook_reykjavik_welcome_render_bottom' );
 
-			// Processing
+				?>
 
-				// Styles
+			</div>
 
-					wp_enqueue_style( 'reykjavik-welcome' );
+			<?php
 
-		} // /assets
-
-
-
-
+	} // /render
 
 	/**
-	 * 100) Others
+	 * Welcome screen CSS styles.
+	 *
+	 * @since    1.0.0
+	 * @version  2.2.0
+	 *
+	 * @param  string $hook
+	 *
+	 * @return  void
 	 */
+	public static function styles( $hook = '' ) {
 
-		/**
-		 * Info text: Rate the theme.
-		 *
-		 * @since    1.5.2
-		 * @version  2.1.0
-		 */
-		public static function get_info_like() {
+		// Requirements check
 
-			// Output
+			if ( 'appearance_page_reykjavik-welcome' !== $hook ) {
+				return;
+			}
 
-				return sprintf(
-					esc_html_x( 'If you %1$s like this theme, please rate it %2$s', '%1$s: heart icon, %2$s: star icons', 'reykjavik' ),
-					'<span class="dashicons dashicons-heart" style="color: red; vertical-align: -.181em;"></span>',
-					'<a href="https://wordpress.org/support/theme/reykjavik/reviews/#new-post" style="display: inline-block; color: goldenrod; text-decoration-style: wavy; vertical-align: middle;"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span></a>'
+
+		// Processing
+
+			// Styles
+
+				wp_enqueue_style(
+					'reykjavik-welcome',
+					get_theme_file_uri( 'assets/css/welcome.css' ),
+					array( 'about' ),
+					'v' . REYKJAVIK_THEME_VERSION
 				);
 
-		} // /get_info_like
+	} // /styles
 
+	/**
+	 * Add screen to WordPress admin menu
+	 *
+	 * @since    1.0.0
+	 * @version  1.0.0
+	 */
+	public static function admin_menu() {
 
+		// Processing
 
-		/**
-		 * Info text: Contact support.
-		 *
-		 * @since    1.5.2
-		 * @version  1.5.2
-		 */
-		public static function get_info_support() {
+			add_theme_page(
+				// $page_title
+				esc_html__( 'Welcome', 'reykjavik' ),
+				// $menu_title
+				esc_html__( 'Welcome', 'reykjavik' ),
+				// $capability
+				'edit_theme_options',
+				// $menu_slug
+				'reykjavik-welcome',
+				// $function
+				__CLASS__ . '::render'
+			);
 
-			// Output
+	} // /admin_menu
 
-				return
-					esc_html__( 'Have a suggestion for improvement or something is not working as it should?', 'reykjavik' )
-					. ' <a href="https://support.webmandesign.eu/">'
-					. esc_html__( 'Contact support center &rarr;', 'reykjavik' )
-					. '</a>';
+	/**
+	 * Info text: Rate the theme.
+	 *
+	 * @since    1.5.2
+	 * @version  2.2.0
+	 */
+	public static function get_info_like() {
 
-		} // /get_info_support
+		// Output
 
+			return
+				sprintf(
+					/* translators: %1$s: heart icon, %2$s: star icons. */
+					esc_html__( 'If you %1$s love this theme don\'t forget to rate it %2$s.', 'reykjavik' ),
+					'<span class="dashicons dashicons-heart" style="color: red; vertical-align: -.181em;"></span>',
+					'<a href="https://wordpress.org/support/theme/reykjavik/reviews/#new-post" style="display: inline-block; color: goldenrod; vertical-align: middle;"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span></a>'
+				)
+				. ' '
+				. '<br>'
+				. '<a href="https://www.webmandesign.eu/contact/#donation">'
+				. esc_html__( 'And/or please consider a donation.', 'reykjavik' )
+				. '</a>'
+				. ' '
+				. esc_html__( 'Thank you!', 'reykjavik' );
 
+	} // /get_info_like
 
+	/**
+	 * Info text: Contact support.
+	 *
+	 * @since    1.5.2
+	 * @version  2.2.0
+	 */
+	public static function get_info_support() {
 
+		// Output
+
+			return
+				esc_html__( 'Have a suggestion for improvement or something is not working as it should?', 'reykjavik' )
+				. ' <a href="https://support.webmandesign.eu/forums/forum/reykjavik/">'
+				. esc_html__( '&rarr; Contact support', 'reykjavik' )
+				. '</a>';
+
+	} // /get_info_support
 
 } // /Reykjavik_Welcome
 

@@ -6,7 +6,7 @@
 		@extend %clearfix;
 
 		h2 {
-			margin-top: _pow( 1 + $golden_minor, 4 ) +rem;
+			margin-top: _pow( 1 + $ratio_min, 4 ) +rem;
 		}
 
 		a {
@@ -39,18 +39,18 @@
 
 	.col-1,
 	.col-2 {
-		padding: ( $golden +em ) 6%; // Vertical paddings need absolute units due to flexbox bug.
+		padding: ( $ratio +em ) 6%; // Vertical paddings need absolute units due to flexbox bug.
 		border-width: 2px;
 		border-style: dashed;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			padding-top: _pow( 1 + $golden_minor, 3 ) +em;
-			padding-bottom: _pow( 1 + $golden_minor, 3 ) +em;
+			padding-top: _pow( 1 + $ratio_min, 3 ) +em;
+			padding-bottom: _pow( 1 + $ratio_min, 3 ) +em;
 		}
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-top: _pow( 1 + $golden_minor, 4 ) +em;
-			padding-bottom: _pow( 1 + $golden_minor, 4 ) +em;
+			padding-top: _pow( 1 + $ratio_min, 4 ) +em;
+			padding-bottom: _pow( 1 + $ratio_min, 4 ) +em;
 		}
 
 	}
@@ -79,11 +79,11 @@
 	}
 
 	.woocommerce-form-login__rememberme {
-		margin-bottom: $golden +em;
+		margin-bottom: $ratio +em;
 	}
 
 	.lost_password {
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 	}
 
 }
@@ -91,8 +91,8 @@
 .woocommerce-MyAccount {
 
 	&-navigation {
-		font-size: 1em - $golden_minor / 2;
-		margin-bottom: _pow( $golden, 2 ) +rem;
+		font-size: 1em - $ratio_min / 2;
+		margin-bottom: _pow( $ratio, 2 ) +rem;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $left; // {{RTL}}
@@ -122,7 +122,7 @@
 
 		a {
 			display: block;
-			padding: 1em ( $golden +em );
+			padding: 1em ( $ratio +em );
 			text-transform: uppercase;
 			font-weight: 700;
 			color: inherit;
@@ -140,9 +140,9 @@
 				@extend %genericon;
 				content: '\f443';
 				display: inline-block;
-				margin-#{$right}: $golden_major +em; // {{RTL}}
+				margin-#{$right}: $ratio_maj +em; // {{RTL}}
 				line-height: 1;
-				font-size: $golden +em;
+				font-size: $ratio +em;
 				vertical-align: middle;
 			}
 
@@ -198,7 +198,7 @@
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $right; // {{RTL}}
-			width: percentage( $golden_major );
+			width: percentage( $ratio_maj );
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {

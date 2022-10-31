@@ -1,5 +1,27 @@
 /* FILE: blocks/_columns.scss */
 
+// WP6.0+ fix:
+// @link  https://github.com/WordPress/gutenberg/blob/b12e82a53d534eac76550e5d03d513f8458b4cf2/packages/block-library/src/columns/style.scss
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+	// Between mobile and large viewports, allow 2 columns.
+	@media (min-width: 600px) and (max-width: 781px) {
+		// Only add two column styling if there are two or more columns
+		&:not(:only-child) {
+			// As with mobile styles, this must be important since the Column
+			// assigns its own width as an inline style, which should take effect
+			// starting at `break-medium`.
+			flex-basis: calc(50% - calc(var(--wp--style--block-gap, 2em) / 2)) !important;
+			flex-grow: 0;
+		}
+
+		// Add space between the multiple columns. Themes can customize this if they wish to work differently.
+		// Only apply this beyond the mobile breakpoint, as there's only a single column on mobile.
+		&:nth-child(even) {
+			margin-left: var(--wp--style--block-gap, 2em);
+		}
+	}
+}
+
 .wp-block-column {
 	@if not variable-exists( 'selector_editor_wrapper' ) {
 		@extend %clearfix;
@@ -11,18 +33,29 @@
 			margin-bottom: 0;
 		}
 
-		&.alignfull {
-			padding-left: var(--block_padding);
-			padding-right: var(--block_padding);
+		&.alignfull:not(.is-style-no-gaps):not(.has-no-gaps):not(.has-no-gap) {
+			padding-left: var(--body_padding);
+			padding-right: var(--body_padding);
 		}
 
 		&.has-background {
-			padding: $golden +em;
+			padding: $ratio +em;
 			padding-bottom: 0;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding: var(--block_padding);
-				padding-bottom: calc( var(--block_padding) - #{ $golden +em } );
+				padding-bottom: calc( var(--block_padding) - #{ $ratio +em } );
+			}
+
+			&.is-style-no-gaps,
+			&.has-no-gaps,
+			&.has-no-gap {
+				padding-bottom: $ratio +em;
+
+				@include media( map_get( $breakpoint, 'xl' ) ) {
+					padding-bottom: var(--block_padding);
+				}
+
 			}
 
 		}
@@ -56,7 +89,7 @@
 	&.wp-block-column {
 
 		&.wp-block-column:last-child {
-			margin-bottom: var(--golden_rem);
+			margin-bottom: var(--wp--style--block-gap);
 		}
 
 		&.is-style-no-margin-vertical:last-child {
@@ -65,23 +98,12 @@
 
 	}
 
-	&s.is-style-no-margin-vertical > .wp-block-column {
+	&s.is-style-no-margin-vertical,
+	&s.has-no-margin, &.margin-none, &.m0, &.m-0,
+	&s.has-no-margin-bottom, &.margin-bottom-none, &.mb0, &.mb-0,
+	&s.has-no-margin-vertical, &.margin-vertical-none, &.margin-top-bottom-none, &.mtb0, &.mtb-0 {
 
-		@include media(
-			( 600, 'min-width' ),
-			( 781, 'max-width' )
-		) {
-			// All columns have 50% width here, so we have to be smart:
-			&:last-child,                     // Always the last column.
-			&:nth-child(1):nth-last-child(2), // 1st column in 2 columns layout.
-			&:nth-child(3):nth-last-child(2), // 3rd column in 4 columns layout.
-			&:nth-child(5):nth-last-child(2)  // 5th column in 6 columns layout.
-			{
-				margin-bottom: 0;
-			}
-		}
-
-		@include media( 782 ) {
+		&:not(.has-background) > .wp-block-column {
 			margin-bottom: 0;
 		}
 
@@ -109,3 +131,32 @@
 	}
 
 }
+
+.has-widgets-in-sidebar .wp-block-columns.alignfull {
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		padding-#{$right}: 0;
+	}
+}
+
+// Column gaps:
+
+	$prepend : '';
+	@if variable-exists( 'selector_editor_wrapper' ) {
+		$prepend : '.block-editor-block-list__block';
+	}
+
+	@media (min-width: 600px) {
+		#{ $prepend }.wp-block-column:nth-child(even) {
+			margin-#{$left}: var(--wp--style--block-gap);
+		}
+	}
+	@media (min-width: 600px) and (max-width: 781px) {
+		#{ $prepend }.wp-block-column:not(:only-child) {
+			flex-basis: calc( 50% - var(--wp--style--block-gap) / 2 ) !important;
+		}
+	}
+	@media (min-width: 782px) {
+		#{ $prepend }.wp-block-column:not(:first-child) {
+			margin-#{$left}: var(--wp--style--block-gap);
+		}
+	}

@@ -1,7 +1,7 @@
 /* FILE: main/content/_page.scss */
 
 .page-header + .page-content {
-	margin-top: $golden +em;
+	margin-top: $ratio +em;
 }
 
 .error-404,
@@ -9,11 +9,11 @@
 
 	form {
 		display: inline-block;
-		width: percentage( $golden_major );
+		width: percentage( $ratio_maj );
 
 		&::before {
-			padding: ( $golden_minor +em ) 0;
-			line-height: 1em + $golden_minor / 2;
+			padding: ( $ratio_min +em ) 0;
+			line-height: 1em + $ratio_min / 2;
 		}
 
 	}
@@ -38,11 +38,11 @@
 	form {
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			max-width: percentage( $golden_major );
+			max-width: percentage( $ratio_maj );
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			max-width: percentage( $golden_minor );
+			max-width: percentage( $ratio_min );
 		}
 
 	}
@@ -70,7 +70,7 @@
 					padding: var(--content_padding) 0 0;
 
 						&-inner:not(:empty) {
-							padding-bottom: _pow( $golden_minor + 1, 4 ) +em;
+							padding-bottom: _pow( $ratio_min + 1, 4 ) +em;
 						}
 
 				}
@@ -119,7 +119,7 @@
 				display: flex;
 				flex-direction: column;
 				width: calc( 100% - 2em );
-				padding: $golden +em;
+				padding: $ratio +em;
 				margin: 1em;
 				border-width: 1px;
 				border-style: solid;
@@ -152,21 +152,21 @@
 				// Child page thumbnail
 
 					&-image {
-						margin-bottom: _pow( $golden, 2 ) +rem;
+						margin-bottom: _pow( $ratio, 2 ) +rem;
 					}
 
 				// Child page title
 
 					&-title {
 						margin: 0;
-						margin-bottom: $golden_minor + 1rem;
+						margin-bottom: $ratio_min + 1rem;
 					}
 
 				// More link
 
 					.link-more {
 						// The container
-						margin-top: $golden +em;
+						margin-top: $ratio +em;
 					}
 
 					// .more-link {

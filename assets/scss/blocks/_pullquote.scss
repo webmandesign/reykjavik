@@ -1,11 +1,11 @@
 /* FILE: blocks/_pullquote.scss */
 
 .wp-block-pullquote {
-	padding: ( _pow( $golden, 2 ) +em ) 6%;
+	padding: ( _pow( $ratio, 2 ) +em ) 6%;
 	text-align: inherit;
-	border-top-width: $golden_minor +em;
+	border-top-width: $ratio_min +em;
 	border-top-style: solid;
-	border-bottom-width: $golden_minor +em;
+	border-bottom-width: $ratio_min +em;
 	border-bottom-style: solid;
 	color: inherit;
 
@@ -15,33 +15,6 @@
 
 	&.wp-block-pullquote p {
 		font-size: 1em;
-	}
-
-	&.alignleft,
-	&.alignright {
-		clear: none;
-		width: 50%;
-		max-width: none;
-		padding-left: 0;
-		padding-right: 0;
-		margin-left: 2em;
-		margin-right: 2em;
-		text-align: inherit;
-
-		@include media( map_get( $breakpoint, 's' ) ) {
-			width: percentage( $golden_minor );
-		}
-
-	}
-
-	&.alignleft {
-		padding-left: 0;
-		margin-left: 0;
-	}
-
-	&.alignright {
-		padding-right: 0;
-		margin-right: 0;
 	}
 
 	&.is-style-solid-color {
@@ -58,11 +31,26 @@
 
 	}
 
+	&.has-border-color,
+	&[style*="border-width"],
+	&[style*="border-style"] {
+		// Using !important to override possible inline styles for `border-style`.
+		border-left-style: none !important;
+		border-right-style: none !important;
+	}
+
 }
 
 .wp-block-pullquote.alignleft,
 .wp-block-pullquote.alignright,
 [data-align="left"] .wp-block-pullquote,
 [data-align="right"] .wp-block-pullquote {
-	max-width: calc( var(--layout_width_entry_content) / 2 - 1em );
+	max-width: calc( var(--layout_width_entry_content) / 2 - var(--typography_font_size_base) / 2 );
+	padding-left: 0;
+	padding-right: 0;
+
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		max-width: calc( var(--layout_width_entry_content) / 2 - var(--typography_font_size_base) );
+	}
+
 }

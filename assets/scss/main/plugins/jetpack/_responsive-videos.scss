@@ -1,7 +1,7 @@
 /* FILE: main/plugins/jetpack/_responsive-videos.scss */
 
 .jetpack-video-wrapper {
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 
 	&:last-child {
 		margin-bottom: 0;

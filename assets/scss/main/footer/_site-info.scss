@@ -10,10 +10,10 @@
 
 .footer-area-site-info {
 	@extend %shaded_background;
-	padding: ( $golden +rem ) 0;
+	padding: ( $ratio +rem ) 0;
 
 	@include media( map_get( $breakpoint, 'm' ) ) {
-		padding: ( _pow( $golden, 2 ) +rem ) 0;
+		padding: ( _pow( $ratio, 2 ) +rem ) 0;
 	}
 
 }
@@ -21,7 +21,7 @@
 
 
 .site-info {
-	padding: ( $golden +em ) 0;
+	padding: ( $ratio +em ) 0;
 
 	&-inner {
 		display: flex;

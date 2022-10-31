@@ -21,7 +21,7 @@
 				vertical-align: top;
 
 				+ li {
-					margin-#{$left}: _pow( $golden, 2 ) +rem; // {{RTL}}
+					margin-#{$left}: _pow( $ratio, 2 ) +rem; // {{RTL}}
 				}
 
 				a {
@@ -30,8 +30,8 @@
 
 				// Label
 				> a {
-					margin-bottom: $golden +em;
-					font-size: 1em - $golden_minor / 4;
+					margin-bottom: $ratio +em;
+					font-size: 1em - $ratio_min / 4;
 					font-weight: 700;
 					text-transform: uppercase;
 					letter-spacing: 1px;
@@ -68,7 +68,7 @@
 
 					// Sub-sub-sub-menu
 					.sub-menu {
-						box-shadow: 0 ( $golden_minor +em ) 1em rgba( #000, .25 );
+						box-shadow: 0 ( $ratio_min +em ) 1em rgba( #000, .25 );
 					}
 
 				}

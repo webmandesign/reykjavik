@@ -12,4 +12,40 @@
 		padding-right: 0;
 	}
 
+	// Used as flexbox:
+
+		&.wp-block-group {
+			gap: var(--wp--style--block-gap);
+		}
+
+		> :not(.wp-block-group__inner-container) {
+			max-width: var(--layout_width_entry_content);
+		}
+
+		$selector_alignfull : '.alignfull';
+		$selector_alignwide : '.alignwide';
+		@if variable-exists( 'selector_editor_wrapper' ) {
+			$selector_alignfull : '[data-align="full"]';
+			$selector_alignwide : '[data-align="wide"]';
+		}
+
+		> #{$selector_alignfull},
+		> #{$selector_alignwide},
+		> .alignwide-wrap {
+			width: 100%;
+		}
+
+		> #{$selector_alignwide},
+		> .alignwide-wrap {
+			max-width: var(--layout_width_content);
+		}
+
+		> #{$selector_alignfull} {
+			max-width: none;
+		}
+
+}
+
+.has-widgets-in-sidebar .wp-block-group:not(.alignwide) .wp-block-group__inner-container {
+	max-width: none;
 }

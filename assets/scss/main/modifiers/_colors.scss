@@ -14,32 +14,33 @@
 			// @see  Reykjavik_Setup::get_color_palette()
 			$selector: _str_replace( '_', '-', $option ) + '-mod';
 
-			#{ $specificity }.has-#{ $selector }-color {
+			#{ $specificity }.has-#{ $selector } {
 
-				&,
-				&:hover,
-				&:focus,
-				&:active,
-				&:visited {
-					color: var(--#{ $option });
+				&-color {
+
+					&,
+					&:hover,
+					&:focus,
+					&:active,
+					&:visited {
+						color: var(--#{ $option });
+					}
+
 				}
 
-			}
+				&-background-color {
+					background-color: var(--#{ $option });
+				}
 
-			#{ $specificity }.has-#{ $selector }-background-color {
-				background-color: var(--#{ $option });
-			}
-
-			#{ $specificity }.has-#{ $selector }-border-color {
-				border-color: var(--#{ $option });
+				&-border-color {
+					border-color: var(--#{ $option });
+				}
 			}
 		}
 	}
 
 	$white_text_bg: (
 		'black',
-		'gray_900',
-		'gray',
 	);
 	@each $color in $white_text_bg {
 		#{ $specificity }.has-#{ $color }-background-color:not(.has-text-color) {
@@ -49,7 +50,6 @@
 
 	$black_text_bg: (
 		'white',
-		'gray_100',
 	);
 	@each $color in $black_text_bg {
 		#{ $specificity }.has-#{ $color }-background-color:not(.has-text-color) {
@@ -70,11 +70,11 @@
 	.has-background.has-background {
 		// Need to use absolute units due to possible
 		// custom font size set on the paragraph block.
-		padding: var(--golden_rem) $important_modifiers; // Simulating rem unit for block editor.
+		padding: var(--gap) $important_modifiers;
 
 		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
-			padding-left: 6vw $important_modifiers;
-			padding-right: 6vw $important_modifiers;
+			padding-left: var(--body_padding) $important_modifiers;
+			padding-right: var(--body_padding) $important_modifiers;
 		}
 
 	}
@@ -84,6 +84,12 @@
 	[data-align="wide"] > .has-background,
 	[data-align="full"] > .has-background {
 		padding: var(--block_padding) $important_modifiers;
+	}
+
+	.has-background.alignfull,
+	[data-align="full"] > .has-background {
+		padding-left: var(--body_padding) $important_modifiers;
+		padding-right: var(--body_padding) $important_modifiers;
 	}
 
 	$important_modifiers: null; // Required reset.

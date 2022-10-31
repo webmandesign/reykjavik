@@ -17,7 +17,7 @@
 			@extend %font_size_1rem;
 			content: '\f307';
 			display: inline-block; // RTL fix // {{RTL}}
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 			vertical-align: middle;
 		}
 
@@ -34,7 +34,7 @@
 			content: '\f300';
 			position: absolute;
 			#{$left}: 0; // {{RTL}}
-			top: $golden_minor +em;
+			top: $ratio_min +em;
 			margin: 0;
 		}
 

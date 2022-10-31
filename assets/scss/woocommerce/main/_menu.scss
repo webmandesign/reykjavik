@@ -6,13 +6,13 @@
 	display: inline-block;
 	#{$right}: 0; // {{RTL}}
 	bottom: -1rem;
-	line-height: 1 + $golden_minor;
+	line-height: 1 + $ratio_min;
 	background-color: map_get( $customize_options, 'color_header_background' );
 	color: map_get( $customize_options, 'color_header_text' );
 	border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
 	background-color: var(--color_header_background);
 	color: var(--color_header_text);
-	border-color: var(--color_header_text--a20);
+	border-color: var(--color_header_border);
 	z-index: 1000; // Above the `.menu-toggle` button and the actual primary menu
 	animation: comeInFromBottom ( $large_animation_speed * 3s );
 
@@ -24,7 +24,7 @@
 		padding: 0;
 		margin: 0;
 		text-align: center;
-		font-size: $golden +em;
+		font-size: $ratio +em;
 		font-weight: 700;
 		border-width: 0;
 		border-#{$left}-width: 1px;

@@ -13,7 +13,7 @@
 	}
 
 	del {
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 		font-weight: 300;
 		opacity: .5;
 
@@ -46,11 +46,11 @@
 }
 
 .woocommerce-price-suffix {
-	margin-#{$left}: $golden_minor +em; // {{RTL}}
+	margin-#{$left}: $ratio_min +em; // {{RTL}}
 }
 
 .amount-separator {
-	margin: 0 ( $golden_minor / 2 +em );
+	margin: 0 ( $ratio_min / 2 +em );
 	font-weight: 400;
 
 	del & {

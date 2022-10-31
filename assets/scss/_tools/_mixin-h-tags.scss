@@ -37,8 +37,8 @@
 					}
 				}
 			} @else {
-				margin-top: $golden_major +em;
-				margin-bottom: $golden_major +em;
+				margin-top: $ratio_maj +em;
+				margin-bottom: $ratio_maj +em;
 
 				@if $last_child {
 					&:last-child {

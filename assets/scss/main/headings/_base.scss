@@ -33,7 +33,7 @@
 
 	}
 
-@include h_tags( $golden_major + $golden_minor / 2, true ); // Heading styles on small devices
+@include h_tags( $ratio_maj + $ratio_min / 2, true ); // Heading styles on small devices
 
 @include media( map_get( $breakpoint, 'm' ) ) {
 	@include h_tags(); // Heading styles on large devices

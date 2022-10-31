@@ -27,7 +27,7 @@
 
 		&,
 		&.product-name {
-			font-size: 1em - $golden_minor / 2;
+			font-size: 1em - $ratio_min / 2;
 		}
 
 	}
@@ -45,8 +45,8 @@
 		text-align: center;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-left: $golden_minor +em;
-			padding-right: $golden_minor +em;
+			padding-left: $ratio_min +em;
+			padding-right: $ratio_min +em;
 		}
 
 		a {
@@ -56,7 +56,7 @@
 			height: 2em;
 			line-height: 2;
 			text-decoration: none;
-			font-size: 1em + $golden_minor / 4;
+			font-size: 1em + $ratio_min / 4;
 
 			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 				background-color: map_get( $customize_options, 'color_accent' );
@@ -88,7 +88,7 @@
 			padding-right: 0;
 
 			img {
-				max-width: _pow( 1 + $golden_minor, 4 ) +em;
+				max-width: _pow( 1 + $ratio_min, 4 ) +em;
 			}
 
 		}
@@ -103,7 +103,7 @@
 	}
 
 	.product-name {
-		font-size: 1em - $golden_minor / 4;
+		font-size: 1em - $ratio_min / 4;
 		overflow: hidden;
 
 		> a {
@@ -119,7 +119,7 @@
 
 	.product-price {
 		text-align: $right; // {{RTL}}
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 	}
 
 	.product-quantity {
@@ -134,7 +134,7 @@
 			margin: 0;
 
 			.qty {
-				font-size: $golden_minor + 1em;
+				font-size: $ratio_min + 1em;
 				text-align: center;
 				border-bottom-color: transparent;
 
@@ -170,7 +170,7 @@
 
 		tr {
 			display: block;
-			padding: ( $golden +em ) 0;
+			padding: ( $ratio +em ) 0;
 		}
 
 		td {
@@ -181,10 +181,10 @@
 			&::before {
 				content: attr( data-title );
 				float: $left; // {{RTL}}
-				margin-bottom: $golden_major +em;
+				margin-bottom: $ratio_maj +em;
 				margin-#{$right}: 1em; // {{RTL}}
 				text-transform: uppercase;
-				font-size: 1rem - $golden_minor / 2;
+				font-size: 1rem - $ratio_min / 2;
 				font-weight: 700;
 			}
 

@@ -2,7 +2,7 @@
 
 .entry-meta {
 	padding: 0;
-	margin: 0 0 ( $golden_major +rem );
+	margin: 0 0 ( $ratio_maj +rem );
 
 	&:empty,
 	.updated,
@@ -25,7 +25,7 @@
 	}
 
 	.single & {
-		margin-bottom: _pow( $golden, 2 ) +em;
+		margin-bottom: _pow( $ratio, 2 ) +em;
 
 		&-element {
 			@extend %font_size_small;
@@ -46,7 +46,7 @@
 
 			.entry-meta-element {
 				flex: 1;
-				padding: ( $golden_major +em ) 1em;
+				padding: ( $ratio_maj +em ) 1em;
 				margin: .5rem;
 				border-width: 1px;
 				border-style: solid;
@@ -98,7 +98,7 @@
 		.single.content-layout-no-paddings .posts & {
 			@extend %font_size_small;
 			padding: 1em 0;
-			margin: 0 0 ( $golden +rem );
+			margin: 0 0 ( $ratio +rem );
 		}
 
 	&-top {
@@ -110,7 +110,7 @@
 
 	&-element {
 		@extend %font_weight_700;
-		margin-#{$right}: $golden_major +em; // {{RTL}}
+		margin-#{$right}: $ratio_maj +em; // {{RTL}}
 		opacity: 1;
 
 		.single & {
@@ -121,7 +121,7 @@
 
 	&-description {
 		@extend %font_weight_400;
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 		text-transform: uppercase;
 	}
 
@@ -136,7 +136,7 @@
 	.tags-links {
 
 		a {
-			margin: 0 ( $golden_minor / 2 +em );
+			margin: 0 ( $ratio_min / 2 +em );
 			text-transform: none;
 
 			&:not(:last-child)::after {
@@ -161,7 +161,7 @@
 .comments-link {
 
 	.comments-title {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 	}
 
 }

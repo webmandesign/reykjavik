@@ -14,8 +14,8 @@
 
 			> h2:first-child {
 				@extend %layout_content_width;
-				margin-top: $padding_vertical * $golden_major;
-				margin-bottom: $golden +em;
+				margin-top: $padding_vertical * $ratio_maj;
+				margin-bottom: $ratio +em;
 			}
 
 		}

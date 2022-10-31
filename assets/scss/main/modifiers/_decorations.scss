@@ -1,0 +1,27 @@
+/* FILE: global/modifiers/_decorations.scss */
+
+// Others
+
+	// Gaps
+
+		$important_modifiers: _important( 'modifier_no_gaps' );
+
+		.is-style-no-gaps.is-style-no-gaps,
+		.has-no-item-margin.has-no-item-margin,
+		.has-no-gap.has-no-gap,
+		.has-no-gaps.has-no-gaps {
+
+			&,
+			& > .blocks-gallery-grid {
+				--wp--style--block-gap: 0px; // WP6.0+ fix
+				gap: 0 $important_modifiers;
+
+				> [class] {
+					margin: 0 $important_modifiers;
+				}
+
+			}
+
+		}
+
+		$important_modifiers: null; // Required reset.

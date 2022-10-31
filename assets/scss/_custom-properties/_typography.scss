@@ -7,4 +7,10 @@
 		--typography_font_size_base: var(--typography_size_html, #{ map_get( $customize_options, 'typography_size_html' ) });
 	}
 
+	--typography_line_height: 1.5;
+	@include media( map_get( $breakpoint, 'l' ) ) {
+		--typography_line_height: #{ $ratio };
+	}
+	--typography_line_height_headings: #{ $ratio_min };
+
 }

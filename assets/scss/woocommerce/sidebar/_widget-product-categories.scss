@@ -8,7 +8,7 @@
 			@extend %genericon;
 			content: '\f301';
 			display: inline-block; // RTL fix // {{RTL}}
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 			font-size: 1rem;
 			vertical-align: middle;
 		}

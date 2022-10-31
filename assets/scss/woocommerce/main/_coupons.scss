@@ -1,14 +1,14 @@
 /* FILE: woocommerce/main/_coupons.scss */
 
 %coupon_box {
-	padding: $golden +em;
+	padding: $ratio +em;
 	text-align: center;
 	border-width: 2px;
 	border-style: dashed;
 	box-sizing: border-box; // Reset required for when displayed in shop table
 
 	label {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 	}
 
 	p {
@@ -42,7 +42,7 @@
 
 	.description {
 		margin-top: 1em;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 		font-style: italic;
 	}
 

@@ -23,13 +23,13 @@ form[role="search"],
 			@extend %genericon;
 			content: '\f400';
 			position: absolute;
-			width: _pow( $golden, 2 ) +rem;
+			width: _pow( $ratio, 2 ) +rem;
 			height: 100%;
 			#{$right}: 0; // {{RTL}}
 			top: -.05em;
 			margin: -2px 0;
 			text-align: center;
-			font-size: $golden +rem;
+			font-size: $ratio +rem;
 			z-index: 1;
 		}
 
@@ -64,7 +64,7 @@ form[role="search"],
 
 	input[type="search"],
 	.search-field {
-		padding-#{$right}: _pow( $golden, 2 ) +rem; // {{RTL}}
+		padding-#{$right}: _pow( $ratio, 2 ) +rem; // {{RTL}}
 	}
 
 
@@ -84,7 +84,7 @@ form[role="search"],
 
 %form_search_submit_button {
 	position: absolute;
-	width: _pow( $golden, 2 ) +rem;
+	width: _pow( $ratio, 2 ) +rem;
 	height: 100%;
 	#{$right}: 0; // {{RTL}}
 	top: 0;

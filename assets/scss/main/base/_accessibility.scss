@@ -2,7 +2,7 @@
 
 .screen-reader-text,
 .is-style-screen-reader-text {
-	@extend %screen_reader_hiding;
+	@extend %screen_reader--hide;
 	padding: 0;
 	margin: -1px;
 	word-wrap: normal !important;
@@ -14,8 +14,8 @@
 		display: block;
 		width: auto;
 		height: auto;
-		#{$left}: $golden_minor +rem; // {{RTL}}
-		top: $golden_minor +rem;
+		#{$left}: $ratio_min +rem; // {{RTL}}
+		top: $ratio_min +rem;
 		padding: 1rem;
 		margin: 0;
 		font-size: 14px;

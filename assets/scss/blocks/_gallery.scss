@@ -1,5 +1,16 @@
 /* FILE: blocks/_gallery.scss */
 
+.wp-block-gallery,
+.blocks-gallery-grid {
+
+	// WP6.0+ fix
+	&.alignfull {
+		margin-#{$left}: calc( 50% - 50vw + ( var(--scrollbar_width) / 2 ) );
+		margin-#{$right}: auto;
+	}
+
+}
+
 .wp-block-gallery:not(.alignfull):not(.alignwide),
 .blocks-gallery-grid {
 	// Do not apply max-width in block editor!
@@ -22,6 +33,15 @@
 
 }
 
-.wp-block-gallery.wp-block-gallery figure.wp-block-image figcaption {
+[class*="wp-container-"] {
+
+	&.blocks-gallery-grid,
+	&.wp-block-gallery {
+		gap: var(--wp--style--block-gap);
+	}
+
+}
+
+.wp-block-gallery.wp-block-gallery.wp-block-gallery figure figcaption {
 	@include gallery_caption();
 }

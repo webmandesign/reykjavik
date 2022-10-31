@@ -55,7 +55,7 @@
 		li,
 		.widget ul li {
 			display: inline-block;
-			padding: 0 ( $golden_major +em );
+			padding: 0 ( $ratio_maj +em );
 			border-width: 0;
 			border-#{$left}-width: 1px; // {{RTL}}
 			border-#{$left}-style: solid; // {{RTL}}
@@ -81,10 +81,10 @@
 	%column_base {
 		column-gap: 2em;
 		column-width: 12em;
-		margin: ( $golden +em ) 0;
+		margin: ( $ratio +em ) 0;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin: ( _pow( $golden, 2 ) +em ) 0;
+			margin: ( _pow( $ratio, 2 ) +em ) 0;
 		}
 
 		&:first-child,
@@ -107,7 +107,7 @@
 		h4,
 		h5,
 		h6 {
-			margin: 1em 0 ( $golden_major +em );
+			margin: 1em 0 ( $ratio_maj +em );
 			line-height: inherit;
 			text-transform: uppercase;
 			letter-spacing: .075em;

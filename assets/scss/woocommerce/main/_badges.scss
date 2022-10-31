@@ -3,21 +3,21 @@
 .onsale {
 	position: relative;
 	display: inline-block;
-	padding: ( $golden_minor +em ) ( $golden +em );
-	margin-bottom: $golden +rem;
+	padding: ( $ratio_min +em ) ( $ratio +em );
+	margin-bottom: $ratio +rem;
 	text-transform: uppercase;
-	font-size: 1em - $golden_minor / 2;
+	font-size: 1em - $ratio_min / 2;
 	font-weight: 700;
 	border: 2px solid;
 
 	ul.products .product & {
 		position: absolute;
-		#{$right}: $golden_minor +em; // {{RTL}}
+		#{$right}: $ratio_min +em; // {{RTL}}
 		top: 0;
 		padding-top: 0;
 		padding-bottom: 0;
-		margin: ( $golden_minor +rem ) 0;
-		line-height: 1rem + 2 * $golden_major;
+		margin: ( $ratio_min +rem ) 0;
+		line-height: 1rem + 2 * $ratio_maj;
 		border: 0;
 	}
 

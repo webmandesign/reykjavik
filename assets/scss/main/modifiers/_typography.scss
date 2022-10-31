@@ -35,16 +35,16 @@
 
 	.has-xs-font-size,
 	.has-extra-small-font-size {
-		font-size: 1em * $golden_major $important_modifiers;
+		font-size: 1em * $ratio_maj $important_modifiers;
 	}
 
 	.has-s-font-size,
 	.has-small-font-size {
-		font-size: 1em - $golden_minor / 2 $important_modifiers;
+		font-size: 1em - $ratio_min / 2 $important_modifiers;
 	}
 
 	.has-smaller-font-size {
-		font-size: 1em - $golden_minor / 4 $important_modifiers;
+		font-size: 1em - $ratio_min / 4 $important_modifiers;
 	}
 
 	.has-m-font-size,
@@ -56,17 +56,17 @@
 	}
 
 	.has-larger-font-size {
-		font-size: 1em + $golden_minor / 2 $important_modifiers;
+		font-size: 1em + $ratio_min / 2 $important_modifiers;
 	}
 
 	.has-l-font-size,
 	.has-large-font-size {
-		font-size: 1em + $golden_minor $important_modifiers;
+		font-size: 1em + $ratio_min $important_modifiers;
 	}
 
 	.has-xl-font-size,
 	.has-extra-large-font-size {
-		font-size: 1em * $golden $important_modifiers;
+		font-size: 1em * $ratio $important_modifiers;
 	}
 
 	$important_modifiers: null; // Required reset.
@@ -108,12 +108,12 @@
 
 	.has-xs-line-height,
 	.has-extra-small-line-height {
-		line-height: ( 1 + $golden_minor / 2 ) $important_modifiers;
+		line-height: ( 1 + $ratio_min / 2 ) $important_modifiers;
 	}
 
 	.has-s-line-height,
 	.has-small-line-height {
-		line-height: ( 1 + $golden_minor ) $important_modifiers;
+		line-height: ( 1 + $ratio_min ) $important_modifiers;
 	}
 
 	.has-m-line-height,

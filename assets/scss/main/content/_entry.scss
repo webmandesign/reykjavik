@@ -5,7 +5,7 @@
 }
 
 .entry-summary {
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 
 	&.has-more-tag {
 		text-transform: uppercase;

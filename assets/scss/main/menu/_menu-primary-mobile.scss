@@ -9,7 +9,7 @@
 		border-color: rgba( map_get( $customize_options, 'color_header_text' ), 20 / 100 );
 		background-color: var(--color_header_background);
 		color: var(--color_header_text);
-		border-color: var(--color_header_text--a20);
+		border-color: var(--color_header_border);
 	}
 
 }
@@ -24,7 +24,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		line-height: 1em + $golden_minor;
+		line-height: 1em + $ratio_min;
 		overflow-y: auto;
 		z-index: 995;
 		opacity: 0;
@@ -50,7 +50,7 @@
 
 			> ul {
 				max-width: map_get( $breakpoint, 's' ) +px; // No need to stretch the menu, keep it narrow and centered
-				padding: ( _pow( $golden, 3 ) +rem ) ( $golden +rem ) ( _pow( $golden, 3 ) + $golden +rem );
+				padding: ( _pow( $ratio, 3 ) +rem ) ( $ratio +rem ) ( _pow( $ratio, 3 ) + $ratio +rem );
 				margin-left: auto;
 				margin-right: auto;
 
@@ -121,7 +121,7 @@
 		}
 
 		.mobile-search-form + .menu > ul {
-			padding-top: ( _pow( $golden, 3 ) +em );
+			padding-top: ( _pow( $ratio, 3 ) +em );
 		}
 
 	}
@@ -141,7 +141,7 @@ body:not(.has-navigation-mobile) {
 				display: inline-block;
 				padding: 0;
 				margin: 0;
-				margin-#{$right}: $golden_major +rem; // {{RTL}}
+				margin-#{$right}: $ratio_maj +rem; // {{RTL}}
 			}
 
 			a {
@@ -162,7 +162,7 @@ body:not(.has-navigation-mobile) {
 	@extend %font_size_1rem;
 	@extend %line_height_golden;
 	max-width: map_get( $breakpoint, 's' ) +px; // Match the mobile menu width
-	padding: 0 ( $golden +rem );
+	padding: 0 ( $ratio +rem );
 	margin: 26vh auto 0;
 
 	@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
@@ -217,15 +217,15 @@ body:not(.has-navigation-mobile) {
 				height: $mobile_menu_toggle_height + 1rem;
 				left: 0;
 				bottom: -1rem;
-				padding: 0 ( $golden +em ) ( $golden_major +em );
+				padding: 0 ( $ratio +em ) ( $ratio_maj +em );
 				margin: 0;
-				line-height: 1 + $golden_minor;
+				line-height: 1 + $ratio_min;
 				text-align: center;
 				font-size: 1em;
 				font-weight: 700;
 				border: 0;
 				z-index: 999;
-				box-shadow: 0 -2px ( $golden +rem ) rgba( #000, .2 );
+				box-shadow: 0 -2px ( $ratio +rem ) rgba( #000, .2 );
 				opacity: 1;
 				animation: comeInFromBottom ( $large_animation_speed * 2s );
 			}
@@ -240,7 +240,7 @@ body:not(.has-navigation-mobile) {
 				( min-width: #{ map_get( $breakpoint, 'm' ) +px } ) and ( max-width: #{ ( map_get( $breakpoint, $mobile_menu_breakpoint ) - 1 ) +px } ),
 				( max-height: #{ ( map_get( $breakpoint, 's' ) - 1 ) +px } )
 			{
-				margin-#{$right}: $golden +rem; // {{RTL}}
+				margin-#{$right}: $ratio +rem; // {{RTL}}
 
 				.toggled & {
 					display: inline-block;
@@ -249,7 +249,7 @@ body:not(.has-navigation-mobile) {
 					#{$right}: 0; // {{RTL}}
 					top: 0;
 					padding: 0;
-					margin-top: $golden +rem;
+					margin-top: $ratio +rem;
 					line-height: 3rem;
 					text-align: $left; // {{RTL}}
 					text-indent: -999em;
@@ -285,7 +285,7 @@ body:not(.has-navigation-mobile) {
 			&::before {
 				@extend %genericon;
 				content: '\f419';
-				margin-#{$right}: $golden_major +em; // {{RTL}}
+				margin-#{$right}: $ratio_maj +em; // {{RTL}}
 
 				.toggled & {
 					content: '\f406';
@@ -301,7 +301,7 @@ body:not(.has-navigation-mobile) {
 	font-weight: 400 !important;
 
 	&:not(:focus) {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 	}
 
 	&-container {

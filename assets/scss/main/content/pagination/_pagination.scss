@@ -3,7 +3,7 @@
 .pagination {
 	clear: both;
 	padding: 1px; // To display accessibility outline.
-	margin-top: _pow( $golden_minor + 1, 4 ) +em;
+	margin-top: _pow( $ratio_min + 1, 4 ) +em;
 	text-align: center;
 	overflow: hidden;
 
@@ -24,9 +24,9 @@
 	a,
 	span {
 		display: none;
-		width: _pow( $golden, 2 ) +em;
-		padding: ( $golden_major +em ) 0;
-		margin: $golden_minor / 2 +em;
+		width: _pow( $ratio, 2 ) +em;
+		padding: ( $ratio_maj +em ) 0;
+		margin: $ratio_min / 2 +em;
 		margin-#{$left}: 0; // {{RTL}}
 		text-align: center;
 		text-decoration: none;
@@ -90,8 +90,8 @@
 	}
 
 	.dots {
-		padding-left: $golden_major +em;
-		padding-right: $golden_major +em;
+		padding-left: $ratio_maj +em;
+		padding-right: $ratio_maj +em;
 		border-color: transparent;
 	}
 

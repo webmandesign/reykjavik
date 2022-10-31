@@ -4,7 +4,7 @@
 	clear: both;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-top: _pow( $golden, 2 ) * -1em;
+		margin-top: _pow( $ratio, 2 ) * -1em;
 	}
 
 	[tabindex="-1"]:focus {
@@ -14,7 +14,7 @@
 	.tabs {
 		@extend %layout_content_width;
 		padding: .5em;
-		line-height: $golden_minor / 2 + 1;
+		line-height: $ratio_min / 2 + 1;
 		list-style: none;
 		text-align: center;
 		border-width: 1px;
@@ -36,7 +36,7 @@
 			padding: 1rem 2rem;
 			text-decoration: none;
 			text-transform: uppercase;
-			font-size: 1em - $golden_minor / 2;
+			font-size: 1em - $ratio_min / 2;
 			font-weight: 700;
 			color: inherit;
 			transition: background ( $small_animation_speed +s ),
@@ -50,9 +50,9 @@
 				@extend %genericon;
 				content: '\f455'; // Default "info" icon
 				display: inline-block;
-				margin-#{$right}: $golden_major +em; // {{RTL}}
-				line-height: $golden_major;
-				font-size: $golden +em;
+				margin-#{$right}: $ratio_maj +em; // {{RTL}}
+				line-height: $ratio_maj;
+				font-size: $ratio +em;
 				vertical-align: middle;
 			}
 
@@ -81,7 +81,7 @@
 
 	.panel {
 		@extend %layout_content_width;
-		padding: ( $padding_vertical * $golden_major ) 0 $padding_vertical;
+		padding: ( $padding_vertical * $ratio_maj ) 0 $padding_vertical;
 
 		&:focus {
 			outline: 0;
@@ -97,7 +97,7 @@
 		}
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+			padding-top: $padding_vertical * ( $ratio_maj + $ratio_min / 2 );
 
 			.site & {
 				max-width: 36em;
@@ -108,7 +108,7 @@
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
 			padding-top: $padding_vertical;
-			padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+			padding-bottom: $ratio_maj * $padding_vertical / 2 + $padding_vertical;
 		}
 
 		> h2:first-child {

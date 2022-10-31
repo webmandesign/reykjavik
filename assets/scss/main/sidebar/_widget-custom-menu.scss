@@ -36,7 +36,7 @@
 			a {
 				@extend %font_size_small_rem;
 				display: block;
-				padding: ( $golden_minor / 2 + 1rem ) ( $golden +rem );
+				padding: ( $ratio_min / 2 + 1rem ) ( $ratio +rem );
 				margin: -1px;
 				text-decoration: none;
 				text-transform: uppercase;

@@ -7,6 +7,10 @@
 		margin-right: auto;
 	}
 
+	a:not(.link-more) { // Post title.
+		pointer-events: none;
+	}
+
 	&__post-excerpt {
 
 		a:last-child {

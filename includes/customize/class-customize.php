@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -1432,7 +1432,7 @@ class Reykjavik_Customize {
 			 * Set alpha values (%) for CSS rgba() colors.
 			 *
 			 * @since    1.0.0
-			 * @version  1.4.0
+			 * @version  2.2.0
 			 *
 			 * @param  array $alphas
 			 */
@@ -1440,12 +1440,26 @@ class Reykjavik_Customize {
 
 				// Processing
 
-					$alphas['color_content_text']       =
-					$alphas['color_footer_text']        =
-					$alphas['color_header_text']        =
-					$alphas['color_intro_text']         =
-					$alphas['color_intro_widgets_text'] =
-					20; // Value for all the above.
+					$alphas['color_header_text'] = array(
+						'css_var_name' => '--color_header_border',
+						'alpha'        => 'var(--border_opacity)',
+					);
+					$alphas['color_intro_text'] = array(
+						'css_var_name' => '--color_intro_border',
+						'alpha'        => 'var(--border_opacity)',
+					);
+					$alphas['color_intro_widgets_text'] = array(
+						'css_var_name' => '--color_intro_widgets_border',
+						'alpha'        => 'var(--border_opacity)',
+					);
+					$alphas['color_content_text'] = array(
+						'css_var_name' => '--color_content_border',
+						'alpha'        => 'var(--border_opacity)',
+					);
+					$alphas['color_footer_text'] = array(
+						'css_var_name' => '--color_footer_border',
+						'alpha'        => 'var(--border_opacity)',
+					);
 
 
 				// Output
@@ -1460,7 +1474,7 @@ class Reykjavik_Customize {
 			 * Customize preview RGBA colors.
 			 *
 			 * @since    1.4.0
-			 * @version  1.4.0
+			 * @version  2.2.0
 			 *
 			 * @param  array $options
 			 */
@@ -1478,10 +1492,17 @@ class Reykjavik_Customize {
 							isset( $option['css_var'] )
 							&& isset( $alphas[ $option['id'] ] )
 						) {
+							$args = $alphas[ $option['id'] ];
+
+							$alpha = $args['alpha'];
+							if ( is_integer( $alpha ) ) {
+								$alpha = (float) ( absint( $alpha ) / 100 );
+							}
+
 							$options[ $key ]['preview_js']['css'][':root'][] = array(
-								'property'         => '--[[id]]--a' . absint( $alphas[ $option['id'] ] ),
+								'property'         => $args['css_var_name'],
 								'prefix'           => 'rgba(',
-								'suffix'           => ',.' . absint( $alphas[ $option['id'] ] ) . ')',
+								'suffix'           => ',' . $alpha . ')',
 								'process_callback' => 'reykjavik.Customize.hexToRgbJoin',
 							);
 						}
@@ -1500,7 +1521,7 @@ class Reykjavik_Customize {
 			 * Adding RGBA CSS variables.
 			 *
 			 * @since    1.4.0
-			 * @version  1.4.0
+			 * @version  2.2.0
 			 *
 			 * @param  array  $css_vars
 			 * @param  array  $option
@@ -1510,19 +1531,17 @@ class Reykjavik_Customize {
 
 				// Variables
 
-					$rgba_alphas = self::get_rgba_alphas();
+					$alphas = self::get_rgba_alphas();
 
 
 				// Processing
 
 					if (
 						isset( $option['id'] )
-						&& isset( $rgba_alphas[ $option['id'] ] )
+						&& isset( $alphas[ $option['id'] ] )
 					) {
-						$alphas = (array) $rgba_alphas[ $option['id'] ];
-						foreach ( $alphas as $alpha ) {
-							$css_vars[ '--' . sanitize_title( $option['id'] ) . '--a' . absint( $alpha ) ] = esc_attr( self::color_hex_to_rgba( $value, absint( $alpha ) ) );
-						}
+						$args = $alphas[ $option['id'] ];
+						$css_vars[ $args['css_var_name'] ] = esc_attr( self::color_hex_to_rgba( (string) $value, $args['alpha'] ) );
 					}
 
 
@@ -1535,28 +1554,27 @@ class Reykjavik_Customize {
 
 
 			/**
-			 * Hex color to RGBA.
+			 * Get rgb() or rgba() from hex color.
 			 *
 			 * @since    1.4.0
-			 * @version  1.4.0
+			 * @version  2.2.0
 			 *
 			 * @link  http://php.net/manual/en/function.hexdec.php
 			 *
-			 * @param  string $hex
-			 * @param  absint $alpha  [0-100]
+			 * @param  string     $hex
+			 * @param  string|int $alpha  [0-100] or CSS variable.
 			 *
-			 * @return  string  Color in rgb() or rgba() format for CSS properties.
+			 * @return  string
 			 */
 			public static function color_hex_to_rgba( $hex, $alpha = 100 ) {
 
 				// Variables
 
-					$alpha  = absint( $alpha );
-					$output = ( 100 === $alpha ) ? ( 'rgb(' ) : ( 'rgba(' );
+					$output = 'rgba(';
 
 					$rgb = array();
 
-					$hex = preg_replace( '/[^0-9A-Fa-f]/', '', $hex );
+					$hex = preg_replace( '/[^0-9A-Fa-f]/', '', (string) $hex );
 					$hex = substr( $hex, 0, 6 );
 
 
@@ -1570,8 +1588,10 @@ class Reykjavik_Customize {
 					$output  .= implode( ',', $rgb );
 
 					// Using alpha (rgba)?
-					if ( 100 > $alpha ) {
+					if ( is_integer( $alpha ) ) {
 						$output .= ',' . ( $alpha / 100 );
+					} else {
+						$output .= ',' . $alpha;
 					}
 
 					// Closing opening bracket.
@@ -1580,7 +1600,7 @@ class Reykjavik_Customize {
 
 				// Output
 
-					return $output;
+					return (string) $output;
 
 			} // /color_hex_to_rgba
 

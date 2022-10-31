@@ -1,8 +1,8 @@
 /* FILE: main/plugins/jetpack/_sharing.scss */
 
 div.sharedaddy {
-	padding: ( $golden +em ) 0 0;
-	margin: ( _pow( $golden, 2 ) +rem ) 0 0;
+	padding: ( $ratio +em ) 0 0;
+	margin: ( _pow( $ratio, 2 ) +rem ) 0 0;
 	font-size: 1em;
 	border-top-width: 2px;
 	border-top-style: solid;
@@ -45,11 +45,11 @@ div.sharedaddy {
 				li {
 
 					a.sd-button {
-						margin: ( $golden_major / 2 +em ) ( $golden_major +em );
+						margin: ( $ratio_maj / 2 +em ) ( $ratio_maj +em );
 						margin-#{$left}: 0; // {{RTL}}
 
 						&:not(.no-text) {
-							padding: ( $golden_major +em ) 1em;
+							padding: ( $ratio_maj +em ) 1em;
 							line-height: normal;
 							border-width: 0;
 							border-radius: 0;

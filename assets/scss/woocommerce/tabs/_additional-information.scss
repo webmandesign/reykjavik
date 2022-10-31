@@ -7,23 +7,23 @@
 
 	td,
 	th {
-		padding: ( $golden_major +rem ) ( $golden +rem );
+		padding: ( $ratio_maj +rem ) ( $ratio +rem );
 		border-width: 0;
 
 		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
 			display: block;
-			padding: $golden_major +rem;
+			padding: $ratio_maj +rem;
 		}
 
 	}
 
 	th {
 		width: auto;
-		line-height: $golden +rem;
+		line-height: $ratio +rem;
 		text-align: $right; // {{RTL}}
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 		border-top-width: 1px;
 		border-top-style: solid;
 		border-bottom-width: 1px;

@@ -2,7 +2,7 @@
 
 .comment-list {
 	padding: 0;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 
 	&,
 	& ol {
@@ -10,14 +10,14 @@
 	}
 
 	.comments-closed + & {
-		margin-top: $golden +em;
+		margin-top: $ratio +em;
 	}
 
 	> li,
 	.children > li {
 		position: relative;
 		min-height: 5em;
-		padding: ( $golden +em ) 0 0;
+		padding: ( $ratio +em ) 0 0;
 		margin: 0;
 		background: none;
 
@@ -30,10 +30,10 @@
 	.children {
 		clear: both;
 		margin: 0;
-		margin-#{$left}: $golden +em; // {{RTL}}
+		margin-#{$left}: 1em; // {{RTL}}
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin-#{$left}: 5em - $golden; // {{RTL}}
+			margin-#{$left}: calc( -100px + #{ $ratio +em } ); // {{RTL}}
 		}
 
 	}
@@ -41,11 +41,11 @@
 }
 
 .comment-body {
-	padding: ( $golden +em ) 0 0;
+	padding: ( $ratio +em ) 0 0;
 
 	@include media( map_get( $breakpoint, 'm' ) ) {
-		padding-left: $golden +em;
-		padding-right: $golden +em;
+		padding-left: $ratio +em;
+		padding-right: $ratio +em;
 	}
 
 }

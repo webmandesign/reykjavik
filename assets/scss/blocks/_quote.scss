@@ -4,7 +4,7 @@
 
 	// This is for backwards compatibility (with possible existing content).
 	&.is-large,
-	&.is-style-large {
+	&.is-style-large:not(.is-style-plain) {
 		padding: 0;
 
 		p {

@@ -9,7 +9,7 @@
 	border-color: rgba( map_get( $customize_options, 'color_intro_text' ), 20 / 100 );
 	background-color: var(--color_intro_background);
 	color: var(--color_intro_text);
-	border-color: var(--color_intro_text--a20);
+	border-color: var(--color_intro_border);
 
 	h1, h2, h3, h4,
 	.h1, .h2, .h3, .h4,
@@ -77,7 +77,7 @@
 		&-inner {
 			@extend %clearfix;
 			@extend %layout_content_width;
-			padding: ( $golden_major * $padding_vertical ) 0;
+			padding: ( $ratio_maj * $padding_vertical ) 0;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
 				padding-top: $padding_vertical;
@@ -89,7 +89,7 @@
 	// Entry title in intro section
 
 		&-title {
-			line-height: 1 + $golden_minor / 2;
+			line-height: 1 + $ratio_min / 2;
 			font-weight: 700;
 			margin: 0;
 
@@ -112,12 +112,12 @@
 			}
 
 			&-separator {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 			&-tagline {
 				display: block;
-				font-size: $golden_major +em;
+				font-size: $ratio_maj +em;
 			}
 
 		}
@@ -125,7 +125,7 @@
 }
 
 .page-summary {
-	margin-top: $golden +em;
+	margin-top: $ratio +em;
 	max-width: 36em;
 	max-width: var(--layout_width_entry_content);
 
@@ -161,14 +161,13 @@
 	.wp-custom-header-video-button {
 		@extend %indent_text_for_icon_only;
 		position: absolute;
-		width: 2em;
 		height: 2em;
 		#{$right}: 1em;
 		top: 50%;
 		margin: -1em 0;
 		line-height: 2;
 		padding: 0;
-		font-size: $golden_minor + 1em;
+		font-size: $ratio_min + 1em;
 		background-color: #111;
 		color: #fff;
 		border: 1px solid;
@@ -177,6 +176,10 @@
 		box-shadow: none;
 		opacity: .33;
 		z-index: 10;
+
+		&[class] {
+			width: 2em; // Overriding later `%indent_text_for_icon_only` styles.
+		}
 
 		@include haf() {
 			opacity: .66;
@@ -218,7 +221,7 @@
 			.blog &,
 			.archive &,
 			.search-results & {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 		}
@@ -270,7 +273,7 @@
 			z-index: 10;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				font-size: 1em + $golden_minor / 2;
+				font-size: 1em + $ratio_min / 2;
 			}
 
 			&-media {
@@ -295,10 +298,10 @@
 			}
 
 			&-title {
-				font-size: _pow( 1 + $golden_minor, 3 ) +em;
+				font-size: _pow( 1 + $ratio_min, 3 ) +em;
 
 				@include media( map_get( $breakpoint, 'xl' ) ) {
-					font-size: _pow( 1 + $golden_minor, 4 ) +em;
+					font-size: _pow( 1 + $ratio_min, 4 ) +em;
 				}
 
 			}
@@ -309,7 +312,7 @@
 				}
 
 			.page-summary {
-				margin-top: _pow( $golden, 2 ) +em;
+				margin-top: _pow( $ratio, 2 ) +em;
 			}
 
 		}

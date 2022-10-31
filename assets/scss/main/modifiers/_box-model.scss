@@ -1,5 +1,29 @@
 /* FILE: global/modifiers/_box-model.scss */
 
+// Width
+
+	$important_modifiers: _important( 'modifier_width' );
+
+	.has-narrow-max-width {
+		max-width: var(--layout_width_entry_content) $important_modifiers;
+	}
+
+	.has-wide-content-width {
+
+		.wp-block-cover__inner-container,
+		.wp-block-group__inner-container {
+
+			&,
+			> * {
+				max-width: var(--layout_width_content) $important_modifiers;
+			}
+
+		}
+
+	}
+
+	$important_modifiers: null; // Required reset.
+
 // Height
 
 	$important_modifiers: _important( 'modifier_screen_min_height' );
@@ -44,8 +68,16 @@
 
 	}
 
+	.has-half-screen-min-height {
+		min-height: calc( 50 * var(--min-height-multiplier-vh) ) $important_modifiers;
+	}
+
+		[class*="wp-block-"].has-half-screen-min-height {
+			@extend .has-half-screen-min-height;
+		}
+
 	.has-phi-vh-min-height {
-		min-height: calc( #{ $golden_major * 100 } * var(--min-height-multiplier-vh) ) $important_modifiers;
+		min-height: calc( #{ $ratio_maj * 100 } * var(--min-height-multiplier-vh) ) $important_modifiers;
 	}
 
 		[class*="wp-block-"].has-phi-vh-min-height,
@@ -74,7 +106,7 @@
 	.has-golden-padding,
 	.padding-phi,
 	.padding-golden {
-		padding: 1.618em $important_modifiers;
+		padding: ( $ratio +em ) $important_modifiers;
 	}
 
 	.has-no-padding,
@@ -168,8 +200,8 @@
 	.has-huge-padding,
 	.has-extra-large-padding {
 		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
-			padding-left: 6vw $important_modifiers;
-			padding-right: 6vw $important_modifiers;
+			padding-left: var(--body_padding) $important_modifiers;
+			padding-right: var(--body_padding) $important_modifiers;
 		}
 	}
 
@@ -249,7 +281,7 @@
 	.has-regular-margin-bottom,
 	.has-normal-margin-bottom,
 	.is-style-has-margin-bottom {
-		margin-bottom: var(--golden_rem) $important_modifiers;
+		margin-bottom: var(--gap) $important_modifiers;
 	}
 
 	$important_modifiers: null; // Required reset.

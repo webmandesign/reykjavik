@@ -34,7 +34,7 @@
 
 	@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
 		float: $left; // {{RTL}}
-		margin-#{$right}: $golden +em;
+		margin-#{$right}: $ratio +em;
 	}
 
 	@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
@@ -45,7 +45,7 @@
 
 		// Menu wrapper.
 		.menu {
-			margin-top: $golden +rem;
+			margin-top: $ratio +rem;
 
 			@include media( map_get( $breakpoint, 'm' ) ) {
 				margin-top: 0;
@@ -73,7 +73,7 @@
 		a {
 			display: block;
 			max-width: 100%; // Fix for FF and IE.
-			padding: ( $golden_major +rem ) ( $golden_minor +rem );
+			padding: ( $ratio_maj +rem ) ( $ratio_min +rem );
 			border: 0 solid transparent;
 			border-#{$left}-width: 2px; // {{RTL}}
 			transition: border-color ( $small_animation_speed +s );
@@ -88,10 +88,10 @@
 		.hide-link {
 
 			> a {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 
 				&:focus {
-					@extend %screen_reader_hiding_disable;
+					@extend %screen_reader--show;
 					position: static !important;
 				}
 
@@ -105,6 +105,7 @@
 
 				@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
 
+					&:hover .current_page_parent > a,
 					&:hover .current-menu-item > a,
 					&:hover .current-menu-ancestor > a {
 						border-color: inherit;
@@ -119,6 +120,8 @@
 
 				@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
 
+					.current_page_parent > a,
+					.current_page_parent > a:hover,
 					.current-menu-ancestor > a,
 					.current-menu-ancestor > a:hover {
 						border-color: currentColor;
@@ -152,7 +155,7 @@
 		// Icon in menu item (has to be included with HTML)
 		.icon,
 		[class^="icon-"] {
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 		}
 
 	}

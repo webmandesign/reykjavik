@@ -24,7 +24,7 @@ $icon_size: 3.618em;
 				( map_get( $breakpoint, 'l' ), 'min-width' ),
 				( map_get( $breakpoint, 'xl' ), 'max-width' )
 			) {
-				font-size: $icon_size * $golden_major;
+				font-size: $icon_size * $ratio_maj;
 			}
 
 		}
@@ -34,10 +34,10 @@ $icon_size: 3.618em;
 			.widget-text-media-image + & {
 				float: $left; // {{RTL}}
 				margin-#{$right}: 1em; // {{RTL}}
-				margin-bottom: $golden_minor +em;
+				margin-bottom: $ratio_min +em;
 
 				.widget-symbol {
-					font-size: $golden +em;
+					font-size: $ratio +em;
 				}
 
 			}
@@ -54,7 +54,7 @@ $icon_size: 3.618em;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			float: $right; // {{RTL}}
-			width: calc( 100% - 1em - #{ $icon_size * $golden_major } );
+			width: calc( 100% - 1em - #{ $icon_size * $ratio_maj } );
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
@@ -65,7 +65,7 @@ $icon_size: 3.618em;
 
 	.widget-title,
 	.widgettitle {
-		margin-bottom: $golden_major +rem;
+		margin-bottom: $ratio_maj +rem;
 	}
 
 }
@@ -76,7 +76,7 @@ $icon_size: 3.618em;
 	ul {
 		margin-top: 0;
 		margin-bottom: 1em;
-		margin-#{$left}: $golden +em; // {{RTL}}
+		margin-#{$left}: $ratio +em; // {{RTL}}
 		margin-#{$right}: 0; // {{RTL}}
 		list-style: square;
 

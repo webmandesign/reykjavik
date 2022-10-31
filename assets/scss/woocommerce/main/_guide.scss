@@ -2,7 +2,7 @@
 
 .checkout-guide {
 	display: block;
-	margin-bottom: _pow( $golden_minor + 1, 4 ) +em;
+	margin-bottom: _pow( $ratio_min + 1, 4 ) +em;
 
 	a {
 		color: inherit;
@@ -49,13 +49,13 @@
 
 	&-title {
 		display: block;
-		margin: $golden_minor +em;
+		margin: $ratio_min +em;
 		text-transform: uppercase;
 		transition: opacity ( $small_animation_speed +s );
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			margin: 0;
-			font-size: 1em - $golden_minor / 2;
+			font-size: 1em - $ratio_min / 2;
 		}
 
 		&::before {
@@ -72,7 +72,7 @@
 			@include media( map_get( $breakpoint, 'l' ) ) {
 				display: block;
 				margin: .5em auto 1em;
-				font-size: $golden_minor / 2 + 1rem;
+				font-size: $ratio_min / 2 + 1rem;
 				font-weight: 300;
 				box-shadow: 0 0 0 2px;
 			}
@@ -126,7 +126,7 @@
 
 				&::before {
 					margin: 0 auto .5em;
-					font-size: $golden +rem;
+					font-size: $ratio +rem;
 					font-weight: inherit;
 					box-shadow: 0 0 0 4px;
 				}

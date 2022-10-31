@@ -2,6 +2,10 @@
 
 .wp-block-media-text {
 
+	&__media {
+		height: 100% !important;
+	}
+
 	&__content {
 
 		[data-align="full"],

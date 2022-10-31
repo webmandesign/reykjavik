@@ -1,9 +1,9 @@
 /* FILE: main/content/pagination/_parts.scss */
 
 .post-table-of-contents {
-	padding: ( $golden +em ) 0 0;
-	margin: ( $golden +em ) 0;
-	margin-top: _pow( $golden, 2 ) +rem;
+	padding: ( $ratio +em ) 0 0;
+	margin: ( $ratio +em ) 0;
+	margin-top: _pow( $ratio, 2 ) +rem;
 	border-top-width: 2px;
 	border-top-style: solid;
 
@@ -39,9 +39,9 @@
 	a {
 		@extend %font_weight_600;
 		display: block;
-		padding: ( $golden_major +em ) 1em;
-		padding-#{$left}: _pow( $golden, 2 ) +em; // {{RTL}}
-		line-height: 1 + $golden_minor;
+		padding: ( $ratio_maj +em ) 1em;
+		padding-#{$left}: _pow( $ratio, 2 ) +em; // {{RTL}}
+		line-height: 1 + $ratio_min;
 		text-decoration: none;
 
 		.entry-content & {
@@ -54,8 +54,8 @@
 			content: counter( table-of-contents-counter );
 			counter-increment: table-of-contents-counter;
 			float: $left; // {{RTL}}
-			margin-top: $golden_minor / -2 +em;
-			margin-#{$left}: -1em - $golden_minor; // {{RTL}}
+			margin-top: $ratio_min / -2 +em;
+			margin-#{$left}: -1em - $ratio_min; // {{RTL}}
 			text-decoration: inherit;
 			font-weight: inherit;
 			font-style: inherit;
@@ -63,7 +63,7 @@
 
 		&::after {
 			content: '\00bb';
-			margin-#{$left}: $golden_major +em; // {{RTL}}
+			margin-#{$left}: $ratio_maj +em; // {{RTL}}
 		}
 
 		@include haf() {
@@ -96,10 +96,10 @@
 		&.top {
 			float: $left; // {{RTL}}
 			display: block;
-			max-width: percentage( $golden_minor );
+			max-width: percentage( $ratio_min );
 			padding: 0 1em 1em;
 			padding-#{$left}: 0; // {{RTL}}
-			margin: 0 ( $golden +em ) 1em;
+			margin: 0 ( $ratio +em ) 1em;
 			margin-#{$left}: 0; // {{RTL}}
 			border-width: 0;
 			border-style: solid;

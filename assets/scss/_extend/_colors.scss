@@ -60,7 +60,7 @@
 	border-color: rgba( map_get( $customize_options, 'color_content_text' ), 20 / 100 );
 	background-color: var(--color_content_background);
 	color: var(--color_content_text);
-	border-color: var(--color_content_text--a20);
+	border-color: var(--color_content_border);
 }
 
 %colors_site_content_headings {

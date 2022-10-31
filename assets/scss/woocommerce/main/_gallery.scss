@@ -3,7 +3,7 @@
 .single-product-images {
 	@extend %clearfix;
 	position: relative;
-	margin-bottom: _pow( $golden, 2 ) +em;
+	margin-bottom: _pow( $ratio, 2 ) +em;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
 		float: $left; // {{RTL}}
@@ -12,7 +12,7 @@
 	}
 
 	@include media( map_get( $breakpoint, 'xl' ) ) {
-		width: percentage( $golden_major - .04 );
+		width: percentage( $ratio_maj - .04 );
 	}
 
 	.gallery-item {
@@ -35,7 +35,7 @@
 	}
 
 	.thumbnails {
-		padding: ( $golden +em ) 0 1em;
+		padding: ( $ratio +em ) 0 1em;
 		white-space: nowrap;
 		overflow-x: auto;
 
@@ -68,7 +68,7 @@
 			#{$right}: 0; // {{RTL}}
 			top: 0;
 			line-height: 2em;
-			font-size: 1em + $golden_minor;
+			font-size: 1em + $ratio_min;
 			z-index: 19;
 
 			.site & {
@@ -98,8 +98,8 @@
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			/* $content_width */
-			max-width: calc( #{ $golden_major - .04 } * #{ map_get( $customize_options, 'layout_width_content' ) } );
-			max-width: calc( #{ $golden_major - .04 } * var(--layout_width_content) );
+			max-width: calc( #{ $ratio_maj - .04 } * #{ map_get( $customize_options, 'layout_width_content' ) } );
+			max-width: calc( #{ $ratio_maj - .04 } * var(--layout_width_content) );
 		}
 
 		.flex-viewport & {
@@ -114,7 +114,7 @@
 				// These are gallery thumbnails when Flex slider hasn't kicked in yet.
 				float: $left; // {{RTL}}
 				width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
-				margin-top: $golden +em;
+				margin-top: $ratio +em;
 				margin-#{$right}: percentage( $gutter / 100 ); // {{RTL}}
 				cursor: pointer;
 
@@ -137,7 +137,7 @@
 		li {
 			float: $left; // {{RTL}}
 			width: percentage( ( ( 100 + $gutter ) / $columns - $gutter ) / 100 );
-			margin-top: $golden +em;
+			margin-top: $ratio +em;
 			margin-#{$right}: percentage( $gutter / 100 ); // {{RTL}}
 			cursor: pointer;
 

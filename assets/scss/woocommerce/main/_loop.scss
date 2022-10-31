@@ -52,7 +52,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 		}
 
 		.description {
-			padding: $golden +em;
+			padding: $ratio +em;
 
 			@include media( map_get( $breakpoint, 'm' ) ) {
 				padding: 2em;
@@ -62,11 +62,11 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 			h3 {
 				margin: 0;
-				font-size: $golden_minor / 2 + 1em;
+				font-size: $ratio_min / 2 + 1em;
 			}
 
 			.entry-subtitle {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 			.star-rating {
@@ -75,14 +75,14 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 				#{$left}: 0; // {{RTL}}
 				top: 0;
 				margin: 1em;
-				box-shadow: 0 0 0 ( $golden_major +em ) map_get( $customize_options, 'color_content_background' );
-				box-shadow: 0 0 0 ( $golden_major +em ) var(--color_content_background);
+				box-shadow: 0 0 0 ( $ratio_maj +em ) map_get( $customize_options, 'color_content_background' );
+				box-shadow: 0 0 0 ( $ratio_maj +em ) var(--color_content_background);
 			}
 
 			.price {
 				display: block;
-				margin: ( $golden_minor +em ) 0 0;
-				line-height: 1 + $golden_minor / 2;
+				margin: ( $ratio_min +em ) 0 0;
+				line-height: 1 + $ratio_min / 2;
 			}
 
 		.button,
@@ -96,9 +96,9 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 				@extend %genericon;
 				content: '\f447';
 				display: inline-block; // Required for animation
-				margin-#{$right}: $golden_minor +em; // {{RTL}}
-				line-height: $golden_major;
-				font-size: 1em + $golden_minor;
+				margin-#{$right}: $ratio_min +em; // {{RTL}}
+				line-height: $ratio_maj;
+				font-size: 1em + $ratio_min;
 				vertical-align: middle;
 
 				@include in( '.product.outofstock' ) {
@@ -135,10 +135,10 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 		}
 
 		.added_to_cart {
-			padding: ( $golden_minor +em ) 1em;
+			padding: ( $ratio_min +em ) 1em;
 			text-align: center;
 			text-decoration: none;
-			font-size: 1em - $golden_minor / 2;
+			font-size: 1em - $ratio_min / 2;
 
 			&::before {
 				content: '\f403';
@@ -148,7 +148,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 
 		// Categories list.
 		&-categories {
-			margin-bottom: _pow( $golden, 2 ) +em;
+			margin-bottom: _pow( $ratio, 2 ) +em;
 
 			.product-category {
 				margin-top: 0;
@@ -163,7 +163,7 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 			.category-label {
 				margin-bottom: 0;
 				text-transform: uppercase;
-				font-size: 1em - $golden_minor / 2;
+				font-size: 1em - $ratio_min / 2;
 			}
 
 			a {
@@ -175,9 +175,9 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 				position: absolute;
 				#{$right}: 0;
 				top: 0;
-				padding: 0 ( $golden_major +em );
-				margin: $golden_minor +rem;
-				line-height: 1rem + 2 * $golden_major;
+				padding: 0 ( $ratio_maj +em );
+				margin: $ratio_min +rem;
+				line-height: 1rem + 2 * $ratio_maj;
 				font-size: 1rem;
 				font-weight: 400;
 			}
@@ -315,8 +315,8 @@ ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of 
 	border-top-style: solid;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
-		padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+		padding-top: $ratio_maj * $padding_vertical / 2 + $padding_vertical;
+		padding-bottom: $ratio_maj * $padding_vertical / 2 + $padding_vertical;
 	}
 
 }

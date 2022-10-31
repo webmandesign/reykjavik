@@ -11,20 +11,20 @@
 
 		#subscribe-email {
 			float: $left; // {{RTL}}
-			width: percentage( $golden_major );
-			padding-#{$right}: $golden_major +em; // {{RTL}}
+			width: percentage( $ratio_maj );
+			padding-#{$right}: $ratio_maj +em; // {{RTL}}
 			margin-bottom: 0;
 
 			input {
 				width: 100%;
-				padding: $golden_major +em;
+				padding: $ratio_maj +em;
 			}
 
 		}
 
 		#subscribe-submit {
 			float: $right; // {{RTL}}
-			width: percentage( $golden_minor );
+			width: percentage( $ratio_min );
 			margin-bottom: 0;
 		}
 
@@ -49,7 +49,7 @@
 			}
 
 			.widgets-list-layout-blavatar {
-				width: _pow( $golden, 2 ) +em;
+				width: _pow( $ratio, 2 ) +em;
 				margin-#{$right}: 1em; // {{RTL}}
 			}
 

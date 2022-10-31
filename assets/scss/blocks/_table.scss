@@ -19,22 +19,18 @@ table.is-style-stripes,
 		border-color: inherit;
 	}
 
-	&.is-style-stripes {
+	&.is-style-stripes tbody tr {
 
-		tbody tr {
+		&:nth-child(odd) {
+			background: transparent;
+		}
 
-			&:nth-child(odd) {
-				background: transparent;
-			}
+		&:nth-child(even) {
 
-			&:nth-child(even) {
-
-				th,
-				td {
-					@extend %shaded_background;
-					position: relative;
-				}
-
+			th,
+			td {
+				@extend %shaded_background;
+				position: relative;
 			}
 
 		}
@@ -47,40 +43,6 @@ table.is-style-stripes,
 
 	tfoot {
 		border-top: 3px solid;
-	}
-
-}
-
-.is-style-border-inner {
-
-	table {
-		border-color: inherit;
-	}
-
-	table,
-	th,
-	td {
-		border-width: 0;
-	}
-
-	th,
-	td {
-		padding-top: 1em;
-		padding-bottom: 1em;
-
-		&:first-child {
-			padding-#{$left}: 0;
-		}
-
-		&:last-child {
-			padding-#{$right}: 0;
-		}
-
-	}
-
-	tr:not(:last-child) {
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
 	}
 
 }

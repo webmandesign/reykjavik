@@ -6,7 +6,7 @@
 
 		del {
 			display: inline;
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 		}
 
 	}

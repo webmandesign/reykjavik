@@ -47,7 +47,7 @@
 	}
 
 	.col-1 {
-		margin-bottom: _pow( $golden, 2 ) +em;
+		margin-bottom: _pow( $ratio, 2 ) +em;
 	}
 
 	@include media( map_get( $breakpoint, 'l' ) ) {

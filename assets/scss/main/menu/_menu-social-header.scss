@@ -7,7 +7,7 @@
 		white-space: nowrap;
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			padding-#{$left}: $golden +em; // {{RTL}}
+			padding-#{$left}: $ratio +em; // {{RTL}}
 			margin-#{$left}: auto; // {{RTL}}
 		}
 

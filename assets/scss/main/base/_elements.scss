@@ -48,9 +48,9 @@ hr {
 	width: 100%;
 	height: var(--hr_height);
 	line-height: var(--hr_height);
-	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 	background: none !important;
 	border-width: 0;
 
@@ -59,16 +59,19 @@ hr {
 		display: inline-block;
 		width: var(--hr_width);
 		height: 100%;
-		border-top-width: 1px;
-		border-top-style: solid;
+		background: currentColor;
 		vertical-align: top;
 		speak: none;
+	}
+
+	&:not(.has-text-color)::before {
+		opacity: var(--border_opacity);
 	}
 
 	&.alignleft,
 	&.alignright {
 		float: none;
-		margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
+		margin-bottom: var(--gap);
 	}
 
 		&.alignleft.alignleft {
@@ -86,13 +89,11 @@ hr {
 	}
 
 	&.alignwide.alignwide {
-		--hr_width: 100%;
 		width: 100%;
 		max-width: var(--layout_width_content);
 	}
 
 	&.alignfull.alignfull {
-		--hr_width: 100%;
 		width: calc( 100vw - var(--scrollbar_width) );
 		max-width: none;
 	}
@@ -103,24 +104,25 @@ hr {
 	.wp-block-separator {
 
 		&:not(:first-child) {
-			margin-top: _pow( 1 + $golden_minor, 4 ) +em;
+			margin-top: _pow( 1 + $ratio_min, 4 ) +em;
 		}
 
 		&:not(:last-child) {
-			margin-bottom: _pow( 1 + $golden_minor, 4 ) +em;
+			margin-bottom: _pow( 1 + $ratio_min, 4 ) +em;
 		}
 
-		&.is-style-wide.is-style-wide {
+		&.is-style-wide,
+		&.alignwide,
+		&.alignfull {
 			--hr_width: 100%;
-			border-width: 0;
 		}
 
 	}
 
-	.has-text-color hr.is-style-wide,
-	hr.is-style-wide.has-text-color {
-		border-color: currentColor;
-	}
+		.has-text-color hr.is-style-wide,
+		hr.is-style-wide.has-text-color {
+			border-color: currentColor;
+		}
 
 abbr[title],
 acronym[title],
@@ -133,15 +135,12 @@ abbr {
 	@extend %font_weight_600;
 }
 
-
-
-
 blockquote {
 	@extend %font_size_golden_minor;
 	@extend %font_weight_300;
 	@extend %line_height_golden;
 	clear: both;
-	margin: ( $golden +em ) 0;
+	margin: ( $ratio +em ) 0;
 
 	&:last-child {
 		margin: 0;
@@ -157,7 +156,7 @@ blockquote {
 		float: $left; // {{RTL}}
 		margin-#{$right}: .25em; // {{RTL}}
 		line-height: .9;
-		font-size: $golden +em;
+		font-size: $ratio +em;
 		opacity: .5;
 	}
 
@@ -191,7 +190,7 @@ blockquote {
 			float: none;
 			margin-left: 0;
 			margin-right: 0;
-			margin-bottom: $golden_minor +em;
+			margin-bottom: $ratio_min +em;
 		}
 
 	}
@@ -203,7 +202,7 @@ blockquote {
 
 		> cite {
 			display: block;
-			margin-top: $golden_major +em;
+			margin-top: $ratio_maj +em;
 		}
 
 	blockquote {
@@ -236,27 +235,22 @@ q {
 		content: close-quote;
 	}
 
-	&::before,
-	&::after {
-		display: inline-block; // Required for correct RTL display. // {{RTL}}
-	}
-
 }
 
 mark,
 ins,
 .highlight {
-	padding: ( $golden_minor / 2 +em ) 0;
-	margin: 0 ( $golden_minor +em );
+	padding: ( $ratio_min / 2 +em ) 0;
+	margin: 0 ( $ratio_min +em );
 	box-decoration-break: clone;
 }
 
 	mark,
 	.highlight {
-		box-shadow: (  $golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' ),
-		            ( -$golden_minor +em ) 0 0 map_get( $customize_options, 'color_accent' );
-		box-shadow: (  $golden_minor +em ) 0 0 var(--color_accent),
-		            ( -$golden_minor +em ) 0 0 var(--color_accent);
+		box-shadow: (  $ratio_min +em ) 0 0 map_get( $customize_options, 'color_accent' ),
+		            ( -$ratio_min +em ) 0 0 map_get( $customize_options, 'color_accent' );
+		box-shadow: (  $ratio_min +em ) 0 0 var(--color_accent),
+		            ( -$ratio_min +em ) 0 0 var(--color_accent);
 	}
 
 s,
@@ -266,7 +260,7 @@ del {
 }
 
 figure {
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 
 	&:last-child {
 		margin-bottom: 0;
@@ -303,8 +297,8 @@ code {
 	@extend %font_size_small;
 	position: relative;
 	display: inline-block;
-	padding: 0 ( $golden_major +em );
-	margin: 0 ( $golden_minor / 2 +em );
+	padding: 0 ( $ratio_maj +em );
+	margin: 0 ( $ratio_min / 2 +em );
 }
 
 	// Not using nesting for additional wrapper in block editor.
@@ -317,7 +311,7 @@ code {
 
 		code {
 			display: inline;
-			padding: 0 ( $golden_minor +em );
+			padding: 0 ( $ratio_min +em );
 			background: none;
 			color: inherit;
 		}
@@ -328,7 +322,7 @@ pre {
 	@extend %font_size_small;
 	position: relative;
 	padding: 1em;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 	overflow: auto;
 	tab-size: 2;
 
@@ -357,8 +351,8 @@ ul,
 ol {
 	padding: 0;
 	margin: 0;
-	margin-#{$left}: $golden_minor + 1em; // {{RTL}}
-	margin-bottom: $golden +em;
+	margin-#{$left}: $ratio_min + 1em; // {{RTL}}
+	margin-bottom: $ratio +em;
 }
 
 	// Not using nesting for additional wrapper in block editor.
@@ -388,7 +382,7 @@ ul {
 
 			&::before {
 				position: absolute;
-				#{$left}: -$golden_minor - 1em;
+				#{$left}: -$ratio_min - 1em;
 				line-height: inherit;
 				speak: none;
 			}
@@ -405,12 +399,12 @@ ul {
 
 dl {
 	margin-top: 0;
-	margin-bottom: $golden +em;
+	margin-bottom: $ratio +em;
 }
 
 dt {
 	@extend %font_weight_700;
-	margin-top: $golden_major +em;
+	margin-top: $ratio_maj +em;
 
 	&:first-child {
 		margin-top: 0;
@@ -419,7 +413,7 @@ dt {
 }
 
 dd {
-	margin-#{$left}: $golden +em; // {{RTL}}
+	margin-#{$left}: $ratio +em; // {{RTL}}
 }
 
 address {
@@ -443,7 +437,7 @@ strong {
 table {
 	@extend %line_height_golden_minor;
 	width: 100%;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $ratio +em );
 	border-width: 2px;
 	border-style: solid;
 	border-collapse: collapse;
@@ -458,7 +452,7 @@ table {
 
 	th,
 	td {
-		padding: ( $golden_major +em ) 1em;
+		padding: ( $ratio_maj +em ) 1em;
 		border-width: 1px;
 		border-style: solid;
 		vertical-align: top;
@@ -497,7 +491,7 @@ svg {
 @if not variable-exists( 'selector_editor_wrapper' ) {
 	#{ $selectors_margin_bottom } {
 		margin-top: 0;
-		margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
+		margin-bottom: var(--gap);
 
 		&:last-child {
 			margin-bottom: 0;

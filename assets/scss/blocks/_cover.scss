@@ -4,6 +4,11 @@
 	height: auto;
 	padding: var(--block_padding);
 
+	&.alignfull {
+		padding-left: var(--body_padding);
+		padding-right: var(--body_padding);
+	}
+
 	&:not(.has-text-color) {
 		color: #fff;
 	}
@@ -76,7 +81,7 @@
 
 	&.alignfull,
 	&.alignwide {
-		min-height: $golden_major * 100vh;
+		min-height: $ratio_maj * 100vh;
 	}
 
 }

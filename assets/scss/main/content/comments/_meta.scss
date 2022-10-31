@@ -2,7 +2,7 @@
 
 .comment-meta {
 	clear: both;
-	padding-bottom: $golden_major +em;
+	padding-bottom: $ratio_maj +em;
 	margin-bottom: 1em;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -19,14 +19,14 @@
 
 	.avatar {
 		display: block;
-		width: 5em - $golden;
+		width: 5em - $ratio;
 		margin-bottom: 1em;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
 			position: absolute;
 			width: 80px;
 			#{$left}: 0; // {{RTL}}
-			top: $golden +em;
+			top: $ratio +em;
 			margin-bottom: 0;
 		}
 
@@ -51,7 +51,7 @@
 	}
 
 	.edit-link {
-		padding-#{$left}: $golden +em; // {{RTL}}
+		padding-#{$left}: $ratio +em; // {{RTL}}
 		font-variant: small-caps;
 	}
 
@@ -66,7 +66,7 @@
 	.avatar {
 
 		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
-			border-left: ( $golden_minor +em ) solid;
+			border-left: ( $ratio_min +em ) solid;
 		}
 
 	}
@@ -83,11 +83,11 @@
 			height: 30px;
 			#{$left}: 25px; // {{RTL}}
 			top: 65px;
-			margin-top: $golden +em;
+			margin-top: $ratio +em;
 			font-size: 16px;
 			line-height: 28px;
 			text-align: center;
-			font-size: 1em + $golden_minor / 2;
+			font-size: 1em + $ratio_min / 2;
 			border-radius: 50%;
 			z-index: 1;
 		}
@@ -107,8 +107,8 @@
 	&::before {
 		@extend %genericon;
 		content: '\f466';
-		margin-#{$right}: $golden_minor / 2 +em; // {{RTL}}
-		font-size: 1em + $golden_minor;
+		margin-#{$right}: $ratio_min / 2 +em; // {{RTL}}
+		font-size: 1em + $ratio_min;
 		vertical-align: middle;
 	}
 

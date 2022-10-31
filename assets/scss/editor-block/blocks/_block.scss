@@ -2,12 +2,12 @@
 
 .wp-block {
 	max-width: $max_width_content;
-	margin-bottom: var(--golden_rem);
+	margin-bottom: var(--gap);
 	z-index: 1; // In case of negative margin overlay.
 
 	&:not([style*="margin-bottom"]):not(.has-no-margin):not(.has-no-margin-bottom):not(.has-no-margin-vertical):not(.margin-none):not(.margin-bottom-none):not(.margin-vertical-none):not(.m0):not(.mb0):not(.m-0):not(.mb-0) {
 		+ .block-list-appender {
-			margin-top: calc( var(--golden_rem) * -1 );
+			margin-top: calc( var(--gap) * -1 );
 		}
 	}
 
@@ -38,9 +38,15 @@
 	&[data-align="left"] {
 
 		.block-editor-block-list__layout & > .is-block-content,
-		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
-			margin-right: 1em;
-			margin-bottom: 1em;
+		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit,
+		> [class] {
+			margin-top: 0;
+			margin-right: var(--typography_font_size_base); // Simulating rem unit for block editor.
+			margin-bottom: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				margin-right: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+			}
 		}
 
 	}
@@ -53,9 +59,15 @@
 	&[data-align="right"] {
 
 		.block-editor-block-list__layout & > .is-block-content,
-		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit {
-			margin-left: 1em;
-			margin-bottom: 1em;
+		#{ $selector_editor_wrapper } & .block-editor-block-list__block-edit,
+		> [class] {
+			margin-top: 0;
+			margin-left: var(--typography_font_size_base); // Simulating rem unit for block editor.
+			margin-bottom: var(--typography_font_size_base); // Simulating rem unit for block editor.
+
+			@include media( map_get( $breakpoint, 'l' ) ) {
+				margin-left: calc( var(--typography_font_size_base) * 2 ); // Simulating rem unit for block editor.
+			}
 		}
 
 	}
@@ -66,7 +78,7 @@
 		margin: 0;
 
 		&:not(:last-child) > * {
-			margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
+			margin-bottom: var(--gap);
 		}
 
 		&:last-child > * {
@@ -110,14 +122,19 @@
 
 }
 
+.has-background [data-align="wide"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 #{ $selector_editor_wrapper } .has-background.has-background .wp-block[data-align="full"] {
 	width: auto;
-	margin-left: calc( -1 * var(--block_padding) );
-	margin-right: calc( -1 * var(--block_padding) );
+	margin-left: calc( -1 * var(--body_padding) );
+	margin-right: calc( -1 * var(--body_padding) );
 }
 
 #{ $selector_editor_wrapper } figure.wp-block {
-	margin-bottom: var(--golden_rem);
+	margin-bottom: var(--gap);
 }
 
 .has-background:not([style*="padding-bottom"]):not(.has-no-padding):not(.has-no-padding-bottom):not(.has-no-padding-vertical):not(.p-0):not(.pb-0) {
@@ -146,6 +163,8 @@
 
 	// WP 5.9 fix for continual height change in block pattern preview.
 	body.editor-styles-wrapper {
+		padding-top: 2em !important;
+		padding-bottom: 2em !important;
 
 		[style*="min-height: 100vh"] {
 			min-height: calc( 100 * var(--min-height-multiplier-vh, 9px) ) !important;

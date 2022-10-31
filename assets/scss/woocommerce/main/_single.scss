@@ -26,7 +26,7 @@
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			width: percentage( $golden_minor - .02 );
+			width: percentage( $ratio_min - .02 );
 		}
 
 		// Rating.
@@ -37,7 +37,7 @@
 			}
 
 			.star-rating {
-				font-size: $golden_minor + 1em;
+				font-size: $ratio_min + 1em;
 			}
 
 			@include media( map_get( $breakpoint, 's' ) ) {
@@ -59,7 +59,7 @@
 			.sharedaddy {
 				padding-top: 1em;
 				margin-top: 0;
-				margin-bottom: $golden +em;
+				margin-bottom: $ratio +em;
 				border-top-width: 1px;
 				border-top-style: solid;
 
@@ -77,13 +77,13 @@
 		// Description.
 
 			.woocommerce-product-details__short-description {
-				margin-bottom: $golden +em;
+				margin-bottom: $ratio +em;
 			}
 
 			.product-description-link {
 				text-transform: uppercase;
 				text-decoration: underline;
-				font-size: 1em - $golden_minor / 2;
+				font-size: 1em - $ratio_min / 2;
 				font-weight: 700;
 
 				&:hover {
@@ -100,16 +100,16 @@
 		// Price.
 
 			.price {
-				margin-bottom: $golden +rem;
-				font-size: $golden +em;
+				margin-bottom: $ratio +rem;
+				font-size: $ratio +em;
 			}
 
 		// Stock.
 
 			.stock {
 				display: inline-block;
-				padding: ( $golden_minor +em ) ( $golden_major +em );
-				font-size: 1em - $golden_minor / 2;
+				padding: ( $ratio_min +em ) ( $ratio_maj +em );
+				font-size: 1em - $ratio_min / 2;
 				border-width: 1px;
 				border-style: solid;
 
@@ -122,7 +122,7 @@
 			table .stock {
 				display: block;
 				padding: 0;
-				margin-top: $golden_minor +em;
+				margin-top: $ratio_min +em;
 				border-width: 0;
 				font-style: italic;
 			}
@@ -142,7 +142,7 @@
 				}
 
 				table {
-					margin: ( $golden +em ) 0;
+					margin: ( $ratio +em ) 0;
 					border-width: 0;
 
 					th,
@@ -164,7 +164,7 @@
 					@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 						display: block;
 						width: 100%;
-						margin-top: $golden +rem;
+						margin-top: $ratio +rem;
 					}
 
 				}
@@ -174,7 +174,7 @@
 					width: 100%;
 					padding-top: 1em;
 					padding-bottom: 1em;
-					margin-top: $golden +rem;
+					margin-top: $ratio +rem;
 					font-size: 1em;
 					font-weight: 700;
 				}
@@ -188,7 +188,7 @@
 			.group_table {
 
 				.qty {
-					font-size: $golden_minor +1em;
+					font-size: $ratio_min +1em;
 				}
 
 				label {
@@ -208,12 +208,12 @@
 	// Product meta.
 
 		.product_meta {
-			margin-top: _pow( 1 + $golden_minor, 4 ) +em;
-			font-size: 1em - $golden_minor / 4;
+			margin-top: _pow( 1 + $ratio_min, 4 ) +em;
+			font-size: 1em - $ratio_min / 4;
 
 			> span {
 				display: block;
-				margin: ( $golden_minor +em ) 0;
+				margin: ( $ratio_min +em ) 0;
 			}
 
 		}

@@ -1,7 +1,7 @@
 === Reykjavik ===
 Contributors: webmandesign
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -37,8 +37,17 @@ Please visit support forum at https://support.webmandesign.eu/
 Please see `changelog.md` file.
 
 
+== Upgrade Notice ==
+
+= 2.2.0 =
+Improving accessibility, styles, JavaScript, updating localization, fixing issues.
+
+
 == Copyright ==
 
+Reykjavik WordPress theme, copyright (C) 2017 WebMan Design (https://www.webmandesign.eu)
+
+This theme bundles the following third-party resources:
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Normalize.css © Nicolas Gallagher and Jonathan Neal, MIT
 * Genericons Neue © Automattic, GPL v2 or later

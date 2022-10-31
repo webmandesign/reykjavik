@@ -4,10 +4,10 @@
 
 	.outdent-content {
 		@extend %clearfix;
-		margin: ( $golden +em ) 0;
+		margin: ( $ratio +em ) 0;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin: ( _pow( $golden, 2 ) +em ) 0;
+			margin: ( _pow( $ratio, 2 ) +em ) 0;
 		}
 
 		&:first-child {
@@ -22,19 +22,19 @@
 			clear: both;
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-left: percentage( -$golden_minor * $golden_minor );
-				margin-right: percentage( -$golden_minor * $golden_minor );
+				margin-left: percentage( -$ratio_min * $ratio_min );
+				margin-right: percentage( -$ratio_min * $ratio_min );
 			}
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-left: percentage( -$golden_major / 2 );
-				margin-right: percentage( -$golden_major / 2 );
+				margin-left: percentage( -$ratio_maj / 2 );
+				margin-right: percentage( -$ratio_maj / 2 );
 			}
 
 		}
 
 		@include media( map_get( $breakpoint, 'xxl' ) ) {
-			margin-#{$left}: percentage( -$golden_minor * $golden_minor ); // {{RTL}}
+			margin-#{$left}: percentage( -$ratio_min * $ratio_min ); // {{RTL}}
 		}
 
 		body.page:not(.page-layout-outdented) & {
@@ -67,7 +67,7 @@
 			> .outdent-heading {
 
 				&:not(:first-child) {
-					margin-top: _pow( 1 + $golden_minor, 4 ) +rem;
+					margin-top: _pow( 1 + $ratio_min, 4 ) +rem;
 
 					@include media( map_get( $breakpoint, 'xl' ) ) {
 						margin-top: 12%;
@@ -90,10 +90,10 @@
 					> h2,
 					> .outdent-heading {
 						width: percentage( 1 / ( $page_content_width / 100 ) );
-						height: $golden +em;
+						height: $ratio +em;
 						padding-#{$right}: percentage( ( $page_content_width + $page_content_gutter ) / $page_content_width );
 						margin-#{$left}: percentage( -1 / ( $page_content_width / 100 ) + 1 ); // {{RTL}}
-						margin-bottom: -$golden +em;
+						margin-bottom: -$ratio +em;
 
 						&.uppercase,
 						&.is-uppercase,

@@ -5,7 +5,7 @@
 	.site-main {
 
 		> .page-title {
-			@extend %screen_reader_hiding;
+			@extend %screen_reader--hide;
 		}
 
 		.term-description {
@@ -17,9 +17,9 @@
 }
 
 .woocommerce-breadcrumb {
-	margin-bottom: $golden_major +em;
+	margin-bottom: $ratio_maj +em;
 	text-transform: uppercase;
-	font-size: 1em - $golden_minor / 2;
+	font-size: 1em - $ratio_min / 2;
 	color: inherit;
 
 	a {
@@ -37,7 +37,7 @@
 	}
 
 	&-delimiter {
-		margin: 0 ( $golden_minor +em );
+		margin: 0 ( $ratio_min +em );
 	}
 
 }
@@ -55,7 +55,7 @@
 	.price {
 		flex: 0 1 auto;
 		margin: 1rem 0 0;
-		font-size: _pow( 1 + $golden_minor, 2 ) +em;
+		font-size: _pow( 1 + $ratio_min, 2 ) +em;
 		font-weight: 300;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
@@ -76,7 +76,7 @@
 
 	del {
 		font-size: inherit;
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 
 		.amount {
 			font-weight: 300;

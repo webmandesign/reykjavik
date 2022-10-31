@@ -3,7 +3,7 @@
 // TinyMCE overrides
 
 	.mce-content-body {
-		line-height: $golden;
+		line-height: $ratio;
 
 		// Heading tags and classes.
 		@each $selector, $settings in $setup_headings {
@@ -16,7 +16,7 @@
 		@each $i, $size in $display_text_size {
 			.display-#{$i},
 			.has-display-#{$i}-font-size {
-				line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
+				line-height: 1 + $ratio_min * 3 / 8 + $ratio_min / 2 / $i;
 			}
 		}
 

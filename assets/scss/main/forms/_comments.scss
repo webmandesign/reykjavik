@@ -3,8 +3,8 @@
 .comment-respond {
 
 	.comment-list & {
-		padding: 0 ( $golden +em );
-		margin: ( $golden +em ) 0;
+		padding: 0 ( $ratio +em );
+		margin: ( $ratio +em ) 0;
 	}
 
 	&,
@@ -15,7 +15,7 @@
 }
 
 .comment-reply-title {
-	margin-bottom: $golden_major +em;
+	margin-bottom: $ratio_maj +em;
 	font-size: inherit;
 	text-transform: uppercase;
 }
@@ -38,7 +38,7 @@
 .comment-form {
 
 	p {
-		margin-bottom: $golden +em;
+		margin-bottom: $ratio +em;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -58,7 +58,7 @@
 	}
 
 	.form-submit {
-		margin-top: _pow( $golden, 2 ) +em;
+		margin-top: _pow( $ratio, 2 ) +em;
 	}
 
 	::placeholder {

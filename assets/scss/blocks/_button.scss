@@ -19,13 +19,13 @@
 		}
 
 		&:not(.has-text-color) {
-			color: map_get( $customize_options, 'color_accent_text' );
-			color: var(--color_accent_text);
 
+			&,
 			&:hover,
 			&:focus,
 			&:active,
 			&:visited {
+				color: map_get( $customize_options, 'color_accent_text' );
 				color: var(--color_accent_text);
 			}
 
@@ -40,13 +40,17 @@
 	.wp-block-button__link {
 		border: 2px solid;
 
-		&:not(.has-text-color) {
-			color: currentColor;
+		&:not(.has-text-color),
+		&:not(.has-text-color):hover,
+		&:not(.has-text-color):focus,
+		&:not(.has-text-color):active {
+			color: inherit;
 		}
 
-		&:hover,
-		&:focus,
-		&:active {
+		&,
+		&:not(.has-background):hover,
+		&:not(.has-background):focus,
+		&:not(.has-background):active {
 			background: none;
 		}
 

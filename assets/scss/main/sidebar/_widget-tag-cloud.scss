@@ -3,10 +3,10 @@
 .tagcloud {
 
 	.widget & {
-		font-size: 1em - $golden_minor * 2 / 3;
+		font-size: 1em - $ratio_min * 2 / 3;
 
 		a {
-			padding: ( $golden_major +em ) 1em;
+			padding: ( $ratio_maj +em ) 1em;
 			text-transform: uppercase;
 		}
 

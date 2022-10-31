@@ -3,7 +3,7 @@
 .comments-area {
 	clear: both;
 	position: relative;
-	padding: ( $golden +rem ) 0 0;
+	padding: ( $ratio +rem ) 0 0;
 	margin: var(--content_padding) 0 0;
 	border-top-width: 2px;
 	border-top-style: solid;
@@ -21,7 +21,7 @@
 		.page.no-widgets-sidebar &-inner {
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				width: percentage( $golden_major );
+				width: percentage( $ratio_maj );
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -39,13 +39,13 @@
 		.content-layout-stretched & {
 			// No sidebar here
 			@extend %layout_content_width;
-			padding: ( _pow( 1 + $golden_minor, 5 ) +rem ) 0;
+			padding: ( _pow( 1 + $ratio_min, 5 ) +rem ) 0;
 			border-width: 0;
 
 			&-inner {
 
 				@include media( map_get( $breakpoint, 'xl' ) ) {
-					width: percentage( $golden_major );
+					width: percentage( $ratio_maj );
 					margin-left: auto;
 					margin-right: auto;
 				}
@@ -59,14 +59,14 @@
 .comments-title {
 	@extend %font_size_golden_minor;
 	@extend %font_weight_700;
-	margin-bottom: $golden +rem;
+	margin-bottom: $ratio +rem;
 
 	@include media( map_get( $breakpoint, 'm' ) ) {
-		margin-bottom: _pow( $golden, 2 ) +rem;
+		margin-bottom: _pow( $ratio, 2 ) +rem;
 	}
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: _pow( $golden, 3 ) +rem;
+		margin-bottom: _pow( $ratio, 3 ) +rem;
 	}
 
 	.add-comment-link {

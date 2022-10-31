@@ -6,7 +6,7 @@
 	@extend %font_style_normal;
 	@extend %line_height_golden_minor;
 	display: block;
-	margin-top: $golden_minor +em;
+	margin-top: $ratio_min +em;
 	opacity: .8;
 
 	// In intro section
@@ -26,7 +26,7 @@
 	// In parted post
 
 		.is-singular[class*="paged-"] & {
-			margin-bottom: $golden_major +em;
+			margin-bottom: $ratio_maj +em;
 		}
 
 		.post-table-of-contents &,

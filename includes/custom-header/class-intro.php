@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -115,7 +115,7 @@ class Reykjavik_Intro {
 		 * @link  https://make.wordpress.org/core/2016/11/26/video-headers-in-4-7/
 		 *
 		 * @since    1.0.0
-		 * @version  2.1.0
+		 * @version  2.2.0
 		 */
 		public static function setup() {
 
@@ -128,8 +128,8 @@ class Reykjavik_Intro {
 
 				add_theme_support( 'custom-header', apply_filters( 'wmhook_reykjavik_custom_header_args', array(
 					'default-text-color' => 'ffffff',
-					'width'              => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][0] ) : ( 1920 ),
-					'height'             => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro'][1] ) : ( 1080 ),
+					'width'              => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro']['width'] ) : ( 1920 ),
+					'height'             => ( isset( $image_sizes['reykjavik-intro'] ) ) ? ( $image_sizes['reykjavik-intro']['height'] ) : ( 1080 ),
 					'flex-width'         => true,
 					'flex-height'        => true,
 					'video'              => true,
@@ -303,7 +303,7 @@ class Reykjavik_Intro {
 		 * Header image URL
 		 *
 		 * @since    1.0.0
-		 * @version  2.1.0
+		 * @version  2.2.0
 		 *
 		 * @param  string $url  Image URL or other custom header value.
 		 */
@@ -339,7 +339,7 @@ class Reykjavik_Intro {
 						$url = (string) $intro_image;
 					}
 
-				} elseif ( has_post_thumbnail( $post_id ) ) {
+				} elseif ( is_singular() && has_post_thumbnail( $post_id ) ) {
 
 					$url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
 					$url = $url[0];

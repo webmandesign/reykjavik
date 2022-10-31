@@ -5,7 +5,7 @@
 	@extend %font_style_italic;
 	display: block;
 	max-width: 20em;
-	margin-top: $golden_minor +em;
+	margin-top: $ratio_min +em;
 	white-space: normal;
 	opacity: .8;
 
@@ -24,7 +24,7 @@
 		@include media( map_get( $breakpoint, 'l' ) ) {
 
 			.main-navigation-container .megamenu > ul > li > a & {
-				margin-bottom: $golden_major +em;
+				margin-bottom: $ratio_maj +em;
 			}
 
 		}

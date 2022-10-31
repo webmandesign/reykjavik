@@ -4,7 +4,7 @@
 
 	.twitter-tweet-rendered {
 		width: 100% $important_wp_embed;
-		margin: ( $golden +em ) 0 $important_wp_embed;
+		margin: ( $ratio +em ) 0 $important_wp_embed;
 	}
 
 // Videos
@@ -12,7 +12,7 @@
 	.wp-video {
 		width: 100% $important_wp_embed;
 		height: auto $important_wp_embed;
-		margin-bottom: $golden +em;
+		margin-bottom: $ratio +em;
 
 		&:last-child {
 			margin-bottom: 0;

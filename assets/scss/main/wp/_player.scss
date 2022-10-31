@@ -1,7 +1,7 @@
 /* FILE: main/wp/_player.scss */
 
 .mejs-container {
-	margin-bottom: $golden +em;
+	margin-bottom: $ratio +em;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -28,13 +28,13 @@
 		&-current-item,
 		&-tracks {
 			height: auto;
-			padding: $golden +rem;
+			padding: $ratio +rem;
 			margin: 0;
 		}
 
 		&-current-item {
 			@extend %font_weight_700;
-			padding-bottom: $golden_major +rem;
+			padding-bottom: $ratio_maj +rem;
 		}
 
 	}

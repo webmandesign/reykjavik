@@ -7,7 +7,7 @@ ul {
 		.widget_recent_comments &,
 		.widget_recent_entries & {
 			position: relative;
-			padding-#{$left}: $golden +em; // {{RTL}}
+			padding-#{$left}: $ratio +em; // {{RTL}}
 		}
 
 	}

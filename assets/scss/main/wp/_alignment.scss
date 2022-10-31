@@ -69,11 +69,11 @@
 .alignfull,
 .alignwide-wrap {
 	clear: both;
-	// position: relative;
+	position: relative;
 	width: calc( 100vw - var(--scrollbar_width) );
 	max-width: calc( 100vw - var(--scrollbar_width) );
 	margin-#{$left}: calc( 50% - 50vw + ( var(--scrollbar_width) / 2 ) );
-	// z-index: 1; // This is for when using negative top margin to stack up over the Cover block overlay.
+	z-index: 1; // This is for when using negative top margin to stack up over the Cover block overlay.
 
 	.has-widgets-sidebar .content-area & {
 		@include media( map_get( $breakpoint, 'l' ) ) {
@@ -94,8 +94,18 @@
 		padding-left: var(--body_padding);
 		padding-right: var(--body_padding);
 
+		.alignwide-wrap {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		> .alignwide {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		&:not(:last-child) > .alignwide {
-			margin-bottom: var(--golden_rem); // Simulating rem unit for block editor.
+			margin-bottom: var(--gap);
 		}
 
 		.has-widgets-sidebar .content-area & {
@@ -124,8 +134,8 @@
 
 	.has-background.has-background & {
 		width: auto;
-		margin-left: calc( -1 * var(--block_padding) );
-		margin-right: calc( -1 * var(--block_padding) );
+		margin-left: calc( -1 * var(--body_padding) );
+		margin-right: calc( -1 * var(--body_padding) );
 	}
 
 }

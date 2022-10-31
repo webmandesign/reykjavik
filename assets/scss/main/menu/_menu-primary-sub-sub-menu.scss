@@ -9,10 +9,10 @@
 			min-width: 0;
 			#{$left}: 100%; // {{RTL}}
 			top: 0;
-			padding: $golden +rem;
+			padding: $ratio +rem;
 			margin: 0;
-			margin-top: -$golden +rem;
-			margin-top: calc( #{ -$golden +rem } - 1px ); // Account for top border.
+			margin-top: -$ratio +rem;
+			margin-top: calc( #{ -$ratio +rem } - 1px ); // Account for top border.
 
 			li {
 				margin-#{$left}: 0; // {{RTL}}

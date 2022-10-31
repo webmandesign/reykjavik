@@ -43,7 +43,7 @@ p.stars {
 	display: inline-block;
 	margin: 0;
 	line-height: 1;
-	font-size: $golden_minor + 1em;
+	font-size: $ratio_min + 1em;
 
 	a {
 		@extend %indent_text_for_icon_only;

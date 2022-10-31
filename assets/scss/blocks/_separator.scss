@@ -1,7 +1,6 @@
 /* FILE: blocks/_separator.scss */
 
 .wp-block-separator {
-	max-width: var(--layout_width_entry_content);
 	border-width: 0;
 
 	@if variable-exists( 'selector_editor_wrapper' ) {
@@ -14,34 +13,26 @@
 		padding: 0;
 	}
 
+	&.is-style-wide {
+		border-width: 0;
+	}
+
 	&.is-style-dots {
-		--hr_width: calc( #{ $golden } * 4em );
-		--hr_height: 1em;
-		text-align: center;
+		--hr_width: calc( #{ $ratio } * 4em );
+		--hr_height: #{ $ratio +em };
 		overflow: visible;
 
 		&::before {
 			content: '●●●';
 			padding: 0;
-			font-size: var(--hr_height);
+			padding-#{$left}: 1em;
+			font-size: 1em;
 			letter-spacing: 1em;
 			white-space: nowrap;
 			background: none;
-			border-width: 0;
-			opacity: .2; // Customizer RGBA colors alpha value. @see $customize_options_rgba.
 			speak: none;
 		}
 
-	}
-
-	&:not(.has-background),
-	&:not(.has-text-color) {
-		border-color: inherit;
-	}
-
-	&.has-background::before,
-	&.has-text-color::before {
-		opacity: 1;
 	}
 
 }
@@ -51,5 +42,5 @@
 }
 
 .wp-block-separator + .wp-block-spacer.wp-block-spacer {
-	margin-top: _pow( 1 + $golden_minor, 4 ) * -1em;
+	margin-top: _pow( 1 + $ratio_min, 4 ) * -1em;
 }

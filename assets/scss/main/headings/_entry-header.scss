@@ -1,19 +1,19 @@
 /* FILE: main/headings/_entry-header.scss */
 
 .entry-header {
-	margin-bottom: _pow( $golden, 2 ) +rem;
+	margin-bottom: _pow( $ratio, 2 ) +rem;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: _pow( 1 + $golden_minor, 4 ) +rem;
+		margin-bottom: _pow( 1 + $ratio_min, 4 ) +rem;
 	}
 
 	.posts & {
-		margin-bottom: $golden +em;
+		margin-bottom: $ratio +em;
 	}
 
 	.page .site-main > .entry > &,
 	.single.has-intro .site-main > .entry > & {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 	}
 
 }
@@ -22,20 +22,20 @@
 .page-title {
 	@extend %break_words;
 	padding: 0;
-	margin: 0 0 ( _pow( $golden, 2 ) +rem );
+	margin: 0 0 ( _pow( $ratio, 2 ) +rem );
 
 	// Paginated title suffix
 
 		small {
 			@extend %font_weight_400;
 			display: block;
-			margin-top: $golden_minor +rem;
+			margin-top: $ratio_min +rem;
 
 			@include media( map_get( $breakpoint, 'm' ) ) {
 				$pagination_suffix_font_size: .5; // In em.
 				display: inline-block;
 				margin-top: ( 1 - $pagination_suffix_font_size ) / $pagination_suffix_font_size +em;
-				margin-#{$left}: $golden_minor +rem; // {{RTL}}
+				margin-#{$left}: $ratio_min +rem; // {{RTL}}
 				font-size: $pagination_suffix_font_size +em;
 				vertical-align: top;
 			}

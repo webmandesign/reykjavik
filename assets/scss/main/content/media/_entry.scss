@@ -1,10 +1,10 @@
 /* FILE: main/content/media/_entry.scss */
 
 .entry-media {
-	margin-bottom: _pow( $golden, 2 ) +rem;
+	margin-bottom: _pow( $ratio, 2 ) +rem;
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: _pow( 1 + $golden_minor, 4 ) +rem;
+		margin-bottom: _pow( 1 + $ratio_min, 4 ) +rem;
 	}
 
 	a {
@@ -56,11 +56,11 @@
 		.posts & {
 			float: none;
 			width: auto;
-			margin: calc( #{ -$golden +em } - 1px ); // Cover border around post entry.
-			margin-bottom: $golden +em;
+			margin: calc( #{ -$ratio +em } - 1px ); // Cover border around post entry.
+			margin-bottom: $ratio +em;
 
 			.search-results & {
-				margin: 0 0 ( $golden +em ); // Due to possible icon child page featured image.
+				margin: 0 0 ( $ratio +em ); // Due to possible icon child page featured image.
 			}
 
 			@include media( map_get( $breakpoint, 'm' ) ) {
@@ -84,7 +84,7 @@
 	// Avatar image
 
 		.avatar {
-			margin-bottom: $golden +em;
+			margin-bottom: $ratio +em;
 		}
 
 }

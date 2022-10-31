@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reykjavik\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2022-03-23 01:11+0100\n"
+"POT-Creation-Date: 2022-10-31 15:26+0100\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -588,12 +588,12 @@ msgid "General text font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1125
-#: includes/setup/class-setup.php:653
+#: includes/setup/class-setup.php:651
 msgid "Headings font"
 msgstr ""
 
 #: includes/customize/class-customize.php:1142
-#: includes/setup/class-setup.php:659
+#: includes/setup/class-setup.php:657
 msgid "Logo font"
 msgstr ""
 
@@ -625,7 +625,6 @@ msgid "Others"
 msgstr ""
 
 #: includes/customize/class-customize.php:1199
-#: templates/parts/admin/notice-welcome.php:48
 msgid "Show \"Welcome\" page"
 msgstr ""
 
@@ -661,22 +660,22 @@ msgstr ""
 msgid "Expand menu: %s"
 msgstr ""
 
-#: includes/frontend/class-content.php:404
+#: includes/frontend/class-content.php:491
 msgctxt "Block style label."
 msgid "Accessibly hidden"
 msgstr ""
 
-#: includes/frontend/class-content.php:411
+#: includes/frontend/class-content.php:498
 msgctxt "Block style label."
 msgid "Single column: align left"
 msgstr ""
 
-#: includes/frontend/class-content.php:416
+#: includes/frontend/class-content.php:503
 msgctxt "Block style label."
 msgid "Single column: align right"
 msgstr ""
 
-#: includes/frontend/class-content.php:443
+#: includes/frontend/class-content.php:530
 msgctxt "Block style label."
 msgid "No vertical gap"
 msgstr ""
@@ -1466,27 +1465,52 @@ msgid ""
 "archive pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:397
+#: includes/setup/class-setup.php:383
+msgctxt "WordPress predefined image size name."
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/setup/class-setup.php:387
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/class-setup.php:404
+#: includes/setup/class-setup.php:391
+msgctxt "WordPress predefined image size name."
+msgid "Medium"
+msgstr ""
+
+#: includes/setup/class-setup.php:396
 msgid "As featured image preview on single post page."
 msgstr ""
 
-#: includes/setup/class-setup.php:405
+#: includes/setup/class-setup.php:398
 msgid "In list of child pages."
 msgstr ""
 
-#: includes/setup/class-setup.php:412 includes/setup/class-setup.php:423
+#: includes/setup/class-setup.php:402
+msgctxt "WordPress predefined image size name."
+msgid "Large"
+msgstr ""
+
+#: includes/setup/class-setup.php:406 includes/setup/class-setup.php:420
 msgid "Not used in the theme."
 msgstr ""
 
-#: includes/setup/class-setup.php:422
+#: includes/setup/class-setup.php:413
+msgctxt "WordPress predefined image size name."
+msgid "Medium large"
+msgstr ""
+
+#: includes/setup/class-setup.php:418
 msgid "This is WordPress native image size."
 msgstr ""
 
-#: includes/setup/class-setup.php:430
+#: includes/setup/class-setup.php:424
+msgctxt "WordPress predefined image size name."
+msgid "Intro"
+msgstr ""
+
+#: includes/setup/class-setup.php:428
 msgid "In page intro section."
 msgstr ""
 
@@ -1495,7 +1519,7 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:536
+#: includes/setup/class-setup.php:534
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
@@ -1505,68 +1529,68 @@ msgstr ""
 #. supported by the font, translate this to 'off'.
 #. The font will not load then.
 #.
-#: includes/setup/class-setup.php:546
+#: includes/setup/class-setup.php:544
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: includes/setup/class-setup.php:615
+#: includes/setup/class-setup.php:613
 msgid "Thin (hairline) text"
 msgstr ""
 
-#: includes/setup/class-setup.php:616
+#: includes/setup/class-setup.php:614
 msgid "Extra light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:617
+#: includes/setup/class-setup.php:615
 msgid "Light text"
 msgstr ""
 
-#: includes/setup/class-setup.php:618
+#: includes/setup/class-setup.php:616
 msgid "Normal weight text"
 msgstr ""
 
-#: includes/setup/class-setup.php:619
+#: includes/setup/class-setup.php:617
 msgid "Medium text"
 msgstr ""
 
-#: includes/setup/class-setup.php:620
+#: includes/setup/class-setup.php:618
 msgid "Semi bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:621
+#: includes/setup/class-setup.php:619
 msgid "Bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:622
+#: includes/setup/class-setup.php:620
 msgid "Extra bold text"
 msgstr ""
 
-#: includes/setup/class-setup.php:623
+#: includes/setup/class-setup.php:621
 msgid "Heavy text"
 msgstr ""
 
-#: includes/setup/class-setup.php:628
+#: includes/setup/class-setup.php:626
 msgid "Text weights"
 msgstr ""
 
-#: includes/setup/class-setup.php:643
+#: includes/setup/class-setup.php:641
 msgid "Fonts"
 msgstr ""
 
-#: includes/setup/class-setup.php:647
+#: includes/setup/class-setup.php:645
 msgid "General font"
 msgstr ""
 
-#: includes/setup/class-setup.php:665
+#: includes/setup/class-setup.php:663
 msgid "Inherit font"
 msgstr ""
 
-#: includes/setup/class-setup.php:676
+#: includes/setup/class-setup.php:674
 msgid "Columns"
 msgstr ""
 
-#: includes/setup/class-setup.php:682
+#: includes/setup/class-setup.php:680
 #, php-format
 msgctxt "%d: Number of columns."
 msgid "Text in %d column"
@@ -1574,52 +1598,52 @@ msgid_plural "Text in %d columns"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup/class-setup.php:692
+#: includes/setup/class-setup.php:690
 msgid "Buttons"
 msgstr ""
 
-#: includes/setup/class-setup.php:696
+#: includes/setup/class-setup.php:694
 msgid "Button from link"
 msgstr ""
 
-#: includes/setup/class-setup.php:707
+#: includes/setup/class-setup.php:705
 msgid "Outdent"
 msgstr ""
 
-#: includes/setup/class-setup.php:711
+#: includes/setup/class-setup.php:709
 msgid "Outdent selected content"
 msgstr ""
 
-#: includes/setup/class-setup.php:722
+#: includes/setup/class-setup.php:720
 msgid "Outdented heading style"
 msgstr ""
 
-#: includes/setup/class-setup.php:857
+#: includes/setup/class-setup.php:855
 msgctxt "Font size."
 msgid "Extra Small"
 msgstr ""
 
-#: includes/setup/class-setup.php:863
+#: includes/setup/class-setup.php:861
 msgctxt "Font size."
 msgid "Small"
 msgstr ""
 
-#: includes/setup/class-setup.php:869
+#: includes/setup/class-setup.php:867
 msgctxt "Font size."
 msgid "Normal"
 msgstr ""
 
-#: includes/setup/class-setup.php:875
+#: includes/setup/class-setup.php:873
 msgctxt "Font size."
 msgid "Large"
 msgstr ""
 
-#: includes/setup/class-setup.php:881
+#: includes/setup/class-setup.php:879
 msgctxt "Font size."
 msgid "Extra Large"
 msgstr ""
 
-#: includes/setup/class-setup.php:896
+#: includes/setup/class-setup.php:894
 #, php-format
 msgctxt "Font size."
 msgid "Display %d"
@@ -1878,24 +1902,33 @@ msgid ""
 "to install WooCommerce plugin suggested below."
 msgstr ""
 
+#: includes/welcome/class-welcome.php:146
 #: includes/welcome/class-welcome.php:148
-#: includes/welcome/class-welcome.php:150
 msgid "Welcome"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:217
+#. translators: %1$s: heart icon, %2$s: star icons.
+#: includes/welcome/class-welcome.php:172
 #, php-format
-msgctxt "%1$s: heart icon, %2$s: star icons"
-msgid "If you %1$s like this theme, please rate it %2$s"
+msgid "If you %1$s love this theme don't forget to rate it %2$s."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:237
+#: includes/welcome/class-welcome.php:179
+msgid "And/or please consider a donation."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:182
+#: templates/parts/admin/welcome-promo.php:30
+msgid "Thank you!"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:197
 msgid ""
 "Have a suggestion for improvement or something is not working as it should?"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:239
-msgid "Contact support center &rarr;"
+#: includes/welcome/class-welcome.php:199
+msgid "&rarr; Contact support"
 msgstr ""
 
 #: includes/widgets/class-wp-widget-recent-posts.php:83
@@ -2535,205 +2568,297 @@ msgstr ""
 msgid "With intro widgets"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:19
+#: templates/parts/admin/media-image-sizes.php:24
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:20
+#: templates/parts/admin/media-image-sizes.php:25
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:21
+#: templates/parts/admin/media-image-sizes.php:26
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:40
+#: templates/parts/admin/media-image-sizes.php:35
 msgid "Recommended image sizes"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:42
+#: templates/parts/admin/media-image-sizes.php:38
 msgid ""
-"For the optimal theme display, please, set image sizes recommended in table "
-"below."
+"For the optimal theme display, please, set image sizes recommended below."
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:45
+#: templates/parts/admin/media-image-sizes.php:39
 msgid ""
-"Do you already have images uploaded to your website and want to resize them?"
+"If you already have images uploaded to your website you need to resize them "
+"after changing the sizes here."
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:46
-msgid "Use a plugin &raquo;"
+#: templates/parts/admin/media-image-sizes.php:40
+msgid "Resize images using plugin &rarr;"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:53
+#: templates/parts/admin/media-image-sizes.php:47
 msgid "Size name"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:54
+#: templates/parts/admin/media-image-sizes.php:48
+msgid "Size ID"
+msgstr ""
+
+#: templates/parts/admin/media-image-sizes.php:49
 msgid "Size parameters"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:55
+#: templates/parts/admin/media-image-sizes.php:50
 msgid "Theme usage"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:68
+#: templates/parts/admin/media-image-sizes.php:63
 msgid "cropped"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:68
+#: templates/parts/admin/media-image-sizes.php:63
 msgid "scaled"
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:80
+#: templates/parts/admin/media-image-sizes.php:67
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 
-#: templates/parts/admin/media-image-sizes.php:90
+#. translators: 1: image width, 2: image height, 3: cropped or scaled?
+#: templates/parts/admin/media-image-sizes.php:95
 #, php-format
-msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: templates/parts/admin/notice-welcome.php:35
+#. translators: %s: Theme name.
+#: templates/parts/admin/notice-welcome.php:27
 #, php-format
-msgctxt "%s: Theme name."
 msgid "Thank you for installing %s theme!"
 msgstr ""
 
-#: templates/parts/admin/notice-welcome.php:42
+#: templates/parts/admin/notice-welcome.php:35
 msgid "Visit \"Welcome\" page for information on how to set up your website."
 msgstr ""
 
-#: templates/parts/admin/welcome-footer.php:31
-msgid ""
-"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
-"Options &raquo; Others."
+#: templates/parts/admin/notice-welcome.php:43
+msgid "Let's Get Started &raquo;"
 msgstr ""
 
-#: templates/parts/admin/welcome-header.php:26
+#: templates/parts/admin/welcome-a11y.php:23
+msgid "Create an Accessible Website"
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:27
+msgid "Make your website inclusive and accessible to anyone."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:28
+msgid ""
+"This theme will help you create a disabilities friendly and barrier-less "
+"user experience."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:29
+msgid ""
+"When building your content, just follow web accessibility best practices."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:33
+msgid "Simplicity"
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:34
+msgid ""
+"Keep your text simple. Paragraphs with more than four lines are more "
+"difficult to read. Use lists and spacing in your content."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:38
+msgid "Hierarchy"
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:39
+msgid ""
+"Keep proper headings hierarchy, do not skip heading levels: H2 should be "
+"followed by H3 and so on."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:43
+msgid "Images"
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:44
+msgid "Adding images to posts and pages makes your content easier to remember."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:48
+msgid "Alternatives"
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:50
+msgid ""
+"Set alt text to images (do this in the media library or directly in post "
+"editor)."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:51
+msgid "Provide text alternatives for videos and sound."
+msgstr ""
+
+#: templates/parts/admin/welcome-a11y.php:57
+msgid "More info in theme documentation &rarr;"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:23
+msgid "Theme Demo Content"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:27
+msgid "Full theme demo content"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:30
+msgid ""
+"You can install a full theme demo content to match the theme demo website."
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:31
+msgid "(Preview the demo &rarr;)"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:32
+msgid "This provides a comprehensive start for building your own website."
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:37
+msgid "Install demo content"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:39
+msgid "(Appearance &rarr; Import Demo Data)"
+msgstr ""
+
+#: templates/parts/admin/welcome-demo.php:42
+msgid "How to import demo content &raquo;"
+msgstr ""
+
+#: templates/parts/admin/welcome-footer.php:26
+msgid ""
+"You can disable this page in Appearance &rarr; Customize &rarr; Theme "
+"Options &rarr; Others."
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:22
+msgid "Quickstart Guide"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:27
+msgid "Set up"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:30
+msgid "Make sure to tweak \"Settings\" section of your site."
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:31
+msgid "(Pay attention to image size setup under Settings &rarr; Media.)"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:33
+msgid "Settings"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:39
+#: templates/parts/admin/welcome-guide.php:45
+msgid "Customize"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:42
+msgid "You can customize your website using a live-preview editor."
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:43
+msgid "Customization changes apply only after you publish them."
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:51
+msgid "New to WordPress?"
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:53
+msgid "If you are new to WordPress check out info in theme documentation."
+msgstr ""
+
+#: templates/parts/admin/welcome-guide.php:54
+msgid "Get to know WordPress &rarr;"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme developer link.
+#: templates/parts/admin/welcome-header.php:32
 #, php-format
-msgctxt "1: theme name, 2: theme version number."
-msgid "Welcome to %1$s %2$s"
+msgid "Congratulations and thank you for choosing %1$s theme by %2$s!"
 msgstr ""
 
 #: templates/parts/admin/welcome-header.php:38
-#, php-format
-msgctxt "1: theme name, 2: theme developer link."
-msgid "Thank you for using %1$s WordPress theme by %2$s!"
+msgid "Information on this page introduces the theme and provides useful tips."
+msgstr ""
+
+#: templates/parts/admin/welcome-header.php:43
+msgid "Accessibility"
+msgstr ""
+
+#: templates/parts/admin/welcome-header.php:44
+msgid "Quickstart"
 msgstr ""
 
 #: templates/parts/admin/welcome-header.php:45
-msgid "Please take time to read the steps below to set up your website."
+msgid "Demo content"
+msgstr ""
+
+#: templates/parts/admin/welcome-header.php:46
+msgid "Upgrade"
+msgstr ""
+
+#: templates/parts/admin/welcome-header.php:51
+msgid "Documentation &rarr;"
 msgstr ""
 
 #: templates/parts/admin/welcome-header.php:52
-msgid "Theme Documentation"
+msgid "Support Forum &rarr;"
 msgstr ""
 
-#: templates/parts/admin/welcome-header.php:54
-msgid "Support Center"
+#: templates/parts/admin/welcome-header.php:56
+msgctxt "Notice, hint."
+msgid "Tip:"
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:26
-msgid "Enjoying the theme?"
+#: templates/parts/admin/welcome-promo.php:24
+msgid "Like the theme?"
+msgstr ""
+
+#: templates/parts/admin/welcome-promo.php:28
+#, php-format
+msgid ""
+"You are using a fully functional 100% free WordPress theme without any paid "
+"upgrade."
 msgstr ""
 
 #: templates/parts/admin/welcome-promo.php:29
 msgid ""
-"If you like this free WordPress theme, please, consider supporting its "
-"development with a donation."
+"If you find it helpful, please support its updates and technical support "
+"service with a donation or by purchasing one of paid products at "
+"WebManDesign.eu."
 msgstr ""
 
-#: templates/parts/admin/welcome-promo.php:30
-msgid "Donate to WebMan Design &raquo;"
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:34
-msgid "You can also rate the theme at WordPress repository page."
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:36
-msgid "Rate the theme with &#9733;&#9733;&#9733;&#9733;&#9733; :)"
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:41
-msgid "Thank you!"
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:48
-msgid "Feel like stepping up?"
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:51
-msgid "I invite you to check out my faster, better, modern themes too!"
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:52
-msgid "There is a whole new generation of WordPress themes I offer nowadays."
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:53
-msgid ""
-"They all are fully block editor (Gutenberg) ready to ensure the best "
-"performance and ease of use."
-msgstr ""
-
-#: templates/parts/admin/welcome-promo.php:57
-msgid "Modern themes &rarr;"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:27
-msgid "Quickstart Guide"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:35
-msgid "WordPress settings"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:38
-msgid ""
-"Do not forget to set up your WordPress in \"Settings\" section of the "
-"WordPress dashboard."
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:39
-msgid "Please go through all the subsections and options."
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:40
-msgid "This step is required for all WordPress websites."
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:44
-msgid ""
-"Please, pay special attention to image sizes setup under Settings &raquo; "
-"Media."
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:47
-msgid "Set Up WordPress &raquo;"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:55
-msgid "Customize the theme"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:58
-msgid "You can customize the theme using live-preview editor."
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:59
-msgid "Customization changes will go live only after you save them!"
-msgstr ""
-
-#: templates/parts/admin/welcome-quickstart.php:62
-msgid "Customize the Theme &raquo;"
+#: templates/parts/admin/welcome-promo.php:33
+msgid "Visit WebMan Design website now &rarr;"
 msgstr ""
 
 #: templates/parts/component/breadcrumbs.php:31

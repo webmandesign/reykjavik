@@ -23,11 +23,11 @@
 
 		.sidebar &,
 		.fl-widget & {
-			margin-#{$right}: $golden_minor / 2 +em; // {{RTL}}
+			margin-#{$right}: $ratio_min / 2 +em; // {{RTL}}
 		}
 
 		.text-right & {
-			margin-#{$left}: $golden_minor / 2 +em; // {{RTL}}
+			margin-#{$left}: $ratio_min / 2 +em; // {{RTL}}
 			margin-#{$right}: 0; // {{RTL}}
 		}
 
@@ -40,8 +40,8 @@
 		color: inherit;
 
 		@include media() {
-			padding-left: $golden_minor / 2 +em;
-			padding-right: $golden_minor / 2 +em;
+			padding-left: $ratio_min / 2 +em;
+			padding-right: $ratio_min / 2 +em;
 		}
 
 		&:hover {
@@ -56,7 +56,7 @@
 					@extend %genericon;
 					content: '\f435';
 					display: inline-block;
-					padding: 0 ( $golden_minor +em );
+					padding: 0 ( $ratio_min +em );
 					vertical-align: top;
 				}
 

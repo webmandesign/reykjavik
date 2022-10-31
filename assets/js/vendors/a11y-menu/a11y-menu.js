@@ -1,14 +1,14 @@
-/**
- * @package      A11y Menu
- * @description  A keyboard accessible navigational menu script.
- * @version      1.1.0
- * @author       WebMan Design, Oliver Juhas, https://www.webmandesign.eu
- * @copyright    2019 WebMan Design, Oliver Juhas
- * @license      GPL-3.0-or-later, https://www.gnu.org/licenses/gpl-3.0-standalone.html
- * @link         https://github.com/webmandesign/a11y-menu
- *
- * @global  window, document, a11yMenuConfig
- */
+/*!
+@package      A11y Menu
+@description  A keyboard accessible navigational menu script.
+@version      1.2.0
+@author       WebMan Design, Oliver Juhas, https://www.webmandesign.eu
+@copyright    2019 WebMan Design, Oliver Juhas
+@license      GPL-3.0-or-later, https://www.gnu.org/licenses/gpl-3.0-standalone.html
+@link         https://github.com/webmandesign/a11y-menu
+
+@global  window, document, a11yMenuConfig
+*/
 
 ( function( options ) {
 
@@ -57,8 +57,8 @@
 						// Get the parent menu item.
 						const menuItem = childMenu.parentNode;
 
-						// Set `aria-haspopup` to indicate we have a child menu within the menu item.
-						menuItem.setAttribute( 'aria-haspopup', 'true' );
+						// Indicate we have a child menu within the menu item.
+						menuItem.classList.add( 'a11y-menu--has-children' );
 
 						// Prepend child menu with toggle button. The button mode check is done in getButton().
 						if ( null != button ) {
@@ -264,12 +264,12 @@
 			/**
 			 * Returns an array of sibling nodes (expandable menu items by default).
 			 *
-			 * @param  {node}   node                               DOM node to get siblings for.
-			 * @param  {String} selector='[aria-haspopup="true"]'  Filters siblings by this selector.
+			 * @param  {node}   node                           DOM node to get siblings for.
+			 * @param  {String} selector='.a11y-menu--has-children'  Filters siblings by this selector.
 			 *
 			 * @return  {Object} Array of nodes, or an empty array.
 			 */
-			getSiblings: function( node, selector = '[aria-haspopup="true"]' ) {
+			getSiblings: function( node, selector = '.a11y-menu--has-children' ) {
 				let
 					siblings = [],
 					sibling  = node.parentNode.firstChild;
@@ -292,12 +292,12 @@
 			/**
 			 * Returns an array of matched parent nodes.
 			 *
-			 * @param  {Event/node} eventOrNode                        An event object or a DOM node to get parents for.
-			 * @param  {String}     selector='[aria-haspopup="true"]'  Filters parents by this selector.
+			 * @param  {Event/node} eventOrNode                   An event object or a DOM node to get parents for.
+			 * @param  {String}     selector='a11y-menu--has-children'  Filters parents by this selector.
 			 *
 			 * @return  {Object} Array of (filtered) nodes, or an empty array.
 			 */
-			getParents: function( eventOrNode, selector = '[aria-haspopup="true"]' ) {
+			getParents: function( eventOrNode, selector = 'a11y-menu--has-children' ) {
 				const
 					_ = this,
 					menus = _.getMenus();

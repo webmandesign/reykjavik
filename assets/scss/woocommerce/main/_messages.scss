@@ -10,12 +10,12 @@ p.no-comments {
 	clear: both;
 	padding: 2em;
 	margin: 0;
-	border-top-width: $golden_major +em;
+	border-top-width: $ratio_maj +em;
 	border-top-style: solid;
 
 	&,
 	&:last-child {
-		margin-bottom: _pow( $golden, 2 ) +em;
+		margin-bottom: _pow( $ratio, 2 ) +em;
 	}
 
 	a {
@@ -29,8 +29,8 @@ p.no-comments {
 		@include media( map_get( $breakpoint, 'm' ) ) {
 			display: inline-block;
 			float: $right; // {{RTL}}
-			margin: ( -$golden_minor / 2 +em ) 0;
-			margin-#{$left}: $golden +em; // {{RTL}}
+			margin: ( -$ratio_min / 2 +em ) 0;
+			margin-#{$left}: $ratio +em; // {{RTL}}
 		}
 
 	}
@@ -43,7 +43,7 @@ p.no-comments {
 
 	li {
 		clear: both;
-		margin: ( $golden_major +em ) 0 0;
+		margin: ( $ratio_maj +em ) 0 0;
 
 		&:first-child {
 			margin-top: 0;

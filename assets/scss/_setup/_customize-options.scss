@@ -8,26 +8,31 @@ $customize_options: (
 	'color_header_background': #fefeff,
 	'color_header_text': #535354,
 	'color_header_headings': #232324,
+	'color_header_border': rgba( #535354, var(--border_opacity) ),
 
 	'color_intro_background': #fafafb,
 	'color_intro_text': #535354,
 	'color_intro_headings': #232324,
 	'color_intro_overlay_background': #0f1732,
 	'color_intro_overlay_text': #fefeff,
+	'color_intro_border': rgba( #535354, var(--border_opacity) ),
 
 	'color_intro_overlay_opacity': 0.6,
 
 	'color_intro_widgets_background': #0f1732,
 	'color_intro_widgets_text': #d3d3d4,
 	'color_intro_widgets_headings': #fefeff,
+	'color_intro_widgets_border': rgba( #d3d3d4, var(--border_opacity) ),
 
 	'color_content_background': #fefeff,
 	'color_content_text': #535354,
 	'color_content_headings': #232324,
+	'color_content_border': rgba( #535354, var(--border_opacity) ),
 
 	'color_footer_background': #0f1732,
 	'color_footer_text': #d3d3d4,
 	'color_footer_headings': #fefeff,
+	'color_footer_border': rgba( #d3d3d4, var(--border_opacity) ),
 
 	'footer_image': url('../images/footer/rawpixel-id-3282586.jpg'),
 	'footer_image_position': 50% 50%,
@@ -43,7 +48,9 @@ $customize_options: (
 	'typography_size_html': 18px,
 	'typography_fonts_text': ( 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif ),
 	'typography_fonts_headings': ( 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif ),
-	'typography_fonts_logo': ( 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif ),
+	'typography_fonts_logo':     ( 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif ),
+	// NOT CUSTOMIZABLE:
+	'typography_font_monospace': ( Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace ),
 
 );
 

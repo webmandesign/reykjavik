@@ -10,5 +10,5 @@
 }
 
 .wp-block-group.has-background:not(:last-child) {
-	margin-bottom: var(--golden_rem); // Don't understand why WP sets this to zero...
+	margin-bottom: var(--gap); // Don't understand why WP sets this to zero...
 }

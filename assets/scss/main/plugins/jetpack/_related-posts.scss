@@ -4,8 +4,8 @@ div#jp-relatedposts {
 	font-size: 1em;
 
 	.site & {
-		padding-top: $golden +em;
-		margin: ( $golden +em ) 0 0;
+		padding-top: $ratio +em;
+		margin: ( $ratio +em ) 0 0;
 		border-top-width: 2px;
 		border-top-style: solid;
 		border-color: inherit;
@@ -40,7 +40,7 @@ div#jp-relatedposts {
 
 			.jp-relatedposts-post-title,
 			h4.jp-relatedposts-post-title {
-				margin: ( $golden_major +em ) 0 ( $golden_minor +em );
+				margin: ( $ratio_maj +em ) 0 ( $ratio_min +em );
 				font-size: 1em;
 			}
 
@@ -51,7 +51,7 @@ div#jp-relatedposts {
 			.jp-relatedposts-post {
 				width: 100%;
 				padding: 0;
-				margin: ( $golden +em ) 0 0;
+				margin: ( $ratio +em ) 0 0;
 				opacity: 1;
 
 				&:first-child {

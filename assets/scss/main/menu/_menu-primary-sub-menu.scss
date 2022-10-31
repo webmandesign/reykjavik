@@ -17,14 +17,14 @@
 		display: none;
 		position: absolute;
 		min-width: 100%;
-		min-width: calc( 100% + #{ $golden * 4rem } );
+		min-width: calc( 100% + #{ $ratio * 4rem } );
 		#{$left}: 0; // {{RTL}}
 		top: 100%;
-		padding: $golden +rem;
-		margin: 0 ( -$golden - $golden_minor +rem );
+		padding: $ratio +rem;
+		margin: 0 ( -$ratio - $ratio_min +rem );
 		border-top-width: 1px;
 		border-top-style: solid;
-		box-shadow: 0 ( $golden_minor +em ) 1em rgba( #000, .25 );
+		box-shadow: 0 ( $ratio_min +em ) 1em rgba( #000, .25 );
 		z-index: 9;
 		transform-origin: 50% 0;
 
@@ -87,7 +87,7 @@
 	.menu-item-has-children {
 
 		// Inaccessible menu fallback indicating submenu.
-		.no-js &:not([aria-haspopup]):not(.menu-item-is-depth-3) {
+		.no-js &:not(.a11y-menu--has-children):not(.menu-item-is-depth-3) {
 			@include media( map_get( $breakpoint, $mobile_menu_breakpoint ) ) {
 
 				> a {

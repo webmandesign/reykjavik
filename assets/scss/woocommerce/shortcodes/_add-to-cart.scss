@@ -4,7 +4,7 @@
 	display: inline-block;
 
 	.amount {
-		font-size: _pow( $golden, 2 ) +em;
+		font-size: _pow( $ratio, 2 ) +em;
 		font-weight: 700;
 	}
 
@@ -15,7 +15,7 @@
 	}
 
 	del {
-		margin-#{$right}: $golden_minor +em;
+		margin-#{$right}: $ratio_min +em;
 		font-size: .8em;
 		font-weight: 300;
 
@@ -26,7 +26,7 @@
 	}
 
 	.button {
-		margin-#{$left}: $golden +em;
+		margin-#{$left}: $ratio +em;
 	}
 
 	.added_to_cart {
@@ -40,7 +40,7 @@
 		.added_to_cart {
 			display: block;
 			margin-#{$left}: 0;
-			margin-top: $golden_major +em;
+			margin-top: $ratio_maj +em;
 		}
 
 	}
@@ -52,7 +52,7 @@
 	}
 
 	.woocommerce-Price-currencySymbol {
-		font-size: $golden_major +em;
+		font-size: $ratio_maj +em;
 	}
 
 }

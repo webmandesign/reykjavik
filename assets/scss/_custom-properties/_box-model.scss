@@ -4,12 +4,12 @@
 
 	// White spaces.
 
-		--white_space: #{ $golden_major * $padding_vertical };
+		--white_space: #{ $ratio_maj * $padding_vertical };
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			--white_space: #{ $padding_vertical };
 		}
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			--white_space: #{ $golden * $padding_vertical };
+			--white_space: #{ $ratio * $padding_vertical };
 		}
 
 		--body_padding:  1rem; // Horizontal padding of HTML body.
@@ -29,6 +29,13 @@
 		--content_padding: var(--white_space);
 		--content_padding_negative: calc( -1 * var(--content_padding) );
 
+		// Default gap size.
+		// Line height in rem.
+		// Simulating rem unit for block editor styles consistency.
+		--gap: calc( var(--typography_font_size_base) * var(--typography_line_height) );
+		--wp--style--block-gap: var(--gap);
+		--gallery-block--gutter-size: var(--wp--style--block-gap);
+
 		--posts_list_gap: 1em;
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			--posts_list_gap: 2em;
@@ -36,15 +43,12 @@
 
 		--letter_spacing: .05em;
 
-		--golden_rem: calc( var(--typography_font_size_base) * #{ $golden } );
-
-		// WP:
-		--wp-admin--admin-bar--height: 32px;
-		@media screen and (max-width: 782px) {
-			--wp-admin--admin-bar--height: 46px;
-		}
-
 	// Widths & heights.
+
+		--max_screen_width: 1920px;
+
+		--max_width_header_content: var(--max_screen_width);
+		--max_width_footer_content: var(--layout_width_content);
 
 		--hr_width: 100%;
 		--hr_height: 1px;
@@ -53,6 +57,12 @@
 		// Touch enabled devices.
 		@media (hover: none) {
 			--button_toggle_sub_menu_size: 24px;
+		}
+
+		// WP:
+		--wp-admin--admin-bar--height: 32px;
+		@media screen and (max-width: 782px) {
+			--wp-admin--admin-bar--height: 46px;
 		}
 
 }

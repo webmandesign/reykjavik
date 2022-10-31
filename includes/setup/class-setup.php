@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -167,7 +167,7 @@ class Reykjavik_Setup {
 		 * as indicating support for post thumbnails.
 		 *
 		 * @since    1.0.0
-		 * @version  2.1.0
+		 * @version  2.2.0
 		 */
 		public static function setup() {
 
@@ -283,9 +283,9 @@ class Reykjavik_Setup {
 								if ( ! in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
 									add_image_size(
 										$size,
-										$image_sizes[ $size ][0],
-										$image_sizes[ $size ][1],
-										$image_sizes[ $size ][2]
+										$image_sizes[ $size ]['width'],
+										$image_sizes[ $size ]['height'],
+										$image_sizes[ $size ]['crop']
 									);
 								}
 							}
@@ -343,27 +343,16 @@ class Reykjavik_Setup {
 	 */
 
 		/**
-		 * Image sizes
-		 *
-		 * @example
-		 *
-		 *   $image_sizes = array(
-		 *     'image_size_id' => array(
-		 *       absint( width ),
-		 *       absint( height ),
-		 *       (bool) cropped?,
-		 *       (string) optional_theme_usage_explanation_text
-		 *     )
-		 *   );
+		 * Image sizes.
 		 *
 		 * @since    1.0.0
-		 * @version  1.3.0
+		 * @version  2.2.0
 		 *
 		 * @param  array $image_sizes
 		 */
 		public static function image_sizes( $image_sizes = array() ) {
 
-			// Helper variables
+			// Variables
 
 				global $content_width;
 
@@ -390,47 +379,56 @@ class Reykjavik_Setup {
 
 				$image_sizes = array(
 
-						'thumbnail' => array(
-								absint( $content_width * .62 ),
-								absint( $content_width * .62 * 9 / 16 ),
-								true,
-								esc_html__( 'In posts list.', 'reykjavik' ),
-							),
+					'thumbnail' => array(
+						'name'        => esc_html_x( 'Thumbnail', 'WordPress predefined image size name.', 'reykjavik' ),
+						'width'       => absint( $content_width * .62 ),
+						'height'      => absint( $content_width * .62 * 9 / 16 ),
+						'crop'        => true,
+						'description' => esc_html__( 'In posts list.', 'reykjavik' ),
+					),
 
-						'medium' => array(
-								absint( $content_width * .62 ),
-								0,
-								false,
-								esc_html__( 'As featured image preview on single post page.', 'reykjavik' ) . '<br>' .
-								esc_html__( 'In list of child pages.', 'reykjavik' ),
-							),
+					'medium' => array(
+						'name'        => esc_html_x( 'Medium', 'WordPress predefined image size name.', 'reykjavik' ),
+						'width'       => absint( $content_width * .62 ),
+						'height'      => 0,
+						'crop'        => false,
+						'description' =>
+							esc_html__( 'As featured image preview on single post page.', 'reykjavik' )
+							. '<br>'
+							. esc_html__( 'In list of child pages.', 'reykjavik' ),
+					),
 
-						'large' => array(
-								absint( $content_width ),
-								0,
-								false,
-								esc_html__( 'Not used in the theme.', 'reykjavik' ),
-							),
+					'large' => array(
+						'name'        => esc_html_x( 'Large', 'WordPress predefined image size name.', 'reykjavik' ),
+						'width'       => absint( $content_width ),
+						'height'      => 0,
+						'crop'        => false,
+						'description' => esc_html__( 'Not used in the theme.', 'reykjavik' ),
+					),
 
-						/**
-						 * @since  WordPress 4.4.0
-						 */
-						'medium_large' => array(
-								absint( $content_width ),
-								0,
-								false,
-								esc_html__( 'This is WordPress native image size.', 'reykjavik' ) . '<br>' .
-								esc_html__( 'Not used in the theme.', 'reykjavik' ),
-							),
+					/**
+					 * @since  WordPress 4.4.0
+					 */
+					'medium_large' => array(
+						'name'        => esc_html_x( 'Medium large', 'WordPress predefined image size name.', 'reykjavik' ),
+						'width'       => absint( $content_width ),
+						'height'      => 0,
+						'crop'        => false,
+						'description' =>
+							esc_html__( 'This is WordPress native image size.', 'reykjavik' )
+							. '<br>'
+							. esc_html__( 'Not used in the theme.', 'reykjavik' ),
+					),
 
-						'reykjavik-intro' => array(
-								absint( $intro_width ),
-								absint( 9 * $intro_width / 16 ),
-								true,
-								esc_html__( 'In page intro section.', 'reykjavik' ),
-							),
+					'reykjavik-intro' => array(
+						'name'        => esc_html_x( 'Intro', 'WordPress predefined image size name.', 'reykjavik' ),
+						'width'       => absint( $intro_width ),
+						'height'      => absint( 9 * $intro_width / 16 ),
+						'crop'        => true,
+						'description' => esc_html__( 'In page intro section.', 'reykjavik' ),
+					),
 
-					);
+				);
 
 
 			// Output

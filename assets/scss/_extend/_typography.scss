@@ -29,27 +29,27 @@
 	}
 
 	%font_size_tiny_rem {
-		font-size: 1rem * $golden_major;
+		font-size: 1rem * $ratio_maj;
 	}
 
 	%font_size_small_rem {
-		font-size: 1rem - $golden_minor / 2;
+		font-size: 1rem - $ratio_min / 2;
 	}
 
 	%font_size_smaller_rem {
-		font-size: 1rem - $golden_minor / 4;
+		font-size: 1rem - $ratio_min / 4;
 	}
 
 	%font_size_larger_rem {
-		font-size: 1rem + $golden_minor / 2;
+		font-size: 1rem + $ratio_min / 2;
 	}
 
 	%font_size_golden_minor_rem {
-		font-size: 1rem + $golden_minor;
+		font-size: 1rem + $ratio_min;
 	}
 
 	%font_size_golden_rem {
-		font-size: 1rem * $golden;
+		font-size: 1rem * $ratio;
 	}
 
 // Font size: em.
@@ -59,27 +59,27 @@
 	}
 
 	%font_size_tiny {
-		font-size: 1em * $golden_major;
+		font-size: 1em * $ratio_maj;
 	}
 
 	%font_size_small {
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 	}
 
 	%font_size_smaller {
-		font-size: 1em - $golden_minor / 4;
+		font-size: 1em - $ratio_min / 4;
 	}
 
 	%font_size_larger {
-		font-size: 1em + $golden_minor / 2;
+		font-size: 1em + $ratio_min / 2;
 	}
 
 	%font_size_golden_minor {
-		font-size: 1em + $golden_minor;
+		font-size: 1em + $ratio_min;
 	}
 
 	%font_size_golden {
-		font-size: 1em * $golden;
+		font-size: 1em * $ratio;
 	}
 
 // Font weight.
@@ -115,13 +115,13 @@
 	}
 
 	%line_height_small {
-		line-height: 1 + $golden_minor / 2;
+		line-height: 1 + $ratio_min / 2;
 	}
 
 	%line_height_golden_minor {
-		line-height: 1 + $golden_minor;
+		line-height: 1 + $ratio_min;
 	}
 
 	%line_height_golden {
-		line-height: $golden;
+		line-height: $ratio;
 	}

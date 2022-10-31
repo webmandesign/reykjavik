@@ -1,5 +1,52 @@
 # Reykjavik Changelog
 
+## 2.2.0, 20221031
+
+### Updated
+- Improving accessibility
+- Improving Welcome page
+- Improving recommended media size info
+- Updating styles and JavaScript
+- Localization
+
+### Fixed
+- Blog page intro image
+- Styling current page ancestor in menu
+- Editor styles
+- Style issues
+- WooCommerce styles
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/editor-blocks.js
+	assets/js/vendors/a11y-menu/*.*
+	assets/scss/blocks.scss
+	assets/scss/editor-style-blocks.scss
+	assets/scss/editor-style.scss
+	assets/scss/main.scss
+	assets/scss/welcome.scss
+	assets/scss/woocommerce.scss
+	includes/custom-header/class-intro.php
+	includes/customize/class-customize.php
+	includes/frontend/class-content.php
+	includes/frontend/class-menu.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/class-setup.php
+	includes/welcome/class-welcome.php
+	languages/reykjavik.pot
+	library/includes/classes/class-css-variables.php
+	templates/parts/admin/media-image-sizes.php
+	templates/parts/admin/notice-welcome.php
+	templates/parts/admin/welcome-a11y.php
+	templates/parts/admin/welcome-demo.php
+	templates/parts/admin/welcome-footer.php
+	templates/parts/admin/welcome-guide.php
+	templates/parts/admin/welcome-header.php
+	templates/parts/admin/welcome-promo.php
+
+
 ## 2.1.0, 20220322
 
 This is a major theme update which may cause issues on certain websites. Double checking a website appearance after theme update is recommended. Found an issue? Report it at https://support.webmandesign.eu.

@@ -33,10 +33,10 @@
 		&:first-letter {
 			@extend %colors_site_content_headings;
 			float: $left;
-			padding: 0 ( $golden_minor / 2 +em );
+			padding: 0 ( $ratio_min / 2 +em );
 			padding-#{$left}: 0; // {{RTL}}
 			margin: 0;
-			font-size: $golden * 2em; // 2 lines of text.
+			font-size: $ratio * 2em; // 2 lines of text.
 			font-weight: inherit;
 			line-height: 1;
 		}

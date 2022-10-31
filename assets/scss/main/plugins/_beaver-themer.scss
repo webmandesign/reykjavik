@@ -10,7 +10,7 @@
 		&.single {
 
 			.site-main > .entry > .entry-header {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 		}

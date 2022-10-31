@@ -3,7 +3,7 @@
 .woocommerce {
 
 	fieldset {
-		padding: ( $golden +em ) 6% ( _pow( $golden, 2 ) +em );
+		padding: ( $ratio +em ) 6% ( _pow( $ratio, 2 ) +em );
 		margin-top: 2em;
 		margin-bottom: 2em;
 		border-width: 2px;
@@ -22,7 +22,7 @@
 	label {
 		display: block;
 		text-transform: uppercase;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 
 		&.inline {
 			display: inline-block;
@@ -33,7 +33,7 @@
 	legend {
 		padding: 0 1em;
 		text-transform: uppercase;
-		font-size: 1em - $golden_minor / 4;
+		font-size: 1em - $ratio_min / 4;
 		font-weight: 700;
 	}
 
@@ -85,7 +85,7 @@
 		select,
 		.input-text,
 		.select2-container .select2-choice {
-			box-shadow: 0 ( $golden_minor +em ) 0 map_get( $colors, 'error_background' );
+			box-shadow: 0 ( $ratio_min +em ) 0 map_get( $colors, 'error_background' );
 		}
 
 	}
@@ -104,9 +104,9 @@
 		display: inline-block;
 		width: 1em;
 		height: 1em;
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 		line-height: 1;
-		font-size: $golden_minor + 1rem;
+		font-size: $ratio_min + 1rem;
 		border-width: 0;
 		border-radius: 1em;
 		vertical-align: middle;
@@ -120,11 +120,12 @@
 
 	input[type="checkbox"]:first-child,
 	input[type="radio"]:first-child {
-		@extend %screen_reader_hiding;
+		@extend %screen_reader--hide;
 		// Workaround for setting the parent element relative position:
 		position: relative !important;
 		float: $left; // {{RTL}}
 		#{$left}: -999em; // {{RTL}}
+		bottom: auto;
 		margin: 0;
 
 		+ label,
@@ -137,6 +138,21 @@
 			}
 
 		}
+
+			&:focus {
+
+				+ label,
+				+ span {
+
+					&::before {
+						outline: 2px dashed;
+						outline-offset: 2px;
+						outline-color: var(--color_accent);
+					}
+
+				}
+
+			}
 
 		&:checked {
 
@@ -155,7 +171,7 @@
 	}
 
 	label[for="rememberme"] input[type="checkbox"]:first-child {
-		@extend %screen_reader_hiding_disable;
+		@extend %screen_reader--show;
 	}
 
 }
@@ -167,11 +183,11 @@
 	vertical-align: top;
 
 	.qty {
-		max-width: $golden +em;
+		max-width: $ratio +em;
 		padding: 0;
 		line-height: 1;
-		font-size: 2 * $golden_major + 1em;
-		font-size: calc( #{ 2 * $golden_major + 1em } - 2px );
+		font-size: 2 * $ratio_maj + 1em;
+		font-size: calc( #{ 2 * $ratio_maj + 1em } - 2px );
 		font-weight: 300;
 		background: none;
 		border-width: 0;
@@ -190,7 +206,7 @@
 		position: relative;
 		max-width: 100%;
 		height: auto;
-		padding: #{ $golden_major +em };
+		padding: #{ $ratio_maj +em };
 		color: inherit;
 		vertical-align: baseline;
 		background-color: transparent;

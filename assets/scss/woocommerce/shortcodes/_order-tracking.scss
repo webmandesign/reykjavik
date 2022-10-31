@@ -1,7 +1,7 @@
 /* FILE: woocommerce/shortcodes/_order-tracking.scss */
 
 .track_order {
-	padding: _pow( $golden, 2 ) +em;
+	padding: _pow( $ratio, 2 ) +em;
 	margin-left: auto;
 	margin-right: auto;
 	border-width: 2px;
@@ -18,13 +18,13 @@
 }
 
 .woocommerce .notes {
-	margin-bottom: _pow( $golden, 2 ) +em;
+	margin-bottom: _pow( $ratio, 2 ) +em;
 	max-width: 36em;
 	max-width: var(--layout_width_entry_content);
 
 	.note {
-		padding: $golden +em;
-		margin-bottom: $golden_major +em;
+		padding: $ratio +em;
+		margin-bottom: $ratio_maj +em;
 		border-width: 1px;
 		border-style: solid;
 
@@ -39,9 +39,9 @@
 	}
 
 	.meta {
-		margin-bottom: $golden_major +em;
+		margin-bottom: $ratio_maj +em;
 		text-transform: uppercase;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 		opacity: .8;
 	}
 

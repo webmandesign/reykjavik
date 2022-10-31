@@ -18,7 +18,7 @@
 		th,
 		td {
 			width: auto;
-			height: _pow( $golden, 2 ) +em;
+			height: _pow( $ratio, 2 ) +em;
 			padding: 0;
 			text-align: center;
 		}
@@ -31,7 +31,7 @@
 			display: block;
 			width: 100%;
 			height: 100%;
-			line-height: _pow( $golden, 2 );
+			line-height: _pow( $ratio, 2 );
 		}
 
 	}

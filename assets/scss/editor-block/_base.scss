@@ -12,6 +12,11 @@
 		border-color: inherit;
 	}
 
+	// WP6.0+ fix:
+	html & {
+		--wp--style--block-gap: var(--gap);
+	}
+
 }
 
 #{ $selector_editor_wrapper } {
@@ -23,14 +28,14 @@
 		html & {
 			background-color: var(--color_content_background);
 			color: var(--color_content_text);
-			border-color: var(--color_content_text--a20);
+			border-color: var(--color_content_border);
 		}
 
 	// Elements.
 
 		#{ $selectors_margin_bottom } {
 			margin-top: 0;
-			margin-bottom: var(--golden_rem);
+			margin-bottom: var(--gap);
 		}
 
 		a {

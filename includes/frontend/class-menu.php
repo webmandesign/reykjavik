@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -200,33 +200,37 @@ class Reykjavik_Menu {
 			 * Primary navigation fallback
 			 *
 			 * @since    1.0.0
-			 * @version  2.1.0
+			 * @version  2.2.0
+			 *
+			 * @return  void
 			 */
 			public static function primary_fallback() {
 
-				// Helper variables
+				// Variables
 
 					$output = wp_page_menu( array( 'echo' => false ) + (array) self::primary_menu_args( get_theme_mod( 'navigation_mobile', true ), 'fallback' ) );
 
 
 				// Output
 
-					echo str_replace(
+					echo str_replace( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						array(
 							'current_page_item',
 							'current_page_parent',
 							'current_page_ancestor',
 							'page_item_has_children',
 							'page_item',
-							'page-item',
+							'class="children"',
+							"class='children'",
 						),
 						array(
-							'current-menu-item',
-							'current-menu-parent',
-							'current-menu-ancestor',
-							'menu-item-has-children',
-							'menu-item',
-							'page-item menu-item',
+							'current_page_item current-menu-item',
+							'current_page_parent current-menu-parent',
+							'current_page_ancestor current-menu-ancestor',
+							'page_item_has_children menu-item-has-children',
+							'page_item menu-item',
+							'class="children sub-menu"',
+							"class='children sub-menu'",
 						),
 						$output
 					);

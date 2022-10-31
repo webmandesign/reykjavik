@@ -5,12 +5,12 @@
 	.product_list_widget .star-rating {
 		display: inline-block;
 		margin: 0;
-		margin-#{$right}: $golden_minor +em;
+		margin-#{$right}: $ratio_min +em;
 	}
 
 	.reviewer {
 		display: inline-block;
-		font-size: 1em - $golden_minor / 4;
+		font-size: 1em - $ratio_min / 4;
 		font-style: italic;
 	}
 

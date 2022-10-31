@@ -5,7 +5,7 @@
 	&-contact-info {
 
 		> div {
-			margin-bottom: $golden_major +em;
+			margin-bottom: $ratio_maj +em;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -23,8 +23,8 @@
 		&::before {
 			@extend %genericon;
 			float: $left; // {{RTL}}
-			margin-#{$right}: $golden_minor +em;
-			font-size: 1em + $golden_minor;
+			margin-#{$right}: $ratio_min +em;
+			font-size: 1em + $ratio_min;
 			line-height: 1;
 		}
 
@@ -34,7 +34,7 @@
 		content: '\f417'; // Icon: Location
 		float: none;
 		display: block;
-		margin-bottom: $golden_minor / 2 +em;
+		margin-bottom: $ratio_min / 2 +em;
 	}
 
 	&-email::before {
@@ -50,7 +50,7 @@
 .jetpack-business-hours {
 	display: inline-grid;
 	grid-template-columns: auto auto;
-	grid-column-gap: $golden +em;
+	grid-column-gap: $ratio +em;
 
 	&.jetpack-business-hours::before {
 		// Rising specificity to override the plugin styles.
@@ -58,9 +58,9 @@
 		content: '\f303'; // Icon: Time
 		display: block;
 		grid-column: 1 / -1;
-		font-size: 1em + $golden_minor;
+		font-size: 1em + $ratio_min;
 		line-height: 1;
-		margin-bottom: $golden_minor / 2 +em;
+		margin-bottom: $ratio_min / 2 +em;
 	}
 
 	dt,

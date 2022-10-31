@@ -3,7 +3,7 @@
 .widget {
 
 	.sidebar & {
-		margin: 0 0 ( _pow( $golden, 2 ) +em );
+		margin: 0 0 ( _pow( $ratio, 2 ) +em );
 
 		&:last-child {
 			margin-bottom: 0;
@@ -12,8 +12,8 @@
 	}
 
 	&[class*="set-colors-"] {
-		padding-left: $golden +em;
-		padding-right: $golden +em;
+		padding-left: $ratio +em;
+		padding-right: $ratio +em;
 	}
 
 	form {
@@ -50,7 +50,7 @@
 		}
 
 		li {
-			padding: ( $golden_minor +em ) 0;
+			padding: ( $ratio_min +em ) 0;
 			border-top-width: 1px;
 			border-top-style: solid;
 
@@ -60,7 +60,7 @@
 
 			ul {
 				position: relative;
-				bottom: $golden_minor * -1em;
+				bottom: $ratio_min * -1em;
 				margin: 0;
 			}
 

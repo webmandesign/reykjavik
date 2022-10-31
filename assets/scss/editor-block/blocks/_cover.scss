@@ -8,15 +8,20 @@
 
 }
 
+[data-align="full"] > .wp-block-cover {
+	padding-left: var(--body_padding);
+	padding-right: var(--body_padding);
+}
+
 // Overriding default WP styles:
 @media (min-width: 600px) {
 	[data-align="full"] .wp-block-group > .wp-block-group__inner-container > .wp-block-cover {
-		padding-left: var(--block_padding);
-		padding-right: var(--block_padding);
+		padding-left: var(--body_padding);
+		padding-right: var(--body_padding);
 	}
 }
 
 [data-align="full"] > .wp-block-cover,
 [data-align="wide"] > .wp-block-cover {
-	min-height: $golden_major * 100vh;
+	min-height: $ratio_maj * 100vh;
 }

@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: 0 0 ( $golden +rem );
+	margin: 0 0 ( $ratio +rem );
 	font-weight: 700;
 
 	&:empty {
@@ -12,15 +12,15 @@
 	}
 
 	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-bottom: _pow( $golden, 2 ) +rem;
+		margin-bottom: _pow( $ratio, 2 ) +rem;
 	}
 
 	.products:not(.products-categories) + & {
-		margin-top: $golden +em;
+		margin-top: $ratio +em;
 		margin-bottom: 0;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-top: _pow( $golden, 2 ) +em;
+			margin-top: _pow( $ratio, 2 ) +em;
 		}
 
 	}
@@ -29,13 +29,13 @@
 
 .woocommerce-result-count {
 	flex: 0 1 auto;
-	margin: ( $golden_major +em );
+	margin: ( $ratio_maj +em );
 
 	&::before {
 		@extend %genericon;
 		@extend %icon_vertical_align_middle;
 		content: '\f403';
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 		font-size: 1rem;
 	}
 
@@ -43,19 +43,19 @@
 
 .woocommerce-ordering {
 	flex: 0 1 auto;
-	margin: ( $golden_major +em );
+	margin: ( $ratio_maj +em );
 
 	&::before {
 		@extend %genericon;
 		@extend %icon_vertical_align_middle;
 		content: '\f514';
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $ratio_min +em; // {{RTL}}
 		font-size: 1rem;
 	}
 
 	select {
 		width: auto;
-		padding-#{$right}: $golden +em; // {{RTL}}
+		padding-#{$right}: $ratio +em; // {{RTL}}
 		padding-top: 0;
 		padding-bottom: 0;
 		background-color: transparent;

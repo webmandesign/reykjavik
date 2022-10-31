@@ -16,7 +16,7 @@
 			}
 
 			.site-main > .entry > .entry-header {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 		}
@@ -26,7 +26,7 @@
 		&-stretched {
 
 			.site-main > .entry > .entry-header {
-				@extend %screen_reader_hiding;
+				@extend %screen_reader--hide;
 			}
 
 			&.is-singular:not(.page-template-sidebar) {

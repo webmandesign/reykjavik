@@ -24,7 +24,7 @@
 		}
 
 		&.page-template-sidebar {
-			padding-#{$right}: percentage( $golden_minor ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
+			padding-#{$right}: percentage( $ratio_min ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
 		}
 
 		*,
@@ -53,7 +53,7 @@
 	}
 
 	.wpview-content {
-		margin: 0 0 ( $golden +em );
+		margin: 0 0 ( $ratio +em );
 	}
 
 // Tables

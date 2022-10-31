@@ -4,7 +4,7 @@
 	margin: 0;
 
 	&:not(:first-child) {
-		margin-top: calc( var(--golden_rem) * -1 );
+		margin-top: calc( var(--gap) * -1 );
 	}
 
 	+ h1,

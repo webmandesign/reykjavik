@@ -9,7 +9,7 @@
 	border-color: rgba( map_get( $customize_options, 'color_intro_widgets_text' ), 20 / 100 );
 	background-color: var(--color_intro_widgets_background);
 	color: var(--color_intro_widgets_text);
-	border-color: var(--color_intro_widgets_text--a20);
+	border-color: var(--color_intro_widgets_border);
 
 	h2, h3, h4,
 	.h1, .h2, .h3, .h4,
@@ -41,13 +41,13 @@
 		padding-bottom: 0;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-top: $golden +rem;
-			padding-bottom: $golden +rem;
+			padding-top: $ratio +rem;
+			padding-bottom: $ratio +rem;
 		}
 
 		@include media( map_get( $breakpoint, 'xl' ) ) {
-			padding-top: _pow( $golden, 2 ) +rem;
-			padding-bottom: _pow( $golden, 2 ) +rem;
+			padding-top: _pow( $ratio, 2 ) +rem;
+			padding-bottom: _pow( $ratio, 2 ) +rem;
 		}
 
 	}

@@ -15,15 +15,15 @@ ul.order_details {
 	position: relative;
 	max-width: 36em;
 	max-width: var(--layout_width_entry_content);
-	margin: ( _pow( 1 + $golden_minor, 4 ) +em ) 0;
+	margin: ( _pow( 1 + $ratio_min, 4 ) +em ) 0;
 	list-style: none;
 
 	li {
 		@extend %shaded_background;
-		padding: 1em ( $golden +em );
+		padding: 1em ( $ratio +em );
 		margin-top: 2px;
 		text-transform: uppercase;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 
 		&:first-of-type {
 			margin-top: 0;
@@ -34,7 +34,7 @@ ul.order_details {
 	strong {
 		display: block;
 		text-transform: none;
-		font-size: 1em + $golden_minor;
+		font-size: 1em + $ratio_min;
 	}
 
 	//
@@ -98,7 +98,7 @@ ul.order_details {
 }
 
 .shop_table {
-	margin-bottom: _pow( 1 + $golden_minor, 4 ) +em;
+	margin-bottom: _pow( 1 + $ratio_min, 4 ) +em;
 
 	&.order_details,
 	.woocommerce-order-pay & {
@@ -111,7 +111,7 @@ ul.order_details {
 			font-weight: 400;
 
 			.amount:first-child {
-				font-size: $golden +em;
+				font-size: $ratio +em;
 				font-weight: 700;
 			}
 
@@ -130,35 +130,35 @@ ul.order_details {
 }
 
 .woocommerce-thankyou-order-failed {
-	padding-top: _pow( $golden, 2 ) +em;
+	padding-top: _pow( $ratio, 2 ) +em;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-size: $golden_minor / 4 + 1em;
+	font-size: $ratio_min / 4 + 1em;
 	border-top-width: 2px;
 	border-top-style: dashed;
 
 	@include media( map_get( $breakpoint, 'xl' ) ) {
-		padding-left: percentage( $golden_minor / 2 );
-		padding-right: percentage( $golden_minor / 2 );
+		padding-left: percentage( $ratio_min / 2 );
+		padding-right: percentage( $ratio_min / 2 );
 	}
 
 	&::before {
 		@extend %genericon;
 		@extend %icon_vertical_align_middle;
 		content: '\f414';
-		margin-#{$right}: $golden_minor +em;
+		margin-#{$right}: $ratio_min +em;
 	}
 
 	&-actions {
-		padding-bottom: _pow( $golden, 2 ) +em;
-		margin-bottom: _pow( $golden, 2 ) +em;
+		padding-bottom: _pow( $ratio, 2 ) +em;
+		margin-bottom: _pow( $ratio, 2 ) +em;
 		text-align: center;
 		border-bottom-width: 2px;
 		border-bottom-style: dashed;
 
 		.button {
-			margin: 0 ( $golden_minor +em );
+			margin: 0 ( $ratio_min +em );
 		}
 
 	}
@@ -166,7 +166,7 @@ ul.order_details {
 }
 
 .woocommerce-thankyou-order-received {
-	font-size: $golden_minor + 1em;
+	font-size: $ratio_min + 1em;
 
 	&::before {
 		@extend %genericon;
@@ -174,10 +174,10 @@ ul.order_details {
 		display: block;
 		width: 2em;
 		height: 2em;
-		line-height: 2 - $golden_minor / 2;
-		margin-bottom: $golden_minor +em;
+		line-height: 2 - $ratio_min / 2;
+		margin-bottom: $ratio_min +em;
 		text-align: center;
-		font-size: 1em + $golden_minor;
+		font-size: 1em + $ratio_min;
 		border-width: 2px;
 		border-style: solid;
 		border-color: currentColor;
@@ -186,7 +186,7 @@ ul.order_details {
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			display: inline-block;
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			margin-#{$right}: $ratio_min +em; // {{RTL}}
 			margin-bottom: 0;
 		}
 
@@ -195,5 +195,5 @@ ul.order_details {
 }
 
 .woocommerce-order-details {
-	margin-bottom: $golden +em;
+	margin-bottom: $ratio +em;
 }

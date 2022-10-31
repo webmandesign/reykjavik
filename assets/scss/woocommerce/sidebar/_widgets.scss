@@ -10,7 +10,7 @@
 		}
 
 		.widget & {
-			padding: ( $golden_major +rem ) 0;
+			padding: ( $ratio_maj +rem ) 0;
 			overflow: hidden;
 
 			.fl-module & {
@@ -24,17 +24,17 @@
 
 	a {
 		display: block;
-		margin-bottom: $golden_minor +em;
+		margin-bottom: $ratio_min +em;
 	}
 
 	img {
 		float: $right; // {{RTL}}
-		width: _pow( $golden, 2 ) +em;
+		width: _pow( $ratio, 2 ) +em;
 		margin-#{$left}: 1em;
 	}
 
 	.star-rating {
-		margin-bottom: $golden_major +em;
+		margin-bottom: $ratio_maj +em;
 	}
 
 }
@@ -42,6 +42,6 @@
 // Product counts.
 .widget.woocommerce .count {
 	float: $right; // {{RTL}}
-	margin-#{$left}: $golden_minor +em; // {{RTL}}
+	margin-#{$left}: $ratio_min +em; // {{RTL}}
 	font-size: 1em;
 }

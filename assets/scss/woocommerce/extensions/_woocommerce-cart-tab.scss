@@ -28,7 +28,7 @@
 					width: 100%;
 
 					+ .button {
-						margin-top: $golden_minor +em;
+						margin-top: $ratio_min +em;
 					}
 
 				}
@@ -36,7 +36,7 @@
 			}
 
 			ul.product_list_widget {
-				margin-top: $golden +em;
+				margin-top: $ratio +em;
 			}
 
 		}

@@ -28,7 +28,7 @@
 		.entry {
 
 			&-header {
-				padding-bottom: $golden +em;
+				padding-bottom: $ratio +em;
 				border-bottom-width: 1px;
 				border-bottom-style: solid;
 			}
@@ -37,7 +37,7 @@
 
 				@include media( map_get( $breakpoint, 'xl' ) ) {
 					float: $right; // {{RTL}}
-					width: percentage( $golden_major );
+					width: percentage( $ratio_maj );
 				}
 
 			}

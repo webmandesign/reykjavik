@@ -37,7 +37,7 @@
 
 	.comment-body {
 		padding: 1em;
-		margin: ( $golden +em ) 0;
+		margin: ( $ratio +em ) 0;
 		border-width: 1px;
 		border-style: dashed;
 		overflow: hidden;
@@ -45,7 +45,7 @@
 		&::before {
 			@extend %genericon;
 			content: '\f107';
-			margin-#{$right}: $golden_major +em;
+			margin-#{$right}: $ratio_maj +em;
 		}
 
 	}

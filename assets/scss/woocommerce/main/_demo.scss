@@ -4,9 +4,9 @@
 .woocommerce-store-notice {
 	@extend %colors_accent;
 	margin: 0;
-	padding: 1em ( $golden +em );
+	padding: 1em ( $ratio +em );
 	text-align: center;
-	font-size: 1em - $golden_minor / 2;
+	font-size: 1em - $ratio_min / 2;
 	font-style: italic;
 
 	&::before {
@@ -14,7 +14,7 @@
 		@extend %icon_vertical_align_middle;
 		content: '\f455';
 		font-size: 1rem;
-		margin-#{$right}: $golden_minor +em;
+		margin-#{$right}: $ratio_min +em;
 	}
 
 	a {
@@ -27,14 +27,14 @@
 .woocommerce-store-notice {
 
 	&__dismiss-link {
-		margin-#{$left}: $golden +em; // {{RTL}}
+		margin-#{$left}: $ratio +em; // {{RTL}}
 
 		&::before {
 			@extend %genericon;
 			@extend %icon_vertical_align_middle;
 			content: '\f406';
 			font-size: 1rem;
-			margin-#{$right}: $golden_minor +em;
+			margin-#{$right}: $ratio_min +em;
 		}
 
 	}

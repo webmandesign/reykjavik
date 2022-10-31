@@ -6,7 +6,7 @@
 		margin-bottom: 2em;
 
 		&_wrapper {
-			padding-top: $golden_major +em;
+			padding-top: $ratio_maj +em;
 		}
 
 	}
@@ -22,12 +22,12 @@
 
 	.from,
 	.to {
-		font-size: 1em + $golden_minor;
+		font-size: 1em + $ratio_min;
 		font-weight: 700;
 	}
 
-	$slider_range_height: $golden_major;
-	$slider_hangle_size: 1 + $golden_minor;
+	$slider_range_height: $ratio_maj;
+	$slider_hangle_size: 1 + $ratio_min;
 
 	.ui-slider {
 		position: relative;
@@ -38,7 +38,7 @@
 			display: block;
 			height: 100%;
 			top: 0;
-			font-size: $golden_minor +em;
+			font-size: $ratio_min +em;
 			background: currentColor;
 			border-width: 0;
 			border-radius: $slider_hangle_size +em;
@@ -77,7 +77,7 @@
 
 			&:hover,
 			&.ui-state-active {
-				box-shadow: 0 0 0 ( $golden_minor +em ) rgba( #000, .1 );
+				box-shadow: 0 0 0 ( $ratio_min +em ) rgba( #000, .1 );
 			}
 
 		}

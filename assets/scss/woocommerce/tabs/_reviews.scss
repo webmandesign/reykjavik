@@ -3,7 +3,7 @@
 .woocommerce-Reviews {
 
 	> div + div {
-		margin-top: _pow( $golden, 2 ) +em;
+		margin-top: _pow( $ratio, 2 ) +em;
 	}
 
 		.clear {
@@ -25,7 +25,7 @@
 		}
 
 	li {
-		padding: $golden +em;
+		padding: $ratio +em;
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
 			padding: 2em;
@@ -38,7 +38,7 @@
 	}
 
 	.avatar {
-		width: _pow( $golden, 2 ) +em;
+		width: _pow( $ratio, 2 ) +em;
 		margin-bottom: 1em;
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
@@ -47,18 +47,18 @@
 		}
 
 		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: _pow( 1 + $golden_minor, 4 ) +em;
+			width: _pow( 1 + $ratio_min, 4 ) +em;
 		}
 
 	}
 
 	.star-rating {
-		margin-bottom: $golden_minor +em;
+		margin-bottom: $ratio_min +em;
 	}
 
 	.meta {
 		margin-bottom: 1em;
-		font-size: 1em - $golden_minor / 2;
+		font-size: 1em - $ratio_min / 2;
 	}
 
 	time {
@@ -83,11 +83,11 @@
 		&-text {
 
 			@include media( map_get( $breakpoint, 'm' ) ) {
-				margin-#{$left}: _pow( $golden, 2 ) + 1em; // {{RTL}}
+				margin-#{$left}: _pow( $ratio, 2 ) + 1em; // {{RTL}}
 			}
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-#{$left}: _pow( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
+				margin-#{$left}: _pow( 1 + $ratio_min, 4 ) + $ratio +em; // {{RTL}}
 			}
 
 		}
@@ -101,8 +101,8 @@
 			margin: 0;
 
 			&-rating {
-				padding: ( $golden_major +em ) 1em;
-				margin-bottom: $golden +em;
+				padding: ( $ratio_maj +em ) 1em;
+				margin-bottom: $ratio +em;
 				overflow: hidden;
 				border-width: 2px;
 				border-style: solid;
@@ -110,13 +110,13 @@
 				label {
 					float: $left; // {{RTL}}
 					margin-#{$right}: 1em; // {{RTL}}
-					font-size: 1em - $golden_minor / 4;
+					font-size: 1em - $ratio_min / 4;
 				}
 
 			}
 
 			textarea {
-				height: _pow( 1 + $golden_minor, 5 ) +em;
+				height: _pow( 1 + $ratio_min, 5 ) +em;
 			}
 
 			.form-submit {

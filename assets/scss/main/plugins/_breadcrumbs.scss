@@ -4,16 +4,16 @@
 	@extend %layout_content_width;
 	@extend %font_size_small_rem;
 	position: relative;
-	padding: 1rem ( $golden +rem );
+	padding: 1rem ( $ratio +rem );
 	border-width: 1px;
 	border-style: solid;
 
 	&-title {
 		@extend %font_weight_700;
-		margin-#{$right}: $golden_major +em; // {{RTL}}
+		margin-#{$right}: $ratio_maj +em; // {{RTL}}
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin-#{$right}: $golden +em; // {{RTL}}
+			margin-#{$right}: $ratio +em; // {{RTL}}
 		}
 
 	}
@@ -21,7 +21,7 @@
 	.sep {
 
 		@include media( map_get( $breakpoint, 'm' ) ) {
-			margin: 0 ( $golden_major +em );
+			margin: 0 ( $ratio_maj +em );
 		}
 
 	}
@@ -53,16 +53,16 @@
 			content: '\f409';
 			position: relative;
 			top: .1em;
-			margin-#{$right}: $golden_minor / 2 +em; // {{RTL}}
-			line-height: $golden_major;
-			font-size: $golden_minor / 2 + 1rem;
+			margin-#{$right}: $ratio_min / 2 +em; // {{RTL}}
+			line-height: $ratio_maj;
+			font-size: $ratio_min / 2 + 1rem;
 		}
 
 	}
 
 	&-container {
 		position: relative;
-		padding: ( $golden +rem ) 0;
+		padding: ( $ratio +rem ) 0;
 		border-color: inherit; // Required here
 
 		.site-content & {
@@ -74,10 +74,10 @@
 		}
 
 		body:not(.no-intro):not(.fl-builder):not(.content-layout-no-paddings) .site-content & {
-			margin-bottom: $golden * -1em;
+			margin-bottom: $ratio * -1em;
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				margin-bottom: _pow( $golden, 2 ) * -1em;
+				margin-bottom: _pow( $ratio, 2 ) * -1em;
 			}
 
 		}
@@ -88,13 +88,13 @@
 			padding-bottom: 1em;
 
 			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $golden +em;
-				padding-bottom: $golden +em;
+				padding-top: $ratio +em;
+				padding-bottom: $ratio +em;
 			}
 
 			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: _pow( $golden, 2 ) +em;
-				padding-bottom: _pow( $golden, 2 ) +em;
+				padding-top: _pow( $ratio, 2 ) +em;
+				padding-bottom: _pow( $ratio, 2 ) +em;
 			}
 
 			.footer-layout-fullwidth & {
