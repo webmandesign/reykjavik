@@ -35,28 +35,29 @@
 
 }
 
-.is-style-outline {
+.wp-block-button.is-style-outline > .wp-block-button__link {
+	border: 2px solid;
 
-	.wp-block-button__link {
-		border: 2px solid;
+	&:not(.has-text-color),
+	&:not(.has-text-color):hover,
+	&:not(.has-text-color):focus,
+	&:not(.has-text-color):active {
+		color: inherit;
+	}
 
-		&:not(.has-text-color),
-		&:not(.has-text-color):hover,
-		&:not(.has-text-color):focus,
-		&:not(.has-text-color):active {
-			color: inherit;
-		}
-
-		&,
-		&:not(.has-background):hover,
-		&:not(.has-background):focus,
-		&:not(.has-background):active {
-			background: none;
-		}
-
+	&:not(.has-background),
+	&:not(.has-background):hover,
+	&:not(.has-background):focus,
+	&:not(.has-background):active {
+		background: none;
 	}
 
 }
+
+	.wp-block-button.is-style-outline > .wp-block-button__link,
+	.wp-block-button__link.is-style-outline {
+		padding: 1em 2em;
+	}
 
 	.is-style-outline > :not(.has-text-color),
 	.is-style-outline:not(.has-text-color) {

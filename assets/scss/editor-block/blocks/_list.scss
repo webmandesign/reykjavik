@@ -9,3 +9,16 @@
 	}
 
 }
+
+// WP6.1+
+.wp-block-list {
+
+	.wp-block-list {
+		margin-#{$left}: $ratio +em;
+	}
+
+	&-item {
+		margin-bottom: 0;
+	}
+
+}

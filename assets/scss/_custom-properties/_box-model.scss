@@ -33,8 +33,6 @@
 		// Line height in rem.
 		// Simulating rem unit for block editor styles consistency.
 		--gap: calc( var(--typography_font_size_base) * var(--typography_line_height) );
-		--wp--style--block-gap: var(--gap);
-		--gallery-block--gutter-size: var(--wp--style--block-gap);
 
 		--posts_list_gap: 1em;
 		@include media( map_get( $breakpoint, 'l' ) ) {
@@ -60,10 +58,19 @@
 		}
 
 		// WP:
-		--wp-admin--admin-bar--height: 32px;
-		@media screen and (max-width: 782px) {
-			--wp-admin--admin-bar--height: 46px;
-		}
+
+			--wp-admin--admin-bar--height: 32px;
+			@media screen and (max-width: 782px) {
+				--wp-admin--admin-bar--height: 46px;
+			}
+
+			--wp--style--block-gap: var(--gap);
+			--wp--style--gallery-gap-default: var(--wp--style--block-gap);
+
+			--wp--style--spacing--base: #{ $ratio_maj +vw };
+			@for $i from 1 through 10 {
+				--wp--preset--spacing--#{ $i * 10 }: calc( #{ $i } * var(--wp--style--spacing--base) );
+			}
 
 }
 

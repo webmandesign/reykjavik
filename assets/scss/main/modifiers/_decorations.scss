@@ -14,6 +14,7 @@
 			&,
 			& > .blocks-gallery-grid {
 				--wp--style--block-gap: 0px; // WP6.0+ fix
+				--wp--style--gallery-gap-default: var(--wp--style--block-gap);
 				gap: 0 $important_modifiers;
 
 				> [class] {

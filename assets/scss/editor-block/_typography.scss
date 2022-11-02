@@ -9,3 +9,12 @@ html #{ $selector_editor_wrapper } {
 .block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
 	font-family: inherit;
 }
+
+// Heading line height.
+#{ $selector_editor_wrapper } {
+	@each $selector, $settings in $setup_headings {
+		#{ $selector }[class] {
+			line-height: nth( $settings, 2 );
+		}
+	}
+}

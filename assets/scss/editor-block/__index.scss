@@ -16,9 +16,9 @@ $selectors_margin_bottom: (
 );
 
 $selectors_button: (
-	'.button',
-	'.wp-block-button__link',
-	'.wp-block-search__button',
+	'[class].button',
+	'[class].wp-block-button__link',
+	'[class].wp-block-search__button',
 );
 
 $important_contexts: append( $important_contexts, 'modifier_font_size' );

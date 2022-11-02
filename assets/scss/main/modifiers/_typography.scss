@@ -33,6 +33,11 @@
 
 	$important_modifiers: _important( 'modifier_font_size' );
 
+	$specificity : '';
+	@if variable-exists( 'selector_editor_wrapper' ) {
+		$specificity : '[class]';
+	}
+
 	.has-xs-font-size,
 	.has-extra-small-font-size {
 		font-size: 1em * $ratio_maj $important_modifiers;
@@ -47,10 +52,10 @@
 		font-size: 1em - $ratio_min / 4 $important_modifiers;
 	}
 
-	.has-m-font-size,
-	.has-medium-font-size,
-	.has-regular-font-size,
-	.has-normal-font-size {
+	#{ $specificity }.has-m-font-size,
+	#{ $specificity }.has-medium-font-size,
+	#{ $specificity }.has-regular-font-size,
+	#{ $specificity }.has-normal-font-size {
 		font-size: 1em $important_modifiers;
 		line-height: inherit;
 	}
