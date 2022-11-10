@@ -71,8 +71,8 @@
 			font-size: 1em + $ratio_min;
 			z-index: 19;
 
-			.site & {
-				width: 2em;
+			&[class] {
+				width: 2em; // Overriding later `%indent_text_for_icon_only` styles.
 			}
 
 			&::before {

@@ -30,6 +30,10 @@
 		border-#{$left}-width: 1px;
 		border-color: inherit;
 
+		&[class] {
+			width: 2em; // Overriding later `%indent_text_for_icon_only` styles.
+		}
+
 		&::before {
 			line-height: $mobile_menu_toggle_height +rem;
 		}

@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.3.1, 20221110
+
+### Fixed
+- Outline button styles
+- Excerpt HTML in Query Loop block
+- Full aligned blocks horizontal margin
+- Pagination styles
+- Parted post pagination styles
+- Horizontal widgets responsive min width
+- WooCommerce mobile menu buttons width
+- WooCommerce shop table product remove button size
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	includes/frontend/class-content.php
+
+
 ## 2.3.0, 20221102
 
 ### Fixed

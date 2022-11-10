@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.2.0
+ * @version  2.3.1
  *
  * Contents:
  *
@@ -308,7 +308,7 @@ class Reykjavik_Content {
 		 * Block editor output modifications.
 		 *
 		 * @since    2.0.0
-		 * @version  2.2.0
+		 * @version  2.3.1
 		 *
      * @param  string $block_content  The pre-rendered content. Default null.
      * @param  array  $block          The block being rendered.
@@ -390,6 +390,16 @@ class Reykjavik_Content {
 						'wp-block-image align-horizontal-wrap',
 						$block_content
 					);
+				}
+
+				// Post Excerpt block.
+				if ( 'core/post-excerpt' == $block['blockName'] ) {
+					// Remove excerpt opening paragraph tag.
+					$block_content = str_replace( '<p class="wp-block-post-excerpt__excerpt">', '', $block_content );
+					// Remove excerpt closing paragraph tag (is `</p></div>`).
+					$block_content = substr( $block_content, 0, -10 ) . '</div>';
+					// Adding excerpt class back in.
+					$block_content = str_replace( '"entry-summary', '"entry-summary wp-block-post-excerpt__excerpt', $block_content );
 				}
 
 				// Cover block.

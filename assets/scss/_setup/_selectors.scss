@@ -31,7 +31,6 @@ $selectors_button: append( $selectors_button, (
 	'.wp-block-button__link',
 	'.wp-block-search .wp-block-search__button',
 	'.page-numbers:not(.current):not(.dots)',
-	'.post-page-numbers:not(.current):not(.dots)',
 	'.main-navigation-container .button > a',
 	'.cart_totals .checkout-button',
 ) );
@@ -42,8 +41,6 @@ $selectors_accent_color: (
 	'#page mark',
 	'.highlight',
 	'#page .highlight',
-	// Pagination
-	'.pagination .current',
 	// Comments
 	'.bypostauthor > .comment-body .comment-author::before',
 	// Widgets

@@ -2,115 +2,78 @@
 
 .pagination {
 	clear: both;
-	padding: 1px; // To display accessibility outline.
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 	margin-top: _pow( $ratio_min + 1, 4 ) +em;
 	text-align: center;
-	overflow: hidden;
 
-	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
-		position: relative;
+	&.pagination::before {
+		content: attr(data-current) " / " attr(data-total);
+		position: absolute;
+		left: 50%; // No RTL needed here.
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%); // No RTL needed here.
 
-		&::after {
-			@include rtl_property( content, attr(data-current) ' / ' attr(data-total), attr(data-current) ' \2216 ' attr(data-total) ); // {{RTL}}
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translateX( -50% )
-			           translateY( -50% );
-		}
-
-	}
-
-	a,
-	span {
-		display: none;
-		width: _pow( $ratio, 2 ) +em;
-		padding: ( $ratio_maj +em ) 0;
-		margin: $ratio_min / 2 +em;
-		margin-#{$left}: 0; // {{RTL}}
-		text-align: center;
-		text-decoration: none;
-		background: transparent;
-		color: inherit;
-		border-width: 1px;
-		border-style: solid;
-		vertical-align: top;
-	}
-
-	a {
-
-		@include haf() {
-			@extend %shaded_background;
-
-			// Unfortunate iOS devices fix for double tap...
-			@include media( ( '1112px', 'max-width' ) ) {
-				&::before {
-					display: none;
-				}
-			}
-		}
-
-		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
-			background-color: map_get( $customize_options, 'color_accent' );
-			color: map_get( $customize_options, 'color_accent_text' );
-			background-color: var(--color_accent);
-			color: var(--color_accent_text);
-		}
-
-	}
-
-	.prev,
-	.next {
-		@extend %shaded_background;
-		display: inline-block;
-
-		// Unfortunate iOS devices fix for double tap...
-		@include media( ( '1112px', 'max-width' ) ) {
-			&::before {
-				display: none;
-			}
-		}
-
-		&:hover::before {
+		@include media( map_get( $breakpoint, 'm' ) ) {
 			display: none;
 		}
 
 	}
 
-	@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+	.nav-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
 
-		.prev {
-			float: $left; // {{RTL}}
-		}
+}
 
-		.next {
-			float: $right; // {{RTL}}
+.pagination a:not(.next):not(.prev),
+.pagination span,
+.page-numbers {
+	display: none;
+	min-width: 2.5em;
+	margin: .25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+
+	@include media( map_get( $breakpoint, 'm' ) ) {
+		display: inline-block;
+	}
+
+	&.prev {
+
+		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+			margin-#{$right}: auto;
 		}
 
 	}
 
-	.dots {
-		padding-left: $ratio_maj +em;
-		padding-right: $ratio_maj +em;
-		border-color: transparent;
+	&.next {
+
+		@include media( ( map_get( $breakpoint, 'm' ), 'max-width' ) ) {
+			margin-#{$left}: auto;
+		}
+
 	}
 
-	.dots,
-	.extend {
+	&.dots,
+	&.extend {
 		width: auto;
 	}
 
-	.current {
-		@extend %font_weight_700;
+	&.current {
+		font-weight: 700;
 	}
 
-	@include media( map_get( $breakpoint, 'm' ) ) {
+}
 
-		a,
-		span {
-			display: inline-block;
-		}
-
-	}
-
+.page-numbers:not(.current):not(.dots) {
+	padding-left: $ratio_min + 1em;
+	padding-right: $ratio_min + 1em;
 }

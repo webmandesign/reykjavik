@@ -132,7 +132,7 @@
 		margin-right: 0;
 	}
 
-	.has-background.has-background & {
+	.alignfull.has-background & {
 		width: auto;
 		margin-left: calc( -1 * var(--body_padding) );
 		margin-right: calc( -1 * var(--body_padding) );

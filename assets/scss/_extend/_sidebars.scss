@@ -10,7 +10,7 @@
 	margin-right: calc( var(--gap) / -2 );
 
 	.widget {
-		flex: 1 1 10em;
+		flex: 1 1 200px;
 		position: relative;
 		padding: ( $ratio +em ) 0;
 		margin: 0 calc( var(--gap) / 2 );

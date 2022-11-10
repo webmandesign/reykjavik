@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.0 =
-Fixing WordPress 6.1 compatibility.
+= 2.3.1 =
+Fixing bugs.
 
 
 == Copyright ==

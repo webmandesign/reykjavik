@@ -22,7 +22,7 @@
 
 					case 'core/column':
 					case 'core/columns':
-						// See also `includes/Content/Block.php/Block:render_block()`
+						// See also `includes/frontend/class-content.php/Reykjavik_Content::render_block()`
 						settings = lodash.merge( {}, settings, {
 							supports: {
 								__experimentalLayout: false
