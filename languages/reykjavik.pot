@@ -1828,7 +1828,7 @@ msgstr ""
 
 #: includes/starter-content/class-starter-content.php:540
 msgctxt "Theme starter content"
-msgid "Twitter"
+msgid "X"
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:110

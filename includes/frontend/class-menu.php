@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.2.0
+ * @version  2.3.2
  *
  * Contents:
  *
@@ -441,7 +441,7 @@ class Reykjavik_Menu {
 			 * Social links supported icons.
 			 *
 			 * @since    1.0.0
-			 * @version  2.1.0
+			 * @version  2.3.2
 			 */
 			public static function social_links_icons() {
 
@@ -487,7 +487,7 @@ class Reykjavik_Menu {
 						'tripadvisor.'      => 'tripadvisor',
 						'tumblr.com'        => 'tumblr',
 						'twitch.tv'         => 'twitch',
-						'twitter.com'       => 'twitter',
+						'twitter.com'       => 'x',
 						'vimeo.com'         => 'vimeo',
 						'vine.co'           => 'vine',
 						'vk.com'            => 'vk',

@@ -1,7 +1,7 @@
 === Reykjavik ===
 Contributors: webmandesign
 Requires at least: 5.8
-Tested up to: 6.1
+Tested up to: 6.4
 Requires PHP: 5.6
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.1 =
-Fixing bugs.
+= 2.3.2 =
+Fixing WordPress 6.4 compatibility, updating Twitter/X icon.
 
 
 == Copyright ==

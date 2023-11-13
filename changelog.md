@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.3.2, 20231113
+
+### Updated
+- Twitter/X icon
+
+### Fixed
+- Can not edit or add new posts and pages in WordPress 6.4
+- Updating TGMPA script to prevent PHP8 error
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/images/svg/social-icons.svg
+	includes/frontend/class-content.php
+	includes/frontend/class-menu.php
+	includes/setup/class-setup.php
+	includes/starter-content/class-starter-content.php
+	library/includes/vendor/tgmpa/class-tgm-plugin-activation.php
+
+
 ## 2.3.1, 20221110
 
 ### Fixed

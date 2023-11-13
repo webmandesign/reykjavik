@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.3.1
+ * @version  2.3.2
  *
  * Contents:
  *
@@ -431,7 +431,8 @@ class Reykjavik_Content {
 		/**
 		 * Enqueues block editor assets for block modifications.
 		 *
-		 * @since  2.2.0
+		 * @since    2.2.0
+		 * @version  2.3.2
 		 *
 		 * @return  void
 		 */
@@ -442,7 +443,7 @@ class Reykjavik_Content {
 				wp_enqueue_script(
 					'reykjavik-editor-blocks',
 					get_theme_file_uri( 'assets/js/editor-blocks.min.js' ),
-					array( 'wp-blocks', 'wp-hooks' ),
+					array( 'wp-blocks', 'wp-hooks', 'lodash' ),
 					'v' . REYKJAVIK_THEME_VERSION
 				);
 
