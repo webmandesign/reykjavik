@@ -1,5 +1,16 @@
 # Reykjavik Changelog
 
+## 2.3.3, 20240902
+
+### Updated
+- Confirming support with WordPress 6.6
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+
+
 ## 2.3.2, 20231113
 
 ### Updated
