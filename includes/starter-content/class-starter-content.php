@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.3.2
+ * @version  2.3.4
  *
  * Contents:
  *
@@ -475,7 +475,7 @@ class Reykjavik_Starter_Content {
 		 * Navigational menus.
 		 *
 		 * @since    1.0.0
-		 * @version  2.3.2
+		 * @version  2.3.4
 		 */
 		public static function nav_menus() {
 
@@ -538,7 +538,7 @@ class Reykjavik_Starter_Content {
 
 							'link_twitter' => array(
 								'title' => esc_html_x( 'X', 'Theme starter content', 'reykjavik' ),
-								'url'   => 'https://twitter.com/',
+								'url'   => 'https://x.com/',
 							),
 
 							'link_email',

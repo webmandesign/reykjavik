@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.3.4, 20240914
+
+### Fixed
+- Block styles
+
+### Updated
+- Improving accessibility
+- Improving and fixing social icons (introducing option to force the icon with `has-icon-#` class)
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/_custom-properties.scss
+	assets/scss/editor-style.scss
+	assets/scss/editor-style-blocks.scss
+	assets/scss/main.scss
+	includes/frontend/class-menu.php
+	includes/starter-content/class-starter-content.php
+
+
 ## 2.3.3, 20240902
 
 ### Updated

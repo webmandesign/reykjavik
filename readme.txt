@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.2 =
-Fixing WordPress 6.4 compatibility, updating Twitter/X icon.
+= 2.3.4 =
+Improving social icons, accessibility, fixing block styles.
 
 
 == Copyright ==
