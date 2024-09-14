@@ -9,7 +9,7 @@
 	> ul,
 	> ol {
 
-		&:not([class*="wp-block-"]) li {
+		> li {
 			margin-#{$left}: 1.25em;
 		}
 

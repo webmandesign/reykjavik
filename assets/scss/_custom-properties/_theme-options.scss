@@ -1,6 +1,6 @@
 /* FILE: _custom-properties/_theme-options.scss */
 
-:root {
+#{ $root } {
 
 	// `$value + ''` is converting values to string to prevent any issues.
 	@each $option, $value in $customize_options {

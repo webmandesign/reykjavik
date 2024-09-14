@@ -14,10 +14,14 @@
 	readme.txt
 	style.css
 	assets/scss/_custom-properties.scss
+	assets/scss/blocks.scss
 	assets/scss/editor-style.scss
 	assets/scss/editor-style-blocks.scss
 	assets/scss/main.scss
+	includes/customize/class-customize-styles.php
+	includes/frontend/class-assets.php
 	includes/frontend/class-menu.php
+	includes/setup/class-setup.php
 	includes/starter-content/class-starter-content.php
 
 

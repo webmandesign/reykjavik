@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.1.0
+ * @version  2.3.4
  *
  * Contents:
  *
@@ -451,7 +451,7 @@ class Reykjavik_Assets {
 		 * Enqueues block editor stylesheets.
 		 *
 		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @version  2.3.4
 		 */
 		public static function enqueue_styles_editor() {
 
@@ -483,7 +483,10 @@ class Reykjavik_Assets {
 
 				wp_add_inline_style(
 					'reykjavik-editor-blocks',
-					Reykjavik_Customize_Styles::esc_css( Reykjavik_Customize_Styles::get_css_variables(), 'customize-styles-editor' )
+					Reykjavik_Customize_Styles::esc_css(
+						Reykjavik_Customize_Styles::get_css_variables( '.editor-styles-wrapper.editor-styles-wrapper' ), // @see `assets/scss/editor-style-blocks.scss`
+						'customize-styles-editor'
+					)
 				);
 
 		} // /enqueue_styles_editor
@@ -733,7 +736,8 @@ class Reykjavik_Assets {
 		/**
 		 * WP 5.9 fix for global styles CSS code overrides.
 		 *
-		 * @since  2.1.0
+		 * @since    2.1.0
+		 * @version  2.3.4
 		 *
 		 * @return  void
 		 */
@@ -780,10 +784,13 @@ class Reykjavik_Assets {
 						return;
 					}
 
-					wp_register_style( 'wp-global-styles', false );
-					wp_add_inline_style( 'wp-global-styles', $stylesheet );
-					wp_enqueue_style( 'wp-global-styles' );
-				} );
+					wp_register_style( 'global-styles', false );
+					wp_add_inline_style( 'global-styles', $stylesheet );
+					wp_enqueue_style( 'global-styles' );
+
+					// Add each block as an inline css.
+					wp_add_global_styles_for_blocks();
+				}, 0 );
 
 				// Treat also editor styles.
 				add_filter( 'block_editor_settings_all', function( $editor_settings ) {

@@ -1,6 +1,11 @@
 /* FILE: editor-block/blocks/_post-title.scss */
 
-#{ $selector_editor_wrapper } .wp-block-post-title {
-	max-width: $max_width_wide;
-	font-size: 2em;
+.edit-post-visual-editor__post-title-wrapper[class] {
+	padding-inline: 6%;
+	margin-block: 2rem !important;
+
+	.wp-block-post-title {
+		max-width: $max_width_wide;
+		font-size: 2em;
+	}
 }

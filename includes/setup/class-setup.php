@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.3.2
+ * @version  2.3.4
  *
  * Contents:
  *
@@ -167,7 +167,7 @@ class Reykjavik_Setup {
 		 * as indicating support for post thumbnails.
 		 *
 		 * @since    1.0.0
-		 * @version  2.3.2
+		 * @version  2.3.4
 		 */
 		public static function setup() {
 
@@ -217,7 +217,9 @@ class Reykjavik_Setup {
 				add_theme_support( 'align-wide' );
 				add_theme_support( 'custom-units' );
 				add_theme_support( 'custom-spacing' );
+				add_theme_support( 'appearance-tools' );
 				add_theme_support( 'link-color' );
+				add_theme_support( 'border' );
 
 				// Responsive embedded content.
 				add_theme_support( 'responsive-embeds' );

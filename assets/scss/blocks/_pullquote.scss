@@ -2,6 +2,7 @@
 
 .wp-block-pullquote {
 	padding: ( _pow( $ratio, 2 ) +em ) 6%;
+	font-size: 1em;
 	text-align: inherit;
 	border-top-width: $ratio_min +em;
 	border-top-style: solid;

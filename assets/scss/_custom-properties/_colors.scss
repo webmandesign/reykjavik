@@ -1,6 +1,6 @@
 /* FILE: _custom-properties/_colors.scss */
 
-:root {
+#{ $root } {
 
 	// WordPress color variables.
 	--wp--style--color--link: var(--color_accent);

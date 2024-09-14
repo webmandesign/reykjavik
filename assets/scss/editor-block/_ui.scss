@@ -31,3 +31,65 @@ $max_width_wide:    calc( var(--layout_width_content)       + var(--editor_width
 	}
 
 }
+
+// Image URL replace fix.
+.block-editor-media-flow__url-input .block-editor-link-control {
+
+	.block-editor-link-control__search-item-title[href^="data:"] {
+		max-width: 140px;
+
+		+ .block-editor-link-control__search-item-info {
+			display: none;
+			// This below is just in case...
+			white-space: normal;
+			max-height: 2em;
+			overflow: hidden;
+		}
+	}
+}
+
+// Spacing options.
+.tools-panel-item-spacing {
+	padding: 1em;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+
+	.components-input-control__container {
+
+		.components-input-control__input[class] {
+			padding-inline: .5em;
+		}
+
+		.components-unit-control__select[class] {
+			margin-inline-end: .25em;
+		}
+	}
+
+	// Zero value visual cue:
+	// Actually styling empty value pointer, not the "zero" one.
+	.components-range-control__wrapper {
+
+		&:has( [aria-valuenow="0"] ~ .components-range-control__tooltip:empty ) { // :has() = CSS4 parent selector.
+
+			.components-range-control__thumb-wrapper {
+				background: currentColor;
+				color: #ddd;
+				// border-radius: 2px;
+
+				span {
+					// background: #fff;
+					// border: 3px solid;
+					background: inherit;
+					border-radius: inherit;
+				}
+			}
+		}
+	}
+}
+
+// Block styles selector.
+.block-editor-block-styles__variants .components-button {
+	height: auto;
+	padding-block: 8px;
+	font-size: 12px;
+}

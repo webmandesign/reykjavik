@@ -15,3 +15,41 @@
 	}
 
 }
+
+.is-style-no-padding.is-style-no-padding {
+	padding-top: 0;
+	padding-bottom: 0;
+
+	&:not(.has-background) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}
+
+.is-style-no-margin-vertical.is-style-no-margin-vertical.is-style-no-margin-vertical {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+$specificity : '';
+@if variable-exists( 'selector_editor_wrapper' ) {
+	$specificity : '[class]';
+}
+.is-layout-constrained,
+.is-layout-flow {
+
+	&#{ $specificity } {
+		@extend %block_inner_container;
+		@extend %clearfix;
+
+		> * {
+			margin-top: 0;
+			margin-bottom: var(--gap);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

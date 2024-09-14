@@ -2,7 +2,21 @@
 
 #{$selectors_headings} {
 	@extend %font_headings;
-	@extend %colors_site_content_headings;
+
+	@if variable-exists( 'selector_editor_wrapper' ) {
+		@at-root html :where( & ) {
+			//
+			// We can't use `@extend` here,
+			// we have to use the actual code!
+			//
+			// @see  _extend/_colors.scss → %colors_site_content_headings
+			//
+			color: map_get( $customize_options, 'color_content_headings' );
+			color: var(--color_content_headings);
+		}
+	} @else {
+		@extend %colors_site_content_headings;
+	}
 }
 
 	h1.h2,

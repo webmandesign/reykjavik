@@ -7,6 +7,21 @@
 		@extend %clearfix;
 	}
 
+		// Sometimes the Group block does not receive layout class
+		// by WordPress (such as when nested within full aligned Group)
+		// and also `.wp-block-group__inner-container` is not rendered,
+		// so we need to fix inner block alignment here (front-end only).
+		// (These styles are from `%block_inner_container`.)
+		> :not(
+			.alignfull,
+			.alignwide,
+			.alignwide-wrap,
+			.wp-block-group__inner-container
+		) {
+			// max-width: var(--layout_width_entry_content); // This style is not needed here (see below).
+			margin-inline: auto;
+		}
+
 	&.has-background > .wp-block-group__inner-container > .alignwide-wrap {
 		padding-left: 0;
 		padding-right: 0;

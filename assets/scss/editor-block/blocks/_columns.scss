@@ -11,8 +11,16 @@
 }
 
 .block-editor-block-list__block.wp-block-column.wp-block-column {
-	margin-bottom: $ratio +em;
+	margin-bottom: var(--wp--style--block-gap);
 }
+
+	[data-align="wide"]:not(:last-child) > .wp-block-columns {
+		margin-bottom: var(--wp--style--block-gap) !important;
+	}
+
+	[data-align="wide"] > .wp-block-columns > .wp-block-column.wp-block-column.wp-block-column {
+		margin-bottom: 0;
+	}
 
 .wp-block-column {
 	max-width: none;

@@ -87,21 +87,23 @@
 .alignwide {
 	width: var(--layout_width_content);
 	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline: auto;
 
 	&-wrap {
-		padding-left: var(--body_padding);
-		padding-right: var(--body_padding);
+		padding-inline: var(--body_padding);
 
-		.alignwide-wrap {
-			padding-left: 0;
-			padding-right: 0;
+		// To override `.is-layout-# > *` styles.
+		&.alignwide-wrap.alignwide-wrap {
+			margin-block: 0;
 		}
 
-		> .alignwide {
-			margin-left: auto;
-			margin-right: auto;
+		.alignwide-wrap {
+			padding-inline: 0;
+		}
+
+		> .alignwide,
+		.alignwide > & {
+			margin-inline: auto;
 		}
 
 		&:not(:last-child) > .alignwide {

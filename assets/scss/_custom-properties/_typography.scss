@@ -1,6 +1,6 @@
 /* FILE: _custom-properties/_typography.scss */
 
-:root {
+#{ $root } {
 
 	--typography_font_size_base: 16px;
 	@include media( map_get( $breakpoint, 'xl' ) ) {

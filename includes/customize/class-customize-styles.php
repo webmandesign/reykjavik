@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.2
+ * @version  2.3.4
  *
  * Contents:
  *
@@ -94,26 +94,30 @@ class Reykjavik_Customize_Styles {
 		 * Get processed CSS variables string.
 		 *
 		 * @since    1.4.0
-		 * @version  1.4.0
+		 * @version  2.3.4
+		 *
+		 * @param  string $root  CSS root selector for defining CSS variables.
+		 *
+		 * @return  string
 		 */
-		public static function get_css_variables() {
+		public static function get_css_variables( string $root = ':root' ): string {
 
 			// Variables
 
 				$css_vars = '';
 
-
-			// Processing
-
 				if ( is_callable( 'Reykjavik_Library_CSS_Variables::get_variables_string' ) ) {
 					$css_vars = Reykjavik_Library_CSS_Variables::get_variables_string();
 				}
+
+
+			// Processing
 
 				if ( ! empty( $css_vars ) ) {
 					$css_vars =
 						'/* START CSS variables */'
 						. PHP_EOL
-						. ':root { '
+						. $root . ' { '
 						. PHP_EOL
 						. $css_vars
 						. PHP_EOL
