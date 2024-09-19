@@ -12,7 +12,7 @@
 		// and also `.wp-block-group__inner-container` is not rendered,
 		// so we need to fix inner block alignment here (front-end only).
 		// (These styles are from `%block_inner_container`.)
-		> :not(
+		&:not(.is-layout-flex) > :not(
 			.alignfull,
 			.alignwide,
 			.alignwide-wrap,

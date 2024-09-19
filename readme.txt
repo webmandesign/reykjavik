@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.4 =
-Improving social icons, accessibility, fixing block styles.
+= 2.3.5 =
+Fixing styles.
 
 
 == Copyright ==

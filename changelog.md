@@ -1,5 +1,19 @@
 # Reykjavik Changelog
 
+## 2.3.5, 20240919
+
+### Fixed
+- Image block border style override
+- Row block justification styles
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/blocks.scss
+	assets/scss/main.scss
+
+
 ## 2.3.4, 20240914
 
 ### Fixed
