@@ -1,5 +1,21 @@
 # Reykjavik Changelog
 
+## 2.3.6, 20250118
+
+### Updated
+- Beaver Builder upgrade link
+
+### Fixed
+- WooCommerce styles
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	includes/plugins/beaver-builder/class-beaver-builder-setup.php
+	includes/plugins/woocommerce/class-woocommerce-single.php
+	
+
 ## 2.3.5, 20240919
 
 ### Fixed

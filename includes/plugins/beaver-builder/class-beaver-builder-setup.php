@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.3.6
  *
  * Contents:
  *
@@ -88,7 +88,7 @@ class Reykjavik_Beaver_Builder_Setup {
 		 * Upgrade link URL
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.3.6
 		 *
 		 * @param  string $url
 		 */
@@ -96,7 +96,7 @@ class Reykjavik_Beaver_Builder_Setup {
 
 			// Output
 
-				return esc_url( add_query_arg( 'fla', '67', $url ) );
+				return trailingslashit( FL_BUILDER_STORE_URL ) . 'fla/67/';
 
 		} // /upgrade_url
 

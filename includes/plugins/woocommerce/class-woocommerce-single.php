@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.0.0
+ * @version  2.3.6
  *
  * Contents:
  *
@@ -35,7 +35,7 @@ class Reykjavik_WooCommerce_Single {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.3.6
 		 */
 		private function __construct() {
 
@@ -47,7 +47,7 @@ class Reykjavik_WooCommerce_Single {
 
 						remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
-						remove_action( 'woocommerce_before_single_product', 'wc_print_notices' );
+						remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices' );
 
 						remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash' );
 
@@ -63,7 +63,7 @@ class Reykjavik_WooCommerce_Single {
 
 						add_action( 'wp', __CLASS__ . '::display_title' );
 
-						add_action( 'woocommerce_before_single_product_summary', 'wc_print_notices', -5 );
+						add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_all_notices', -5 );
 
 						add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 5 );
 
