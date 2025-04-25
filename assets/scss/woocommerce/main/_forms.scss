@@ -145,9 +145,10 @@
 				+ span {
 
 					&::before {
-						outline: 2px dashed;
-						outline-offset: 2px;
-						outline-color: var(--color_accent);
+						outline-width: 2px;
+						outline-style: dashed;
+						outline-offset: 3px;
+						outline-color: currentColor;
 					}
 
 				}

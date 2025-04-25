@@ -1,0 +1,17 @@
+//
+// Button focus styles.
+//
+// @since  2.3.7
+//
+@mixin button_focus() {
+
+	&:focus {
+		outline-style: dashed;
+		outline-width: 2px;
+		outline-offset: 1px;
+		outline-color: map_get( $customize_options, 'color_accent' );
+		outline-color: var(--color_accent);
+		box-shadow: 0 0 0 3px;
+	}
+
+} // /button_focus

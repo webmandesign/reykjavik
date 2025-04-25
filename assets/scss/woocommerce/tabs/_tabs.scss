@@ -7,10 +7,6 @@
 		margin-top: _pow( $ratio, 2 ) * -1em;
 	}
 
-	[tabindex="-1"]:focus {
-		outline: 0;
-	}
-
 	.tabs {
 		@extend %layout_content_width;
 		padding: .5em;
@@ -82,10 +78,6 @@
 	.panel {
 		@extend %layout_content_width;
 		padding: ( $padding_vertical * $ratio_maj ) 0 $padding_vertical;
-
-		&:focus {
-			outline: 0;
-		}
 
 		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
 			display: block !important;

@@ -1,7 +1,10 @@
 /* FILE: main/base/_elements.scss */
 
-:focus {
-	outline: thin dashed;
+:where( .site :focus ) {
+	outline-width: 2px;
+	outline-style: dashed;
+	outline-offset: 3px;
+	outline-color: currentColor;
 }
 
 body {
@@ -9,11 +12,6 @@ body {
 	// @see  add_theme_support( 'custom-background', $args );
 	background-color: #e3e3e4;
 	overflow-x: hidden;
-
-	&:focus {
-		outline: none;
-	}
-
 }
 
 a {
@@ -286,12 +284,6 @@ img {
 
 iframe {
 	border-width: 0;
-	outline: 0;
-
-	&:focus {
-		outline: thin dashed;
-	}
-
 }
 
 code {

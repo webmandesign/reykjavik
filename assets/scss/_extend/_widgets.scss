@@ -59,11 +59,6 @@
 			text-decoration: none;
 			line-height: 2;
 			transition: background .3s;
-
-			&:focus {
-				outline-color: var(--color_accent);
-			}
-
 		}
 
 	}

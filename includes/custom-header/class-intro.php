@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.2.0
+ * @version  2.3.7
  *
  * Contents:
  *
@@ -303,7 +303,7 @@ class Reykjavik_Intro {
 		 * Header image URL
 		 *
 		 * @since    1.0.0
-		 * @version  2.2.0
+		 * @version  2.3.7
 		 *
 		 * @param  string $url  Image URL or other custom header value.
 		 */
@@ -333,16 +333,16 @@ class Reykjavik_Intro {
 				if ( $intro_image ) {
 
 					if ( is_numeric( $intro_image ) ) {
-						$url = wp_get_attachment_image_src( absint( $intro_image ), $image_size );
-						$url = $url[0];
+						$url = (array) wp_get_attachment_image_src( absint( $intro_image ), $image_size );
+						$url = (string) $url[0];
 					} else {
 						$url = (string) $intro_image;
 					}
 
 				} elseif ( is_singular() && has_post_thumbnail( $post_id ) ) {
 
-					$url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
-					$url = $url[0];
+					$url = (array) wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
+					$url = (string) $url[0];
 
 				} elseif ( ! is_front_page() && ! is_home() ) {
 

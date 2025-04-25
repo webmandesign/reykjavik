@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.2.0
+ * @version  2.3.7
  *
  * Contents:
  *
@@ -247,7 +247,7 @@ class Reykjavik_One_Click_Demo_Import {
 		 * Setup theme options
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.3.7
 		 */
 		public static function theme_options() {
 
@@ -266,8 +266,8 @@ class Reykjavik_One_Click_Demo_Import {
 
 					if ( isset( $footer_image_attachment_post->ID ) ) {
 
-						$footer_image_url = wp_get_attachment_image_src( $footer_image_attachment_post->ID, 'full' );
-						$footer_image_url = $footer_image_url[0];
+						$footer_image_url = (array) wp_get_attachment_image_src( $footer_image_attachment_post->ID, 'full' );
+						$footer_image_url = (string) $footer_image_url[0];
 
 						set_theme_mod( 'footer_image', esc_url_raw( $footer_image_url ) );
 						set_theme_mod( 'footer_image_opacity', .10 );

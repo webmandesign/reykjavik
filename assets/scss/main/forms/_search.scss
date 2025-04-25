@@ -3,6 +3,8 @@
 form[role="search"],
 .form-search,
 .search-form {
+	--gap: 0;
+
 	display: block;
 	position: relative;
 	max-width: 100%;

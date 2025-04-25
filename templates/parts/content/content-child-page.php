@@ -16,7 +16,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.5.2
+ * @version  2.3.7
  */
 
 
@@ -48,14 +48,14 @@
 
 		if ( is_numeric( $page_image_url ) ) {
 			$image_alt_attr = get_post_meta( absint( $page_image_url ), '_wp_attachment_image_alt', true );
-			$page_image_url = wp_get_attachment_image_src( absint( $page_image_url ), $image_size );
-			$page_image_url = $page_image_url[0];
+			$page_image_url = (array) wp_get_attachment_image_src( absint( $page_image_url ), $image_size );
+			$page_image_url = (string) $page_image_url[0];
 		}
 
 		if ( empty( $page_image_url ) && has_post_thumbnail( $child_id ) ) {
 			$image_alt_attr = get_post_meta( get_post_thumbnail_id( $child_id ), '_wp_attachment_image_alt', true );
-			$page_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $child_id ), $image_size );
-			$page_image_url = $page_image_url[0];
+			$page_image_url = (array) wp_get_attachment_image_src( get_post_thumbnail_id( $child_id ), $image_size );
+			$page_image_url = (string) $page_image_url[0];
 		}
 
 		$page_image_url = (string) apply_filters( 'wmhook_reykjavik_content_child_page_image_url', $page_image_url, $child_id );

@@ -1,7 +1,6 @@
 /* FILE: editor-block/_accessibility.scss */
+// Do not style `.screen-reader-text` as of WP6.8 (@see Social Icon block)!
 
-#{ $selector_editor_wrapper } .wp-block.screen-reader-text,
-#{ $selector_editor_wrapper } .wp-block > .screen-reader-text,
 #{ $selector_editor_wrapper } .wp-block.is-style-screen-reader-text,
 #{ $selector_editor_wrapper } .wp-block > .is-style-screen-reader-text {
 	position: relative !important;
@@ -33,11 +32,6 @@
 
 }
 
-#{ $selector_editor_wrapper } .wp-block:hover > .screen-reader-text,
-#{ $selector_editor_wrapper } .is-selected > .screen-reader-text,
-#{ $selector_editor_wrapper } .screen-reader-text:hover,
-#{ $selector_editor_wrapper } .screen-reader-text:focus,
-#{ $selector_editor_wrapper } .screen-reader-text:focus-within,
 #{ $selector_editor_wrapper } .wp-block:hover > .is-style-screen-reader-text,
 #{ $selector_editor_wrapper } .is-selected > .is-style-screen-reader-text,
 #{ $selector_editor_wrapper } .is-style-screen-reader-text:hover,

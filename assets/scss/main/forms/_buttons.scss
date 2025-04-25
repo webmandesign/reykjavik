@@ -35,16 +35,7 @@
 		border-color: transparent;
 	}
 
-	&:hover {
-		outline: 0;
-	}
-
-	&:focus {
-		outline: thin dashed;
-	}
-
 	&:active {
-		outline: 0;
 		opacity: .9;
 	}
 

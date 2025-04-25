@@ -1,5 +1,26 @@
 # Reykjavik Changelog
 
+## 2.3.7, 20250425
+
+### Updated
+- Accessibility styles
+- Improving code
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/editor-style-blocks.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	assets/scss/_tools/_mixin-button-focus.scss
+	includes/custom-header/class-intro.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/plugins/woocommerce/class-woocommerce-pages.php
+	library/includes/classes/class-sanitize.php
+	templates/parts/content/content-child-page.php
+
+
 ## 2.3.6, 20250118
 
 ### Updated

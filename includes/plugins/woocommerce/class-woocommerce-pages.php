@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.3.7
  *
  * Contents:
  *
@@ -188,7 +188,7 @@ class Reykjavik_WooCommerce_Pages {
 		 * @link  https://developer.wordpress.org/reference/functions/get_header_image/
 		 *
 		 * @since    1.0.0
-		 * @version  1.0.0
+		 * @version  2.3.7
 		 *
 		 * @param  string $url  Image URL or other custom header value.
 		 */
@@ -216,16 +216,16 @@ class Reykjavik_WooCommerce_Pages {
 				if ( $intro_image ) {
 
 					if ( is_numeric( $intro_image ) ) {
-						$url = wp_get_attachment_image_src( absint( $intro_image ), $image_size );
-						$url = $url[0];
+						$url = (array) wp_get_attachment_image_src( absint( $intro_image ), $image_size );
+						$url = (string) $url[0];
 					} else {
 						$url = (string) $intro_image;
 					}
 
 				} elseif ( has_post_thumbnail( $shop_page_id ) ) {
 
-					$url = wp_get_attachment_image_src( get_post_thumbnail_id( $shop_page_id ), $image_size );
-					$url = $url[0];
+					$url = (array) wp_get_attachment_image_src( get_post_thumbnail_id( $shop_page_id ), $image_size );
+					$url = (string) $url[0];
 
 				} else {
 

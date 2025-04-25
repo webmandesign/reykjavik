@@ -1,7 +1,7 @@
 === Reykjavik ===
 Contributors: webmandesign
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.5 =
-Fixing styles.
+= 2.3.7 =
+Improving code and accessibility styles.
 
 
 == Copyright ==
