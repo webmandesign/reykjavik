@@ -71,6 +71,21 @@
 	speak: none;
 }
 
+%icon_background {
+
+	:where( & )::before {
+		content: '';
+		display: inline-block;
+		width: var(--icon_size);
+		height: var(--icon_size);
+		background-color: currentColor;
+		vertical-align: middle;
+		mask-image: var( --icon, none );
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
+	}
+}
+
 %indent_text_for_icon_only {
 	// position: relative; // Provide each time!
 	display: inline-block;

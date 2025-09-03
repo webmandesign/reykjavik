@@ -39,8 +39,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.3.7 =
-Improving code and accessibility styles.
+= 2.3.8 =
+Fixing bugs.
 
 
 == Copyright ==

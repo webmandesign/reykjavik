@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  1.4.0
+ * @version  2.3.8
  *
  * Contents:
  *
@@ -33,7 +33,7 @@ class Reykjavik_WooCommerce_Setup {
 		 * Constructor
 		 *
 		 * @since    1.0.0
-		 * @version  1.4.0
+		 * @version  2.3.8
 		 */
 		private function __construct() {
 
@@ -72,7 +72,8 @@ class Reykjavik_WooCommerce_Setup {
 
 					// Removing
 
-						remove_action( 'wp_footer', 'woocommerce_demo_store' );
+						remove_action( 'wp_footer',    'woocommerce_demo_store' );
+						remove_action( 'wp_body_open', 'woocommerce_demo_store' );
 
 						remove_filter( 'wp_nav_menu', 'Reykjavik_Menu::mobile_menu_search', 20 );
 

@@ -1,5 +1,23 @@
 # Reykjavik Changelog
 
+## 2.3.8, 20250903
+
+### Fixed
+- Preventing post excerpt bleeding into category description
+- WooCommerce styles
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/scss/_custom-properties.scss
+	assets/scss/_extend.scss
+	assets/scss/main.scss
+	assets/scss/woocommerce.scss
+	includes/frontend/class-post-summary.php
+	includes/plugins/woocommerce/class-woocommerce-setup.php
+
+
 ## 2.3.7, 20250425
 
 ### Updated

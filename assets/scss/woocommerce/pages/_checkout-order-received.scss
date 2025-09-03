@@ -129,6 +129,29 @@ ul.order_details {
 
 }
 
+	.woocommerce-customer-details {
+
+		&--email,
+		&--phone {
+			@extend %icon_background;
+			margin: .25em 0 0;
+
+			&::before {
+				margin-inline-end: .5em;
+			}
+		}
+
+		:where( &--email ) {
+			// https://icon-sets.iconify.design/line-md/email/
+			--icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggc3Ryb2tlLWRhc2hhcnJheT0iNjQiIHN0cm9rZS1kYXNob2Zmc2V0PSI2NCIgZD0iTTQgNWgxNmMwLjU1IDAgMSAwLjQ1IDEgMXYxMmMwIDAuNTUgLTAuNDUgMSAtMSAxaC0xNmMtMC41NSAwIC0xIC0wLjQ1IC0xIC0xdi0xMmMwIC0wLjU1IDAuNDUgLTEgMSAtMVoiPjxhbmltYXRlIGZpbGw9ImZyZWV6ZSIgYXR0cmlidXRlTmFtZT0ic3Ryb2tlLWRhc2hvZmZzZXQiIGR1cj0iMC42cyIgdmFsdWVzPSI2NDswIi8+PC9wYXRoPjxwYXRoIHN0cm9rZS1kYXNoYXJyYXk9IjI0IiBzdHJva2UtZGFzaG9mZnNldD0iMjQiIGQ9Ik0zIDYuNWw5IDUuNWw5IC01LjUiPjxhbmltYXRlIGZpbGw9ImZyZWV6ZSIgYXR0cmlidXRlTmFtZT0ic3Ryb2tlLWRhc2hvZmZzZXQiIGJlZ2luPSIwLjZzIiBkdXI9IjAuMnMiIHZhbHVlcz0iMjQ7MCIvPjwvcGF0aD48L2c+PC9zdmc+");
+		}
+
+		:where( &--phone ) {
+			// https://icon-sets.iconify.design/line-md/phone/
+			--icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtZGFzaGFycmF5PSI2NCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjY0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTggM2MwLjUgMCAyLjUgNC41IDIuNSA1YzAgMSAtMS41IDIgLTIgM2MtMC41IDEgMC41IDIgMS41IDNjMC4zOSAwLjM5IDIgMiAzIDEuNWMxIC0wLjUgMiAtMiAzIC0yYzAuNSAwIDUgMiA1IDIuNWMwIDIgLTEuNSAzLjUgLTMgNGMtMS41IDAuNSAtMi41IDAuNSAtNC41IDBjLTIgLTAuNSAtMy41IC0xIC02IC0zLjVjLTIuNSAtMi41IC0zIC00IC0zLjUgLTZjLTAuNSAtMiAtMC41IC0zIDAgLTQuNWMwLjUgLTEuNSAyIC0zIDQgLTNaIj48YW5pbWF0ZSBmaWxsPSJmcmVlemUiIGF0dHJpYnV0ZU5hbWU9InN0cm9rZS1kYXNob2Zmc2V0IiBkdXI9IjAuNnMiIHZhbHVlcz0iNjQ7MCIvPjwvcGF0aD48L3N2Zz4=");
+		}
+	}
+
 .woocommerce-thankyou-order-failed {
 	padding-top: _pow( $ratio, 2 ) +em;
 	margin-left: auto;

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0.0
- * @version  2.0.0
+ * @version  2.3.8
  *
  * Contents:
  *
@@ -66,7 +66,7 @@ class Reykjavik_Post_Summary {
 		 * If the post has more tag, display the content appropriately.
 		 *
 		 * @since    1.0.0
-		 * @version  1.5.2
+		 * @version  2.3.8
 		 *
 		 * @param  string $excerpt
 		 */
@@ -93,7 +93,8 @@ class Reykjavik_Post_Summary {
 			// Processing
 
 				if (
-					! is_single( $post_id )
+					false === strpos( $excerpt, 'page-summary' )
+					&& ! is_single( $post_id )
 					&& Reykjavik_Library::has_more_tag()
 				) {
 
